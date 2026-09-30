@@ -1,0 +1,73 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2606                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _481094f-20260618 OPENFOAM=2606 version=2606
+Arch   : "LSB;label=32;scalar=64"
+Exec   : rhoPimpleFoam
+Date   : Sep 30 2026
+Time   : 10:43:44
+Host   : hsedf-fsi-20260930-102931
+PID    : 7308
+--> FOAM Warning : 
+    From Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 558
+    PWD is not the cwd() - reverting to physical description
+I/O    : uncollated
+--> FOAM Warning : 
+    From Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 558
+    PWD is not the cwd() - reverting to physical description
+Case   : /opt/phase15-fsi/phase15/fsi/cases/wing_t36mm/fluid
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+memory pool : not available
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+
+--> FOAM Warning : allowSystemOperations : Allowing user-supplied system call operations.
+                   This can be a security risk if running untrusted cases
+                   through e.g. 'coded' on-the-fly-compilation functionality.
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Selecting dynamicFvMesh dynamicMotionSolverFvMesh
+Selecting motion solver: displacementLaplacian
+Applying motion to entire mesh
+Selecting motion diffusion: quadratic
+Selecting motion diffusion: inverseDistance
+Selecting patchDistMethod meshWave
+
+PIMPLE: Operating solver in PISO mode
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+
+
+--> FOAM FATAL IO ERROR: (openfoam-2606)
+Required entry 'freestreamValue' missing in dictionary "0/p/boundaryField/farfield"
+
+
+file: 0/p/boundaryField/farfield at line 16.
+
+    From bool Foam::Field<Type>::assign(const Foam::word&, const Foam::dictionary&, Foam::label, Foam::IOobjectOption::readOption) [with Type = double; Foam::label = int]
+    in file ./src/OpenFOAM/lnInclude/Field.C at line 296.
+
+FOAM exiting
+

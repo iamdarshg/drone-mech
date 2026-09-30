@@ -1,0 +1,35 @@
+{
+  "id": "r065_linear_medium",
+  "turnRadiusM": 0.065,
+  "transitionProfile": "linear",
+  "meshLevel": "medium",
+  "caseId": "r065_linear_medium",
+  "slotWidthM": 0.05,
+  "slotLengthM": 0.12,
+  "outerDiameterM": 0.09,
+  "boreDiameterM": 0.088,
+  "hubDiameterM": 0.032,
+  "transitionLengthM": 0.12,
+  "maxCellSizeM": 0.006,
+  "totalPressurePa": 90037.94841092758,
+  "totalTemperatureK": 288.55693507850793,
+  "targetMassFlowKgPerS": 0.858742049399817,
+  "targetRecovery": 0.98,
+  "meshEvidence": {
+    "nodeCount": 8827,
+    "tetraCellCount": 37705,
+    "minSICN": 0.34812365237785126,
+    "p10SICN": 0.7096638278310952,
+    "cellsSICNBelow0p05": 0,
+    "minQualityCellCentroidM": [
+      0.06031593561114858,
+      -0.018537295043668224,
+      -0.055203108649784394
+    ],
+    "physicalFaceCounts": {
+      "inlet": 1,
+      "outlet": 1,
+      "walls": 242
+    }
+  }
+}

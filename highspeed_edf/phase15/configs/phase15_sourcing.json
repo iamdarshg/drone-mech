@@ -1,0 +1,58 @@
+{
+  "phase": 15,
+  "capturedUtc": "2026-09-29",
+  "purpose": "Low-cost benchmark input: presently purchasable motors and 12S LiPo options from amazon.in (primary) and robu.in (accepted backup), scored for flight time, efficiency, and flight performance, then handed to the high-cost generative-design benchmark.",
+  "costCaps": {
+    "currency": "INR",
+    "motorUnitMaxInr": 4000,
+    "batteryPairMaxInr": 12000
+  },
+  "missionAssumptions": {
+    "payloadKg": 1.0,
+    "nominalPackVoltageV": 44.4,
+    "usableEnergyFraction": 0.85,
+    "cruiseAltitudeM": 3000,
+    "cruiseSpeedKmh": 650
+  },
+  "knownFixedAirframeMassKg": {
+    "phase13TotalIncluding2kgPayloadKg": 8.1487740311,
+    "phase13SixMotorsKg": 1.68,
+    "phase13BatteryPairKg": 1.426,
+    "note": "non-propulsion, non-battery residual = total - motors - battery = 5.0427740311 kg, which already contained a 2.0 kg payload allowance"
+  },
+  "motors": [
+    {"id": "flycci_fa4119_350", "name": "FLYCCI FPV Brushless Motor FA4119 350KV", "supplier": "robu.in", "url": "https://robu.in/product/flycci-fpv-brushless-motors-fa4119-350kv/", "priceInr": 4499, "inStock": true, "massKg": 0.226, "kv": 350, "polePairs": 7, "maxPowerW": 2011, "maxCells": 12, "ratingType": "manufacturer multirotor rating with 9-10 inch prop", "verdict": "MARGINAL: meets 12S/2kW/<=250g; INR 499 over unit cap; 7 pole pairs needs gearing at high fan rpm"},
+    {"id": "xfly_70mm_inrunner_2200", "name": "XFLY 70mm 12B EDF inrunner 2680-2200KV", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B096NRN38M", "priceInr": 9541, "inStock": true, "massKg": 0.170, "kv": 2200, "polePairs": 4, "maxPowerW": 2400, "maxCells": 6, "ratingType": "6S EDF inrunner, listed 2400 W / 70 A", "verdict": "MARGINAL: best power/mass (170 g, 2.4 kW) but 6S and INR 9541"},
+    {"id": "xfly_80mm_inrunner_2200", "name": "XFLY 80mm 12B EDF inrunner 3280-2200KV", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B094Q84CZJ", "priceInr": 12129, "inStock": true, "massKg": 0.319, "kv": 2200, "polePairs": 4, "maxPowerW": 3400, "maxCells": 6, "ratingType": "6S EDF inrunner, listed 3400 W", "verdict": "FAIL: 6S, 319 g, INR 12129"},
+    {"id": "fms_80mm_inrunner_2000", "name": "FMS 80mm 12B EDF inrunner 3270-2000KV", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B0D5D58P7W", "priceInr": 15079, "inStock": true, "massKg": 0.310, "kv": 2000, "polePairs": 4, "maxPowerW": 2000, "maxCells": 6, "ratingType": "6S EDF inrunner", "verdict": "FAIL: 6S, INR 15079"},
+    {"id": "spektrum_3670_1950", "name": "Spektrum 3670-1950KV 4-pole inrunner SPMXAM1400", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B097C17FHD", "priceInr": 13315, "inStock": true, "massKg": 0.227, "kv": 1950, "polePairs": 2, "maxPowerW": 1900, "maxCells": 6, "ratingType": "6S EDF inrunner, 4-pole (2 pole pairs)", "verdict": "MARGINAL: 227 g + 4-pole + ~1.9 kW but 6S and INR 13315"},
+    {"id": "spektrum_3060_1900", "name": "Spektrum SMART 3060-1900kV 4-pole inrunner SPMXAM3000", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B0CNBL3BBT", "priceInr": 10053, "inStock": true, "massKg": 0.181, "kv": 1900, "polePairs": 2, "maxPowerW": 1400, "maxCells": 6, "ratingType": "6S inrunner, 4-pole", "verdict": "MARGINAL: 181 g, 4-pole; 6S and ~1.4 kW"},
+    {"id": "surpass_4274_2000", "name": "Surpass Hobby 4274 2000KV 4-pole sensored", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B09KRWM3JR", "priceInr": 17019, "inStock": true, "massKg": 0.470, "kv": 2000, "polePairs": 2, "maxPowerW": 2000, "maxCells": 6, "ratingType": "car/marine burst-style rating", "verdict": "FAIL: 470 g >250 g; INR 17019"},
+    {"id": "castle_2028_800", "name": "Castle Creations 2028-800Kv 3S-12S 4-pole", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B08FBRKR21", "priceInr": 43274, "inStock": true, "massKg": 0.318, "kv": 800, "polePairs": 2, "maxPowerW": 2200, "maxCells": 12, "ratingType": "12S capable, 4-pole", "verdict": "FAIL: 12S + low pole count but 318 g and INR 43274"},
+    {"id": "mad_5015_320", "name": "MAD 5015 IPE V3.0 320KV 6-12S", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B08GQ6JB6D", "priceInr": 47961, "inStock": true, "massKg": 0.223, "kv": 320, "polePairs": 7, "maxPowerW": 2000, "maxCells": 12, "ratingType": "12S multirotor", "verdict": "FAIL: true 12S and 223 g but wrong Kv (large prop) and INR 47961"},
+    {"id": "goolrc_s3670_2850", "name": "GoolRC S3670 2850KV 4-pole", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B08YD792LM", "priceInr": 7189, "inStock": true, "massKg": 0.267, "kv": 2850, "polePairs": 2, "maxPowerW": 1600, "maxCells": 4, "ratingType": "4S car rating, 120 A burst", "verdict": "FAIL: 4S, 267 g, INR 7189"},
+    {"id": "flashhobby_d2836_1500", "name": "FLASH HOBBY D2836 1500KV 2-4S", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B08M8VS47Y", "priceInr": 3971, "inStock": true, "massKg": 0.070, "kv": 1500, "polePairs": 7, "maxPowerW": 368, "maxCells": 4, "ratingType": "2-4S, 368 W", "verdict": "FAIL: only genuine brand motor under INR 4000 but 368 W"},
+    {"id": "emax_eco2_2207_1700", "name": "EMAX ECO II 2207 1700KV", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B0GN2FR2JY", "priceInr": 3339, "inStock": true, "massKg": 0.030, "kv": 1700, "polePairs": 7, "maxPowerW": 500, "maxCells": 6, "ratingType": "4-6S FPV, ~500 W", "verdict": "FAIL: under cap but ~0.5 kW"}
+  ],
+  "batteries": [
+    {"id": "turnigy_rapid_6s5000_100c", "name": "Turnigy Rapid 6S 5000mAh 100C XT90", "supplier": "speedyfpv (listed), not on robu.in", "url": "https://speedyfpv.com/products/turnigy-rapid-6s-5000mah-22-2v-100c-lipo-battery-w-xt90-for-rc-cars", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 5.0, "cContinuous": 100, "massKgPerPack": 0.713, "priceInrPerPack": 5400, "priceInrFor12s": 10800, "inStock": false, "verdict": "PASS spec, but sold out; shipping/tax unspecified"},
+    {"id": "ovonic_6s5000_120c_2pack", "name": "OVONIC 6S 5000mAh 120C EC5 2-pack", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B0CP5KHH46", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 5.0, "cContinuous": 120, "massKgPerPack": 0.689, "priceInrPerPack": 10749, "priceInrFor12s": 21498, "inStock": false, "verdict": "FAIL: best spec at usable capacity but no active seller and over budget"},
+    {"id": "youme_6s6500_60c_2pack", "name": "Youme 6500mAh 6S 60C EC5 2-pack", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B07RYS7GXY", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 6.5, "cContinuous": 60, "massKgPerPack": 0.843, "priceInrPerPack": 12251, "priceInrFor12s": 24501, "inStock": false, "verdict": "FAIL: good capacity/C but over budget and out of stock"},
+    {"id": "zeee_6s5200_100c_2pack", "name": "Zeee 5200mAh 6S 100C EC5 2-pack", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B0925KYFCL", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 5.2, "cContinuous": 100, "massKgPerPack": 0.753, "priceInrPerPack": 18363, "priceInrFor12s": 36726, "inStock": false, "verdict": "FAIL: best spec, but over budget and out of stock"},
+    {"id": "zeee_6s6000_100c", "name": "Zeee 6S 6000mAh 100C EC5", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B07ZV5DDWQ", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 6.0, "cContinuous": 100, "massKgPerPack": 0.833, "priceInrPerPack": null, "priceInrFor12s": null, "inStock": false, "verdict": "FAIL: unavailable; best capacity/pack if restocked"},
+    {"id": "ovonic_6s_2pieces_1300", "name": "OVONIC 130C 6S 1300mAh 2-pack", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B0C3KQ416G", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 1.3, "cContinuous": 130, "massKgPerPack": 0.150, "priceInrPerPack": 5498, "priceInrFor12s": 10995, "inStock": false, "verdict": "FAIL: only 1.3 Ah"},
+    {"id": "ovonic_6s_2pieces_1400", "name": "OVONIC 130C 6S 1400mAh 2-pack", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B0C3KXRHF1", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 1.4, "cContinuous": 130, "massKgPerPack": 0.160, "priceInrPerPack": 5625, "priceInrFor12s": 11249, "inStock": true, "verdict": "FAIL: only 1.4 Ah"},
+    {"id": "prorange_6s4200_35c", "name": "Pro-Range 22.2V 4200mAh 35C 6S", "supplier": "robu.in", "url": "https://robu.in/product/orange-4200mah-6s-40c80c-lithium-polymer-battery-pack-lipo/", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 4.2, "cContinuous": 35, "massKgPerPack": 0.621, "priceInrPerPack": 5979, "priceInrFor12s": 11958, "inStock": true, "verdict": "MARGINAL: only in-stock 12S ~4Ah under INR 12000 but 35C gives ~147 A < ~330 A draw"},
+    {"id": "prorange_6s5200_35c", "name": "Pro-Range 22.2V 5200mAh 35C 6S", "supplier": "robu.in", "url": "https://robu.in/product/orange-5200mah-6s-35c-22-2-v-lithium-polymer-battery-pack-li-po-copy/", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 5.2, "cContinuous": 35, "massKgPerPack": 0.72, "priceInrPerPack": 6819, "priceInrFor12s": 13638, "inStock": true, "verdict": "FAIL: over budget; 35C"},
+    {"id": "axldrone_6s8000_20c", "name": "axldrone 8000mAh 6S 20C XT60H", "supplier": "amazon.in", "url": "https://www.amazon.in/dp/B0HJ16LL3R", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 8.0, "cContinuous": 20, "massKgPerPack": 0.835, "priceInrPerPack": 6374, "priceInrFor12s": 12747, "inStock": true, "verdict": "FAIL: 20C far below the ~66C needed for 330 A; over budget as a 12S pair"},
+    {"id": "bonka_6s4500_120c", "name": "Bonka 22.2V 4500mAh 120C 6S U2", "supplier": "robu.in", "url": "https://robu.in/product/bonka-22-2v-4500mah-120c-6s-fpv-u2-series-lithium-polymer-battery-pack/", "cells": 6, "unitsFor12s": 2, "capacityAhPerString": 4.5, "cContinuous": 120, "massKgPerPack": 0.695, "priceInrPerPack": 12229, "priceInrFor12s": 24458, "inStock": false, "verdict": "FAIL: 2x budget and out of stock"}
+  ],
+  "evidenceLimits": [
+    "Crawl coverage: motor 71 queries / 115 search pages / ~2,113 unique ASINs reviewed; battery 54 queries / 279 search pages / ~836 unique ASINs; EDF-unit 15 queries.",
+    "Listings, prices, stock, and C-ratings were captured from live pages on 2026-09-29 and change frequently.",
+    "Advertised C-ratings are seller claims, not measured DCIR.",
+    "No amazon.in motor meets 12S + ~2 kW + <=250 g + <=INR 4000 simultaneously.",
+    "No in-stock 12S pack under INR 12000 meets the ~330 A design current.",
+    "No 12S EDF unit or 12S inrunner exists on amazon.in at all."
+  ]
+}

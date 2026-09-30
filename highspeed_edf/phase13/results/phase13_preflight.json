@@ -1,0 +1,188 @@
+{
+  "phase": 13,
+  "createdAtUtc": "2026-09-26T08:59:15.700378+00:00",
+  "status": "local-gmsh-and-dictionary-preflight-remote-checkmesh-required",
+  "evidenceClass": "Local geometry/mesh and lexical dictionary validation; no local OpenFOAM checkMesh or CFD claim",
+  "sources": {
+    "sourceHashes": {
+      "phase9Config": "6cff87cd4730265eac14c272a55fe6d443b063893df77d9c797acdaee629a900",
+      "phase9Meanline": "7df9a666f54bcba4fb5b5efe63f3992a2cbd31863a21b387e8ddfdc9407f41a9",
+      "phase12FrontAreaVariants": "25de0ff876d4a8f2f6a57c0398666eca1535028df3ec1befa85f966f116dc45e",
+      "phase13Config": "97833d4e5ac9f73fb1942605c555bd9438c2a366ac21aee71d73c432abc386bc"
+    },
+    "powertrain": {
+      "batteryConfiguration": "12S1P",
+      "phase9BatteryDescription": "two Turnigy Rapid 6S 5000mAh 100C packs in series; 12S1P, 5Ah",
+      "motor": "six stock Flycci FA4119 KV350",
+      "immutable": true
+    },
+    "freestream": {
+      "altitudeM": 3000.0,
+      "speedMps": 200.0,
+      "staticTemperatureK": 268.65,
+      "staticPressurePa": 70108.26833969312,
+      "densityKgM3": 0.9091276032136805,
+      "mach": 0.6086866542925556,
+      "totalTemperatureK": 288.55693507850793,
+      "totalPressurePa": 90037.94841092758
+    },
+    "branch": {
+      "branchesTotal": 4,
+      "massFlowKgS": 0.4293710246999085,
+      "slotAreaM2": 0.003,
+      "branchOutletAreaM2": 0.002778738702100172,
+      "inletMassFluxKgM2S": 143.1236748999695,
+      "inletMachAtTargetFlow": 0.4314638184509273,
+      "inletStaticPressurePa": 79224.5198420509,
+      "inletStaticTemperatureK": 278.19897376565706,
+      "inletDensityKgM3": 0.9920796491822426,
+      "inletSpeedMs": 144.26631472376675,
+      "inletVelocityVectorMs": [
+        -144.26631472376675,
+        0.0,
+        0.0
+      ],
+      "outletStaticPressurePa": 70108.26833969312
+    },
+    "annulus": {
+      "perDuctAreaM2": 0.005557477404200344,
+      "perDuctAreaCm2": 55.57477404200344,
+      "perBranchAreaM2": 0.002778738702100172,
+      "perBranchAreaCm2": 27.78738702100172,
+      "halfAnnulusAnalyticAreaM2": 0.002778738702100172
+    },
+    "projectedArea": {
+      "maximumCm2": 75.0,
+      "source": "deliverables/phase12/reports/phase12_front_area_variants.csv",
+      "variants": [
+        {
+          "radiusMm": 30,
+          "completeProjectedAreaCm2": 67.85874663337762,
+          "areaGatePass": true,
+          "initialVariant": true,
+          "recoveryEvidence": "none; geometry-only variant",
+          "caseId": "r030_smoothstep_medium"
+        },
+        {
+          "radiusMm": 35,
+          "completeProjectedAreaCm2": 68.43794521111468,
+          "areaGatePass": true,
+          "initialVariant": false,
+          "recoveryEvidence": "none; geometry-only variant",
+          "caseId": "r035_smoothstep_medium"
+        }
+      ]
+    },
+    "geometry": {
+      "ductCount": 2,
+      "ductOuterDiameterM": 0.09,
+      "hubDiameterM": 0.032,
+      "slotCountTotal": 4,
+      "slotsPerDuct": 2,
+      "slotWidthM": 0.025,
+      "slotLengthM": 0.12,
+      "splitTurnHeightM": 0.025,
+      "branchOutlet": "one semicircular annulus per slot branch, 90 mm OD / 32 mm ID; two branches form each EDF annulus",
+      "transitionProfile": "smoothstep",
+      "transitionLengthM": 0.12,
+      "turnAngleDeg": 90.0,
+      "turnRadiiMm": [
+        30,
+        35
+      ],
+      "branchMassFlowSource": "Phase-9 720 km/h meanline total divided by 2 ducts and 2 slots per duct"
+    }
+  },
+  "cases": [
+    {
+      "caseId": "r030_smoothstep_medium",
+      "turnRadiusMm": 30.0,
+      "transitionProfile": "smoothstep",
+      "meshLevel": "medium",
+      "nodes": 1934,
+      "volumeCells": 6909,
+      "tetraCells": 6909,
+      "minSICN": 0.04260191990934673,
+      "outletSectionAreaErrorFraction": 0.0072948003927934355,
+      "fluidVolumeM3": 0.00046495828657874746,
+      "physicalFaceCounts": {
+        "inlet": 1,
+        "outlet": 1,
+        "walls": 130
+      },
+      "completeProjectedAreaCm2": 67.85874663337762,
+      "projectedAreaGatePass": true,
+      "localOpenFOAMCheckMesh": null,
+      "localDictionaryStaticCheckPass": true,
+      "remoteCheckMeshStatus": "required_before_solver",
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    },
+    {
+      "caseId": "r035_smoothstep_medium",
+      "turnRadiusMm": 35.0,
+      "transitionProfile": "smoothstep",
+      "meshLevel": "medium",
+      "nodes": 1981,
+      "volumeCells": 7124,
+      "tetraCells": 7124,
+      "minSICN": 0.04266830416012794,
+      "outletSectionAreaErrorFraction": 0.0072948003927934355,
+      "fluidVolumeM3": 0.0004885202314806711,
+      "physicalFaceCounts": {
+        "inlet": 1,
+        "outlet": 1,
+        "walls": 130
+      },
+      "completeProjectedAreaCm2": 68.43794521111468,
+      "projectedAreaGatePass": true,
+      "localOpenFOAMCheckMesh": null,
+      "localDictionaryStaticCheckPass": true,
+      "remoteCheckMeshStatus": "required_before_solver",
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    }
+  ],
+  "localToolAvailability": {
+    "gmshPython": "4.15.2",
+    "checkMeshOnPath": false
+  },
+  "launchGate": {
+    "localGmshGeometryAndShapeChecksPass": true,
+    "localStaticDictionaryChecksPass": true,
+    "localCheckMeshRequired": false,
+    "remoteCheckMeshRequired": true,
+    "remoteCheckMeshRunnerMustGateSolver": true,
+    "allCompleteCadProjectionsBelow75Cm2": true,
+    "maximumNewConservativeEstimateUsd": 0.02634,
+    "cumulativeConservativeEstimateUsd": 0.19923,
+    "withinApprovedNewAndTotalEstimates": true,
+    "launchPermittedAfterCloudBillingAndResourcePreflight": false,
+    "pendingGates": [
+      "single-Spot-VM billing/resource configuration preflight",
+      "remote gmshToFoam, direct wall-patch changeDictionary, and real checkMesh"
+    ]
+  },
+  "costPlan": {
+    "approvedNewEnvelopeUsd": 0.0271,
+    "priorEstimatedEnvelopeUsd": 0.17289,
+    "approvedTotalEnvelopeUsd": 0.2,
+    "maxInstancesTotal": 1,
+    "maxConcurrentInstances": 1,
+    "machineType": "e2-standard-2",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maxRunDurationSeconds": 420,
+    "terminationAction": "DELETE",
+    "bootDiskGb": 12,
+    "bootDiskType": "pd-standard",
+    "bootDiskAutoDelete": true,
+    "conservativeComputeRateUsdPerHour": 0.2,
+    "computeMaximumUsd": 0.02334,
+    "ancillaryAllowanceUsd": 0.003,
+    "aggregateEstimateUsd": 0.02634,
+    "aggregateCeilingUsd": 0.0271,
+    "maximumWorkerArtifactBytes": 15000000,
+    "calculation": "420 seconds x $0.20/hour = $0.02334 compute; the 12 GB auto-delete disk, ephemeral IPv4, same-region GCS staging and <=15 MB retained artifact are capped within the $0.003 ancillary allowance. Maximum new estimate $0.02634 and prior Phase-10/11 estimate $0.17289 produce cumulative estimate $0.19923. One Spot VM only; no retry, fallback, or second VM; auto-delete at 420 seconds."
+  }
+}

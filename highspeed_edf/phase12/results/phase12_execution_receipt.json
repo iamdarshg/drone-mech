@@ -1,0 +1,29 @@
+{
+  "phase": 12,
+  "status": "local-preflight-only-no-cloud-launch",
+  "solverFamily": "OpenFOAM rhoSimpleFoam planned; not executed",
+  "localGmshMeshCases": 4,
+  "localOpenFOAMCheckMeshExecutableAvailable": false,
+  "wslOpenFOAMCheckMeshAvailable": false,
+  "dockerDaemonAvailable": false,
+  "localDictionaryStaticCheckPassed": true,
+  "launchPermitted": false,
+  "reason": "The required local real checkMesh gate cannot be met: no checkMesh executable is installed, the Docker engine is stopped, and the Ubuntu WSL virtual disk cannot be attached. The user required both cases to pass real local checkMesh before launch.",
+  "gcpInstancesCreated": 0,
+  "approvedNewSpendCapUsd": 0.0271,
+  "priorPhase10And11EnvelopeEstimateUsd": 0.17289,
+  "combinedEnvelopeEstimateUsd": 0.17289,
+  "newCloudSpendUsdEstimate": 0.0,
+  "temporaryGcsObjectsCreated": 0,
+  "cncExecution": false,
+  "validPressureRecoveryResults": 0,
+  "bestGeometry": null,
+  "retainedArtifacts": [
+    "configs/phase12_split_inlet_sweep.json",
+    "optimization/phase12_openfoam_casegen.py",
+    "results/phase12_case_matrix.csv",
+    "results/phase12_preflight.json",
+    "results/phase12_cost_plan.json",
+    "reports/phase12-split-inlet-preflight.md"
+  ]
+}

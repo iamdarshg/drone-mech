@@ -1,0 +1,57 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : changeDictionary -constant
+Date   : Sep 25 2026
+Time   : 18:43:39
+Host   : hsedf-p11-20260925-184158
+PID    : 2391
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+I/O    : uncollated
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+Case   : /opt/phase11/phase11/cases/r075_linear_medium
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = constant
+
+Read dictionary changeDictionaryDict with replacements for dictionaries 1(dictionaryReplacement)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 3(walls inlet outlet)
+Replacing entries in dictionary dictionaryReplacement
+Loading dictionary dictionaryReplacement
+--> FOAM Warning : 
+    From function int main(int, char**)
+    in file changeDictionary.C at line 709
+    Requested field to change dictionaryReplacement does not exist in "/opt/phase11/phase11/cases/r075_linear_medium/constant"
+Create mesh for time = 0
+
+Read dictionary changeDictionaryDict with replacements for dictionaries 1(dictionaryReplacement)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 3(walls inlet outlet)
+Replacing entries in dictionary dictionaryReplacement
+Loading dictionary dictionaryReplacement
+--> FOAM Warning : 
+    From function int main(int, char**)
+    in file changeDictionary.C at line 709
+    Requested field to change dictionaryReplacement does not exist in "/opt/phase11/phase11/cases/r075_linear_medium/0"
+
+End
+

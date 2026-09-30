@@ -1,0 +1,7 @@
+motor_id,note,motor_price_inr,rewind_material_inr,rewind_case,total_unit_inr,under_4000,six_motor_inr,material_note
+tarot_3115_900kv,"in stock, 6S, 31x15 stator",3109,500,diy_bare_wire,3609,True,21654,"bare magnet wire + minimal consumables, self-wound"
+tarot_3115_900kv,"in stock, 6S, 31x15 stator",3109,1750,decision_record_full,4859,False,29154,copper + Nomex + varnish + thermistors + consumables per drone-arm
+rocket_3670_4pole_1550kv,"in stock, 4-6S, 4-pole, 36x70 can",3409,500,diy_bare_wire,3909,True,23454,"bare magnet wire + minimal consumables, self-wound"
+rocket_3670_4pole_1550kv,"in stock, 4-6S, 4-pole, 36x70 can",3409,1750,decision_record_full,5159,False,30954,copper + Nomex + varnish + thermistors + consumables per drone-arm
+qpt_3115_900kv,"out of stock, 6S, 1700 W",3879,500,diy_bare_wire,4379,False,26274,"bare magnet wire + minimal consumables, self-wound"
+qpt_3115_900kv,"out of stock, 6S, 1700 W",3879,1750,decision_record_full,5629,False,33774,copper + Nomex + varnish + thermistors + consumables per drone-arm

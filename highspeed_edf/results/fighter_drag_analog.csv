@@ -1,0 +1,7 @@
+speed_kmh,analog,altitude_km,mass_kg,wing_reference_area_m2,span_m,aspect_ratio,cl_min,cl_max,cd_min,cd_max,equivalent_wing_area_min_cm2,equivalent_wing_area_max_cm2,assumed_frontal_to_wing_area_min,assumed_frontal_to_wing_area_max,front_equivalent_area_min_cm2,front_equivalent_area_max_cm2,front_equivalent_area_central_cm2,evidence_class
+500,F-16C clean analog,3,12000,27.87,9.96,3.559,0.482,0.482,0.0424,0.0527,598,743,0.08,0.12,48,89,66,analytical polar estimate; aircraft dimensions public; polar and front/wing ratio assumed
+600,F-16C clean analog,3,12000,27.87,9.96,3.559,0.334,0.334,0.0298,0.0383,822,1058,0.08,0.12,66,127,93,analytical polar estimate; aircraft dimensions public; polar and front/wing ratio assumed
+700,F-16C clean analog,3,12000,27.87,9.96,3.559,0.246,0.246,0.0244,0.0322,978,1293,0.08,0.12,78,155,112,analytical polar estimate; aircraft dimensions public; polar and front/wing ratio assumed
+500,Gripen C clean analog,3,8500,30.0,8.4,2.352,0.317,0.317,0.0360,0.0474,664,875,0.08,0.12,53,105,76,analytical polar estimate; aircraft dimensions public; polar and front/wing ratio assumed
+600,Gripen C clean analog,3,8500,30.0,8.4,2.352,0.220,0.220,0.0277,0.0374,843,1137,0.08,0.12,67,137,97,analytical polar estimate; aircraft dimensions public; polar and front/wing ratio assumed
+700,Gripen C clean analog,3,8500,30.0,8.4,2.352,0.162,0.162,0.0242,0.0331,953,1304,0.08,0.12,76,156,110,analytical polar estimate; aircraft dimensions public; polar and front/wing ratio assumed

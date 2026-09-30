@@ -1,0 +1,4 @@
+capacity_Ah,battery_pair_mass_kg_linear_capacity_proxy,mass_saved_vs_5Ah_kg,C_rate_at_214A_650kmh_bus_current,C_rate_at_268A_200kmh_TWR_bus_current,C_rate_at_330A_soft_limit,ideal_energy_time_at_650kmh_s,battery_envelope_proxy,note
+5.0,1.426,0.0,42.8,53.6,66.0,84.0,150x50x45mm each retained; no battery package-size saving credited,"linear mass proxy only; actual pack DCIR, continuous C rating, sag, and thermal data required"
+4.0,1.141,0.285,53.5,67.0,82.5,67.2,150x50x45mm each retained; no battery package-size saving credited,"linear mass proxy only; actual pack DCIR, continuous C rating, sag, and thermal data required"
+3.5,0.998,0.428,61.1,76.6,94.3,58.8,150x50x45mm each retained; no battery package-size saving credited,"linear mass proxy only; actual pack DCIR, continuous C rating, sag, and thermal data required"

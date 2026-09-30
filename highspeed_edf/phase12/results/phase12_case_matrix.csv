@@ -1,0 +1,5 @@
+caseId,turnRadiusMm,meshLevel,cells,minSICN,localOpenFOAMCheckMesh,localDictionaryStaticCheck,solverStatus,pressureRecovery
+r035_linear_coarse,35.0,coarse,7201,0.13279655485707872,,True,prepared_not_run,
+r035_linear_medium,35.0,medium,13780,0.16351554141568925,,True,prepared_not_run,
+r035_linear_fine,35.0,fine,20840,0.22190478564921529,,True,prepared_not_run,
+r045_linear_medium,45.0,medium,14215,0.17981638482579884,,True,prepared_not_run,

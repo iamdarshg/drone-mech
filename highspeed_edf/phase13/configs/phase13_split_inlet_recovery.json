@@ -1,0 +1,108 @@
+{
+  "phase": 13,
+  "studyId": "highspeed-edf-two-slot-half-annulus-pressure-recovery",
+  "status": "local-mesh-and-dictionary-preflight-then-single-bounded-spot-worker",
+  "sources": {
+    "phase9Config": "configs/phase9_geometry_mass_screen.json",
+    "phase9Meanline": "results/phase9_720_meanline_summary.json",
+    "phase12FrontAreaVariants": "deliverables/phase12/reports/phase12_front_area_variants.csv"
+  },
+  "fixedPowertrain": {
+    "batteryConfiguration": "12S1P",
+    "immutable": true,
+    "source": "Phase-9 fixed powertrain design; unchanged for this aerodynamic study"
+  },
+  "operatingPoint": {
+    "altitudeM": 3000.0,
+    "speedKmh": 720.0,
+    "gamma": 1.4,
+    "gasConstantJPerKgK": 287.05,
+    "cpJPerKgK": 1004.685,
+    "inletTotalStateSource": "ISA static state plus isentropic freestream compression at flight Mach",
+    "outletStaticPressureSource": "ISA freestream static pressure; no target total-pressure recovery imposed"
+  },
+  "geometry": {
+    "ductCount": 2,
+    "ductOuterDiameterM": 0.09,
+    "hubDiameterM": 0.032,
+    "slotCountTotal": 4,
+    "slotsPerDuct": 2,
+    "slotWidthM": 0.025,
+    "slotLengthM": 0.12,
+    "splitTurnHeightM": 0.025,
+    "branchOutlet": "one semicircular annulus per slot branch, 90 mm OD / 32 mm ID; two branches form each EDF annulus",
+    "transitionProfile": "smoothstep",
+    "transitionLengthM": 0.12,
+    "turnAngleDeg": 90.0,
+    "turnRadiiMm": [30, 35],
+    "branchMassFlowSource": "Phase-9 720 km/h meanline total divided by 2 ducts and 2 slots per duct"
+  },
+  "projectedAreaGate": {
+    "maximumCm2": 75.0,
+    "source": "deliverables/phase12/reports/phase12_front_area_variants.csv",
+    "method": "Complete CAD projected silhouette including modeled structure; no extra allowance is added"
+  },
+  "mesh": {
+    "method": "Gmsh OpenCASCADE quarter-turn sweep of an exact 25x120 mm slot and smoothstep loft to the half-annulus outlet; linear tetrahedra; MSH2 physical inlet/outlet/walls",
+    "level": "medium",
+    "targetSizeM": 0.009,
+    "minimumCells": 6000,
+    "minimumSICN": 0.02,
+    "maximumOutletAreaErrorFraction": 0.01,
+    "localCheckMeshRequired": false,
+    "remoteCheckMeshRequired": true,
+    "solverMustNotStartUnlessRemoteCheckMeshPasses": true
+  },
+  "solver": {
+    "family": "OpenFOAM rhoSimpleFoam only",
+    "versionPackage": "Ubuntu OpenFOAM 1912",
+    "turbulenceModel": "kOmegaSST",
+    "maxIterations": 250,
+    "maxSecondsPerCase": 105,
+    "residualTargets": {
+      "p": 0.00001,
+      "U": 0.00001,
+      "energy": 0.00001,
+      "k": 0.0001,
+      "omega": 0.0001
+    },
+    "massImbalanceLimitFraction": 0.005,
+    "meanlineMassFlowToleranceFraction": 0.05,
+    "recoveryStabilityWindowIterations": 3,
+    "recoveryStabilityLimitFraction": 0.005,
+    "recoverySource": "Converged OpenFOAM solution p/U/T surface-field averages; reconstructed isentropic total pressure, never a target-recovery boundary value"
+  },
+  "cloudBudget": {
+    "approvedNewEnvelopeUsd": 0.0271,
+    "priorEstimatedEnvelopeUsd": 0.17289,
+    "approvedTotalEnvelopeUsd": 0.2,
+    "maxInstancesTotal": 1,
+    "maxConcurrentInstances": 1,
+    "machineType": "e2-standard-2",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maxRunDurationSeconds": 420,
+    "terminationAction": "DELETE",
+    "bootDiskGb": 12,
+    "bootDiskType": "pd-standard",
+    "bootDiskAutoDelete": true,
+    "conservativeComputeRateUsdPerHour": 0.2,
+    "computeMaximumUsd": 0.02334,
+    "ancillaryAllowanceUsd": 0.003,
+    "aggregateEstimateUsd": 0.02634,
+    "aggregateCeilingUsd": 0.0271,
+    "maximumWorkerArtifactBytes": 15000000,
+    "calculation": "420 seconds x $0.20/hour = $0.02334 compute; the 12 GB auto-delete disk, ephemeral IPv4, same-region GCS staging and <=15 MB retained artifact are capped within the $0.003 ancillary allowance. Maximum new estimate $0.02634 and prior Phase-10/11 estimate $0.17289 produce cumulative estimate $0.19923. One Spot VM only; no retry, fallback, or second VM; auto-delete at 420 seconds."
+  },
+  "runner": {
+    "runnerBudgetSeconds": 300,
+    "caseOrder": ["r030_smoothstep_medium", "r035_smoothstep_medium"],
+    "stopOnFirstCheckMeshFailure": true,
+    "stopOnFirstSolverNonConvergence": true,
+    "retainLatestFields": true
+  },
+  "cases": [
+    {"id": "r030_smoothstep_medium", "turnRadiusM": 0.03, "transitionProfile": "smoothstep", "meshLevel": "medium"},
+    {"id": "r035_smoothstep_medium", "turnRadiusM": 0.035, "transitionProfile": "smoothstep", "meshLevel": "medium"}
+  ]
+}

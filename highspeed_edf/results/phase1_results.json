@@ -1,0 +1,697 @@
+{
+  "study_id": "highspeed-edf",
+  "phase": "0+1",
+  "source_class": "analytical-screening",
+  "workbench_gas_model": "aeroworkbench_turbomachinery.cycle.gas.AIR",
+  "requirements_sha256": "181e5847d1b67d27088d5ae283c9acf6f70c895e635e5946cf57bff57824df05",
+  "design_revision": 1,
+  "native_solver_runs": [],
+  "gcp_jobs": [],
+  "model_scope": {
+    "forward_flight": "single-stream equivalent captured annulus, pressure recovery, compressor PR, fully expanded nozzle momentum thrust",
+    "static": "ideal actuator disk with assumed electrical-drive and fan efficiencies",
+    "vbr": "variable bypass split not resolved; fan/core flow split is an architecture-phase model gap",
+    "battery": "Thevenin resistance sensitivity and energy bound; no exact cell DCIR/discharge data available",
+    "motor": "FA4119 published/contract RPM and current constraints; no validated EDF motor map"
+  },
+  "key_assumptions": {
+    "atmosphere": {
+      "altitude_study_m": [
+        0,
+        1000,
+        2000,
+        3000
+      ],
+      "model": "ISA-troposphere",
+      "static_temperature_k": 288.15,
+      "static_pressure_pa": 101325
+    },
+    "inlet_capture_area_fraction": 0.85,
+    "compressor_isentropic_efficiency": 0.82,
+    "nozzle_total_pressure_recovery": 0.98,
+    "esc_efficiency": 0.97,
+    "motor_efficiency": 0.92,
+    "static_fan_efficiency_sensitivity": [
+      0.45,
+      0.65,
+      0.8
+    ],
+    "static_t_over_w_floor": 0.5,
+    "static_t_over_w_target": 1.0,
+    "provenance": "assumed-analytical-screening; replace with validated maps/data"
+  },
+  "atmosphere_study": [
+    {
+      "altitude_m": 0.0,
+      "static_temperature_k": 288.15,
+      "static_pressure_pa": 101325.0,
+      "density_kg_m3": 1.2246161177454742
+    },
+    {
+      "altitude_m": 1000.0,
+      "static_temperature_k": 281.65,
+      "static_pressure_pa": 89877.94055008143,
+      "density_kg_m3": 1.1113358890803753
+    },
+    {
+      "altitude_m": 2000.0,
+      "static_temperature_k": 275.15,
+      "static_pressure_pa": 79501.24693004199,
+      "density_kg_m3": 1.0062511872950244
+    },
+    {
+      "altitude_m": 3000.0,
+      "static_temperature_k": 268.65,
+      "static_pressure_pa": 70116.61869970639,
+      "density_kg_m3": 0.9089418548388617
+    }
+  ],
+  "battery_power_caps": {
+    "nominal_R0.010_soft-rollback": {
+      "open_circuit_voltage_v": 44.4,
+      "assumed_pack_resistance_ohm": 0.01,
+      "current_limit_a": 330.0,
+      "c_rate": 66.0,
+      "loaded_voltage_v": 41.1,
+      "terminal_power_w": 13563.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "nominal_R0.010_initial-hard": {
+      "open_circuit_voltage_v": 44.4,
+      "assumed_pack_resistance_ohm": 0.01,
+      "current_limit_a": 390.0,
+      "c_rate": 78.0,
+      "loaded_voltage_v": 40.5,
+      "terminal_power_w": 15795.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "nominal_R0.010_provisional-short-duration-unvalidated": {
+      "open_circuit_voltage_v": 44.4,
+      "assumed_pack_resistance_ohm": 0.01,
+      "current_limit_a": 450.0,
+      "c_rate": 90.0,
+      "loaded_voltage_v": 39.9,
+      "terminal_power_w": 17955.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "nominal_R0.020_soft-rollback": {
+      "open_circuit_voltage_v": 44.4,
+      "assumed_pack_resistance_ohm": 0.02,
+      "current_limit_a": 330.0,
+      "c_rate": 66.0,
+      "loaded_voltage_v": 37.8,
+      "terminal_power_w": 12473.999999999998,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "nominal_R0.020_initial-hard": {
+      "open_circuit_voltage_v": 44.4,
+      "assumed_pack_resistance_ohm": 0.02,
+      "current_limit_a": 390.0,
+      "c_rate": 78.0,
+      "loaded_voltage_v": 36.6,
+      "terminal_power_w": 14274.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "nominal_R0.020_provisional-short-duration-unvalidated": {
+      "open_circuit_voltage_v": 44.4,
+      "assumed_pack_resistance_ohm": 0.02,
+      "current_limit_a": 450.0,
+      "c_rate": 90.0,
+      "loaded_voltage_v": 35.4,
+      "terminal_power_w": 15930.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "nominal_R0.030_soft-rollback": {
+      "open_circuit_voltage_v": 44.4,
+      "assumed_pack_resistance_ohm": 0.03,
+      "current_limit_a": 330.0,
+      "c_rate": 66.0,
+      "loaded_voltage_v": 34.5,
+      "terminal_power_w": 11385.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "nominal_R0.030_initial-hard": {
+      "open_circuit_voltage_v": 44.4,
+      "assumed_pack_resistance_ohm": 0.03,
+      "current_limit_a": 390.0,
+      "c_rate": 78.0,
+      "loaded_voltage_v": 32.7,
+      "terminal_power_w": 12753.000000000002,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "nominal_R0.030_provisional-short-duration-unvalidated": {
+      "open_circuit_voltage_v": 44.4,
+      "assumed_pack_resistance_ohm": 0.03,
+      "current_limit_a": 450.0,
+      "c_rate": 90.0,
+      "loaded_voltage_v": 30.9,
+      "terminal_power_w": 13905.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "fully_charged_R0.010_soft-rollback": {
+      "open_circuit_voltage_v": 50.4,
+      "assumed_pack_resistance_ohm": 0.01,
+      "current_limit_a": 330.0,
+      "c_rate": 66.0,
+      "loaded_voltage_v": 47.1,
+      "terminal_power_w": 15543.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "fully_charged_R0.010_initial-hard": {
+      "open_circuit_voltage_v": 50.4,
+      "assumed_pack_resistance_ohm": 0.01,
+      "current_limit_a": 390.0,
+      "c_rate": 78.0,
+      "loaded_voltage_v": 46.5,
+      "terminal_power_w": 18135.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "fully_charged_R0.010_provisional-short-duration-unvalidated": {
+      "open_circuit_voltage_v": 50.4,
+      "assumed_pack_resistance_ohm": 0.01,
+      "current_limit_a": 450.0,
+      "c_rate": 90.0,
+      "loaded_voltage_v": 45.9,
+      "terminal_power_w": 20655.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "fully_charged_R0.020_soft-rollback": {
+      "open_circuit_voltage_v": 50.4,
+      "assumed_pack_resistance_ohm": 0.02,
+      "current_limit_a": 330.0,
+      "c_rate": 66.0,
+      "loaded_voltage_v": 43.8,
+      "terminal_power_w": 14453.999999999998,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "fully_charged_R0.020_initial-hard": {
+      "open_circuit_voltage_v": 50.4,
+      "assumed_pack_resistance_ohm": 0.02,
+      "current_limit_a": 390.0,
+      "c_rate": 78.0,
+      "loaded_voltage_v": 42.6,
+      "terminal_power_w": 16614.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "fully_charged_R0.020_provisional-short-duration-unvalidated": {
+      "open_circuit_voltage_v": 50.4,
+      "assumed_pack_resistance_ohm": 0.02,
+      "current_limit_a": 450.0,
+      "c_rate": 90.0,
+      "loaded_voltage_v": 41.4,
+      "terminal_power_w": 18630.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "fully_charged_R0.030_soft-rollback": {
+      "open_circuit_voltage_v": 50.4,
+      "assumed_pack_resistance_ohm": 0.03,
+      "current_limit_a": 330.0,
+      "c_rate": 66.0,
+      "loaded_voltage_v": 40.5,
+      "terminal_power_w": 13365.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "fully_charged_R0.030_initial-hard": {
+      "open_circuit_voltage_v": 50.4,
+      "assumed_pack_resistance_ohm": 0.03,
+      "current_limit_a": 390.0,
+      "c_rate": 78.0,
+      "loaded_voltage_v": 38.7,
+      "terminal_power_w": 15093.000000000002,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    },
+    "fully_charged_R0.030_provisional-short-duration-unvalidated": {
+      "open_circuit_voltage_v": 50.4,
+      "assumed_pack_resistance_ohm": 0.03,
+      "current_limit_a": 450.0,
+      "c_rate": 90.0,
+      "loaded_voltage_v": 36.9,
+      "terminal_power_w": 16605.0,
+      "source_class": "analytical; resistance sensitivity assumed; FA4119 decision-record current limits"
+    }
+  },
+  "motor_rpm_screen": [
+    {
+      "mechanical_rpm": 12500.0,
+      "electrical_rpm": 87500.0,
+      "electrical_frequency_hz": 1458.3333333333333,
+      "tip_speed_m_s": 52.35987755982989,
+      "tip_mach_static": 0.15384248408379667,
+      "mean_radius_m": 0.028,
+      "mean_blade_speed_m_s": 36.651914291880914,
+      "max_specific_work_per_3_rotors_j_kg_at_psi_0_5": 2015.0442318890766,
+      "stock_motor_no_load_rpm_at_nominal_v": 15540.0,
+      "stock_motor_no_load_rpm_at_full_charge_v": 17640.0,
+      "source_class": "motor RPM limits externally sourced; kinematics analytical"
+    },
+    {
+      "mechanical_rpm": 13500.0,
+      "electrical_rpm": 94500.0,
+      "electrical_frequency_hz": 1575.0,
+      "tip_speed_m_s": 56.54866776461628,
+      "tip_mach_static": 0.1661498828105004,
+      "mean_radius_m": 0.028,
+      "mean_blade_speed_m_s": 39.5840674352314,
+      "max_specific_work_per_3_rotors_j_kg_at_psi_0_5": 2350.34759207542,
+      "stock_motor_no_load_rpm_at_nominal_v": 15540.0,
+      "stock_motor_no_load_rpm_at_full_charge_v": 17640.0,
+      "source_class": "motor RPM limits externally sourced; kinematics analytical"
+    },
+    {
+      "mechanical_rpm": 17640.0,
+      "electrical_rpm": 123480.0,
+      "electrical_frequency_hz": 2058.0,
+      "tip_speed_m_s": 73.89025921243193,
+      "tip_mach_static": 0.21710251353905383,
+      "mean_radius_m": 0.028,
+      "mean_blade_speed_m_s": 51.72318144870235,
+      "max_specific_work_per_3_rotors_j_kg_at_psi_0_5": 4012.9312487630805,
+      "stock_motor_no_load_rpm_at_nominal_v": 15540.0,
+      "stock_motor_no_load_rpm_at_full_charge_v": 17640.0,
+      "source_class": "motor RPM limits externally sourced; kinematics analytical"
+    }
+  ],
+  "required_rotor_loading_screen": [
+    {
+      "altitude_m": 0.0,
+      "ambient_density_kg_m3": 1.2246161177454742,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14625.22267422503,
+      "rotor_loading_coefficient_assumed": 0.4,
+      "equal_three_rotor_required_rpm": 37650.77943011354,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 0.0,
+      "ambient_density_kg_m3": 1.2246161177454742,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14625.22267422503,
+      "rotor_loading_coefficient_assumed": 0.5,
+      "equal_three_rotor_required_rpm": 33675.880884633865,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 0.0,
+      "ambient_density_kg_m3": 1.2246161177454742,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14625.22267422503,
+      "rotor_loading_coefficient_assumed": 0.6,
+      "equal_three_rotor_required_rpm": 30741.73267395166,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 0.0,
+      "ambient_density_kg_m3": 1.2246161177454742,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16388.451225115714,
+      "rotor_loading_coefficient_assumed": 0.4,
+      "equal_three_rotor_required_rpm": 39855.81406427263,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 0.0,
+      "ambient_density_kg_m3": 1.2246161177454742,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16388.451225115714,
+      "rotor_loading_coefficient_assumed": 0.5,
+      "equal_three_rotor_required_rpm": 35648.12381852231,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 0.0,
+      "ambient_density_kg_m3": 1.2246161177454742,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16388.451225115714,
+      "rotor_loading_coefficient_assumed": 0.6,
+      "equal_three_rotor_required_rpm": 32542.135913569786,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 1000.0,
+      "ambient_density_kg_m3": 1.1113358890803753,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14529.378712624695,
+      "rotor_loading_coefficient_assumed": 0.4,
+      "equal_three_rotor_required_rpm": 37527.20758851935,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 1000.0,
+      "ambient_density_kg_m3": 1.1113358890803753,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14529.378712624695,
+      "rotor_loading_coefficient_assumed": 0.5,
+      "equal_three_rotor_required_rpm": 33565.35486947009,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 1000.0,
+      "ambient_density_kg_m3": 1.1113358890803753,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14529.378712624695,
+      "rotor_loading_coefficient_assumed": 0.6,
+      "equal_three_rotor_required_rpm": 30640.836687791067,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 1000.0,
+      "ambient_density_kg_m3": 1.1113358890803753,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16291.16647265246,
+      "rotor_loading_coefficient_assumed": 0.4,
+      "equal_three_rotor_required_rpm": 39737.342395618616,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 1000.0,
+      "ambient_density_kg_m3": 1.1113358890803753,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16291.16647265246,
+      "rotor_loading_coefficient_assumed": 0.5,
+      "equal_three_rotor_required_rpm": 35542.15953671503,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 1000.0,
+      "ambient_density_kg_m3": 1.1113358890803753,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16291.16647265246,
+      "rotor_loading_coefficient_assumed": 0.6,
+      "equal_three_rotor_required_rpm": 32445.40420117698,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 2000.0,
+      "ambient_density_kg_m3": 1.0062511872950244,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14433.391607168089,
+      "rotor_loading_coefficient_assumed": 0.4,
+      "equal_three_rotor_required_rpm": 37403.04202283779,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 2000.0,
+      "ambient_density_kg_m3": 1.0062511872950244,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14433.391607168089,
+      "rotor_loading_coefficient_assumed": 0.5,
+      "equal_three_rotor_required_rpm": 33454.29781133862,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 2000.0,
+      "ambient_density_kg_m3": 1.0062511872950244,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14433.391607168089,
+      "rotor_loading_coefficient_assumed": 0.6,
+      "equal_three_rotor_required_rpm": 30539.45592794312,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 2000.0,
+      "ambient_density_kg_m3": 1.0062511872950244,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16193.682070440058,
+      "rotor_loading_coefficient_assumed": 0.4,
+      "equal_three_rotor_required_rpm": 39618.272238017395,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 2000.0,
+      "ambient_density_kg_m3": 1.0062511872950244,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16193.682070440058,
+      "rotor_loading_coefficient_assumed": 0.5,
+      "equal_three_rotor_required_rpm": 35435.65995011985,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 2000.0,
+      "ambient_density_kg_m3": 1.0062511872950244,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16193.682070440058,
+      "rotor_loading_coefficient_assumed": 0.6,
+      "equal_three_rotor_required_rpm": 32348.18382460506,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 3000.0,
+      "ambient_density_kg_m3": 0.9089418548388617,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14337.25195747575,
+      "rotor_loading_coefficient_assumed": 0.4,
+      "equal_three_rotor_required_rpm": 37278.2645794313,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 3000.0,
+      "ambient_density_kg_m3": 0.9089418548388617,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14337.25195747575,
+      "rotor_loading_coefficient_assumed": 0.5,
+      "equal_three_rotor_required_rpm": 33342.6934731324,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 3000.0,
+      "ambient_density_kg_m3": 0.9089418548388617,
+      "speed_kmh": 600,
+      "cda_m2": 0.004,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 14337.25195747575,
+      "rotor_loading_coefficient_assumed": 0.6,
+      "equal_three_rotor_required_rpm": 30437.575572024813,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 3000.0,
+      "ambient_density_kg_m3": 0.9089418548388617,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16095.985243378682,
+      "rotor_loading_coefficient_assumed": 0.4,
+      "equal_three_rotor_required_rpm": 39498.582504298975,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 3000.0,
+      "ambient_density_kg_m3": 0.9089418548388617,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16095.985243378682,
+      "rotor_loading_coefficient_assumed": 0.5,
+      "equal_three_rotor_required_rpm": 35328.60619779856,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    },
+    {
+      "altitude_m": 3000.0,
+      "ambient_density_kg_m3": 0.9089418548388617,
+      "speed_kmh": 700,
+      "cda_m2": 0.0035,
+      "inlet_recovery": 0.98,
+      "required_specific_work_j_kg": 16095.985243378682,
+      "rotor_loading_coefficient_assumed": 0.6,
+      "equal_three_rotor_required_rpm": 32250.457566251815,
+      "source_class": "analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius"
+    }
+  ],
+  "battery_energy_bounds": [
+    {
+      "usable_energy_fraction_assumed": 0.7,
+      "usable_energy_wh": 155.39999999999998,
+      "bus_power_kw": 12,
+      "ideal_duration_s": 46.61999999999999,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.7,
+      "usable_energy_wh": 155.39999999999998,
+      "bus_power_kw": 15,
+      "ideal_duration_s": 37.29599999999999,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.7,
+      "usable_energy_wh": 155.39999999999998,
+      "bus_power_kw": 18,
+      "ideal_duration_s": 31.08,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.7,
+      "usable_energy_wh": 155.39999999999998,
+      "bus_power_kw": 21,
+      "ideal_duration_s": 26.639999999999997,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.7,
+      "usable_energy_wh": 155.39999999999998,
+      "bus_power_kw": 24,
+      "ideal_duration_s": 23.309999999999995,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.7,
+      "usable_energy_wh": 155.39999999999998,
+      "bus_power_kw": 27,
+      "ideal_duration_s": 20.72,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.7,
+      "usable_energy_wh": 155.39999999999998,
+      "bus_power_kw": 30,
+      "ideal_duration_s": 18.647999999999996,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.8,
+      "usable_energy_wh": 177.60000000000002,
+      "bus_power_kw": 12,
+      "ideal_duration_s": 53.28000000000001,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.8,
+      "usable_energy_wh": 177.60000000000002,
+      "bus_power_kw": 15,
+      "ideal_duration_s": 42.62400000000001,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.8,
+      "usable_energy_wh": 177.60000000000002,
+      "bus_power_kw": 18,
+      "ideal_duration_s": 35.52,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.8,
+      "usable_energy_wh": 177.60000000000002,
+      "bus_power_kw": 21,
+      "ideal_duration_s": 30.445714285714292,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.8,
+      "usable_energy_wh": 177.60000000000002,
+      "bus_power_kw": 24,
+      "ideal_duration_s": 26.640000000000004,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.8,
+      "usable_energy_wh": 177.60000000000002,
+      "bus_power_kw": 27,
+      "ideal_duration_s": 23.680000000000003,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.8,
+      "usable_energy_wh": 177.60000000000002,
+      "bus_power_kw": 30,
+      "ideal_duration_s": 21.312000000000005,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.9,
+      "usable_energy_wh": 199.8,
+      "bus_power_kw": 12,
+      "ideal_duration_s": 59.94000000000001,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.9,
+      "usable_energy_wh": 199.8,
+      "bus_power_kw": 15,
+      "ideal_duration_s": 47.952000000000005,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.9,
+      "usable_energy_wh": 199.8,
+      "bus_power_kw": 18,
+      "ideal_duration_s": 39.96000000000001,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.9,
+      "usable_energy_wh": 199.8,
+      "bus_power_kw": 21,
+      "ideal_duration_s": 34.25142857142857,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.9,
+      "usable_energy_wh": 199.8,
+      "bus_power_kw": 24,
+      "ideal_duration_s": 29.970000000000006,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.9,
+      "usable_energy_wh": 199.8,
+      "bus_power_kw": 27,
+      "ideal_duration_s": 26.64,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    },
+    {
+      "usable_energy_fraction_assumed": 0.9,
+      "usable_energy_wh": 199.8,
+      "bus_power_kw": 30,
+      "ideal_duration_s": 23.976000000000003,
+      "source_class": "analytical energy bound; excludes voltage cut-off, thermal derating, acceleration and reserve"
+    }
+  ],
+  "counts": {
+    "forward_points": 224,
+    "recovery_points": 64,
+    "speed_power_points": 196,
+    "cda_limit_points": 168,
+    "static_points": 216
+  },
+  "warning": "Not CFD, measured motor data, a PyBaMM cell simulation, or a validated pack-power result."
+}

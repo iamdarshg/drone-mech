@@ -1,0 +1,30 @@
+{
+  "phase": 4,
+  "status": "completed",
+  "transport": "single ephemeral GCE Spot worker; governed NativeJobManager local executor on worker",
+  "gcpInstance": "hsedf-p4-20260923-185355",
+  "zone": "us-central1-a",
+  "machineType": "e2-standard-2",
+  "provisioningModel": "SPOT",
+  "maxRunDurationSeconds": 1200,
+  "workbenchCommit": "e1dc31833c444ec1047200d32fb094c5a3aa3163",
+  "rossVersion": "2.3.0",
+  "nativeJobIds": [
+    "82a32b2becdc428a957f1b6a78eaf03c",
+    "1ea4a99b16eb436cba62979fd27b322f",
+    "56ae67e79ff043c988a6fb35f8877fe7"
+  ],
+  "allThreeCompleted": true,
+  "resultsSource": "native_solver",
+  "estimatedComputeCostAtReferenceRateUsd": 0.0086,
+  "estimatedStorageAndIoUsd": "small; actual billing receipt not queried",
+  "actualBillingAmountUsd": null,
+  "underTenCentEstimate": true,
+  "gcpEvidenceObjects": [
+    "gs://aero-governed-blockers-988177451335-20260919/highspeed-edf-phase4-20260923T185355Z-evidence.json",
+    "gs://aero-governed-blockers-988177451335-20260919/highspeed-edf-phase4-20260923T185355Z-cases.tar.gz"
+  ],
+  "temporaryInputsDeleted": true,
+  "instanceDeleted": true,
+  "note": "Reference-rate estimate only; not a GCP invoice."
+}

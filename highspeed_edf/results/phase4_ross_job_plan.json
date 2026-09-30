@@ -1,0 +1,915 @@
+{
+  "studyId": "highspeed-edf",
+  "phase": 4,
+  "status": "prepared-validated-not-submitted",
+  "evidenceClass": "application-specific ROSS input plan; assumptions remain unverified",
+  "gcpBrief": {
+    "what": "Three governed ROSS Campbell cases, one representative EDF rotor per stage (R1/R2/R3), run sequentially on one ephemeral GCE Spot worker with order/fixed forcing lines",
+    "why": "Locate forward critical speeds and separation from synchronous, blade/stator-pass, electrical and PWM excitations before geometry freeze",
+    "referenceMachineRateUsdPerHour": 0.1,
+    "maximumWorkerLifetimeSeconds": 1200,
+    "plannedMaximumComputeCostUsdTotal": 0.034,
+    "targetTotalSpendUsd": 0.1,
+    "hardTotalSpendUsd": 0.12,
+    "estimatedTotalSpendUsd": 0.04,
+    "gpu": false,
+    "estimateQualification": "one Spot VM reused for all cases; 20-minute lifetime cap; actual regional GCP billing receipt is authoritative",
+    "decisionUnlocked": "whether each rotor/RPM schedule requires RPM exclusion zones, a stiffness/mass/spacing change, or a higher-fidelity forced response"
+  },
+  "jobs": [
+    {
+      "jobId": "phase4-r1-campbell",
+      "participantId": "rotor-campbell",
+      "designRow": "R1",
+      "maxSpeedRpm": 31310.0,
+      "forcingsDeclared": 7,
+      "model": {
+        "analysis": "campbell",
+        "material": {
+          "name": "steel",
+          "youngs_modulus_pa": 211000000000.0,
+          "shear_modulus_pa": 81200000000.0,
+          "density_kg_m3": 7810.0,
+          "poisson_ratio": 0.3
+        },
+        "segments": [
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          }
+        ],
+        "disks": [
+          {
+            "position": 2,
+            "outer_diameter_m": 0.08,
+            "width_m": 0.002,
+            "inner_diameter_m": 0.032
+          }
+        ],
+        "bearings": [
+          {
+            "node": 0,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          },
+          {
+            "node": 4,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          }
+        ],
+        "speed_rpm": 0.0,
+        "max_speed_rpm": 31310.0,
+        "gyroscopic": true,
+        "shear_effects": true,
+        "rotary_inertia": true,
+        "unbalance": null
+      },
+      "forcings": [
+        {
+          "source": "highspeed-edf-phase4",
+          "label": "1x rotation",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 1,
+          "speed_dependence": "order",
+          "harmonic_family": "synchronous"
+        },
+        {
+          "source": "highspeed-edf-phase4",
+          "label": "R1 rotor blade passing",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 13,
+          "speed_dependence": "order",
+          "harmonic_family": "blade-passing"
+        },
+        {
+          "source": "highspeed-edf-phase4",
+          "label": "R1 stator passing",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 23,
+          "speed_dependence": "order",
+          "harmonic_family": "stator-passing"
+        },
+        {
+          "source": "drone-arm-FA4119-14pole",
+          "label": "electrical fundamental",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 7,
+          "speed_dependence": "order",
+          "harmonic_family": "electrical"
+        },
+        {
+          "source": "drone-arm-FA4119-14pole",
+          "label": "electrical sixth harmonic/torque-ripple proxy",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 42,
+          "speed_dependence": "order",
+          "harmonic_family": "torque-ripple"
+        },
+        {
+          "source": "drone-arm-controller-PWM",
+          "label": "PWM 20 kHz",
+          "frequency_hz": 20000,
+          "amplitude": null,
+          "order": null,
+          "speed_dependence": "fixed",
+          "harmonic_family": "switching"
+        },
+        {
+          "source": "drone-arm-controller-PWM",
+          "label": "PWM 40 kHz",
+          "frequency_hz": 40000,
+          "amplitude": null,
+          "order": null,
+          "speed_dependence": "fixed",
+          "harmonic_family": "switching"
+        }
+      ],
+      "inputs": {
+        "analysis": "campbell",
+        "material": {
+          "name": "steel",
+          "youngs_modulus_pa": 211000000000.0,
+          "shear_modulus_pa": 81200000000.0,
+          "density_kg_m3": 7810.0,
+          "poisson_ratio": 0.3
+        },
+        "segments": [
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          }
+        ],
+        "disks": [
+          {
+            "position": 2,
+            "outer_diameter_m": 0.08,
+            "width_m": 0.002,
+            "inner_diameter_m": 0.032
+          }
+        ],
+        "bearings": [
+          {
+            "node": 0,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          },
+          {
+            "node": 4,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          }
+        ],
+        "speed_rpm": 0.0,
+        "max_speed_rpm": 31310.0,
+        "gyroscopic": true,
+        "shear_effects": true,
+        "rotary_inertia": true,
+        "unbalance": null,
+        "forcings": [
+          {
+            "source": "highspeed-edf-phase4",
+            "label": "1x rotation",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 1,
+            "speed_dependence": "order",
+            "harmonic_family": "synchronous"
+          },
+          {
+            "source": "highspeed-edf-phase4",
+            "label": "R1 rotor blade passing",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 13,
+            "speed_dependence": "order",
+            "harmonic_family": "blade-passing"
+          },
+          {
+            "source": "highspeed-edf-phase4",
+            "label": "R1 stator passing",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 23,
+            "speed_dependence": "order",
+            "harmonic_family": "stator-passing"
+          },
+          {
+            "source": "drone-arm-FA4119-14pole",
+            "label": "electrical fundamental",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 7,
+            "speed_dependence": "order",
+            "harmonic_family": "electrical"
+          },
+          {
+            "source": "drone-arm-FA4119-14pole",
+            "label": "electrical sixth harmonic/torque-ripple proxy",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 42,
+            "speed_dependence": "order",
+            "harmonic_family": "torque-ripple"
+          },
+          {
+            "source": "drone-arm-controller-PWM",
+            "label": "PWM 20 kHz",
+            "frequency_hz": 20000,
+            "amplitude": null,
+            "order": null,
+            "speed_dependence": "fixed",
+            "harmonic_family": "switching"
+          },
+          {
+            "source": "drone-arm-controller-PWM",
+            "label": "PWM 40 kHz",
+            "frequency_hz": 40000,
+            "amplitude": null,
+            "order": null,
+            "speed_dependence": "fixed",
+            "harmonic_family": "switching"
+          }
+        ],
+        "forcing_warning_margin_hz": 5,
+        "forcing_critical_margin_hz": 2
+      },
+      "requestTemplate": {
+        "participant_id": "rotor-campbell",
+        "analysis": "campbell",
+        "inputsKey": "inputs",
+        "deferred": true
+      },
+      "assumptions": [
+        "assumed output shaft/support span; FA4119 rotor/output shaft geometry not specified by decision record",
+        "steel annulus used as a lumped mass/inertia proxy for hub, blades and attachments; carbon blades are not modeled anisotropically",
+        "assumed support values for screening only; selected fan-shaft bearings not specified",
+        "one rotor per stage represents left/right symmetric ducts; installation coupling omitted"
+      ],
+      "gcpEstimatedComputeShareUsd": 0.011333333333333334
+    },
+    {
+      "jobId": "phase4-r2-campbell",
+      "participantId": "rotor-campbell",
+      "designRow": "R2",
+      "maxSpeedRpm": 34340.0,
+      "forcingsDeclared": 7,
+      "model": {
+        "analysis": "campbell",
+        "material": {
+          "name": "steel",
+          "youngs_modulus_pa": 211000000000.0,
+          "shear_modulus_pa": 81200000000.0,
+          "density_kg_m3": 7810.0,
+          "poisson_ratio": 0.3
+        },
+        "segments": [
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          }
+        ],
+        "disks": [
+          {
+            "position": 2,
+            "outer_diameter_m": 0.08,
+            "width_m": 0.002,
+            "inner_diameter_m": 0.032
+          }
+        ],
+        "bearings": [
+          {
+            "node": 0,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          },
+          {
+            "node": 4,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          }
+        ],
+        "speed_rpm": 0.0,
+        "max_speed_rpm": 34340.0,
+        "gyroscopic": true,
+        "shear_effects": true,
+        "rotary_inertia": true,
+        "unbalance": null
+      },
+      "forcings": [
+        {
+          "source": "highspeed-edf-phase4",
+          "label": "1x rotation",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 1,
+          "speed_dependence": "order",
+          "harmonic_family": "synchronous"
+        },
+        {
+          "source": "highspeed-edf-phase4",
+          "label": "R2 rotor blade passing",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 12,
+          "speed_dependence": "order",
+          "harmonic_family": "blade-passing"
+        },
+        {
+          "source": "highspeed-edf-phase4",
+          "label": "R2 stator passing",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 21,
+          "speed_dependence": "order",
+          "harmonic_family": "stator-passing"
+        },
+        {
+          "source": "drone-arm-FA4119-14pole",
+          "label": "electrical fundamental",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 7,
+          "speed_dependence": "order",
+          "harmonic_family": "electrical"
+        },
+        {
+          "source": "drone-arm-FA4119-14pole",
+          "label": "electrical sixth harmonic/torque-ripple proxy",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 42,
+          "speed_dependence": "order",
+          "harmonic_family": "torque-ripple"
+        },
+        {
+          "source": "drone-arm-controller-PWM",
+          "label": "PWM 20 kHz",
+          "frequency_hz": 20000,
+          "amplitude": null,
+          "order": null,
+          "speed_dependence": "fixed",
+          "harmonic_family": "switching"
+        },
+        {
+          "source": "drone-arm-controller-PWM",
+          "label": "PWM 40 kHz",
+          "frequency_hz": 40000,
+          "amplitude": null,
+          "order": null,
+          "speed_dependence": "fixed",
+          "harmonic_family": "switching"
+        }
+      ],
+      "inputs": {
+        "analysis": "campbell",
+        "material": {
+          "name": "steel",
+          "youngs_modulus_pa": 211000000000.0,
+          "shear_modulus_pa": 81200000000.0,
+          "density_kg_m3": 7810.0,
+          "poisson_ratio": 0.3
+        },
+        "segments": [
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          }
+        ],
+        "disks": [
+          {
+            "position": 2,
+            "outer_diameter_m": 0.08,
+            "width_m": 0.002,
+            "inner_diameter_m": 0.032
+          }
+        ],
+        "bearings": [
+          {
+            "node": 0,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          },
+          {
+            "node": 4,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          }
+        ],
+        "speed_rpm": 0.0,
+        "max_speed_rpm": 34340.0,
+        "gyroscopic": true,
+        "shear_effects": true,
+        "rotary_inertia": true,
+        "unbalance": null,
+        "forcings": [
+          {
+            "source": "highspeed-edf-phase4",
+            "label": "1x rotation",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 1,
+            "speed_dependence": "order",
+            "harmonic_family": "synchronous"
+          },
+          {
+            "source": "highspeed-edf-phase4",
+            "label": "R2 rotor blade passing",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 12,
+            "speed_dependence": "order",
+            "harmonic_family": "blade-passing"
+          },
+          {
+            "source": "highspeed-edf-phase4",
+            "label": "R2 stator passing",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 21,
+            "speed_dependence": "order",
+            "harmonic_family": "stator-passing"
+          },
+          {
+            "source": "drone-arm-FA4119-14pole",
+            "label": "electrical fundamental",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 7,
+            "speed_dependence": "order",
+            "harmonic_family": "electrical"
+          },
+          {
+            "source": "drone-arm-FA4119-14pole",
+            "label": "electrical sixth harmonic/torque-ripple proxy",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 42,
+            "speed_dependence": "order",
+            "harmonic_family": "torque-ripple"
+          },
+          {
+            "source": "drone-arm-controller-PWM",
+            "label": "PWM 20 kHz",
+            "frequency_hz": 20000,
+            "amplitude": null,
+            "order": null,
+            "speed_dependence": "fixed",
+            "harmonic_family": "switching"
+          },
+          {
+            "source": "drone-arm-controller-PWM",
+            "label": "PWM 40 kHz",
+            "frequency_hz": 40000,
+            "amplitude": null,
+            "order": null,
+            "speed_dependence": "fixed",
+            "harmonic_family": "switching"
+          }
+        ],
+        "forcing_warning_margin_hz": 5,
+        "forcing_critical_margin_hz": 2
+      },
+      "requestTemplate": {
+        "participant_id": "rotor-campbell",
+        "analysis": "campbell",
+        "inputsKey": "inputs",
+        "deferred": true
+      },
+      "assumptions": [
+        "assumed output shaft/support span; FA4119 rotor/output shaft geometry not specified by decision record",
+        "steel annulus used as a lumped mass/inertia proxy for hub, blades and attachments; carbon blades are not modeled anisotropically",
+        "assumed support values for screening only; selected fan-shaft bearings not specified",
+        "one rotor per stage represents left/right symmetric ducts; installation coupling omitted"
+      ],
+      "gcpEstimatedComputeShareUsd": 0.011333333333333334
+    },
+    {
+      "jobId": "phase4-r3-campbell",
+      "participantId": "rotor-campbell",
+      "designRow": "R3",
+      "maxSpeedRpm": 36360.0,
+      "forcingsDeclared": 7,
+      "model": {
+        "analysis": "campbell",
+        "material": {
+          "name": "steel",
+          "youngs_modulus_pa": 211000000000.0,
+          "shear_modulus_pa": 81200000000.0,
+          "density_kg_m3": 7810.0,
+          "poisson_ratio": 0.3
+        },
+        "segments": [
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          }
+        ],
+        "disks": [
+          {
+            "position": 2,
+            "outer_diameter_m": 0.08,
+            "width_m": 0.002,
+            "inner_diameter_m": 0.032
+          }
+        ],
+        "bearings": [
+          {
+            "node": 0,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          },
+          {
+            "node": 4,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          }
+        ],
+        "speed_rpm": 0.0,
+        "max_speed_rpm": 36360.0,
+        "gyroscopic": true,
+        "shear_effects": true,
+        "rotary_inertia": true,
+        "unbalance": null
+      },
+      "forcings": [
+        {
+          "source": "highspeed-edf-phase4",
+          "label": "1x rotation",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 1,
+          "speed_dependence": "order",
+          "harmonic_family": "synchronous"
+        },
+        {
+          "source": "highspeed-edf-phase4",
+          "label": "R3 rotor blade passing",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 11,
+          "speed_dependence": "order",
+          "harmonic_family": "blade-passing"
+        },
+        {
+          "source": "highspeed-edf-phase4",
+          "label": "R3 stator passing",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 19,
+          "speed_dependence": "order",
+          "harmonic_family": "stator-passing"
+        },
+        {
+          "source": "drone-arm-FA4119-14pole",
+          "label": "electrical fundamental",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 7,
+          "speed_dependence": "order",
+          "harmonic_family": "electrical"
+        },
+        {
+          "source": "drone-arm-FA4119-14pole",
+          "label": "electrical sixth harmonic/torque-ripple proxy",
+          "frequency_hz": null,
+          "amplitude": null,
+          "order": 42,
+          "speed_dependence": "order",
+          "harmonic_family": "torque-ripple"
+        },
+        {
+          "source": "drone-arm-controller-PWM",
+          "label": "PWM 20 kHz",
+          "frequency_hz": 20000,
+          "amplitude": null,
+          "order": null,
+          "speed_dependence": "fixed",
+          "harmonic_family": "switching"
+        },
+        {
+          "source": "drone-arm-controller-PWM",
+          "label": "PWM 40 kHz",
+          "frequency_hz": 40000,
+          "amplitude": null,
+          "order": null,
+          "speed_dependence": "fixed",
+          "harmonic_family": "switching"
+        }
+      ],
+      "inputs": {
+        "analysis": "campbell",
+        "material": {
+          "name": "steel",
+          "youngs_modulus_pa": 211000000000.0,
+          "shear_modulus_pa": 81200000000.0,
+          "density_kg_m3": 7810.0,
+          "poisson_ratio": 0.3
+        },
+        "segments": [
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          },
+          {
+            "length_m": 0.015,
+            "outer_diameter_m": 0.006,
+            "inner_diameter_m": 0.0
+          }
+        ],
+        "disks": [
+          {
+            "position": 2,
+            "outer_diameter_m": 0.08,
+            "width_m": 0.002,
+            "inner_diameter_m": 0.032
+          }
+        ],
+        "bearings": [
+          {
+            "node": 0,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          },
+          {
+            "node": 4,
+            "kxx": 10000000.0,
+            "kyy": 10000000.0,
+            "cxx": 200.0,
+            "cyy": 200.0,
+            "kxy": 0.0,
+            "kyx": 0.0,
+            "cxy": 0.0,
+            "cyx": 0.0
+          }
+        ],
+        "speed_rpm": 0.0,
+        "max_speed_rpm": 36360.0,
+        "gyroscopic": true,
+        "shear_effects": true,
+        "rotary_inertia": true,
+        "unbalance": null,
+        "forcings": [
+          {
+            "source": "highspeed-edf-phase4",
+            "label": "1x rotation",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 1,
+            "speed_dependence": "order",
+            "harmonic_family": "synchronous"
+          },
+          {
+            "source": "highspeed-edf-phase4",
+            "label": "R3 rotor blade passing",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 11,
+            "speed_dependence": "order",
+            "harmonic_family": "blade-passing"
+          },
+          {
+            "source": "highspeed-edf-phase4",
+            "label": "R3 stator passing",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 19,
+            "speed_dependence": "order",
+            "harmonic_family": "stator-passing"
+          },
+          {
+            "source": "drone-arm-FA4119-14pole",
+            "label": "electrical fundamental",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 7,
+            "speed_dependence": "order",
+            "harmonic_family": "electrical"
+          },
+          {
+            "source": "drone-arm-FA4119-14pole",
+            "label": "electrical sixth harmonic/torque-ripple proxy",
+            "frequency_hz": null,
+            "amplitude": null,
+            "order": 42,
+            "speed_dependence": "order",
+            "harmonic_family": "torque-ripple"
+          },
+          {
+            "source": "drone-arm-controller-PWM",
+            "label": "PWM 20 kHz",
+            "frequency_hz": 20000,
+            "amplitude": null,
+            "order": null,
+            "speed_dependence": "fixed",
+            "harmonic_family": "switching"
+          },
+          {
+            "source": "drone-arm-controller-PWM",
+            "label": "PWM 40 kHz",
+            "frequency_hz": 40000,
+            "amplitude": null,
+            "order": null,
+            "speed_dependence": "fixed",
+            "harmonic_family": "switching"
+          }
+        ],
+        "forcing_warning_margin_hz": 5,
+        "forcing_critical_margin_hz": 2
+      },
+      "requestTemplate": {
+        "participant_id": "rotor-campbell",
+        "analysis": "campbell",
+        "inputsKey": "inputs",
+        "deferred": true
+      },
+      "assumptions": [
+        "assumed output shaft/support span; FA4119 rotor/output shaft geometry not specified by decision record",
+        "steel annulus used as a lumped mass/inertia proxy for hub, blades and attachments; carbon blades are not modeled anisotropically",
+        "assumed support values for screening only; selected fan-shaft bearings not specified",
+        "one rotor per stage represents left/right symmetric ducts; installation coupling omitted"
+      ],
+      "gcpEstimatedComputeShareUsd": 0.011333333333333334
+    }
+  ],
+  "gcpJobsSubmitted": [],
+  "limitations": [
+    "FA4119 selected motor document does not specify output shaft geometry or bearings; motor shaft itself is not modeled.",
+    "Shaft 6 mm x 60 mm, 2 mm steel-equivalent rotor disk, and bearing support values are assumptions.",
+    "Bearing stiffness/damping, blade mass distribution, hub material, gear mesh and bearing characteristic frequencies are unknown.",
+    "ROSS Campbell participant reports critical speeds and forcing margins; it does not currently publish a full Campbell plot artifact.",
+    "Do not interpret any result as validation of blade stress, containment, gear mesh dynamics, or gearbox coupled modes."
+  ],
+  "environmentGate": {
+    "gcloudOperatorAuth": "active and project configured; existing US-CENTRAL1 evidence bucket is visible",
+    "executionPath": "one ephemeral GCE Spot VM; app runner uses NativeJobManager local executor on the worker",
+    "gcpBatchExecutor": "unprovisioned in workbench; this plan does not invoke it",
+    "submissionStatus": "not submitted yet; revised cents-budget worker plan pending"
+  },
+  "inputHashes": {
+    "rossAssumptionsSha256": "9c9789bffb83e7913a043a1452ca5b1035eb064dae98cd83ceac62af836cd3fc",
+    "phase3ConfigSha256": "395dde25fd5533f4eef2e5891199b7fee4cf3d8f5335f05f2d2f005dbc23896e"
+  }
+}

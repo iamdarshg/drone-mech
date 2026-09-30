@@ -1,0 +1,93 @@
+study:
+  id: highspeed-edf
+  revision: 1
+  status: frozen-baseline
+  description: Dual electrically driven 80 mm axial variable-bypass propulsion study
+  source: User-provided mission brief and follow-up decisions
+  provenance_policy: Every value in results is labeled by evidence class.
+
+aircraft:
+  mass_kg: 18.0
+  ducts: 2
+  nominal_fan_diameter_m: 0.080
+  baseline_speed_kmh: 600
+  stretch_speed_kmh: 700
+  speeds_of_interest_kmh: [0, 100, 200, 400, 500, 550, 600, 650, 700]
+  cdA_search_m2: [0.0025, 0.0030, 0.0035, 0.0040, 0.0045, 0.0050, 0.0060]
+
+propulsion:
+  concept: electrically-driven-axial-variable-bypass
+  motors_per_duct: 3
+  maximum_rotor_stator_stages: 4
+  axial_arrangement_required: true
+  bypass_actuation: passive-mechanical-variable-nozzle-areas-preferred
+  propulsion_servo_policy: minimize; prefer passive/mechanical scheduling
+  total_pressure_recovery_sweep: [0.90, 0.92, 0.94, 0.96, 0.97, 0.98, 0.985, 0.99]
+  hub_diameter_search_mm: [28, 36]
+  baseline_hub_diameter_mm: 32
+  rotor_chord_max_mm: 16
+  stator_chord_max_mm: 5
+  screening_rotor_loading_coefficient_max: 0.5
+  source_class: user-requirement
+
+motor:
+  source: D:/CodeProjects/drone-arm/hardware/motor_release/FA4119_PROPULSION_DECISION.md
+  model: Flycci FA4119 retail outrunner, 12-slot/14-pole, 7 pole pairs
+  stock_kv_rpm_per_v: 350
+  rewind_kv_development_target_rpm_per_v: 550
+  baseline: stock-350-kv-direct-drive
+  initial_soft_rpm_limit: 12500
+  initial_hard_rpm_limit: 13500
+  stock_no_load_rpm_at_50_4_v: 17640
+  published_prop_test:
+    electrical_power_w: 3470
+    battery_current_a: 74
+    speed_rpm: 11256
+    static_thrust_kgf: 8.18
+    propeller: HQ 13x9 three-blade
+    transferability_to_80mm_duct: not-established
+  evidence_class: externally-sourced-decision-record; not-flight-released
+  warning: Rewind target, 80mm-duct performance, high-speed rotor rating, and loaded RPM are unvalidated.
+
+battery:
+  packs: 2
+  pack_model: Turnigy Rapid LiPo 6S 5000mAh 100C
+  topology: series
+  series_cells: 12
+  capacity_ah: 5.0
+  nominal_voltage_v: 44.4
+  fully_charged_voltage_v: 50.4
+  advertised_c_rate: 100
+  continuous_pack_resistance_sensitivity_ohm: [0.010, 0.020, 0.030]
+  resistance_basis: assumed-sensitivity-only; exact cell DCIR/discharge curves not supplied
+  usable_energy_fraction_sensitivity: [0.70, 0.80, 0.90]
+  evidence_class: pack-identity-user-specified; electrical-parameters-unmeasured
+
+electrical_limits:
+  battery_current_per_motor_soft_rollback_a: 55
+  battery_current_per_motor_initial_hard_a: 65
+  battery_current_per_motor_provisional_short_a: 75
+  provisional_short_duration_s: null
+  esc_phase_current_continuous_a_rms: 60
+  esc_phase_current_burst_a_rms: 90
+  esc_phase_burst_duration_s: 30
+  sources:
+    motor_limits: D:/CodeProjects/drone-arm/hardware/motor_release/FA4119_PROPULSION_DECISION.md
+    esc_phase_limits: D:/CodeProjects/drone-arm/docs/hardware/REV_B_ARCHITECTURE.md
+  evidence_class: decision-record-and-ESC-contract; selected-motor-short-duration-not-validated
+
+screening_assumptions:
+  atmosphere:
+    altitude_study_m: [0, 1000, 2000, 3000]
+    model: ISA-troposphere
+    static_temperature_k: 288.15
+    static_pressure_pa: 101325
+  inlet_capture_area_fraction: 0.85
+  compressor_isentropic_efficiency: 0.82
+  nozzle_total_pressure_recovery: 0.98
+  esc_efficiency: 0.97
+  motor_efficiency: 0.92
+  static_fan_efficiency_sensitivity: [0.45, 0.65, 0.80]
+  static_t_over_w_floor: 0.5
+  static_t_over_w_target: 1.0
+  provenance: assumed-analytical-screening; replace with validated maps/data

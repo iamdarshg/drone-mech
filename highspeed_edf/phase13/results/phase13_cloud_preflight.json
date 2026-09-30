@@ -1,0 +1,63 @@
+{
+  "phase": 13,
+  "checkedAtUtc": "2026-09-26T09:02:53.652382+00:00",
+  "localGates": {
+    "preflightStatus": "local-gmsh-and-dictionary-preflight-remote-checkmesh-required",
+    "caseCount": 2,
+    "allLocalMeshDictionaryAndAreaGatesPass": true,
+    "localOpenFOAMCheckMeshAvailable": false,
+    "localCheckMeshIsNotALaunchPrerequisite": true,
+    "allCompleteProjectionAreasBelow75Cm2": true,
+    "costBreakdown": {
+      "computeMaximumUsd": 0.02333333,
+      "artifactInternetEgressMaximumUsd": 0.0018,
+      "ephemeralIpv4MaximumUsd": 0.00058333,
+      "bootDiskMaximumUsd": 7.778e-05,
+      "temporaryGcsAndApiAllowanceUsd": 5e-05,
+      "ancillaryModeledUsd": 0.00251111,
+      "ancillaryAllowanceUsd": 0.003,
+      "ancillaryHeadroomUsd": 0.00048889,
+      "maximumNewEstimateUsd": 0.02634,
+      "cumulativeMaximumEstimateUsd": 0.19923
+    },
+    "costEstimatePass": true
+  },
+  "cloudGates": {
+    "projectId": "project-ba289c9c-3c25-4e15-9dc",
+    "billingEnabled": true,
+    "billingAccountName": "billingAccounts/01CE1D-5EAC9D-E82F06",
+    "requiredApisEnabled": true,
+    "enabledApis": [
+      "compute.googleapis.com",
+      "storage.googleapis.com"
+    ],
+    "machineType": "e2-standard-2",
+    "machineVcpus": 2,
+    "machineMemoryMb": 8192,
+    "zoneStatus": "UP",
+    "existingRunningPhase13Instances": [],
+    "gceMaxRunDurationSupportedByCli": true,
+    "boundedResourceSpec": {
+      "machineType": "e2-standard-2",
+      "provisioningModel": "SPOT",
+      "zone": "us-central1-b",
+      "maxRunDurationSeconds": 420,
+      "terminationAction": "DELETE",
+      "bootDiskGb": 12,
+      "bootDiskAutoDelete": true,
+      "sameRegionGcsBucket": "us-central1",
+      "maxInternetEgressArtifactBytes": 15000000
+    }
+  },
+  "oneLaunchOnlyGuardPass": true,
+  "launchGatesPass": true,
+  "workerPackage": {
+    "path": "packages\\phase13_worker_bundle.tar.gz",
+    "sizeBytes": 295731,
+    "sha256": "74325e51ddeeea824e4a8682556e67d382e6c42faecfa9e2c5898f7fc0041544",
+    "error": null
+  },
+  "launchRequested": true,
+  "launchPermitted": true,
+  "status": "ready"
+}

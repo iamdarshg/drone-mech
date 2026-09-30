@@ -1,0 +1,540 @@
+{
+  "phase": 11,
+  "status": "cad_cam_complete_openfoam_attempt_blocked",
+  "fixedPowertrainUnchanged": true,
+  "phase9MeanlineMassFlowTotalKgS": 1.717484098799634,
+  "phase9MeanlineNetThrustRatio": 1.0202002230861358,
+  "projectedAreaTrade": [
+    {
+      "turnRadiusMm": 65.0,
+      "fanUnionCm2": 63.61725123519331,
+      "turnProjectionAdditionalLowerBoundCm2": 20.0,
+      "bodyProjectionAdditionalEstimateCm2": 1.5,
+      "edgeOnBareBoardProjectionCm2": 3.5460000000000003,
+      "mountFairingAllowanceCm2": 5.0,
+      "completeFrontProjectionLowerBoundCm2": 93.66325123519331,
+      "strict75cm2Pass": false,
+      "bodyProjectionIncludedInReserve": true,
+      "bareBoardEdgeOnAreaCm2": 3.5460000000000003,
+      "bodyProjectionEstimateCm2": 1.5,
+      "projectedAreaWithStructureReserveCm2": 93.61725123519331,
+      "areaPass": false,
+      "areaFeasibleCenterlineRadiusMaxMm": 46.38274876480669
+    },
+    {
+      "turnRadiusMm": 70.0,
+      "fanUnionCm2": 63.61725123519331,
+      "turnProjectionAdditionalLowerBoundCm2": 25.0,
+      "bodyProjectionAdditionalEstimateCm2": 1.5,
+      "edgeOnBareBoardProjectionCm2": 3.5460000000000003,
+      "mountFairingAllowanceCm2": 5.0,
+      "completeFrontProjectionLowerBoundCm2": 98.66325123519331,
+      "strict75cm2Pass": false,
+      "bodyProjectionIncludedInReserve": true,
+      "bareBoardEdgeOnAreaCm2": 3.5460000000000003,
+      "bodyProjectionEstimateCm2": 1.5,
+      "projectedAreaWithStructureReserveCm2": 98.61725123519331,
+      "areaPass": false,
+      "areaFeasibleCenterlineRadiusMaxMm": 46.38274876480669
+    },
+    {
+      "turnRadiusMm": 75.0,
+      "fanUnionCm2": 63.61725123519331,
+      "turnProjectionAdditionalLowerBoundCm2": 30.0,
+      "bodyProjectionAdditionalEstimateCm2": 1.5,
+      "edgeOnBareBoardProjectionCm2": 3.5460000000000003,
+      "mountFairingAllowanceCm2": 5.0,
+      "completeFrontProjectionLowerBoundCm2": 103.66325123519331,
+      "strict75cm2Pass": false,
+      "bodyProjectionIncludedInReserve": true,
+      "bareBoardEdgeOnAreaCm2": 3.5460000000000003,
+      "bodyProjectionEstimateCm2": 1.5,
+      "projectedAreaWithStructureReserveCm2": 103.61725123519331,
+      "areaPass": false,
+      "areaFeasibleCenterlineRadiusMaxMm": 46.38274876480669
+    }
+  ],
+  "savedStepFiles": [
+    {
+      "path": "deliverables\\phase11\\step\\phase11_flowpath_R065.step",
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 68310.02283230993,
+      "bboxMm": [
+        133.0,
+        90.0000002,
+        249.0000001
+      ]
+    },
+    {
+      "path": "deliverables\\phase11\\step\\phase11_flowpath_R070.step",
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 73248.49678623216,
+      "bboxMm": [
+        143.0,
+        90.0000002,
+        254.0000001
+      ]
+    },
+    {
+      "path": "deliverables\\phase11\\step\\phase11_flowpath_R075.step",
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 78186.97070459314,
+      "bboxMm": [
+        153.0,
+        90.0000002,
+        259.0000001
+      ]
+    },
+    {
+      "path": "deliverables\\phase11\\step\\phase11_full_assembly_R065.step",
+      "validSolids": true,
+      "compoundValid": true,
+      "solidCount": 231,
+      "volumeMm3": 355569.52859490074,
+      "bboxMm": [
+        122.30975391451531,
+        150.0,
+        845.0000001000001
+      ]
+    },
+    {
+      "path": "deliverables\\phase11\\step\\phase11_EDF_A_R065.step",
+      "validSolids": true,
+      "compoundValid": true,
+      "solidCount": 110,
+      "volumeMm3": 106253.82870068452,
+      "bboxMm": [
+        90.0000002,
+        90.00000248047428,
+        110.01373546610061
+      ]
+    },
+    {
+      "path": "deliverables\\phase11\\step\\phase11_EDF_B_R065.step",
+      "validSolids": true,
+      "compoundValid": true,
+      "solidCount": 111,
+      "volumeMm3": 108156.09700523282,
+      "bboxMm": [
+        90.0,
+        90.0,
+        174.065
+      ]
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\A_phase11_rotor_billet1_250x50x16_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\A_phase11_rotor_billet2_250x50x16_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\A_phase11_stator_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_A_phase11_rotor_billet1_250x50x16_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_A_phase11_rotor_billet1_250x50x16_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_A_phase11_rotor_billet2_250x50x16_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_A_phase11_rotor_billet2_250x50x16_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_A_phase11_stator_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_A_phase11_stator_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\B_phase11_stator_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_B_phase11_rotor_billet1_250x50x16_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_B_phase11_rotor_billet1_250x50x16_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_B_phase11_rotor_billet2_250x50x16_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_B_phase11_rotor_billet2_250x50x16_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_B_phase11_stator_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_B_phase11_stator_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_body_01_body_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_01_body_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_01_body_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_body_02_body_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_02_body_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_02_body_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_body_03_body_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_03_body_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_03_body_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_body_04_body_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_04_body_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_04_body_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_body_05_body_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_05_body_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_05_body_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_body_06_body_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_06_body_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_body_06_body_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_01_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_01_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_01_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_02_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_02_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_02_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_03_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_03_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_03_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_04_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_04_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_04_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_05_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_05_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_05_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_06_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_06_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_06_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_07_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_07_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_07_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_08_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_08_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_08_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_09_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_09_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_09_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_10_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_10_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_10_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_11_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_11_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_11_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_duct_12_duct_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_12_duct_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_duct_12_duct_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_casing_01_casing_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_casing_01_casing_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_casing_01_casing_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_casing_02_casing_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_casing_02_casing_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_casing_02_casing_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_casing_03_casing_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_casing_03_casing_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_casing_03_casing_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\stock_layouts\\P11_casing_04_casing_panels_250x100x5_stock_nest.step",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_casing_04_casing_panels_250x100x5_2mm_rough.nc",
+      "valid": true
+    },
+    {
+      "path": "deliverables\\phase11\\gcode\\edf_P11_casing_04_casing_panels_250x100x5_0p5mm_finish_top_0p5mm.nc",
+      "valid": true
+    }
+  ],
+  "boardMassCsv": "results/phase9_control_board_mass.csv",
+  "bareBoardMassKg": 0.12058531923529413,
+  "stockPerEdfSet": {
+    "rotorBillet": [
+      250.0,
+      50.0,
+      16.0
+    ],
+    "statorPlate": [
+      250.0,
+      100.0,
+      5.0
+    ]
+  },
+  "rotorNesting": {
+    "bladesPerEdf": 36,
+    "safeClearanceMm": 2.5,
+    "blankWidthRangeMm": [
+      8.199532253031935,
+      9.24281535725218
+    ],
+    "rectangularKeepoutEnvelopeAreaPerEdfMm2": 12788.625448227554,
+    "oneBilletMaterialAreaMm2": 12500.0,
+    "oneBilletKeepoutAreaProofPasses": false,
+    "oneBilletKeepoutAreaExcessMm2": 288.62544822755444,
+    "layout": "two billets per EDF: 28+8 blanks, 7x4 no-overlap grid; one billet cannot hold all36 disjoint 2.5 mm rectangular keep-out envelopes because their summed area exceeds billet area",
+    "rotorBilletsPerEdf": 2,
+    "extraBilletsBeyondOnePerEdf": 2
+  },
+  "airframePanelStock": {
+    "extraPlates250x100x5": 22,
+    "panelFamilies": {
+      "body": 43583.99999999999,
+      "duct": 81669.42919764433,
+      "casing": 62203.5345410779
+    },
+    "netBlankMassKg": 2.5306690104727503,
+    "stockNotIncludedInTwoEdfPairs": true,
+    "fabricationScope": "flat perimeter blanks only; forming, seam design, seals and joining are not validated"
+  },
+  "statorNesting": {
+    "vanesPerEdf": 63,
+    "platesPerEdf": 1,
+    "layout": "8x10 positions; 63 vane blanks on one 250x100x5 plate"
+  },
+  "massScreen": {
+    "fixedKnownKg": 3.226585319235294,
+    "cadModuleGrossKg": 0.5802170435930017,
+    "compactBody6061Kg": 0.2411691920453631,
+    "healthyTwrMassLimitKg": 10.68,
+    "twrAt11p5kgActualBoreAreaScaled": 1.0218172413683544,
+    "massVerified": false,
+    "populatedBoardAndHarnessWeightsInvented": false
+  },
+  "structuralScreen": {
+    "material": "6061-T6",
+    "yieldAssumedMPa": 276.0,
+    "minimumBladeRootSafetyFactor": 3.3381488836780493,
+    "minimumHubSafetyFactor": 11.01692413702637,
+    "targetSafetyFactor": 2.5,
+    "validationClass": "analytical centrifugal-only screen, not FEA or test"
+  },
+  "cfd": {
+    "caseMatrix": [
+      "r065_linear_coarse",
+      "r065_linear_medium",
+      "r065_linear_fine",
+      "r070_linear_medium",
+      "r075_linear_medium"
+    ],
+    "pressureRecoveryResults": null,
+    "workerRunId": "20260925T184158Z",
+    "checkMeshPassedCases": 3,
+    "checkMeshFailedCases": 2,
+    "rhoSimpleFoamInvocations": 3,
+    "simpleIterationsCompleted": 0,
+    "bestFlowpath": null,
+    "reason": "changeDictionaryDict had the wrong wrapper syntax; walls remained patch type and wall-function initialization aborted. Corrected locally after the one-worker cap; no second launch was made."
+  },
+  "limitations": [
+    "No motor, battery, gearbox, populated-board, harness or landing-gear geometry was provided; the full-airframe projected envelope is not a released packaging drawing.",
+    "Body/board masses are not weighed; populated-board and harness mass remain explicit allowances.",
+    "Rotor root/hub margins use a centrifugal-only model and do not validate fatigue, aeroelasticity, attachment or burst containment."
+  ]
+}

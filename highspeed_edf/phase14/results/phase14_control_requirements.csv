@@ -1,0 +1,11 @@
+domain,frozen_requirement,numeric_limit,reference_disposition
+ESC supply,6 independent motor channels; 12S LiPo,50.4V maximum,Rev-B power stage basis matches voltage; qualification open
+ESC phase current,continuous per motor channel,60 Arms,Rev-B design basis states 60A; board route/thermal/bench qualification open
+ESC phase burst,burst per motor channel,90 Arms; duration not credited until validated,Rev-B design requires physical qualification
+Battery current,soft / hard / provisional short limits per motor,55A / 65A / 75A,keep distinct from phase RMS current
+Motor speed,soft rollback / hard shutdown,12500rpm / 13500rpm = 87500 / 94500 eRPM,FA4119 7 pole-pair mapping; firmware and dyno proof required
+Motor thermal,independent winding and bell/magnet-region temperature telemetry for every channel,"windings: 100-110C rollback, 120C shutdown; bell: 70C warning, 80C shutdown",UNMET: Rev-B cell has one local PCB NTC; external motor sensor interfaces are not specified
+ESC command path,six independent torque/thrust setpoints and per-channel telemetry,CAN-FD; design target >=1kHz command/telemetry scheduling,"CAN-FD topology exists; protocol, firmware, timing and fault-injection are open"
+Surface/vector actuators,2 elevons + 4 independently actuated exit vanes,6 channels; >= 400Hz updates; <= 10ms latency,"UNMET interface contract: main-board PWM pins exist, but servo power, position feedback and validated safe-state interface are unspecified"
+Actuator feedback,each actuator position observable for jam/stale detection,>= 200Hz; stale by 20ms,UNMET: no actuator feedback channel is identified in the main-board contract
+Control authority,strong 0-500km/h; medium 500-700km/h,"strong reserve >= 1.5x, medium reserve >= 1.1x","system target frozen; proof requires identified mass/inertia, aero derivatives, efflux map and actuator dynamics"

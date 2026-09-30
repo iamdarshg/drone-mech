@@ -1,0 +1,33 @@
+{
+  "phases": [6, 7],
+  "scope": "application-specific analytical screening; no geometry, CFD, or hardware validation",
+  "phase6": {
+    "name": "core-annulus and variable-bypass schedule",
+    "casingDiameterM": 0.08,
+    "hubDiameterM": 0.032,
+    "statorReynoldsFloor": 50000,
+    "coreAreaMarginFractions": [0.0, 0.05, 0.1, 0.15],
+    "areaSource": "phase3_core_area_schedule_sensitivity.csv",
+    "interpretation": "geometric core-flow area sensitivity, not a calibrated nozzle throat or bypass map"
+  },
+  "phase7": {
+    "name": "integrated electrical, speed, energy, and readiness envelope",
+    "batteryNominalEnergyWh": 222.0,
+    "usableEnergyFractions": [0.7, 0.8, 0.9],
+    "packR0AssumptionOhm": 0.01,
+    "softBatteryCurrentAperChannel": 55.0,
+    "hardBatteryCurrentAperChannel": 65.0,
+    "provisionalShortBatteryCurrentAperChannel": 75.0,
+    "escContinuousPhaseCurrentARms": 60.0,
+    "escBurstPhaseCurrentARms": 90.0,
+    "motorSoftRpm": 12500.0,
+    "motorHardRpm": 13500.0,
+    "rossFirstCriticalRpm": 18433.0,
+    "projectedFrontalAreaCheckpointM2": 0.0075,
+    "geometryMeasured": false,
+    "rotordynamicStartupCrossingResolved": false,
+    "missionProfileProvided": false,
+    "interpretation": "ideal constant-power energy ceiling; excludes voltage sag, cutoff, thermal derating, mass growth, and reserve"
+  },
+  "evidencePolicy": "Preserve analyst assumptions and distinguish them from user requirements, Phase-3 analytical results, and Phase-4 native results."
+}

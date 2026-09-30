@@ -1,0 +1,27 @@
+{
+  "caseId": "r225_linear_fine",
+  "bendRadiusM": 0.225,
+  "contractionProfile": "linear",
+  "meshLevel": "fine",
+  "purpose": "reference grid convergence",
+  "slotWidthM": 0.05,
+  "slotLengthM": 0.12,
+  "outerDiameterM": 0.09,
+  "hubDiameterM": 0.032,
+  "transitionLengthM": 0.12,
+  "maxCellSizeM": 0.0038,
+  "totalTemperatureK": 288.55693507850793,
+  "totalPressurePa": 90037.94841092758,
+  "targetMassFlowKgPerS": 0.858742049399817,
+  "targetRecovery": 0.98,
+  "meshEvidence": {
+    "fluidVolumeM3": 0.002906781299699146,
+    "nodeCount": 49349,
+    "tetraCellCount": 257986,
+    "physicalSurfaces": {
+      "inlet": 1,
+      "outlet": 1,
+      "walls": 202
+    }
+  }
+}

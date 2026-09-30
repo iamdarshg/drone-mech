@@ -1,0 +1,41 @@
+
+************************************************************
+
+CalculiX Version 2.20, Copyright(C) 1998-2022 Guido Dhondt
+CalculiX comes with ABSOLUTELY NO WARRANTY. This is free
+software, and you are welcome to redistribute it under
+certain conditions, see gpl.htm
+
+************************************************************
+
+You are using an executable made on Sun Jul 31 18:08:37 CEST 2022
+ Decascading the MPC's
+
+ Determining the structure of the matrix:
+ Using up to 1 cpu(s) for setting up the structure of the matrix.
+ number of equations
+ 10443
+ number of nonzero lower triangular matrix elements
+ 175476
+
+Starting FSI analysis via preCICE using the geometrically linear CalculiX solver...
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the energy calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using up to 1 cpu(s) for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the energy calculation.
+
+Setting up preCICE participant Solid, using config file: config.yml
+Set ID NOT Found 
+ERROR: Set NIFACEN does not exist! Please check that the interface names are correct and that .nam file is provided.
+corrupted double-linked list
+[hsedf-fsi-20260930-104657:07295] *** Process received signal ***
+[hsedf-fsi-20260930-104657:07295] Signal: Aborted (6)
+[hsedf-fsi-20260930-104657:07295] Signal code:  (-6)

@@ -1,0 +1,50 @@
+{
+  "phase": 11,
+  "status": "partial_or_unconverged",
+  "runSource": "one_ephemeral_GCE_Spot_OpenFOAM_worker",
+  "instanceName": "hsedf-p11-20260925-184158",
+  "solver": "OpenFOAM rhoSimpleFoam only",
+  "turbulenceModel": "kOmegaSST",
+  "startedAtUtc": "2026-09-25T18:43:32.272096+00:00",
+  "finishedAtUtc": "2026-09-25T18:43:40.236526+00:00",
+  "elapsedSeconds": 7.964451552,
+  "records": [
+    {
+      "caseId": "r065_linear_coarse",
+      "status": "driver_error",
+      "error": "KeyError:'bendRadiusM'"
+    },
+    {
+      "caseId": "r065_linear_fine",
+      "status": "driver_error",
+      "error": "KeyError:'bendRadiusM'"
+    },
+    {
+      "caseId": "r065_linear_medium",
+      "status": "driver_error",
+      "error": "KeyError:'bendRadiusM'"
+    },
+    {
+      "caseId": "r070_linear_medium",
+      "status": "driver_error",
+      "error": "KeyError:'bendRadiusM'"
+    },
+    {
+      "caseId": "r075_linear_medium",
+      "status": "driver_error",
+      "error": "KeyError:'bendRadiusM'"
+    }
+  ],
+  "gridConvergence": {
+    "referenceCaseIds": [
+      "r065_linear_coarse",
+      "r065_linear_fine",
+      "r065_linear_medium"
+    ],
+    "mediumFineAbsoluteRecoveryDifference": null,
+    "agreementLimit": 0.005,
+    "passes": false
+  },
+  "bestGeometryAmongConvergedMediumCases": null,
+  "evidenceClass": "OpenFOAM output; converged flag requires residual, mesh, mass-balance and pressure post-processing checks"
+}

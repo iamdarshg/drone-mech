@@ -1,0 +1,202 @@
+{
+  "datum": {
+    "x": "lateral",
+    "y": "vertical",
+    "z": "aft",
+    "fanPlaneZmm": 0,
+    "units": "mm"
+  },
+  "sourceFiles": [
+    "design/HANDOFF_GEOMETRY_AGENT.md",
+    "design/PHASE15_DESIGN_SPEC.md",
+    "design/PHASE15_CONTROL_SURFACES.md",
+    "design/DESIGN_DECISIONS_FOR_VERDICT.md",
+    "phase15/results/phase15_motor_and_rewind_v2.md",
+    "phase15/configs/phase15_sourcing.json"
+  ],
+  "nominal": {
+    "ductOuterDiameterMm": 82.0,
+    "ductInnerDiameterMm": 78.0,
+    "ductRadialWallMm": 2.0,
+    "ductCentreSpacingMm": 88,
+    "ductCentresXmm": [
+      -44.0,
+      44.0
+    ],
+    "moduleLengthMm": 110.0,
+    "inletMouthAreaPerDuctCm2": 55.41769440932395,
+    "inletMouthAreaTotalCm2": 110.8353888186479,
+    "rotorCounts": [
+      13,
+      12,
+      11
+    ],
+    "statorCounts": [
+      23,
+      21,
+      19
+    ],
+    "rotorZmm": [
+      12.0,
+      48.0,
+      84.0
+    ],
+    "statorZmm": [
+      30.0,
+      66.0,
+      102.0
+    ],
+    "hubDiameterMm": 40.0,
+    "rotorTipClearanceMm": 0.7000000000000028,
+    "rotorSpanMm": 19.799999999999997,
+    "bodyLengthMm": 640.0,
+    "bodyEnvelopeMm": [
+      186.0,
+      88.0
+    ],
+    "bodySuperellipseExponent": 2.6,
+    "bodyWallMm": 1.2,
+    "wingSpanMm": 520.0,
+    "wingAreaM2": 0.19,
+    "wingAspectRatio": 1.4231578947368422,
+    "wingSweepDeg": 25.0,
+    "elevonMm": [
+      40.0,
+      150.0
+    ],
+    "finMm": [
+      90.0,
+      70.0
+    ],
+    "finCantDeg": 30.0,
+    "vaneCount": 4,
+    "vaneSizeMm": [
+      30.0,
+      40.0
+    ],
+    "vaneRingRadiusMm": 44.0,
+    "batteryBayXYZmm": [
+      135.0,
+      75.0,
+      200.0
+    ],
+    "escBoardXZThicknessMm": [
+      150.0,
+      150.0,
+      1.6
+    ],
+    "escBoardCentreYZmm": [
+      52.0,
+      220.0
+    ],
+    "flightBoardXZThicknessMm": [
+      140.0,
+      100.0,
+      1.6
+    ],
+    "flightBoardCentreYZmm": [
+      52.0,
+      345.0
+    ],
+    "coolingTunnelZmm": [
+      145.0,
+      395.0
+    ]
+  },
+  "bands": {
+    "ductODmm": [
+      72,
+      80,
+      90
+    ],
+    "ductLengthMm": [
+      95,
+      110,
+      130
+    ],
+    "ductSpacingMm": [
+      84,
+      88,
+      96
+    ],
+    "bodySectionMm": [
+      [
+        175,
+        72
+      ],
+      [
+        186,
+        78
+      ],
+      [
+        205,
+        90
+      ]
+    ],
+    "bodyLengthMm": [
+      480,
+      560,
+      640
+    ],
+    "wingAreaM2": [
+      0.13,
+      0.19,
+      0.3
+    ],
+    "wingSpanMm": [
+      450,
+      520,
+      620
+    ],
+    "wingAR": [
+      1.3,
+      1.42,
+      1.8
+    ],
+    "elevonChordSpanMm": [
+      [
+        25,
+        100
+      ],
+      [
+        40,
+        150
+      ],
+      [
+        60,
+        200
+      ]
+    ],
+    "finHeightChordMm": [
+      [
+        50,
+        60
+      ],
+      [
+        70,
+        90
+      ],
+      [
+        100,
+        130
+      ]
+    ]
+  },
+  "derivedParameters": {
+    "statorMetalAnglesDeg": [
+      0.0,
+      0.0
+    ],
+    "basis": "No Phase-15 stator angle schedule in source handoff; neutral seed is adjustable and not aerodynamically qualified.",
+    "highTempDuctMaterial": "High-temp CF composite shell, provisional material class; select resin/core only after temperature qualification.",
+    "servoMassKg": 0.025,
+    "servoMassBasis": "Analyst envelope allowance; control doc gives actuator count/type but no unit mass.",
+    "payloadCGmm": [
+      0,
+      0,
+      0
+    ],
+    "payloadCGZmm": -320.0,
+    "payloadCGBasis": "Selected 20 mm forward of the Z=-300 battery-bay boundary; hardware moments yield CG within -5..+15 mm. Payload envelope/fit remains unspecified."
+  }
+}

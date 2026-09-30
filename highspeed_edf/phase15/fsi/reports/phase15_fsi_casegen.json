@@ -1,0 +1,116 @@
+{
+  "study": "Phase-15 wing-sector OpenFOAM-preCICE-CalculiX FSI candidate sweep",
+  "evidenceClass": "meshed and prepared; no solver has run yet",
+  "candidateSource": "Aero Multiphysics Workbench coupled airframe/EDF candidate screen",
+  "workbenchCandidateScreenSha256": "d6c6270f93a87fabea956bee73ebf72f9e2d4578f358a25fceabec851023017f",
+  "workbenchFidelity": [
+    "analytical ideal annular actuator-disk screening; stator count recorded without stator-row aerodynamics"
+  ],
+  "workbenchNativeSolverEvidence": false,
+  "candidates": [
+    {
+      "candidate": "wing_t30mm",
+      "maxThicknessMm": 30.0,
+      "fluid": {
+        "mesh": "wing.msh",
+        "fluidCells": 34166,
+        "fluidVolumeM3": 1.5601048211505963,
+        "wingVolumeM3": 0.0012773004678969851,
+        "patchFaceCounts": {
+          "fsi": 65,
+          "rootWall": 1,
+          "inlet": 1,
+          "outlet": 1,
+          "farfield": 4
+        },
+        "domainM": {
+          "xMin": -0.4045757692307692,
+          "xMax": 0.7449057692307692,
+          "yMin": -0.35,
+          "yMax": 0.35,
+          "zMin": -0.6204661212050243,
+          "zMax": 1.3200138372741457
+        }
+      },
+      "solid": {
+        "mesh": "wing.msh",
+        "candidateStep": "wing.step",
+        "solidNodes": 3661,
+        "solidElements": 12862,
+        "couplingSurfaceEntities": 65,
+        "rootSurfaceEntities": 1,
+        "wingVolumeM3": 0.0012773004678969851,
+        "calculixInput": "wing.inp",
+        "nodes": 3661,
+        "tetrahedra": 12862,
+        "fsiNodes": 2675,
+        "rootNodes": 288,
+        "tipNodes": 1,
+        "youngsModulusPa": 10000000000.0,
+        "poissonRatio": 0.3,
+        "densityKgM3": 150.0
+      },
+      "effectiveMaterial": {
+        "E_Pa": 10000000000.0,
+        "nu": 0.3,
+        "rhoKgM3": 150.0,
+        "basis": "Equivalent isotropic stiffness seed for 1.2 mm CF wrap over light core; sweep uncertainty before design release"
+      }
+    },
+    {
+      "candidate": "wing_t36mm",
+      "maxThicknessMm": 36.0,
+      "fluid": {
+        "mesh": "wing.msh",
+        "fluidCells": 34519,
+        "fluidVolumeM3": 1.5599617762465896,
+        "wingVolumeM3": 0.0014203453719030873,
+        "patchFaceCounts": {
+          "fsi": 65,
+          "rootWall": 1,
+          "inlet": 1,
+          "outlet": 1,
+          "farfield": 4
+        },
+        "domainM": {
+          "xMin": -0.4045757692307692,
+          "xMax": 0.7449057692307692,
+          "yMin": -0.35,
+          "yMax": 0.35,
+          "zMin": -0.6204661212050243,
+          "zMax": 1.3200138372741457
+        }
+      },
+      "solid": {
+        "mesh": "wing.msh",
+        "candidateStep": "wing.step",
+        "solidNodes": 3811,
+        "solidElements": 13599,
+        "couplingSurfaceEntities": 65,
+        "rootSurfaceEntities": 1,
+        "wingVolumeM3": 0.0014203453719030873,
+        "calculixInput": "wing.inp",
+        "nodes": 3811,
+        "tetrahedra": 13599,
+        "fsiNodes": 2678,
+        "rootNodes": 330,
+        "tipNodes": 1,
+        "youngsModulusPa": 10000000000.0,
+        "poissonRatio": 0.3,
+        "densityKgM3": 150.0
+      },
+      "effectiveMaterial": {
+        "E_Pa": 10000000000.0,
+        "nu": 0.3,
+        "rhoKgM3": 150.0,
+        "basis": "Equivalent isotropic stiffness seed for 1.2 mm CF wrap over light core; sweep uncertainty before design release"
+      }
+    }
+  ],
+  "limitations": [
+    "Isolated outboard wing sector only; does not include fuselage, EDF jets, actuator loads, motor dynamics or full-aircraft aeroelastic modes.",
+    "200 m/s at 3 km is the 720 km/h design point; local fluid Mach is about 0.61 and the density/thermo inputs remain ISA assumptions.",
+    "Equivalent isotropic composite stiffness is a sensitivity assumption; the actual laminate schedule, orthotropic constants and joint stiffness are not sourced.",
+    "The two motor-can envelopes and seventh-servo/PWM incompatibility in the airframe audit are outside this wing-sector FSI model."
+  ]
+}

@@ -1,0 +1,3 @@
+candidate,maxThicknessMm,fluidCells,solidElements,fsiNodes,rootNodes,E_Pa,rhoKgM3
+wing_t30mm,30.0,34166,12862,2675,288,10000000000.0,150.0
+wing_t36mm,36.0,34519,13599,2678,330,10000000000.0,150.0

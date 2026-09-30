@@ -1,0 +1,46 @@
+{
+  "phase": 10,
+  "status": "execution-complete-solver-blocked",
+  "configSha256": "2da011c25d0784dc6732da44d15953f1b29a3d21fd950435058851ba6ef0943e",
+  "sourceHashes": {
+    "phase9ConfigSha256": "6cff87cd4730265eac14c272a55fe6d443b063893df77d9c797acdaee629a900",
+    "candidateStateSha256": "bd9cb393f3101fe8ca90f0bbf3969f11a679f923969eceac0317947110fd8acc",
+    "phase9MeanlineSha256": "7df9a666f54bcba4fb5b5efe63f3992a2cbd31863a21b387e8ddfdc9407f41a9"
+  },
+  "caseIds": [
+    "r225_linear_coarse",
+    "r225_linear_medium",
+    "r225_linear_fine",
+    "r270_linear_medium",
+    "r315_linear_medium",
+    "r225_cosine_medium",
+    "r225_front_loaded_medium"
+  ],
+  "budget": {
+    "approvalCapUsd": 0.2,
+    "instanceCountMax": 5,
+    "concurrentInstancesMax": 1,
+    "machineType": "e2-standard-4",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maxRunDurationSeconds": 2200,
+    "priorFailedWorkerSeconds": 614.53,
+    "priorFailedWorkerComputeEstimateUsd": 0.03414,
+    "aggregateWorkerLifetimeCeilingSeconds": 2700,
+    "terminationAction": "DELETE",
+    "bootDiskType": "pd-standard",
+    "bootDiskSizeGb": 12,
+    "conservativeComputeRateUsdPerHour": 0.2,
+    "computeCapUsd": 0.15,
+    "storageNetworkAndLogsReserveUsd": 0.03,
+    "contingencyReserveUsd": 0.02,
+    "estimatedMaximumAggregateUsd": 0.08414,
+    "capCalculation": "Execution is complete: five Spot VM lifetimes totaled about 614.53 s, estimated $0.03414 at the conservative $0.20/hour rate. Add the reserved $0.03 disk/network/artifact allowance and $0.02 contingency for an estimated envelope usage of $0.08414, below the approved $0.20 cap. Five-instance cap reached; no further launch."
+  },
+  "instanceWillLaunch": false,
+  "actualInstancesCreated": 5,
+  "actualInstancesDeleted": 5,
+  "solverCasesAttempted": 7,
+  "validPressureRecoveryResults": 0,
+  "finalReceipt": "phase10_execution_receipt.json"
+}

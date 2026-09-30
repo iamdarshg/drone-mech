@@ -1,0 +1,29 @@
+{
+  "phase": 11,
+  "status": "execution-complete-cost-receipt",
+  "phase10PriorEnvelopeEstimateUsd": 0.08414,
+  "userApprovedRemainingUsd": 0.11586,
+  "newCompute": {
+    "instanceCountTotal": 1,
+    "instanceCountConcurrent": 1,
+    "machineType": "e2-standard-4",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maxRunDurationSeconds": 600,
+    "terminationAction": "DELETE",
+    "bootDisk": "12 GB pd-standard, auto-delete",
+    "conservativeRateUsdPerHour": 0.2,
+    "computeMaximumUsd": 0.03334
+  },
+  "temporaryStorageNetworkAndArtifactsMaxUsd": 0.02,
+  "contingencyUsd": 0.06252,
+  "maximumNewAggregateUsd": 0.11586,
+  "maximumTotalEnvelopeWithPhase10Usd": 0.2,
+  "observedWorkerLifetimeSeconds": 112.216,
+  "conservativeObservedComputeEstimateUsd": 0.00623,
+  "conservativeNewEnvelopeUsageUsd": 0.08875,
+  "actualBillingAmountUsd": null,
+  "calculation": "The 600-second maximum x $0.20/hour reserved $0.03334 compute; the actual observed worker lifetime was 112.216 s, estimated $0.00623. Including the full $0.02 temporary disk/network/artifact allowance and $0.06252 contingency, estimated new envelope usage is $0.08875 <=$0.11586. Combined with the Phase-10 $0.08414 estimate, the envelope is $0.17289 <=$0.20. One Spot worker only, no GPU, no solver-family fallback; VM and disk were deleted.",
+  "solverFamily": "OpenFOAM rhoSimpleFoam only",
+  "cncExecution": false
+}

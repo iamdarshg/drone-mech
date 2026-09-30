@@ -1,0 +1,355 @@
+{
+  "phase": 12,
+  "status": "offline-CAD-CAM-complete-no-OpenFOAM-winner",
+  "powertrainImmutable": {
+    "motor": "6 x stock Flycci FA4119 KV350; 0.28kg each",
+    "battery": "2 x Turnigy Rapid 6S 5000mAh in series; 12S1P; 5Ah; 0.713kg each",
+    "gearRatios": [
+      2.35,
+      2.65,
+      2.95
+    ],
+    "motorSoftRpm": 12500.0,
+    "currentAndPowerLimits": "retained from Phase 9, unchanged"
+  },
+  "phase9TargetsRetained": {
+    "allUpMassKg": 11.5,
+    "cdA720M2": 0.0009,
+    "projectedAreaReferenceCm2": 73.61725123519331,
+    "phase9WorstR0TWRAt3km": 1.0395516612139422
+  },
+  "fan": {
+    "modules": 2,
+    "ODmm": 90.0,
+    "boreMm": 88.0,
+    "hubMm": 32.0,
+    "rotorCounts": [
+      13,
+      12,
+      11
+    ],
+    "rotorChordMm": 16.0,
+    "statorCounts": [
+      23,
+      21,
+      19
+    ],
+    "statorChordMm": 8.0,
+    "rotorRpmScheduleAt720KmhPhase9": [
+      29375.0,
+      33125.0,
+      36360.0
+    ],
+    "softLimitDerivedRotorRpm": [
+      29375.0,
+      33125.0,
+      36875.0
+    ]
+  },
+  "inlet": {
+    "slotsPerEDF": 2,
+    "totalSlots": 4,
+    "slotMm": [
+      25.0,
+      120.0
+    ],
+    "kgPerBranch": 0.42937,
+    "kgPerEDF": 0.85874,
+    "totalKgPerS": 1.71748,
+    "radiiMm": [
+      30.0,
+      35.0,
+      40.0,
+      45.0
+    ],
+    "initialRadiusMm": 30.0,
+    "phase9RecoveryTarget": 0.98,
+    "measuredRecovery": null,
+    "grossReferenceHalfAnnulusAreaMm2": 2778.738702100172,
+    "CADBranchOutletHalfAreaMm2": 2779.665471932981,
+    "CADFanFaceHalfAnnulusAreaMm2": 2638.9378290154264,
+    "areaContractionToPhysicalFanFaceFraction": 0.05062754649382051,
+    "recoveryEvidence": "Phase-12 local mesh/preflight only; execution receipt says checkMesh gate blocked cloud, pressure recovery null, bestGeometry null"
+  },
+  "phase12Preflight": {
+    "receipt": "phase12/results/phase12_execution_receipt.json",
+    "status": "local-preflight-only-no-cloud-launch",
+    "validPressureRecoveries": 0,
+    "bestGeometry": null,
+    "launchPermitted": false,
+    "reason": "local checkMesh/OpenFOAM runtime unavailable; no CFD values consumed",
+    "conservativeAreaFormula": "fan union 63.617 + 10 cm2 generic structure reserve + 2.4*max(0,R+12.5-45) cm2",
+    "preflightR35AreaBoundCm2": 79.61725123519331,
+    "selectedR30ConservativeAreaBoundCm2": 73.61725123519331,
+    "conservativeAreaScreen": {
+      "formula": "fan union 63.617 + generic structure reserve 10 + 2.4*max(0,R+12.5-45) cm2",
+      "R35BoundCm2": 79.61725123519331,
+      "disposition": "R30 selected provisionally because it passes the conservative area budget; R35's detailed union passes but its generic reserve/protrusion bound does not. Preserve this discrepancy for CAD/CFD reconciliation."
+    }
+  },
+  "boardMassesFromCsvKg": {
+    "ESC_bare": 0.0701629936219608,
+    "flight_bare": 0.05042232561333333,
+    "bareTotal": 0.12058531923529413
+  },
+  "installationEnvelopes": {
+    "batteryPacks": [
+      {
+        "dimsMm": [
+          150,
+          50,
+          45
+        ],
+        "massKg": 0.713,
+        "centreZmm": -337.5,
+        "status": "dimension proxy; mass sourced"
+      },
+      {
+        "dimsMm": [
+          150,
+          50,
+          45
+        ],
+        "massKg": 0.713,
+        "centreZmm": -177.5,
+        "status": "dimension proxy; mass sourced"
+      }
+    ],
+    "boards": [
+      {
+        "name": "ESC",
+        "dimsMm": [
+          150.0,
+          150.0,
+          1.6
+        ],
+        "massKg": 0.0701629936219608,
+        "centreMm": [
+          0,
+          56,
+          220
+        ],
+        "populationAndHeatspreaderMassEstimated": true
+      },
+      {
+        "name": "flight",
+        "dimsMm": [
+          140.0,
+          100.0,
+          1.6
+        ],
+        "massKg": 0.05042232561333333,
+        "centreMm": [
+          0,
+          56,
+          235
+        ],
+        "populationAndHeatspreaderMassEstimated": true
+      }
+    ],
+    "cgDatum": {
+      "X": "lateral",
+      "Y": "vertical",
+      "Z": "flight axis",
+      "units": "mm"
+    }
+  },
+  "stockAndNesting": {
+    "rotorStock": {
+      "rawBilletMm": [
+        300,
+        50,
+        16
+      ],
+      "CAMregionMm": [
+        250,
+        50,
+        16
+      ],
+      "CAMxBoundsMm": [
+        25,
+        275
+      ],
+      "reservedClampMarginsEachEndMm": 25,
+      "billets": 6,
+      "rowCounts": [
+        13,
+        12,
+        11
+      ],
+      "oneRowAndOneHubPerBillet": true,
+      "nesting": "5 blade columns x 3 rows (15 slots; 13/12/11 used) plus one 32mm hub disk in the rear field"
+    },
+    "statorStock": {
+      "plates": 2,
+      "perPlateMm": [
+        250,
+        100,
+        5
+      ],
+      "vanesPerEDF": 63,
+      "nesting": "7 columns x 9 rows = 63; 2.5mm rectangular keep-outs"
+    },
+    "minimumIncrease": {
+      "additionalAluminiumStock": "none for the supplied blade/hub/stator cut layouts",
+      "unsupportedProcesses": [
+        "twisted airfoil surface machining requires multi-axis/flip/secondary forming",
+        "composite shell parts are printed PLA plus hand layup, not 6061 plate CNC",
+        "0.5mm cutter is not used through the 16mm rotor billet walls"
+      ]
+    }
+  },
+  "compositeLayupAssumptions": {
+    "PLAcoreMm": 1.2,
+    "carbonFabricGsmPerFace": 200,
+    "glassFabricGsmPerFace": 100,
+    "resinToFibreMassRatio": 0.8,
+    "laminateSurfaceAreaM2": 0.4151519864912248,
+    "midSurfaceAreaM2": 0.2075759932456124,
+    "laminateMassKg": 0.22418207270526141,
+    "PLAcoreMassKg": 0.3088730779494712,
+    "status": "analyst assumptions; panel areal weight and printed-core mass must be checked by coupon/weighing"
+  },
+  "frontAreaVariants": [
+    {
+      "radiusMm": 30.0,
+      "frontProjectedAreaCm2": 67.85874663337762,
+      "gate75Pass": true,
+      "initialVariant": true,
+      "phase12PreflightProtrusionMm": 0.0,
+      "phase12ConservativeReserveBoundCm2": 73.61725123519331,
+      "phase12ConservativeBoundPass": true,
+      "recoveryEvidence": "none; geometry-only variant"
+    },
+    {
+      "radiusMm": 35.0,
+      "frontProjectedAreaCm2": 68.43794521111468,
+      "gate75Pass": true,
+      "initialVariant": false,
+      "phase12PreflightProtrusionMm": 2.5,
+      "phase12ConservativeReserveBoundCm2": 79.61725123519331,
+      "phase12ConservativeBoundPass": false,
+      "recoveryEvidence": "none; geometry-only variant"
+    },
+    {
+      "radiusMm": 40.0,
+      "frontProjectedAreaCm2": 69.43639537628803,
+      "gate75Pass": true,
+      "initialVariant": false,
+      "phase12PreflightProtrusionMm": 7.5,
+      "phase12ConservativeReserveBoundCm2": 91.61725123519331,
+      "phase12ConservativeBoundPass": false,
+      "recoveryEvidence": "none; geometry-only variant"
+    },
+    {
+      "radiusMm": 45.0,
+      "frontProjectedAreaCm2": 71.00369686037565,
+      "gate75Pass": true,
+      "initialVariant": false,
+      "phase12PreflightProtrusionMm": 12.5,
+      "phase12ConservativeReserveBoundCm2": 103.61725123519331,
+      "phase12ConservativeBoundPass": false,
+      "recoveryEvidence": "none; geometry-only variant"
+    }
+  ],
+  "massCg": {
+    "estimatedSubtotalKg": 5.733956714045254,
+    "unallocatedAllowanceTo11p5Kg": 5.766043285954746,
+    "cgXmm": 0.0,
+    "cgYmm": 3.935219430921987,
+    "cgZmm": 20.70306645533664,
+    "massVerified": false,
+    "batteryEnvelopeProxyMm": [
+      150,
+      50,
+      45
+    ],
+    "populationGearboxHarnessMountMassesEstimated": true
+  },
+  "rotorStress": [
+    {
+      "row": "R1",
+      "fixedGearRatio": 2.35,
+      "motorSoftRpm": 12500.0,
+      "designRotorRpm": 29375.0,
+      "softLimitDerivedRotorRpm": 29375.0,
+      "proofRotorRpm_1p25x": 36718.75,
+      "rootAreaBaselineMm2": 20.96066560429954,
+      "rootAreaReinforcedMm2": 26.5,
+      "rootBlendTargetMm": 2.0,
+      "yield6061T6MPa": 276.0,
+      "centrifugalOnlyFOSAtProofRpm": 4.138870102493788,
+      "targetFOS": 2.5,
+      "pass": true,
+      "scope": "Phase-11 stress model scaled by RPM^2 and reinforced root area; Kt=2.5 retained; excludes fatigue/aero/burst testing"
+    },
+    {
+      "row": "R2",
+      "fixedGearRatio": 2.65,
+      "motorSoftRpm": 12500.0,
+      "designRotorRpm": 33125.0,
+      "softLimitDerivedRotorRpm": 33125.0,
+      "proofRotorRpm_1p25x": 41406.25,
+      "rootAreaBaselineMm2": 20.96066560429954,
+      "rootAreaReinforcedMm2": 26.5,
+      "rootBlendTargetMm": 2.0,
+      "yield6061T6MPa": 276.0,
+      "centrifugalOnlyFOSAtProofRpm": 3.254552972237892,
+      "targetFOS": 2.5,
+      "pass": true,
+      "scope": "Phase-11 stress model scaled by RPM^2 and reinforced root area; Kt=2.5 retained; excludes fatigue/aero/burst testing"
+    },
+    {
+      "row": "R3",
+      "fixedGearRatio": 2.95,
+      "motorSoftRpm": 12500.0,
+      "designRotorRpm": 36360.0,
+      "softLimitDerivedRotorRpm": 36875.0,
+      "proofRotorRpm_1p25x": 46093.75,
+      "rootAreaBaselineMm2": 20.96066560429954,
+      "rootAreaReinforcedMm2": 26.5,
+      "rootBlendTargetMm": 2.0,
+      "yield6061T6MPa": 276.0,
+      "centrifugalOnlyFOSAtProofRpm": 2.626093423732173,
+      "targetFOS": 2.5,
+      "pass": true,
+      "scope": "Phase-11 stress model scaled by RPM^2 and reinforced root area; Kt=2.5 retained; excludes fatigue/aero/burst testing"
+    }
+  ],
+  "generated": [
+    "gcode\\channel_01_R1_blade_hub_0p5mm_finish_top0p5.nc",
+    "gcode\\channel_01_R1_blade_hub_2mm_rough.nc",
+    "gcode\\channel_02_R2_blade_hub_0p5mm_finish_top0p5.nc",
+    "gcode\\channel_02_R2_blade_hub_2mm_rough.nc",
+    "gcode\\channel_03_R3_blade_hub_0p5mm_finish_top0p5.nc",
+    "gcode\\channel_03_R3_blade_hub_2mm_rough.nc",
+    "gcode\\channel_04_R1_blade_hub_0p5mm_finish_top0p5.nc",
+    "gcode\\channel_04_R1_blade_hub_2mm_rough.nc",
+    "gcode\\channel_05_R2_blade_hub_0p5mm_finish_top0p5.nc",
+    "gcode\\channel_05_R2_blade_hub_2mm_rough.nc",
+    "gcode\\channel_06_R3_blade_hub_0p5mm_finish_top0p5.nc",
+    "gcode\\channel_06_R3_blade_hub_2mm_rough.nc",
+    "gcode\\EDF_A_63stators_250x100x5_0p5mm_full_depth_finish.nc",
+    "gcode\\EDF_A_63stators_250x100x5_2mm_rough.nc",
+    "gcode\\EDF_B_63stators_250x100x5_0p5mm_full_depth_finish.nc",
+    "gcode\\EDF_B_63stators_250x100x5_2mm_rough.nc",
+    "step\\phase12_EDF_A_R030.step",
+    "step\\phase12_EDF_B_R030.step",
+    "step\\phase12_full_assembly_R030.step",
+    "step\\phase12_full_assembly_R035.step",
+    "step\\phase12_full_assembly_R040.step",
+    "step\\phase12_full_assembly_R045.step",
+    "step\\phase12_interchangeable_inlet_split_R030.step",
+    "step\\phase12_interchangeable_inlet_split_R035.step",
+    "step\\phase12_interchangeable_inlet_split_R040.step",
+    "step\\phase12_interchangeable_inlet_split_R045.step",
+    "stock_layouts\\phase12_channel01_R1_rotor_hub_300x50x16.step",
+    "stock_layouts\\phase12_channel02_R2_rotor_hub_300x50x16.step",
+    "stock_layouts\\phase12_channel03_R3_rotor_hub_300x50x16.step",
+    "stock_layouts\\phase12_channel04_R1_rotor_hub_300x50x16.step",
+    "stock_layouts\\phase12_channel05_R2_rotor_hub_300x50x16.step",
+    "stock_layouts\\phase12_channel06_R3_rotor_hub_300x50x16.step",
+    "stock_layouts\\phase12_EDF_A_stator_set_250x100x5.step",
+    "stock_layouts\\phase12_EDF_B_stator_set_250x100x5.step"
+  ]
+}

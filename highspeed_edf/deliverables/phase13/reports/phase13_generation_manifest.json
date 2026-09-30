@@ -1,0 +1,53 @@
+{
+  "phase": 13,
+  "files": {
+    "step": [
+      "step\\phase13_full_assembly_R030.step",
+      "step\\phase13_EDF_A_R030.step",
+      "step\\phase13_EDF_B_R030.step",
+      "step\\phase13_split_inlet_R030_4x25x120.step",
+      "stock_layouts\\phase13_channel01_R1_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_channel02_R2_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_channel03_R3_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_EDF_A_stator_set_250x100x5.step",
+      "stock_layouts\\phase13_channel04_R1_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_channel05_R2_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_channel06_R3_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_EDF_B_stator_set_250x100x5.step"
+    ],
+    "gcode": [
+      "phase13_channel_01_R1_blade_hub_2mm_rough.nc",
+      "phase13_channel_01_R1_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_channel_02_R2_blade_hub_2mm_rough.nc",
+      "phase13_channel_02_R2_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_channel_03_R3_blade_hub_2mm_rough.nc",
+      "phase13_channel_03_R3_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_EDF_A_63stators_250x100x5_2mm_rough.nc",
+      "phase13_EDF_A_63stators_250x100x5_0p5mm_full_depth_finish.nc",
+      "phase13_channel_04_R1_blade_hub_2mm_rough.nc",
+      "phase13_channel_04_R1_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_channel_05_R2_blade_hub_2mm_rough.nc",
+      "phase13_channel_05_R2_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_channel_06_R3_blade_hub_2mm_rough.nc",
+      "phase13_channel_06_R3_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_EDF_B_63stators_250x100x5_2mm_rough.nc",
+      "phase13_EDF_B_63stators_250x100x5_0p5mm_full_depth_finish.nc"
+    ],
+    "reports": [
+      "reports/phase13_cad_cam_report.md",
+      "reports/phase13_mass_cg_budget.csv",
+      "reports/phase13_rotor_strength_screen.csv",
+      "reports/phase13_cg_layout.csv",
+      "reports/phase13_lifting_body_sections.csv",
+      "reports/phase13_nc_validation.csv",
+      "reports/phase13_step_reimport_validation.csv"
+    ]
+  },
+  "stepCount": 12,
+  "gcodeCount": 16,
+  "stepReimportPass": true,
+  "ncCoordinateToolDepthPass": true,
+  "cncRun": false,
+  "openfoamRun": false,
+  "gcpRun": false
+}

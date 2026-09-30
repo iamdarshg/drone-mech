@@ -1,0 +1,131 @@
+{
+  "phase": 15,
+  "part1_motors_under_4000": {
+    "robuCheapest12sMotorInr": 4499,
+    "robuCheapest12sMotor": "FLYCCI FA4119 350KV",
+    "finding": "no stock 12S motor <= INR 4000; only route is to rewind a cheaper 6S-class motor",
+    "rewindCheapestTotalInr": 3609,
+    "rewindCheapestUnder4000": [
+      {
+        "motor_id": "tarot_3115_900kv",
+        "note": "in stock, 6S, 31x15 stator",
+        "motor_price_inr": 3109,
+        "rewind_material_inr": 500,
+        "rewind_case": "diy_bare_wire",
+        "total_unit_inr": 3609,
+        "under_4000": true,
+        "six_motor_inr": 21654,
+        "material_note": "bare magnet wire + minimal consumables, self-wound"
+      },
+      {
+        "motor_id": "rocket_3670_4pole_1550kv",
+        "note": "in stock, 4-6S, 4-pole, 36x70 can",
+        "motor_price_inr": 3409,
+        "rewind_material_inr": 500,
+        "rewind_case": "diy_bare_wire",
+        "total_unit_inr": 3909,
+        "under_4000": true,
+        "six_motor_inr": 23454,
+        "material_note": "bare magnet wire + minimal consumables, self-wound"
+      }
+    ]
+  },
+  "part2_range": {
+    "cdaM2": 0.000693,
+    "fanMm": 80.0,
+    "batteries": [
+      {
+        "battery_id": "bonka_1600_150c",
+        "battery_pair_price_inr": 10638,
+        "capacity_ah": 1.6,
+        "continuous_C": 150,
+        "usable_energy_wh": 60.4,
+        "current_cap_a": 240.0,
+        "power_cap_w": 10656.0,
+        "under_12000": true,
+        "max_range_km": 36.81,
+        "max_range_speed_kmh": 290.0,
+        "note": "range = speed x energy / electrical power, parasite+induced drag, ideal disk"
+      },
+      {
+        "battery_id": "pro_range_4200_35c",
+        "battery_pair_price_inr": 11958,
+        "capacity_ah": 4.2,
+        "continuous_C": 35,
+        "usable_energy_wh": 158.5,
+        "current_cap_a": 147.0,
+        "power_cap_w": 6527.0,
+        "under_12000": true,
+        "max_range_km": 90.74,
+        "max_range_speed_kmh": 300.0,
+        "note": "range = speed x energy / electrical power, parasite+induced drag, ideal disk"
+      },
+      {
+        "battery_id": "liion_prange_p50b_6s1p_5000_12c",
+        "battery_pair_price_inr": 11658,
+        "capacity_ah": 5.0,
+        "continuous_C": 12,
+        "usable_energy_wh": 188.7,
+        "current_cap_a": 60.0,
+        "power_cap_w": 2664.0,
+        "under_12000": true,
+        "max_range_km": 106.03,
+        "max_range_speed_kmh": 300.0,
+        "note": "range = speed x energy / electrical power, parasite+induced drag, ideal disk"
+      },
+      {
+        "battery_id": "liion_prange_nmc_6s2p_10000_3c",
+        "battery_pair_price_inr": 12278,
+        "capacity_ah": 10.0,
+        "continuous_C": 3,
+        "usable_energy_wh": 377.4,
+        "current_cap_a": 30.0,
+        "power_cap_w": 1332.0,
+        "under_12000": false,
+        "max_range_km": 190.24,
+        "max_range_speed_kmh": 320.0,
+        "note": "range = speed x energy / electrical power, parasite+induced drag, ideal disk"
+      },
+      {
+        "battery_id": "liion_samsung_6s2p_10000_9c",
+        "battery_pair_price_inr": 16478,
+        "capacity_ah": 10.0,
+        "continuous_C": 9,
+        "usable_energy_wh": 377.4,
+        "current_cap_a": 90.0,
+        "power_cap_w": 3996.0,
+        "under_12000": false,
+        "max_range_km": 190.24,
+        "max_range_speed_kmh": 320.0,
+        "note": "range = speed x energy / electrical power, parasite+induced drag, ideal disk"
+      }
+    ],
+    "bestRange": {
+      "battery_id": "liion_prange_nmc_6s2p_10000_3c",
+      "battery_pair_price_inr": 12278,
+      "capacity_ah": 10.0,
+      "continuous_C": 3,
+      "usable_energy_wh": 377.4,
+      "current_cap_a": 30.0,
+      "power_cap_w": 1332.0,
+      "under_12000": false,
+      "max_range_km": 190.24,
+      "max_range_speed_kmh": 320.0,
+      "note": "range = speed x energy / electrical power, parasite+induced drag, ideal disk"
+    },
+    "bestValueUnder12000": {
+      "battery_id": "liion_prange_p50b_6s1p_5000_12c",
+      "battery_pair_price_inr": 11658,
+      "capacity_ah": 5.0,
+      "continuous_C": 12,
+      "usable_energy_wh": 188.7,
+      "current_cap_a": 60.0,
+      "power_cap_w": 2664.0,
+      "under_12000": true,
+      "max_range_km": 106.03,
+      "max_range_speed_kmh": 300.0,
+      "note": "range = speed x energy / electrical power, parasite+induced drag, ideal disk"
+    }
+  },
+  "newCloudSpendUsd": 0
+}

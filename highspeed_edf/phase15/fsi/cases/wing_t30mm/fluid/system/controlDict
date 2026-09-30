@@ -1,0 +1,38 @@
+FoamFile
+{
+ version 2.0;
+ format ascii;
+ class dictionary;
+ location "system";
+ object controlDict;
+}
+
+
+application rhoPimpleFoam;
+startFrom startTime;
+startTime 0;
+stopAt endTime;
+endTime 0.001;
+deltaT 1e-05;
+adjustTimeStep no;
+writeControl adjustableRunTime;
+writeInterval 0.0005;
+purgeWrite 0;
+writeFormat ascii;
+writePrecision 8;
+writeCompression off;
+timeFormat general;
+timePrecision 8;
+runTimeModifiable true;
+libs ("libpreciceAdapterFunctionObject.so");
+functions
+{
+  preCICE_Adapter { type preciceAdapterFunctionObject; errors strict; }
+  wingForces
+  {
+    type forces; libs ("libforces.so"); patches (fsi);
+    p p; U U; rho rho; rhoInf 0.909;
+    CofR (0 0 0); writeControl timeStep; writeInterval 1;
+  }
+}
+

@@ -1,0 +1,15 @@
+component,massKg,cgXmm,cgYmm,cgZmm,evidence
+motors_fixed_6x0.28kg,1.6800000000000002,0.0,0.0,122.0,measured/source mass
+batteries_fixed_2x0.713kg,1.426,0.0,0.0,-257.5,measured/source mass
+ESC_board_bare_csv,0.0701629936219608,0.0,56.0,220.0,measured/source mass
+flight_board_bare_csv,0.05042232561333333,0.0,56.0,235.0,measured/source mass
+estimated_populated_parts,0.2,0.0,56.0,230.0,CAD volume/material or analyst estimate
+estimated_heatspreaders,0.08235,0.0,56.0,230.0,CAD volume/material or analyst estimate
+6061_rotor_hub_blade_solids,0.3182700814686347,0.0,0.0,122.0,CAD volume/material or analyst estimate
+6061_stator_vane_and_rail_solids,0.0536961626865937,0.0,0.0,122.0,CAD volume/material or analyst estimate
+composite_CGskin,0.22418207270526141,0.0,0.0,0.0,CAD volume/material or analyst estimate
+printed_PLA_panel_core,0.3088730779494712,0.0,0.0,0.0,CAD volume/material or analyst estimate
+estimated_gearboxes_fixed_ratios_6x0.12kg,0.72,0.0,0.0,122.0,CAD volume/material or analyst estimate
+estimated_harness,0.25,0.0,0.0,110.0,CAD volume/material or analyst estimate
+estimated_mounts,0.35,0.0,0.0,80.0,CAD volume/material or analyst estimate
+TOTAL_SCREEN_NOT_WEIGHED,5.733956714045254,0.0,3.935219430921987,20.70306645533664,includes explicitly estimated gears/population/harness/mounts

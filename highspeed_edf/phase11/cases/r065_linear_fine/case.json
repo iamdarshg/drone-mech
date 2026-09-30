@@ -1,0 +1,35 @@
+{
+  "id": "r065_linear_fine",
+  "turnRadiusM": 0.065,
+  "transitionProfile": "linear",
+  "meshLevel": "fine",
+  "caseId": "r065_linear_fine",
+  "slotWidthM": 0.05,
+  "slotLengthM": 0.12,
+  "outerDiameterM": 0.09,
+  "boreDiameterM": 0.088,
+  "hubDiameterM": 0.032,
+  "transitionLengthM": 0.12,
+  "maxCellSizeM": 0.0045,
+  "totalPressurePa": 90037.94841092758,
+  "totalTemperatureK": 288.55693507850793,
+  "targetMassFlowKgPerS": 0.858742049399817,
+  "targetRecovery": 0.98,
+  "meshEvidence": {
+    "nodeCount": 15812,
+    "tetraCellCount": 71982,
+    "minSICN": 0.37761121883026716,
+    "p10SICN": 0.7462698738366121,
+    "cellsSICNBelow0p05": 0,
+    "minQualityCellCentroidM": [
+      -0.046945580489395344,
+      0.01974019851307974,
+      0.01975529389599402
+    ],
+    "physicalFaceCounts": {
+      "inlet": 1,
+      "outlet": 1,
+      "walls": 242
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "r030_smoothstep_medium",
+  "turnRadiusM": 0.03,
+  "transitionProfile": "smoothstep",
+  "meshLevel": "medium",
+  "caseId": "r030_smoothstep_medium",
+  "radiusMm": 30.0,
+  "targetMassFlowKgPerS": 0.4293710246999085,
+  "targetBranchCount": 4,
+  "inletVelocityMagnitudeMs": 144.26631472376675,
+  "inletStaticPressurePa": 79224.5198420509,
+  "inletStaticTemperatureK": 278.19897376565706,
+  "outletStaticPressurePa": 70108.26833969312,
+  "freestreamTotalPressurePa": 90037.94841092758,
+  "completeProjectedAreaCm2": 67.85874663337762,
+  "projectedAreaGatePass": true,
+  "turbulenceInitialK": 78.04788586491347,
+  "turbulenceInitialOmega": 9216.836759592037,
+  "meshEvidence": {
+    "nodes": 1934,
+    "volumeCells": 6909,
+    "tetraCells": 6909,
+    "minSICN": 0.04260191990934673,
+    "meanSICN": 0.7777265865317547,
+    "cellsSICNBelow0p05": 4,
+    "fluidVolumeM3": 0.00046495828657874746,
+    "inletSectionAreaM2": 0.003,
+    "outletSectionAreaM2": 0.0027584683579246214,
+    "outletSectionAnalyticAreaM2": 0.002778738702100172,
+    "outletSectionAreaErrorFraction": 0.0072948003927934355,
+    "inletSectionDimensionsMm": [
+      25.0,
+      120.0
+    ],
+    "outletSection": "semicircular annulus, 90 mm OD / 32 mm ID",
+    "geometryShapeChecks": {
+      "singleFusedFluidVolume": true,
+      "positiveFluidVolume": true,
+      "matchingSlotAndTurnHeight": true,
+      "smoothstepSectionCorrespondence": true,
+      "physicalFaceCounts": {
+        "inlet": 1,
+        "outlet": 1,
+        "walls": 130
+      }
+    }
+  },
+  "dictionaryPreflight": {
+    "allRequiredFilesPresent": true,
+    "missing": [],
+    "braceBalance": {
+      "0/p": 0,
+      "0/U": 0,
+      "0/T": 0,
+      "0/k": 0,
+      "0/omega": 0,
+      "0/nut": 0,
+      "0/alphat": 0,
+      "constant/thermophysicalProperties": 0,
+      "constant/turbulenceProperties": 0,
+      "system/controlDict": 0,
+      "system/fvSchemes": 0,
+      "system/fvSolution": 0,
+      "system/changeDictionaryDict": 0,
+      "system/meshQualityDict": 0
+    },
+    "allBracesBalanced": true,
+    "directWallPatchTypeReplacementValid": true,
+    "pressureBoundaryConditionsUseStaticPressureNotTargetRecovery": true,
+    "fixedInletVelocityAndPressureOutletVelocityConditionsPresent": true,
+    "unresolvedTemplateTokens": []
+  }
+}

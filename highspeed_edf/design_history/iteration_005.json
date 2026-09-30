@@ -1,0 +1,23 @@
+{
+  "iteration": 5,
+  "accepted": true,
+  "phase": "phase4-ross-preparation",
+  "sourceClass": "application-specific-input-preparation-and-local-schema-validation",
+  "requirementsRevision": 2,
+  "designRevision": 2,
+  "decision": "Prepared three representative ROSS Campbell cases with declared forcing lines; no GCP/native run occurred because current remote authorization/image policy is absent in this process environment.",
+  "costBrief": {
+    "machineType": "e2-standard-2",
+    "maxWallTimeSecondsPerCase": 1800,
+    "referenceRateUsdPerHour": 0.10,
+    "plannedMaximumComputeUsd": 0.15,
+    "caseCount": 3,
+    "gpu": false
+  },
+  "limitations": [
+    "FA4119 shaft and bearing geometry unavailable; rotor models use explicit assumptions.",
+    "Full Campbell plots and forced-response amplitudes are not published by the current participant."
+  ],
+  "jobPlan": "../results/phase4_ross_job_plan.json",
+  "preJobBrief": "../reports/phase4-prejob-brief.md"
+}

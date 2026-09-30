@@ -1,0 +1,131 @@
+{
+  "phase": 11,
+  "status": "bounded-geometry-screen-with-openfoam-attempt",
+  "objective": "Find an inlet/fuselage/EDF geometry satisfying the complete projected-area, 720 km/h, low-speed T/W, stock, and structural gates without changing the locked powertrain.",
+  "fixedPowertrain": {
+    "motorCount": 6,
+    "motor": "stock Flycci FA4119 KV350",
+    "battery": "2x Turnigy Rapid 6S 5000mAh in series; 12S1P; 5Ah",
+    "softBatteryCurrentAperMotor": 55.0,
+    "initialHardBatteryCurrentAperMotor": 65.0,
+    "provisionalShortBatteryCurrentAperMotor": 75.0,
+    "escCurrentLimitA": 60.0,
+    "changesPermitted": false
+  },
+  "sources": {
+    "phase9Config": "configs/phase9_geometry_mass_screen.json",
+    "phase9Design": "designs/design_state_r4_geometry_candidate.json",
+    "phase9Meanline": "results/phase9_720_meanline_summary.json",
+    "phase9MassBudget": "results/phase9_mass_budget.csv",
+    "phase9BoardMass": "results/phase9_control_board_mass.csv",
+    "phase10GeometryAudit": "deliverables/phase10/reports/phase10_geometry_audit.json"
+  },
+  "operatingPoint": {
+    "altitudeM": 3000.0,
+    "speedKmh": 720.0,
+    "gamma": 1.4,
+    "gasConstantJPerKgK": 287.05,
+    "cpJPerKgK": 1004.685,
+    "freestreamTotalPressurePa": 90037.94841092758,
+    "freestreamTotalTemperatureK": 288.55693507850793,
+    "targetTotalPressureRecovery": 0.98
+  },
+  "geometry": {
+    "ductCount": 2,
+    "outerDiameterM": 0.09,
+    "boreDiameterM": 0.088,
+    "hubDiameterM": 0.032,
+    "slotWidthM": 0.05,
+    "slotLengthM": 0.12,
+    "quarterTurnDeg": 90.0,
+    "turnRadiiM": [0.065, 0.07, 0.075],
+    "transitionLengthM": 0.12,
+    "transitionProfiles": ["linear"],
+    "stockWidthMm": 50.0,
+    "stockThicknessMm": 16.0,
+    "material": "6061-T6 aluminum",
+    "fuselageConcept": {
+      "bodyHalfSpanMm": 60.0,
+      "bodyMaxThicknessMm": 5.0,
+      "airframeMassDensityKgM3": 2700.0,
+      "projectionIncludes": ["both fans", "inlet ducts", "boards edge-on", "supports", "fairings"]
+    },
+    "projectedAreaGateCm2": 75.0,
+    "structureAndControlsAllowanceCm2": 10.0,
+    "turnProjectionLowerBoundFormula": "fanUnion + 2*max(0,R-OD/2)*slotWidth + reserve; converts mm2 to cm2",
+    "turnSelfIntersectionConstraint": "R must exceed half the 120 mm slot radial section (60 mm) for the current un-split full-height sweep"
+  },
+  "performanceGates": {
+    "speedTargetKmh": 720.0,
+    "maxCdAM2": 0.0009,
+    "minimumLowSpeedTWR": 1.0,
+    "healthyTWRScreenTarget": 1.1,
+    "maxAllUpMassForHealthyTWRKg": 10.68,
+    "minimum6061T6CentrifugalSafetyFactor": 2.5,
+    "minimumPressureRecovery": 0.98,
+    "pressureRecoveryGridTolerance": 0.005
+  },
+  "cam": {
+    "router": "TwoTrees 3018 Pro; GRBL; no machine execution",
+    "perEdfStock": {
+      "rotorBillet": [250.0, 50.0, 16.0],
+      "statorPlate": [250.0, 100.0, 5.0]
+    },
+    "roughToolMm": 2.0,
+    "finishToolMm": 0.5,
+    "finishDepthMm": 0.5,
+    "roughFeedsMmMin": {"rotor": 55.0, "stator": 60.0},
+    "roughStepdownMm": {"rotor": 0.2, "stator": 0.25},
+    "clearanceMm": 2.5,
+    "note": "NC is 2.5D blank/perimeter machining only; full twisted rotor surfaces and duct shells require separate processes."
+  },
+  "mesh": {
+    "method": "Gmsh OpenCASCADE quarter-torus plus loft; MSH2; changeDictionary sets walls patch type; checkMesh gates rhoSimpleFoam",
+    "minimumCells": 10000,
+    "maxNonOrthogonalityDeg": 70,
+    "maxSecondsPerCase": 45,
+    "meshLevels": {
+      "coarse": {"maxCellSizeM": 0.008},
+      "medium": {"maxCellSizeM": 0.006},
+      "fine": {"maxCellSizeM": 0.0045}
+    }
+  },
+  "solver": {
+    "family": "OpenFOAM rhoSimpleFoam only",
+    "turbulenceModel": "kOmegaSST",
+    "model": "steady compressible ideal-gas RANS; kOmegaSST",
+    "maxIterations": 250,
+    "maxSecondsPerCase": 75,
+    "residualTargets": {"p": 0.00001, "U": 0.00001, "energy": 0.00001, "k": 0.0001, "omega": 0.0001},
+    "massImbalanceLimitFraction": 0.005,
+    "meanlineMassFlowToleranceFraction": 0.05,
+    "pressureRecoveryGridAgreementLimitFraction": 0.005,
+    "gridConvergenceCaseIds": ["r065_linear_coarse", "r065_linear_medium", "r065_linear_fine"]
+  },
+  "cloudBudget": {
+    "approvedRemainingUsd": 0.11586,
+    "maxInstancesTotal": 1,
+    "maxConcurrentInstances": 1,
+    "runnerBudgetSeconds": 250,
+    "machineType": "e2-standard-4",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maxRunDurationSeconds": 600,
+    "runnerBudgetSeconds": 300,
+    "terminationAction": "DELETE",
+    "bootDisk": {"type": "pd-standard", "sizeGb": 12, "autoDelete": true},
+    "conservativeComputeRateUsdPerHour": 0.2,
+    "computeMaximumUsd": 0.03334,
+    "storageNetworkArtifactReserveUsd": 0.02,
+    "contingencyUsd": 0.06252,
+    "maximumNewAggregateUsd": 0.11586,
+    "budgetCalculation": "600 seconds / 3600 x $0.20 per hour = $0.03334 compute; $0.02 temporary disk/network/artifact allowance and $0.06252 contingency; total <= $0.11586. No GPU, no second worker, no solver family fallback."
+  },
+  "cases": [
+    {"id": "r065_linear_coarse", "turnRadiusM": 0.065, "transitionProfile": "linear", "meshLevel": "coarse"},
+    {"id": "r065_linear_medium", "turnRadiusM": 0.065, "transitionProfile": "linear", "meshLevel": "medium"},
+    {"id": "r065_linear_fine", "turnRadiusM": 0.065, "transitionProfile": "linear", "meshLevel": "fine"},
+    {"id": "r070_linear_medium", "turnRadiusM": 0.07, "transitionProfile": "linear", "meshLevel": "medium"},
+    {"id": "r075_linear_medium", "turnRadiusM": 0.075, "transitionProfile": "linear", "meshLevel": "medium"}
+  ]
+}

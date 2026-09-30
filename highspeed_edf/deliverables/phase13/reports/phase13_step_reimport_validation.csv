@@ -1,0 +1,13 @@
+file,validCompound,solidCount,allSolidsValidAndPositiveVolume,volumeMm3,bboxXmm,bboxYmm,bboxZmm,reimported
+phase13_full_assembly_R030.step,True,172,True,1259135.1180675528,150.0,102.0,890.0,True
+phase13_EDF_A_R030.step,True,76,True,106937.57960909199,90.0,90.0,202.0,True
+phase13_EDF_B_R030.step,True,76,True,106937.57960909072,90.0,90.0,202.0,True
+phase13_split_inlet_R030_4x25x120.step,True,4,True,2295.390001307047,62.0,29.000000000000213,274.0,True
+phase13_channel01_R1_rotor_hub_300x50x16.step,True,17,True,336322.3770608181,300.0,50.0,16.0,True
+phase13_channel02_R2_rotor_hub_300x50x16.step,True,16,True,336959.1401327578,300.0,50.0,16.0,True
+phase13_channel03_R3_rotor_hub_300x50x16.step,True,15,True,336266.3858119346,300.0,50.0,16.0,True
+phase13_EDF_A_stator_set_250x100x5.step,True,64,True,153907.80834958932,250.0,100.0,5.0,True
+phase13_channel04_R1_rotor_hub_300x50x16.step,True,17,True,336322.3770608181,300.0,50.0,16.0,True
+phase13_channel05_R2_rotor_hub_300x50x16.step,True,16,True,336959.1401327578,300.0,50.0,16.0,True
+phase13_channel06_R3_rotor_hub_300x50x16.step,True,15,True,336266.3858119346,300.0,50.0,16.0,True
+phase13_EDF_B_stator_set_250x100x5.step,True,64,True,153907.80834958932,250.0,100.0,5.0,True

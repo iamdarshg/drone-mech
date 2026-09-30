@@ -1,0 +1,44 @@
+{
+  "phase": 3,
+  "altitudeM": 3000,
+  "speedsKmh": [500, 550, 600, 650, 700],
+  "cdAReferenceM2": 0.00315,
+  "inletRecovery": 0.98,
+  "hubDiameterMm": 32,
+  "tipDiameterMm": 80,
+  "tipClearanceMm": 0.30,
+  "axialVelocityContinuityAreaFraction": 1.0,
+  "rotorRows": [
+    {"id":"R1","chordMm":16.0,"bladeCount":13,"gearRatio":2.35,"statorId":"S1"},
+    {"id":"R2","chordMm":15.0,"bladeCount":12,"gearRatio":2.65,"statorId":"S2"},
+    {"id":"R3","chordMm":14.0,"bladeCount":11,"gearRatio":2.95,"statorId":"S3"}
+  ],
+  "statorRows": [
+    {"id":"S1","chordMm":5.0,"vaneCount":23,"targetExitSwirlDeg":0.0},
+    {"id":"S2","chordMm":5.0,"vaneCount":21,"targetExitSwirlDeg":0.0},
+    {"id":"S3","chordMm":5.0,"vaneCount":19,"targetExitSwirlDeg":0.0}
+  ],
+  "rotorSpeedScheduleRpm": {
+    "500": [24250, 27270, 30300],
+    "550": [25250, 28785, 31815],
+    "600": [27270, 30300, 33330],
+    "650": [29290, 32320, 35350],
+    "700": [31310, 34340, 36360]
+  },
+  "workSplit": "proportional-to-individual-rotor-blade-speed-squared; gives equal target psi initially",
+  "gearboxEfficiency": 0.95,
+  "statorSwirlPolicy": "complete-deswirl-after-each-rotor-for-first-screen",
+  "screeningLimits": {
+    "maxRelativeMach": 0.90,
+    "maxDiffusionFactor": 0.55,
+    "minDeHaller": 0.72,
+    "maxIncidenceDeg": 8.0,
+    "maxTurningDeg": 90.0,
+    "maxLoadingCoefficient": 0.50,
+    "minReaction": 0.15,
+    "maxClearanceLossFraction": 0.35,
+    "minReynolds": 50000,
+    "maxExitMach": 1.0
+  },
+  "evidenceClass": "application-specific initial meanline design inputs; RPM/chords/counts assumed screening candidates"
+}

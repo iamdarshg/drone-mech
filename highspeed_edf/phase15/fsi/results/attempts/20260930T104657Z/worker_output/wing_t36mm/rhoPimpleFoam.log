@@ -1,0 +1,102 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2606                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _481094f-20260618 OPENFOAM=2606 version=2606
+Arch   : "LSB;label=32;scalar=64"
+Exec   : rhoPimpleFoam
+Date   : Sep 30 2026
+Time   : 10:52:46
+Host   : hsedf-fsi-20260930-104657
+PID    : 7293
+--> FOAM Warning : 
+    From Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 558
+    PWD is not the cwd() - reverting to physical description
+I/O    : uncollated
+--> FOAM Warning : 
+    From Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 558
+    PWD is not the cwd() - reverting to physical description
+Case   : /opt/phase15-fsi/phase15/fsi/cases/wing_t36mm/fluid
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+memory pool : not available
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+
+--> FOAM Warning : allowSystemOperations : Allowing user-supplied system call operations.
+                   This can be a security risk if running untrusted cases
+                   through e.g. 'coded' on-the-fly-compilation functionality.
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Selecting dynamicFvMesh dynamicMotionSolverFvMesh
+Selecting motion solver: displacementLaplacian
+Applying motion to entire mesh
+Selecting motion diffusion: quadratic
+Selecting motion diffusion: inverseDistance
+Selecting patchDistMethod meshWave
+
+PIMPLE: Operating solver in PISO mode
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+
+
+--> FOAM FATAL ERROR: (openfoam-2606)
+Invalid wall function specification
+    Patch type for patch fsi must be wall
+    Current patch type is patch
+
+
+
+    From virtual void Foam::nutWallFunctionFvPatchScalarField::checkType()
+    in file derivedFvPatchFields/wallFunctions/nutWallFunctions/nutWallFunction/nutWallFunctionFvPatchScalarField.C at line 49.
+
+FOAM aborting
+
+[stack trace]
+=============
+#1  Foam::error::simpleExit(int, bool) platforms/linux64GccDPInt32Opt/lib/libOpenFOAM.so [0x745a1626c318]
+#2  Foam::nutWallFunctionFvPatchScalarField::nutWallFunctionFvPatchScalarField(Foam::fvPatch const&, Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) platforms/linux64GccDPInt32Opt/lib/libturbulenceModels.so [0x745a19359aeb]
+#3  Foam::nutkWallFunctionFvPatchScalarField::nutkWallFunctionFvPatchScalarField(Foam::fvPatch const&, Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) platforms/linux64GccDPInt32Opt/lib/libturbulenceModels.so [0x745a1935a1e6]
+#4  Foam::fvPatchField<double>::adddictionaryConstructorToTable<Foam::nutkWallFunctionFvPatchScalarField>::New(Foam::fvPatch const&, Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) platforms/linux64GccDPInt32Opt/lib/libturbulenceModels.so [0x745a1935c417]
+#5  platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so(+0x89bad) [0x745a18e9abad]
+#6  platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so(+0x7e3b1) [0x745a18e8f3b1]
+#7  platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so(+0x17166e) [0x745a18f8266e]
+#8  platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so(+0x7bbd9) [0x745a18e8cbd9]
+#9  platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so(+0x7bce8) [0x745a18e8cce8]
+#10  Foam::RASModel<Foam::EddyDiffusivity<Foam::ThermalDiffusivity<Foam::CompressibleTurbulenceModel<Foam::fluidThermo>>>>::adddictionaryConstructorToTable<Foam::RASModels::kOmegaSST<Foam::EddyDiffusivity<Foam::ThermalDiffusivity<Foam::CompressibleTurbulenceModel<Foam::fluidThermo>>>>>::New(Foam::geometricOneField const&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::fluidThermo const&, Foam::word const&) platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so [0x745a18e7e427]
+#11  platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so(+0x7490b) [0x745a18e8590b]
+#12  Foam::TurbulenceModel<Foam::geometricOneField, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>, Foam::compressibleTurbulenceModel, Foam::fluidThermo>::adddictionaryConstructorToTable<Foam::RASModel<Foam::EddyDiffusivity<Foam::ThermalDiffusivity<Foam::CompressibleTurbulenceModel<Foam::fluidThermo>>>>>::NewTurbulenceModel(Foam::geometricOneField const&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::fluidThermo const&, Foam::word const&) platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so [0x745a18e85d6d]
+#13  rhoPimpleFoam(+0x7f228) [0x5b9a5fb73228]
+#14  rhoPimpleFoam(+0x1c060) [0x5b9a5fb10060]
+#15  /usr/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x745a15829d90]
+#16  __libc_start_main /usr/lib/x86_64-linux-gnu/libc.so.6 [0x745a15829e40]
+#17  rhoPimpleFoam(+0x2c575) [0x5b9a5fb20575]
+=============

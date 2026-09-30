@@ -1,0 +1,7 @@
+RUN_ID=20260923T185355Z
+BUCKET=aero-governed-blockers-988177451335-20260919
+PLAN_OBJECT=highspeed-edf-phase4-20260923T185355Z-plan.json
+RUNNER_OBJECT=highspeed-edf-phase4-20260923T185355Z-runner.py
+RESULT_OBJECT=highspeed-edf-phase4-20260923T185355Z-evidence.json
+ARCHIVE_OBJECT=highspeed-edf-phase4-20260923T185355Z-cases.tar.gz
+FAILURE_OBJECT=highspeed-edf-phase4-20260923T185355Z-failure.log

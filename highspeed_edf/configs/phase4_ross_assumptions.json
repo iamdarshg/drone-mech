@@ -1,0 +1,76 @@
+{
+  "phase": 4,
+  "analysis": "campbell",
+  "representativeRotors": ["R1", "R2", "R3"],
+  "symmetry": "one representative per stage; left/right copies assumed identical",
+  "rotorSource": "Phase-3 preliminary row geometry; not CAD or measured mass properties",
+  "shaft": {
+    "material": "steel",
+    "youngsModulusPa": 211000000000,
+    "shearModulusPa": 81200000000,
+    "densityKgM3": 7810,
+    "lengthM": 0.060,
+    "outerDiameterM": 0.006,
+    "segments": 4,
+    "basis": "assumed output shaft/support span; FA4119 rotor/output shaft geometry not specified by decision record"
+  },
+  "equivalentFanDisk": {
+    "positionNode": 2,
+    "outerDiameterM": 0.080,
+    "innerDiameterM": 0.032,
+    "nominalWidthM": 0.002,
+    "widthSensitivityM": [0.001, 0.002, 0.003],
+    "materialApproximation": "steel annulus used as a lumped mass/inertia proxy for hub, blades and attachments; carbon blades are not modeled anisotropically",
+    "nominalMassKgCalculatedFromSteelRing": 0.066
+  },
+  "bearings": {
+    "positions": [0, 4],
+    "nominalRadialStiffnessNPerM": 10000000,
+    "nominalRadialDampingNsPerM": 200,
+    "stiffnessSensitivityNPerM": [1000000, 10000000, 100000000],
+    "basis": "assumed support values for screening only; selected fan-shaft bearings not specified"
+  },
+  "effects": {
+    "gyroscopic": true,
+    "shearEffects": true,
+    "rotaryInertia": true,
+    "forcingWarningMarginHz": 5,
+    "forcingCriticalMarginHz": 2
+  },
+  "declaredForcingFamilies": [
+    "1x synchronous rotation",
+    "rotor blade passing order from Phase-3 blade count",
+    "stator passing order from Phase-3 vane count",
+    "7x electrical fundamental order from FA4119 14-pole motor",
+    "42x electrical sixth-harmonic/torque-ripple proxy",
+    "20 kHz and 40 kHz fixed PWM lines from controller design range"
+  ],
+  "unresolvedForcingData": [
+    "gear tooth count and mesh frequency",
+    "selected bearing rolling-element geometry and characteristic frequencies",
+    "measured vibration/unbalance amplitudes and phase",
+    "measured shaft, hub, rotor, and blade masses/inertias"
+  ],
+  "gcpPlan": {
+    "workerCount": 1,
+    "machineType": "e2-standard-2",
+    "vCpu": 2,
+    "memoryMiB": 4096,
+    "maximumWorkerLifetimeSeconds": 1200,
+    "nativeJobTimeoutSecondsPerCase": 600,
+    "provisioningModel": "SPOT",
+    "bootDiskSizeGiB": 20,
+    "bootDiskType": "pd-standard",
+    "bootDiskAutoDelete": true,
+    "providerNeutralReferenceRateUsdPerHour": 0.10,
+    "caseCount": 3,
+    "plannedMaximumComputeCostUsd": 0.034,
+    "targetTotalSpendUsd": 0.10,
+    "hardTotalSpendUsd": 0.12,
+    "estimatedBootDiskAndStorageUsd": 0.005,
+    "estimatedTotalSpendUsd": 0.04,
+    "gpu": false,
+    "billingNote": "One reusable ephemeral Spot VM; 20-minute max lifetime. Conservative estimate uses $0.10/h reference rate ($0.034 VM), with $0.005 storage/I/O allowance and rounded total $0.04. Target <=$0.10 and hard cap $0.12; actual regional billing must be checked from the GCP receipt."
+  },
+  "evidenceClass": "application-specific assumed ROSS model; requires measured/CAD support data before design acceptance"
+}

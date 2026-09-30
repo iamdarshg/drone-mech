@@ -1,0 +1,55 @@
+{
+  "phase": 11,
+  "status": "execution-complete-solver-blocked",
+  "solver": "OpenFOAM rhoSimpleFoam only",
+  "cases": [
+    "r065_linear_coarse",
+    "r065_linear_medium",
+    "r065_linear_fine",
+    "r070_linear_medium",
+    "r075_linear_medium"
+  ],
+  "worker": {
+    "instancesTotal": 1,
+    "instancesConcurrent": 1,
+    "machineType": "e2-standard-4",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maximumLifetimeSeconds": 600,
+    "terminationAction": "DELETE",
+    "bootDiskGb": 12,
+    "bootDiskAutoDelete": true,
+    "runnerBudgetSeconds": 250,
+    "caseTimeoutSeconds": 45,
+    "gpuCount": 0
+  },
+  "cost": {
+    "remainingApprovedUsd": 0.11586,
+    "computeRateCeilingUsdPerHour": 0.2,
+    "computeCeilingUsd": 0.03334,
+    "temporaryDiskNetworkArtifactsReserveUsd": 0.02,
+    "contingencyReserveUsd": 0.06252,
+    "maximumNewAggregateUsd": 0.11586,
+    "phase10PriorEnvelopeEstimateUsd": 0.08414,
+    "combinedPriorPlusMaximumNewEnvelopeUsd": 0.2
+  },
+  "launchGates": {
+    "allFiveGmshMeshesGenerated": true,
+    "localGmshMinimumSICNByCase": {
+      "r065_linear_coarse": 0.3127707753,
+      "r065_linear_medium": 0.3481236524,
+      "r065_linear_fine": 0.3776112188,
+      "r070_linear_medium": 0.3807678568,
+      "r075_linear_medium": 0.3267871848
+    },
+    "areaPassingVariants": 0,
+    "interpretation": "CFD is limited to single-branch inlet recovery characterization because the unsplit-turn family remains over the complete projected-area gate. No overall aircraft-best claim unless all system gates pass."
+  },
+  "vmAutoDelete": true,
+  "cncExecution": false,
+  "actualInstanceCount": 1,
+  "actualInstanceDeleted": true,
+  "rhoSimpleFoamConvergedCases": 0,
+  "validPressureRecoveryResults": 0,
+  "furtherLaunches": 0
+}

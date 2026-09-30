@@ -1,0 +1,72 @@
+{
+  "phase": 5,
+  "sourceClass": "application-specific reduced-order estimate",
+  "altitudeM": 3000,
+  "designCdAReferenceM2": 0.00315,
+  "motor": {
+    "identity": "Flycci FA4119 stock 350 Kv",
+    "polePairs": 7,
+    "KtNmPerAIdealFromKv": 0.02728,
+    "motorEtaAssumed": 0.92,
+    "gearboxEtaAssumed": 0.95,
+    "escEtaAssumed": 0.97,
+    "softBatteryCurrentA": 55,
+    "initialHardBatteryCurrentA": 65,
+    "provisionalShortBatteryCurrentA": 75,
+    "escPhaseCurrentContinuousARms": 60,
+    "escPhaseCurrentBurstARms": 90,
+    "manufacturerReferenceElectricalPowerW": 3470,
+    "manufacturerReferenceBatteryCurrentA": 74,
+    "manufacturerReferenceSpeedRpm": 11256,
+    "manufacturerReferencePropeller": "HQ 13x9 three blade; not an EDF validation point"
+  },
+  "battery": {
+    "topology": "two 6S 5Ah packs in series; equivalent 12S1P, 5Ah",
+    "capacityAh": 5.0,
+    "seriesCells": 12,
+    "nominalVoltageV": 44.4,
+    "fullyChargedVoltageV": 50.4,
+    "initialSoc": 0.95,
+    "packResistanceSensitivityOhm": [0.01, 0.02, 0.03],
+    "packResistanceBasis": "assumed sensitivity only; no Turnigy DCIR or discharge curve supplied",
+    "initialCellOrPackTemperatureK": 318.15,
+    "ambientAt3kmK": 268.65,
+    "lowerVoltageCutoffV": 38.4,
+    "usableEnergyFractionSensitivity": [0.7, 0.8, 0.9],
+    "genericLipoPackOcvVBySoc": [
+      [0.0, 39.6], [0.1, 42.0], [0.2, 43.2], [0.3, 44.4], [0.4, 45.0],
+      [0.5, 45.6], [0.6, 46.2], [0.7, 47.0], [0.8, 48.0], [0.9, 49.2], [1.0, 50.4]
+    ],
+    "ocvCurveEvidence": "analyst generic LiPo curve; not Turnigy-specific or measured",
+    "pybammEquivalentCircuit": {
+      "model": "Thevenin one-RC pack-equivalent",
+      "r1FractionOfR0": 0.2,
+      "rcTimeConstantSeconds": 5.0,
+      "entropicHeat": 0.0,
+      "packThermalCapacityJPerK": 900,
+      "cellToJigThermalConductanceWPerK": 5,
+      "jigThermalCapacityJPerK": 1500,
+      "jigToAirThermalConductanceWPerK": 10
+    }
+  },
+  "simulation": {
+    "durationSeconds": [5, 10, 20, 30],
+    "speedsKmhForPyBaMM": [500, 600, 650, 700],
+    "ambientScenariosC": [45, -4.5],
+    "initialTemperatureScenariosC": [45, 25],
+    "machineThermalSensitivity": {
+      "motorThermalCapacityJPerK": [100, 180],
+      "motorThetaKPerW": [0.15, 0.35],
+      "escThermalCapacityJPerK": [60, 100],
+      "escThetaKPerW": [0.30, 0.60],
+      "gearboxThermalCapacityJPerK": [60, 120],
+      "gearboxThetaKPerW": [0.20, 0.40]
+    }
+  },
+  "workbenchContractLimitations": {
+    "pybammParameterSets": ["Chen2020", "Chen2020_composite", "Marquis2019", "ECM_Example"],
+    "participantMaximumDischargeCurrentA": 100,
+    "turnigyCustomParameterSetAvailable": false,
+    "note": "Phase-5 direct PyBaMM overrides are labelled application-specific reduced-order results; not a governed native_solver envelope."
+  }
+}

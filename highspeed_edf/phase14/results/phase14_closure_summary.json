@@ -1,0 +1,81 @@
+{
+  "phase": 14,
+  "status": "coupled-concept-multivariable-screen-180kmh-gate-cost-open",
+  "stock": {
+    "rawStockMassKg": 1.539,
+    "barMassKg": 0.648,
+    "sheetAMassKg": 0.405,
+    "sheetBMassKg": 0.486,
+    "requiredSheetBlanks": 198,
+    "sheetBlankCapacity": 204,
+    "sheetBlankMargin": 6,
+    "hubCapacity": 7,
+    "hubRequired": 6,
+    "stockNestAnalyticalPass": true
+  },
+  "performance": {
+    "isaDensityAtAltitudeKgM3": 0.909128,
+    "effectiveAnnulusDiskAreaM2": 0.0105558,
+    "aggregatePropulsiveEfficiencyCalibrated": 0.253121,
+    "calibrationBasis": "Phase-9 12.93kW bus estimate at 720km/h and CdA=0.00090m2; analyst model calibration, not a measured efficiency",
+    "staticThrustDerivedFromInheritedTwrN": 117.237,
+    "idealDiskPowerCalibratedFromStaticThrustW": 9162.7,
+    "staticTwrAtDesignMass": 1.4064,
+    "staticTwrAt11p5kg": 1.0395,
+    "minimumIdealTwr0To200AtDesignMass": 1.0808,
+    "minimumTwrSpeedKmh0To200": 200,
+    "maximumIdealMassForTwr1Throughout0To200Kg": 9.187,
+    "idealDiskPowerForTwr1At200AtDesignMassW": 8276.9,
+    "estimatedBusPowerForTwr1At200AtDesignMassW": 11896.7,
+    "estimatedBusPowerPerMotorForTwr1At200W": 1982.8,
+    "powerRequirementCaveat": "same drive-efficiency scaling as inherited static screen; ideal disk only, no installed-system losses",
+    "twrClaimStatus": "fixed-power ideal actuator-disk upper-bound; installed fan map, inlet/nozzle losses, and measured mass remain open",
+    "powerAt650W": 9513.5,
+    "powerAt700W": 11882.2,
+    "powerAt720W": 12930.0,
+    "softPowerCapW": 13170
+  },
+  "control": {
+    "actuatorCount": 6,
+    "actuators": [
+      "left elevon",
+      "right elevon",
+      "upper-left vector vane",
+      "upper-right vector vane",
+      "lower-left vector vane",
+      "lower-right vector vane"
+    ],
+    "authorityBandsKmh": {
+      "strong": [
+        0,
+        500
+      ],
+      "medium": [
+        500,
+        700
+      ]
+    },
+    "controlMomentReserveRatios": {
+      "strong": 1.5,
+      "medium": 1.1
+    },
+    "idealizedFourVaneMomentMatrixRank": 3,
+    "rankInterpretation": "geometric controllability only; aerodynamic force magnitude, vane hinge loads, and actuator dynamics are not modeled",
+    "proofStatus": "not modeled; requires flight-dynamics/control-allocation/actuator model and test correlation"
+  },
+  "massBudget": {
+    "inheritedPhase13PlannedMassIncludingPayloadKg": 8.1487740311,
+    "phase14AllUpTargetKg": 8.5,
+    "growthAllowanceForActuatorsAndMassGrowthKg": 0.351226
+  },
+  "limitations": [
+    "flight-ready",
+    "verified 650kmh cruise",
+    "verified TWR >= 1 across 0-180kmh",
+    "verified strong or medium control authority",
+    "qualified rotor containment",
+    "measured CdA or installed pressure recovery",
+    "verified variable-bypass or auxiliary-inlet thrust gain"
+  ],
+  "newCloudSpendUsd": 0
+}

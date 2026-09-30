@@ -1,0 +1,685 @@
+{
+  "study_id": "highspeed-edf",
+  "phase": 4,
+  "run_source": "governed-native-job-manager-local-executor-on-gce-spot-worker",
+  "workbench_commit": "e1dc31833c444ec1047200d32fb094c5a3aa3163",
+  "completed_count": 3,
+  "records": [
+    {
+      "job_id_label": "phase4-r1-campbell",
+      "participant_id": "rotor-campbell",
+      "design_row": "R1",
+      "max_speed_rpm": 31310.0,
+      "started_at_utc": "2026-09-23T19:00:26.796736+00:00",
+      "input_hash": "a29e6ffe7766e522863a8d98351ca101bb229e9af7ce12356d7a9ba171a23da0",
+      "native_job_id": "82a32b2becdc428a957f1b6a78eaf03c",
+      "state": "COMPLETED",
+      "status": {
+        "job_id": "82a32b2becdc428a957f1b6a78eaf03c",
+        "participant_id": "rotor-campbell",
+        "design_id": "phase4-r1-campbell",
+        "owner_id": null,
+        "revision_id": null,
+        "analysis": "campbell",
+        "fidelity": "beam-campbell",
+        "state": "COMPLETED",
+        "error_code": null,
+        "error_detail": null,
+        "run_id": "c2ca7728977b4d298d16c469a9dc05c6",
+        "result_id": "1a3cb9c3df9fbb41dd01c54eea0fb11a093dde593284c2ec17bec8a9a26293f2",
+        "provenance_id": "70dc4288751f466794786a641baa48b8",
+        "input_hash": "de3e5c3eb22cae018d14d4a4f9dc0cacb368b411321d1e3dc1d94aec722f3f8a",
+        "executor": "local",
+        "resume_of": null,
+        "attempt": 1,
+        "checkpoint_id": null,
+        "interruption_reason": null,
+        "created_at": "2026-09-23T19:00:26.796996+00:00",
+        "updated_at": "2026-09-23T19:00:33.756855+00:00"
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "state": "QUEUED",
+          "at": "2026-09-23T19:00:26.796996+00:00",
+          "detail": "input_hash=a29e6ffe7766e522863a8d98351ca101bb229e9af7ce12356d7a9ba171a23da0"
+        },
+        {
+          "sequence": 2,
+          "state": "PREPARING",
+          "at": "2026-09-23T19:00:26.797840+00:00",
+          "detail": "participant=rotor-campbell"
+        },
+        {
+          "sequence": 3,
+          "state": "RUNNING",
+          "at": "2026-09-23T19:00:26.822792+00:00",
+          "detail": "run_id=c2ca7728977b4d298d16c469a9dc05c6"
+        },
+        {
+          "sequence": 4,
+          "state": "PARSING",
+          "at": "2026-09-23T19:00:33.753547+00:00",
+          "detail": "solver output ready"
+        },
+        {
+          "sequence": 5,
+          "state": "VALIDATING",
+          "at": "2026-09-23T19:00:33.754517+00:00",
+          "detail": "parser=ross.rotor:parse_rotor_result"
+        },
+        {
+          "sequence": 6,
+          "state": "COMPLETED",
+          "at": "2026-09-23T19:00:33.756855+00:00",
+          "detail": "run_id=c2ca7728977b4d298d16c469a9dc05c6"
+        }
+      ],
+      "envelope": {
+        "source": "native_solver",
+        "fidelity": "beam-campbell",
+        "units": {
+          "first_critical_rpm": "rpm",
+          "min_forcing_separation_hz": "Hz"
+        },
+        "validity": {
+          "participant_id": "rotor-campbell",
+          "passed": true,
+          "checks": {
+            "criticals_positive": true,
+            "criticals_ascending": true,
+            "screening_plausible": true,
+            "forcing_separation_nonnegative": true
+          },
+          "detail": "native first critical 18432.6 rpm vs screening beam estimate 204115.3 rpm (ratio 0.090); native bearing/gyroscopic modes are authoritative, the beam estimate is a plausibility band only; declared forcing separation 11.234 Hz"
+        },
+        "input_hash": "de3e5c3eb22cae018d14d4a4f9dc0cacb368b411321d1e3dc1d94aec722f3f8a",
+        "solver_identity": "ross",
+        "solver_version": "2.3.0",
+        "run_id": "c2ca7728977b4d298d16c469a9dc05c6",
+        "provenance_id": "70dc4288751f466794786a641baa48b8",
+        "warnings": [
+          "NUMBA_DISABLE_JIT=1 was set for ROSS compatibility; numerics unaffected"
+        ],
+        "scalars": {
+          "first_critical_rpm": 18432.63949,
+          "min_forcing_separation_hz": 11.234218012930512
+        },
+        "artifacts": [
+          {
+            "name": "case.json",
+            "sha256": "9ee1013a92cb5f9ae87b88bacd9b5125733f2f134334502b285cd1cfb7aaf10f",
+            "bytes": 3375
+          },
+          {
+            "name": "result.json",
+            "sha256": "fa5506a03bdb68e3475c9806a180b8efc9c97c3e6f0b7bf365359993640fc0b8",
+            "bytes": 81645
+          },
+          {
+            "name": "run_ross.py",
+            "sha256": "c895997194408f71dadba4ea7982f3393cbbeca53d62779a46645d11848138db",
+            "bytes": 13121
+          },
+          {
+            "name": "solver.log",
+            "sha256": "c107d4b5558f440cc99eaf8729e9c842d01866e0ae9c4d1090c72b0ca3a4a971",
+            "bytes": 980
+          },
+          {
+            "name": "stderr.log",
+            "sha256": "45a604cba955b43936e9a2bcf44a8a87bd252b9b5b1c39fc9f328db81560edbd",
+            "bytes": 230
+          },
+          {
+            "name": "stdout.log",
+            "sha256": "c107d4b5558f440cc99eaf8729e9c842d01866e0ae9c4d1090c72b0ca3a4a971",
+            "bytes": 980
+          }
+        ]
+      },
+      "provenance": [
+        {
+          "sequence": 1,
+          "event_id": "launch-82a32b2becdc428a957f1b6a78eaf03c",
+          "event_type": "native.launch-accepted",
+          "subject_hash": "a29e6ffe7766e522863a8d98351ca101bb229e9af7ce12356d7a9ba171a23da0",
+          "actor": "native-scheduler",
+          "occurred_at": "2026-09-23T19:00:26.796996+00:00",
+          "details": {
+            "attempt": 1,
+            "checkpoint_id": null,
+            "design_id": "phase4-r1-campbell",
+            "job_id": "82a32b2becdc428a957f1b6a78eaf03c",
+            "participant_id": "rotor-campbell",
+            "resume_of": null
+          },
+          "previous_event_hash": null,
+          "event_hash": "dd41305f23abf81cfb08cc6612d2b8b4395ea5165f7f42237e1efa1403194e99",
+          "artifacts": []
+        },
+        {
+          "sequence": 2,
+          "event_id": "result-82a32b2becdc428a957f1b6a78eaf03c",
+          "event_type": "native.result-recorded",
+          "subject_hash": "de3e5c3eb22cae018d14d4a4f9dc0cacb368b411321d1e3dc1d94aec722f3f8a",
+          "actor": "native-scheduler",
+          "occurred_at": "2026-09-23T19:00:33.756405+00:00",
+          "details": {
+            "fidelity": "beam-campbell",
+            "job_id": "82a32b2becdc428a957f1b6a78eaf03c",
+            "participant_id": "rotor-campbell",
+            "run_id": "c2ca7728977b4d298d16c469a9dc05c6",
+            "solver_version": "2.3.0"
+          },
+          "previous_event_hash": "dd41305f23abf81cfb08cc6612d2b8b4395ea5165f7f42237e1efa1403194e99",
+          "event_hash": "2c4b45aed83811f380372e4b767ae7cf6aa49cd3fb741644713f20cfcf073ace",
+          "artifacts": [
+            {
+              "format": "json",
+              "uri": "jobs/82a32b2becdc428a957f1b6a78eaf03c/case.json",
+              "sha256": "9ee1013a92cb5f9ae87b88bacd9b5125733f2f134334502b285cd1cfb7aaf10f",
+              "bytes": 3375
+            },
+            {
+              "format": "py",
+              "uri": "jobs/82a32b2becdc428a957f1b6a78eaf03c/run_ross.py",
+              "sha256": "fa5506a03bdb68e3475c9806a180b8efc9c97c3e6f0b7bf365359993640fc0b8",
+              "bytes": 81645
+            },
+            {
+              "format": "json",
+              "uri": "jobs/82a32b2becdc428a957f1b6a78eaf03c/result.json",
+              "sha256": "c895997194408f71dadba4ea7982f3393cbbeca53d62779a46645d11848138db",
+              "bytes": 13121
+            },
+            {
+              "format": "log",
+              "uri": "jobs/82a32b2becdc428a957f1b6a78eaf03c/solver.log",
+              "sha256": "c107d4b5558f440cc99eaf8729e9c842d01866e0ae9c4d1090c72b0ca3a4a971",
+              "bytes": 980
+            }
+          ]
+        }
+      ],
+      "case_artifacts": {
+        "case.json": {
+          "sha256": "9ee1013a92cb5f9ae87b88bacd9b5125733f2f134334502b285cd1cfb7aaf10f",
+          "bytes": 3375
+        },
+        "result.json": {
+          "sha256": "fa5506a03bdb68e3475c9806a180b8efc9c97c3e6f0b7bf365359993640fc0b8",
+          "bytes": 81645
+        },
+        "solver.log": {
+          "sha256": "c107d4b5558f440cc99eaf8729e9c842d01866e0ae9c4d1090c72b0ca3a4a971",
+          "bytes": 980
+        },
+        "stdout.log": {
+          "sha256": "c107d4b5558f440cc99eaf8729e9c842d01866e0ae9c4d1090c72b0ca3a4a971",
+          "bytes": 980
+        },
+        "stderr.log": {
+          "sha256": "45a604cba955b43936e9a2bcf44a8a87bd252b9b5b1c39fc9f328db81560edbd",
+          "bytes": 230
+        },
+        "run_ross.py": {
+          "sha256": "c895997194408f71dadba4ea7982f3393cbbeca53d62779a46645d11848138db",
+          "bytes": 13121
+        }
+      },
+      "finished_at_utc": "2026-09-23T19:00:33.757970+00:00"
+    },
+    {
+      "job_id_label": "phase4-r2-campbell",
+      "participant_id": "rotor-campbell",
+      "design_row": "R2",
+      "max_speed_rpm": 34340.0,
+      "started_at_utc": "2026-09-23T19:00:33.757979+00:00",
+      "input_hash": "139cfd0781030208c34b65057d4b4599c036ee0cda24d928410351328b0f6940",
+      "native_job_id": "1ea4a99b16eb436cba62979fd27b322f",
+      "state": "COMPLETED",
+      "status": {
+        "job_id": "1ea4a99b16eb436cba62979fd27b322f",
+        "participant_id": "rotor-campbell",
+        "design_id": "phase4-r2-campbell",
+        "owner_id": null,
+        "revision_id": null,
+        "analysis": "campbell",
+        "fidelity": "beam-campbell",
+        "state": "COMPLETED",
+        "error_code": null,
+        "error_detail": null,
+        "run_id": "a2f673d8af284d0ca6903b5a32ffd0d3",
+        "result_id": "89b0999f4941075991cba5e87afed09a0786f20c4e71d0ef04969576133e3196",
+        "provenance_id": "74333911a2104bc6ad41372dbe5a5e00",
+        "input_hash": "cb747af2465db08a126c6c747597b8c212b7321fb70199cc9649722e2542d964",
+        "executor": "local",
+        "resume_of": null,
+        "attempt": 1,
+        "checkpoint_id": null,
+        "interruption_reason": null,
+        "created_at": "2026-09-23T19:00:33.758102+00:00",
+        "updated_at": "2026-09-23T19:00:40.815852+00:00"
+      },
+      "events": [
+        {
+          "sequence": 7,
+          "state": "QUEUED",
+          "at": "2026-09-23T19:00:33.758102+00:00",
+          "detail": "input_hash=139cfd0781030208c34b65057d4b4599c036ee0cda24d928410351328b0f6940"
+        },
+        {
+          "sequence": 8,
+          "state": "PREPARING",
+          "at": "2026-09-23T19:00:33.758641+00:00",
+          "detail": "participant=rotor-campbell"
+        },
+        {
+          "sequence": 9,
+          "state": "RUNNING",
+          "at": "2026-09-23T19:00:33.760913+00:00",
+          "detail": "run_id=a2f673d8af284d0ca6903b5a32ffd0d3"
+        },
+        {
+          "sequence": 10,
+          "state": "PARSING",
+          "at": "2026-09-23T19:00:40.812682+00:00",
+          "detail": "solver output ready"
+        },
+        {
+          "sequence": 11,
+          "state": "VALIDATING",
+          "at": "2026-09-23T19:00:40.813746+00:00",
+          "detail": "parser=ross.rotor:parse_rotor_result"
+        },
+        {
+          "sequence": 12,
+          "state": "COMPLETED",
+          "at": "2026-09-23T19:00:40.815852+00:00",
+          "detail": "run_id=a2f673d8af284d0ca6903b5a32ffd0d3"
+        }
+      ],
+      "envelope": {
+        "source": "native_solver",
+        "fidelity": "beam-campbell",
+        "units": {
+          "first_critical_rpm": "rpm",
+          "min_forcing_separation_hz": "Hz"
+        },
+        "validity": {
+          "participant_id": "rotor-campbell",
+          "passed": true,
+          "checks": {
+            "criticals_positive": true,
+            "criticals_ascending": true,
+            "screening_plausible": true,
+            "forcing_separation_nonnegative": true
+          },
+          "detail": "native first critical 18433.3 rpm vs screening beam estimate 204115.3 rpm (ratio 0.090); native bearing/gyroscopic modes are authoritative, the beam estimate is a plausibility band only; declared forcing separation 6.574 Hz"
+        },
+        "input_hash": "cb747af2465db08a126c6c747597b8c212b7321fb70199cc9649722e2542d964",
+        "solver_identity": "ross",
+        "solver_version": "2.3.0",
+        "run_id": "a2f673d8af284d0ca6903b5a32ffd0d3",
+        "provenance_id": "74333911a2104bc6ad41372dbe5a5e00",
+        "warnings": [
+          "NUMBA_DISABLE_JIT=1 was set for ROSS compatibility; numerics unaffected"
+        ],
+        "scalars": {
+          "first_critical_rpm": 18433.327602,
+          "min_forcing_separation_hz": 6.574054898232703
+        },
+        "artifacts": [
+          {
+            "name": "case.json",
+            "sha256": "72958e092501018733a46528a80d5d45374a84a5805b69e21716cbdd5537a9e6",
+            "bytes": 3375
+          },
+          {
+            "name": "result.json",
+            "sha256": "154363b4a2b948f35fb611103a5f3edd5711ea1833dd5b7bf7a3b9dc63f2cbd5",
+            "bytes": 80826
+          },
+          {
+            "name": "run_ross.py",
+            "sha256": "c895997194408f71dadba4ea7982f3393cbbeca53d62779a46645d11848138db",
+            "bytes": 13121
+          },
+          {
+            "name": "solver.log",
+            "sha256": "0f0bc122d7bfcdd9e0fd645dbca0e787869f7e791aad8d19ce5632a684576b94",
+            "bytes": 980
+          },
+          {
+            "name": "stderr.log",
+            "sha256": "df29e750ff33646b88998e274998d448634546c21c841b5191623b8f249c9ea9",
+            "bytes": 230
+          },
+          {
+            "name": "stdout.log",
+            "sha256": "0f0bc122d7bfcdd9e0fd645dbca0e787869f7e791aad8d19ce5632a684576b94",
+            "bytes": 980
+          }
+        ]
+      },
+      "provenance": [
+        {
+          "sequence": 3,
+          "event_id": "launch-1ea4a99b16eb436cba62979fd27b322f",
+          "event_type": "native.launch-accepted",
+          "subject_hash": "139cfd0781030208c34b65057d4b4599c036ee0cda24d928410351328b0f6940",
+          "actor": "native-scheduler",
+          "occurred_at": "2026-09-23T19:00:33.758102+00:00",
+          "details": {
+            "attempt": 1,
+            "checkpoint_id": null,
+            "design_id": "phase4-r2-campbell",
+            "job_id": "1ea4a99b16eb436cba62979fd27b322f",
+            "participant_id": "rotor-campbell",
+            "resume_of": null
+          },
+          "previous_event_hash": "2c4b45aed83811f380372e4b767ae7cf6aa49cd3fb741644713f20cfcf073ace",
+          "event_hash": "0a16594a288a73d344504e13a275f4def8563ab420615f83da34527621a9a15d",
+          "artifacts": []
+        },
+        {
+          "sequence": 4,
+          "event_id": "result-1ea4a99b16eb436cba62979fd27b322f",
+          "event_type": "native.result-recorded",
+          "subject_hash": "cb747af2465db08a126c6c747597b8c212b7321fb70199cc9649722e2542d964",
+          "actor": "native-scheduler",
+          "occurred_at": "2026-09-23T19:00:40.815489+00:00",
+          "details": {
+            "fidelity": "beam-campbell",
+            "job_id": "1ea4a99b16eb436cba62979fd27b322f",
+            "participant_id": "rotor-campbell",
+            "run_id": "a2f673d8af284d0ca6903b5a32ffd0d3",
+            "solver_version": "2.3.0"
+          },
+          "previous_event_hash": "0a16594a288a73d344504e13a275f4def8563ab420615f83da34527621a9a15d",
+          "event_hash": "19af358017d48cc880533b921af519305add87e32494e58ac953580a5438550a",
+          "artifacts": [
+            {
+              "format": "json",
+              "uri": "jobs/1ea4a99b16eb436cba62979fd27b322f/case.json",
+              "sha256": "72958e092501018733a46528a80d5d45374a84a5805b69e21716cbdd5537a9e6",
+              "bytes": 3375
+            },
+            {
+              "format": "py",
+              "uri": "jobs/1ea4a99b16eb436cba62979fd27b322f/run_ross.py",
+              "sha256": "154363b4a2b948f35fb611103a5f3edd5711ea1833dd5b7bf7a3b9dc63f2cbd5",
+              "bytes": 80826
+            },
+            {
+              "format": "json",
+              "uri": "jobs/1ea4a99b16eb436cba62979fd27b322f/result.json",
+              "sha256": "c895997194408f71dadba4ea7982f3393cbbeca53d62779a46645d11848138db",
+              "bytes": 13121
+            },
+            {
+              "format": "log",
+              "uri": "jobs/1ea4a99b16eb436cba62979fd27b322f/solver.log",
+              "sha256": "0f0bc122d7bfcdd9e0fd645dbca0e787869f7e791aad8d19ce5632a684576b94",
+              "bytes": 980
+            }
+          ]
+        }
+      ],
+      "case_artifacts": {
+        "case.json": {
+          "sha256": "72958e092501018733a46528a80d5d45374a84a5805b69e21716cbdd5537a9e6",
+          "bytes": 3375
+        },
+        "result.json": {
+          "sha256": "154363b4a2b948f35fb611103a5f3edd5711ea1833dd5b7bf7a3b9dc63f2cbd5",
+          "bytes": 80826
+        },
+        "solver.log": {
+          "sha256": "0f0bc122d7bfcdd9e0fd645dbca0e787869f7e791aad8d19ce5632a684576b94",
+          "bytes": 980
+        },
+        "stdout.log": {
+          "sha256": "0f0bc122d7bfcdd9e0fd645dbca0e787869f7e791aad8d19ce5632a684576b94",
+          "bytes": 980
+        },
+        "stderr.log": {
+          "sha256": "df29e750ff33646b88998e274998d448634546c21c841b5191623b8f249c9ea9",
+          "bytes": 230
+        },
+        "run_ross.py": {
+          "sha256": "c895997194408f71dadba4ea7982f3393cbbeca53d62779a46645d11848138db",
+          "bytes": 13121
+        }
+      },
+      "finished_at_utc": "2026-09-23T19:00:40.816816+00:00"
+    },
+    {
+      "job_id_label": "phase4-r3-campbell",
+      "participant_id": "rotor-campbell",
+      "design_row": "R3",
+      "max_speed_rpm": 36360.0,
+      "started_at_utc": "2026-09-23T19:00:40.816824+00:00",
+      "input_hash": "465b69ab7063b1deb731598dabc76d62bd42889f44a53a68fd0f4251bcf8c2e2",
+      "native_job_id": "56ae67e79ff043c988a6fb35f8877fe7",
+      "state": "COMPLETED",
+      "status": {
+        "job_id": "56ae67e79ff043c988a6fb35f8877fe7",
+        "participant_id": "rotor-campbell",
+        "design_id": "phase4-r3-campbell",
+        "owner_id": null,
+        "revision_id": null,
+        "analysis": "campbell",
+        "fidelity": "beam-campbell",
+        "state": "COMPLETED",
+        "error_code": null,
+        "error_detail": null,
+        "run_id": "1d237ca83ac244f0beb8b3ee073ef1bd",
+        "result_id": "7811b7247c8ae754f626a17d0defac4f1c82bb371af2d6fd91f9f7581879b833",
+        "provenance_id": "b5455e062fc8420ab8a0ccc71d856506",
+        "input_hash": "49b77e348f7b7fb4b0f7f98e1276847a22ccf5e9dbfe1644d26c10a31bbfef6d",
+        "executor": "local",
+        "resume_of": null,
+        "attempt": 1,
+        "checkpoint_id": null,
+        "interruption_reason": null,
+        "created_at": "2026-09-23T19:00:40.816957+00:00",
+        "updated_at": "2026-09-23T19:00:47.935886+00:00"
+      },
+      "events": [
+        {
+          "sequence": 13,
+          "state": "QUEUED",
+          "at": "2026-09-23T19:00:40.816957+00:00",
+          "detail": "input_hash=465b69ab7063b1deb731598dabc76d62bd42889f44a53a68fd0f4251bcf8c2e2"
+        },
+        {
+          "sequence": 14,
+          "state": "PREPARING",
+          "at": "2026-09-23T19:00:40.817470+00:00",
+          "detail": "participant=rotor-campbell"
+        },
+        {
+          "sequence": 15,
+          "state": "RUNNING",
+          "at": "2026-09-23T19:00:40.819729+00:00",
+          "detail": "run_id=1d237ca83ac244f0beb8b3ee073ef1bd"
+        },
+        {
+          "sequence": 16,
+          "state": "PARSING",
+          "at": "2026-09-23T19:00:47.932636+00:00",
+          "detail": "solver output ready"
+        },
+        {
+          "sequence": 17,
+          "state": "VALIDATING",
+          "at": "2026-09-23T19:00:47.933667+00:00",
+          "detail": "parser=ross.rotor:parse_rotor_result"
+        },
+        {
+          "sequence": 18,
+          "state": "COMPLETED",
+          "at": "2026-09-23T19:00:47.935886+00:00",
+          "detail": "run_id=1d237ca83ac244f0beb8b3ee073ef1bd"
+        }
+      ],
+      "envelope": {
+        "source": "native_solver",
+        "fidelity": "beam-campbell",
+        "units": {
+          "first_critical_rpm": "rpm",
+          "min_forcing_separation_hz": "Hz"
+        },
+        "validity": {
+          "participant_id": "rotor-campbell",
+          "passed": true,
+          "checks": {
+            "criticals_positive": true,
+            "criticals_ascending": true,
+            "screening_plausible": true,
+            "forcing_separation_nonnegative": true
+          },
+          "detail": "native first critical 18432.9 rpm vs screening beam estimate 204115.3 rpm (ratio 0.090); native bearing/gyroscopic modes are authoritative, the beam estimate is a plausibility band only; declared forcing separation 3.091 Hz"
+        },
+        "input_hash": "49b77e348f7b7fb4b0f7f98e1276847a22ccf5e9dbfe1644d26c10a31bbfef6d",
+        "solver_identity": "ross",
+        "solver_version": "2.3.0",
+        "run_id": "1d237ca83ac244f0beb8b3ee073ef1bd",
+        "provenance_id": "b5455e062fc8420ab8a0ccc71d856506",
+        "warnings": [
+          "NUMBA_DISABLE_JIT=1 was set for ROSS compatibility; numerics unaffected"
+        ],
+        "scalars": {
+          "first_critical_rpm": 18432.878121,
+          "min_forcing_separation_hz": 3.0914611203647837
+        },
+        "artifacts": [
+          {
+            "name": "case.json",
+            "sha256": "7b8b30561bcb9c3764108663616b0a624facb22475fa819a0e4799dbac9b112e",
+            "bytes": 3375
+          },
+          {
+            "name": "result.json",
+            "sha256": "0d3a2ec358a07b67e710766e92f297adefc9eeefb5f79a139630241b42bbc55c",
+            "bytes": 80165
+          },
+          {
+            "name": "run_ross.py",
+            "sha256": "c895997194408f71dadba4ea7982f3393cbbeca53d62779a46645d11848138db",
+            "bytes": 13121
+          },
+          {
+            "name": "solver.log",
+            "sha256": "b83680dc6d1d60af72d774e1cdb73f01342570455c77474304b67a8cc318f285",
+            "bytes": 980
+          },
+          {
+            "name": "stderr.log",
+            "sha256": "040c16c1106155d9c1866f5ce71c2043a4668e8e714357b5595fe956d0ea8434",
+            "bytes": 230
+          },
+          {
+            "name": "stdout.log",
+            "sha256": "b83680dc6d1d60af72d774e1cdb73f01342570455c77474304b67a8cc318f285",
+            "bytes": 980
+          }
+        ]
+      },
+      "provenance": [
+        {
+          "sequence": 5,
+          "event_id": "launch-56ae67e79ff043c988a6fb35f8877fe7",
+          "event_type": "native.launch-accepted",
+          "subject_hash": "465b69ab7063b1deb731598dabc76d62bd42889f44a53a68fd0f4251bcf8c2e2",
+          "actor": "native-scheduler",
+          "occurred_at": "2026-09-23T19:00:40.816957+00:00",
+          "details": {
+            "attempt": 1,
+            "checkpoint_id": null,
+            "design_id": "phase4-r3-campbell",
+            "job_id": "56ae67e79ff043c988a6fb35f8877fe7",
+            "participant_id": "rotor-campbell",
+            "resume_of": null
+          },
+          "previous_event_hash": "19af358017d48cc880533b921af519305add87e32494e58ac953580a5438550a",
+          "event_hash": "794f59dedd39e031a7a4b4b402f93fe10c961cd2a082a16543c40ce2182d6821",
+          "artifacts": []
+        },
+        {
+          "sequence": 6,
+          "event_id": "result-56ae67e79ff043c988a6fb35f8877fe7",
+          "event_type": "native.result-recorded",
+          "subject_hash": "49b77e348f7b7fb4b0f7f98e1276847a22ccf5e9dbfe1644d26c10a31bbfef6d",
+          "actor": "native-scheduler",
+          "occurred_at": "2026-09-23T19:00:47.935504+00:00",
+          "details": {
+            "fidelity": "beam-campbell",
+            "job_id": "56ae67e79ff043c988a6fb35f8877fe7",
+            "participant_id": "rotor-campbell",
+            "run_id": "1d237ca83ac244f0beb8b3ee073ef1bd",
+            "solver_version": "2.3.0"
+          },
+          "previous_event_hash": "794f59dedd39e031a7a4b4b402f93fe10c961cd2a082a16543c40ce2182d6821",
+          "event_hash": "4ce02ead7676212e3902b7c23d5e7f5210c6b7116b7bba8800c545d21c308509",
+          "artifacts": [
+            {
+              "format": "json",
+              "uri": "jobs/56ae67e79ff043c988a6fb35f8877fe7/case.json",
+              "sha256": "7b8b30561bcb9c3764108663616b0a624facb22475fa819a0e4799dbac9b112e",
+              "bytes": 3375
+            },
+            {
+              "format": "py",
+              "uri": "jobs/56ae67e79ff043c988a6fb35f8877fe7/run_ross.py",
+              "sha256": "0d3a2ec358a07b67e710766e92f297adefc9eeefb5f79a139630241b42bbc55c",
+              "bytes": 80165
+            },
+            {
+              "format": "json",
+              "uri": "jobs/56ae67e79ff043c988a6fb35f8877fe7/result.json",
+              "sha256": "c895997194408f71dadba4ea7982f3393cbbeca53d62779a46645d11848138db",
+              "bytes": 13121
+            },
+            {
+              "format": "log",
+              "uri": "jobs/56ae67e79ff043c988a6fb35f8877fe7/solver.log",
+              "sha256": "b83680dc6d1d60af72d774e1cdb73f01342570455c77474304b67a8cc318f285",
+              "bytes": 980
+            }
+          ]
+        }
+      ],
+      "case_artifacts": {
+        "case.json": {
+          "sha256": "7b8b30561bcb9c3764108663616b0a624facb22475fa819a0e4799dbac9b112e",
+          "bytes": 3375
+        },
+        "result.json": {
+          "sha256": "0d3a2ec358a07b67e710766e92f297adefc9eeefb5f79a139630241b42bbc55c",
+          "bytes": 80165
+        },
+        "solver.log": {
+          "sha256": "b83680dc6d1d60af72d774e1cdb73f01342570455c77474304b67a8cc318f285",
+          "bytes": 980
+        },
+        "stdout.log": {
+          "sha256": "b83680dc6d1d60af72d774e1cdb73f01342570455c77474304b67a8cc318f285",
+          "bytes": 980
+        },
+        "stderr.log": {
+          "sha256": "040c16c1106155d9c1866f5ce71c2043a4668e8e714357b5595fe956d0ea8434",
+          "bytes": 230
+        },
+        "run_ross.py": {
+          "sha256": "c895997194408f71dadba4ea7982f3393cbbeca53d62779a46645d11848138db",
+          "bytes": 13121
+        }
+      },
+      "finished_at_utc": "2026-09-23T19:00:47.936829+00:00"
+    }
+  ],
+  "plan_sha256": "3290e97e1a60f0c5f82e5bd8766d46a86f2eca71db59f7fb18e12bab68174bc1"
+}

@@ -1,0 +1,12 @@
+item,massKg,basis
+six fixed FA4119 motors,1.6800000000000002,Phase-9 sourced motor mass
+two fixed 6S5000 packs / 12S1P,1.426,Phase-9 sourced pack mass
+ESC and flight-control bare boards,0.12058531923529413,results/phase9_control_board_mass.csv; populations excluded
+two duct/rotor/stator CAD module solids gross,0.5802170435930017,6061-T6 density on CadQuery solid volumes; blade/hub overlaps may overcount
+compact lifting-body CAD solid,0.2411691920453631,6061-T6 density on compact body solid; no composite substitution assumed
+flat body/inlet/casing panel concept net blank mass,2.5306690104727503,"22 extra 250x100x5 panels; alternatives to corresponding monolithic CAD shell volume, forming/joining not included"
+fixed known plus panelized major-part mass screen,6.167903486112394,known motors/packs/bare boards + rotor/stator core CAD solids + 6061 body/inlet/casing blanks; excludes populations/gears/harness/landing gear
+unweighed allowance to healthy TWR mass screen,4.512096513887606,"remaining amount for ESC populations, shafts, gearboxes, mounting, wire, landing gear and payload; not weighed"
+known plus modeled mass lower estimate,4.047971554873659,"excludes motor gearboxes, population, harness, mounts and landing gear"
+unweighed mass remaining to 11.5 kg,7.452028445126341,explicit allowance; must be measured/BOM-closed
+unweighed mass remaining to healthy-TWR mass target,6.632028445126341,target ≤10.68 kg for 1.10 area-scaled worst-case static T/W

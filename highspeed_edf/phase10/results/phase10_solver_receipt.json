@@ -1,0 +1,315 @@
+{
+  "phase": 10,
+  "status": "partial_or_unconverged",
+  "runSource": "one_ephemeral_GCE_Spot_OpenFOAM_worker",
+  "instanceName": "hsedf-p10-20260925-160304",
+  "solver": "OpenFOAM rhoSimpleFoam (steady compressible RANS, ideal-gas air)",
+  "turbulenceModel": "kOmegaSST",
+  "startedAtUtc": "2026-09-25T16:04:57.211077+00:00",
+  "finishedAtUtc": "2026-09-25T16:05:25.842895+00:00",
+  "elapsedSeconds": 28.631827333000004,
+  "records": [
+    {
+      "caseId": "r225_cosine_medium",
+      "bendRadiusM": 0.225,
+      "contractionProfile": "cosine",
+      "meshLevel": "medium",
+      "meshCells": 91325,
+      "targetMassFlowKgPerS": 0.858742049399817,
+      "inletMassFlowKgPerS": null,
+      "outletMassFlowKgPerS": null,
+      "massImbalanceFraction": null,
+      "meanlineMassFlowErrorFraction": null,
+      "meanlineMassFlowPass": false,
+      "outletTotalPressurePa": null,
+      "freestreamTotalPressurePa": 90037.94841092758,
+      "pressureRecovery": null,
+      "finalResiduals": {},
+      "solverCompleted": false,
+      "residualTargetsPass": false,
+      "meshCheckPass": false,
+      "massBalancePass": false,
+      "converged": false,
+      "status": "solver_failed_or_timed_out",
+      "commandResults": {
+        "gmshToFoam": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 0.8046440209999872
+        },
+        "checkMesh": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 1.8431468240000015
+        },
+        "rhoSimpleFoam": {
+          "returnCode": -6,
+          "timedOut": false,
+          "elapsedSeconds": 2.220292506000007
+        }
+      },
+      "startedAtUtc": "2026-09-25T16:04:57.211664+00:00",
+      "finishedAtUtc": "2026-09-25T16:05:02.080932+00:00"
+    },
+    {
+      "caseId": "r225_front_loaded_medium",
+      "bendRadiusM": 0.225,
+      "contractionProfile": "front_loaded",
+      "meshLevel": "medium",
+      "meshCells": 92762,
+      "targetMassFlowKgPerS": 0.858742049399817,
+      "inletMassFlowKgPerS": null,
+      "outletMassFlowKgPerS": null,
+      "massImbalanceFraction": null,
+      "meanlineMassFlowErrorFraction": null,
+      "meanlineMassFlowPass": false,
+      "outletTotalPressurePa": null,
+      "freestreamTotalPressurePa": 90037.94841092758,
+      "pressureRecovery": null,
+      "finalResiduals": {},
+      "solverCompleted": false,
+      "residualTargetsPass": false,
+      "meshCheckPass": false,
+      "massBalancePass": false,
+      "converged": false,
+      "status": "solver_failed_or_timed_out",
+      "commandResults": {
+        "gmshToFoam": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 0.7110880660000021
+        },
+        "checkMesh": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 1.787403900000001
+        },
+        "rhoSimpleFoam": {
+          "returnCode": -6,
+          "timedOut": false,
+          "elapsedSeconds": 0.5258662510000107
+        }
+      },
+      "startedAtUtc": "2026-09-25T16:05:02.080963+00:00",
+      "finishedAtUtc": "2026-09-25T16:05:05.106280+00:00"
+    },
+    {
+      "caseId": "r225_linear_coarse",
+      "bendRadiusM": 0.225,
+      "contractionProfile": "linear",
+      "meshLevel": "coarse",
+      "meshCells": 32511,
+      "targetMassFlowKgPerS": 0.858742049399817,
+      "inletMassFlowKgPerS": null,
+      "outletMassFlowKgPerS": null,
+      "massImbalanceFraction": null,
+      "meanlineMassFlowErrorFraction": null,
+      "meanlineMassFlowPass": false,
+      "outletTotalPressurePa": null,
+      "freestreamTotalPressurePa": 90037.94841092758,
+      "pressureRecovery": null,
+      "finalResiduals": {},
+      "solverCompleted": false,
+      "residualTargetsPass": false,
+      "meshCheckPass": false,
+      "massBalancePass": false,
+      "converged": false,
+      "status": "solver_failed_or_timed_out",
+      "commandResults": {
+        "gmshToFoam": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 0.2634944200000007
+        },
+        "checkMesh": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 0.6472140799999977
+        },
+        "rhoSimpleFoam": {
+          "returnCode": -6,
+          "timedOut": false,
+          "elapsedSeconds": 0.40192805200000237
+        }
+      },
+      "startedAtUtc": "2026-09-25T16:05:05.106361+00:00",
+      "finishedAtUtc": "2026-09-25T16:05:06.419904+00:00"
+    },
+    {
+      "caseId": "r225_linear_fine",
+      "bendRadiusM": 0.225,
+      "contractionProfile": "linear",
+      "meshLevel": "fine",
+      "meshCells": 257986,
+      "targetMassFlowKgPerS": 0.858742049399817,
+      "inletMassFlowKgPerS": null,
+      "outletMassFlowKgPerS": null,
+      "massImbalanceFraction": null,
+      "meanlineMassFlowErrorFraction": null,
+      "meanlineMassFlowPass": false,
+      "outletTotalPressurePa": null,
+      "freestreamTotalPressurePa": 90037.94841092758,
+      "pressureRecovery": null,
+      "finalResiduals": {},
+      "solverCompleted": false,
+      "residualTargetsPass": false,
+      "meshCheckPass": false,
+      "massBalancePass": false,
+      "converged": false,
+      "status": "solver_failed_or_timed_out",
+      "commandResults": {
+        "gmshToFoam": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 2.138668025000001
+        },
+        "checkMesh": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 6.030174310999996
+        },
+        "rhoSimpleFoam": {
+          "returnCode": -6,
+          "timedOut": false,
+          "elapsedSeconds": 0.9225996830000014
+        }
+      },
+      "startedAtUtc": "2026-09-25T16:05:06.419937+00:00",
+      "finishedAtUtc": "2026-09-25T16:05:15.512299+00:00"
+    },
+    {
+      "caseId": "r225_linear_medium",
+      "bendRadiusM": 0.225,
+      "contractionProfile": "linear",
+      "meshLevel": "medium",
+      "meshCells": 91363,
+      "targetMassFlowKgPerS": 0.858742049399817,
+      "inletMassFlowKgPerS": null,
+      "outletMassFlowKgPerS": null,
+      "massImbalanceFraction": null,
+      "meanlineMassFlowErrorFraction": null,
+      "meanlineMassFlowPass": false,
+      "outletTotalPressurePa": null,
+      "freestreamTotalPressurePa": 90037.94841092758,
+      "pressureRecovery": null,
+      "finalResiduals": {},
+      "solverCompleted": false,
+      "residualTargetsPass": false,
+      "meshCheckPass": false,
+      "massBalancePass": false,
+      "converged": false,
+      "status": "solver_failed_or_timed_out",
+      "commandResults": {
+        "gmshToFoam": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 0.7357936629999955
+        },
+        "checkMesh": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 1.9254421579999956
+        },
+        "rhoSimpleFoam": {
+          "returnCode": -6,
+          "timedOut": false,
+          "elapsedSeconds": 0.5205545660000013
+        }
+      },
+      "startedAtUtc": "2026-09-25T16:05:15.512327+00:00",
+      "finishedAtUtc": "2026-09-25T16:05:18.695017+00:00"
+    },
+    {
+      "caseId": "r270_linear_medium",
+      "bendRadiusM": 0.27,
+      "contractionProfile": "linear",
+      "meshLevel": "medium",
+      "meshCells": 102728,
+      "targetMassFlowKgPerS": 0.858742049399817,
+      "inletMassFlowKgPerS": null,
+      "outletMassFlowKgPerS": null,
+      "massImbalanceFraction": null,
+      "meanlineMassFlowErrorFraction": null,
+      "meanlineMassFlowPass": false,
+      "outletTotalPressurePa": null,
+      "freestreamTotalPressurePa": 90037.94841092758,
+      "pressureRecovery": null,
+      "finalResiduals": {},
+      "solverCompleted": false,
+      "residualTargetsPass": false,
+      "meshCheckPass": false,
+      "massBalancePass": false,
+      "converged": false,
+      "status": "solver_failed_or_timed_out",
+      "commandResults": {
+        "gmshToFoam": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 0.8035399519999942
+        },
+        "checkMesh": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 2.099463995000008
+        },
+        "rhoSimpleFoam": {
+          "returnCode": -6,
+          "timedOut": false,
+          "elapsedSeconds": 0.5416990209999994
+        }
+      },
+      "startedAtUtc": "2026-09-25T16:05:18.695053+00:00",
+      "finishedAtUtc": "2026-09-25T16:05:22.140763+00:00"
+    },
+    {
+      "caseId": "r315_linear_medium",
+      "bendRadiusM": 0.315,
+      "contractionProfile": "linear",
+      "meshLevel": "medium",
+      "meshCells": 114781,
+      "targetMassFlowKgPerS": 0.858742049399817,
+      "inletMassFlowKgPerS": null,
+      "outletMassFlowKgPerS": null,
+      "massImbalanceFraction": null,
+      "meanlineMassFlowErrorFraction": null,
+      "meanlineMassFlowPass": false,
+      "outletTotalPressurePa": null,
+      "freestreamTotalPressurePa": 90037.94841092758,
+      "pressureRecovery": null,
+      "finalResiduals": {},
+      "solverCompleted": false,
+      "residualTargetsPass": false,
+      "meshCheckPass": false,
+      "massBalancePass": false,
+      "converged": false,
+      "status": "solver_failed_or_timed_out",
+      "commandResults": {
+        "gmshToFoam": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 0.9173646809999951
+        },
+        "checkMesh": {
+          "returnCode": 0,
+          "timedOut": false,
+          "elapsedSeconds": 2.225052081000001
+        },
+        "rhoSimpleFoam": {
+          "returnCode": -6,
+          "timedOut": false,
+          "elapsedSeconds": 0.5586208269999986
+        }
+      },
+      "startedAtUtc": "2026-09-25T16:05:22.140844+00:00",
+      "finishedAtUtc": "2026-09-25T16:05:25.842778+00:00"
+    }
+  ],
+  "gridConvergence": {
+    "reference": "r225_linear",
+    "mediumFineAbsoluteRecoveryDifference": null,
+    "agreementLimit": 0.005,
+    "passes": false
+  },
+  "bestGeometryAmongConvergedMediumCases": null,
+  "evidenceClass": "OpenFOAM output; converged flag requires residual, mesh, mass-balance and pressure post-processing checks"
+}

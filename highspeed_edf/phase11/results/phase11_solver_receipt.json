@@ -1,0 +1,27 @@
+{
+  "phase": 11,
+  "status": "no-converged-pressure-recovery",
+  "runId": "20260925T184158Z",
+  "openfoam": "Ubuntu openfoam 1912.200626-1",
+  "solver": "rhoSimpleFoam",
+  "turbulenceModel": "kOmegaSST",
+  "cases": [
+    {"caseId":"r065_linear_coarse","meshCells":16825,"checkMesh":"failed-one-small-determinant-check","solver":"not-run","pressureRecovery":null},
+    {"caseId":"r065_linear_medium","meshCells":37705,"checkMesh":"passed","solver":"aborted-at-initialization-wall-patch-type","pressureRecovery":null},
+    {"caseId":"r065_linear_fine","meshCells":71982,"checkMesh":"passed","solver":"aborted-at-initialization-wall-patch-type","pressureRecovery":null},
+    {"caseId":"r070_linear_medium","meshCells":38618,"checkMesh":"passed","solver":"aborted-at-initialization-wall-patch-type","pressureRecovery":null},
+    {"caseId":"r075_linear_medium","meshCells":39252,"checkMesh":"failed-one-small-determinant-check","solver":"not-run","pressureRecovery":null}
+  ],
+  "commonFatalError": "changeDictionaryDict used a dictionaryReplacement wrapper; OpenFOAM 1912 requires the boundary replacement at dictionary root. The patch therefore remained type patch, incompatible with nutkWallFunction.",
+  "rhoSimpleFoamIterations": 0,
+  "gridConvergenceEstablished": false,
+  "bestAerodynamicCase": null,
+  "bestWholeAirframeCandidate": null,
+  "workerDriverIssue": "The shared runner expected bendRadiusM while Phase-11 cases specify turnRadiusM; the raw worker receipt records driver_error after commands. The local runner now accepts either key.",
+  "followupTemplateFixes": [
+    "changeDictionaryDict now directly defines boundary { walls { type wall; } }",
+    "runner uses turnRadiusM as the fallback radius key",
+    "mesh-quality failures block solver invocation"
+  ],
+  "noFurtherCloudRun": "The single Phase-11 worker allowance was used and the instance was deleted; no retry was submitted."
+}

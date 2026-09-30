@@ -1,0 +1,21 @@
+speed_kmh,core_flow_area_margin_fraction,required_core_area_m2,required_core_outer_diameter_m,remaining_bypass_annulus_area_m2,remaining_bypass_area_fraction,fits_80mm_casing_32mm_hub,status,source_class
+500,0.0,0.0026284328850187545,0.06611070026771922,0.001593867641405928,0.37748796691067543,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+500,0.05,0.0027598545292696923,0.06736435202970945,0.0014624459971549902,0.34636236525620917,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+500,0.1,0.00289127617352063,0.06859509573487765,0.0013310243529040524,0.31523676360174296,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+500,0.15,0.0030226978177715674,0.06980414309603292,0.001199602708653115,0.2841111619472768,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+550,0.0,0.0028849751512150176,0.06853659203743112,0.0013373253752096649,0.31672908331375266,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+550,0.05,0.0030292239087757688,0.06986363625313623,0.0011930766176489137,0.2825655374794402,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+550,0.1,0.0031734726663365195,0.07116593913464356,0.001048827860088163,0.24840199164512788,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+550,0.15,0.00331772142389727,0.07244483498028728,0.0009045791025274123,0.21423844581081555,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+600,0.0,0.0031477379203440625,0.07093535364431816,0.00107456260608062,0.2544969500289283,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+600,0.05,0.003305124816361266,0.07233405571704594,0.0009171757100634166,0.21722179753037463,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+600,0.1,0.003462511712378469,0.07370621979391516,0.0007597888140462136,0.1799466450318211,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+600,0.15,0.003619898608395672,0.0750533014339886,0.0006024019180290107,0.14267149253326755,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+650,0.0,0.003406079141280039,0.07321717459158972,0.0008162213851446434,0.1933120061057793,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+650,0.05,0.003576383098344041,0.07468328051133064,0.0006459174280806414,0.15297760641106828,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+650,0.1,0.0037466870554080435,0.07612115422596313,0.00047561347101663905,0.11264320671635714,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+650,0.15,0.003916991012472045,0.07753236648943221,0.00030530951395263753,0.0723088070216462,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+700,0.0,0.0036719659887573487,0.07549365737469876,0.0005503345376673338,0.13033997324992416,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+700,0.05,0.003855564288195216,0.0770263391249956,0.0003667362382294664,0.08685697191242038,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+700,0.1,0.0040391625876330835,0.07852911265377477,0.00018313793879159903,0.0433739705749166,True,geometrically_possible_screen_only,analyst area-margin sensitivity; not a calibrated loss allowance
+700,0.15,0.00422276088707095,0.08000366334974711,0.0,0.0,False,NO_ROOM_FOR_CORE_AND_BYPASS,analyst area-margin sensitivity; not a calibrated loss allowance

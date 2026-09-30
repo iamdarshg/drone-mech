@@ -1,0 +1,4 @@
+mechanical_rpm,electrical_rpm,electrical_frequency_hz,tip_speed_m_s,tip_mach_static,mean_radius_m,mean_blade_speed_m_s,max_specific_work_per_3_rotors_j_kg_at_psi_0_5,stock_motor_no_load_rpm_at_nominal_v,stock_motor_no_load_rpm_at_full_charge_v,source_class
+12500.0,87500.0,1458.3333333333333,52.35987755982989,0.15384248408379667,0.028,36.651914291880914,2015.0442318890766,15540.0,17640.0,motor RPM limits externally sourced; kinematics analytical
+13500.0,94500.0,1575.0,56.54866776461628,0.1661498828105004,0.028,39.5840674352314,2350.34759207542,15540.0,17640.0,motor RPM limits externally sourced; kinematics analytical
+17640.0,123480.0,2058.0,73.89025921243193,0.21710251353905383,0.028,51.72318144870235,4012.9312487630805,15540.0,17640.0,motor RPM limits externally sourced; kinematics analytical

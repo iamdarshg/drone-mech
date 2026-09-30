@@ -1,0 +1,29 @@
+{
+  "candidate": "wing_t30mm",
+  "status": "coupled_solver_failed_or_not_converged",
+  "meshConversion": {
+    "returnCode": 0,
+    "elapsedSeconds": 0.344,
+    "timedOut": false
+  },
+  "checkMesh": {
+    "returnCode": 0,
+    "elapsedSeconds": 0.249,
+    "timedOut": false,
+    "passed": true
+  },
+  "coupling": {
+    "status": "coupled_solver_failed_or_not_converged",
+    "fluidReturnCode": -6,
+    "solidReturnCode": -15,
+    "timedOut": false,
+    "elapsedSeconds": 5.039,
+    "fluidReachedEnd": false,
+    "preCICECompletionLogMarkers": 0,
+    "fluidLog": "rhoPimpleFoam.log",
+    "solidLog": "ccx_preCICE.log"
+  },
+  "tipDisplacement": null,
+  "forceHistoryLastLine": null,
+  "preciceLogFiles": []
+}

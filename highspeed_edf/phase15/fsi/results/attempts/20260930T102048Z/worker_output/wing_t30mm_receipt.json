@@ -1,0 +1,15 @@
+{
+  "candidate": "wing_t30mm",
+  "status": "remote_checkMesh_failed",
+  "meshConversion": {
+    "returnCode": 0,
+    "elapsedSeconds": 0.503,
+    "timedOut": false
+  },
+  "checkMesh": {
+    "returnCode": 1,
+    "elapsedSeconds": 0.202,
+    "timedOut": false
+  },
+  "meshOkTextPresent": false
+}

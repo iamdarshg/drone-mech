@@ -1,0 +1,8 @@
+caseId,bendRadiusM,contractionProfile,meshLevel,meshCells,targetMassFlowKgPerS,outletMassFlowKgPerS,massImbalanceFraction,pressureRecovery,meanlineMassFlowErrorFraction,meanlineMassFlowPass,solverCompleted,residualTargetsPass,meshCheckPass,massBalancePass,converged,status
+r225_cosine_medium,0.225,cosine,medium,91325,0.858742049399817,,,,,False,False,False,False,False,False,solver_failed_or_timed_out
+r225_front_loaded_medium,0.225,front_loaded,medium,92762,0.858742049399817,,,,,False,False,False,False,False,False,solver_failed_or_timed_out
+r225_linear_coarse,0.225,linear,coarse,32511,0.858742049399817,,,,,False,False,False,False,False,False,solver_failed_or_timed_out
+r225_linear_fine,0.225,linear,fine,257986,0.858742049399817,,,,,False,False,False,False,False,False,solver_failed_or_timed_out
+r225_linear_medium,0.225,linear,medium,91363,0.858742049399817,,,,,False,False,False,False,False,False,solver_failed_or_timed_out
+r270_linear_medium,0.27,linear,medium,102728,0.858742049399817,,,,,False,False,False,False,False,False,solver_failed_or_timed_out
+r315_linear_medium,0.315,linear,medium,114781,0.858742049399817,,,,,False,False,False,False,False,False,solver_failed_or_timed_out

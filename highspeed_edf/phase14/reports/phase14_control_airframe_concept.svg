@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <style>
+      text { font-family: Segoe UI, Arial, sans-serif; fill: #172b3a; }
+      .title { font-size: 25px; font-weight: 700; }
+      .sub { font-size: 14px; fill: #526575; }
+      .label { font-size: 15px; font-weight: 600; }
+      .small { font-size: 12px; fill: #526575; }
+      .panel { fill: #f8fbfd; stroke: #b9cbd6; stroke-width: 1.5; }
+      .body { fill: #d8e4eb; stroke: #31546a; stroke-width: 2; }
+      .duct { fill: #d7eff4; stroke: #177e89; stroke-width: 3; }
+      .rotor { stroke: #da7b35; stroke-width: 4; }
+      .stator { stroke: #39866f; stroke-width: 3; }
+      .control { fill: #f7c96c; stroke: #9b6810; stroke-width: 2; }
+      .board { fill: #526e9a; stroke: #233c68; stroke-width: 2; }
+      .battery { fill: #76899a; stroke: #425968; stroke-width: 2; }
+      .flow { stroke: #2f79a4; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .control-line { stroke: #9b6810; stroke-width: 1.5; stroke-dasharray: 6 5; fill: none; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2f79a4" />
+    </marker>
+  </defs>
+  <rect width="1200" height="720" fill="#ffffff" />
+  <text x="40" y="42" class="title">Phase 14 — coupled airframe / EDF / controls concept</text>
+  <text x="40" y="68" class="sub">Concept flow and control allocation only — not dimensioned CAD, a structural drawing, or a flight-release claim.</text>
+
+  <rect x="35" y="95" width="725" height="375" rx="12" class="panel" />
+  <text x="58" y="127" class="label">Side view · flight axis left to right</text>
+  <text x="58" y="149" class="small">90 mm projected-overlap EDF modules · 3 rotor rows per module · 6 FA4119 channels total</text>
+  <path d="M95 284 Q145 235 230 238 L615 240 Q677 246 716 284 Q677 322 615 328 L230 330 Q145 333 95 284 Z" class="body" />
+  <path d="M245 244 L435 244 L435 324 L245 324 Z" class="duct" />
+  <path d="M442 244 L620 244 L620 324 L442 324 Z" class="duct" />
+  <line x1="282" y1="248" x2="282" y2="320" class="rotor" />
+  <line x1="321" y1="248" x2="321" y2="320" class="stator" />
+  <line x1="359" y1="248" x2="359" y2="320" class="rotor" />
+  <line x1="397" y1="248" x2="397" y2="320" class="stator" />
+  <line x1="478" y1="248" x2="478" y2="320" class="rotor" />
+  <line x1="515" y1="248" x2="515" y2="320" class="stator" />
+  <line x1="552" y1="248" x2="552" y2="320" class="rotor" />
+  <line x1="588" y1="248" x2="588" y2="320" class="stator" />
+  <rect x="316" y="184" width="86" height="34" rx="4" class="battery" />
+  <rect x="420" y="184" width="86" height="34" rx="4" class="battery" />
+  <text x="327" y="206" fill="#fff" style="font-size:12px">12S 5 Ah</text>
+  <text x="431" y="206" fill="#fff" style="font-size:12px">12S 5 Ah</text>
+  <rect x="383" y="352" width="108" height="16" rx="3" class="board" />
+  <text x="395" y="385" class="small">ESC + flight board near CG; edge-on, independently cooled</text>
+  <path d="M625 282 L682 282" class="flow" />
+  <path d="M680 257 L690 281 L680 306 L666 299 L675 282 L666 265 Z" class="control" />
+  <text x="560" y="223" class="small">four-vane vector ring</text>
+  <line x1="626" y1="228" x2="676" y2="260" class="control-line" />
+  <path d="M99 284 L68 284" class="flow" />
+  <text x="64" y="257" class="small">inlet</text>
+  <text x="286" y="344" class="small">R1 · R2 · R3</text>
+  <text x="482" y="344" class="small">R1 · R2 · R3</text>
+  <path d="M180 239 L196 178 L306 184 L286 239 Z" class="body" />
+  <path d="M180 331 L196 392 L306 386 L286 331 Z" class="body" />
+  <path d="M180 178 L306 184 L283 208 L190 204 Z" class="control" />
+  <path d="M180 392 L306 386 L283 362 L190 366 Z" class="control" />
+  <text x="95" y="176" class="small">lifting-body / elevon region</text>
+
+  <rect x="785" y="95" width="380" height="375" rx="12" class="panel" />
+  <text x="808" y="127" class="label">Aft exit · four independent vector vanes</text>
+  <circle cx="975" cy="281" r="115" class="duct" />
+  <circle cx="975" cy="281" r="41" fill="#d8e4eb" stroke="#31546a" stroke-width="2" />
+  <path d="M958 173 L992 173 L986 239 L964 239 Z" class="control" />
+  <path d="M958 389 L992 389 L986 323 L964 323 Z" class="control" />
+  <path d="M867 264 L867 298 L933 292 L933 270 Z" class="control" />
+  <path d="M1083 264 L1083 298 L1017 292 L1017 270 Z" class="control" />
+  <path d="M975 152 L975 96" class="flow" />
+  <text x="936" y="439" class="small">individually commanded · position monitored</text>
+  <text x="915" y="187" class="small">upper-left</text>
+  <text x="1010" y="187" class="small">upper-right</text>
+  <text x="905" y="380" class="small">lower-left</text>
+  <text x="1010" y="380" class="small">lower-right</text>
+
+  <rect x="35" y="495" width="1130" height="185" rx="12" class="panel" />
+  <text x="58" y="530" class="label">Control contract and design gates</text>
+  <text x="60" y="563" class="sub">2 elevons + 4 exit vanes use six independent PWM commands; the six motor FOC channels use CAN-FD.</text>
+  <text x="60" y="590" class="sub">Actuators: ≥400 Hz commands · ≤10 ms command latency · ≥200 Hz position feedback · stale by 20 ms fault.</text>
+  <text x="60" y="617" class="sub">Low-speed: vector vanes use EDF efflux. High-speed: elevons dominate progressively; authority reserve targets are ≥1.5× to 500 km/h and ≥1.1× to 700 km/h.</text>
+  <text x="60" y="644" class="sub">Power screen: 650/700/720 km/h ≈9.51/11.88/12.93 kW at CdA 0.00090 m². All-up target ≤8.5 kg; installed performance remains unverified.</text>
+</svg>

@@ -1,0 +1,8 @@
+item,centreXmm,centreYmm,centreZmm,envelopeMm,notes
+ESC PCB + population,0,52,220,150 X x 1.6 Y x 150 Z; Z145..295,"Side-bay board, forward cooling inlet at Z145"
+Flight-control PCB + population,0,52,345,140 X x 1.6 Y x 100 Z; Z295..395,No overlap with ESC PCB; aft cooling outlet at Z395
+ESC aluminium spreader,0,54.2,220,150 X x 1 Y x 150 Z,0.6mm nominal PCB/spreader stand-off
+Flight aluminium spreader,0,54.2,345,100 X x 1 Y x 80 Z,0.6mm nominal PCB/spreader stand-off
+Battery 1,0,0,-337.5,50 X x 45 Y x 150 Z proxy; Z-412.5..-262.5,0.713kg sourced; verify physical pack dims
+Battery 2,0,0,-177.5,50 X x 45 Y x 150 Z proxy; Z-252.5..-102.5,0.713kg sourced; series wiring; 10mm axial bay gap
+Cooling route,0,53,270,150 X x 8 Y x 250 Z; Z145..395,Forward inlet Z145; washes PCBs/spreaders; aft outlet Z395

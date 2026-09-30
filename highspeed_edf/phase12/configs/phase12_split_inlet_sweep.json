@@ -1,0 +1,108 @@
+{
+  "phase": 12,
+  "studyId": "highspeed-edf-two-slot-per-duct-split-turn",
+  "status": "phase12-preflight; one bounded run only after geometry and worker gates pass",
+  "fixedPowertrain": {
+    "motors": "6 x stock Flycci FA4119 KV350",
+    "battery": "2 x Turnigy Rapid 6S5000 in series; 12S1P; 5Ah",
+    "motorCount": 6,
+    "motorKv": 350.0,
+    "packVoltageNominalV": 44.4,
+    "softCurrentLimitAperMotor": 55.0,
+    "hardCurrentLimitAperMotor": 65.0,
+    "escCurrentLimitA": 60.0,
+    "immutable": true
+  },
+  "sources": {
+    "phase9Config": "configs/phase9_geometry_mass_screen.json",
+    "phase9Design": "designs/design_state_r4_geometry_candidate.json",
+    "phase9Meanline": "results/phase9_720_meanline_summary.json",
+    "phase10CamGeometryAudit": "deliverables/phase10/reports/phase10_geometry_audit.json",
+    "phase12FrontAreaVariants": "deliverables/phase12/reports/phase12_front_area_variants.csv"
+  },
+  "operatingPoint": {
+    "altitudeM": 3000.0,
+    "speedKmh": 720.0,
+    "gamma": 1.4,
+    "gasConstantJPerKgK": 287.05,
+    "cpJPerKgK": 1004.685,
+    "inletTotalStateSource": "ISA static state plus isentropic freestream compression at candidate flight Mach",
+    "targetTotalPressureRecovery": 0.98
+  },
+  "geometry": {
+    "ductCount": 2,
+    "ductOuterDiameterM": 0.09,
+    "hubDiameterM": 0.032,
+    "slotCountTotal": 4,
+    "slotsPerDuct": 2,
+    "slotWidthM": 0.025,
+    "slotLengthM": 0.12,
+    "totalSlotAreaCm2": 120.0,
+    "branchSlotAreaCm2": 30.0,
+    "branchFlowSplitPerDuct": 0.5,
+    "branchOutletAreaDefinition": "one-half of annulus area pi/4*(90^2-32^2); mesh outlet is a semicircular annulus with 90mm OD and 32mm ID; splitter/manifold mixing is not included",
+    "splitTurnHeightMm": 25.0,
+    "turnAngleDeg": 90.0,
+    "turnRadiiMm": [35.0, 45.0],
+    "transitionLengthM": 0.12,
+    "transitionProfile": "smoothstep 25x120mm slot to half-annulus branch outlet",
+    "routerStock": "3018-class CNC; 6061-T6; 16x50 mm max per billet"
+  },
+  "projectedAreaGate": {
+    "maximumCm2": 75.0,
+    "areaSource": "deliverables/phase12/reports/phase12_front_area_variants.csv",
+    "areaSourceMethod": "CAD projected silhouette union including installed body, boards, support rails, inlet branches/lips, battery proxies, and fan union",
+    "warning": "These CAD areas are geometry-only and do not establish pressure recovery or CFD feasibility."
+  },
+  "mesh": {
+    "method": "Gmsh 4.x OpenCASCADE quarter-turn sweep of a 25x120mm slot with a 25mm radial turn height, smoothstep loft to exact half-annulus branch outlet; linear tetrahedra; physical inlet/outlet/walls; MSH2",
+    "minimumCells": 6000,
+    "levels": {"coarse": 0.012, "medium": 0.009, "fine": 0.007},
+    "threads": 2,
+    "maxNonOrthogonalityDeg": 70.0,
+    "localCheckMeshRequired": false,
+    "remoteCheckMeshRequired": true,
+    "solverMustNotStartIfCheckMeshMissingOrFails": true,
+    "geometryConformanceRequiredBeforeRun": true
+  },
+  "solver": {
+    "family": "OpenFOAM rhoSimpleFoam only",
+    "versionPackage": "Ubuntu OpenFOAM 1912",
+    "turbulenceModel": "kOmegaSST",
+    "maxIterations": 250,
+    "maxSecondsPerCase": 45,
+    "residualTargets": {"p": 0.00001, "U": 0.00001, "energy": 0.00001, "k": 0.0001, "omega": 0.0001},
+    "massImbalanceLimitFraction": 0.005,
+    "meanlineMassFlowToleranceFraction": 0.05,
+    "pressureRecoveryGridAgreementLimitFraction": 0.005,
+    "gridConvergenceCaseIds": ["r035_linear_coarse", "r035_linear_medium", "r035_linear_fine"]
+  },
+  "cloudBudget": {
+    "approvedNewEnvelopeUsd": 0.0271,
+    "priorEstimatedEnvelopeUsd": 0.17289,
+    "approvedTotalEnvelopeUsd": 0.2,
+    "maxInstancesTotal": 1,
+    "maxConcurrentInstances": 1,
+    "machineType": "e2-standard-2",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maxRunDurationSeconds": 420,
+    "terminationAction": "DELETE",
+    "bootDiskGb": 12,
+    "bootDiskAutoDelete": true,
+    "conservativeComputeRateUsdPerHour": 0.2,
+    "computeMaximumUsd": 0.02334,
+    "ancillaryAllowanceUsd": 0.003,
+    "aggregateEstimateUsd": 0.02634,
+    "aggregateCeilingUsd": 0.0271,
+    "calculation": "420 seconds x $0.20/hour = $0.02334 compute; the $0.003 ancillary ceiling includes temporary disk, network, retained logs/artifacts and contingency. Total new envelope estimate <=$0.02634, below the $0.0271 new-run limit. Prior Phase-10/11 envelope estimate $0.17289 keeps combined estimate <=$0.20. One Spot VM only, no retry/fallback, auto-delete at 420 seconds."
+  },
+  "cases": [
+    {"id":"r030_smoothstep_medium","turnRadiusM":0.030,"transitionProfile":"smoothstep","meshLevel":"medium"},
+    {"id":"r035_smoothstep_coarse","turnRadiusM":0.035,"transitionProfile":"smoothstep","meshLevel":"coarse"},
+    {"id":"r035_smoothstep_medium","turnRadiusM":0.035,"transitionProfile":"smoothstep","meshLevel":"medium"},
+    {"id":"r035_smoothstep_fine","turnRadiusM":0.035,"transitionProfile":"smoothstep","meshLevel":"fine"},
+    {"id":"r040_smoothstep_medium","turnRadiusM":0.040,"transitionProfile":"smoothstep","meshLevel":"medium"},
+    {"id":"r045_smoothstep_medium","turnRadiusM":0.045,"transitionProfile":"smoothstep","meshLevel":"medium"}
+  ]
+}

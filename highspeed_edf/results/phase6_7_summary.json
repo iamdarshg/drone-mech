@@ -1,0 +1,14 @@
+{
+  "phases": [
+    6,
+    7
+  ],
+  "configSha256": "08e15cf9f7d49459a0cb4421a22108a77457f0355f47b0fddc396f53035d7871",
+  "phase6GeometryPoints": 5,
+  "phase6AreaMarginCases": 20,
+  "phase7IntegratedSpeeds": 5,
+  "combinedGatePassSpeeds": 0,
+  "cloudJobs": [],
+  "cloudCostUsd": 0.0,
+  "evidenceClass": "application-specific analytical post-processing"
+}

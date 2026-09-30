@@ -1,0 +1,6 @@
+caseId,bendRadiusM,contractionProfile,meshLevel,meshCells,targetMassFlowKgPerS,outletMassFlowKgPerS,massImbalanceFraction,pressureRecovery,meanlineMassFlowErrorFraction,meanlineMassFlowPass,solverCompleted,residualTargetsPass,meshCheckPass,massBalancePass,converged,status
+r065_linear_coarse,,,,,,,,,,,,,,,,driver_error
+r065_linear_fine,,,,,,,,,,,,,,,,driver_error
+r065_linear_medium,,,,,,,,,,,,,,,,driver_error
+r070_linear_medium,,,,,,,,,,,,,,,,driver_error
+r075_linear_medium,,,,,,,,,,,,,,,,driver_error

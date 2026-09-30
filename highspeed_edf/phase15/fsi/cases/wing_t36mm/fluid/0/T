@@ -1,0 +1,19 @@
+FoamFile
+{
+ version 2.0;
+ format ascii;
+ class volScalarField;
+ location "0";
+ object T;
+}
+
+dimensions [0 0 0 1 0 0 0];
+internalField uniform 268.65;
+boundaryField
+{
+  inlet { type fixedValue; value uniform 268.65; }
+  outlet { type zeroGradient; }
+  farfield { type fixedValue; value uniform 268.65; }
+  fsi { type zeroGradient; }
+  rootWall { type zeroGradient; }
+}

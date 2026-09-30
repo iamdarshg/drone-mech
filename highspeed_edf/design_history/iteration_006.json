@@ -1,0 +1,15 @@
+{
+  "iteration": 6,
+  "accepted": true,
+  "phase": "phase4-governed-ross-campbell-screen",
+  "sourceClass": "native_solver",
+  "requirementsRevision": 2,
+  "designRevision": 2,
+  "resultEvidence": "../results/phase4_ross_evidence.json",
+  "review": "../reports/phase4-ross-review.md",
+  "decision": "All three representative Campbell jobs completed. First critical is near 18.43 krpm and lies in each rotor's startup sweep; R3 has a sampled forcing-margin watch. The assumed model is not sufficient for rotor acceptance because support/disk data are not measured and a provenance artifact-name/hash mismatch was observed.",
+  "estimatedComputeCostUsd": 0.0086,
+  "actualBillingAmountUsd": null,
+  "workerDeleted": true,
+  "gcpJobs": 3
+}

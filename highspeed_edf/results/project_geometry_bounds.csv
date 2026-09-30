@@ -1,0 +1,4 @@
+quantity,area_m2,area_cm2,75cm2_checkpoint_ratio,basis
+two_80mm_duct_outer_envelopes,0.010053096491487338,100.53096491487338,1.3404128655316452,sum of two nominal circular duct face envelopes; not a CAD projected silhouette
+two_80mm_duct_annular_flow_openings_32mm_hub,0.008444601052849365,84.44601052849364,1.1259468070465821,"two annulus flow openings; excludes lip, hub nose, struts, fuselage, overlap and internal visibility"
+two_32mm_hub_faces,0.001608495438637974,16.08495438637974,0.2144660584850632,two circular hub-face projections

@@ -1,0 +1,4 @@
+stock,stock_mm,nest,capacity_blanks,stator_vanes,rotor_blades,required_blanks,remaining_positions,disposition
+sheet_A,250x120x5,8x12,96,63,33,96,0,"nominal rectangular blank-grid fit; 3D milling, tabs, retention and CAM simulation not validated"
+sheet_B,300x120x5,9x12,108,63,39,102,6,"nominal rectangular blank-grid fit; 3D milling, tabs, retention and CAM simulation not validated"
+bar_hub_nest,300x50x16,six_hubs_pitch_34.5mm,7,0,0,6,1,six 32mm hub blanks fit in 250mm between clamp reserves; hub machining/shaft interface not released

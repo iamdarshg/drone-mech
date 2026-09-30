@@ -1,0 +1,80 @@
+{
+  "phase": 10,
+  "status": "solver-batch-blocked-no-valid-pressure-recovery",
+  "runId": "20260925T160304Z",
+  "instanceName": "hsedf-p10-20260925-160304",
+  "zone": "us-central1-b",
+  "machineType": "e2-standard-4",
+  "provisioningModel": "SPOT",
+  "openfoamPackage": "Ubuntu openfoam 1912.200626-1",
+  "solver": "rhoSimpleFoam",
+  "turbulenceModel": "kOmegaSST",
+  "geometryAndMesh": {
+    "caseCount": 7,
+    "gmshToFoamConversionsSuccessful": 7,
+    "tetraCellsByCase": {
+      "r225_linear_coarse": 32511,
+      "r225_linear_medium": 91363,
+      "r225_linear_fine": 257986,
+      "r270_linear_medium": 102728,
+      "r315_linear_medium": 114781,
+      "r225_cosine_medium": 91325,
+      "r225_front_loaded_medium": 92762
+    },
+    "referenceMediumCheckMesh": {
+      "processReturnCode": 0,
+      "failedQualityCheckCount": 4,
+      "maximumAspectRatio": 1239.8961,
+      "highAspectRatioCellCount": 8,
+      "maximumNonOrthogonalityDeg": 89.856451,
+      "facesAbove70Deg": 155,
+      "lowDeterminantCells": 635,
+      "lowInterpolationWeightFaces": 112,
+      "lowVolumeRatioFaces": 83
+    }
+  },
+  "solverExecution": {
+    "rhoSimpleFoamInvocations": 7,
+    "simpleIterationsCompleted": 0,
+    "commonFatalError": "Invalid wall function specification: patch walls must be type wall; imported patch type was patch.",
+    "perCaseExitCode": -6,
+    "pressureRecoveryByCase": {
+      "r225_linear_coarse": null,
+      "r225_linear_medium": null,
+      "r225_linear_fine": null,
+      "r270_linear_medium": null,
+      "r315_linear_medium": null,
+      "r225_cosine_medium": null,
+      "r225_front_loaded_medium": null
+    },
+    "gridConvergenceEstablished": false,
+    "bestGeometry": null
+  },
+  "budgetAndLifecycle": {
+    "approvedAggregateCapUsd": 0.2,
+    "actualBillingAmountUsd": null,
+    "vmInstancesCreated": 5,
+    "vmInstancesDeleted": 5,
+    "cumulativeObservedVmLifetimeSeconds": 614.534,
+    "conservativeComputeEstimateUsd": 0.03414,
+    "reservedStorageNetworkAndContingencyUsd": 0.05,
+    "conservativeAggregateEnvelopeUsageUsd": 0.08414,
+    "maximumPlannedAggregateUsd": 0.19746,
+    "bootDisksAutoDelete": true,
+    "temporaryGcsObjectsDeleted": true,
+    "furtherCloudLaunches": 0
+  },
+  "retainedArtifacts": [
+    "phase10_case_matrix.csv",
+    "phase10_preflight.json",
+    "phase10_solver_receipt.json",
+    "phase10_solver_results.csv",
+    "phase10_worker.log",
+    "phase10_finish.json",
+    "attemptLogs/",
+    "caseLogs/",
+    "phase10_cloud_output.tar.gz",
+    "phase10_launch_attempts.json"
+  ],
+  "evidenceClass": "Generated and imported CFD meshes; solver executable invoked but aborted before iteration. No pressure-recovery CFD result or geometry ranking is claimed."
+}

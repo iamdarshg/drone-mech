@@ -1,0 +1,130 @@
+{
+  "phase": 11,
+  "createdAtUtc": "2026-09-25T19:04:34.338032+00:00",
+  "status": "solver_attempted_no_valid_pressure_recovery",
+  "sourceHashes": {
+    "phase9Config": "6cff87cd4730265eac14c272a55fe6d443b063893df77d9c797acdaee629a900",
+    "phase9Meanline": "7df9a666f54bcba4fb5b5efe63f3992a2cbd31863a21b387e8ddfdc9407f41a9"
+  },
+  "freestream": {
+    "staticTemperatureK": 268.65,
+    "staticPressurePa": 70108.26833969312,
+    "densityKgM3": 0.9091276032136805,
+    "speedMps": 200.0,
+    "mach": 0.6086866542925556,
+    "totalTemperatureK": 288.55693507850793,
+    "totalPressurePa": 90037.94841092758
+  },
+  "branch": {
+    "massFlowKgS": 0.858742049399817,
+    "slotAreaM2": 0.006,
+    "annulusAreaM2": 0.005277875658030852,
+    "slotToAnnulusAreaRatio": 1.1368210220849668,
+    "inletMach": 0.4314638184509273,
+    "inletStaticPressurePa": 79224.5198420509,
+    "inletStaticTemperatureK": 278.19897376565706,
+    "inletVolumeFlowM3S": 0.8655978883426004,
+    "outletMachAtTargetRecovery": 0.5277156826587124,
+    "outletStaticPressurePa": 72990.18996999555,
+    "outletStaticTemperatureK": 273.3331613119662,
+    "idealChokedMassFlowKgS": 1.1306039305913962
+  },
+  "geometryChecks": [
+    {
+      "caseId": "r065_linear_coarse",
+      "radiusMm": 65.0,
+      "projectedAreaLowerBoundCm2": 93.61725123519331,
+      "projectedAreaPass": false,
+      "selfIntersectionRadiusPass": true
+    },
+    {
+      "caseId": "r065_linear_medium",
+      "radiusMm": 65.0,
+      "projectedAreaLowerBoundCm2": 93.61725123519331,
+      "projectedAreaPass": false,
+      "selfIntersectionRadiusPass": true
+    },
+    {
+      "caseId": "r065_linear_fine",
+      "radiusMm": 65.0,
+      "projectedAreaLowerBoundCm2": 93.61725123519331,
+      "projectedAreaPass": false,
+      "selfIntersectionRadiusPass": true
+    },
+    {
+      "caseId": "r070_linear_medium",
+      "radiusMm": 70.0,
+      "projectedAreaLowerBoundCm2": 98.61725123519331,
+      "projectedAreaPass": false,
+      "selfIntersectionRadiusPass": true
+    },
+    {
+      "caseId": "r075_linear_medium",
+      "radiusMm": 75.0,
+      "projectedAreaLowerBoundCm2": 103.61725123519331,
+      "projectedAreaPass": false,
+      "selfIntersectionRadiusPass": true
+    }
+  ],
+  "projectedAreaRadiusMaximumMm": 46.38274876480669,
+  "geometricMinimumTurnRadiusMm": 60.0,
+  "areaVsTurnFeasibility": "No current full-height single-quarter-turn radius satisfies both constraints; topology/cross-section must change.",
+  "cases": [
+    {
+      "caseId": "r065_linear_coarse",
+      "turnRadiusMm": 65.0,
+      "profile": "linear",
+      "meshLevel": "coarse",
+      "cellSizeMm": 8.0,
+      "cells": 16825,
+      "minSICN": 0.3127707752599118,
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    },
+    {
+      "caseId": "r065_linear_medium",
+      "turnRadiusMm": 65.0,
+      "profile": "linear",
+      "meshLevel": "medium",
+      "cellSizeMm": 6.0,
+      "cells": 37705,
+      "minSICN": 0.34812365237785126,
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    },
+    {
+      "caseId": "r065_linear_fine",
+      "turnRadiusMm": 65.0,
+      "profile": "linear",
+      "meshLevel": "fine",
+      "cellSizeMm": 4.5,
+      "cells": 71982,
+      "minSICN": 0.37761121883026716,
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    },
+    {
+      "caseId": "r070_linear_medium",
+      "turnRadiusMm": 70.0,
+      "profile": "linear",
+      "meshLevel": "medium",
+      "cellSizeMm": 6.0,
+      "cells": 38618,
+      "minSICN": 0.38076785675211544,
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    },
+    {
+      "caseId": "r075_linear_medium",
+      "turnRadiusMm": 75.0,
+      "profile": "linear",
+      "meshLevel": "medium",
+      "cellSizeMm": 6.0,
+      "cells": 39252,
+      "minSICN": 0.3267871849955038,
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    }
+  ],
+  "totalMeshCells": 204382
+}

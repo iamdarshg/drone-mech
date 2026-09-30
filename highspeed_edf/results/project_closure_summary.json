@@ -1,0 +1,27 @@
+{
+  "study": "highspeed-edf",
+  "analysisPhasesCompleted": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "fixedPowertrain": true,
+  "candidateAreaCm2": 73.61725123519331,
+  "candidateTwr3kmWorstR0Soft": 1.0395516612139422,
+  "candidateMassTargetKg": 11.5,
+  "candidateSpeedKmh": 720,
+  "speedSamplesPassingSoftCurrent": 4,
+  "bareControllerPcbMassKg": 0.12058531923529413,
+  "knownMotorBatteryBarePcbMassKg": 3.226585319235294,
+  "openEvidenceGates": 9,
+  "engineeringReleaseReady": false,
+  "cloudJobs": [],
+  "cloudCostUsd": 0.0
+}

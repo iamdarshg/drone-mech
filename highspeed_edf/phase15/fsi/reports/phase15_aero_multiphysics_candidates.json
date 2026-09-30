@@ -1,0 +1,548 @@
+{
+  "workbench": "aero-multiphysics-workbench",
+  "workbenchRoot": "D:\\CodeProjects\\aero-multiphysics-workbench",
+  "workbenchCoupledOptimizerModule": "aeroworkbench_vehicle_systems.coupled_optimizer",
+  "workbenchCommit": "1c68f479461f4ac83bad9c2d735b72e00c7c835e",
+  "handoffSha256": "780065a8104e72ab650c3664b5d174d319a4324e5ceda005e4837d3081ac329e",
+  "status": "SCREENED; FSI candidates passed to native OpenFOAM/preCICE/CalculiX workflow",
+  "physicsSource": "analytical ideal-annular-actuator-disk screening; no high-cost SLSQP promotion",
+  "highCostOptimizerAttempt": {
+    "status": "NOT_CONVERGED_WITHIN_600S",
+    "solver": "Aero Multiphysics Workbench OpenMDAO/SLSQP coupled optimizer",
+    "observedMessages": [
+      "Iteration limit reached",
+      "Positive directional derivative for linesearch"
+    ],
+    "candidatePromoted": false
+  },
+  "candidates": [
+    {
+      "id": "wing_t30mm",
+      "maxThicknessMm": 30.0,
+      "workbenchFidelity": "analytical ideal annular actuator-disk screening; stator count recorded without stator-row aerodynamics",
+      "feasible": false,
+      "frontalAreaM2": 0.021649017250684445,
+      "thrustToWeight": 0.34847853050883487,
+      "tipMach": 0.5132183917088865,
+      "gates": {
+        "frontal_area": false,
+        "low_speed_thrust_to_weight": false,
+        "target_speed": false,
+        "motor_current": true,
+        "battery_current": true,
+        "motor_rpm": true,
+        "tip_mach": true,
+        "motor_power": true,
+        "blade_root_stress": true,
+        "manufacturing": false,
+        "propulsion_validity": true,
+        "full_jet_validation": true
+      },
+      "gateMargins": {
+        "frontal_area_m2": -0.014149017250684445,
+        "low_speed_thrust_to_weight": -0.6515214694911651,
+        "target_speed_requirement_margin_kmh": 70.0,
+        "target_speed_thrust_margin_n": -86.88465012767415,
+        "motor_current_margin_a": 11.0,
+        "battery_current_margin_a": 281.0,
+        "motor_rpm_margin": 1300.0,
+        "motor_rpm_margin_fraction": 0.02765957446808509,
+        "tip_mach_margin": 0.28678160829111354,
+        "motor_power_margin_w": 0.0,
+        "blade_root_stress_margin_pa": 104893380.76556888,
+        "full_jet_validation_margin": 1.0,
+        "manufacturing_score": 0.0
+      },
+      "geometry": {
+        "assemblyId": "coupled-airframe-assembly",
+        "surfaces": [
+          {
+            "surfaceId": "coupled-airframe-planform",
+            "role": "lifting_body",
+            "frame": "vehicle-body",
+            "nSurface": 17,
+            "nEdge": 4,
+            "planform": {
+              "spanMm": 520.0,
+              "rootChordMm": 425.44783983140144,
+              "tipChordMm": 305.3213909378293,
+              "sweepDeg": 25.0,
+              "dihedralDeg": 0.0,
+              "twistRootDeg": 0.0,
+              "twistTipDeg": 0.0
+            },
+            "stations": [
+              {
+                "spanFraction": 0.0,
+                "leadingEdgeMm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "chordMm": 425.44783983140144,
+                "twistDeg": 0.0,
+                "dihedralDeg": 0.0,
+                "localFrame": null,
+                "profile": {
+                  "family": "naca4",
+                  "thicknessRatio": 0.0821917808219178,
+                  "camberRatio": 0.0,
+                  "camberPosition": 0.4,
+                  "thicknessFamily": "naca4",
+                  "camberFamily": "circular_arc",
+                  "maxThicknessLocation": 0.3,
+                  "leadingEdgeThicknessRatio": 0.006,
+                  "trailingEdgeThicknessRatio": 0.004,
+                  "leadingEdgeRadiusRatio": 0.02,
+                  "trailingEdgeRadiusRatio": 0.01,
+                  "upperCoordinates": [],
+                  "lowerCoordinates": [],
+                  "cstUpper": [],
+                  "cstLower": [],
+                  "splineControls": []
+                }
+              },
+              {
+                "spanFraction": 0.25,
+                "leadingEdgeMm": [
+                  60.61999556014982,
+                  0.0,
+                  130.0
+                ],
+                "chordMm": 395.4162276080084,
+                "twistDeg": 0.0,
+                "dihedralDeg": 0.0,
+                "localFrame": null,
+                "profile": {
+                  "family": "naca4",
+                  "thicknessRatio": 0.0821917808219178,
+                  "camberRatio": 0.0,
+                  "camberPosition": 0.4,
+                  "thicknessFamily": "naca4",
+                  "camberFamily": "circular_arc",
+                  "maxThicknessLocation": 0.3,
+                  "leadingEdgeThicknessRatio": 0.006,
+                  "trailingEdgeThicknessRatio": 0.004,
+                  "leadingEdgeRadiusRatio": 0.02,
+                  "trailingEdgeRadiusRatio": 0.01,
+                  "upperCoordinates": [],
+                  "lowerCoordinates": [],
+                  "cstUpper": [],
+                  "cstLower": [],
+                  "splineControls": []
+                }
+              },
+              {
+                "spanFraction": 0.5,
+                "leadingEdgeMm": [
+                  121.23999112029963,
+                  0.0,
+                  260.0
+                ],
+                "chordMm": 365.38461538461536,
+                "twistDeg": 0.0,
+                "dihedralDeg": 0.0,
+                "localFrame": null,
+                "profile": {
+                  "family": "naca4",
+                  "thicknessRatio": 0.0821917808219178,
+                  "camberRatio": 0.0,
+                  "camberPosition": 0.4,
+                  "thicknessFamily": "naca4",
+                  "camberFamily": "circular_arc",
+                  "maxThicknessLocation": 0.3,
+                  "leadingEdgeThicknessRatio": 0.006,
+                  "trailingEdgeThicknessRatio": 0.004,
+                  "leadingEdgeRadiusRatio": 0.02,
+                  "trailingEdgeRadiusRatio": 0.01,
+                  "upperCoordinates": [],
+                  "lowerCoordinates": [],
+                  "cstUpper": [],
+                  "cstLower": [],
+                  "splineControls": []
+                }
+              },
+              {
+                "spanFraction": 0.75,
+                "leadingEdgeMm": [
+                  181.85998668044945,
+                  0.0,
+                  390.0
+                ],
+                "chordMm": 335.3530031612223,
+                "twistDeg": 0.0,
+                "dihedralDeg": 0.0,
+                "localFrame": null,
+                "profile": {
+                  "family": "naca4",
+                  "thicknessRatio": 0.0821917808219178,
+                  "camberRatio": 0.0,
+                  "camberPosition": 0.4,
+                  "thicknessFamily": "naca4",
+                  "camberFamily": "circular_arc",
+                  "maxThicknessLocation": 0.3,
+                  "leadingEdgeThicknessRatio": 0.006,
+                  "trailingEdgeThicknessRatio": 0.004,
+                  "leadingEdgeRadiusRatio": 0.02,
+                  "trailingEdgeRadiusRatio": 0.01,
+                  "upperCoordinates": [],
+                  "lowerCoordinates": [],
+                  "cstUpper": [],
+                  "cstLower": [],
+                  "splineControls": []
+                }
+              },
+              {
+                "spanFraction": 1.0,
+                "leadingEdgeMm": [
+                  242.47998224059927,
+                  0.0,
+                  520.0
+                ],
+                "chordMm": 305.3213909378293,
+                "twistDeg": 0.0,
+                "dihedralDeg": 0.0,
+                "localFrame": null,
+                "profile": {
+                  "family": "naca4",
+                  "thicknessRatio": 0.0821917808219178,
+                  "camberRatio": 0.0,
+                  "camberPosition": 0.4,
+                  "thicknessFamily": "naca4",
+                  "camberFamily": "circular_arc",
+                  "maxThicknessLocation": 0.3,
+                  "leadingEdgeThicknessRatio": 0.006,
+                  "trailingEdgeThicknessRatio": 0.004,
+                  "leadingEdgeRadiusRatio": 0.02,
+                  "trailingEdgeRadiusRatio": 0.01,
+                  "upperCoordinates": [],
+                  "lowerCoordinates": [],
+                  "cstUpper": [],
+                  "cstLower": [],
+                  "splineControls": []
+                }
+              }
+            ]
+          }
+        ],
+        "bodies": [
+          {
+            "bodyId": "coupled-airframe-body",
+            "role": "lifting_body",
+            "frame": "vehicle-body",
+            "nPoints": 16,
+            "sections": [
+              {
+                "stationFraction": 0.0,
+                "spineMm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "widthMm": 22.32,
+                "heightMm": 13.2,
+                "lateralOffsetMm": 0.0,
+                "verticalOffsetMm": 0.0,
+                "superellipseExponent": 2.6
+              },
+              {
+                "stationFraction": 0.5,
+                "spineMm": [
+                  0.0,
+                  0.0,
+                  320.0
+                ],
+                "widthMm": 186.0,
+                "heightMm": 88.0,
+                "lateralOffsetMm": 0.0,
+                "verticalOffsetMm": 0.0,
+                "superellipseExponent": 2.6
+              },
+              {
+                "stationFraction": 1.0,
+                "spineMm": [
+                  0.0,
+                  0.0,
+                  640.0
+                ],
+                "widthMm": 18.6,
+                "heightMm": 10.559999999999999,
+                "lateralOffsetMm": 0.0,
+                "verticalOffsetMm": 0.0,
+                "superellipseExponent": 2.6
+              }
+            ]
+          }
+        ],
+        "controls": []
+      },
+      "inputHash": "fbfea2a7f84139b2c1fc95723e23d9b89985be509fad2bb43cc3af9cd4ae3498",
+      "nativeSolverEvidence": false
+    },
+    {
+      "id": "wing_t36mm",
+      "maxThicknessMm": 36.0,
+      "workbenchFidelity": "analytical ideal annular actuator-disk screening; stator count recorded without stator-row aerodynamics",
+      "feasible": false,
+      "frontalAreaM2": 0.021649017250684445,
+      "thrustToWeight": 0.34847853050883487,
+      "tipMach": 0.5132183917088865,
+      "gates": {
+        "frontal_area": false,
+        "low_speed_thrust_to_weight": false,
+        "target_speed": false,
+        "motor_current": true,
+        "battery_current": true,
+        "motor_rpm": true,
+        "tip_mach": true,
+        "motor_power": true,
+        "blade_root_stress": true,
+        "manufacturing": false,
+        "propulsion_validity": true,
+        "full_jet_validation": true
+      },
+      "gateMargins": {
+        "frontal_area_m2": -0.014149017250684445,
+        "low_speed_thrust_to_weight": -0.6515214694911651,
+        "target_speed_requirement_margin_kmh": 70.0,
+        "target_speed_thrust_margin_n": -88.30418437424949,
+        "motor_current_margin_a": 11.0,
+        "battery_current_margin_a": 281.0,
+        "motor_rpm_margin": 1300.0,
+        "motor_rpm_margin_fraction": 0.02765957446808509,
+        "tip_mach_margin": 0.28678160829111354,
+        "motor_power_margin_w": 0.0,
+        "blade_root_stress_margin_pa": 104893380.76556888,
+        "full_jet_validation_margin": 1.0,
+        "manufacturing_score": 0.0
+      },
+      "geometry": {
+        "assemblyId": "coupled-airframe-assembly",
+        "surfaces": [
+          {
+            "surfaceId": "coupled-airframe-planform",
+            "role": "lifting_body",
+            "frame": "vehicle-body",
+            "nSurface": 17,
+            "nEdge": 4,
+            "planform": {
+              "spanMm": 520.0,
+              "rootChordMm": 425.44783983140144,
+              "tipChordMm": 305.3213909378293,
+              "sweepDeg": 25.0,
+              "dihedralDeg": 0.0,
+              "twistRootDeg": 0.0,
+              "twistTipDeg": 0.0
+            },
+            "stations": [
+              {
+                "spanFraction": 0.0,
+                "leadingEdgeMm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "chordMm": 425.44783983140144,
+                "twistDeg": 0.0,
+                "dihedralDeg": 0.0,
+                "localFrame": null,
+                "profile": {
+                  "family": "naca4",
+                  "thicknessRatio": 0.09863013698630137,
+                  "camberRatio": 0.0,
+                  "camberPosition": 0.4,
+                  "thicknessFamily": "naca4",
+                  "camberFamily": "circular_arc",
+                  "maxThicknessLocation": 0.3,
+                  "leadingEdgeThicknessRatio": 0.006,
+                  "trailingEdgeThicknessRatio": 0.004,
+                  "leadingEdgeRadiusRatio": 0.02,
+                  "trailingEdgeRadiusRatio": 0.01,
+                  "upperCoordinates": [],
+                  "lowerCoordinates": [],
+                  "cstUpper": [],
+                  "cstLower": [],
+                  "splineControls": []
+                }
+              },
+              {
+                "spanFraction": 0.25,
+                "leadingEdgeMm": [
+                  60.61999556014982,
+                  0.0,
+                  130.0
+                ],
+                "chordMm": 395.4162276080084,
+                "twistDeg": 0.0,
+                "dihedralDeg": 0.0,
+                "localFrame": null,
+                "profile": {
+                  "family": "naca4",
+                  "thicknessRatio": 0.09863013698630137,
+                  "camberRatio": 0.0,
+                  "camberPosition": 0.4,
+                  "thicknessFamily": "naca4",
+                  "camberFamily": "circular_arc",
+                  "maxThicknessLocation": 0.3,
+                  "leadingEdgeThicknessRatio": 0.006,
+                  "trailingEdgeThicknessRatio": 0.004,
+                  "leadingEdgeRadiusRatio": 0.02,
+                  "trailingEdgeRadiusRatio": 0.01,
+                  "upperCoordinates": [],
+                  "lowerCoordinates": [],
+                  "cstUpper": [],
+                  "cstLower": [],
+                  "splineControls": []
+                }
+              },
+              {
+                "spanFraction": 0.5,
+                "leadingEdgeMm": [
+                  121.23999112029963,
+                  0.0,
+                  260.0
+                ],
+                "chordMm": 365.38461538461536,
+                "twistDeg": 0.0,
+                "dihedralDeg": 0.0,
+                "localFrame": null,
+                "profile": {
+                  "family": "naca4",
+                  "thicknessRatio": 0.09863013698630137,
+                  "camberRatio": 0.0,
+                  "camberPosition": 0.4,
+                  "thicknessFamily": "naca4",
+                  "camberFamily": "circular_arc",
+                  "maxThicknessLocation": 0.3,
+                  "leadingEdgeThicknessRatio": 0.006,
+                  "trailingEdgeThicknessRatio": 0.004,
+                  "leadingEdgeRadiusRatio": 0.02,
+                  "trailingEdgeRadiusRatio": 0.01,
+                  "upperCoordinates": [],
+                  "lowerCoordinates": [],
+                  "cstUpper": [],
+                  "cstLower": [],
+                  "splineControls": []
+                }
+              },
+              {
+                "spanFraction": 0.75,
+                "leadingEdgeMm": [
+                  181.85998668044945,
+                  0.0,
+                  390.0
+                ],
+                "chordMm": 335.3530031612223,
+                "twistDeg": 0.0,
+                "dihedralDeg": 0.0,
+                "localFrame": null,
+                "profile": {
+                  "family": "naca4",
+                  "thicknessRatio": 0.09863013698630137,
+                  "camberRatio": 0.0,
+                  "camberPosition": 0.4,
+                  "thicknessFamily": "naca4",
+                  "camberFamily": "circular_arc",
+                  "maxThicknessLocation": 0.3,
+                  "leadingEdgeThicknessRatio": 0.006,
+                  "trailingEdgeThicknessRatio": 0.004,
+                  "leadingEdgeRadiusRatio": 0.02,
+                  "trailingEdgeRadiusRatio": 0.01,
+                  "upperCoordinates": [],
+                  "lowerCoordinates": [],
+                  "cstUpper": [],
+                  "cstLower": [],
+                  "splineControls": []
+                }
+              },
+              {
+                "spanFraction": 1.0,
+                "leadingEdgeMm": [
+                  242.47998224059927,
+                  0.0,
+                  520.0
+                ],
+                "chordMm": 305.3213909378293,
+                "twistDeg": 0.0,
+                "dihedralDeg": 0.0,
+                "localFrame": null,
+                "profile": {
+                  "family": "naca4",
+                  "thicknessRatio": 0.09863013698630137,
+                  "camberRatio": 0.0,
+                  "camberPosition": 0.4,
+                  "thicknessFamily": "naca4",
+                  "camberFamily": "circular_arc",
+                  "maxThicknessLocation": 0.3,
+                  "leadingEdgeThicknessRatio": 0.006,
+                  "trailingEdgeThicknessRatio": 0.004,
+                  "leadingEdgeRadiusRatio": 0.02,
+                  "trailingEdgeRadiusRatio": 0.01,
+                  "upperCoordinates": [],
+                  "lowerCoordinates": [],
+                  "cstUpper": [],
+                  "cstLower": [],
+                  "splineControls": []
+                }
+              }
+            ]
+          }
+        ],
+        "bodies": [
+          {
+            "bodyId": "coupled-airframe-body",
+            "role": "lifting_body",
+            "frame": "vehicle-body",
+            "nPoints": 16,
+            "sections": [
+              {
+                "stationFraction": 0.0,
+                "spineMm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "widthMm": 22.32,
+                "heightMm": 13.2,
+                "lateralOffsetMm": 0.0,
+                "verticalOffsetMm": 0.0,
+                "superellipseExponent": 2.6
+              },
+              {
+                "stationFraction": 0.5,
+                "spineMm": [
+                  0.0,
+                  0.0,
+                  320.0
+                ],
+                "widthMm": 186.0,
+                "heightMm": 88.0,
+                "lateralOffsetMm": 0.0,
+                "verticalOffsetMm": 0.0,
+                "superellipseExponent": 2.6
+              },
+              {
+                "stationFraction": 1.0,
+                "spineMm": [
+                  0.0,
+                  0.0,
+                  640.0
+                ],
+                "widthMm": 18.6,
+                "heightMm": 10.559999999999999,
+                "lateralOffsetMm": 0.0,
+                "verticalOffsetMm": 0.0,
+                "superellipseExponent": 2.6
+              }
+            ]
+          }
+        ],
+        "controls": []
+      },
+      "inputHash": "836e177591125c61b9a6082e5a36a31f80d054d179501215a5227648804d3b17",
+      "nativeSolverEvidence": false
+    }
+  ],
+  "promotedGeometry": null,
+  "promotionPolicy": "No candidate is promoted by this analytical stage; native coupled response, mesh gates, structural limits and manufacturability are required."
+}

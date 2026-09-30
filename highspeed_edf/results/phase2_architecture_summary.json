@@ -1,0 +1,130 @@
+{
+  "phase": 2,
+  "evidenceClass": "reduced-order analytical screening",
+  "atmosphere": {
+    "altitudeM": 3000,
+    "temperatureK": 268.65,
+    "pressurePa": 70116.61869970639,
+    "densityKgM3": 0.9089418548388617
+  },
+  "geometryCheckpoint": {
+    "projectedFrontalAreaMaxCm2": 75,
+    "mustBeDerivedSeparatelyFromCdA": true,
+    "activeRequirementRevision": 2
+  },
+  "architectureCandidates": [
+    {
+      "id": "A",
+      "label": "three serial work-adding rotor rows",
+      "motorsPerDuct": 3,
+      "stages": 3,
+      "servoCountPropulsion": 0,
+      "screenedAs": "bypass fraction 0.0"
+    },
+    {
+      "id": "B",
+      "label": "front fan + two core rotor rows + variable bypass",
+      "motorsPerDuct": 3,
+      "stages": 3,
+      "servoCountPropulsion": 0,
+      "screenedAs": "bypass split grid 0.0-0.8"
+    },
+    {
+      "id": "C",
+      "label": "contra-rotating fan pair + one core rotor",
+      "motorsPerDuct": 3,
+      "stages": 2,
+      "servoCountPropulsion": 0,
+      "status": "thermodynamically comparable only; swirl/rotordynamics not screened"
+    },
+    {
+      "id": "D",
+      "label": "fan + three core stages, one motor drives tandem pair",
+      "motorsPerDuct": 3,
+      "stages": 4,
+      "servoCountPropulsion": 0,
+      "status": "shaft split not closed; mechanical risk candidate only"
+    }
+  ],
+  "gearbox": {
+    "fixedRatios": [
+      2.3,
+      2.6,
+      2.9
+    ],
+    "efficiencyAssumed": 0.95,
+    "motorHardRpm": 13500
+  },
+  "stageCountScreen": [
+    {
+      "speed_kmh": 700,
+      "altitude_m": 3000,
+      "cdA_m2": 0.00315,
+      "total_pressure_ratio": 1.1543668292944747,
+      "pressure_adding_rotor_rows": 1,
+      "equal_stage_pressure_ratio": 1.1543668292944747,
+      "equal_specific_work_per_row_j_kg": 14750.540210089057,
+      "rpm_at_loading_psi_0_5": 58577.699448827065,
+      "fixed_overdrive_at_motor_13500rpm": 4.339088848061264,
+      "ideal_cycle_power_change_vs_other_stage_counts_w": 0.0,
+      "source_class": "equal-work thermodynamic distribution; common radius; assumed psi=0.5; stage efficiencies held equal"
+    },
+    {
+      "speed_kmh": 700,
+      "altitude_m": 3000,
+      "cdA_m2": 0.00315,
+      "total_pressure_ratio": 1.1543668292944747,
+      "pressure_adding_rotor_rows": 2,
+      "equal_stage_pressure_ratio": 1.0744146449553238,
+      "equal_specific_work_per_row_j_kg": 7375.2701050445285,
+      "rpm_at_loading_psi_0_5": 41420.688506573104,
+      "fixed_overdrive_at_motor_13500rpm": 3.0681991486350446,
+      "ideal_cycle_power_change_vs_other_stage_counts_w": 0.0,
+      "source_class": "equal-work thermodynamic distribution; common radius; assumed psi=0.5; stage efficiencies held equal"
+    },
+    {
+      "speed_kmh": 700,
+      "altitude_m": 3000,
+      "cdA_m2": 0.00315,
+      "total_pressure_ratio": 1.1543668292944747,
+      "pressure_adding_rotor_rows": 3,
+      "equal_stage_pressure_ratio": 1.0490139887424832,
+      "equal_specific_work_per_row_j_kg": 4916.846736696352,
+      "rpm_at_loading_psi_0_5": 33819.8505452893,
+      "fixed_overdrive_at_motor_13500rpm": 2.505174114465874,
+      "ideal_cycle_power_change_vs_other_stage_counts_w": 0.0,
+      "source_class": "equal-work thermodynamic distribution; common radius; assumed psi=0.5; stage efficiencies held equal"
+    },
+    {
+      "speed_kmh": 700,
+      "altitude_m": 3000,
+      "cdA_m2": 0.00315,
+      "total_pressure_ratio": 1.1543668292944747,
+      "pressure_adding_rotor_rows": 4,
+      "equal_stage_pressure_ratio": 1.0365397459602423,
+      "equal_specific_work_per_row_j_kg": 3687.6350525222642,
+      "rpm_at_loading_psi_0_5": 29288.849724413532,
+      "fixed_overdrive_at_motor_13500rpm": 2.169544424030632,
+      "ideal_cycle_power_change_vs_other_stage_counts_w": 0.0,
+      "source_class": "equal-work thermodynamic distribution; common radius; assumed psi=0.5; stage efficiencies held equal"
+    }
+  ],
+  "bypassConstraints": {
+    "minimumCoreMassFractionAssumed": 0.2,
+    "minimumCorePressureRatioAssumed": 1.05
+  },
+  "maximumProvisionalBusPowerW": 20655.0,
+  "gcpJobs": [],
+  "nativeSolvers": [],
+  "knownMissingPhysics": [
+    "real fan/core maps",
+    "nozzle flow capacity/choking",
+    "mechanical variable-nozzle map",
+    "frontal geometry",
+    "installed inlet/interference losses",
+    "motor torque-speed/loss maps",
+    "gearbox mass and life"
+  ],
+  "requirementsSha256": "5b66ef42d2367001066f95ecd142f3efb308bf6d681952c47a52d6e8772f2e7b",
+  "configSha256": "3385589c1edef1617e0c979cbded32bee806ba2913d204d66b1c1a749ef190a1"
+}

@@ -1,0 +1,25 @@
+altitude_m,ambient_density_kg_m3,speed_kmh,cda_m2,inlet_recovery,required_specific_work_j_kg,rotor_loading_coefficient_assumed,equal_three_rotor_required_rpm,source_class
+0.0,1.2246161177454742,600,0.004,0.98,14625.22267422503,0.4,37650.77943011354,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+0.0,1.2246161177454742,600,0.004,0.98,14625.22267422503,0.5,33675.880884633865,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+0.0,1.2246161177454742,600,0.004,0.98,14625.22267422503,0.6,30741.73267395166,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+0.0,1.2246161177454742,700,0.0035,0.98,16388.451225115714,0.4,39855.81406427263,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+0.0,1.2246161177454742,700,0.0035,0.98,16388.451225115714,0.5,35648.12381852231,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+0.0,1.2246161177454742,700,0.0035,0.98,16388.451225115714,0.6,32542.135913569786,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+1000.0,1.1113358890803753,600,0.004,0.98,14529.378712624695,0.4,37527.20758851935,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+1000.0,1.1113358890803753,600,0.004,0.98,14529.378712624695,0.5,33565.35486947009,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+1000.0,1.1113358890803753,600,0.004,0.98,14529.378712624695,0.6,30640.836687791067,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+1000.0,1.1113358890803753,700,0.0035,0.98,16291.16647265246,0.4,39737.342395618616,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+1000.0,1.1113358890803753,700,0.0035,0.98,16291.16647265246,0.5,35542.15953671503,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+1000.0,1.1113358890803753,700,0.0035,0.98,16291.16647265246,0.6,32445.40420117698,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+2000.0,1.0062511872950244,600,0.004,0.98,14433.391607168089,0.4,37403.04202283779,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+2000.0,1.0062511872950244,600,0.004,0.98,14433.391607168089,0.5,33454.29781133862,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+2000.0,1.0062511872950244,600,0.004,0.98,14433.391607168089,0.6,30539.45592794312,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+2000.0,1.0062511872950244,700,0.0035,0.98,16193.682070440058,0.4,39618.272238017395,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+2000.0,1.0062511872950244,700,0.0035,0.98,16193.682070440058,0.5,35435.65995011985,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+2000.0,1.0062511872950244,700,0.0035,0.98,16193.682070440058,0.6,32348.18382460506,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+3000.0,0.9089418548388617,600,0.004,0.98,14337.25195747575,0.4,37278.2645794313,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+3000.0,0.9089418548388617,600,0.004,0.98,14337.25195747575,0.5,33342.6934731324,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+3000.0,0.9089418548388617,600,0.004,0.98,14337.25195747575,0.6,30437.575572024813,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+3000.0,0.9089418548388617,700,0.0035,0.98,16095.985243378682,0.4,39498.582504298975,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+3000.0,0.9089418548388617,700,0.0035,0.98,16095.985243378682,0.5,35328.60619779856,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius
+3000.0,0.9089418548388617,700,0.0035,0.98,16095.985243378682,0.6,32250.457566251815,analytical work balance + ISA; assumed equal-work 3-rotor loading; optimistic common radius

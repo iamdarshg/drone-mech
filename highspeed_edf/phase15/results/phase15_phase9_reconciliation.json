@@ -1,0 +1,90 @@
+{
+  "phase": 15,
+  "question": "why is Phase-9 ~12.9 kW when the momentum/loss model gives ~3.9 kW?",
+  "operatingPoint": {
+    "speedKmh": 720.0,
+    "altitudeM": 3000.0,
+    "cdaM2": 0.000693,
+    "thrustN": 12.6,
+    "massFlowKgS": 1.0886,
+    "annulusM2": 0.007043,
+    "captureFraction": 0.85,
+    "freestreamTotalPressurePa": 90038.0
+  },
+  "explanation": "At M=0.6 the freestream TOTAL pressure is ~1.28x ambient, but the fan only needs to add ~1-2% of that total pressure to make thrust. A 2% inlet loss plus a 2% nozzle loss is therefore the same order as the useful pressure rise, so the fan must work several times harder. Phase-9 used inlet 0.98, nozzle 0.98, compressor eta 0.82, which lands at ~10 kW shaft / ~13 kW electrical. The momentum/actuator-disk model ignores those recovery losses, giving ~3.4 kW.",
+  "sensitivityCases": [
+    {
+      "inlet_recovery": 0.98,
+      "nozzle_recovery": 0.98,
+      "compressor_eta": 0.82,
+      "required_pr": 1.0671,
+      "required_jet_velocity_m_s": 211.58,
+      "shaft_power_w": 7203.0,
+      "electrical_power_w": 8072.0,
+      "ideal_momentum_power_w": 2593.0,
+      "overpower_factor_vs_ideal": 3.11,
+      "propulsive_efficiency": 0.312,
+      "case": "phase9_basis"
+    },
+    {
+      "inlet_recovery": 0.99,
+      "nozzle_recovery": 0.99,
+      "compressor_eta": 0.86,
+      "required_pr": 1.0477,
+      "required_jet_velocity_m_s": 211.58,
+      "shaft_power_w": 4922.0,
+      "electrical_power_w": 5515.0,
+      "ideal_momentum_power_w": 2593.0,
+      "overpower_factor_vs_ideal": 2.13,
+      "propulsive_efficiency": 0.457,
+      "case": "good_inlet"
+    },
+    {
+      "inlet_recovery": 0.995,
+      "nozzle_recovery": 0.995,
+      "compressor_eta": 0.9,
+      "required_pr": 1.0383,
+      "required_jet_velocity_m_s": 211.58,
+      "shaft_power_w": 3785.0,
+      "electrical_power_w": 4242.0,
+      "ideal_momentum_power_w": 2593.0,
+      "overpower_factor_vs_ideal": 1.64,
+      "propulsive_efficiency": 0.594,
+      "case": "very_good_inlet"
+    },
+    {
+      "inlet_recovery": 1.0,
+      "nozzle_recovery": 1.0,
+      "compressor_eta": 1.0,
+      "required_pr": 1.0291,
+      "required_jet_velocity_m_s": 211.58,
+      "shaft_power_w": 2593.0,
+      "electrical_power_w": 2906.0,
+      "ideal_momentum_power_w": 2593.0,
+      "overpower_factor_vs_ideal": 1.12,
+      "propulsive_efficiency": 0.867,
+      "case": "clean_idealised"
+    },
+    {
+      "inlet_recovery": 0.97,
+      "nozzle_recovery": 0.97,
+      "compressor_eta": 0.8,
+      "required_pr": 1.087,
+      "required_jet_velocity_m_s": 211.58,
+      "shaft_power_w": 9511.0,
+      "electrical_power_w": 10658.0,
+      "ideal_momentum_power_w": 2593.0,
+      "overpower_factor_vs_ideal": 4.11,
+      "propulsive_efficiency": 0.236,
+      "case": "poor_inlet"
+    }
+  ],
+  "rangeAt1p6AhSprint": {
+    "at_phase9_12p9kW_km": 3.4,
+    "at_10kW_km": 4.3,
+    "at_6kW_km": 7.2,
+    "at_lossmodel_3p9kW_km": 11.2
+  },
+  "realisticConvention": "Industry practice sizes an electrically-driven fan on measured thrust-vs-airspeed maps, not on an idealised compressor cycle. NOTE: the phase9_basis row of THIS model computes 7.9 kW, not the 12.93 kW of the original Phase-9 run; the difference is the smaller 80 mm annulus and mass flow used here. The defensible envelope for this duct is therefore roughly 4-10.5 kW electrical at 720 km/h (2.7 kW ideal floor), with the original 12.93 kW as a higher-mass-flow bound.",
+  "newCloudSpendUsd": 0
+}

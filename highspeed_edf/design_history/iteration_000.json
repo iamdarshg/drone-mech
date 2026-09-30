@@ -1,0 +1,10 @@
+{
+  "iteration": 0,
+  "accepted": true,
+  "phase": "phase0-baseline",
+  "sourceClass": "user-requirement-and-external-decision-record",
+  "requirementsRevision": 1,
+  "designStateFile": "../designs/design_state.json",
+  "designRevision": 1,
+  "note": "Baseline snapshot marker. No aerodynamic design candidate is accepted yet."
+}

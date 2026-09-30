@@ -1,0 +1,97 @@
+{
+  "phase": 10,
+  "powertrainImmutable": {
+    "motors": "6 x stock Flycci FA4119 KV350",
+    "battery": "2 x Turnigy Rapid 6S 5000mAh in series; 12S1P; 5Ah"
+  },
+  "nominalGeometry": {
+    "ductOuterDiameterMm": 90.0,
+    "ductBoreMm": 88.0,
+    "hubDiameterMm": 32.0,
+    "nominalBladeSpanMm": 29.0,
+    "rotorChordMm": 16.0,
+    "statorChordMm": 8.0,
+    "rotorCountsPerModule": [
+      13,
+      12,
+      11
+    ],
+    "statorCountsPerModule": [
+      23,
+      21,
+      19
+    ],
+    "rotorRpm720Kmh": [
+      29375.0,
+      33125.0,
+      36360.0
+    ],
+    "slotMm": [
+      50.0,
+      120.0
+    ],
+    "sideTurnRadiusMm": 225.0
+  },
+  "camOutputs": [
+    "deliverables\\phase10\\step\\phase10_edf_A_configuration.step",
+    "deliverables\\phase10\\step\\phase10_edf_B_configuration.step",
+    "deliverables\\phase10\\step\\phase10_full_assembly.step",
+    "deliverables\\phase10\\stock_layouts\\A_rotor_billet1_250x50x16_stock_nest.step",
+    "deliverables\\phase10\\stock_layouts\\A_rotor_billet2_250x50x16_stock_nest.step",
+    "deliverables\\phase10\\stock_layouts\\A_stator_250x100x5_stock_nest.step",
+    "deliverables\\phase10\\gcode\\edf_A_rotor_billet1_250x50x16_2mm_rough.nc",
+    "deliverables\\phase10\\gcode\\edf_A_rotor_billet1_250x50x16_0p5mm_finish_top_0p5mm.nc",
+    "deliverables\\phase10\\gcode\\edf_A_rotor_billet2_250x50x16_2mm_rough.nc",
+    "deliverables\\phase10\\gcode\\edf_A_rotor_billet2_250x50x16_0p5mm_finish_top_0p5mm.nc",
+    "deliverables\\phase10\\gcode\\edf_A_stator_vanes_250x100x5_2mm_rough.nc",
+    "deliverables\\phase10\\gcode\\edf_A_stator_vanes_250x100x5_0p5mm_finish_top_0p5mm.nc",
+    "deliverables\\phase10\\stock_layouts\\B_rotor_billet1_250x50x16_stock_nest.step",
+    "deliverables\\phase10\\stock_layouts\\B_rotor_billet2_250x50x16_stock_nest.step",
+    "deliverables\\phase10\\stock_layouts\\B_stator_250x100x5_stock_nest.step",
+    "deliverables\\phase10\\gcode\\edf_B_rotor_billet1_250x50x16_2mm_rough.nc",
+    "deliverables\\phase10\\gcode\\edf_B_rotor_billet1_250x50x16_0p5mm_finish_top_0p5mm.nc",
+    "deliverables\\phase10\\gcode\\edf_B_rotor_billet2_250x50x16_2mm_rough.nc",
+    "deliverables\\phase10\\gcode\\edf_B_rotor_billet2_250x50x16_0p5mm_finish_top_0p5mm.nc",
+    "deliverables\\phase10\\gcode\\edf_B_stator_vanes_250x100x5_2mm_rough.nc",
+    "deliverables\\phase10\\gcode\\edf_B_stator_vanes_250x100x5_0p5mm_finish_top_0p5mm.nc"
+  ],
+  "cutStockNesting": {
+    "perEdfSet": {
+      "rotorBlanks": 36,
+      "rotorBilletMm": [
+        250,
+        50,
+        16
+      ],
+      "rotorBilletsPerEdf": 2,
+      "rotorNest": "Each billet uses a 6 x 4 no-overlap keep-out grid; 24 blanks in billet 1 and 12 in billet 2 per EDF.",
+      "statorVanes": 63,
+      "statorPlateMm": [
+        250,
+        100,
+        5
+      ],
+      "statorNest": "8 columns x 10 rows; 63 of 80 positions used"
+    },
+    "bothEdfs": "2 plates plus 4 billets: two plate/billet pairs plus two additional rotor billets",
+    "unprovidedMachinedParts": [
+      "3 rotor hub assemblies per EDF (8 mm bore is a provisional interface)",
+      "90 mm casing rings and row support details",
+      "side-inlet elbow shells and fuselage/lifting-body structure"
+    ]
+  },
+  "ncProcess": {
+    "controller": "GRBL; no CNC execution",
+    "machine": "TwoTrees 3018 Pro nominal 300 x 180 x 40 mm; ER11 775 spindle",
+    "spindleRpm": 7000,
+    "roughToolMm": 2.0,
+    "roughStepdownMm": {
+      "rotorBillet": 0.2,
+      "statorPlate": 0.25
+    },
+    "finishToolMm": 0.5,
+    "finishDepthMm": 0.5,
+    "workOffset": "G54; XY stock lower-left; Z0 stock top",
+    "finishScope": "top 0.5 mm perimeter band only; 0.5 mm cutter is not used through stock thickness"
+  }
+}

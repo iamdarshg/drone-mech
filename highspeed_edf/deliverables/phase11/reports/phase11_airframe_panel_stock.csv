@@ -1,0 +1,23 @@
+plateId,family,blankCount,stockMm,blankAreaMm2,net6061BlankMassKg,NC
+P11_body_01,body,1,250x100x5,7328.0,0.098928,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_body_02,body,1,250x100x5,7328.0,0.098928,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_body_03,body,1,250x100x5,11293.333333333332,0.15245999999999998,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_body_04,body,1,250x100x5,11293.333333333332,0.15245999999999998,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_body_05,body,1,250x100x5,3170.6666666666665,0.042804,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_body_06,body,1,250x100x5,3170.6666666666665,0.042804,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_01,duct,1,250x100x5,6005.105088062083,0.08106891868883813,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_02,duct,1,250x100x5,6005.105088062083,0.08106891868883813,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_03,duct,1,250x100x5,7206.126105674501,0.09728270242660576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_04,duct,1,250x100x5,7206.126105674501,0.09728270242660576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_05,duct,1,250x100x5,7206.126105674501,0.09728270242660576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_06,duct,1,250x100x5,7206.126105674501,0.09728270242660576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_07,duct,1,250x100x5,6005.105088062083,0.08106891868883813,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_08,duct,1,250x100x5,6005.105088062083,0.08106891868883813,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_09,duct,1,250x100x5,7206.126105674501,0.09728270242660576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_10,duct,1,250x100x5,7206.126105674501,0.09728270242660576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_11,duct,1,250x100x5,7206.126105674501,0.09728270242660576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_duct_12,duct,1,250x100x5,7206.126105674501,0.09728270242660576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_casing_01,casing,4,250x100x5,17772.43844030797,0.2399279189441576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_casing_02,casing,4,250x100x5,17772.43844030797,0.2399279189441576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_casing_03,casing,4,250x100x5,17772.43844030797,0.2399279189441576,2mm rough plus 0.5mm top-band finish; no CNC run
+P11_casing_04,casing,2,250x100x5,8886.219220153986,0.1199639594720788,2mm rough plus 0.5mm top-band finish; no CNC run

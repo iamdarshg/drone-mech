@@ -1,0 +1,123 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2606                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _481094f-20260618 OPENFOAM=2606 version=2606
+Arch   : "LSB;label=32;scalar=64"
+Exec   : rhoPimpleFoam
+Date   : Sep 30 2026
+Time   : 11:01:14
+Host   : hsedf-fsi-20260930-105555
+PID    : 7299
+--> FOAM Warning : 
+    From Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 558
+    PWD is not the cwd() - reverting to physical description
+I/O    : uncollated
+--> FOAM Warning : 
+    From Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 558
+    PWD is not the cwd() - reverting to physical description
+Case   : /opt/phase15-fsi/phase15/fsi/cases/wing_t36mm/fluid
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+memory pool : not available
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+
+--> FOAM Warning : allowSystemOperations : Allowing user-supplied system call operations.
+                   This can be a security risk if running untrusted cases
+                   through e.g. 'coded' on-the-fly-compilation functionality.
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Selecting dynamicFvMesh dynamicMotionSolverFvMesh
+Selecting motion solver: displacementLaplacian
+Applying motion to entire mesh
+Selecting motion diffusion: quadratic
+Selecting motion diffusion: inverseDistance
+Selecting patchDistMethod meshWave
+
+PIMPLE: Operating solver in PISO mode
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.55555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+Creating field dpdt for moving meshes
+
+Creating field kinetic energy K
+
+No MRF models present
+
+No finite volume options present
+Constructing face momentum rhoUf
+
+
+--> FOAM FATAL ERROR: (openfoam-2606)
+Different dimensions for '(a = b)'
+     dimensions : [0 2 -1 0 0 0 0] != [1 -1 -1 0 0 0 0]
+
+
+    From bool Foam::checkDims(const char*, const Foam::dimensionSet&, const Foam::dimensionSet&)
+    in file dimensionSet/dimensionSet.C at line 56.
+
+FOAM aborting
+
+[stack trace]
+=============
+#1  Foam::error::simpleExit(int, bool) platforms/linux64GccDPInt32Opt/lib/libOpenFOAM.so [0x7b8ad286c318]
+#2  Foam::dimensionSet::operator=(Foam::dimensionSet const&) const platforms/linux64GccDPInt32Opt/lib/libOpenFOAM.so [0x7b8ad2a55a64]
+#3  platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so(+0x77b1e) [0x7b8ad5488b1e]
+#4  platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so(+0x88165) [0x7b8ad5499165]
+#5  platforms/linux64GccDPInt32Opt/lib/libcompressibleTurbulenceModels.so(+0x7ad3e) [0x7b8ad548bd3e]
+#6  rhoPimpleFoam(+0x1ccac) [0x619129015cac]
+#7  /usr/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7b8ad1e29d90]
+#8  __libc_start_main /usr/lib/x86_64-linux-gnu/libc.so.6 [0x7b8ad1e29e40]
+#9  rhoPimpleFoam(+0x2c575) [0x619129025575]
+=============

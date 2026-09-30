@@ -1,0 +1,4 @@
+row,rpm,tipSpeedMps,bladeVolumeMm3,rootAreaMm2,centrifugalForcePerBladeN,nominalRootStressMPa,stressConcentrationFactor,rootSafetyFactorTo6061T6Yield,hubThinRingStressMPa,hubSafetyFactorTo6061T6Yield,scope
+1,29375.0,134.11982636950424,607.8593995652893,20.96066560429954,452.39013393337353,21.582813374045593,2.5,5.115181143750309,6.540586836601917,16.879219366401227,"centrifugal-only; excludes cyclic aero/bending, fatigue, flaws, hub-joint and gearbox loads"
+2,33125.0,151.24150633156862,607.859414167986,20.96066560429954,575.3121906362809,27.447229086001467,2.5,4.022263947084764,8.317115628798001,13.273832531285262,"centrifugal-only; excludes cyclic aero/bending, fatigue, flaws, hub-joint and gearbox loads"
+3,36360.0,166.01180891217615,607.8594237696191,20.96066560429954,693.2157801676561,33.07222171539537,2.5,3.3381488836780493,10.02094583087495,11.01692413702637,"centrifugal-only; excludes cyclic aero/bending, fatigue, flaws, hub-joint and gearbox loads"

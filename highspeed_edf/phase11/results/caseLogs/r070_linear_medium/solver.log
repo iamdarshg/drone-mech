@@ -1,0 +1,179 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : rhoSimpleFoam
+Date   : Sep 25 2026
+Time   : 18:43:38
+Host   : hsedf-p11-20260925-184158
+PID    : 2334
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+I/O    : uncollated
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+Case   : /opt/phase11/phase11/cases/r070_linear_medium
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+SIMPLE: convergence criteria
+    field p	 tolerance 1e-05
+    field U	 tolerance 1e-05
+    field h	 tolerance 1e-05
+    field k	 tolerance 0.0001
+    field omega	 tolerance 0.0001
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+--> FOAM Warning : 
+    From function Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 494
+    PWD is not the cwd() - reverting to physical description
+
+--- STDERR ---
+
+
+--> FOAM FATAL ERROR: 
+Invalid wall function specification
+    Patch type for patch walls must be wall
+    Current patch type is patch
+
+
+
+    From function virtual void Foam::nutWallFunctionFvPatchScalarField::checkType()
+    in file derivedFvPatchFields/wallFunctions/nutWallFunctions/nutWallFunction/nutWallFunctionFvPatchScalarField.C at line 49.
+
+FOAM aborting
+
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::error::abort() at ??:?
+#2  Foam::nutWallFunctionFvPatchScalarField::nutWallFunctionFvPatchScalarField(Foam::fvPatch const&, Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) at ??:?
+#3  Foam::nutkWallFunctionFvPatchScalarField::nutkWallFunctionFvPatchScalarField(Foam::fvPatch const&, Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) at ??:?
+#4  Foam::fvPatchField<double>::adddictionaryConstructorToTable<Foam::nutkWallFunctionFvPatchScalarField>::New(Foam::fvPatch const&, Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) at ??:?
+#5  Foam::fvPatchField<double>::New(Foam::fvPatch const&, Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) in /usr/bin/rhoSimpleFoam
+#6  Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>::Boundary::readField(Foam::DimensionedField<double, Foam::volMesh> const&, Foam::dictionary const&) in /usr/bin/rhoSimpleFoam
+#7  Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>::readFields(Foam::dictionary const&) in /usr/bin/rhoSimpleFoam
+#8  Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>::readFields() in /usr/bin/rhoSimpleFoam
+#9  ? at ??:?
+#10  Foam::eddyViscosity<Foam::RASModel<Foam::EddyDiffusivity<Foam::ThermalDiffusivity<Foam::CompressibleTurbulenceModel<Foam::fluidThermo> > > > >::eddyViscosity(Foam::word const&, Foam::geometricOneField const&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::fluidThermo const&, Foam::word const&) at ??:?
+#11  Foam::kOmegaSSTBase<Foam::eddyViscosity<Foam::RASModel<Foam::EddyDiffusivity<Foam::ThermalDiffusivity<Foam::CompressibleTurbulenceModel<Foam::fluidThermo> > > > > >::kOmegaSSTBase(Foam::word const&, Foam::geometricOneField const&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::fluidThermo const&, Foam::word const&) at ??:?
+#12  Foam::RASModel<Foam::EddyDiffusivity<Foam::ThermalDiffusivity<Foam::CompressibleTurbulenceModel<Foam::fluidThermo> > > >::adddictionaryConstructorToTable<Foam::RASModels::kOmegaSST<Foam::EddyDiffusivity<Foam::ThermalDiffusivity<Foam::CompressibleTurbulenceModel<Foam::fluidThermo> > > > >::New(Foam::geometricOneField const&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::fluidThermo const&, Foam::word const&) at ??:?
+#13  Foam::RASModel<Foam::EddyDiffusivity<Foam::ThermalDiffusivity<Foam::CompressibleTurbulenceModel<Foam::fluidThermo> > > >::New(Foam::geometricOneField const&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::fluidThermo const&, Foam::word const&) at ??:?
+#14  Foam::TurbulenceModel<Foam::geometricOneField, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>, Foam::compressibleTurbulenceModel, Foam::fluidThermo>::adddictionaryConstructorToTable<Foam::RASModel<Foam::EddyDiffusivity<Foam::ThermalDiffusivity<Foam::CompressibleTurbulenceModel<Foam::fluidThermo> > > > >::NewTurbulenceModel(Foam::geometricOneField const&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> const&, Foam::fluidThermo const&, Foam::word const&) at ??:?
+#15  ? in /usr/bin/rhoSimpleFoam
+#16  ? in /usr/bin/rhoSimpleFoam
+#17  ? in /lib/x86_64-linux-gnu/libc.so.6
+#18  __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+#19  ? in /usr/bin/rhoSimpleFoam

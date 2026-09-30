@@ -1,0 +1,17 @@
+file,toolNumber,toolDiameterMm,stockMm,camXBoundsMm,minXmm,maxXmm,minYmm,maxYmm,minZmm,maxZmm,coordinateWordCount,linearMotionBlocks,allCoordinatesInsideStock,depthInsideStock,G54,spindle8000,manualToolChange,cncRun
+phase13_channel_01_R1_blade_hub_2mm_rough.nc,1,2.0,"[300.0, 50.0, 16.0]","[25.0, 275.0]",28.75,247.249,1.758,43.081,-16.0,5.0,346082,118162,True,True,True,True,True,False
+phase13_channel_01_R1_blade_hub_0p5mm_finish_top0p5.nc,2,0.5,"[300.0, 50.0, 16.0]","[25.0, 275.0]",29.75,246.25,2.752,42.064,-0.5,5.0,18287,6272,True,True,True,True,True,False
+phase13_channel_02_R2_blade_hub_2mm_rough.nc,1,2.0,"[300.0, 50.0, 16.0]","[25.0, 275.0]",28.75,247.249,1.758,43.836,-16.0,5.0,322642,110162,True,True,True,True,True,False
+phase13_channel_02_R2_blade_hub_0p5mm_finish_top0p5.nc,2,0.5,"[300.0, 50.0, 16.0]","[25.0, 275.0]",29.75,246.25,2.752,42.819,-0.5,5.0,17032,5842,True,True,True,True,True,False
+phase13_channel_03_R3_blade_hub_2mm_rough.nc,1,2.0,"[300.0, 50.0, 16.0]","[25.0, 275.0]",28.75,247.249,1.758,44.431,-16.0,5.0,299202,102162,True,True,True,True,True,False
+phase13_channel_03_R3_blade_hub_0p5mm_finish_top0p5.nc,2,0.5,"[300.0, 50.0, 16.0]","[25.0, 275.0]",29.75,246.25,2.752,43.414,-0.5,5.0,15777,5412,True,True,True,True,True,False
+phase13_EDF_A_63stators_250x100x5_2mm_rough.nc,1,2.0,"[250.0, 100.0, 5.0]","[0.0, 250.0]",3.75,222.25,3.75,62.11,-5.0,5.0,248222,85682,True,True,True,True,True,False
+phase13_EDF_A_63stators_250x100x5_0p5mm_full_depth_finish.nc,2,0.5,"[250.0, 100.0, 5.0]","[0.0, 250.0]",4.75,221.25,4.75,61.111,-5.0,5.0,1089902,378002,True,True,True,True,True,False
+phase13_channel_04_R1_blade_hub_2mm_rough.nc,1,2.0,"[300.0, 50.0, 16.0]","[25.0, 275.0]",28.75,247.249,1.758,43.081,-16.0,5.0,346082,118162,True,True,True,True,True,False
+phase13_channel_04_R1_blade_hub_0p5mm_finish_top0p5.nc,2,0.5,"[300.0, 50.0, 16.0]","[25.0, 275.0]",29.75,246.25,2.752,42.064,-0.5,5.0,18287,6272,True,True,True,True,True,False
+phase13_channel_05_R2_blade_hub_2mm_rough.nc,1,2.0,"[300.0, 50.0, 16.0]","[25.0, 275.0]",28.75,247.249,1.758,43.836,-16.0,5.0,322642,110162,True,True,True,True,True,False
+phase13_channel_05_R2_blade_hub_0p5mm_finish_top0p5.nc,2,0.5,"[300.0, 50.0, 16.0]","[25.0, 275.0]",29.75,246.25,2.752,42.819,-0.5,5.0,17032,5842,True,True,True,True,True,False
+phase13_channel_06_R3_blade_hub_2mm_rough.nc,1,2.0,"[300.0, 50.0, 16.0]","[25.0, 275.0]",28.75,247.249,1.758,44.431,-16.0,5.0,299202,102162,True,True,True,True,True,False
+phase13_channel_06_R3_blade_hub_0p5mm_finish_top0p5.nc,2,0.5,"[300.0, 50.0, 16.0]","[25.0, 275.0]",29.75,246.25,2.752,43.414,-0.5,5.0,15777,5412,True,True,True,True,True,False
+phase13_EDF_B_63stators_250x100x5_2mm_rough.nc,1,2.0,"[250.0, 100.0, 5.0]","[0.0, 250.0]",3.75,222.25,3.75,62.11,-5.0,5.0,248222,85682,True,True,True,True,True,False
+phase13_EDF_B_63stators_250x100x5_0p5mm_full_depth_finish.nc,2,0.5,"[250.0, 100.0, 5.0]","[0.0, 250.0]",4.75,221.25,4.75,61.111,-5.0,5.0,1089902,378002,True,True,True,True,True,False

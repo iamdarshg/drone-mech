@@ -1,0 +1,2 @@
+PHASE15_FSI_WORKER_START instance=hsedf-fsi-20260930-094924 utc=2026-09-30T09:51:07Z
+STEP install OpenFOAM and adapter build dependencies

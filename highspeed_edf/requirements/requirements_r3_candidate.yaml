@@ -1,0 +1,56 @@
+study:
+  id: highspeed-edf
+  revision: 3
+  status: geometry-and-mass-candidate-screen-not-release
+  parent_revision: requirements_r2.yaml
+  evidence_policy: keep measured/source-derived data separate from analyst assumptions
+
+aircraft:
+  all_up_mass_target_kg: 11.5
+  mass_basis: derived screening cap for low-speed T/W with the locked six-motor / 12S1P powertrain; final BOM weighing required
+  projected_frontal_area_strict_max_cm2: 75.0
+  projected_frontal_area_target_cm2: 73.62
+  baseline_speed_kmh: 600
+  required_stretch_speed_kmh: greater-than-700
+  candidate_design_speed_kmh: 720
+  design_altitude_m: 3000
+  low_speed_static_t_over_w_minimum: 1.0
+
+immutable_powertrain:
+  motors:
+    count: 6
+    model: Flycci_FA4119_stock_KV350
+    mass_kg_each: 0.280
+    source: drone-arm/hardware/motor_release/FA4119_PROPULSION_DECISION.md
+  battery:
+    packs: 2
+    model: Turnigy_Rapid_6S_5000mAh_100C
+    topology: 12S1P_series
+    capacity_ah: 5.0
+    mass_kg_each: 0.713
+    source: SpeedyFPV product specification, XT90 variant
+  electrical_limits:
+    soft_battery_current_a_per_motor: 55
+    initial_hard_battery_current_a_per_motor: 65
+    provisional_short_battery_current_a_per_motor: 75
+    provisional_short_duration_s: unvalidated
+    esc_phase_current_continuous_a_rms: 60
+    esc_phase_current_burst_a_rms: 90
+
+geometry:
+  duct_count: 2
+  candidate_fan_outer_diameter_mm: 90
+  hub_diameter_mm: 32
+  projected_layout: axially_staggered coincident fan-disk outlines with side-facing flush inlets
+  candidate_inlets: two 50x120mm side slots; 120cm2 total opening
+  blade_material_stock_mm: 16_thick_x_50_wide
+  rotor_chord_mm: 16
+  rotor_radial_span_mm: 29
+  stator_chord_mm: 8
+  fuselage_cdA_target_m2_at_720kmh: 0.0009
+
+screening:
+  pack_r0_sensitivity_ohm: [0.01, 0.02, 0.03]
+  fan_efficiency_assumed: 0.8
+  gearbox_efficiency_assumed: 0.95
+  evidence: ideal actuator disk + Phase-1 ideal-gas flight cycle + candidate Phase-3 row meanline

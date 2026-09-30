@@ -1,0 +1,27 @@
+{
+  "caseId": "r225_front_loaded_medium",
+  "bendRadiusM": 0.225,
+  "contractionProfile": "front_loaded",
+  "meshLevel": "medium",
+  "purpose": "area-transition profile sweep",
+  "slotWidthM": 0.05,
+  "slotLengthM": 0.12,
+  "outerDiameterM": 0.09,
+  "hubDiameterM": 0.032,
+  "transitionLengthM": 0.12,
+  "maxCellSizeM": 0.0055,
+  "totalTemperatureK": 288.55693507850793,
+  "totalPressurePa": 90037.94841092758,
+  "targetMassFlowKgPerS": 0.858742049399817,
+  "targetRecovery": 0.98,
+  "meshEvidence": {
+    "fluidVolumeM3": 0.0029208726563901203,
+    "nodeCount": 19114,
+    "tetraCellCount": 92762,
+    "physicalSurfaces": {
+      "inlet": 1,
+      "outlet": 1,
+      "walls": 202
+    }
+  }
+}

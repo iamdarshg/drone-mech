@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "subagent_depth": 3,
+  "permission": {
+    "task": "allow",
+    "webfetch": "allow",
+    "websearch": "allow"
+  },
+  "agent": {
+    "research": {
+      "description": "Supplier and technical research subagent for purchasable parts and live listings. Read-only: it may search and fetch the web but cannot edit files or run shell commands.",
+      "mode": "subagent",
+      "permission": {
+        "edit": "deny",
+        "bash": "deny",
+        "webfetch": "allow",
+        "websearch": "allow"
+      }
+    }
+  },
+  "instructions": ["highspeed_edf/design/*.md", "highspeed_edf/OBSOLETE.md"]
+}

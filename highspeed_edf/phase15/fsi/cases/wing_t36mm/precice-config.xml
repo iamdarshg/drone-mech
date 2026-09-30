@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<precice-configuration xmlns:data="https://precice.org/data"
+  xmlns:mapping="https://precice.org/mapping"
+  xmlns:m2n="https://precice.org/m2n"
+  xmlns:coupling-scheme="https://precice.org/coupling-scheme"
+  xmlns:acceleration="https://precice.org/acceleration">
+  <log><sink filter="%Severity% > info and %Rank% = 0" format="---[precice] %Severity% %Message%" enabled="true" /></log>
+  <data:vector name="Force" />
+  <data:vector name="Displacement" />
+  <mesh name="Fluid-Mesh" dimensions="3">
+    <use-data name="Force" /><use-data name="Displacement" />
+  </mesh>
+  <mesh name="Solid-Mesh" dimensions="3">
+    <use-data name="Force" /><use-data name="Displacement" />
+  </mesh>
+  <participant name="Fluid">
+    <provide-mesh name="Fluid-Mesh" />
+    <receive-mesh name="Solid-Mesh" from="Solid" />
+    <write-data name="Force" mesh="Fluid-Mesh" />
+    <read-data name="Displacement" mesh="Fluid-Mesh" />
+    <mapping:nearest-neighbor direction="write" from="Fluid-Mesh" to="Solid-Mesh" constraint="conservative" />
+    <mapping:nearest-neighbor direction="read" from="Solid-Mesh" to="Fluid-Mesh" constraint="consistent" />
+  </participant>
+  <participant name="Solid">
+    <provide-mesh name="Solid-Mesh" />
+    <receive-mesh name="Fluid-Mesh" from="Fluid" />
+    <write-data name="Displacement" mesh="Solid-Mesh" />
+    <read-data name="Force" mesh="Solid-Mesh" />
+    <watch-point mesh="Solid-Mesh" name="WingTip" coordinate="0.26;0.015;0.0" />
+  </participant>
+  <m2n:sockets acceptor="Fluid" connector="Solid" exchange-directory="." />
+  <coupling-scheme:parallel-implicit>
+    <time-window-size value="1e-05" />
+    <max-time value="0.001" />
+    <participants first="Fluid" second="Solid" />
+    <exchange data="Force" mesh="Solid-Mesh" from="Fluid" to="Solid" />
+    <exchange data="Displacement" mesh="Solid-Mesh" from="Solid" to="Fluid" />
+    <max-iterations value="6" />
+    <min-iterations value="2" />
+    <relative-convergence-measure limit="5e-3" data="Displacement" mesh="Solid-Mesh" />
+    <acceleration:IQN-ILS>
+      <data name="Displacement" mesh="Solid-Mesh" />
+      <filter type="QR2" limit="1e-2" />
+      <initial-relaxation value="0.5" />
+      <max-used-iterations value="30" />
+      <time-windows-reused value="5" />
+    </acceleration:IQN-ILS>
+  </coupling-scheme:parallel-implicit>
+</precice-configuration>

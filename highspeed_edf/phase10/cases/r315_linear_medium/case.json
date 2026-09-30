@@ -1,0 +1,27 @@
+{
+  "caseId": "r315_linear_medium",
+  "bendRadiusM": 0.315,
+  "contractionProfile": "linear",
+  "meshLevel": "medium",
+  "purpose": "bend-radius sweep",
+  "slotWidthM": 0.05,
+  "slotLengthM": 0.12,
+  "outerDiameterM": 0.09,
+  "hubDiameterM": 0.032,
+  "transitionLengthM": 0.12,
+  "maxCellSizeM": 0.0055,
+  "totalTemperatureK": 288.55693507850793,
+  "totalPressurePa": 90037.94841092758,
+  "targetMassFlowKgPerS": 0.858742049399817,
+  "targetRecovery": 0.98,
+  "meshEvidence": {
+    "fluidVolumeM3": 0.003755011316168395,
+    "nodeCount": 23589,
+    "tetraCellCount": 114781,
+    "physicalSurfaces": {
+      "inlet": 1,
+      "outlet": 1,
+      "walls": 202
+    }
+  }
+}

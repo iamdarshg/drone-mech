@@ -1,0 +1,73 @@
+{
+  "phase": 15,
+  "study": "GCP rhoPimpleFoam + preCICE + CalculiX wing-sector aeroelastic FSI",
+  "generatedAtUtc": "2026-09-30T11:19:39.286680+00:00",
+  "status": "one_or_more_candidates_incomplete",
+  "evidenceClass": "coupled solver run receipt; component-only, geometry/material assumptions in casegen report",
+  "candidateResults": [
+    {
+      "candidate": "wing_t30mm",
+      "status": "coupled_run_timeout",
+      "meshConversion": {
+        "returnCode": 0,
+        "elapsedSeconds": 0.41,
+        "timedOut": false
+      },
+      "checkMesh": {
+        "returnCode": 0,
+        "elapsedSeconds": 0.322,
+        "timedOut": false,
+        "passed": true
+      },
+      "coupling": {
+        "status": "coupled_run_timeout",
+        "fluidReturnCode": -15,
+        "solidReturnCode": -15,
+        "timedOut": true,
+        "elapsedSeconds": 301.339,
+        "fluidReachedEnd": false,
+        "preCICECompletionLogMarkers": 0,
+        "fluidLog": "rhoPimpleFoam.log",
+        "solidLog": "ccx_preCICE.log"
+      },
+      "tipDisplacement": null,
+      "forceHistoryLastLine": null,
+      "preciceLogFiles": []
+    },
+    {
+      "candidate": "wing_t36mm",
+      "status": "coupled_run_timeout",
+      "meshConversion": {
+        "returnCode": 0,
+        "elapsedSeconds": 0.381,
+        "timedOut": false
+      },
+      "checkMesh": {
+        "returnCode": 0,
+        "elapsedSeconds": 0.305,
+        "timedOut": false,
+        "passed": true
+      },
+      "coupling": {
+        "status": "coupled_run_timeout",
+        "fluidReturnCode": -15,
+        "solidReturnCode": -15,
+        "timedOut": true,
+        "elapsedSeconds": 301.353,
+        "fluidReachedEnd": false,
+        "preCICECompletionLogMarkers": 0,
+        "fluidLog": "rhoPimpleFoam.log",
+        "solidLog": "ccx_preCICE.log"
+      },
+      "tipDisplacement": null,
+      "forceHistoryLastLine": null,
+      "preciceLogFiles": []
+    }
+  ],
+  "limitations": [
+    "This is an isolated outboard wing-sector model, not the complete twin-EDF aircraft or rotor-jet interaction.",
+    "Flow speed is 200 m/s (720 km/h) at the 3 km ISA density; turbulence wall resolution and y+ require additional assessment.",
+    "The isotropic 10 GPa stiffness and 150 kg/m^3 density are equivalent laminate/core assumptions, not measured coupon properties.",
+    "The local Mach is about 0.61; the compressible rhoPimpleFoam run is still a coarse unsteady RANS screening mesh."
+  ]
+}

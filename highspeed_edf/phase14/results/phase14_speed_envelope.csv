@@ -1,0 +1,10 @@
+speed_kmh,density_kg_m3,dynamic_pressure_pa,cdA_m2,drag_N,drag_power_W,estimated_bus_power_W,soft_bus_power_margin_W,ideal_available_net_thrust_N,ideal_twr_at_design_mass,mass_limit_for_twr_1_kg,power_screen,thrust_to_weight_status
+0,0.90913,0.0,0.0009,0.0,0.0,0.0,13170.0,117.237,1.4064,11.955,not applicable: static/low-speed map missing,ideal actuator-disk upper bound only; installed fan map and inlet/nozzle losses omitted
+50,0.90913,87.69,0.0009,0.079,1.1,4.3,13165.7,110.301,1.3232,11.248,analytical screen only,ideal actuator-disk upper bound only; installed fan map and inlet/nozzle losses omitted
+100,0.90913,350.74,0.0009,0.316,8.8,34.6,13135.4,103.42,1.2407,10.546,analytical screen only,ideal actuator-disk upper bound only; installed fan map and inlet/nozzle losses omitted
+150,0.90913,789.17,0.0009,0.71,29.6,116.9,13053.1,96.659,1.1596,9.856,analytical screen only,ideal actuator-disk upper bound only; installed fan map and inlet/nozzle losses omitted
+200,0.90913,1402.97,0.0009,1.263,70.1,277.1,12892.9,90.09,1.0808,9.187,analytical screen only,ideal actuator-disk upper bound only; installed fan map and inlet/nozzle losses omitted
+500,0.90913,8768.59,0.0009,7.892,1096.1,4330.2,8839.8,57.988,0.6957,5.913,analytical screen only,not a T/W qualification point
+650,0.90913,14818.92,0.0009,13.337,2408.1,9513.5,3656.5,47.395,0.5686,4.833,analytical screen only,not a T/W qualification point
+700,0.90913,17186.44,0.0009,15.468,3007.6,11882.2,1287.8,44.539,0.5343,4.542,analytical screen only,not a T/W qualification point
+720,0.90913,18182.55,0.0009,16.364,3272.9,12930.0,240.0,43.477,0.5216,4.433,analytical screen only,not a T/W qualification point

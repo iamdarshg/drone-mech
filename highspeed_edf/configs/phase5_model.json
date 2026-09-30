@@ -1,0 +1,68 @@
+{
+  "phase": 5,
+  "sourceClass": "application-specific reduced-order screening",
+  "altitudeM": 3000,
+  "designCdAReferenceM2": 0.00315,
+  "battery": {
+    "topology": "2x Turnigy Rapid 6S 5000mAh 100C packs in series = 12S, 5Ah",
+    "seriesCells": 12,
+    "capacityAh": 5.0,
+    "nominalVoltageV": 44.4,
+    "fullyChargedVoltageV": 50.4,
+    "initialSoc": 0.95,
+    "lowerVoltageCutoffV": 38.4,
+    "packR0SensitivityOhm": [0.01, 0.02, 0.03],
+    "r1FractionOfR0": 0.2,
+    "rcTimeConstantSeconds": 5.0,
+    "ocvPackCurveSocVoltage": [[0.0,39.6],[0.1,42.0],[0.2,43.2],[0.3,44.4],[0.4,45.0],[0.5,45.6],[0.6,46.2],[0.7,47.0],[0.8,48.0],[0.9,49.2],[1.0,50.4]],
+    "ocvCurveSource": "analyst generic LiPo curve, not measured Turnigy data",
+    "temperature": {
+      "initialC": 45.0,
+      "ambient3kmC": -4.5,
+      "packThermalCapacityJPerK": 900,
+      "cellToJigConductanceWPerK": 5,
+      "jigThermalCapacityJPerK": 1500,
+      "jigToAirConductanceWPerK": 10,
+      "allThermalValuesSource": "assumed sensitivity inputs; battery mass/thermal constants not provided"
+    }
+  },
+  "motorDrive": {
+    "motorKvRpmPerV": 350,
+    "polePairs": 7,
+    "KtIdealFromKvNmPerA": 0.02728,
+    "motorEfficiencyAssumed": 0.92,
+    "escEfficiencyAssumed": 0.97,
+    "fixedGearboxEfficiencyAssumed": 0.95,
+    "batteryCurrentSoftAperChannel": 55,
+    "batteryCurrentInitialHardAperChannel": 65,
+    "batteryCurrentProvisionalShortAperChannel": 75,
+    "escPhaseCurrentContinuousARms": 60,
+    "escPhaseCurrentBurstARms": 90,
+    "pwmFrequencyHzSensitivity": [20000, 40000],
+    "motorReferenceElectricalPowerW": 3470,
+    "motorReferenceBatteryCurrentA": 74,
+    "motorReferenceRpm": 11256,
+    "motorReferenceProp": "HQ 13x9 three blade; not transferable as an EDF map"
+  },
+  "simulation": {
+    "speedsKmh": [500, 550, 600, 650, 700],
+    "dischargeDurationsS": [5, 10, 20, 30],
+    "runPyBaMMForSpeedsKmh": [600, 650, 700],
+    "thermalRC": {
+      "motorCapacityJPerKRange": [100, 180],
+      "motorThetaKPerWRange": [0.15, 0.35],
+      "escCapacityJPerKRange": [60, 100],
+      "escThetaKPerWRange": [0.3, 0.6],
+      "gearboxCapacityJPerKRange": [60, 120],
+      "gearboxThetaKPerWRange": [0.2, 0.4]
+    }
+  },
+  "knownWorkbenchGaps": {
+    "pybammParameterSets": ["Chen2020", "Chen2020_composite", "Marquis2019", "ECM_Example"],
+    "customTurnigyParameterSet": false,
+    "governedPyBaMMMaxDischargeCurrentA": 100,
+    "turnigyPackCurrentRequiredAtHighPowerA": "model-derived; hundreds of A at pack level",
+    "nativeRotatingMachineEM": "declared interface, no FA4119 EM case/map",
+    "elmer": "can conduct heat only after application geometry/material/BC mesh exists"
+  }
+}

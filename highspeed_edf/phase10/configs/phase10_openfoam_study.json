@@ -1,0 +1,98 @@
+{
+  "phase": 10,
+  "studyId": "highspeed-edf-side-inlet-pressure-recovery",
+  "status": "execution-complete-no-valid-pressure-recovery",
+  "geometrySource": {
+    "phase9Config": "configs/phase9_geometry_mass_screen.json",
+    "candidateState": "designs/design_state_r4_geometry_candidate.json",
+    "phase9Meanline": "results/phase9_720_meanline_summary.json"
+  },
+  "operatingPoint": {
+    "altitudeM": 3000.0,
+    "flightSpeedKmh": 720.0,
+    "flightCaptureFraction": 0.85,
+    "gamma": 1.4,
+    "gasConstantJPerKgK": 287.05,
+    "cpJPerKgK": 1004.685,
+    "targetTotalPressureRecovery": 0.98,
+    "pressureRecoveryDefinition": "total pressure reconstructed isentropically from outlet mass-flux-weighted p/U/T patch averages, divided by freestream isentropic total pressure"
+  },
+  "geometry": {
+    "ductCount": 2,
+    "ductOuterDiameterM": 0.09,
+    "hubDiameterM": 0.032,
+    "slotWidthM": 0.05,
+    "slotLengthM": 0.12,
+    "quarterTurnAngleDeg": 90.0,
+    "turnCenterlineRadiiM": [0.225, 0.27, 0.315],
+    "transitionLengthM": 0.12,
+    "contractionProfiles": ["linear", "cosine", "front_loaded"],
+    "profileVariantPolicy": "radius sweep uses linear profile; profile sweep uses 225 mm radius",
+    "constructionMaterial": "6061-T6 aluminum; same constrained envelope/material across variants",
+    "stockEnvelopeMm": [16.0, 50.0],
+    "fabricationEnvelope": {
+      "router": "3018-class CNC",
+      "stockMaterial": "6061-T6 aluminum",
+      "maximumThicknessMm": 16.0,
+      "maximumStockWidthMm": 50.0,
+      "90mmDuctShell": "segmented panels; no single-piece 90mm-wide cut assumed"
+    },
+    "note": "Each 50x120 mm slot feeds one 90/32 mm annulus. Areas are 60.0 and 55.6 cm2 respectively (ratio 1.0796), matching the stated 1.08 slot-to-annulus ratio and 7.4% net contraction."
+  },
+  "mesh": {
+    "method": "Gmsh OpenCASCADE sweep/loft, first-order tetrahedra, physical inlet/outlet/walls; converted with gmshToFoam",
+    "levels": {
+      "coarse": {"maxCellSizeM": 0.008, "caseIds": ["r225_linear_coarse"]},
+      "medium": {"maxCellSizeM": 0.0055, "caseIds": ["r225_linear_medium", "r270_linear_medium", "r315_linear_medium", "r225_cosine_medium", "r225_front_loaded_medium"]},
+      "fine": {"maxCellSizeM": 0.0038, "caseIds": ["r225_linear_fine"]}
+    },
+    "wallTreatment": "kOmegaSST with wall functions; assess wall-function suitability alongside checkMesh and mesh refinement",
+    "meshAcceptance": {
+      "maxNonOrthogonalityDeg": 70.0,
+      "maxSkewness": 4.0,
+      "minimumCells": 10000
+    }
+  },
+  "solver": {
+    "family": "OpenFOAM rhoSimpleFoam (steady compressible RANS, ideal-gas air)",
+    "turbulenceModel": "kOmegaSST",
+    "energy": "sensibleEnthalpy",
+    "maxIterations": 250,
+    "writeIntervalIterations": 25,
+    "residualTargets": {"p": 0.00001, "U": 0.00001, "energy": 0.00001, "k": 0.0001, "omega": 0.0001},
+    "massImbalanceLimitFraction": 0.005,
+    "meanlineMassFlowToleranceFraction": 0.05,
+    "pressureRecoveryGridAgreementLimitFraction": 0.005,
+    "maxSecondsPerCase": 180
+  },
+  "executionBudget": {
+    "approvalCapUsd": 0.2,
+    "instanceCountMax": 5,
+    "concurrentInstancesMax": 1,
+    "machineType": "e2-standard-4",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maxRunDurationSeconds": 2200,
+    "priorFailedWorkerSeconds": 614.53,
+    "priorFailedWorkerComputeEstimateUsd": 0.03414,
+    "aggregateWorkerLifetimeCeilingSeconds": 2700,
+    "terminationAction": "DELETE",
+    "bootDiskType": "pd-standard",
+    "bootDiskSizeGb": 12,
+    "conservativeComputeRateUsdPerHour": 0.2,
+    "computeCapUsd": 0.15,
+    "storageNetworkAndLogsReserveUsd": 0.03,
+    "contingencyReserveUsd": 0.02,
+    "estimatedMaximumAggregateUsd": 0.08414,
+    "capCalculation": "Execution is complete: five Spot VM lifetimes totaled about 614.53 s, estimated $0.03414 at the conservative $0.20/hour rate. Add the reserved $0.03 disk/network/artifact allowance and $0.02 contingency for an estimated envelope usage of $0.08414, below the approved $0.20 cap. Five-instance cap reached; no further launch."
+  },
+  "caseMatrix": [
+    {"caseId": "r225_linear_coarse", "bendRadiusM": 0.225, "contractionProfile": "linear", "meshLevel": "coarse", "purpose": "reference grid convergence"},
+    {"caseId": "r225_linear_medium", "bendRadiusM": 0.225, "contractionProfile": "linear", "meshLevel": "medium", "purpose": "reference and radius/profile comparison"},
+    {"caseId": "r225_linear_fine", "bendRadiusM": 0.225, "contractionProfile": "linear", "meshLevel": "fine", "purpose": "reference grid convergence"},
+    {"caseId": "r270_linear_medium", "bendRadiusM": 0.27, "contractionProfile": "linear", "meshLevel": "medium", "purpose": "bend-radius sweep"},
+    {"caseId": "r315_linear_medium", "bendRadiusM": 0.315, "contractionProfile": "linear", "meshLevel": "medium", "purpose": "bend-radius sweep"},
+    {"caseId": "r225_cosine_medium", "bendRadiusM": 0.225, "contractionProfile": "cosine", "meshLevel": "medium", "purpose": "area-transition profile sweep"},
+    {"caseId": "r225_front_loaded_medium", "bendRadiusM": 0.225, "contractionProfile": "front_loaded", "meshLevel": "medium", "purpose": "area-transition profile sweep"}
+  ]
+}

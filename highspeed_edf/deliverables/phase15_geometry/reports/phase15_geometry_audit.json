@@ -1,0 +1,50 @@
+{
+  "nominalSpecConflicts": [
+    "\u00d880 duct OD + \u00d878 bore gives only 1 mm radial wall; CAD uses \u00d882 OD (within band) to honor the 2 mm radial composite wall.",
+    "78 mm nominal fuselage height cannot enclose an 80+ mm duct pair; CAD uses 88 mm height within the specified 72\u201390 mm range.",
+    "The specified 200 mm axial battery bay needs body section at Z=-300..-100; body length is set to the 640 mm upper band limit.",
+    "42 mm motor cans at rotor stations 36 mm apart overlap by 36 mm axially; all six sourced motor envelopes are retained and the conflict is visible.",
+    "4 vanes + 2 elevons + 1 rudder require seven servo channels; all seven mechanical mounts are present, while flight-board PWM allocation remains F-05 open."
+  ],
+  "checks": {
+    "ductCount": 2,
+    "coaxial": false,
+    "rotorBlanks": 72,
+    "statorBlanks": 126,
+    "hubs": 6,
+    "servoPositions": 7,
+    "bayReservedMm": [
+      200.0,
+      135.0,
+      75.0
+    ],
+    "batteryPairFitsReservedCrossSection": true,
+    "actualRotorTipClearanceMm": 0.7000000000000028,
+    "rotorSpanMm": 19.799999999999997,
+    "frontalSolidAreaCm2": 248.0486749908059,
+    "frontalTargetBandPass": true,
+    "hardwarePlusPayloadKg": 6.5406217259774495,
+    "allUpWithReserveKg": 7.521714984874067,
+    "massTargetPass": true,
+    "cgXmm": 0.11015658731633121,
+    "cgYmm": 6.731202912057851,
+    "cgZmm": -3.964559341474018,
+    "cgXTargetPass": true,
+    "cgYTargetPass": true,
+    "cgZTargetPass": true,
+    "reimportPassCount": 81,
+    "reimportFileCount": 81,
+    "stockNests": [
+      "stock_nests\\sheet_A_250x120x5_36rotors_63stators.step",
+      "stock_nests\\sheet_B_300x120x5_36rotors_63stators.step",
+      "stock_nests\\six_hubs_300x50x16_bar.step"
+    ],
+    "sheetBUsesFullMachineXTravel": true
+  },
+  "motorEnvelopeOverlap": {
+    "canLengthMm": 72.0,
+    "rotorPitchMm": 36.0,
+    "overlapMm": 36.0,
+    "pairsPerDuct": 2
+  }
+}

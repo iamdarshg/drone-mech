@@ -1,0 +1,20 @@
+{
+  "iteration": 2,
+  "accepted": true,
+  "phase": "phase2-reduced-order-architecture-screen",
+  "sourceClass": "analytical-and-assumed-reduced-order-screening",
+  "requirementsRevision": 2,
+  "designRevision": 2,
+  "decision": "No architecture selected yet. VBR has no material high-speed power benefit in the current idealized model; retain it for static/low-speed map evaluation. Three driven rotor rows remain the cleanest 3-motor-per-duct candidate for meanline evaluation.",
+  "keyFindings": {
+    "projectedFrontalAreaCheckpointCm2": 75,
+    "frontalAreaSeparateFromCdA": true,
+    "altitudeM": 3000,
+    "speed700KmHAtCdA0_00315ElectricalPowerKw": 22.07,
+    "bestCaseProvisionalBusPowerKw": 20.655,
+    "threeRotorScreenRpmAtPsi0_5": 33820,
+    "fixedGearRatioCandidateAt13500MotorRpm": 2.51
+  },
+  "gcpJobs": [],
+  "note": "Reduced-order screening is not component-map, CFD, or measured validation; stage count and passive bypass hardware remain open."
+}

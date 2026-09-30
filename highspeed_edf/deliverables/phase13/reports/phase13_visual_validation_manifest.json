@@ -1,0 +1,147 @@
+{
+  "renderer": "CadQuery STEP import + OpenCascade tessellation + PyVista/VTK offscreen raster",
+  "windowPixels": [
+    1500,
+    950
+  ],
+  "screenshots": [
+    {
+      "image": "reports\\screenshots\\01_full_assembly_isometric_R030.png",
+      "sourceStep": "phase12\\step\\phase12_full_assembly_R030.step",
+      "validBrep": true,
+      "solidCount": 239,
+      "bboxMm": [
+        -75.0,
+        75.0,
+        -58.6,
+        58.6,
+        -495.629,
+        390.0
+      ],
+      "view": "ISO view; X lateral, Y vertical, Z flight; 100 mm scale bar"
+    },
+    {
+      "image": "reports\\screenshots\\02_front_projection_R030.png",
+      "sourceStep": "phase12\\step\\phase12_full_assembly_R030.step",
+      "validBrep": true,
+      "solidCount": 239,
+      "bboxMm": [
+        -75.0,
+        75.0,
+        -58.6,
+        58.6,
+        -495.629,
+        390.0
+      ],
+      "view": "View +Z; X lateral/Y vertical; CAD union 67.86 cm2; 50 mm scale bar"
+    },
+    {
+      "image": "reports\\screenshots\\03_inlet_routing_top_R030.png",
+      "sourceStep": "phase12\\step\\phase12_interchangeable_inlet_split_R030.step",
+      "validBrep": true,
+      "solidCount": 4,
+      "bboxMm": [
+        -31.0,
+        31.0,
+        -14.5,
+        14.5,
+        -92.0,
+        182.0
+      ],
+      "view": "View +Y; X lateral/Z flight; centerline overlay; 50 mm scale bar"
+    },
+    {
+      "image": "reports\\screenshots\\04_inlet_routing_side_R030.png",
+      "sourceStep": "phase12\\step\\phase12_interchangeable_inlet_split_R030.step",
+      "validBrep": true,
+      "solidCount": 4,
+      "bboxMm": [
+        -31.0,
+        31.0,
+        -14.5,
+        14.5,
+        -92.0,
+        182.0
+      ],
+      "view": "View +X; Y vertical/Z flight; recovery unmeasured; 50 mm scale bar"
+    },
+    {
+      "image": "reports\\screenshots\\05_EDF_A_rotor_stator_closeup_R030.png",
+      "sourceStep": "phase12\\step\\phase12_EDF_A_R030.step",
+      "validBrep": true,
+      "solidCount": 112,
+      "bboxMm": [
+        -45.171,
+        45.171,
+        -45.171,
+        45.171,
+        -92.0,
+        110.171
+      ],
+      "view": "Isometric; 16 mm rotor / 8 mm stator chord; 30 mm scale bar"
+    },
+    {
+      "image": "reports\\screenshots\\06_EDF_B_rotor_stator_closeup_R030.png",
+      "sourceStep": "phase12\\step\\phase12_EDF_B_R030.step",
+      "validBrep": true,
+      "solidCount": 112,
+      "bboxMm": [
+        -45.171,
+        45.171,
+        -45.171,
+        45.171,
+        58.0,
+        260.171
+      ],
+      "view": "Isometric; 16 mm rotor / 8 mm stator chord; 30 mm scale bar"
+    },
+    {
+      "image": "reports\\screenshots\\07_rotor_R1_hub_blade_assembly_detail_R030.png",
+      "sourceStep": "phase12\\step\\phase12_EDF_A_R030.step",
+      "validBrep": true,
+      "solidCount": 112,
+      "bboxMm": [
+        -45.171,
+        45.171,
+        -45.171,
+        45.171,
+        -92.0,
+        110.171
+      ],
+      "view": "Isometric close-up; nominal root engagement shown; 20 mm scale bar"
+    },
+    {
+      "image": "reports\\screenshots\\08_rotor_billet_nest_channel01.png",
+      "sourceStep": "phase12\\stock_layouts\\phase12_channel01_R1_rotor_hub_300x50x16.step",
+      "validBrep": true,
+      "solidCount": 17,
+      "bboxMm": [
+        -0.0,
+        300.0,
+        -0.0,
+        50.0,
+        -0.061,
+        16.061
+      ],
+      "view": "Top +Z; 300x50 billet, CAM X25..275; 25 mm end margins; 50 mm scale bar"
+    },
+    {
+      "image": "reports\\screenshots\\09_stator_plate_nest_EDF_A.png",
+      "sourceStep": "phase12\\stock_layouts\\phase12_EDF_A_stator_set_250x100x5.step",
+      "validBrep": true,
+      "solidCount": 64,
+      "bboxMm": [
+        -0.0,
+        250.0,
+        -0.0,
+        100.0,
+        -0.0,
+        5.0
+      ],
+      "view": "Top +Z; 250x100x5 plate; 63 vanes; 50 mm scale bar"
+    }
+  ],
+  "phase12Openfoam": "No iterations/recovery results; phase12 execution receipt is local-preflight-only-no-cloud-launch.",
+  "frontAreaReferenceCm2": 67.85874663337762,
+  "conservativePreflightAreaCm2": 73.61725123519331
+}

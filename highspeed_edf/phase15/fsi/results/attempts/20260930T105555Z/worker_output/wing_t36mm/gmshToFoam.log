@@ -1,0 +1,96 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2606                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _481094f-20260618 OPENFOAM=2606 version=2606
+Arch   : "LSB;label=32;scalar=64"
+Exec   : gmshToFoam wing.msh
+Date   : Sep 30 2026
+Time   : 11:01:14
+Host   : hsedf-fsi-20260930-105555
+PID    : 7297
+--> FOAM Warning : 
+    From Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 558
+    PWD is not the cwd() - reverting to physical description
+I/O    : uncollated
+--> FOAM Warning : 
+    From Foam::fileName Foam::cwd_L()
+    in file POSIX.C at line 558
+    PWD is not the cwd() - reverting to physical description
+Case   : /opt/phase15-fsi/phase15/fsi/cases/wing_t36mm/fluid
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+memory pool : not available
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+
+--> FOAM Warning : allowSystemOperations : Allowing user-supplied system call operations.
+                   This can be a security risk if running untrusted cases
+                   through e.g. 'coded' on-the-fly-compilation functionality.
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Starting to read mesh format at line 2
+Read format version 2.2  ascii 0
+
+Starting to read physical names at line 5
+Physical names:6
+    Surface 11	inlet
+    Surface 12	outlet
+    Surface 13	farfield
+    Surface 14	fsi
+    Surface 15	rootWall
+    Volume 1	fluid
+
+Starting to read points at line 14
+Vertices to be read: 7236
+Vertices read:7236
+
+Starting to read cells at line 7253
+Cells to be read: 40057
+
+Mapping region 14 to Foam patch 0
+Mapping region 15 to Foam patch 1
+Mapping region 13 to Foam patch 2
+Mapping region 12 to Foam patch 3
+Mapping region 11 to Foam patch 4
+Mapping region 1 to Foam cellZone 0
+Cells:
+    total:34519
+    hex  :0
+    prism:0
+    pyr  :0
+    tet  :34519
+
+CellZones:
+Zone	Size
+    0	34519
+
+Patch 0 gets name fsi
+Patch 1 gets name rootWall
+Patch 2 gets name farfield
+Patch 3 gets name outlet
+Patch 4 gets name inlet
+
+--> FOAM Warning : 
+    From Foam::polyMesh::polyMesh(const Foam::IOobject&, Foam::pointField&&, const cellShapeList&, const faceListList&, const wordList&, const wordList&, const Foam::word&, const Foam::word&, const wordList&, bool)
+    in file meshes/polyMesh/polyMeshFromShapeMesh.C at line 635
+    Found 5538 undefined faces in mesh; adding to default patch defaultFaces
+Finding faces of patch 0
+Finding faces of patch 1
+Finding faces of patch 2
+Finding faces of patch 3
+Finding faces of patch 4
+
+FaceZones:
+Zone	Size
+
+Writing zone 0 to cellZone fluid and cellSet
+End
+
+
+--- STDERR ---

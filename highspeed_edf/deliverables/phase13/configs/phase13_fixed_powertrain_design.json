@@ -1,0 +1,176 @@
+{
+  "phase": 13,
+  "status": "CAD_CAM_complete_R030_pressure_recovery_pending",
+  "supersedes": "none; additive revision based on deliverables/phase12; old phase files remain authoritative history",
+  "fixedPowertrainImmutable": {
+    "motors": "six stock FA4119 KV350, 0.280kg each, 1.680kg total",
+    "batteries": "two Turnigy Rapid 6S5000 in series; 12S1P/5Ah; 0.713kg each; 1.426kg total",
+    "gearRatios": [
+      2.35,
+      2.65,
+      2.95
+    ],
+    "motorSoftLimitRpm": 12500.0,
+    "currentVoltageEscAndRPMLimits": "unchanged from Phase 9/12; no powertrain changes",
+    "rotorDesignRpm": [
+      29375.0,
+      33125.0,
+      36360.0
+    ],
+    "maximumGearDerivedRotorRpm": [
+      29375.0,
+      33125.0,
+      36875.0
+    ]
+  },
+  "fan": {
+    "sets": 2,
+    "motorsPerSet": 3,
+    "rotorODmm": 90.0,
+    "boreMm": 88.0,
+    "hubMm": 32.0,
+    "rotorRowsPerSet": 3,
+    "statorRowsPerSet": 3,
+    "projectedAreaUnionCm2": 69.14274663337761
+  },
+  "inlet": {
+    "selectedRadiusMm": 30.0,
+    "status": "pending pressure recovery; packaging start only",
+    "slotsPerSet": 2,
+    "totalSlots": 4,
+    "slotMm": [
+      25.0,
+      120.0
+    ],
+    "validPressureRecovery": null,
+    "winnerClaim": false
+  },
+  "rotorRoot": {
+    "rootRadialStartMm": 14.0,
+    "rootInsertionInto32mmHubMm": 2.0,
+    "rootAirfoilThicknessRatio": 0.2,
+    "tipThicknessRatio": 0.12,
+    "smoothThicknessTransitionFirst24PercentSpan": true,
+    "minimumCentrifugalOnlyFOSAt1p25xFixedGearDerivedRpm": 3.4619286855660505,
+    "targetFOS": 3.0,
+    "scope": "analytical only; structural FEA and spin test not performed"
+  },
+  "projectedArea": {
+    "selection": "R30 packaging start; CFD/pressure recovery pending",
+    "geometryOnlyProjectedAreaUnionCm2": 69.14274663337761,
+    "fanSilhouetteUnionCm2": 63.61725123519331,
+    "phase12GenericStructureReserveCm2": 10.0,
+    "conservativeReserveAwareBoundCm2": 73.61725123519331,
+    "strict75GatePass": true,
+    "slots": {
+      "count": 4,
+      "eachMm": [
+        25.0,
+        120.0
+      ]
+    },
+    "rotorODmm": 90.0,
+    "boreMm": 88.0,
+    "hubMm": 32.0,
+    "pressureRecovery": null,
+    "aerodynamicWinner": null
+  },
+  "massBudget": {
+    "measuredOrSourcedMassKg": 3.226585319235294,
+    "calculatedAndExplicitAllowancesIncludingPayloadKg": 8.148774031091609,
+    "payloadAllowanceKg": 2.0,
+    "unallocatedReserveKg": 2.351225968908391,
+    "allUpDesignBudgetKg": 10.5,
+    "cgIncludingPayloadMmXYZ": [
+      0.0,
+      2.5934952324852003,
+      6.503368624791841
+    ],
+    "physicalWeighingComplete": false,
+    "cgDatum": {
+      "X": "lateral",
+      "Y": "vertical",
+      "Z": "flight axis",
+      "units": "mm"
+    }
+  },
+  "stockAndMachine": {
+    "rotorBillets": 6,
+    "rotorBilletMm": [
+      300,
+      50,
+      16
+    ],
+    "rotorUse": "one billet per motor/ESC; CAM X25..275, reserve 25mm clamp ends",
+    "statorPlates": 2,
+    "statorPlateMm": [
+      250,
+      100,
+      5
+    ],
+    "statorSets": "one 63-stator set per EDF plate",
+    "machine": "TwoTrees 3018 Pro / GRBL; 300x180x40mm nominal; ER11; spindle 7-9krpm",
+    "cam": "S8000; G54 lower-left stock XY; Z0 top; T1 2mm carbide rough; T2 0.5mm carbide finish",
+    "roughFeedsMmMin": {
+      "cut": 40,
+      "plunge": 8
+    },
+    "finishFeedsMmMin": {
+      "cut": 20,
+      "plunge": 5
+    },
+    "cncRun": false
+  },
+  "evidence": {
+    "phase12Root": "deliverables/phase12 preserved",
+    "phase10PressureRecovery": "null; solver aborted before iteration",
+    "phase11PressureRecovery": "null; solver aborted at initialization",
+    "phase12PressureRecovery": "null; local preflight only; no launch",
+    "phase13CfdRun": false,
+    "stepReimportSolidValidationCount": 12,
+    "ncFilesValidated": 16
+  },
+  "generatedFiles": {
+    "step": [
+      "step\\phase13_full_assembly_R030.step",
+      "step\\phase13_EDF_A_R030.step",
+      "step\\phase13_EDF_B_R030.step",
+      "step\\phase13_split_inlet_R030_4x25x120.step",
+      "stock_layouts\\phase13_channel01_R1_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_channel02_R2_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_channel03_R3_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_EDF_A_stator_set_250x100x5.step",
+      "stock_layouts\\phase13_channel04_R1_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_channel05_R2_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_channel06_R3_rotor_hub_300x50x16.step",
+      "stock_layouts\\phase13_EDF_B_stator_set_250x100x5.step"
+    ],
+    "gcode": [
+      "phase13_channel_01_R1_blade_hub_2mm_rough.nc",
+      "phase13_channel_01_R1_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_channel_02_R2_blade_hub_2mm_rough.nc",
+      "phase13_channel_02_R2_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_channel_03_R3_blade_hub_2mm_rough.nc",
+      "phase13_channel_03_R3_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_EDF_A_63stators_250x100x5_2mm_rough.nc",
+      "phase13_EDF_A_63stators_250x100x5_0p5mm_full_depth_finish.nc",
+      "phase13_channel_04_R1_blade_hub_2mm_rough.nc",
+      "phase13_channel_04_R1_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_channel_05_R2_blade_hub_2mm_rough.nc",
+      "phase13_channel_05_R2_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_channel_06_R3_blade_hub_2mm_rough.nc",
+      "phase13_channel_06_R3_blade_hub_0p5mm_finish_top0p5.nc",
+      "phase13_EDF_B_63stators_250x100x5_2mm_rough.nc",
+      "phase13_EDF_B_63stators_250x100x5_0p5mm_full_depth_finish.nc"
+    ],
+    "reports": [
+      "reports/phase13_cad_cam_report.md",
+      "reports/phase13_mass_cg_budget.csv",
+      "reports/phase13_rotor_strength_screen.csv",
+      "reports/phase13_cg_layout.csv",
+      "reports/phase13_lifting_body_sections.csv",
+      "reports/phase13_nc_validation.csv",
+      "reports/phase13_step_reimport_validation.csv"
+    ]
+  }
+}

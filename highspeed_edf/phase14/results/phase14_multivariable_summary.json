@@ -1,0 +1,95 @@
+{
+  "phase": 14,
+  "model": "multivariable ideal actuator-disk screen with variable-bypass, auxiliary-inlet, FOM, altitude, cost, and 180km/h TWR gate",
+  "rowCount": 1080,
+  "dimensionsSwept": {
+    "fanOuterDiameterMm": [
+      90,
+      85,
+      80,
+      75,
+      70
+    ],
+    "motorClasses": [
+      "FA4119_geared",
+      "220g_geared",
+      "180g_geared",
+      "220g_direct",
+      "180g_direct",
+      "150g_direct"
+    ],
+    "batteryAh": [
+      5.0,
+      4.0,
+      3.5
+    ],
+    "auxInletFractions": [
+      0.0,
+      0.1,
+      0.2
+    ],
+    "fanFigureOfMerit": [
+      1.0,
+      0.72
+    ],
+    "projectionCases": [
+      "battery_body_54cm2",
+      "battery_body_60cm2"
+    ],
+    "projectedAreaRule": "max(fan_disk_union, battery_body_cross_section) + inlet_control_reserve",
+    "boardsDefineInternalVolumeNotFrontalArea": true,
+    "escInternalVolumeMm": [
+      150,
+      150,
+      1.6
+    ],
+    "flightControlInternalVolumeMm": [
+      140,
+      100,
+      1.6
+    ]
+  },
+  "variablesModeled": [
+    "fan diameter and hub diameter",
+    "projected-area CdA scaling (constant reference Cd)",
+    "motor mass, continuous bus input, gearbox removal, and price",
+    "battery capacity mass and price proxy",
+    "variable-bypass low-speed thrust multiplier from Phase-2 beta anchors",
+    "auxiliary-inlet low-speed thrust sensitivity with flush-close above 180 km/h",
+    "fan figure of merit 0.72 vs ideal 1.00",
+    "sea-level and 3000 m ISA density and speed of sound",
+    "tip Mach, eRPM, and 200 keRPM ESC limit"
+  ],
+  "variablesNotModeled": [
+    "measured fan/motor/ESC maps",
+    "inlet pressure recovery and spillage drag",
+    "nozzle area matching and exit-loss maps",
+    "Reynolds-dependent skin friction and drag rise",
+    "structural, fatigue, flutter, and containment limits",
+    "actuator/control effectiveness",
+    "manufacturing tolerance and cost of fabricated parts"
+  ],
+  "lowSpeedTwrGate": {
+    "minimum": 1.0,
+    "upToKmh": 180,
+    "altitudeForGate": "sea level",
+    "note": "3 km TWR is reported separately but the low-speed gate is evaluated at sea level"
+  },
+  "counts": {
+    "lowSpeedAndCruisePassNoAuxFom072": 2,
+    "ofWhichListedPricePass": 0
+  },
+  "lightestCandidate": {
+    "description": "70 mm fan, 150g_direct, 3.5 Ah, aux 0.0, FOM 1.0",
+    "massKg": 6.123,
+    "TWR180seaLevel": 1.167,
+    "vmaxKmh": 685.3
+  },
+  "costGatesInr": {
+    "motorUnitMax": 4000,
+    "batteryPairMax": 12000,
+    "knownMotorStatus": "over_cap",
+    "knownBatteryStatus": "listed_sold_out; shipping_and_tax_unspecified"
+  },
+  "newCloudSpendUsd": 0
+}

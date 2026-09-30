@@ -1,0 +1,32 @@
+{
+  "phase": 10,
+  "status": "execution-complete-cost-receipt",
+  "userApprovedAggregateCapUsd": 0.2,
+  "plannedMaximumAggregateUsd": 0.2,
+  "compute": {
+    "instancesMaxTotal": 5,
+    "instancesMaxConcurrent": 1,
+    "machineType": "e2-standard-4",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maximumLifetimeSecondsPerVm": 2200,
+    "priorFailedWorkerSeconds": 614.53,
+    "aggregateWorkerLifetimeCeilingSeconds": 2700,
+    "terminationAction": "DELETE",
+    "bootDisk": "12 GB pd-standard, auto-delete",
+    "conservativePlanningRateUsdPerHour": 0.2,
+    "computeSpendCeilingUsd": 0.15,
+    "priorFailedWorkerComputeEstimateUsd": 0.03414,
+    "remainingComputeAllowanceUsd": 0.11586
+  },
+  "otherSpendAllowanceUsd": {
+    "diskNetworkAndArtifactTransfer": 0.03,
+    "contingency": 0.02
+  },
+  "calculation": "Five actual worker lifetimes total approximately 614.53 s, estimated at $0.03414 using the conservative $0.20/h planning rate. The initial approved execution envelope remained $0.20 aggregate, including $0.03 temporary disk/network/artifact allowance and $0.02 contingency. Estimated actual-envelope usage is $0.08414; invoice amount was not queried. No further instance was launched after the five-instance cap was reached.",
+  "cloudJobFamilies": ["OpenFOAM rhoSimpleFoam only"],
+  "gpuCount": 0,
+  "concurrentInstances": 1,
+  "instanceDeletePolicy": "Five sequential instance IDs total; all were deleted by caller and configured boot disks auto-delete. No further instance launches.",
+  "launchGate": "Proceed only if the instance remains within the stated configuration and aggregate ceiling. No fallback instance, longer runtime, or second solver family."
+}

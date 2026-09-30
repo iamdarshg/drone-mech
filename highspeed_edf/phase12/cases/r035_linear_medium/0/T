@@ -1,0 +1,15 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class volScalarField;
+    object T;
+}
+dimensions [0 0 0 1 0 0 0];
+internalField uniform 275.3131524;
+boundaryField
+{
+    inlet { type totalTemperature; T0 uniform 288.5569351; U U; phi phi; psi psi; gamma 1.4; value uniform 278.1989738; }
+    outlet { type zeroGradient; }
+    walls { type zeroGradient; }
+}

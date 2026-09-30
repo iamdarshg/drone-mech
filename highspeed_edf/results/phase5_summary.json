@@ -1,0 +1,23 @@
+{
+  "phase": 5,
+  "sourceClass": "application-specific reduced-order; PyBaMM library simulation and workbench thermal network",
+  "pybammVersion": "26.8.0.0",
+  "configSha256": "4715bd4e5af2f4b24b412841f95268a862cb46f59760a70971aac281e34cc834",
+  "gcpJobs": [],
+  "nativeSolverRuns": [],
+  "powerPoints": 15,
+  "motorRows": 15,
+  "thermalScenarios": 20,
+  "pybammRuns": 36,
+  "pybammCompleted": 10,
+  "pybammCutoffTerminated": 18,
+  "pybammFailedOrInfeasible": 8,
+  "limits": {
+    "turnigyPackR0IsAssumed": true,
+    "turnigyOcvCurveIsAssumed": true,
+    "fa4119MotorEfficiencyAndKtAreAssumed": true,
+    "droneArmBatteryCurrentLimitsAreDecisionRecordValues": true,
+    "noGcpSpend": true,
+    "noElmerGeometryJob": "no application motor/ESC/battery thermal mesh or measured boundary data exists yet"
+  }
+}

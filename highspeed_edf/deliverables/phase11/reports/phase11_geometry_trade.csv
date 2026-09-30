@@ -1,0 +1,4 @@
+turnRadiusMm,fanUnionCm2,turnProjectionAdditionalLowerBoundCm2,bodyProjectionAdditionalEstimateCm2,edgeOnBareBoardProjectionCm2,mountFairingAllowanceCm2,completeFrontProjectionLowerBoundCm2,strict75cm2Pass,bodyProjectionIncludedInReserve,bareBoardEdgeOnAreaCm2,bodyProjectionEstimateCm2,projectedAreaWithStructureReserveCm2,areaPass,areaFeasibleCenterlineRadiusMaxMm
+65.0,63.61725123519331,20.0,1.5,3.5460000000000003,5.0,93.66325123519331,False,True,3.5460000000000003,1.5,93.61725123519331,False,46.38274876480669
+70.0,63.61725123519331,25.0,1.5,3.5460000000000003,5.0,98.66325123519331,False,True,3.5460000000000003,1.5,98.61725123519331,False,46.38274876480669
+75.0,63.61725123519331,30.0,1.5,3.5460000000000003,5.0,103.66325123519331,False,True,3.5460000000000003,1.5,103.61725123519331,False,46.38274876480669

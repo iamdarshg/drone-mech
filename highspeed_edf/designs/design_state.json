@@ -1,0 +1,68 @@
+{
+  "studyId": "highspeed-edf",
+  "revision": 2,
+  "requirementsRevision": 2,
+  "status": "phase4-ross-review-complete-startup-resonance-flagged",
+  "source": "user-requirement",
+  "aircraft": {
+    "massKg": 18.0,
+    "ductCount": 2,
+    "nominalDuctDiameterM": 0.08,
+    "baselineSpeedKmh": 600.0,
+    "stretchSpeedKmh": 700.0
+  },
+  "aerodynamicCheckpoint": {
+    "projectedFrontalAreaMaxCm2": 75.0,
+    "preferLess": true,
+    "basis": "fighter-polar analogue; projected area estimate, not geometry measurement",
+    "cdAIsSeparate": true
+  },
+  "propulsion": {
+    "architecture": "electric-axial-variable-bypass",
+    "motorsPerDuct": 3,
+    "maximumStages": 4,
+    "arrangement": "three driven axial rotors plus stators; preliminary 3-stage meanline candidate only",
+    "bypassActuation": "passive-mechanical-variable-nozzle-areas-preferred",
+    "hubDiameterMm": 32.0,
+    "rotorChordMaxMm": 16.0,
+    "statorChordMaxMm": 5.0
+  },
+  "motor": {
+    "identity": "Flycci FA4119 retail",
+    "kvRpmPerV": 350.0,
+    "polePairs": 7,
+    "baseline": "stock-direct-drive",
+    "softRpmLimit": 12500,
+    "hardRpmLimit": 13500,
+    "evidence": "external-decision-record; not EDF-validated"
+  },
+  "battery": {
+    "identity": "2x Turnigy Rapid 6S 5000mAh 100C",
+    "topology": "12S1P-series-packs",
+    "capacityAh": 5.0,
+    "nominalVoltageV": 44.4,
+    "fullyChargedVoltageV": 50.4,
+    "internalResistanceOhm": null,
+    "note": "Pack resistance and discharge/thermal data not yet measured."
+  },
+  "rotordynamics": {
+    "status": "three governed ROSS Campbell cases completed on one bounded GCE Spot worker; startup critical crossing flagged",
+    "representativeRotorRows": ["R1", "R2", "R3"],
+    "firstCriticalRpmByRow": {"R1": 18432.64, "R2": 18433.33, "R3": 18432.88},
+    "minimumRossSampledForcingSeparationHzByRow": {"R1": 11.23, "R2": 6.57, "R3": 3.09},
+    "r3ForcingState": "watch",
+    "nativeFidelity": "beam-campbell",
+    "workbenchCommit": "e1dc31833c444ec1047200d32fb094c5a3aa3163",
+    "gcpWorker": "hsedf-p4-20260923-185355 (Spot e2-standard-2; deleted)",
+    "assumedShaftDiameterMm": 6,
+    "assumedSupportSpanMm": 60,
+    "assumedRadialBearingStiffnessNPerM": 10000000,
+    "assumedEffectiveRotorDiskMassG": 66,
+    "note": "Assumptions await shaft, fan-hub and bearing definition; not measured motor data."
+  },
+  "provenance": {
+    "sourceClass": "requirements-and-assumptions",
+    "nativeSolversRun": false,
+    "gcpJobsRun": false
+  }
+}

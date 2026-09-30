@@ -1,0 +1,26 @@
+{
+  "iteration": 4,
+  "accepted": true,
+  "phase": "phase3-stator-reynolds-and-core-area-sensitivity",
+  "sourceClass": "workbench-analytical-meanline-plus-continuity-sensitivity",
+  "requirementsRevision": 2,
+  "designRevision": 2,
+  "candidate": "80 mm fan annulus with speed-scheduled smaller core annulus and three independently driven axial rotor rows",
+  "findings": {
+    "uniform80mmStatorsPassRe50k": false,
+    "uniform80mmStatorReRangeAt3km": [31126, 43483],
+    "coreAreaScheduleForS1Re50kM2PerDuct": {
+      "500kmh": 0.002628,
+      "550kmh": 0.002885,
+      "600kmh": 0.003148,
+      "650kmh": 0.003406,
+      "700kmh": 0.003672
+    },
+    "fixed500kmhCoreAreaHasSubsonicContinuityAtHigherPoints": false,
+    "700kmhMotorCurrentAt44_4VNoSagMaxChannelA": 94.4,
+    "projectedFrontalAreaCheckpointCm2": 75
+  },
+  "nextIteration": "Implement the mechanically scheduled annulus/core-area candidate in the meanline driver; increase core-stage fixed overdrive to approximately 2.9:1 and 3.1:1 as a starting sizing estimate; recheck Mach, loading, Reynolds, torque/current, pressure ratio and continuity.",
+  "gcpJobs": [],
+  "note": "Sensitivity is an ideal continuity sizing estimate; it is not a solved contracted-geometry meanline candidate or hardware-validated passive mechanism."
+}

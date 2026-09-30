@@ -1,0 +1,5 @@
+radiusMm,frontProjectedAreaCm2,gate75Pass,initialVariant,phase12PreflightProtrusionMm,phase12ConservativeReserveBoundCm2,phase12ConservativeBoundPass,recoveryEvidence
+30.0,67.85874663337762,True,True,0.0,73.61725123519331,True,none; geometry-only variant
+35.0,68.43794521111468,True,False,2.5,79.61725123519331,False,none; geometry-only variant
+40.0,69.43639537628803,True,False,7.5,91.61725123519331,False,none; geometry-only variant
+45.0,71.00369686037565,True,False,12.5,103.61725123519331,False,none; geometry-only variant

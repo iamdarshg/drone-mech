@@ -1,0 +1,102 @@
+{
+  "phase": 10,
+  "attempts": [
+    {
+      "attempt": 1,
+      "runId": "20260925T152122Z",
+      "status": "rejected_before_instance",
+      "reason": "PowerShell argument splitting made the optional GCE label value invalid.",
+      "instanceCreated": false,
+      "computeSeconds": 0,
+      "temporaryInputObjectDeleted": true,
+      "additionalSolverJobs": 0
+    },
+    {
+      "attempt": 2,
+      "runId": "20260925T152352Z",
+      "status": "rejected_before_instance",
+      "reason": "ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS for e2-standard-4 Spot in us-central1-a.",
+      "instanceCreated": false,
+      "computeSeconds": 0,
+      "temporaryInputObjectDeleted": true,
+      "additionalSolverJobs": 0
+    },
+    {
+      "attempt": 3,
+      "runId": "20260925T152631Z",
+      "status": "worker-start-aborted-before-receipt",
+      "reason": "The initial PowerShell storage poll treated a not-yet-uploaded finish marker as fatal; the caller deleted the VM after 62.595 seconds.",
+      "instanceCreated": true,
+      "instanceDeleted": true,
+      "computeSeconds": 62.595,
+      "conservativeComputeEstimateUsd": 0.00348,
+      "solverCasesStarted": 0,
+      "temporaryInputObjectDeleted": true,
+      "additionalSolverJobs": 0
+    },
+    {
+      "attempt": 4,
+      "runId": "20260925T153350Z",
+      "status": "openfoam-installed_worker-aborted-before-case-run",
+      "reason": "Sourcing /usr/share/openfoam/etc/bashrc failed under shell nounset (WM_PROJECT_DIR unbound); startup trap retained the full apt/startup log, and the caller deleted the VM.",
+      "instanceCreated": true,
+      "instanceDeleted": true,
+      "computeSeconds": 141.085,
+      "conservativeComputeEstimateUsd": 0.00784,
+      "solverCasesStarted": 0,
+      "workerLogRetained": true,
+      "temporaryInputObjectDeleted": true,
+      "additionalSolverJobs": 0
+    },
+    {
+      "attempt": 5,
+      "runId": "20260925T154356Z",
+      "status": "openfoam-installed_worker-aborted-before-case-run",
+      "reason": "The Ubuntu Python 3.10 runtime lacks datetime.UTC; the worker exited before starting any case, and the caller deleted the VM.",
+      "instanceCreated": true,
+      "instanceDeleted": true,
+      "computeSeconds": 120.142,
+      "conservativeComputeEstimateUsd": 0.00667,
+      "solverCasesStarted": 0,
+      "workerLogRetained": true,
+      "temporaryInputObjectDeleted": true,
+      "additionalSolverJobs": 0
+    },
+    {
+      "attempt": 6,
+      "runId": "20260925T155527Z",
+      "status": "case-pipeline-driver-error",
+      "reason": "The first case entered post-command metrics extraction, then the worker referenced a missing freestreamTotalPressurePa config key. The VM and disk were deleted; per-case logs had not yet been copied to the output archive.",
+      "instanceCreated": true,
+      "instanceDeleted": true,
+      "computeSeconds": 130.406,
+      "conservativeComputeEstimateUsd": 0.00724,
+      "casePipelineRecordsReached": 1,
+      "solverResultRetained": false,
+      "workerStartupLogRetained": true,
+      "temporaryInputObjectDeleted": true,
+      "additionalSolverJobs": 0
+    },
+    {
+      "attempt": 7,
+      "runId": "20260925T160304Z",
+      "status": "mesh-generated-solver-initialization-failed",
+      "reason": "Gmsh conversion and checkMesh ran for all seven cases; rhoSimpleFoam aborted during model initialization because the generated walls patch had type patch, but wall functions require type wall. The medium reference also reported four failed mesh-quality checks.",
+      "instanceCreated": true,
+      "instanceDeleted": true,
+      "computeSeconds": 160.307,
+      "conservativeComputeEstimateUsd": 0.00891,
+      "casesMeshedAndChecked": 7,
+      "rhoSimpleFoamInvocations": 7,
+      "simpleIterationsCompleted": 0,
+      "pressureRecoveryValues": 0,
+      "caseLogsRetained": true,
+      "temporaryInputObjectDeleted": true,
+      "additionalSolverJobs": 0
+    }
+  ],
+  "cumulativeComputeUsdAtConservativePlanningRate": 0.03414,
+  "approvedAggregateCapUsd": 0.2,
+  "remainingPlannedCapUsd": 0.16586,
+  "nextRequest": "None; the five-instance cap is reached. Stop cloud execution; report the mesh-quality and wall-patch blockers without ranking a geometry."
+}

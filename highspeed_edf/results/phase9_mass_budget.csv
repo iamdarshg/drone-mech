@@ -1,0 +1,6 @@
+component,quantity,unit_mass_kg,mass_kg,basis
+six FA4119 motors with leads,6,0.28,1.6800000000000002,drone-arm FA4119 decision record: approximately 280 g each
+two Turnigy Rapid 6S 5000mAh packs,2,0.713,1.426,SpeedyFPV product specification: 713 g each including XT90 leads
+ESC and flight-control bare PCBs,2,0.060292659617647064,0.12058531923529413,"KiCad substrate/copper calculation; excludes population, lugs, heat spreader and mounting"
+known propulsion/electrical lower bound,1,3.226585319235294,3.226585319235294,sum of sourced motor/pack masses and calculated bare PCB material masses
+remaining all-up mass allowance,1,8.273414680764706,8.273414680764706,"budget for populated PCBs, heat spreaders, six rotor stages, gearing, ducts, side intakes, wiring, fuselage, servos and payload"

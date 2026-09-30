@@ -1,0 +1,178 @@
+{
+  "phase": 14,
+  "status": "coupled-concept-multivariable-screen-180kmh-gate-cost-open",
+  "intent": "Couple the airframe, six-channel ESC, motor limits, stock nesting, and low/high-speed control effectors without changing the selected powertrain.",
+  "sources": {
+    "priorGeometry": "deliverables/phase13/configs/phase13_fixed_powertrain_design.json",
+    "motorReference": "D:/CodeProjects/drone-arm/hardware/motor_release/FA4119_PROPULSION_DECISION.md",
+    "escReference": "D:/CodeProjects/drone-arm/docs/hardware/REV_B_ARCHITECTURE.md",
+    "flightControlReference": "D:/CodeProjects/drone-arm/hardware/main/rev_b/main_rev_b.kicad_sch"
+  },
+  "powertrain": {
+    "motorCount": 6,
+    "motor": "Flycci FA4119 stock KV350",
+    "motorMassKgEach": 0.28,
+    "polePairs": 7,
+    "battery": "2x Turnigy Rapid 6S5000 in series; 12S1P; 5Ah",
+    "maximumPackVoltageV": 50.4,
+    "motorRpmSoft": 12500,
+    "motorRpmHard": 13500,
+    "batteryCurrentSoftAperMotor": 55,
+    "batteryCurrentHardAperMotor": 65,
+    "batteryCurrentProvisionalShortAperMotor": 75,
+    "escPhaseCurrentContinuousArms": 60,
+    "escPhaseCurrentBurstArms": 90,
+    "escBurstDuration": "unvalidated; do not budget as available continuous power",
+    "escBusSoftPowerLimitW": 13170,
+    "escBusSoftPowerLimitBasis": "inherited Phase-9 six-channel, 330A, 30mOhm pack sensitivity screen"
+  },
+  "costConstraints": {
+    "currency": "INR",
+    "motorUnitPriceMaxInr": 4000,
+    "batteryPairPriceMaxInr": 12000,
+    "motorCount": 6,
+    "knownMotor": {
+      "model": "Flycci FA4119 KV350",
+      "unitPriceInr": 4500,
+      "source": "D:/CodeProjects/drone-arm/hardware/motor_release/FA4119_PROPULSION_DECISION.md",
+      "status": "over_cap"
+    },
+    "knownBattery": {
+      "model": "Turnigy Rapid 6S5000 100C XT90",
+      "listedUnitPriceInr": 5400,
+      "listedPairPriceInr": 10800,
+      "source": "https://speedyfpv.com/products/turnigy-rapid-6s-5000mah-22-2v-100c-lipo-battery-w-xt90-for-rc-cars",
+      "status": "listed_sold_out; shipping_and_tax_unspecified"
+    },
+    "alternativeMotorUnitPriceInr": null,
+    "alternativeBatteryPairPriceInr": null
+  },
+  "alternativeMotorTradeScreen": {
+    "recommendation": "retain FA4119 until a smaller EDF motor demonstrates the exact operating map",
+    "candidateClass": "12S EDF-rated high-speed brushless motor, 35-40mm stator OD, <=0.25kg each",
+    "minimumBusInputPerMotorAt200kmhTwr1W": 1983,
+    "minimumBusInputPerMotorFor720kmhCruiseW": 2155,
+    "candidateContinuousElectricalInputPerMotorW": 2200,
+    "candidateContinuousElectricalInputPerMotorIfMaxSpeedIs650W": 2000,
+    "ratingBasis": "system bus-input share from Phase-14 calibrated analytical screen; shaft rating must be derived from measured motor/ESC/gear efficiency",
+    "purchaseGate": "manufacturer continuous EDF cooling data or guarded dynamometer map at 12S, target RPM, current and thermal limits"
+  },
+  "airframe": {
+    "architecture": "slender carbon-fibre-wrapped PLA lifting body with two coaxially projected 90mm EDF modules and split exit flow through a four-vane thrust-vectoring ring",
+    "ductCount": 2,
+    "rotorRowsPerDuct": 3,
+    "rotorOuterDiameterMm": 90,
+    "rotorBoreMm": 88,
+    "hubDiameterMm": 32,
+    "allUpMassTargetKg": 8.5,
+    "allUpMassHardScreenKg": 9.187,
+    "lowSpeedTwrMinimum": 1.0,
+    "lowSpeedTwrLimitKmh": 180,
+    "designAltitudeM": 3000,
+    "minimumCruiseSpeedKmh": 650,
+    "screenedHighSpeedKmh": [650, 700, 720],
+    "maximumCdAM2": 0.0009,
+    "projectedAreaScreenCm2": 73.62,
+    "frontalAreaModel": {
+      "dominatedBy": "battery_pack_cross_section_plus_fan_disk",
+      "unionRule": "max(fan_disk_union, battery_body_cross_section) + inlet_control_reserve",
+      "batteryBodyCrossSectionCm2": 54.0,
+      "inletAndControlReserveCm2": 5.52,
+      "referenceFanDiskUnionCm2": 63.617,
+      "referenceProjectedTotalCm2": 69.143,
+      "boardsDefineInternalVolumeNotFrontalArea": true,
+      "escInternalVolumeMm": [150, 150, 1.6],
+      "flightControlInternalVolumeMm": [140, 100, 1.6],
+      "note": "The 150x150 ESC and 140x100 flight boards set the minimum internal bay volume, not the external silhouette. The external frontal silhouette is battery/body dominated and saturates below roughly an 80 mm fan diameter, so shrinking the fan past that point does not reduce CdA."
+    },
+    "airframeCoreTemperatureLimitC": 45,
+    "airframeMaterial": "printed PLA core, carbon-fibre wrap, high-temperature epoxy system, local glass isolation ply at metal edges"
+  },
+  "massBudget": {
+    "inheritedPlannedMassIncludingPayloadKg": 8.1487740311,
+    "inheritedPayloadAllowanceKg": 2.0,
+    "note": "Phase-13 estimate excludes the newly specified six control actuators and vector-vane details; all additions and measured mass growth must fit under the Phase-14 8.5kg cap."
+  },
+  "fixedPackaging": {
+    "escPcbMm": [150, 150, 1.6],
+    "flightControlPcbMm": [140, 100, 1.6],
+    "batteryPackMmEach": [136, 44, 64],
+    "batteryPackCount": 2,
+    "batteryPackMassKgEach": 0.713,
+    "combinedBareBoardMassKg": 0.120585,
+    "populatedBoardAndConnectorsAllowanceKg": 0.2,
+    "boardHeatSpreaderMassKg": 0.08235,
+    "batteryPackEnvelopeSource": "SpeedyFPV Turnigy Rapid 6S5000 listing: 136x44x64mm; Phase-13 CAD used a 150x50x45mm package proxy",
+    "note": "These fixed envelopes prevent whole-airframe mass from scaling with EDF diameter. ESC saved PCB is six-layer while the reference architecture document still states four-layer. Refit battery envelopes in CAD before release."
+  },
+  "stock": {
+    "densityKgM3": 2700,
+    "material": "6061-T6 aluminium",
+    "oneBarMm": [300, 50, 16],
+    "sheetAmm": [250, 120, 5],
+    "sheetBmm": [300, 120, 5],
+    "rotorRows": 6,
+    "rotorBladesPerRow": [13, 12, 11, 13, 12, 11],
+    "statorVanesPerDuct": [23, 21, 19],
+    "profileBlankEnvelopeMm": [29, 8.2],
+    "profileBlankClearanceMm": 1.5,
+    "profileBlankEdgeMarginMm": 1,
+    "hubBlankDiameterMm": 32,
+    "hubBlankClearanceMm": 2.5,
+    "barEndClampMarginMm": 25,
+    "stockAllocation": "six rotor hubs from the 16mm bar; 72 rotor blades plus 126 stator vanes nested in the two 5mm sheets; stator rails are integrated into the composite duct structure"
+  },
+  "control": {
+    "controlAuthorityBandsKmh": {
+      "strong": [0, 500],
+      "medium": [500, 700]
+    },
+    "authorityMetric": "available control moment divided by trim-plus-disturbance demanded control moment",
+    "strongMinimumReserveRatio": 1.5,
+    "mediumMinimumReserveRatio": 1.1,
+    "vectorVaneAxialMomentArmM": 0.25,
+    "vectorVaneRingRadiusM": 0.044,
+    "actuators": [
+      "left elevon",
+      "right elevon",
+      "upper-left vector vane",
+      "upper-right vector vane",
+      "lower-left vector vane",
+      "lower-right vector vane"
+    ],
+    "actuatorCommandUpdateHzMinimum": 400,
+    "commandToActuatorLatencyMsMaximum": 10,
+    "positionFeedbackHzMinimum": 200,
+    "positionFeedbackStaleMsMaximum": 20,
+    "actuatorPower": "dedicated regulated high-current rail sized from selected actuator stall current; not the ESC flight-board 5V auxiliary rail",
+    "vectoringRole": "four independently actuated vanes in the split EDF exit provide propwash control as airspeed approaches zero; paired elevons add aerodynamic authority as dynamic pressure builds"
+  },
+  "lowSpeedFlowConcept": {
+    "sourceInletTotalAreaCm2": 120,
+    "physicalFanAnnulusTotalAreaCm2": 105.558,
+    "phase2BypassAnchors": [
+      {"speedKmh": 100, "bestScreenedBypassMassFraction": 0.5},
+      {"speedKmh": 200, "bestScreenedBypassMassFraction": 0.0},
+      {"speedKmh": 400, "bestScreenedBypassMassFraction": 0.0},
+      {"speedKmh": 500, "bestScreenedBypassMassFraction": 0.0},
+      {"speedKmh": 700, "bestScreenedBypassMassFraction": 0.0}
+    ],
+    "bypassEvidenceLimit": "Phase-2 reduced-order cycle sweep at CdA=0.00315m2; separate ideal nozzles; no static point, fan map, variable-area kinematics, or measured pressure recovery",
+    "auxiliaryInletAreaMultipliers": [1.0, 1.5, 2.0],
+    "auxiliaryInletScheduleConcept": "open extra side area from static through 180kmh; close/fair flush above low-speed transition to protect high-speed CdA",
+    "nozzleAndBypassScheduleStatus": "concept only; current Phase-13 CAD does not model actuated area schedule"
+  },
+  "evidencePolicy": {
+    "status": "screening-only",
+    "doNotClaim": [
+      "flight-ready",
+      "verified 650kmh cruise",
+      "verified TWR >= 1 across 0-180kmh",
+      "verified strong or medium control authority",
+      "qualified rotor containment",
+      "measured CdA or installed pressure recovery",
+      "verified variable-bypass or auxiliary-inlet thrust gain"
+    ],
+    "cloudSpendUsd": 0
+  }
+}

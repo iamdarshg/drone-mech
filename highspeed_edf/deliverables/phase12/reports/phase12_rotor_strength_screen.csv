@@ -1,0 +1,4 @@
+row,fixedGearRatio,motorSoftRpm,designRotorRpm,softLimitDerivedRotorRpm,proofRotorRpm_1p25x,rootAreaBaselineMm2,rootAreaReinforcedMm2,rootBlendTargetMm,yield6061T6MPa,centrifugalOnlyFOSAtProofRpm,targetFOS,pass,scope
+R1,2.35,12500.0,29375.0,29375.0,36718.75,20.96066560429954,26.5,2.0,276.0,4.138870102493788,2.5,True,Phase-11 stress model scaled by RPM^2 and reinforced root area; Kt=2.5 retained; excludes fatigue/aero/burst testing
+R2,2.65,12500.0,33125.0,33125.0,41406.25,20.96066560429954,26.5,2.0,276.0,3.254552972237892,2.5,True,Phase-11 stress model scaled by RPM^2 and reinforced root area; Kt=2.5 retained; excludes fatigue/aero/burst testing
+R3,2.95,12500.0,36360.0,36875.0,46093.75,20.96066560429954,26.5,2.0,276.0,2.626093423732173,2.5,True,Phase-11 stress model scaled by RPM^2 and reinforced root area; Kt=2.5 retained; excludes fatigue/aero/burst testing

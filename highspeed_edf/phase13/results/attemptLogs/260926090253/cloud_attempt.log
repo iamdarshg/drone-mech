@@ -1,0 +1,24 @@
+2026-09-26T09:02:53.656378+00:00 ATTEMPT_START instance=hsedf-p13-260926090253 bucket=hsedf-p13-4e15-9dc-260926090253 packageBytes=295731 sha256=74325e51ddeeea824e4a8682556e67d382e6c42faecfa9e2c5898f7fc0041544
+2026-09-26T09:03:20.043582+00:00 GCS_UPLOAD_COMPLETE bytes=295731
+2026-09-26T09:03:20.044598+00:00 VM_CREATE_REQUEST gcloud compute instances create hsedf-p13-260926090253 --project=project-ba289c9c-3c25-4e15-9dc --zone=us-central1-b --machine-type=e2-standard-2 --provisioning-model=SPOT --instance-termination-action=DELETE --max-run-duration=420s --maintenance-policy=TERMINATE --no-restart-on-failure --image-family=ubuntu-2204-lts --image-project=ubuntu-os-cloud --boot-disk-size=12GB --boot-disk-type=pd-standard --boot-disk-auto-delete --scopes=storage-rw --metadata=BUCKET=hsedf-p13-4e15-9dc-260926090253,BUNDLE_OBJECT=input/phase13-worker-bundle.tar.gz,RESULT_OBJECT=output/phase13-output.tar.gz,FINISH_OBJECT=output/phase13-finish.json,MAX_ARTIFACT_BYTES=15000000 --metadata-from-file=startup-script=D:\CodeProjects\drone-mech\highspeed_edf\phase13\optimization\phase13_worker_startup.sh --labels=phase=13,study=split-inlet-recovery --quiet
+2026-09-26T09:03:42.375012+00:00 VM_CREATE_RETURN rc=0; NAME                    ZONE           MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP     STATUS
+hsedf-p13-260926090253  us-central1-b  e2-standard-2  true         10.128.0.60  35.253.199.205  RUNNING
+WARNING: You have selected a disk size of under [200GB]. This may result in poor I/O performance. For more information, see: https://developers.google.com/compute/docs/disks#performance.
+Created [https://www.googleapis.com/compute/v1/projects/project-ba289c9c-3c25-4e15-9dc/zones/us-central1-b/instances/hsedf-p13-260926090253].
+WARNING: Some requests generated warnings:
+ - Disk size: '12 GB' is larger than image size: '10 GB'. You might need to resize the root repartition manually if the operating system does not support automatic resizing. See https://cloud.google.com/compute/docs/disks/add-persistent-disk#resize_pd for details.
+
+
+2026-09-26T09:03:46.977986+00:00 VM_EXISTS status=RUNNING createdAt=2026-09-26T02:03:27.103-07:00
+2026-09-26T09:03:51.502187+00:00 VM_RUNNING; max-runtime watchdog active
+2026-09-26T09:10:29.730654+00:00 MAX_RUNTIME_NEAR; issuing the one planned instance delete
+2026-09-26T09:10:29.731670+00:00 WORKER_FINISH_MISSING_BY_RUNNER_DEADLINE
+2026-09-26T09:10:35.200505+00:00 SERIAL_CONSOLE_CAPTURED bytes=199195
+2026-09-26T09:11:23.148484+00:00 VM_DELETE_RETURN rc=1;  ERROR: (gcloud.compute.instances.delete) Could not fetch resource:
+ - The resource 'projects/project-ba289c9c-3c25-4e15-9dc/zones/us-central1-b/instances/hsedf-p13-260926090253' was not found
+
+
+2026-09-26T09:11:23.149497+00:00 OBSERVED_VM_RUNNING_SECONDS=463.860497
+2026-09-26T09:11:23.150498+00:00 DELETE_COMMAND_ELAPSED_SECONDS=47.953
+2026-09-26T09:11:46.940135+00:00 TEMP_GCS_BUCKET_DELETE_RETURN rc=0
+2026-09-26T09:11:46.941280+00:00 TEMP_GCS_BUCKET_DELETE_REQUESTED

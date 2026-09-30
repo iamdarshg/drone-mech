@@ -1,0 +1,19 @@
+component,massKg,basis,cgXmm,cgYmm,cgZmm,massClass
+Six stock FA4119 KV350 motors,1.68,sourced fixed motor mass 6 x 0.280 kg,0,0,122,sourced
+"Two Turnigy Rapid 6S5000 packs in series, 12S1P 5Ah",1.426,sourced 2 x 0.713 kg; 150x50x45 mm package dimensions remain a proxy,0,0,-257.5,sourced
+ESC and flight-control bare PCBs,0.12058531923529413,results/phase9_control_board_mass.csv; population excluded,0,52,272.2,sourced
+"Remaining populated-board parts, connectors and solder",0.2,explicit analyst allowance beyond bare PCB source mass,0,52,270,analyst allowance
+Aluminium board heat spreaders,0.08235,Phase-12 dimension/material estimate retained; two separate spreaders,0,54.2,270,analyst allowance
+Six 6061-T6 fused rotors and hubs,0.31402966103964963,Phase-13 CadQuery fused-solid volumes x 2700 kg/m3,0,0,122,CAD-calculated
+Six 6061-T6 stator sets and rails,0.0536961626865937,Phase-13 CadQuery solid volumes x 2700 kg/m3,0,0,122,CAD-calculated
+Six fixed-ratio gearboxes,0.72,explicit analyst allowance 6 x 0.120 kg; gear ratios unchanged,0,0,122,analyst allowance
+"Power, phase, sensor and control harness",0.25,explicit analyst allowance including service loops/connectors,0,0,110,analyst allowance
+PLA/CF fuselage and lifting-body shells,0.2736775850655555,CAD surface split 0.21314 m2; PLA core + 200gsm CF/100gsm glass per face and 0.8 resin:fibre,0,0,0,CAD-calculated
+PLA/CF fan casing shells,0.15796380251591594,CAD surface 0.12302 m2; same documented laminate/core schedule,0,0,122,CAD-calculated
+PLA/CF four R30 split-inlet branches and lips,0.1204715005486002,CAD surface 0.09383 m2; same documented laminate/core schedule,0,0,122,CAD-calculated
+"Mounts, clamps, fasteners and cooling-bay support allowance",0.35,explicit analyst allowance; motor/shaft outline dimensions are not sourced,0,0,80,analyst allowance
+Landing gear allowance,0.4,explicit analyst allowance; detailed gear geometry not supplied,0,0,-40,analyst allowance
+Payload allowance,2.0,design payload allocation; not an installed/verified payload,0,0,-50,analyst allowance
+Unallocated growth/design reserve to 10.5kg ceiling,2.351225968908391,"budget headroom; not a physical component, excluded from CG",,,,budget reserve
+TOTAL PLANNED MASS INCLUDING PAYLOAD,8.148774031091609,sourced masses + CAD volumes + explicit engineering/payload allowances,0.0,2.5934952324852003,6.503368624791841,not weighed
+10.5kg ALL-UP DESIGN CEILING,10.5,planned mass plus 2.3512 kg unallocated reserve,,,,design budget

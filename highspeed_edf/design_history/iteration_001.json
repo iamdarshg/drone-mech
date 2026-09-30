@@ -1,0 +1,11 @@
+{
+  "iteration": 1,
+  "accepted": true,
+  "phase": "phase2-architecture-study-start",
+  "sourceClass": "user-requirement",
+  "requirementsRevision": 2,
+  "designStateFile": "../designs/design_state.json",
+  "designRevision": 2,
+  "decision": "Projected frontal area checkpoint <=75 cm2, lower preferred; preserve as geometry constraint distinct from aerodynamic CdA.",
+  "note": "Architecture candidates remain open pending the phase-2 comparison."
+}

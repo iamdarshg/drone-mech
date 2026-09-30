@@ -1,0 +1,134 @@
+{
+  "phase": 15,
+  "report": "FINAL CONFIG \u2014 high-amperage battery now, hybrid/large-Li-ion ready later",
+  "architecture": {
+    "motor": "6x rewound 4-pole inrunner (Rocket 3670 class), tuned Kv",
+    "drive": "DIRECT DRIVE \u2014 gearbox deleted in favour of a tuned Kv",
+    "tunedKv_80mm": 925.0,
+    "fanMm": 80.0,
+    "hubMm": 40.0,
+    "fanRpm": 41070.0,
+    "esc": "drone-arm Rev-B, 6 channels, 12S, sensorless FOC, <=60 A/channel",
+    "batteryNow": "2x Bonka 6S 1600 mAh 150C (12S 1.6 Ah, 240 A) INR 10638"
+  },
+  "poleCountAnswer": {
+    "question": "is 2 pole pairs terrible for efficiency?",
+    "answer": "No \u2014 at high mechanical speed fewer pole pairs gives LOWER electrical frequency, so LOWER iron (hysteresis+eddy) loss. A 2-pole-pair motor at 41,070 rpm runs at ~1,369 Hz, essentially the same frequency as a 7-pole-pair motor at 12,500 rpm (~1,458 Hz), so the direct-drive rewind is not penalised. Fewer poles does reduce torque-per-amp (more copper loss for a given torque) and motor inductance, but at this high speed iron loss dominates, so low pole count is the right choice. Pole count is set by the rotor magnets and is NOT changed by a rewind.",
+    "analysis": [
+      {
+        "case": "direct_2_pole_pairs",
+        "mechanical_rpm": 41070.0,
+        "pole_pairs": 2,
+        "electrical_frequency_hz": 1369.0,
+        "erpm": 82140.0,
+        "within_200k_erpm": true,
+        "iron_loss_index_f_pow_1_5_relative": 5.95
+      },
+      {
+        "case": "geared_7_pole_pairs",
+        "mechanical_rpm": 12500.0,
+        "pole_pairs": 7,
+        "electrical_frequency_hz": 1458.3,
+        "erpm": 87500.0,
+        "within_200k_erpm": true,
+        "iron_loss_index_f_pow_1_5_relative": 6.54
+      },
+      {
+        "case": "direct_7_pole_pairs_would_fail",
+        "mechanical_rpm": 41070.0,
+        "pole_pairs": 7,
+        "electrical_frequency_hz": 4791.5,
+        "erpm": 287490.0,
+        "within_200k_erpm": false,
+        "iron_loss_index_f_pow_1_5_relative": 38.95
+      }
+    ]
+  },
+  "gearboxVsDirect": {
+    "geared": {
+      "with_gearbox": true,
+      "useful_thrust_power_w": 2520.1,
+      "ideal_disk_power_w": 2580.6,
+      "fan_loss_w": 1003.6,
+      "gearbox_loss_w": 188.6,
+      "motor_loss_w": 419.2,
+      "esc_loss_w": 129.7,
+      "battery_heat_w": 284.2,
+      "bus_power_w": 4321.7,
+      "battery_terminal_power_w": 4605.9,
+      "pack_current_a": 97.3,
+      "overall_efficiency_useful_over_battery": 0.5471
+    },
+    "direct": {
+      "with_gearbox": false,
+      "useful_thrust_power_w": 2520.1,
+      "ideal_disk_power_w": 2580.6,
+      "fan_loss_w": 1003.6,
+      "gearbox_loss_w": 0.0,
+      "motor_loss_w": 398.2,
+      "esc_loss_w": 123.2,
+      "battery_heat_w": 256.5,
+      "bus_power_w": 4105.6,
+      "battery_terminal_power_w": 4362.1,
+      "pack_current_a": 92.5,
+      "overall_efficiency_useful_over_battery": 0.5777
+    },
+    "conclusion": "Deleting the gearbox removes the 5% gear loss and the 0.72 kg gearbox, and keeps the same electrical frequency, so direct drive wins. It requires a rewound Kv of ~925 (80 mm) and a rotor/bearing/containment rating for ~41 krpm."
+  },
+  "rewindMachine": {
+    "approach": "attachment for the existing TwoTrees 3018 Pro CNC \u2014 replace the spindle tool with a 3D-printed winding mandrel; the CNC X/Z axes do the wire traverse and the spindle rotates the mandrel",
+    "items": [
+      {
+        "item": "3D printed winding mandrel + stator holder + wire guide + tensioner (PLA/PETG)",
+        "inr": 300
+      },
+      {
+        "item": "Hall-effect sensor + magnet ring for turn counting (or optical flag)",
+        "inr": 150
+      },
+      {
+        "item": "Wiring, connectors, mandrel insert, fasteners, misc",
+        "inr": 150
+      }
+    ],
+    "machine_total_inr": 600,
+    "note": "one-time tool; reuses the CNC so no gantry/stepper/driver/controller spend; per-motor wire/consumables shown separately"
+  },
+  "cost": {
+    "six_motor_price_inr": 20454,
+    "six_motor_rewire_wire_inr": 3000,
+    "six_motor_total_no_machine_inr": 23454,
+    "six_motor_total_with_machine_inr": 24054,
+    "motor_pair_budget_inr": 24000,
+    "under_budget_without_machine": true,
+    "under_budget_with_machine": false,
+    "note": "if the winder is a reusable tool it is not charged to the six-motor ceiling; if it is, the build exceeds INR 24000 by INR 54"
+  },
+  "batteryBayFutureProofing": {
+    "currentPackMm_each": [
+      185,
+      65,
+      55
+    ],
+    "currentPairVolumeL": 1.323,
+    "reservedBayMm": [
+      200,
+      135,
+      75
+    ],
+    "reservedBayVolumeL": 2.025,
+    "option1_largeLiIon_12S_200A_200km": {
+      "example": "12S 10 Ah 90 A+ Li-ion (Samsung 6S2P 10000 mAh 9C pair or equivalent)",
+      "fitsReservedBay": true,
+      "gives": "~219 km range at ~305 km/h, >200 A if a high-power Li-ion 21700 blend is used"
+    },
+    "option2_hybrid": "reserve a second isolated bay + connector for an auxiliary range pack or a fuel-cell/turbine range extender feeding the same 12S bus",
+    "requirements": [
+      "battery bay sized 200 x 135 x 75 mm with adjustable rails and a retention strap",
+      "two independent fused 12S feed points so a second/hybrid pack can be paralleled or switched",
+      "mass ballast and CG range reserved for a pack up to ~2.6 kg",
+      "thermal vent path and connector cut-outs sized for a larger pack"
+    ]
+  },
+  "newCloudSpendUsd": 0
+}

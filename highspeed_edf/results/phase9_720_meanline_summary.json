@@ -1,0 +1,23 @@
+{
+  "speedKmh": 720.0,
+  "massFlowTotalKgPerS": 1.717484098799634,
+  "fanPressureRatio": 1.0,
+  "corePressureRatio": 1.0617101575948498,
+  "overallPressureRatio": 1.0617101575948498,
+  "meanlineOutletPressureRatio": 1.0407380977926104,
+  "nozzleExitVelocityMs": 209.7185460448144,
+  "meanlineNetThrustN": 16.691448295420788,
+  "requiredAircraftDragThrustN": 16.36095338709951,
+  "meanlineThrustToRequiredRatio": 1.0202002230861358,
+  "stageWorkMultiplierForThrustClosure": 1.0455078125000001,
+  "cycleBusPowerW": 13013.711245808,
+  "rowSolveElectricalPowerW": 12925.639938255803,
+  "maximumContinuityErrorFraction": 5.871422121652155e-08,
+  "rowsPassingScreen": 6,
+  "rowsTotal": 6,
+  "allRowsPassScreen": true,
+  "maximumMotorRpm": 12500.0,
+  "maxEqualShareBatteryCurrentA": 43.258500462703495,
+  "maxIdealKvTorqueCurrentEstimateA": 54.59169149261419,
+  "allEscPhaseCurrentEstimatesBelow60A": true
+}

@@ -1,0 +1,185 @@
+{
+  "phase": 12,
+  "createdAtUtc": "2026-09-25T19:50:51.968140+00:00",
+  "status": "local-mesh-and-syntax-only-no-checkmesh",
+  "evidenceClass": "Gmsh geometry/mesh plus static dictionary lexical check; not OpenFOAM checkMesh or CFD",
+  "sources": {
+    "sourceHashes": {
+      "phase9Config": "6cff87cd4730265eac14c272a55fe6d443b063893df77d9c797acdaee629a900",
+      "phase9Meanline": "7df9a666f54bcba4fb5b5efe63f3992a2cbd31863a21b387e8ddfdc9407f41a9"
+    },
+    "freestream": {
+      "altitudeM": 3000.0,
+      "speedMps": 200.0,
+      "staticTemperatureK": 268.65,
+      "staticPressurePa": 70108.26833969312,
+      "densityKgM3": 0.9091276032136805,
+      "mach": 0.6086866542925556,
+      "totalTemperatureK": 288.55693507850793,
+      "totalPressurePa": 90037.94841092758
+    },
+    "branch": {
+      "branchesTotal": 4,
+      "massFlowKgS": 0.4293710246999085,
+      "slotAreaM2": 0.003,
+      "branchOutletAreaM2": 0.002778738702100172,
+      "equivalentRoundOutletDiameterM": 0.0594810894318522,
+      "slotToBranchAreaRatio": 1.0796265218217886,
+      "inletMachAtTargetFlow": 0.4314638184509273,
+      "inletStaticPressurePa": 79224.5198420509,
+      "inletStaticTemperatureK": 278.19897376565706,
+      "inletVolumeFlowM3S": 0.4327989441713002,
+      "outletMachAtTargetRecovery": 0.49043058297803965,
+      "outletStaticPressurePa": 74857.56848234423,
+      "outletStaticTemperatureK": 275.3131524389007,
+      "idealChokedBranchFlowKgS": 0.5952495098857679,
+      "targetRecovery": 0.98
+    },
+    "annulus": {
+      "perDuctAreaM2": 0.005557477404200344,
+      "perDuctAreaCm2": 55.57477404200344,
+      "perBranchAreaM2": 0.002778738702100172,
+      "perBranchAreaCm2": 27.78738702100172
+    },
+    "projectedArea": {
+      "fanUnionCm2": 63.61725123519331,
+      "structureAllowanceCm2": 10.0
+    },
+    "geometry": {
+      "ductCount": 2,
+      "ductOuterDiameterM": 0.09,
+      "hubDiameterM": 0.032,
+      "slotCountTotal": 4,
+      "slotsPerDuct": 2,
+      "slotWidthM": 0.025,
+      "slotLengthM": 0.12,
+      "totalSlotAreaCm2": 120.0,
+      "branchSlotAreaCm2": 30.0,
+      "branchFlowSplitPerDuct": 0.5,
+      "branchOutletAreaDefinition": "one-half of annulus area pi/4*(90^2-32^2); mesh uses area-equivalent circular outlet patch; splitter/manifold mixing is not included",
+      "splitTurnHeightMm": 25.0,
+      "turnAngleDeg": 90.0,
+      "turnRadiiMm": [
+        35.0,
+        45.0
+      ],
+      "transitionLengthM": 0.12,
+      "transitionProfile": "smoothstep rounded-rectangle to equal-area branch outlet",
+      "routerStock": "3018-class CNC; 6061-T6; 16x50 mm max per billet"
+    },
+    "referenceCandidate": {
+      "slotToAnnulusAreaRatioPhase9": 1.08
+    }
+  },
+  "cases": [
+    {
+      "caseId": "r035_linear_coarse",
+      "turnRadiusMm": 35.0,
+      "meshLevel": "coarse",
+      "cells": 7201,
+      "minSICN": 0.13279655485707872,
+      "localOpenFOAMCheckMesh": null,
+      "localDictionaryStaticCheck": true,
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    },
+    {
+      "caseId": "r035_linear_medium",
+      "turnRadiusMm": 35.0,
+      "meshLevel": "medium",
+      "cells": 13780,
+      "minSICN": 0.16351554141568925,
+      "localOpenFOAMCheckMesh": null,
+      "localDictionaryStaticCheck": true,
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    },
+    {
+      "caseId": "r035_linear_fine",
+      "turnRadiusMm": 35.0,
+      "meshLevel": "fine",
+      "cells": 20840,
+      "minSICN": 0.22190478564921529,
+      "localOpenFOAMCheckMesh": null,
+      "localDictionaryStaticCheck": true,
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    },
+    {
+      "caseId": "r045_linear_medium",
+      "turnRadiusMm": 45.0,
+      "meshLevel": "medium",
+      "cells": 14215,
+      "minSICN": 0.17981638482579884,
+      "localOpenFOAMCheckMesh": null,
+      "localDictionaryStaticCheck": true,
+      "solverStatus": "prepared_not_run",
+      "pressureRecovery": null
+    }
+  ],
+  "frontProjectionScreen": [
+    {
+      "caseId": "r035_linear_coarse",
+      "turnRadiusMm": 35.0,
+      "outboardProtrusionMm": 2.5,
+      "projectedAreaLowerBoundIfOppositePairsOverlapCm2": 79.61725123519331,
+      "projectedAreaLowerBoundIfAllFourAreDistinctCm2": 85.61725123519331,
+      "areaGatePassEvenUnderTwoPathOverlap": false
+    },
+    {
+      "caseId": "r035_linear_medium",
+      "turnRadiusMm": 35.0,
+      "outboardProtrusionMm": 2.5,
+      "projectedAreaLowerBoundIfOppositePairsOverlapCm2": 79.61725123519331,
+      "projectedAreaLowerBoundIfAllFourAreDistinctCm2": 85.61725123519331,
+      "areaGatePassEvenUnderTwoPathOverlap": false
+    },
+    {
+      "caseId": "r035_linear_fine",
+      "turnRadiusMm": 35.0,
+      "outboardProtrusionMm": 2.5,
+      "projectedAreaLowerBoundIfOppositePairsOverlapCm2": 79.61725123519331,
+      "projectedAreaLowerBoundIfAllFourAreDistinctCm2": 85.61725123519331,
+      "areaGatePassEvenUnderTwoPathOverlap": false
+    },
+    {
+      "caseId": "r045_linear_medium",
+      "turnRadiusMm": 45.0,
+      "outboardProtrusionMm": 12.5,
+      "projectedAreaLowerBoundIfOppositePairsOverlapCm2": 103.61725123519331,
+      "projectedAreaLowerBoundIfAllFourAreDistinctCm2": 133.6172512351933,
+      "areaGatePassEvenUnderTwoPathOverlap": false
+    }
+  ],
+  "localToolAvailability": {
+    "gmshPython": true,
+    "checkMeshOnPath": false,
+    "checkMeshViaWsl": null,
+    "dockerDaemon": false
+  },
+  "launchGate": {
+    "realLocalCheckMeshPassed": false,
+    "solverSyntaxOpenFoamParserPassed": false,
+    "areaPassingGeometryCount": 0,
+    "launchPermitted": false,
+    "reason": "No local checkMesh/OpenFOAM executable is installed; WSL Ubuntu VHDX mount failed. Required real checkMesh gate cannot be met locally."
+  },
+  "costPlan": {
+    "approvedNewEnvelopeUsd": 0.11586,
+    "maxInstancesTotal": 1,
+    "maxConcurrentInstances": 1,
+    "machineType": "e2-standard-2",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maxRunDurationSeconds": 420,
+    "terminationAction": "DELETE",
+    "bootDiskGb": 12,
+    "bootDiskAutoDelete": true,
+    "conservativeComputeRateUsdPerHour": 0.2,
+    "computeMaximumUsd": 0.02334,
+    "ancillaryAllowanceUsd": 0.003,
+    "aggregateEstimateUsd": 0.02634,
+    "aggregateCeilingUsd": 0.0271,
+    "calculation": "420 seconds x $0.20/hour = $0.02334 compute; $0.003 ancillary cap; total estimated new compute/storage/network <=$0.02634, below the $0.0271 limit. One Spot VM only, no retry/fallback, auto-delete at 420 seconds."
+  }
+}

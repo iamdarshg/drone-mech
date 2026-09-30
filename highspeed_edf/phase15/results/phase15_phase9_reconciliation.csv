@@ -1,0 +1,6 @@
+inlet_recovery,nozzle_recovery,compressor_eta,required_pr,required_jet_velocity_m_s,shaft_power_w,electrical_power_w,ideal_momentum_power_w,overpower_factor_vs_ideal,propulsive_efficiency,case
+0.98,0.98,0.82,1.0671,211.58,7203.0,8072.0,2593.0,3.11,0.312,phase9_basis
+0.99,0.99,0.86,1.0477,211.58,4922.0,5515.0,2593.0,2.13,0.457,good_inlet
+0.995,0.995,0.9,1.0383,211.58,3785.0,4242.0,2593.0,1.64,0.594,very_good_inlet
+1.0,1.0,1.0,1.0291,211.58,2593.0,2906.0,2593.0,1.12,0.867,clean_idealised
+0.97,0.97,0.8,1.087,211.58,9511.0,10658.0,2593.0,4.11,0.236,poor_inlet

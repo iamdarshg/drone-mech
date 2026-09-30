@@ -1,0 +1,6 @@
+case_id,turn_radius_mm,mesh_level,cells,min_sicn,gmsh_to_foam,change_dictionary,check_mesh,rho_simple_foam,solver_iterations,meanline_mdot_kg_s,computed_mdot_kg_s,total_pressure_recovery,converged,status
+r065_linear_coarse,65,coarse,16825,0.3127707753,pass,warning_no_replacement,fail_1_check,not_run,0,0.858742,, ,false,checkMesh_failed
+r065_linear_medium,65,medium,37705,0.3481236524,pass,warning_no_replacement,pass,abort_SIGABRT,0,0.858742,,,false,wall_patch_type_fatal
+r065_linear_fine,65,fine,71982,0.3776112188,pass,warning_no_replacement,pass,abort_SIGABRT,0,0.858742,,,false,wall_patch_type_fatal
+r070_linear_medium,70,medium,38618,0.3807678568,pass,warning_no_replacement,pass,abort_SIGABRT,0,0.858742,,,false,wall_patch_type_fatal
+r075_linear_medium,75,medium,39252,0.3267871848,pass,warning_no_replacement,fail_1_check,not_run,0,0.858742,,,false,checkMesh_failed

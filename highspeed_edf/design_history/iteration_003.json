@@ -1,0 +1,13 @@
+{
+  "iteration": 3,
+  "accepted": true,
+  "phase": "phase3-first-meanline-candidate-screen",
+  "sourceClass": "workbench-analytical-meanline",
+  "requirementsRevision": 2,
+  "designRevision": 2,
+  "candidate": "three-rotor/three-stator serial axial path with independent RPM schedules and fixed stage-specific overdrive ratios",
+  "outcome": "Rotor row screens pass after RPM/work scheduling update; stators fail the 50k Reynolds validity floor at 3 km. Motor current/power screen exceeds existing provisional FA4119 limits at 650-700 km/h.",
+  "nextIteration": "Investigate core annulus contraction / variable bypass split to raise stator Reynolds, then re-screen rotor speed and motor torque/current; preserve frontal area checkpoint <=75 cm2 and separate CdA.",
+  "gcpJobs": [],
+  "note": "Candidate is not accepted as a converged or flight-ready design."
+}

@@ -1,0 +1,5 @@
+speed_kmh,altitude_m,cdA_m2,total_pressure_ratio,pressure_adding_rotor_rows,equal_stage_pressure_ratio,equal_specific_work_per_row_j_kg,rpm_at_loading_psi_0_5,fixed_overdrive_at_motor_13500rpm,ideal_cycle_power_change_vs_other_stage_counts_w,source_class
+700,3000,0.00315,1.1543668292944747,1,1.1543668292944747,14750.540210089057,58577.699448827065,4.339088848061264,0.0,equal-work thermodynamic distribution; common radius; assumed psi=0.5; stage efficiencies held equal
+700,3000,0.00315,1.1543668292944747,2,1.0744146449553238,7375.2701050445285,41420.688506573104,3.0681991486350446,0.0,equal-work thermodynamic distribution; common radius; assumed psi=0.5; stage efficiencies held equal
+700,3000,0.00315,1.1543668292944747,3,1.0490139887424832,4916.846736696352,33819.8505452893,2.505174114465874,0.0,equal-work thermodynamic distribution; common radius; assumed psi=0.5; stage efficiencies held equal
+700,3000,0.00315,1.1543668292944747,4,1.0365397459602423,3687.6350525222642,29288.849724413532,2.169544424030632,0.0,equal-work thermodynamic distribution; common radius; assumed psi=0.5; stage efficiencies held equal

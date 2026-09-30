@@ -1,0 +1,3 @@
+id,maxThicknessMm,workbenchFidelity,feasible,frontalAreaM2,thrustToWeight,tipMach,inputHash,nativeSolverEvidence
+wing_t30mm,30.0,analytical ideal annular actuator-disk screening; stator count recorded without stator-row aerodynamics,False,0.021649017250684445,0.34847853050883487,0.5132183917088865,fbfea2a7f84139b2c1fc95723e23d9b89985be509fad2bb43cc3af9cd4ae3498,False
+wing_t36mm,36.0,analytical ideal annular actuator-disk screening; stator count recorded without stator-row aerodynamics,False,0.021649017250684445,0.34847853050883487,0.5132183917088865,836e177591125c61b9a6082e5a36a31f80d054d179501215a5227648804d3b17,False

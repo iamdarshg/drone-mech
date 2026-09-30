@@ -1,0 +1,49 @@
+{
+  "studyId": "highspeed-edf",
+  "revision": 4,
+  "parentRequirementRevision": 3,
+  "candidateRequirementsFile": "requirements/requirements_r3_candidate.yaml",
+  "status": "fixed-powertrain-geometry-only-candidate-screen",
+  "allUpMassTargetKg": 11.5,
+  "projectedFrontalAreaMaxCm2": 75.0,
+  "candidateProjectedFrontalAreaCm2": 73.6173,
+  "candidateCdaAt720KmhM2": 0.0009,
+  "candidateStaticTwrAt3km": 1.0395,
+  "powertrainImmutable": {
+    "motors": 6,
+    "motor": "Flycci FA4119 stock KV350",
+    "motorMassKgEach": 0.28,
+    "battery": "2x Turnigy Rapid 6S 5000mAh 100C in series",
+    "batteryTopology": "12S1P",
+    "batteryCapacityAh": 5.0,
+    "batteryMassKgEach": 0.713,
+    "nominalVoltageV": 44.4,
+    "fullChargeVoltageV": 50.4
+  },
+  "fuselageAndFanGeometry": {
+    "ductCount": 2,
+    "ductOuterDiameterMm": 90.0,
+    "hubDiameterMm": 32.0,
+    "frontProjection": "coincident axially-staggered duct silhouettes",
+    "sideInlets": "2 flush slots, each 50mm x 120mm",
+    "sideInletTotalAreaCm2": 120.0,
+    "projectedAreaAllowanceForStructureAndControlsCm2": 10.0,
+    "rotorRadialSpanMm": 29.0,
+    "rotorChordMm": 16.0,
+    "statorChordMm": 8.0,
+    "stockEnvelopeMm": "16 thick x 50 wide; 29mm blade span and 16mm chord fit"
+  },
+  "screeningAssumptions": {
+    "packR0Ohm": [0.01, 0.02, 0.03],
+    "initialSoc": 0.95,
+    "fanAirEfficiency": 0.8,
+    "motorEfficiency": 0.92,
+    "escEfficiency": 0.97,
+    "gearboxEfficiency": 0.95,
+    "maxPackSoftCurrentA": 330.0,
+    "maxBatteryCurrentAperMotor": 55.0
+  },
+  "derivedFixedHardwareMassLowerBoundKg": 3.2266,
+  "remainingMassAllowanceKg": 8.2734,
+  "statusNote": "Mass allowance is not a weighed assembly; populated controller boards, busbars, heat spreaders, gears, rotors, duct shell, airframe and payload must total no more than the remaining allowance."
+}

@@ -1,0 +1,5 @@
+item,unit_price_inr_listed,purchase_quantity,extended_price_inr_listed,applicable_cap_inr,cap_basis,gate,source_or_note
+FA4119 motor,4500,6,27000,24000,six-motor total implied by unit cap,FAIL_OVER_CAP,D:/CodeProjects/drone-arm/hardware/motor_release/FA4119_PROPULSION_DECISION.md
+Turnigy Rapid 6S5000 battery pair,5400,2,10800,12000,pair total,PASS_LISTED_SOLD_OUT_SHIPPING_TAX_UNSPECIFIED,https://speedyfpv.com/products/turnigy-rapid-6s-5000mah-22-2v-100c-lipo-battery-w-xt90-for-rc-cars
+alternative motor candidates,,6,,24000,"unit cap <= INR 4,000",UNPRICED_NOT_A_COST_PASS,Get dated supplier quote for the selected 12S EDF motor; include required high-speed rotor/shaft hardware.
+alternative battery capacity variants,,2,,12000,"pair total <= INR 12,000",UNPRICED_NOT_A_COST_PASS,4Ah/3.5Ah mass sensitivities are not priced substitute SKUs; verify actual matched 12S pair dimensions and discharge rating.

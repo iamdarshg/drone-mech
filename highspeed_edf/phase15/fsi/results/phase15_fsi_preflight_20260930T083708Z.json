@@ -1,0 +1,47 @@
+{
+  "local": {
+    "caseCount": 2,
+    "cases": [
+      {
+        "candidate": "wing_t30mm",
+        "fluidCells": 33840,
+        "solidTetrahedra": 12925,
+        "fluidMshBytes": 1778696,
+        "solidInpBytes": 596978
+      },
+      {
+        "candidate": "wing_t36mm",
+        "fluidCells": 34498,
+        "solidTetrahedra": 13741,
+        "fluidMshBytes": 1811780,
+        "solidInpBytes": 631870
+      }
+    ],
+    "meshAndCaseGeneration": "PASS",
+    "maximumRuntimeSeconds": 2400,
+    "conservativeComputeUsd": 0.3333,
+    "ancillaryUsdCeiling": 0.08,
+    "conservativeTotalUsd": 0.4133,
+    "hardBudgetUsd": 0.45,
+    "budgetPass": true,
+    "maximumArtifactBytes": 15000000
+  },
+  "cloud": {
+    "project": "project-ba289c9c-3c25-4e15-9dc",
+    "billingEnabled": true,
+    "computeApiEnabled": true,
+    "storageApiEnabled": true,
+    "zone": "us-central1-b",
+    "zoneStatus": "UP",
+    "machineType": "e2-standard-4",
+    "machineVcpus": 4,
+    "machineMemoryMb": 16384,
+    "bucket": "aero-governed-blockers-988177451335-20260919",
+    "bucketLocation": "US-CENTRAL1",
+    "existingRunningFsiInstances": [],
+    "pass": true
+  },
+  "launchPermitted": true,
+  "launchRequested": false,
+  "checkedAtUtc": "2026-09-30T08:37:40.169628+00:00"
+}

@@ -1,0 +1,8 @@
+case_id,bend_radius_mm,contraction_profile,mesh_level,max_cell_size_mm,mesh_cells,mesh_nodes,target_mdot_per_duct_kg_s,solver_status,pressure_recovery
+r225_linear_coarse,225.0,linear,coarse,8.0,32511,7402,0.858742049399817,solver_aborted_wall_patch,
+r225_linear_medium,225.0,linear,medium,5.5,91363,18913,0.858742049399817,solver_aborted_wall_patch,
+r225_linear_fine,225.0,linear,fine,3.8,257986,49349,0.858742049399817,solver_aborted_wall_patch,
+r270_linear_medium,270.0,linear,medium,5.5,102728,21178,0.858742049399817,solver_aborted_wall_patch,
+r315_linear_medium,315.0,linear,medium,5.5,114781,23589,0.858742049399817,solver_aborted_wall_patch,
+r225_cosine_medium,225.0,cosine,medium,5.5,91325,18908,0.858742049399817,solver_aborted_wall_patch,
+r225_front_loaded_medium,225.0,front_loaded,medium,5.5,92762,19114,0.858742049399817,solver_aborted_wall_patch,

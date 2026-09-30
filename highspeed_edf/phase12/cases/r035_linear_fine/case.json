@@ -1,0 +1,47 @@
+{
+  "id": "r035_linear_fine",
+  "turnRadiusM": 0.035,
+  "transitionProfile": "linear",
+  "meshLevel": "fine",
+  "caseId": "r035_linear_fine",
+  "targetMassFlowKgPerS": 0.4293710246999085,
+  "targetRecovery": 0.98,
+  "totalPressurePa": 90037.94841092758,
+  "totalTemperatureK": 288.55693507850793,
+  "turnRadiusMm": 35.0,
+  "slotWidthM": 0.025,
+  "slotLengthM": 0.12,
+  "meshEvidence": {
+    "nodes": 5345,
+    "tetraCells": 20840,
+    "minSICN": 0.22190478564921529,
+    "cellsSICNBelow0p05": 0,
+    "fluidVolumeM3": 0.00023297356773133791,
+    "physicalFaceCounts": {
+      "inlet": 1,
+      "outlet": 1,
+      "walls": 240
+    }
+  },
+  "syntaxPreflight": {
+    "allRequiredFilesPresent": true,
+    "missing": [],
+    "braceBalance": {
+      "0/p": 0,
+      "0/U": 0,
+      "0/T": 0,
+      "0/k": 0,
+      "0/omega": 0,
+      "0/nut": 0,
+      "0/alphat": 0,
+      "constant/thermophysicalProperties": 0,
+      "constant/turbulenceProperties": 0,
+      "system/controlDict": 0,
+      "system/fvSchemes": 0,
+      "system/fvSolution": 0,
+      "system/changeDictionaryDict": 0
+    },
+    "allBracesBalanced": true,
+    "wallPatchDictionaryDirect": true
+  }
+}

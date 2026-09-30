@@ -1,0 +1,12 @@
+{
+  "candidate": "wing_t36mm",
+  "sourceGeometry": "Phase-15 nominal wing section schedule; outboard sector x=80.33..260 mm",
+  "thicknessVariantMm": "wing_36mm",
+  "flowSpeedMps": 200.0,
+  "altitudeM": 3000,
+  "angleOfAttackDeg": 0.5,
+  "machEstimate": 0.6086866542925556,
+  "dynamicPressurePa": 18180.0,
+  "solver": "rhoPimpleFoam",
+  "coupling": "preCICE FSI"
+}

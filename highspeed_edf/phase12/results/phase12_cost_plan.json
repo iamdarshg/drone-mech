@@ -1,0 +1,27 @@
+{
+  "phase": 12,
+  "status": "launch-blocked-local-checkMesh-unavailable",
+  "approvedRemainingNewEnvelopeUsd": 0.0271,
+  "totalApprovedEnvelopeUsd": 0.2,
+  "phase10And11PriorEnvelopeEstimateUsd": 0.17289,
+  "newWorkerMaximum": {
+    "instancesTotal": 1,
+    "instancesConcurrent": 1,
+    "machineType": "e2-standard-2",
+    "provisioningModel": "SPOT",
+    "zone": "us-central1-b",
+    "maximumLifetimeSeconds": 420,
+    "terminationAction": "DELETE",
+    "bootDisk": "12 GB pd-standard, auto-delete",
+    "gpuCount": 0
+  },
+  "costCeilingsUsd": {
+    "computeAtConservativeRate": 0.02334,
+    "temporaryDiskNetworkArtifactsAndContingency": 0.003,
+    "aggregateNewCeiling": 0.02634,
+    "approvedNewCeiling": 0.0271,
+    "aggregatePriorPlusNewHardCeiling": 0.2
+  },
+  "calculation": "420 seconds / 3600 x $0.20/hour = $0.02334 compute; $0.003 maximum ancillary including temporary disk, network, retained artifacts and contingency; estimated aggregate $0.02634 <= $0.0271 hard new-run ceiling. With Phase-10/11 prior envelope estimate $0.17289, the combined estimate is <=$0.20. No VM was launched because local checkMesh and OpenFOAM dictionary parsing were unavailable; actual new cloud spend is $0.",
+  "launchPolicy": "A real local OpenFOAM checkMesh executable and passing mesh results are required before creation. This gate failed, so there was no cloud request, retry, or temporary GCS object."
+}

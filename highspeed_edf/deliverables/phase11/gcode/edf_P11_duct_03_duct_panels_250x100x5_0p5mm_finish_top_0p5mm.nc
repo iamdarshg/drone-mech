@@ -1,0 +1,62 @@
+(Phase-10 P11_duct_03 duct_panels_250x100x5 0p5mm_finish_top_0p5mm)
+(GRBL 3-axis; offline generated only; CNC was not run.)
+(G54 XY origin = stock lower-left; Z0 = stock top; units mm.)
+(Stock = 250 x 100 x 5 mm plate.)
+(775 spindle set conservatively to 7000 rpm; 2-flute carbide.)
+(Stock alloy/material was not specified; verify material/tool chipload before use.)
+(Do not use these paths on carbon-fibre or unknown abrasive/composite stock.)
+(No ATC: install and measure tool manually at the M0 prompt.)
+(Clamp stock flat; keep clamps outside all 2 mm cutter paths.)
+(Dry-run above stock with spindle disabled before cutting.)
+G21 G17 G90 G94 G54
+G40 G49 G80
+G0 Z5.000
+M5
+M0 (Install 0.5 mm 2-flute carbide finisher; re-touch G54 Z0)
+M3 S7000
+G4 P3
+(F20 mm/min; 0.10 mm Z stepdown; shallow finish band only: Z-0.1 to Z-0.5.)
+(This is not a full-thickness wall finish; rough-side allowance remains below Z-0.5.)
+G0 X2.250 Y2.500
+G0 Z1.000
+G1 Z-0.100 F6.0
+G1 X2.250 Y62.500 Z-0.100 F20.0
+G1 X122.602 Y62.750 Z-0.100 F20.0
+G1 X122.852 Y2.500 Z-0.100 F20.0
+G1 X2.250 Y2.500 Z-0.100 F20.0
+G0 Z1.000
+G0 X2.250 Y2.500
+G0 Z1.000
+G1 Z-0.200 F6.0
+G1 X2.250 Y62.500 Z-0.200 F20.0
+G1 X122.602 Y62.750 Z-0.200 F20.0
+G1 X122.852 Y2.500 Z-0.200 F20.0
+G1 X2.250 Y2.500 Z-0.200 F20.0
+G0 Z1.000
+G0 X2.250 Y2.500
+G0 Z1.000
+G1 Z-0.300 F6.0
+G1 X2.250 Y62.500 Z-0.300 F20.0
+G1 X122.602 Y62.750 Z-0.300 F20.0
+G1 X122.852 Y2.500 Z-0.300 F20.0
+G1 X2.250 Y2.500 Z-0.300 F20.0
+G0 Z1.000
+G0 X2.250 Y2.500
+G0 Z1.000
+G1 Z-0.400 F6.0
+G1 X2.250 Y62.500 Z-0.400 F20.0
+G1 X122.602 Y62.750 Z-0.400 F20.0
+G1 X122.852 Y2.500 Z-0.400 F20.0
+G1 X2.250 Y2.500 Z-0.400 F20.0
+G0 Z1.000
+G0 X2.250 Y2.500
+G0 Z1.000
+G1 Z-0.500 F6.0
+G1 X2.250 Y62.500 Z-0.500 F20.0
+G1 X122.602 Y62.750 Z-0.500 F20.0
+G1 X122.852 Y2.500 Z-0.500 F20.0
+G1 X2.250 Y2.500 Z-0.500 F20.0
+G0 Z1.000
+M5
+G0 Z5.000
+M30

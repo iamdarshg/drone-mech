@@ -1,0 +1,6 @@
+caseId,turnRadiusMm,profile,meshLevel,cellSizeMm,cells,minSICN,solverStatus,pressureRecovery
+r065_linear_coarse,65.0,linear,coarse,8.0,16825,0.3127707752599118,checkMesh_failed_1_check,
+r065_linear_medium,65.0,linear,medium,6.0,37705,0.34812365237785126,rhoSimpleFoam_aborted_wall_patch,
+r065_linear_fine,65.0,linear,fine,4.5,71982,0.37761121883026716,rhoSimpleFoam_aborted_wall_patch,
+r070_linear_medium,70.0,linear,medium,6.0,38618,0.38076785675211544,rhoSimpleFoam_aborted_wall_patch,
+r075_linear_medium,75.0,linear,medium,6.0,39252,0.3267871849955038,checkMesh_failed_1_check,

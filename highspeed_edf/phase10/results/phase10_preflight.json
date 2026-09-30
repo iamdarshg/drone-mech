@@ -1,0 +1,153 @@
+{
+  "phase": 10,
+  "generatedAtUtc": "2026-09-25T16:21:59.751268+00:00",
+  "status": "solver_attempted_no_valid_recovery",
+  "evidenceClass": "Gmsh meshes imported; checkMesh quality gates failed and rhoSimpleFoam aborted during wall-function initialization; no pressure-recovery values",
+  "sourceHashes": {
+    "phase9ConfigSha256": "6cff87cd4730265eac14c272a55fe6d443b063893df77d9c797acdaee629a900",
+    "candidateStateSha256": "bd9cb393f3101fe8ca90f0bbf3969f11a679f923969eceac0317947110fd8acc",
+    "phase9MeanlineSha256": "7df9a666f54bcba4fb5b5efe63f3992a2cbd31863a21b387e8ddfdc9407f41a9"
+  },
+  "candidate": {
+    "allUpMassKg": 11.5,
+    "ductCount": 2,
+    "outerDiameterM": 0.09,
+    "hubDiameterM": 0.032,
+    "slotWidthM": 0.05,
+    "slotLengthM": 0.12,
+    "declaredSlotToAnnulusAreaRatio": 1.08
+  },
+  "freestream": {
+    "altitudeM": 3000.0,
+    "speedMPerS": 200.0,
+    "staticTemperatureK": 268.65,
+    "staticPressurePa": 70108.26833969312,
+    "densityKgPerM3": 0.9091276032136805,
+    "mach": 0.6086866542925556,
+    "soundSpeedMPerS": 328.5762856628579,
+    "totalTemperatureK": 288.55693507850793,
+    "totalPressurePa": 90037.94841092758
+  },
+  "perDuct": {
+    "meanlineMassFlowKgPerS": 0.858742049399817,
+    "slotAreaM2": 0.006,
+    "annulusAreaM2": 0.005557477404200344,
+    "slotToAnnulusAreaRatio": 1.0796265218217886,
+    "areaContractionFraction": 0.07375376596660932,
+    "slotCaptureMassFlowAtConfiguredFractionKgPerS": 0.927310155277954,
+    "captureFractionNeededForMeanlineFlow": 0.7871484398561918,
+    "annulusMassFluxKgPerM2S": 154.5201153226065,
+    "idealChokedMassFlowLimitKgPerS": 1.1904990197715357,
+    "fractionOfIdealChokedLimit": 0.7213294888429349,
+    "inletMachAtMeanlineFlow": 0.4314638184509273,
+    "inletStaticPressureAtMeanlineFlowPa": 79224.5198420509,
+    "inletStaticTemperatureAtMeanlineFlowK": 278.19897376565706,
+    "inletVolumetricFlowAtMeanlineFlowM3PerS": 0.8655978883426004,
+    "outletMachAtTargetRecovery": 0.49043058297803965,
+    "outletStaticPressureAtTargetRecoveryPa": 74857.56848234423,
+    "outletStaticTemperatureAtTargetRecoveryK": 275.3131524389007,
+    "targetTotalPressureRecovery": 0.98
+  },
+  "geometryChecks": {
+    "slotRatioMatchesPhase9": true,
+    "meanlineFlowBelowIdealChoke": true,
+    "allPass": true
+  },
+  "meshSummary": {
+    "caseCount": 7,
+    "totalTetraCells": 783456,
+    "minimumCells": 32511,
+    "maximumCells": 257986,
+    "gridConvergenceCases": [
+      "r225_linear_coarse",
+      "r225_linear_medium",
+      "r225_linear_fine"
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "r225_linear_coarse",
+      "bend_radius_mm": 225.0,
+      "contraction_profile": "linear",
+      "mesh_level": "coarse",
+      "max_cell_size_mm": 8.0,
+      "mesh_cells": 32511,
+      "mesh_nodes": 7402,
+      "target_mdot_per_duct_kg_s": 0.858742049399817,
+      "solver_status": "prepared_not_run",
+      "pressure_recovery": ""
+    },
+    {
+      "case_id": "r225_linear_medium",
+      "bend_radius_mm": 225.0,
+      "contraction_profile": "linear",
+      "mesh_level": "medium",
+      "max_cell_size_mm": 5.5,
+      "mesh_cells": 91363,
+      "mesh_nodes": 18913,
+      "target_mdot_per_duct_kg_s": 0.858742049399817,
+      "solver_status": "prepared_not_run",
+      "pressure_recovery": ""
+    },
+    {
+      "case_id": "r225_linear_fine",
+      "bend_radius_mm": 225.0,
+      "contraction_profile": "linear",
+      "mesh_level": "fine",
+      "max_cell_size_mm": 3.8,
+      "mesh_cells": 257986,
+      "mesh_nodes": 49349,
+      "target_mdot_per_duct_kg_s": 0.858742049399817,
+      "solver_status": "prepared_not_run",
+      "pressure_recovery": ""
+    },
+    {
+      "case_id": "r270_linear_medium",
+      "bend_radius_mm": 270.0,
+      "contraction_profile": "linear",
+      "mesh_level": "medium",
+      "max_cell_size_mm": 5.5,
+      "mesh_cells": 102728,
+      "mesh_nodes": 21178,
+      "target_mdot_per_duct_kg_s": 0.858742049399817,
+      "solver_status": "prepared_not_run",
+      "pressure_recovery": ""
+    },
+    {
+      "case_id": "r315_linear_medium",
+      "bend_radius_mm": 315.0,
+      "contraction_profile": "linear",
+      "mesh_level": "medium",
+      "max_cell_size_mm": 5.5,
+      "mesh_cells": 114781,
+      "mesh_nodes": 23589,
+      "target_mdot_per_duct_kg_s": 0.858742049399817,
+      "solver_status": "prepared_not_run",
+      "pressure_recovery": ""
+    },
+    {
+      "case_id": "r225_cosine_medium",
+      "bend_radius_mm": 225.0,
+      "contraction_profile": "cosine",
+      "mesh_level": "medium",
+      "max_cell_size_mm": 5.5,
+      "mesh_cells": 91325,
+      "mesh_nodes": 18908,
+      "target_mdot_per_duct_kg_s": 0.858742049399817,
+      "solver_status": "prepared_not_run",
+      "pressure_recovery": ""
+    },
+    {
+      "case_id": "r225_front_loaded_medium",
+      "bend_radius_mm": 225.0,
+      "contraction_profile": "front_loaded",
+      "mesh_level": "medium",
+      "max_cell_size_mm": 5.5,
+      "mesh_cells": 92762,
+      "mesh_nodes": 19114,
+      "target_mdot_per_duct_kg_s": 0.858742049399817,
+      "solver_status": "prepared_not_run",
+      "pressure_recovery": ""
+    }
+  ]
+}
