@@ -17102,7 +17102,7 @@ Phase-15 FSI solid candidate, max thickness 30 mm
 ,
 *STEP, INC=1000000
 *DYNAMIC, ALPHA=0.0, DIRECT
-1e-05, 0.001
+1e-05, 0.0002
 *BOUNDARY
 ROOT, 1, 3, 0.0
 *CLOAD

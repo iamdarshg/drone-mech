@@ -1,0 +1,112 @@
+
+************************************************************
+
+CalculiX Version 2.20, Copyright(C) 1998-2022 Guido Dhondt
+CalculiX comes with ABSOLUTELY NO WARRANTY. This is free
+software, and you are welcome to redistribute it under
+certain conditions, see gpl.htm
+
+************************************************************
+
+You are using an executable made on Sun Jul 31 18:08:37 CEST 2022
+ Decascading the MPC's
+
+ Determining the structure of the matrix:
+ Using up to 1 cpu(s) for setting up the structure of the matrix.
+ number of equations
+ 10119
+ number of nonzero lower triangular matrix elements
+ 168924
+
+Starting FSI analysis via preCICE using the geometrically linear CalculiX solver...
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the energy calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using up to 1 cpu(s) for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the energy calculation.
+
+Setting up preCICE participant Solid, using config file: config.yml
+Set ID Found 
+Read data 'Force' found.
+Write data 'Displacement' found.
+Initializing coupling data
+Adapter reading coupling data...
+Reading FORCES coupling data.
+Adjusting time step for transient step
+precice_dt = 0.000010, ccx_dt = 0.000010 (dtheta = 0.050000, tper = 0.000200) -> dt = 0.000010 (dtheta = 0.050000)
+Adapter reading coupling data...
+Reading FORCES coupling data.
+Adapter writing checkpoint...
+ increment 1 attempt 1 
+ increment size= 1.000000e-05
+ sum of previous increments=0.000000e+00
+ actual step time=1.000000e-05
+ actual total time=1.000000e-05
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the energy calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using up to 1 cpu(s) for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the energy calculation.
+
+ average force= 0.000000
+ time avg. forc= 0.010000
+ largest residual force= 0.000000 in node 65 and dof 1
+ largest increment of disp= 0.000000e+00
+ largest correction to disp= 0.000000e+00
+
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using up to 1 cpu(s) for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the energy calculation.
+
+ average force= 0.000000
+ time avg. forc= 0.010000
+ largest residual force= 0.000000 in node 65 and dof 1
+ largest increment of disp= 0.000000e+00
+ largest correction to disp= 0.000000e+00
+
+ convergence
+
+Adapter writing coupling data...
+Writing DISPLACEMENTS coupling data.
+Adapter calling advance()...
+---[precice] ERROR:  Receiving data from another participant (using sockets) failed with a system error: read: End of file. This often means that the other participant exited with an error (look there).
+[hsedf-fsi-20260930-131234:07370] *** Process received signal ***
+[hsedf-fsi-20260930-131234:07370] Signal: Aborted (6)
+[hsedf-fsi-20260930-131234:07370] Signal code:  (-6)
+[hsedf-fsi-20260930-131234:07370] [ 0] /usr/lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x713fd2242520]
+[hsedf-fsi-20260930-131234:07370] [ 1] /usr/lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x713fd22969bc]
+[hsedf-fsi-20260930-131234:07370] [ 2] /usr/lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x713fd2242476]
+[hsedf-fsi-20260930-131234:07370] [ 3] /usr/lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x713fd22287f3]
+[hsedf-fsi-20260930-131234:07370] [ 4] /usr/lib/x86_64-linux-gnu/libprecice.so.3(+0x7f247)[0x713fd327f247]
+[hsedf-fsi-20260930-131234:07370] [ 5] ccx_preCICE(+0x1f3c2d)[0x5f7f37f47c2d]
+[hsedf-fsi-20260930-131234:07370] [ 6] ccx_preCICE(+0xbd78)[0x5f7f37d5fd78]
+[hsedf-fsi-20260930-131234:07370] [ 7] /usr/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x713fd2229d90]
+[hsedf-fsi-20260930-131234:07370] [ 8] /usr/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x713fd2229e40]
+[hsedf-fsi-20260930-131234:07370] [ 9] ccx_preCICE(+0x16be5)[0x5f7f37d6abe5]
+[hsedf-fsi-20260930-131234:07370] *** End of error message ***

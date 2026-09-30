@@ -142,5 +142,41 @@
     "machineType": "e2-standard-2",
     "resourceReleased": true,
     "preempted": false
+  },
+  {
+    "jobId": "phase15-wing-fsi-20260930T121121Z",
+    "plannedMaxCostUsd": 0.12,
+    "estimatedComputeCostUsd": 0.059678,
+    "actualCloudInvoiceUsd": null,
+    "ancillaryCeilingUsd": 0.03,
+    "allInConservativeEstimateUsd": 0.089678,
+    "vmWallSecondsEstimate": 2148.391,
+    "machineType": "e2-standard-2",
+    "resourceReleased": true,
+    "preempted": false
+  },
+  {
+    "jobId": "phase15-wing-fsi-20260930T124938Z",
+    "plannedMaxCostUsd": 0.12,
+    "estimatedComputeCostUsd": 0.018305,
+    "actualCloudInvoiceUsd": null,
+    "ancillaryCeilingUsd": 0.03,
+    "allInConservativeEstimateUsd": 0.048305,
+    "vmWallSecondsEstimate": 329.484,
+    "machineType": "e2-standard-4",
+    "resourceReleased": true,
+    "preempted": false
+  },
+  {
+    "jobId": "phase15-wing-fsi-20260930T131236Z",
+    "plannedMaxCostUsd": 0.12,
+    "estimatedComputeCostUsd": 0.019315,
+    "actualCloudInvoiceUsd": null,
+    "ancillaryCeilingUsd": 0.03,
+    "allInConservativeEstimateUsd": 0.049315,
+    "vmWallSecondsEstimate": 347.671,
+    "machineType": "e2-standard-4",
+    "resourceReleased": true,
+    "preempted": false
   }
 ]

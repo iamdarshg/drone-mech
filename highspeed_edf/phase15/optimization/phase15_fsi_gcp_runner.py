@@ -83,7 +83,7 @@ def load_workbench_remote_policy(workbench_root: Path, project: str) -> dict[str
     policy = RemoteComputePolicy.from_environment()
     policy.require_enabled()
     limits = policy.limits
-    machine_shape = {"e2-standard-2": (2.0, 4096.0), "e2-standard-4": (4.0, 8192.0)}
+    machine_shape = {"e2-standard-2": (2.0, 4096.0), "e2-standard-4": (4.0, 16384.0), "e2-standard-8": (8.0, 32768.0)}
     if limits.machine_type not in machine_shape:
         raise ValueError(f"workbench FSI run does not admit machine type {limits.machine_type}")
     vcpu, memory = machine_shape[limits.machine_type]
@@ -322,7 +322,7 @@ def main() -> int:
                   "--provisioning-model=SPOT", "--instance-termination-action=DELETE",
                   f"--max-run-duration={wall_s}s", "--maintenance-policy=TERMINATE",
                   "--no-restart-on-failure", "--image-family=ubuntu-2204-lts",
-                  "--image-project=ubuntu-os-cloud", "--boot-disk-size=20GB",
+                  "--image-project=ubuntu-os-cloud", "--boot-disk-size=15GB",
                   "--boot-disk-type=pd-standard", "--boot-disk-auto-delete",
                   "--scopes=storage-rw", f"--metadata={metadata}",
                   f"--metadata-from-file=startup-script={startup}",
@@ -332,11 +332,16 @@ def main() -> int:
             raise RuntimeError("pinned Ubuntu boot image not available")
         create[create.index("--image-family=ubuntu-2204-lts")] = f"--image={image_name}"
         event("VM_CREATE_REQUEST " + " ".join(create))
-        create_result = run(create, timeout=120, allow_fail=True)
-        event(f"VM_CREATE_RETURN rc={create_result.returncode} {create_result.stderr[-1000:]}")
+        try:
+            create_result = run(create, timeout=240, allow_fail=True)
+            event(f"VM_CREATE_RETURN rc={create_result.returncode} {create_result.stderr[-1000:]}")
+        except subprocess.TimeoutExpired:
+            # A slow client-side create can still have provisioned the VM; fall
+            # through to a describe so the instance is never leaked.
+            event("VM_CREATE_CLIENT_TIMEOUT; describing the requested instance")
         describe = run(["gcloud", "compute", "instances", "describe", instance,
                         f"--project={args.project}", f"--zone={ZONE}", "--format=json", "--quiet"],
-                       timeout=45, allow_fail=True)
+                       timeout=90, allow_fail=True)
         created = describe.returncode == 0
         if not created:
             raise RuntimeError("GCE instance create did not produce a describable instance")

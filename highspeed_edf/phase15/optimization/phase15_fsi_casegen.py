@@ -41,7 +41,7 @@ E_EQ = 1.0e10
 NU_SOLID = 0.30
 RHO_SOLID = 150.0
 COUPLING_DT = 1.0e-5
-COUPLING_WINDOWS = 100
+COUPLING_WINDOWS = 20
 
 
 def naca_section(x_local: float, le_z: float, chord: float,
@@ -420,6 +420,10 @@ solvers
  p { solver GAMG; tolerance 1e-7; relTol 0.05; smoother GaussSeidel; }
  pFinal { $p; relTol 0; }
  "(U|h|k|omega)" { solver smoothSolver; smoother symGaussSeidel; tolerance 1e-7; relTol 0.1; }
+ cellDisplacement { solver PCG; preconditioner DIC; tolerance 1e-07; relTol 0; }
+ cellDisplacementFinal { $cellDisplacement; }
+ pcorr { solver PCG; preconditioner DIC; tolerance 1e-05; relTol 0; }
+ pcorrFinal { $pcorr; }
 }
 PIMPLE { nOuterCorrectors 1; nCorrectors 2; nNonOrthogonalCorrectors 0; }
 relaxationFactors { fields { p 0.3; } equations { U 0.5; h 0.5; k 0.5; omega 0.5; } }
@@ -569,15 +573,15 @@ def build_candidate(thickness_mm: float) -> dict[str, Any]:
     <read-data name="Force" mesh="Solid-Mesh" />
     <watch-point mesh="Solid-Mesh" name="WingTip" coordinate="0.26;0.015;0.0" />
   </participant>
-  <m2n:sockets acceptor="Fluid" connector="Solid" exchange-directory="." />
+  <m2n:sockets acceptor="Fluid" connector="Solid" exchange-directory=".." />
   <coupling-scheme:parallel-implicit>
     <time-window-size value="{COUPLING_DT:.9g}" />
     <max-time value="{COUPLING_DT * COUPLING_WINDOWS:.9g}" />
     <participants first="Fluid" second="Solid" />
     <exchange data="Force" mesh="Solid-Mesh" from="Fluid" to="Solid" />
     <exchange data="Displacement" mesh="Solid-Mesh" from="Solid" to="Fluid" />
-    <max-iterations value="6" />
-    <min-iterations value="2" />
+    <max-iterations value="3" />
+    <min-iterations value="1" />
     <relative-convergence-measure limit="5e-3" data="Displacement" mesh="Solid-Mesh" />
     <acceleration:IQN-ILS>
       <data name="Displacement" mesh="Solid-Mesh" />

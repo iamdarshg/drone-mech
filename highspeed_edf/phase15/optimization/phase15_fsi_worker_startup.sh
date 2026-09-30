@@ -166,4 +166,4 @@ done
 echo "STEP run coupled wing candidates"
 python3 "$ROOT/phase15/optimization/phase15_fsi_worker.py" \
   --case-root "$ROOT/phase15/fsi/cases" --output "$ROOT/output" \
-  --candidate-timeout-seconds 300
+  --candidate-timeout-seconds 900
