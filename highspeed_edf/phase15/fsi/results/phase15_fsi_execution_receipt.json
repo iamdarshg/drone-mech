@@ -2,111 +2,34 @@
   "phase": 15,
   "study": "GCP OpenFOAM-preCICE-CalculiX coupled wing-sector FSI",
   "executionPath": "Aero Multiphysics candidate/remote-cost policy plus one bounded GCE Spot worker; workbench GCP Batch transport is not provisioned",
-  "status": "worker_failed",
+  "status": "worker_finish_missing_at_deadline",
   "project": "project-ba289c9c-3c25-4e15-9dc",
   "zone": "us-central1-b",
-  "instanceName": "hsedf-fsi-20260930-131234",
+  "instanceName": "hsedf-fsi-20260930-135143",
   "maxRuntimeSeconds": 2160,
   "conservativeBudgetUsd": 0.15,
   "hardBudgetUsd": 0.15,
   "workbenchCostReceipt": {
-    "jobId": "phase15-wing-fsi-20260930T131236Z",
+    "jobId": "phase15-wing-fsi-20260930T135144Z",
     "plannedMaxCostUsd": 0.12,
-    "estimatedComputeCostUsd": 0.019315,
+    "estimatedComputeCostUsd": 0.12,
     "actualCloudInvoiceUsd": null,
     "ancillaryCeilingUsd": 0.03,
-    "allInConservativeEstimateUsd": 0.049315,
-    "vmWallSecondsEstimate": 347.671,
+    "allInConservativeEstimateUsd": 0.15,
+    "vmWallSecondsEstimate": 2377.89,
     "machineType": "e2-standard-4",
     "resourceReleased": true,
-    "preempted": false
+    "preempted": true
   },
   "pinnedBootImage": "ubuntu-2204-jammy-v20260923",
-  "bundleBytes": 2422951,
-  "bundleSha256": "843adbff659c6a02a1d5702c3153c78540e34271792bd094369c02edb8feb711",
-  "startedAtUtc": "2026-09-30T13:21:44.610295+00:00",
-  "observedRunnerSeconds": 509.906,
-  "workerFinish": {
-    "instance": "hsedf-fsi-20260930-131234",
-    "exitCode": 2,
-    "finishedAtUtc": "2026-09-30T13:19:37Z",
-    "artifactBytes": 25812
-  },
-  "workerReceipt": {
-    "phase": 15,
-    "study": "GCP rhoPimpleFoam + preCICE + CalculiX wing-sector aeroelastic FSI",
-    "generatedAtUtc": "2026-09-30T13:19:37.074985+00:00",
-    "status": "one_or_more_candidates_incomplete",
-    "evidenceClass": "coupled solver run receipt; component-only, geometry/material assumptions in casegen report",
-    "candidateResults": [
-      {
-        "candidate": "wing_t30mm",
-        "status": "coupled_solver_failed_or_not_converged",
-        "meshConversion": {
-          "returnCode": 0,
-          "elapsedSeconds": 0.327,
-          "timedOut": false
-        },
-        "checkMesh": {
-          "returnCode": 0,
-          "elapsedSeconds": 0.265,
-          "timedOut": false,
-          "passed": true
-        },
-        "coupling": {
-          "status": "coupled_solver_failed_or_not_converged",
-          "fluidReturnCode": 1,
-          "solidReturnCode": -6,
-          "timedOut": false,
-          "elapsedSeconds": 6.009,
-          "fluidReachedEnd": false,
-          "preCICECompletionLogMarkers": 0,
-          "fluidLog": "rhoPimpleFoam.log",
-          "solidLog": "ccx_preCICE.log"
-        },
-        "tipDisplacement": null,
-        "forceHistoryLastLine": null,
-        "preciceLogFiles": []
-      },
-      {
-        "candidate": "wing_t36mm",
-        "status": "coupled_solver_failed_or_not_converged",
-        "meshConversion": {
-          "returnCode": 0,
-          "elapsedSeconds": 0.384,
-          "timedOut": false
-        },
-        "checkMesh": {
-          "returnCode": 0,
-          "elapsedSeconds": 0.271,
-          "timedOut": false,
-          "passed": true
-        },
-        "coupling": {
-          "status": "coupled_solver_failed_or_not_converged",
-          "fluidReturnCode": 1,
-          "solidReturnCode": -6,
-          "timedOut": false,
-          "elapsedSeconds": 3.006,
-          "fluidReachedEnd": false,
-          "preCICECompletionLogMarkers": 0,
-          "fluidLog": "rhoPimpleFoam.log",
-          "solidLog": "ccx_preCICE.log"
-        },
-        "tipDisplacement": null,
-        "forceHistoryLastLine": null,
-        "preciceLogFiles": []
-      }
-    ],
-    "limitations": [
-      "This is an isolated outboard wing-sector model, not the complete twin-EDF aircraft or rotor-jet interaction.",
-      "Flow speed is 200 m/s (720 km/h) at the 3 km ISA density; turbulence wall resolution and y+ require additional assessment.",
-      "The isotropic 10 GPa stiffness and 150 kg/m^3 density are equivalent laminate/core assumptions, not measured coupon properties.",
-      "The local Mach is about 0.61; the compressible rhoPimpleFoam run is still a coarse unsteady RANS screening mesh."
-    ]
-  },
-  "attemptDirectory": "fsi\\results\\attempts\\20260930T131234Z",
-  "log": "fsi\\results\\attempts\\20260930T131234Z\\gcp_attempt.log",
+  "bundleBytes": 2423172,
+  "bundleSha256": "bfba2d957042b4f1074249c722268faaa5b3af0dc798dc38a93c1cbec948621a",
+  "startedAtUtc": "2026-09-30T14:32:38.958655+00:00",
+  "observedRunnerSeconds": 2419.094,
+  "workerFinish": null,
+  "workerReceipt": null,
+  "attemptDirectory": "fsi\\results\\attempts\\20260930T135143Z",
+  "log": "fsi\\results\\attempts\\20260930T135143Z\\gcp_attempt.log",
   "preflight": {
     "local": {
       "caseCount": 2,
@@ -171,6 +94,6 @@
     },
     "launchPermitted": true,
     "launchRequested": true,
-    "checkedAtUtc": "2026-09-30T13:13:13.245071+00:00"
+    "checkedAtUtc": "2026-09-30T13:52:18.449582+00:00"
   }
 }

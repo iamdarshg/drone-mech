@@ -1,0 +1,66 @@
+{
+  "local": {
+    "caseCount": 2,
+    "cases": [
+      {
+        "candidate": "wing_t30mm",
+        "fluidCells": 34166,
+        "solidTetrahedra": 12862,
+        "fluidMshBytes": 1793263,
+        "solidInpBytes": 628149
+      },
+      {
+        "candidate": "wing_t36mm",
+        "fluidCells": 34519,
+        "solidTetrahedra": 13599,
+        "fluidMshBytes": 1812687,
+        "solidInpBytes": 659821
+      }
+    ],
+    "workbench": {
+      "status": "SCREENED; FSI candidates passed to native OpenFOAM/preCICE/CalculiX workflow",
+      "commit": "1c68f479461f4ac83bad9c2d735b72e00c7c835e",
+      "fidelity": "analytical ideal-annular-actuator-disk screening; no high-cost SLSQP promotion",
+      "nativeEvidence": null,
+      "inputHash": "d6c6270f93a87fabea956bee73ebf72f9e2d4578f358a25fceabec851023017f"
+    },
+    "meshAndCaseGeneration": "PASS",
+    "maximumArtifactBytes": 15000000
+  },
+  "cloud": {
+    "project": "project-ba289c9c-3c25-4e15-9dc",
+    "billingEnabled": true,
+    "computeApiEnabled": true,
+    "storageApiEnabled": true,
+    "zone": "us-central1-b",
+    "zoneStatus": "UP",
+    "machineType": "e2-standard-4",
+    "machineVcpus": 4,
+    "machineMemoryMb": 16384,
+    "bootImage": "ubuntu-2204-jammy-v20260923",
+    "bucket": "aero-governed-blockers-988177451335-20260919",
+    "bucketLocation": "US-CENTRAL1",
+    "existingRunningFsiInstances": [],
+    "pass": true
+  },
+  "workbenchRemotePolicy": {
+    "enabled": true,
+    "workbenchRoot": "D:\\CodeProjects\\aero-multiphysics-workbench",
+    "machineType": "e2-standard-4",
+    "vcpu": 4.0,
+    "memoryMiB": 16384.0,
+    "maxWallTimeSeconds": 2160,
+    "plannedComputeUsd": 0.12,
+    "ancillaryCeilingUsd": 0.03,
+    "allInCeilingUsd": 0.15,
+    "maxJobCostUsd": 0.15,
+    "maxSessionCostUsd": 0.49,
+    "maxDailyCostUsd": 0.49,
+    "maxProjectCostUsd": 0.49,
+    "priorAllInConservativeUsd": 0.0,
+    "pass": true
+  },
+  "launchPermitted": true,
+  "launchRequested": true,
+  "checkedAtUtc": "2026-09-30T13:52:18.449582+00:00"
+}

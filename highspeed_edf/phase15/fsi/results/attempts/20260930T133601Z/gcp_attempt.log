@@ -1,0 +1,12 @@
+2026-09-30T13:36:36.305146+00:00 PREFLIGHT_PASS instance=hsedf-fsi-20260930-133601 bundleBytes=2423029 sha256=ec12feb9346a594de4b6a8819a1a6b5da7d0d35bbc24f513f82cd642a16624fe workbenchCostCeilingUsd=0.15
+2026-09-30T13:36:54.234520+00:00 BUNDLE_UPLOAD_COMPLETE
+2026-09-30T13:36:54.236537+00:00 VM_CREATE_REQUEST gcloud compute instances create hsedf-fsi-20260930-133601 --project=project-ba289c9c-3c25-4e15-9dc --zone=us-central1-b --machine-type=e2-standard-4 --provisioning-model=SPOT --instance-termination-action=DELETE --max-run-duration=2160s --maintenance-policy=TERMINATE --no-restart-on-failure --image=ubuntu-2204-jammy-v20260923 --image-project=ubuntu-os-cloud --boot-disk-size=15GB --boot-disk-type=pd-standard --boot-disk-auto-delete --scopes=storage-rw --metadata=BUCKET=aero-governed-blockers-988177451335-20260919,BUNDLE_OBJECT=phase15-fsi/20260930T133601Z/input.tar.gz,RESULT_OBJECT=phase15-fsi/20260930T133601Z/output.tar.gz,LOG_OBJECT=phase15-fsi/20260930T133601Z/worker.log,FINISH_OBJECT=phase15-fsi/20260930T133601Z/finish.json,MAX_ARTIFACT_BYTES=15000000 --metadata-from-file=startup-script=D:\CodeProjects\drone-mech\highspeed_edf\phase15\optimization\phase15_fsi_worker_startup.sh --labels=phase=15,study=wing-fsi --quiet
+2026-09-30T13:37:14.018450+00:00 VM_CREATE_RETURN rc=0 WARNING: You have selected a disk size of under [200GB]. This may result in poor I/O performance. For more information, see: https://developers.google.com/compute/docs/disks#performance.
+Created [https://www.googleapis.com/compute/v1/projects/project-ba289c9c-3c25-4e15-9dc/zones/us-central1-b/instances/hsedf-fsi-20260930-133601].
+WARNING: Some requests generated warnings:
+ - Disk size: '15 GB' is larger than image size: '10 GB'. You might need to resize the root repartition manually if the operating system does not support automatic resizing. See https://cloud.google.com/compute/docs/disks/add-persistent-disk#resize_pd for details.
+
+
+2026-09-30T13:37:18.692864+00:00 VM_CREATED; one pinned Ubuntu image; 2160s max runtime; automatic termination configured
+2026-09-30T13:41:05.759581+00:00 FINISH_OBJECT exitCode=2
+2026-09-30T13:41:39.502393+00:00 VM_DELETE rc=0

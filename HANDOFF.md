@@ -86,17 +86,30 @@ binding for any future agent working in this repo.
 - Both participants now **connect over preCICE** (after fixing
   `exchange-directory`).
 
-**Current blocking error (being fixed):** `rhoPimpleFoam` with the dynamic-mesh
-FSI module asks for solver entries it needs in `system/fvSolution`. Fixed so
-far: `cellDisplacement(Final)`. Latest blocker: `pcorrFinal` — **added in this
-commit**; needs one more confirmation run.
+**Latest state (last run `20260930T135143Z`):** after fixing the `fvSchemes`/
+`fvSolution` entries, the coupled solvers now **run to the bounded wall-time cap
+instead of failing fast** — i.e. initialization is fully fixed and the simulation
+advances, but 2 candidates × 20 coupling windows did not finish inside the
+2160 s VM budget (`worker_finish_missing_at_deadline`; VM auto-deleted). The
+dominant cost is CalculiX re-factoring the solid system on every coupling
+iteration (single-threaded SPOOLES) plus the ~8 min per-VM OpenFOAM/adapter
+install.
 
-Fixes already landed (all in the committed scripts):
+All fixes landed (in the committed scripts):
 `gradSchemes` missing; `freestreamPressure` needs `freestreamValue`; mesh type
 for `fsi`/`rootWall` must be `wall` (wall functions); dynamic-mesh keyword is
 `motionSolver`; compressible `alphat` dimensions `[1 -1 -1 ...]`; CalculiX
 `NSET` must be `N`-prefixed (`NIFACE`); `exchange-directory=".."`;
-`cellDisplacement(Final)`; `pcorr(Final)`.
+`fvSolution` solvers `cellDisplacement(Final)`, `pcorr(Final)`, `rho(Final)`,
+`"(U|h|k|omega)Final"`; `divSchemes` now has a `default` scheme plus the
+compressible `div((muEff*…))` / `div(((rho*nuEff)*…))` stress terms and
+`div(phid,p)`.
+
+**Recommended next step to actually finish:** run **one** candidate per VM with a
+longer cap, or cut the solid cost — e.g. coarsen the structural tet mesh, move
+the coupling interface to `faceCenters` with fewer interface nodes, or build a
+reusable pre-baked VM image so the ~8 min install/build no longer eats the
+window. Then inspect the real coupling outputs before any promotion claim.
 
 ---
 
@@ -162,7 +175,7 @@ for `fsi`/`rootWall` must be `wall` (wall functions); dynamic-mesh keyword is
 
 ## 6. Cloud spend so far
 
-- Actual attributable compute ≈ **$0.25** (≈8,500 Spot-VM seconds across the FSI
+- Actual attributable compute ≈ **$0.434** (11,941 Spot-VM seconds across 19 FSI
   attempts + one ~7-minute VM reclaimed when a client-side `create` timed out;
   the runner now describes-then-deletes so it cannot leak). Plus cents of GCS.
 - The runner's *conservative reserved* ledger is higher because it counts a

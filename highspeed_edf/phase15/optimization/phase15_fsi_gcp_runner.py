@@ -341,7 +341,7 @@ def main() -> int:
             event("VM_CREATE_CLIENT_TIMEOUT; describing the requested instance")
         describe = run(["gcloud", "compute", "instances", "describe", instance,
                         f"--project={args.project}", f"--zone={ZONE}", "--format=json", "--quiet"],
-                       timeout=90, allow_fail=True)
+                       timeout=180, allow_fail=True)
         created = describe.returncode == 0
         if not created:
             raise RuntimeError("GCE instance create did not produce a describable instance")
@@ -382,7 +382,7 @@ def main() -> int:
         if created:
             delete = run(["gcloud", "compute", "instances", "delete", instance,
                           f"--project={args.project}", f"--zone={zone_used}", "--quiet"],
-                         timeout=90, allow_fail=True)
+                         timeout=180, allow_fail=True)
             event(f"VM_DELETE rc={delete.returncode}")
     except Exception as exc:
         runner_status = "runner_exception"
@@ -390,7 +390,7 @@ def main() -> int:
         if created:
             run(["gcloud", "compute", "instances", "delete", instance,
                  f"--project={args.project}", f"--zone={zone_used}", "--quiet"],
-                timeout=90, allow_fail=True)
+                timeout=180, allow_fail=True)
     finally:
         for object_name in objects.values():
             run(["gcloud", "storage", "rm", f"gs://{args.bucket}/{object_name}", "--quiet"],

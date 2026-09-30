@@ -1,0 +1,12 @@
+2026-09-30T13:24:54.715688+00:00 PREFLIGHT_PASS instance=hsedf-fsi-20260930-132349 bundleBytes=2423016 sha256=34e5f7c56ef42b1f61dc2b9279f6105cbca02812c883b3bdb631cd1c1e117270 workbenchCostCeilingUsd=0.15
+2026-09-30T13:25:11.713219+00:00 BUNDLE_UPLOAD_COMPLETE
+2026-09-30T13:25:11.714251+00:00 VM_CREATE_REQUEST gcloud compute instances create hsedf-fsi-20260930-132349 --project=project-ba289c9c-3c25-4e15-9dc --zone=us-central1-b --machine-type=e2-standard-4 --provisioning-model=SPOT --instance-termination-action=DELETE --max-run-duration=2160s --maintenance-policy=TERMINATE --no-restart-on-failure --image=ubuntu-2204-jammy-v20260923 --image-project=ubuntu-os-cloud --boot-disk-size=15GB --boot-disk-type=pd-standard --boot-disk-auto-delete --scopes=storage-rw --metadata=BUCKET=aero-governed-blockers-988177451335-20260919,BUNDLE_OBJECT=phase15-fsi/20260930T132349Z/input.tar.gz,RESULT_OBJECT=phase15-fsi/20260930T132349Z/output.tar.gz,LOG_OBJECT=phase15-fsi/20260930T132349Z/worker.log,FINISH_OBJECT=phase15-fsi/20260930T132349Z/finish.json,MAX_ARTIFACT_BYTES=15000000 --metadata-from-file=startup-script=D:\CodeProjects\drone-mech\highspeed_edf\phase15\optimization\phase15_fsi_worker_startup.sh --labels=phase=15,study=wing-fsi --quiet
+2026-09-30T13:27:15.409650+00:00 VM_CREATE_RETURN rc=0 WARNING: You have selected a disk size of under [200GB]. This may result in poor I/O performance. For more information, see: https://developers.google.com/compute/docs/disks#performance.
+Created [https://www.googleapis.com/compute/v1/projects/project-ba289c9c-3c25-4e15-9dc/zones/us-central1-b/instances/hsedf-fsi-20260930-132349].
+WARNING: Some requests generated warnings:
+ - Disk size: '15 GB' is larger than image size: '10 GB'. You might need to resize the root repartition manually if the operating system does not support automatic resizing. See https://cloud.google.com/compute/docs/disks/add-persistent-disk#resize_pd for details.
+
+
+2026-09-30T13:27:20.113203+00:00 VM_CREATED; one pinned Ubuntu image; 2160s max runtime; automatic termination configured
+2026-09-30T13:31:12.163615+00:00 FINISH_OBJECT exitCode=2
+2026-09-30T13:33:35.474145+00:00 RUNNER_EXCEPTION TimeoutExpired: Command 'gcloud compute instances delete hsedf-fsi-20260930-132349 --project=project-ba289c9c-3c25-4e15-9dc --zone=us-central1-b --quiet' timed out after 90 seconds
