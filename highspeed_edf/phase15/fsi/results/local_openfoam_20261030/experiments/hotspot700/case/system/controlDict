@@ -1,0 +1,5 @@
+FoamFile { version 2.0; format ascii; class dictionary; location "system"; object controlDict; }
+application rhoPimpleFoam;
+startFrom startTime; startTime 0; stopAt endTime; endTime 0.00005;
+deltaT 1e-5; adjustTimeStep yes; maxCo 0.4; maxDeltaT 2e-5;
+writeControl timeStep; writeInterval 1; purgeWrite 0; writeFormat ascii; writePrecision 10; writeCompression off; timeFormat general; timePrecision 8; runTimeModifiable false;

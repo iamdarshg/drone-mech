@@ -1,0 +1,17 @@
+# High-subsonic transonic formulation test
+
+This experiment keeps the original 34,166-cell tracked wing-sector mesh, all initial fields, and all patch boundary conditions. It changes only the compressible pressure formulation and the associated numerical treatment. Both IAS700 and IAS900 cases were run with Debian OpenFOAM 1912.200626-3+b1 from the pinned packages in `../../package-provenance.txt`.
+
+The case dictionaries set `PIMPLE transonic yes`, use `PBiCGStab` with `DILU` for `p` (the transonic pressure equation is asymmetric), use three non-orthogonal corrections, and limit the corrected Laplacian to 0.33. The baseline used no transonic switch, `GAMG` for pressure, one non-orthogonal correction, and an unbounded corrected Laplacian. `rhoPimpleFoam -dry-run` passed for both modified cases before the run.
+
+The 75-second bounded IAS700 run reached `t=6.5416606e-5 s`, with the last logged `deltaT=3.944560936e-7 s` and `maxCo=0.4035`. The baseline IAS700 log reached `t=3.2305828e-5 s` with `deltaT=1.96585377e-10 s` and `maxCo=0.4000`. At the same approximate physical time, the modified run maintained a time step roughly 2,000 times larger. The corrected run's last saved field checkpoint is earlier than its last log time (`4.0626955e-5 s`) because output was written every 100 steps.
+
+The 75-second bounded IAS900 run reached `t=5.7153228e-5 s`, with last logged `deltaT=2.712123439e-7 s` and `maxCo=0.4071`. The baseline IAS900 attempt was stopped at `t=8.7245773e-6 s` after 3.9 seconds, so those IAS900 wall-time records are not a like-for-like stability comparison. The corrected run's last saved field checkpoint is `3.1610796e-5 s`.
+
+Neither run reached the configured 0.004 s horizon or emitted a normal `End` marker. These runs show a substantial bounded stability improvement for IAS700 and stable progression for IAS900 during the allotted time, not solver convergence or a final aerodynamic result. The IAS700 and IAS900 residual/continuity excerpts and native logs are retained beside the case folders.
+
+At their last saved checkpoints, manual integration of the native boundary `phi` and `rho` fields gives inlet/outlet mass flow magnitudes of 147.683/147.692 kg/s for IAS700 and 188.265/188.276 kg/s for IAS900. Including farfield flux, the net open-boundary mass imbalance is 0.00863 and 0.01081 kg/s, respectively, about 0.006% of inlet flow. This is a single transient checkpoint per speed, not a converged mass-balance history.
+
+The pressure-only wall integration at those checkpoints gives the wing-sector load components in `checkpoint_flux_and_pressure_loads.json`; the flow axes are +Z and +Y is vertical. It omits viscous stress and is sampled during the transient, so it is not a final force or coefficient result. The raw X component is not physically interpretable: the modeled wing is cut at x=80.33 mm and that cut is assigned a symmetry plane, leaving the integrated wetted surface open at the inboard section. The Y and Z pressure components also remain provisional because the flow is not converged.
+
+An attempted `forces`/`surfaceFieldValue` function-object setup stopped in OpenFOAM with an IOstream fatal error naming `sha1`; that failed preflight log is retained as `dryrun_ias900_functions.log`. Those function objects were removed from the actual native runs. Checkpoint flux and pressure calculations were performed directly from native fields using `analyze_checkpoints.py`.

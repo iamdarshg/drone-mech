@@ -1,0 +1,6 @@
+{
+  "solver":"rhoSimpleFoam", "package":"OpenFOAM 1912.200626-3+b1",
+  "sourceCase":"cases/rhoSimpleFoam/ias700", "sourceMeshSHA256":"4f5a100ddf29afeb890f68626e60fccefe3d2530e777bc864d3e126dbf5c6cb4",
+  "changes":["SIMPLE nNonOrthogonalCorrectors 3", "equation relaxation 0.1 and pressure relaxation 0.05", "bounded upwind momentum and pressure convection"],
+  "purpose":"Stability experiment for IAS700; no convergence or coefficient claim unless native logs support it."
+}

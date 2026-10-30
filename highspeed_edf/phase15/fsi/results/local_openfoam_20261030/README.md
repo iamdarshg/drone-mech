@@ -60,3 +60,7 @@ prepare_cases.py regenerates only the transient rhoPimpleFoam cases; run_bounded
 `experiments/mesh_refine2x/README.md` records the physical-boundary audit, reproducible 2x target-size Gmsh refinement, exact tool/runtime versions, mesh and generator SHA256 hashes, and bounded IAS700/IAS900 checks. It confirms the `defaultFaces` importer warning did not leave unnamed boundaries. The refined mesh has mixed quality changes and bounded runs stopped at the time cap without convergence.
 
 `experiments/maxCo1/README.md` records the isolated IAS700 maxCo=1 run and gives the native rerun command. Its `constant/polyMesh` symlink uses the packaged shared mesh at `mesh/polyMesh`. The run advanced farther per wall time than the baseline but later suffered a similar timestep collapse. Neither experiment yields usable aerodynamic coefficients.
+
+## Transonic pressure-formulation diagnosis
+
+`solver-diagnosis.md` records the timestep-collapse field evidence, patch audit, mesh limits, and an additional bounded solver test. The controlled PIMPLE experiment in `experiments/pimple_transonic/README.md` enables the transonic pressure formulation and a compatible asymmetric pressure solver for both speeds. IAS700 advanced past the previous timestep collapse with `deltaT` near 4e-7 s, while IAS900 remained bounded through its 75 s cap. Neither reached the configured physical horizon or solver convergence; transient pressure-only loads and one checkpoint mass-flow balance are reported with their limits.

@@ -1,0 +1,60 @@
+[
+  {
+    "speedIASKmh": 700,
+    "snapshotTime": "4.0626955e-05",
+    "massFluxes": {
+      "inlet": {
+        "faceCount": 150,
+        "volumeFluxM3s": -162.4690940292,
+        "massFluxKgS_outwardPositive": -147.6828111687884
+      },
+      "outlet": {
+        "faceCount": 150,
+        "volumeFluxM3s": 162.4732349442,
+        "massFluxKgS_outwardPositive": 147.69188983750215
+      },
+      "farfield": {
+        "faceCount": 1338,
+        "volumeFluxM3s": -0.00049432556545842,
+        "massFluxKgS_outwardPositive": -0.0004493424482693899
+      }
+    },
+    "netOpenBoundaryMassFlowKgS": 0.008629326265485788,
+    "inletPlusOutletMassFlowKgS": 0.009078668713755178,
+    "pressureOnlyWingForceN_outwardFluidNormalConvention": [
+      607.3696489822577,
+      -55.20168163076841,
+      -125.75959553140513
+    ],
+    "pressureOnlyForceOmitsViscousStress": true
+  },
+  {
+    "speedIASKmh": 900,
+    "snapshotTime": "3.1610796e-05",
+    "massFluxes": {
+      "inlet": {
+        "faceCount": 150,
+        "volumeFluxM3s": -207.1141533417,
+        "massFluxKgS_outwardPositive": -188.26486140565
+      },
+      "outlet": {
+        "faceCount": 150,
+        "volumeFluxM3s": 207.1192182632,
+        "massFluxKgS_outwardPositive": 188.27600557397875
+      },
+      "farfield": {
+        "faceCount": 1338,
+        "volumeFluxM3s": -0.00036884936808577,
+        "massFluxKgS_outwardPositive": -0.0003352845643907827
+      }
+    },
+    "netOpenBoundaryMassFlowKgS": 0.010808883764350206,
+    "inletPlusOutletMassFlowKgS": 0.011144168328740989,
+    "pressureOnlyWingForceN_outwardFluidNormalConvention": [
+      623.8323124163251,
+      -67.37461164223674,
+      -164.13731395729786
+    ],
+    "pressureOnlyForceOmitsViscousStress": true
+  }
+]
