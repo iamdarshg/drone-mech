@@ -90,7 +90,9 @@ def _record_mechanical_check(profile: str, row: dict, core: dict, config_path: P
     row.update({"run_id":run_id,"core_manifest_path":str(core_manifest_path),
                 "core_manifest_sha256":core_manifest_sha,"mechanical_catalog_sha256":_sha(catalog),
                 "mechanical_source_hashes":source_hashes,"drone_mech_sha":_git_head(MECH),
-                "drone_arm_sha":_git_head(ARM),"blocking":True})
+                "drone_arm_sha":_git_head(ARM),"system":"twin_electric_ducted_fan_aircraft",
+                "severity":"P0","applicability":"cad_material" if profile=="cad-material" else "cad_manufacture",
+                "blocking":True})
     entry={"schema_version":1,"run_id":run_id,"profile":profile,"check_id":row["id"],
            "status":row["status"],"timestamp_utc":datetime.now(timezone.utc).isoformat(),
            "drone_mech_sha":row["drone_mech_sha"],"drone_arm_sha":row["drone_arm_sha"],
@@ -164,6 +166,8 @@ def main(argv=None) -> int:
         config=yaml.safe_load(args.config.read_text())
         custom=_native_check(profile,core["run_id"],config)
         core["results"].append(_record_mechanical_check(profile,custom,core,args.config))
+        core["release_critical_total"] = core.get("release_critical_total",0) + 1
+        core["release_critical_pass"] = core.get("release_critical_pass",0) + int(custom["status"]=="PASS")
     counts={s:sum(x["status"]==s for x in core["results"]) for s in ("PASS","FAIL","BLOCKED","NOT_RUN","NOT_APPLICABLE")}
     core.update(profile=profile,counts=counts,checks_attempted=len(core["results"]))
     print("wrote",_render(core,args.json,args.junit,args.html))
