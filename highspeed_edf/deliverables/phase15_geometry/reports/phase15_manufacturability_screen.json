@@ -470,7 +470,7 @@
   ],
   "schemaVersion": 1,
   "screen": "Phase-15 CNC/FDM geometry manufacturability preflight",
-  "sourceCommit": "6acc0a73b5f34ef1d5b28878dcf4b28dae5f7989",
+  "sourceCommit": "c5ea2ec538c3ab5828fa15fb6623f13ff4a9d93a",
   "sourceInputs": {
     "geometryGenerator": {
       "path": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
@@ -482,7 +482,7 @@
     },
     "screenProgram": {
       "path": "highspeed_edf/verification/native_manufacturability.py",
-      "sha256": "487d8a19a25411b76ca4b910272bae875cf3e407d52a51c67fb40f034356a959"
+      "sha256": "71434f5b05ff672394c750949c1309de562c06fedefbc123d52f90583de07677"
     }
   },
   "stockNesting": {
