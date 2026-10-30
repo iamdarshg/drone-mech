@@ -4,8 +4,8 @@
   "evidence_status": "SCREENING_ONLY_BLOCKED_FOR_INSTALLATION",
   "candidate": {
     "name": "DJI Action 2 Camera Unit",
-    "source_url": "https://www.dji.com/action-2/specs",
-    "source_type": "manufacturer product specifications",
+    "source_url": "https://dl.djicdn.com/downloads/DJI_Action_2/20211028UM/DJI_Action_2_User_Manual_V1.0_EN-11.pdf",
+    "source_type": "DJI manufacturer user manual, English, version 1.0, published 2021-10-28",
     "mass_kg": 0.056,
     "dimensions_mm": [
       39.0,
@@ -17,8 +17,14 @@
       "width",
       "height"
     ],
-    "source_note": "DJI lists the Camera Unit at 56 g and 39 \u00d7 39 \u00d7 22.3 mm. This is an online catalog candidate only; no unit was purchased or measured."
+    "source_note": "The bundled PDF is the retrieved manufacturer manual snapshot. The file SHA-256 is enforced by the screen CLI. Its Camera Unit table lists dimensions 39\u00d739\u00d722.3 mm and weight 56 g. No unit was purchased or measured.",
+    "retrieved_utc": "2026-10-30",
+    "source_snapshot": "highspeed_edf/phase15/configs/source_snapshots/DJI_Action_2_User_Manual_V1.0_EN-11.pdf",
+    "source_snapshot_sha256": "c71167c3b9ef8dfbe571aa6ad000c718ef9029011686150f895bc62e620b5586",
+    "source_location": "Specifications, printed page 20 / PDF page 21; DJI Action 2 Camera Unit"
   },
+  "source_manifest_sha256": "b33742f08f3584686f7145ef9abda668edd3724a0268c08db6d50e0b5ee2d3c6",
+  "baseline_revision": "236056ff6e5036eaf5bed27b8ba361f84b1bb090",
   "baseline_mass_kg": 6.540621725977448,
   "baseline_cg_mm": {
     "x": 0.11015658731633139,
@@ -95,7 +101,5 @@
     "camera location is inherited from an analyst-selected point mass, not a mounting datum",
     "mount, cable, power, thermal, vibration, hatch, and service envelopes are absent",
     "online catalog values are not independently measured or physically validated"
-  ],
-  "source_manifest_sha256": "e94fcf30b4253205dc1cb9f4cb86f816e0d44f78c1748b5d7cd57c24ac5a769c",
-  "baseline_revision": "236056ff6e5036eaf5bed27b8ba361f84b1bb090"
+  ]
 }

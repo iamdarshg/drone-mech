@@ -20,6 +20,10 @@ def load_inputs(root: Path, manifest_path: Path) -> tuple[dict[str, Any], list[d
         path = root / baseline[key]
         if not path.is_file() or sha256(path) != baseline[hash_key]:
             raise ValueError(f"source pin mismatch: {baseline[key]}")
+    candidate = manifest["candidate"]
+    snapshot = root / candidate["source_snapshot"]
+    if not snapshot.is_file() or sha256(snapshot) != candidate["source_snapshot_sha256"]:
+        raise ValueError(f"source pin mismatch: {candidate['source_snapshot']}")
     with (root / baseline["mass_csv"]).open(newline="") as stream:
         rows = list(csv.DictReader(stream))
     return manifest, rows
@@ -64,6 +68,8 @@ def compute(manifest: dict[str, Any], rows: list[dict[str, str]]) -> dict[str, A
         "issue": manifest["issue"],
         "evidence_status": "SCREENING_ONLY_BLOCKED_FOR_INSTALLATION",
         "candidate": source_candidate,
+        "source_manifest_sha256": None,
+        "baseline_revision": manifest["baseline"]["revision"],
         "baseline_mass_kg": sum(e["mass_kg"] for e in entries),
         "baseline_cg_mm": {axis: sum(e["mass_kg"] * e[f"{axis}_mm"] for e in entries) / sum(e["mass_kg"] for e in entries) for axis in "xyz"},
         "non_payload_mass_kg": base_mass,
@@ -87,7 +93,6 @@ def main() -> int:
     manifest, rows = load_inputs(args.source_root, args.source_root / args.inputs)
     result = compute(manifest, rows)
     result["source_manifest_sha256"] = sha256(args.source_root / args.inputs)
-    result["baseline_revision"] = manifest["baseline"]["revision"]
     args.json.parent.mkdir(parents=True, exist_ok=True)
     args.json.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps({"status": result["evidence_status"], "baseline_mass_kg": result["baseline_mass_kg"],
