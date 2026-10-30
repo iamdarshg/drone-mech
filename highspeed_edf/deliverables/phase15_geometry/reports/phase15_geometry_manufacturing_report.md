@@ -1,8 +1,8 @@
 # Phase-15 geometry generation and manufacturing report
 
 Generated from `design/HANDOFF_GEOMETRY_AGENT.md`. Coordinate convention: X lateral, Y vertical, +Z aft,
-Z=0 at the first rotor plane. Units are mm unless noted. CAD is a manufacturable
-layout model and envelope set; it is not a flight-release design.
+Z=0 at the first rotor plane. Units are mm unless noted. CAD is a mechanical layout
+model and envelope set; it is not a fabrication or flight-release design.
 
 ## Delivered CAD
 
@@ -17,7 +17,7 @@ layout model and envelope set; it is not a flight-release design.
 - Fan tubes use Ø82 OD / Ø78 bore (2 mm radial wall), two axes at X=±44; the 82 mm OD is inside the 72–90 band and keeps a true 2 mm composite wall. The inlet mouths are Ø84 mm side-facing ports, 55.4 cm² each (110.8 cm² total), with a 2.5 mm toroidal lip and a 100 mm segmented elbow into the axial ducts.
 - Body and wing are modeled as 1.2 mm skins over cold-side PLA core, with the two EDF passages kept clear. The fuselage is a 640 mm master shell with internal frames at Z=-100/+100 mm; section the master at those planes into ≤260 mm FDM pieces and use sealed scarf/flange joints. Split the 520 mm wing on the X=0 joiner web into two 260 mm panels. Main shell and wing use composite wrap; no PLA is assigned to the duct, nozzle, motor bay or hot-side insert.
 - Duct/nozzle hot-side shell is represented as high-temperature CF composite; qualify core/resin service temperature and hoop strength before manufacture. A 6061 insert/capture ring is required at every rotor-retention station. The exact high-temperature material and insert fastener details are not present in the source data.
-- All 72 rotor and 126 stator blanks are nested on the stated 250×120×5 and 300×120×5 sheets, split evenly (36+63 per sheet), at 1.5 mm nominal inter-part spacing and 1 mm edge margin. The nests are geometry-only: rough blanks require indexed/two-sided machining, deburring, root retention, balance and overspeed qualification. The 300 mm sheet consumes the nominal X travel of a 3018-class machine; side clamps/vacuum fixture and tool overtravel must be validated before CAM.
+- All 72 rotor and 126 stator blanks are nested on the stated 250×120×5 and 300×120×5 sheets, split evenly (36+63 per sheet), with at least 1.5 mm blank clearance and 1 mm sheet-edge margin. Profile bounds are used when placing the blanks; the previous rotor origin put the first row 3.1 mm beyond the lower sheet edge. Native STEP verification is recorded in `reports/phase15_stock_nest_bounds_validation.json`, with the correction documented in `reports/phase15_stock_nest_bounds_fix.md`. The nests are geometry-only: rough blanks require indexed/two-sided machining, deburring, root retention, balance and overspeed qualification. The 300 mm sheet consumes the nominal X travel of a 3018-class machine; side clamps/vacuum fixture and tool overtravel must be validated before CAM.
 - Six Ø40×16 hubs fit the 300×50×16 bar inside a 250 mm usable length with 25 mm end clamp zones. Hub turning/bore finishing and rotor balancing are separate operations. No production G-code is emitted from an unverified fixture.
 
 ## Constraint audit / unavoidable incompatibilities

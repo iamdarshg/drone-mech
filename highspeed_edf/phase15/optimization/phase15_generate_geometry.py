@@ -553,6 +553,29 @@ def make_stock_blank(profile: list[tuple[float, float]], x: float, y: float) -> 
     return cq.Workplane("XY").polyline(pts).close().extrude(5.0).val()
 
 
+def profile_bounds(profile: list[tuple[float, float]]) -> tuple[float, float, float, float]:
+    """Return the parametric blank's actual XY bounds before placement."""
+    xs = [point[0] for point in profile]
+    ys = [point[1] for point in profile]
+    return min(xs), min(ys), max(xs), max(ys)
+
+
+def assert_blank_inside_stock(blank: cq.Shape, stock: tuple[float, float, float],
+                              edge_margin: float, label: str) -> None:
+    sx, sy, sz = stock
+    bb = blank.BoundingBox()
+    tol = 1e-7
+    if (bb.xmin < edge_margin - tol or bb.ymin < edge_margin - tol
+            or bb.xmax > sx - edge_margin + tol or bb.ymax > sy - edge_margin + tol
+            or bb.zmin < -tol or bb.zmax > sz + tol):
+        raise ValueError(
+            f"{label} exceeds stock/edge margin: "
+            f"bbox=({bb.xmin:.6f},{bb.ymin:.6f},{bb.zmin:.6f},"
+            f"{bb.xmax:.6f},{bb.ymax:.6f},{bb.zmax:.6f}), "
+            f"stock=({sx:g},{sy:g},{sz:g}), edge_margin={edge_margin:g}"
+        )
+
+
 def rotor_blank_profile() -> list[tuple[float, float]]:
     top, bottom = [], []
     for i in range(25):
@@ -584,19 +607,38 @@ def export_nest(name: str, stock: tuple[float, float, float]) -> Path:
     nest.add(raw, name="raw_stock", color=Color(0.58, 0.64, 0.68, 0.20))
     rotor_profile = rotor_blank_profile()
     stator_profile = stator_blank_profile()
+    rotor_x0, rotor_y0, rotor_x1, rotor_y1 = profile_bounds(rotor_profile)
+    stator_x0, stator_y0, stator_x1, stator_y1 = profile_bounds(stator_profile)
+    rotor_x_pitch = (rotor_x1 - rotor_x0) + BLANK_SPACING
+    rotor_y_pitch = (rotor_y1 - rotor_y0) + BLANK_SPACING
+    # Anchor the measured profile bounds to the required stock edge margin.
+    rotor_x_origin = EDGE_MARGIN - rotor_x0
+    rotor_y_origin = EDGE_MARGIN - rotor_y0
+    rotor_rows = math.ceil(36 / 8)
+    rotor_top = rotor_y_origin + (rotor_rows - 1) * rotor_y_pitch + rotor_y1
+    # Keep at least the declared gap between the rotor group and the stator
+    # group. The stator rows retain their existing 9.7 mm pitch (>= 1.5 mm
+    # based on their actual profile envelope).
+    stator_y_origin = rotor_top + BLANK_SPACING - stator_y0
+    stator_x_pitch = (stator_x1 - stator_x0) + BLANK_SPACING
+    stator_y_pitch = max(8.2, stator_y1 - stator_y0) + BLANK_SPACING
     # 36 rotors: 8 columns x 5 rows; only four positions in the last row used.
     for i in range(36):
         row, col = divmod(i, 8)
-        x = EDGE_MARGIN + col * (29.0 + BLANK_SPACING)
-        y = EDGE_MARGIN + row * (8.2 + BLANK_SPACING)
-        nest.add(make_stock_blank(rotor_profile, x, y), name=f"rotor_blank_{i + 1:02d}",
+        x = rotor_x_origin + col * rotor_x_pitch
+        y = rotor_y_origin + row * rotor_y_pitch
+        blank = make_stock_blank(rotor_profile, x, y)
+        assert_blank_inside_stock(blank, stock, EDGE_MARGIN, f"rotor_blank_{i + 1:02d}")
+        nest.add(blank, name=f"rotor_blank_{i + 1:02d}",
                  color=Color(0.91, 0.49, 0.18, 0.95))
-    # 63 stators: 12 columns x 6 rows; 3 positions unused as edge/clamp keep-outs.
+    # 63 stators: 12 columns x 6 rows; nine positions remain unused.
     for i in range(63):
         row, col = divmod(i, 12)
-        x = EDGE_MARGIN + col * (16.0 + BLANK_SPACING)
-        y = 51.0 + row * (8.2 + BLANK_SPACING)
-        nest.add(make_stock_blank(stator_profile, x, y), name=f"stator_vane_blank_{i + 1:03d}",
+        x = EDGE_MARGIN - stator_x0 + col * stator_x_pitch
+        y = stator_y_origin + row * stator_y_pitch
+        blank = make_stock_blank(stator_profile, x, y)
+        assert_blank_inside_stock(blank, stock, EDGE_MARGIN, f"stator_vane_blank_{i + 1:03d}")
+        nest.add(blank, name=f"stator_vane_blank_{i + 1:03d}",
                  color=Color(0.20, 0.55, 0.82, 0.95))
     path = NEST_DIR / f"{name}.step"
     nest.save(str(path), exportType="STEP", tolerance=0.01, angularTolerance=0.1)
@@ -796,8 +838,8 @@ def write_manufacturing_report(stock_nests: Iterable[Path], projected_area_cm2: 
     report = f'''# Phase-15 geometry generation and manufacturing report
 
 Generated from `{source}`. Coordinate convention: X lateral, Y vertical, +Z aft,
-Z=0 at the first rotor plane. Units are mm unless noted. CAD is a manufacturable
-layout model and envelope set; it is not a flight-release design.
+Z=0 at the first rotor plane. Units are mm unless noted. CAD is a mechanical layout
+model and envelope set; it is not a fabrication or flight-release design.
 
 ## Delivered CAD
 
