@@ -1,0 +1,25 @@
+{
+  "candidate": "wing_t30mm",
+  "maxThicknessMm": 30.0,
+  "fluid": {
+    "mesh": "wing.msh",
+    "fluidCells": 258681,
+    "fluidVolumeM3": 1.5601048211505963,
+    "wingVolumeM3": 0.0012773004678969851,
+    "patchFaceCounts": {
+      "fsi": 65,
+      "rootWall": 1,
+      "inlet": 1,
+      "outlet": 1,
+      "farfield": 4
+    },
+    "domainM": {
+      "xMin": -0.4045757692307692,
+      "xMax": 0.7449057692307692,
+      "yMin": -0.35,
+      "yMax": 0.35,
+      "zMin": -0.6204661212050243,
+      "zMax": 1.3200138372741457
+    }
+  }
+}

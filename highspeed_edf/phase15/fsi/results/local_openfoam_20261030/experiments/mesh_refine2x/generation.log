@@ -1,0 +1,58 @@
+[32;1m
+*******************************************************************
+******        Statistics on Transfer (Write)                 ******[0m
+[32;1m
+*******************************************************************
+******        Transfer Mode = 0  I.E.  As Is       ******[0m
+[32;1m******        Transferring Shape, ShapeType = 0                      ******[0m
+[32;1m** WorkSession : Sending all data[0m
+[32;1m Step File Name : /workspace/drone-mech/highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/mesh_refine2x/cases/wing_t30mm/solid/wing.step(4902 ents)  Write  Done[0m
+{
+  "candidate": "wing_t30mm",
+  "maxThicknessMm": 30.0,
+  "fluid": {
+    "mesh": "wing.msh",
+    "fluidCells": 258681,
+    "fluidVolumeM3": 1.5601048211505963,
+    "wingVolumeM3": 0.0012773004678969851,
+    "patchFaceCounts": {
+      "fsi": 65,
+      "rootWall": 1,
+      "inlet": 1,
+      "outlet": 1,
+      "farfield": 4
+    },
+    "domainM": {
+      "xMin": -0.4045757692307692,
+      "xMax": 0.7449057692307692,
+      "yMin": -0.35,
+      "yMax": 0.35,
+      "zMin": -0.6204661212050243,
+      "zMax": 1.3200138372741457
+    }
+  },
+  "solid": {
+    "mesh": "wing.msh",
+    "candidateStep": "wing.step",
+    "solidNodes": 16511,
+    "solidElements": 72471,
+    "couplingSurfaceEntities": 65,
+    "rootSurfaceEntities": 1,
+    "wingVolumeM3": 0.0012773004678969851,
+    "calculixInput": "wing.inp",
+    "nodes": 16511,
+    "tetrahedra": 72471,
+    "fsiNodes": 8864,
+    "rootNodes": 765,
+    "tipNodes": 1,
+    "youngsModulusPa": 10000000000.0,
+    "poissonRatio": 0.3,
+    "densityKgM3": 150.0
+  },
+  "effectiveMaterial": {
+    "E_Pa": 10000000000.0,
+    "nu": 0.3,
+    "rhoKgM3": 150.0,
+    "basis": "Equivalent isotropic stiffness seed for 1.2 mm CF wrap over light core; sweep uncertainty before design release"
+  }
+}

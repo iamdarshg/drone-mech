@@ -1,0 +1,17 @@
+Tracked source MSH2 physical names and surface triangle counts (Gmsh element type 2):
+11 inlet     150
+12 outlet    150
+13 farfield  1338
+14 fsi       3526
+15 rootWall  300
+Total        5464
+
+Refined MSH2 physical names and surface triangle counts (Gmsh element type 2):
+11 inlet     576
+12 outlet    576
+13 farfield  4960
+14 fsi       10342
+15 rootWall  832
+Total        17286
+
+The corresponding native OpenFOAM checkMesh final patch face counts match exactly in both cases.

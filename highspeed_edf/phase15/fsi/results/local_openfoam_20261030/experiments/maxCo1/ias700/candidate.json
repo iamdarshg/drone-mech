@@ -1,0 +1,17 @@
+{
+  "candidate": "wing_t30mm_ias700_rigid",
+  "sourceCandidate": "wing_t30mm",
+  "sourceGeometry": "Phase-15 nominal wing section schedule; outboard sector x=80.33..260 mm",
+  "thicknessVariantMm": "wing_30mm",
+  "inputAirspeedKmh": 700,
+  "airspeedType": "CAS approximately IAS",
+  "flowSpeedMps": 222.13220429717072,
+  "altitudeM": 3000,
+  "staticTemperatureK": 268.65,
+  "solverStaticPressurePa": 70100.0,
+  "casConversionReferencePressurePa": 70108.0,
+  "angleOfAttackDeg": 0.5,
+  "machFromCasConversion": 0.6760445412213765,
+  "solver": "rhoPimpleFoam",
+  "coupling": "none; rigid fixed geometry"
+}

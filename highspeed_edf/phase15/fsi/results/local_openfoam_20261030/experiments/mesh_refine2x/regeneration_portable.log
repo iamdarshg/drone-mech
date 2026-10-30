@@ -1,0 +1,27 @@
+{
+  "python": "3.12.14",
+  "gmshPythonBinding": "4.15.2",
+  "gmshSharedLibrarySoname": "libgmsh.so.4.13",
+  "gmshRuntime": "4.13.1",
+  "netgenOptimizer": "disabled; unavailable in the recorded Gmsh runtime",
+  "phase15Generator": "highspeed_edf/phase15/optimization/phase15_fsi_casegen.py",
+  "phase15GeneratorSha256": "f2ea9705c2ea10d5a5ce5145df32944f0c80fbeba35fb4a70961dfea7c36acce",
+  "regenerationScript": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/generate_refined_mesh.py",
+  "regenerationScriptSha256": "069fb0b69f0f3907434d36fce3b94e52c29fc17b1f336200d02da271c339275b",
+  "trackedBaseMesh": "highspeed_edf/phase15/fsi/cases/wing_t30mm/fluid/wing.msh",
+  "trackedBaseMeshSha256": "4f5a100ddf29afeb890f68626e60fccefe3d2530e777bc864d3e126dbf5c6cb4",
+  "refinedFluidMesh": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/mesh_refine2x/cases/wing_t30mm/fluid/wing.msh",
+  "refinedFluidMeshSha256": "75bb3b5fcb3eac8893eb737af0125ea37e397ebba90db53a322dfdb2ea45274b",
+  "fluidCells": 258681,
+  "fluidVolumeM3": 1.5601048211505963,
+  "wingVolumeM3": 0.0012773004678969851,
+  "domainM": {
+    "xMin": -0.4045757692307692,
+    "xMax": 0.7449057692307692,
+    "yMin": -0.35,
+    "yMax": 0.35,
+    "zMin": -0.6204661212050243,
+    "zMax": 1.3200138372741457
+  },
+  "refinement": "same Phase-15 30 mm wing and farfield; MeshSizeMin/Max halved from 0.012/0.12 m to 0.006/0.06 m"
+}
