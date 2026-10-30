@@ -2,6 +2,7 @@
   "title": "Phase-15 preliminary wing load-demand screen",
   "status": "BLOCKED: preliminary load demand only; no structural pass/fail",
   "evidenceClass": "reproducible analytical load screen, not FEA and not structural validation",
+  "sourceIntegrityPolicy": "fixed SHA-256 allowlist; generation raises SourceIntegrityError if any pinned source is missing or differs, and changing a reviewed digest requires an explicit reviewer edit to the allowlist",
   "nativeSolverAvailability": {
     "gmsh": null,
     "ccx": null,
@@ -15,6 +16,11 @@
     "fluidDiagnostic": "FOAM FATAL IO ERROR: Entry 'div(meshPhi,p)' not found in dictionary system/fvSchemes/divSchemes",
     "solidDiagnostic": "preCICE received EOF from the fluid participant after its fatal exit; no valid coupled load/displacement history",
     "equivalentSolidMaterial": "existing deck uses isotropic E=10 GPa, nu=0.30, density=150 kg/m^3; a screening seed, not a sourced hand-laid laminate"
+  },
+  "materialsAuditEvidence": {
+    "report": "highspeed_edf/phase15/reports/issue4_material_matrix_stockfix_ff670.md",
+    "machineReadableReport": "highspeed_edf/phase15/reports/issue4_material_matrix_stockfix_ff670.json",
+    "finding": "inventory remains blocked because supplier/product identity, laminate layup, coupon allowables, temperature/adhesive qualification, measured masses, and manufacturing traveler are absent"
   },
   "sources": [
     {
@@ -40,6 +46,14 @@
     {
       "path": "highspeed_edf/phase15/fsi/results/attempts/20260930T134329Z/worker_output/wing_t36mm/rhoPimpleFoam.log",
       "sha256": "8123486174e8c3c11665850ca3cb7cbc32b873aa7b720337c719af996ef74fca"
+    },
+    {
+      "path": "highspeed_edf/phase15/reports/issue4_material_matrix_stockfix_ff670.md",
+      "sha256": "7fe8cd706c308bce060e17d576bf69d46355e1ed61716155facfd269ff19db5c"
+    },
+    {
+      "path": "highspeed_edf/phase15/reports/issue4_material_matrix_stockfix_ff670.json",
+      "sha256": "1ab93043326b013fcee32ed75b79de2018ea752ec9e230dce430b5c86db4c012"
     }
   ],
   "inputs": {

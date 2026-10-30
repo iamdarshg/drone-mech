@@ -29,6 +29,13 @@ class WingLoadStressGateTests(unittest.TestCase):
         self.assertIn("no actual stress", result["gate"])
         self.assertEqual(result["inputs"]["loadFactorCasesG"], [1.0, 2.0, 3.0])
         self.assertTrue(all(len(source["sha256"]) == 64 for source in result["sources"]))
+        self.assertEqual(len(result["sources"]), 8)
+        self.assertIn("issue4_material_matrix_stockfix_ff670.md", result["materialsAuditEvidence"]["report"])
+
+    def test_changed_pinned_input_fails_closed(self) -> None:
+        relative_path, _ = next(iter(gate.PINNED_SOURCE_SHA256.items()))
+        with self.assertRaisesRegex(gate.SourceIntegrityError, "pinned source drift"):
+            gate.verify_source(gate.REPO / relative_path, relative_path, "0" * 64)
 
 
 if __name__ == "__main__":

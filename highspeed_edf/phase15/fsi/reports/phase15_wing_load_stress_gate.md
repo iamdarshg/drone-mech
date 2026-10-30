@@ -2,6 +2,8 @@
 
 **Status: BLOCKED.** This is an analytical load-demand calculation, not FEA, not a stress result, and not structural validation.
 
+Provenance is fail-closed: report generation checks every listed SHA-256 against a fixed allowlist; changed or missing inputs stop generation until the reviewed pin is deliberately updated.
+
 Candidate inputs: 6.541 kg, 0.190 m² wing area, 0.520 m span, 0.425/0.305 m root/tip chord, 200 m/s at 3 km ISA density 0.909 kg/m³. Dynamic pressure is 18.18 kPa; 1g lift requires CL=0.0186.
 
 The model assigns half the symmetric aircraft lift to each half-wing and distributes it in proportion to linearly tapered chord. This places the half-wing lift centroid at 0.1229 m outboard of the root.
@@ -34,5 +36,7 @@ Source SHA-256 pins:
 - `highspeed_edf/phase15/fsi/cases/wing_t36mm/solid/wing.inp`: `ae81cd06d2a976b1a1c4d55ec3c8505a01c7a0ca0b588d041e98427a9f7dd390`
 - `highspeed_edf/phase15/fsi/results/attempts/20260930T134329Z/worker_output/wing_t36mm_receipt.json`: `0a6f87e6c8a3ecef48f683d83e472162059d41c6f4f396453989a91f435c02d4`
 - `highspeed_edf/phase15/fsi/results/attempts/20260930T134329Z/worker_output/wing_t36mm/rhoPimpleFoam.log`: `8123486174e8c3c11665850ca3cb7cbc32b873aa7b720337c719af996ef74fca`
+- `highspeed_edf/phase15/reports/issue4_material_matrix_stockfix_ff670.md`: `7fe8cd706c308bce060e17d576bf69d46355e1ed61716155facfd269ff19db5c`
+- `highspeed_edf/phase15/reports/issue4_material_matrix_stockfix_ff670.json`: `1ab93043326b013fcee32ed75b79de2018ea752ec9e230dce430b5c86db4c012`
 
 This report provides no actual stress, reserve factor, deformation, failure mode, or structural acceptance decision.
