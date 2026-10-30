@@ -1,0 +1,54 @@
+{
+  "sourceStep": "/workspace/fuselage-shell-repair/highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell_endpoint_relief_42_6.step",
+  "sourceStepSha256": "c00acd3287965dca80fce109b4a5ab61f376b2794ee5746ffe23e8e5aba3d057",
+  "viewedNativeStepSolids": 4,
+  "tessellation": {
+    "linearToleranceMm": 0.6,
+    "angularToleranceRad": 0.35,
+    "triangles": 4252
+  },
+  "boundsMm": {
+    "x": [
+      -105.891846080653,
+      105.89184608066236
+    ],
+    "y": [
+      -48.45873785340276,
+      45.41363327196221
+    ],
+    "z": [
+      -360.0000001,
+      280.0000001
+    ]
+  },
+  "renderer": "Blender 4.3.2",
+  "runtime": {
+    "python": "3.12.14",
+    "cadQuery": "2.7.0",
+    "openCascade": "7.8.1.1",
+    "pillow": "12.3.0"
+  },
+  "images": [
+    {
+      "file": "01_shell_isometric.png",
+      "title": "Fuselage shell \u00b7 isometric",
+      "note": "Four disconnected BREP solids, colored by solid index; no parts moved.",
+      "sha256": "9ede070eace38872baffe0b32b4daa8260e11c77109aa041ce293d86e0619598"
+    },
+    {
+      "file": "02_shell_side.png",
+      "title": "Fuselage shell \u00b7 side view",
+      "note": "Full station span \u2212360 to +280 mm; components remain in native locations.",
+      "sha256": "e1c6d5aa3ac1d4675eaf86b3a97661c53b887d8ad3de5ec300ceb753bb5db029"
+    },
+    {
+      "file": "03_shell_top.png",
+      "title": "Fuselage shell \u00b7 top view",
+      "note": "Service aperture and cavity; four solids remain in native locations.",
+      "sha256": "96816525e904bb399eca4e1bf251cdbda0f6c6a345e844a263a3dafe144d329f"
+    }
+  ],
+  "limitations": [
+    "Rendered surface geometry only; these images do not establish manufacturing suitability, structural performance, or flight readiness."
+  ]
+}
