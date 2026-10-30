@@ -100,7 +100,7 @@
     "Areas/chords are planform-envelope measurements from CAD parameters, not aerodynamic effective areas.",
     "Elevon includes taper/sweep in CAD; rectangular area envelope is used; mean aerodynamic chord and hinge line integration are not extracted.",
     "Rudder is a simplified rectangular CAD plate; actual canted/hinged aero and gaps are not modeled.",
-    "Vector vane local jet velocity is unknown; ratios 1, 2, 4 are sensitivity scenarios relative to freestream, not measured exit conditions. At zero freestream speed this method cannot represent powered static jet load.",
+    "Vector vane q scenarios use the same freestream density for every velocity-ratio case and scale only velocity by ratios 1, 2, 4 (thus q by 1, 4, 16); this is a hypothetical sensitivity, not jet-flow physics or a prediction of exit density/velocity. At zero freestream speed this method cannot represent powered static jet load.",
     "Torque values are at hinge axis; servo-shaft demand requires actual horn/linkage kinematics, friction, stiffness, backlash, and load sharing, which are not specified.",
     "No dynamic rate/inertia, hinge moment variation with deflection, aeroelastic effects, transient gusts, control loads, or actuator thermal derating are included."
   ],

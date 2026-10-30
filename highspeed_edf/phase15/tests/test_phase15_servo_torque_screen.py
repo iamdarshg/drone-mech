@@ -50,6 +50,9 @@ class ServoTorqueScreenTests(unittest.TestCase):
         self.assertIn("BLOCKED", summary["actual_servo_comparison"])
         self.assertIsNone(servo_screen.check_pins()["manufacturer_servo_source"])
         self.assertEqual(summary["actuator_count"], 7)
+        caveat = " ".join(summary["surface_geometry_caveats"])
+        self.assertIn("same freestream density", caveat)
+        self.assertIn("not jet-flow physics", caveat)
         self.assertEqual(list(summary["servo_placeholder_envelope_mm"]), [23.0, 12.0, 29.0])
 
 
