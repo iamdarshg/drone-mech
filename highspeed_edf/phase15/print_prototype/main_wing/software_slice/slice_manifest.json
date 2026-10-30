@@ -1,0 +1,233 @@
+{
+  "classification": "SOFTWARE-ONLY SLICE; EXPERIMENTAL PROTOTYPE; NOT A FABRICATION OR FLIGHT RELEASE",
+  "generatedUtc": "2026-10-30T16:13:31Z",
+  "software": {
+    "name": "OrcaSlicer",
+    "version": "2.4.2",
+    "distribution": "official Linux AppImage, extracted and run with Debian 13 runtime libraries rootlessly",
+    "appImageSha256": "d12fb8c8eac1aecd2dfb6377acd48f994f8fa439ed5292fa532dd82880f029fd",
+    "debRuntimePackages": [
+      {
+        "name": "libgles2",
+        "version": "1.7.0-1+b2"
+      },
+      {
+        "name": "libharfbuzz-icu0",
+        "version": "10.2.0-1+deb13u1"
+      },
+      {
+        "name": "libhidapi-hidraw0",
+        "version": "0.14.0-1+b2"
+      },
+      {
+        "name": "libhyphen0",
+        "version": "2.8.8-7+b2"
+      },
+      {
+        "name": "libjavascriptcoregtk-4.1-0",
+        "version": "2.52.6-1~deb13u1"
+      },
+      {
+        "name": "libmanette-0.2-0",
+        "version": "0.2.12-1"
+      },
+      {
+        "name": "libmspack0t64",
+        "version": "0.11-1.1+b1"
+      },
+      {
+        "name": "libwebkit2gtk-4.1-0",
+        "version": "2.52.6-1~deb13u1"
+      },
+      {
+        "name": "xdg-dbus-proxy",
+        "version": "0.1.6-1+deb13u3"
+      }
+    ]
+  },
+  "model": {
+    "path": "../wing_centre_bridge_x1_z1.stl",
+    "sha256": "f582a95d8921aa3106b7a30755579406d6b761b49d1d1f2c9268f9454d4fafa9",
+    "units": "millimetres intended; STL has no unit metadata",
+    "sourceStep": "../wing_centre_bridge_x1_z1.step",
+    "orientation": "Automatic OrcaSlicer orientation enabled; CLI reports best orientation vector (0, 0, -1)",
+    "arrangement": "Automatic arrangement enabled; one object on plate 1"
+  },
+  "profiles": {
+    "vendor": "Bambu Lab",
+    "vendorProfileVersion": "02.01.00.19",
+    "printer": "Bambu Lab A1 mini 0.4 nozzle",
+    "process": "0.20mm Standard @BBL A1M",
+    "material": "Bambu PLA Basic @BBL A1M (provisional profile/material assumption; not user- or stock-confirmed)",
+    "plate": "Textured PEI Plate (explicitly set to the A1 mini profile default)",
+    "inheritanceSourceHashes": {
+      "machine": [
+        {
+          "name": "fdm_machine_common",
+          "path": "machine/fdm_machine_common.json",
+          "sha256": "cdcaa5e5061934a9b960c94e203cc7d1e3b869a407182644f2dda9fdcbf5c2b3"
+        },
+        {
+          "name": "fdm_bbl_3dp_001_common",
+          "path": "machine/fdm_bbl_3dp_001_common.json",
+          "sha256": "e90597a202d5461a2f8636a06c35409cffc79a2c1991bb726c6e465e9a0bd26c"
+        },
+        {
+          "name": "Bambu Lab A1 mini 0.4 nozzle",
+          "path": "machine/Bambu Lab A1 mini 0.4 nozzle.json",
+          "sha256": "a224b133eded61efe68eabda27d93d3ea7c466d2c1a3bdfe5207dfe2e0d619e2"
+        }
+      ],
+      "process": [
+        {
+          "name": "fdm_process_common",
+          "path": "process/fdm_process_common.json",
+          "sha256": "398fcb322a7f459edab00cb2daf524345a19b8cef074415af52f377f91e4bd5b"
+        },
+        {
+          "name": "fdm_process_single_common",
+          "path": "process/fdm_process_single_common.json",
+          "sha256": "59fc5ca43dcf9850076708b8ca14b7f9098fe90b9b32ceffc6741b4fcaf3e73e"
+        },
+        {
+          "name": "fdm_process_single_0.20",
+          "path": "process/fdm_process_single_0.20.json",
+          "sha256": "b26b4c110e0f44dc25985af0acb2deb00d7d1b3eba57b8d2241ad8106fc8e034"
+        },
+        {
+          "name": "0.20mm Standard @BBL A1M",
+          "path": "process/0.20mm Standard @BBL A1M.json",
+          "sha256": "80ab40ba2362e80e2633dac1a49721ce8a595ce3dbf3e9a5fbf01d618d375c55"
+        }
+      ],
+      "filament": [
+        {
+          "name": "fdm_filament_common",
+          "path": "filament/fdm_filament_common.json",
+          "sha256": "05725cc129f96ea903dc77c40d248fa1bd0137cfc41216d09d952cfdd37d3683"
+        },
+        {
+          "name": "fdm_filament_pla",
+          "path": "filament/fdm_filament_pla.json",
+          "sha256": "79f257ca32c8a938f49df82623cc84ca86d1044a818d600714b024e6b6499642"
+        },
+        {
+          "name": "Bambu PLA Basic @base",
+          "path": "filament/Bambu PLA Basic @base.json",
+          "sha256": "72e18fd4eb000013153bd93721634c3b650bc1fcfa85d1c1458e89dbae1b1fa5"
+        },
+        {
+          "name": "Bambu PLA Basic @BBL A1M",
+          "path": "filament/Bambu PLA Basic @BBL A1M.json",
+          "sha256": "ea7d88ecac57df1ac5a31e42a0fa0aac6fec952da5d28bca0e9d988b3e73acaa"
+        }
+      ]
+    },
+    "effectiveProfileSnapshots": {
+      "machine": "effective-machine.json",
+      "process": "effective-process.json",
+      "filament": "effective-filament.json"
+    },
+    "vendorProfileSource": {
+      "path": "BBL.json",
+      "sha256": "9b240779aec0b75f9dcc2c0fb7281c9af0b01db9c1ba33435c51b0380fe8bfda"
+    },
+    "machineModelSource": {
+      "path": "BBL/machine/Bambu Lab A1 mini.json",
+      "sha256": "b492666c34902c2f51fdd0681c407dcc571eb83004ef6bc51316cae22823bceb",
+      "defaultBedType": "Textured PEI Plate"
+    }
+  },
+  "sliceResult": {
+    "error_string": "Success.",
+    "export_time": 0,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 0,
+    "prepare_time": 0,
+    "return_code": 0,
+    "sliced_plates": [
+      {
+        "id": 1,
+        "sliced_time": 5,
+        "sliced_time_with_cache": 3,
+        "triangle_count": 334,
+        "warning_message": ""
+      }
+    ],
+    "sparse_infill_density": 15.0,
+    "wall_loops": 2
+  },
+  "effectiveSettings": {
+    "nozzleDiameterMm": 0.4,
+    "layerHeightMm": 0.2,
+    "wallLoops": 2,
+    "topShellLayers": 5,
+    "bottomShellLayers": 3,
+    "sparseInfill": "15% crosshatch",
+    "supportsEnabled": false,
+    "brim": "auto_brim, 5 mm",
+    "nozzleTemperatureC": 220,
+    "initialNozzleTemperatureC": 220,
+    "texturedPlateTemperatureC": 65,
+    "initialTexturedPlateTemperatureC": 65,
+    "filamentDiameterMm": 1.75,
+    "filamentDensityGPerCm3": 1.26,
+    "filamentFlowRatio": 0.98,
+    "filamentMaxVolumetricSpeedMm3PerS": 21
+  },
+  "outputs": {
+    "gcode": {
+      "path": "plate_1.gcode",
+      "bytes": 3166745,
+      "sha256": "d461ee9069ff1fda844ff18df17b6c8fe55cb5aeef9885ec34653d9f2f552685",
+      "modelPrintTime": "1h 27m 30s",
+      "totalEstimatedTime": "1h 33m 29s",
+      "firstLayerEstimatedTime": "5m 58s",
+      "layers": 708,
+      "filament": {
+        "lengthMm": 5235.32,
+        "volumeCm3": 12.59,
+        "massG": 15.87,
+        "estimatedCost": 0.4
+      }
+    },
+    "resultJson": {
+      "path": "result.json",
+      "bytes": 345,
+      "sha256": "27932cdf128841d108fb724ffbd6a1148cd5241c31738361ee0370f033b63df8"
+    },
+    "cliLog": {
+      "path": "orca-cli.log",
+      "sha256": "a673f639a83156d2a9fe2a1852b15f97d4a7d73382786d323cd51a3facbf8acb"
+    }
+  },
+  "boundary": "A successful software slice and empty slicer warning_message do not establish orientation suitability, bed adhesion, dimensional accuracy, print success, material properties, seam/join strength, structural suitability, CNC feasibility, or flight readiness. No printer or other hardware was used.",
+  "runtimeEnvironment": {
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "profileSourceSnapshot": "https://snapshot.debian.org/archive/debian/20260925T181338Z/",
+    "rootlessRuntimeExtractionDirectory": "/tmp/orca-root",
+    "runtimePackagesExtractedOnly": "The Debian packages below were unpacked to a private prefix; no host packages were installed."
+  },
+  "invocation": {
+    "executable": "/tmp/squashfs-root/bin/orca-slicer",
+    "environment": "LD_LIBRARY_PATH=/tmp/orca-root/usr/lib/x86_64-linux-gnu:/tmp/orca-root/usr/lib",
+    "arguments": [
+      "--datadir",
+      "/tmp/orca-user",
+      "--load-settings",
+      "/tmp/orca-machine-resolved.json;/tmp/orca-process-resolved.json",
+      "--load-filaments",
+      "/tmp/orca-filament-resolved.json",
+      "--orient",
+      "1",
+      "--arrange",
+      "1",
+      "--outputdir",
+      "/tmp/orca-output",
+      "--slice",
+      "0",
+      "highspeed_edf/phase15/print_prototype/main_wing/wing_centre_bridge_x1_z1.stl"
+    ],
+    "note": "The three effective profile JSON files referenced above are preserved as effective-machine.json, effective-process.json and effective-filament.json in this directory."
+  }
+}

@@ -8,13 +8,16 @@ validation. The source revision and source/output SHA-256 hashes are recorded in
 not the current repository head.
 
 Each exported piece was reimported as a valid solid and its axis-aligned extents
-are below 180 mm. This establishes an envelope screen only: bed adhesion,
-support, orientation, wall thickness, printing, assembly, and strength remain
-unverified. The partition volume check does not claim a fused reconstruction.
+are below 180 mm. One segment also has a successful OrcaSlicer 2.4.2 software
+slice under provisional A1 mini and Bambu PLA Basic profile assumptions. The
+slice does not qualify adhesion, orientation suitability, supports, accuracy,
+printing, assembly, or strength. The partition volume check does not claim a
+fused reconstruction.
 
 The software screen and one STEP-to-STL exchange export are documented in
-[`manufacturing-software-screen.md`](manufacturing-software-screen.md). No actual
-slicing or CAM path generation was completed.
+[`manufacturing-software-screen.md`](manufacturing-software-screen.md). A software
+slice was completed for one segment; no physical print or CAM path generation
+was performed.
 
 Regenerate from the repository root with Python, CadQuery 2.7.0, OCP 7.8.1.1,
 and Matplotlib 3.10.8:
