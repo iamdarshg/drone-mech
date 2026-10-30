@@ -44,6 +44,10 @@ STOCK_NOMINAL = {
 REPORT_DIR = Path("highspeed_edf/deliverables/phase15_geometry/reports")
 PARAMETERS = Path("highspeed_edf/deliverables/phase15_geometry/reports/phase15_parameter_register.json")
 GENERATOR = Path("highspeed_edf/phase15/optimization/phase15_generate_geometry.py")
+WING_SEGMENT_DIR = Path("highspeed_edf/phase15/print_prototype/main_wing")
+WING_SEGMENT_MANIFEST = WING_SEGMENT_DIR / "segmentation_manifest.json"
+SLICER_COMMANDS = ("BambuStudio", "bambu-studio", "orca-slicer", "OrcaSlicer",
+                   "prusa-slicer", "PrusaSlicer", "curaengine", "CuraEngine", "slic3r")
 
 
 def sha256(path: Path) -> str:
@@ -191,6 +195,66 @@ def git_commit(root: Path) -> str:
     return p.stdout.strip()
 
 
+def wing_segment_screen(root: Path) -> dict[str, Any]:
+    """Check committed experimental wing partitions against the A1 mini cube."""
+    manifest_path = root / WING_SEGMENT_MANIFEST
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    build_volume = tuple(float(x) for x in manifest["method"]["printEnvelopeMm"])
+    pieces = []
+    for row in manifest["pieces"]:
+        path = root / WING_SEGMENT_DIR / row["step"]
+        actual_sha256 = sha256(path)
+        shape = cq.importers.importStep(str(path)).val()
+        bbox = optimal_bbox(shape)
+        extents = [bbox["xlen"], bbox["ylen"], bbox["zlen"]]
+        solid_count = len(shape.Solids())
+        valid = solid_count == 1 and shape.isValid() and shape.Volume() > 0
+        axis_fit = all(d < cap for d, cap in zip(extents, build_volume))
+        pieces.append({
+            "id": row["id"], "path": str(path.relative_to(root)),
+            "sha256": actual_sha256, "manifestSha256": row["sha256"],
+            "manifestSha256Matches": actual_sha256 == row["sha256"],
+            "solids": solid_count,
+            "bboxMm": [round(v, 3) for v in extents],
+            "volumeMm3": round(shape.Volume(), 3),
+            "validSingleSolid": valid, "strictAxisAlignedEnvelopeFit": axis_fit,
+        })
+    available = {name: path for name in SLICER_COMMANDS if (path := shutil.which(name))}
+    source_parts = []
+    for item in manifest["components"]:
+        path = root / item["path"]
+        actual_sha256 = sha256(path)
+        source_parts.append({
+            "id": item["id"], "path": item["path"],
+            "sha256": actual_sha256, "manifestSha256": item["sha256"],
+            "manifestSha256Matches": actual_sha256 == item["sha256"],
+        })
+    return {
+        "prototypeClassification": manifest["classification"],
+        "sourceRepositoryCommit": manifest["sourceRepositoryCommit"],
+        "manifest": {"path": str(manifest_path.relative_to(root)), "sha256": sha256(manifest_path)},
+        "sourceParts": source_parts,
+        "allSourcePartHashesMatch": all(item["manifestSha256Matches"] for item in source_parts),
+        "printerBuildVolumeMm": list(build_volume),
+        "pieceCount": len(pieces), "pieces": pieces,
+        "allPiecesValid": all(row["validSingleSolid"] for row in pieces),
+        "allPieceHashesMatchManifest": all(row["manifestSha256Matches"] for row in pieces),
+        "allPiecesStrictAxisAlignedEnvelopeFit": bool(pieces) and all(
+            row["strictAxisAlignedEnvelopeFit"] for row in pieces),
+        "maximumPieceAxisExtentMm": round(max(max(row["bboxMm"]) for row in pieces), 3),
+        "slicerDiscovery": {
+            "searchedCommands": list(SLICER_COMMANDS), "available": available,
+            "result": ("SLICER_FOUND_NOT_A_PRINTABILITY_RESULT" if available
+                       else "BLOCKED_NO_SUPPORTED_SLICER_EXECUTABLE_FOUND"),
+        },
+        "limitations": [
+            "This checks the 15 committed planar butt-cut STEP prototypes against the nominal printer cube only.",
+            "The pieces have no joint keys, spar, alignment features, tolerances, or structural validation; the source manifest explicitly says no slicer or print test was performed.",
+            "Axis-aligned envelope fit does not establish bed adhesion, supportability, orientation, material/process feasibility, or printer clearance.",
+        ],
+    }
+
+
 def build(root: Path) -> dict[str, Any]:
     geometry = root / "highspeed_edf/deliverables/phase15_geometry"
     result: dict[str, Any] = {
@@ -229,6 +293,12 @@ def build(root: Path) -> dict[str, Any]:
             "selectedPrinterBuildVolumeMm": [180, 180, 180],
             "printerBuildVolumeSource": "Bambu Lab A1 mini official specifications/product page: https://bambulab.com/en/a1-mini/tech-specs (build volume 180 × 180 × 180 mm).",
             "fdmReadiness": "BLOCKED: no slicer profile, filament datasheet, support plan, or sliced job is evidenced.",
+            "userStockThicknessScreen": {
+                "reportedSheetThicknessMm": [6.0, 20.0],
+                "designSheetStockMm": [5.0],
+                "designHubBlankThicknessMm": 16.0,
+                "interpretation": "The 6 mm stock differs by +1 mm from the 5 mm sheet nest; the 20 mm stock differs by +4 mm from the 16 mm hub blank. Sheet XY, temper, flatness and thickness tolerance are not stated, so neither can yet be matched to the STEP nests. With only a visually estimated 8–10 mm flute length, 20 mm through-depth is beyond the estimate; no staged operation or long-reach tool is approved by this screen.",
+            },
             "promotableFabricationRelease": False,
         },
     }
@@ -279,6 +349,7 @@ def build(root: Path) -> dict[str, Any]:
             "orientationIndependentResult": "IMPOSSIBLE" if diameter_lower_bound > diagonal else "UNRESOLVED_BY_DIAMETER_BOUND",
             "orientationScreen": "FITS_AXIS_ALIGNED" if axis_fit else ("IMPOSSIBLE_ANY_ORIENTATION" if diameter_lower_bound > diagonal else "NO_AXIS_ALIGNED_FIT; ROTATED_FIT_UNRESOLVED"),
         }
+    result["fdmGeometryChecks"]["segmentedWingPrototype"] = wing_segment_screen(root)
     outside = sum(entry["outOfStockBlankCount"] for entry in result["stockNesting"].values())
     result["overallDisposition"] = (
         "FAIL geometry containment / BLOCKED machine-specific CAM and FDM feasibility"
@@ -322,18 +393,18 @@ def render_markdown(data: dict[str, Any]) -> str:
         )
     lines += [
         "- The CNC design requirement is **≥320 × 140 × 45 mm**. User-stated machine identifier is `233018 Pro`; manufacturer and exact model remain unverified, and no measured travel is available. The user reports it can barely cut aluminum. The design brief separately mentions generic 3018-class equipment. Stock dimensions and the nominal class do not establish setup fit; clamps, fixture, tool and approach clearances remain unknown.",
-        "- User-reported stock is 6061 aluminum with unspecified temper, as 6 mm and 20 mm sheets (sheet dimensions unknown). The nests require 5 mm sheets and a 300 × 50 × 16 mm hub bar. The 6 mm sheet is 1 mm thicker than the modeled sheet; no 300 × 50 × 16 mm bar is identified. Available stock cannot be matched to the geometry yet.",
+        "- User-reported stock is 6061 aluminum with unspecified temper, as 6 mm and 20 mm sheets (sheet dimensions, flatness, and thickness tolerances unknown). The nests use 5 mm sheet and model 16 mm hub blanks in a 300 × 50 × 16 mm bar. Thickness alone does not establish a stock match; no 300 × 50 × 16 mm bar is identified.",
         "- User-reported tooling is two-flute PCB-style carbide cutters, nominal Ø0.1–2 mm, plus V-cutters. Flutes are visually estimated at 8–10 mm, not measured. A 6 mm through-cut has only 2–4 mm nominal flute spare under that estimate; a 20 mm through-cut is 10–12 mm deeper. This does not prove flute reach, shank/holder clearance, tool stickout, clamp access, safe feeds/speeds, runout, or suitability for the unspecified 6061 temper. A staged strategy or suitable longer-reach tooling must be evidenced for 20 mm stock.",
-        "- Rotor/stator blanks are nested stock geometry only. The design calls for indexed/two-sided 3D machining, but there is no tool library, operation plan, feeds/speeds, machine model, collision check, postprocessor identity or NC file. The stock-sheet overhangs also prevent CAM sign-off as nested.",
+        "- Rotor/stator blanks are nested stock geometry only. The design calls for indexed/two-sided 3D machining, but there is no tool library, operation plan, feeds/speeds, machine model, collision check, postprocessor identity or NC file. The 20 mm stock is 10–12 mm deeper than the visually estimated 8–10 mm flute length; no staged setup or longer-reach tool has been verified.",
         "- The fuselage shell STEP measures only 194.04 × 76.06 × 84 mm, while the geometry notes describe a 640 mm master divided into sections up to 260 mm. The exported shell file does not contain that master or the described print sections.",
-        "- The selected printer is the Bambu Lab A1 mini; Bambu Lab lists a 180 × 180 × 180 mm build volume ([official specifications](https://bambulab.com/en/a1-mini/tech-specs)). Rotor, stator, duct and nozzle axis-aligned extents fit the cube. All three wing BREP parts exceed the cube's 311.77 mm body diagonal by a rotation-independent distance bound: the left and right sectors each have a 498.61 mm axis span; the center bridge has a 425.054 mm axis span. None can fit in any orientation. The shell's lower bound is between 180 mm and the cube diagonal: its direct fit fails one axis, while a rotated fit is unresolved. It is only the short shell export described above.",
-        "- Each exported left/right wing sector is a single BREP solid with a 498.61 mm axis-aligned extent, and the center bridge is a single solid with a 425.054 mm extent. All exceed the design note's 260 mm maximum print-section length and the A1 mini's orientation-independent size limit. No smaller split STEP artifacts or sliced job are present.",
+        "- The selected printer is the Bambu Lab A1 mini; Bambu Lab lists a 180 × 180 × 180 mm build volume ([official specifications](https://bambulab.com/en/a1-mini/tech-specs)). Rotor, stator, duct and nozzle axis-aligned extents fit the cube. The three unsplit wing BREP source parts exceed the cube's 311.77 mm body diagonal by a rotation-independent distance bound: the left and right sectors each have a 498.61 mm axis span; the center bridge has a 425.054 mm axis span. None can fit in any orientation. Their 15 experimental segmentation pieces are assessed separately below. The shell's lower bound is between 180 mm and the cube diagonal: its direct fit fails one axis, while a rotated fit is unresolved. It is only the short shell export described above.",
+        "- The main wing now has 15 experimental planar-cut STEP pieces. The source-pinned prototype checks their BREP validity and confirms every piece is strictly inside the A1 mini's nominal 180 mm cube when axis-aligned; the maximum piece axis extent is %.3f mm. The cuts are simple butt seams without alignment/joinery features and are not a structural wing design. No supported slicer executable, profile, or sliced job is available in this environment. These BREP envelope checks establish neither print feasibility nor assembly strength." % data["fdmGeometryChecks"]["segmentedWingPrototype"]["maximumPieceAxisExtentMm"],
         "- A FreeCAD 1.0.0 native STEP import independently confirmed the sheet-A nest and tessellated wing/shell surfaces at 0.1 mm linear deflection. FreeCAD's default spline-control-polygon `BoundBox` can report much larger extents; this screen uses tight OCCT `AddOptimal` bounds, which agree with the mesh extents. FreeCAD's `Path` CAM module is installed, but this only proves module availability; no machine configuration, postprocessor or toolpath was executed.",
         "- FDM material/process feasibility remains blocked despite the user-stated printer and known nominal volume: no slicer profile, filament grade/datasheet, material/process qualification, orientation/support plan or sliced job is pinned. Composite and hot-side material requirements need separate qualification.",
         "",
         "## Scope and reproducibility",
         "",
-        "Run from the repository root with `python highspeed_edf/verification/native_manufacturability.py`. The program imports 11 actual STEP assets with CadQuery/OpenCascade, records per-file SHA-256 and tight `BRepBndLib.AddOptimal` bounds/volumes, checks loose-blank BREP bounding boxes against the stock solid, then independently imports sheet A and compares selected print-part bounds against FreeCAD tessellation at 0.1 mm linear deflection. It writes JSON and this report in the Phase-15 reports directory.",
+        "Run from the repository root with `python highspeed_edf/verification/native_manufacturability.py`. The program imports 11 actual STEP assets and all 15 wing segmentation STEP prototypes with CadQuery/OpenCascade, records file SHA-256 and tight `BRepBndLib.AddOptimal` bounds/volumes, checks loose-blank BREP bounding boxes against the stock solid, records whether a supported slicer executable is present, then independently imports sheet A and compares selected print-part bounds against FreeCAD tessellation at 0.1 mm linear deflection. It writes JSON and this report in the Phase-15 reports directory.",
         "",
         "Stock containment checks use bounding boxes only; part-to-part spacing, cutter compensation, fixtures, machine travel, collision-free toolpaths and sliced print volume are not evaluated. Do not infer fabrication readiness from STEP validity or this screen.",
         "",
@@ -360,12 +431,20 @@ def main() -> int:
     if args.self_test:
         assert data["nativeToolEvidence"]["freecad"]["nativeStepImportExitCode"] == 0
         assert data["nativeToolEvidence"]["freecad"]["nativeStepImportEvidence"]
-        assert data["stockNesting"]["sheet_A"]["outOfStockBlankCount"] == 8
-        assert data["stockNesting"]["sheet_B"]["outOfStockBlankCount"] == 8
+        assert data["stockNesting"]["sheet_A"]["outOfStockBlankCount"] == 0
+        assert data["stockNesting"]["sheet_A"]["containmentStatus"] == "PASS"
+        assert data["stockNesting"]["sheet_B"]["outOfStockBlankCount"] == 0
+        assert data["stockNesting"]["sheet_B"]["containmentStatus"] == "PASS"
         assert data["stockNesting"]["hub_bar"]["outOfStockBlankCount"] == 0
         assert data["fdmGeometryChecks"]["fuselageShell"]["measuredExportBboxMm"]["Z"] == 84.0
         assert data["fdmGeometryChecks"]["wingLeft"]["longestAxisMm"] > 260.0
         assert data["fdmGeometryChecks"]["a1MiniPartFits"]["wing_left"]["orientationIndependentResult"] == "IMPOSSIBLE"
+        segmented = data["fdmGeometryChecks"]["segmentedWingPrototype"]
+        assert segmented["pieceCount"] == 15
+        assert segmented["allSourcePartHashesMatch"]
+        assert segmented["allPieceHashesMatchManifest"]
+        assert segmented["allPiecesValid"] and segmented["allPiecesStrictAxisAlignedEnvelopeFit"]
+        assert segmented["slicerDiscovery"]["result"] == "BLOCKED_NO_SUPPORTED_SLICER_EXECUTABLE_FOUND"
         mesh_bounds = {row["asset"]: row["bboxMm"]
                        for row in data["nativeToolEvidence"]["freecad"]["freecadTessellationCrosschecks"]}
         for key, asset_key in (("wing_left", "wing_left"), ("wing_center", "wing_center"),
