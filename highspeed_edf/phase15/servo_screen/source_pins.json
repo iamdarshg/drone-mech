@@ -1,0 +1,49 @@
+{
+  "source_commit": "e0f8946bb51cbb84d616de58ac434798e205532d",
+  "sources": [
+    {
+      "role": "geometry",
+      "path": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+      "git_blob": "f7da937588a5288f3ea65a9c06002bce125c2df1",
+      "sha256": "53353da1c6f46d8cd9df7431209946869c0984908b269fb94d01f25a1cfabd47",
+      "source_commit": "e0f8946bb51cbb84d616de58ac434798e205532d"
+    },
+    {
+      "role": "control_contract",
+      "path": "highspeed_edf/phase14/configs/phase14_coupled_design.json",
+      "git_blob": "8d7bb08acdee1bfab9ec1334557b41cde8c4bcdf",
+      "sha256": "c9e599d512d288cbab71ad2e44b0936ef54ec16161307e825999e169e757b7b0",
+      "source_commit": "e0f8946bb51cbb84d616de58ac434798e205532d"
+    },
+    {
+      "role": "speed_envelope",
+      "path": "highspeed_edf/phase14/results/phase14_speed_envelope.csv",
+      "git_blob": "c22d2945e3a098d9edad97837b14401b5b53ea68",
+      "sha256": "8324273d234db6275b0b98467fe749e9a251de560616718db3869104f5a5de9a",
+      "source_commit": "e0f8946bb51cbb84d616de58ac434798e205532d"
+    }
+  ],
+  "external_method_sources": [
+    {
+      "title": "U.S. Standard Atmosphere, 1976",
+      "publisher": "NASA / NOAA / USAF",
+      "url": "https://ntrs.nasa.gov/citations/19770009539",
+      "retrieved_utc": "2026-10-30",
+      "used_for": "ISA context only; aircraft design density is taken directly from the pinned Phase-14 speed envelope.",
+      "retrieved_sha256": "25176aa873536ab4db12d127789c824c5fe460ae13af1d691750f97204f6d1a2",
+      "retrieved_bytes": 83500
+    },
+    {
+      "title": "Aerodynamic Forces",
+      "publisher": "NASA Glenn Research Center",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/aerodynamic-forces/",
+      "retrieved_utc": "2026-10-30",
+      "used_for": "Dynamic-pressure scaling context. No numeric hinge-moment coefficient is sourced from this page or asserted by this screen.",
+      "retrieved_sha256": "228a3acbbd590fa6b7a35a762d816a3c10edb0c40bc3359975ef752640b4ce72",
+      "retrieved_bytes": 74860
+    }
+  ],
+  "manufacturer_servo_source": null,
+  "manufacturer_servo_source_reason": "No make/model is selected in the pinned design. The CAD contains only an analyst servo envelope and mass placeholder, so a manufacturer data sheet cannot be associated with an actual component.",
+  "external_capture_note": "SHA-256 records the fetched HTML bytes as retrieved on the date above; methods are referenced for context only, and no design coefficient is imported."
+}

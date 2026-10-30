@@ -1,0 +1,108 @@
+{
+  "status": "ANALYTICAL SENSITIVITY ONLY \u2014 NOT A SERVO ADEQUACY OR FLIGHT-SAFETY DETERMINATION",
+  "source_commit": "e0f8946bb51cbb84d616de58ac434798e205532d",
+  "source_pins": [
+    {
+      "role": "geometry",
+      "path": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+      "git_blob": "f7da937588a5288f3ea65a9c06002bce125c2df1",
+      "sha256": "53353da1c6f46d8cd9df7431209946869c0984908b269fb94d01f25a1cfabd47",
+      "source_commit": "e0f8946bb51cbb84d616de58ac434798e205532d"
+    },
+    {
+      "role": "control_contract",
+      "path": "highspeed_edf/phase14/configs/phase14_coupled_design.json",
+      "git_blob": "8d7bb08acdee1bfab9ec1334557b41cde8c4bcdf",
+      "sha256": "c9e599d512d288cbab71ad2e44b0936ef54ec16161307e825999e169e757b7b0",
+      "source_commit": "e0f8946bb51cbb84d616de58ac434798e205532d"
+    },
+    {
+      "role": "speed_envelope",
+      "path": "highspeed_edf/phase14/results/phase14_speed_envelope.csv",
+      "git_blob": "c22d2945e3a098d9edad97837b14401b5b53ea68",
+      "sha256": "8324273d234db6275b0b98467fe749e9a251de560616718db3869104f5a5de9a",
+      "source_commit": "e0f8946bb51cbb84d616de58ac434798e205532d"
+    }
+  ],
+  "indicated_speeds_kmh": [
+    50,
+    100,
+    150,
+    200,
+    250,
+    300,
+    350,
+    400,
+    450,
+    500,
+    550,
+    600,
+    650,
+    700,
+    720,
+    750,
+    800,
+    850,
+    900
+  ],
+  "phase14_anchor_ias_kmh": [
+    50,
+    100,
+    150,
+    200,
+    500,
+    650,
+    700,
+    720
+  ],
+  "airspeed_convention": "Requested speed is treated as indicated airspeed (IAS); CAS\u2248IAS is an explicit ideal instrument/calibration assumption.",
+  "pitot_conversion": "Subsonic compressible impact-pressure relation: compute sea-level calibrated qc from IAS, then solve qc/p=(1+0.2M\u00b2)^3.5\u22121 at ambient static pressure.",
+  "dynamic_pressure": "q=0.5*gamma*p*M^2; TAS=M*sqrt(gamma*R*T). No incompressible rho*V^2/2 approximation is used for q.",
+  "environments": {
+    "sea_level": {
+      "altitude_m": 0.0,
+      "temperature_k": 288.15,
+      "static_pressure_pa": 101325.0,
+      "density_kg_m3": 1.2250122659906946
+    },
+    "primary_design_altitude": {
+      "altitude_m": 3000.0,
+      "temperature_k": 268.65,
+      "static_pressure_pa": 70108.26833969312,
+      "density_kg_m3": 0.9091276032136805
+    }
+  },
+  "mach_note": "Freestream Mach follows compressible IAS-to-Mach conversion. Ch variation with Mach is still unknown and not modeled.",
+  "coefficient_scenarios": [
+    0.01,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "coefficient_warning": "Analyst-selected sensitivity values only. No Ch is asserted or inferred. Replace with measured/validated CFD hinge coefficients over deflection, Mach, Reynolds number and installation flow.",
+  "vector_vane_velocity_ratio_scenarios": [
+    1.0,
+    2.0,
+    4.0
+  ],
+  "reserve_factor": 1.5,
+  "reserve_basis": "Phase-14 strong control-authority band minimum reserve ratio; applied as a screening factor, not a servo design standard.",
+  "actual_servo_comparison": "BLOCKED: design sources specify generic 23x12x29 mm / 25 g servo envelopes only; no make/model, rated output torque at supply voltage, voltage/current/thermal duty, speed, or verified linkage ratio is selected.",
+  "servo_placeholder_envelope_mm": [
+    23.0,
+    12.0,
+    29.0
+  ],
+  "servo_placeholder_mass_kg": 0.025,
+  "actuator_count": 7,
+  "known_interface_gate": "Phase-14 control contract listed 6 channels; Phase-15 CAD has 4 vanes + 2 elevons + 1 rudder = 7 actuator positions; seventh channel unresolved.",
+  "surface_geometry_caveats": [
+    "Areas/chords are planform-envelope measurements from CAD parameters, not aerodynamic effective areas.",
+    "Elevon includes taper/sweep in CAD; rectangular area envelope is used; mean aerodynamic chord and hinge line integration are not extracted.",
+    "Rudder is a simplified rectangular CAD plate; actual canted/hinged aero and gaps are not modeled.",
+    "Vector vane local jet velocity is unknown; ratios 1, 2, 4 are sensitivity scenarios relative to freestream, not measured exit conditions. At zero freestream speed this method cannot represent powered static jet load.",
+    "Torque values are at hinge axis; servo-shaft demand requires actual horn/linkage kinematics, friction, stiffness, backlash, and load sharing, which are not specified.",
+    "No dynamic rate/inertia, hinge moment variation with deflection, aeroelastic effects, transient gusts, control loads, or actuator thermal derating are included."
+  ],
+  "rows": 2280
+}
