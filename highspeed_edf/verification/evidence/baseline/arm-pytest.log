@@ -20,10 +20,10 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
 self = <Popen: returncode: 255 args: ['C:\\Program Files\\KiCad\\9.0\\bin\\python.e...>
-args = ['C:\\Program Files\\KiCad\\9.0\\bin\\python.exe', '/workspace/drone-arm/tools/hardware/prepare_quilter_upload.py', '-...5mm_usb_reconciled.kicad_pcb', '--netlist', '/workspace/drone-arm/hardware/esc/rev_b/reports/esc_usb_netlist.xml', ...]
+args = ['C:\\Program Files\\KiCad\\9.0\\bin\\python.exe', '/workspace/legacy-baseline/tools/hardware/prepare_quilter_upload.p...b_reconciled.kicad_pcb', '--netlist', '/workspace/legacy-baseline/hardware/esc/rev_b/reports/esc_usb_netlist.xml', ...]
 executable = b'C:\\Program Files\\KiCad\\9.0\\bin\\python.exe'
 preexec_fn = None, close_fds = True, pass_fds = ()
-cwd = PosixPath('/workspace/drone-arm'), env = None, startupinfo = None
+cwd = PosixPath('/workspace/legacy-baseline'), env = None, startupinfo = None
 creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 11
 c2pwrite = 12, errread = 13, errwrite = 14, restore_signals = True, gid = None
 gids = None, uid = None, umask = -1, start_new_session = False
@@ -217,10 +217,10 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
 self = <Popen: returncode: 255 args: ['C:\\Program Files\\KiCad\\9.0\\bin\\python.e...>
-args = ['C:\\Program Files\\KiCad\\9.0\\bin\\python.exe', '/workspace/drone-arm/tools/hardware/reconcile_esc_usb_footprints.p...pcb', '--output', '/workspace/drone-arm/.superpowers/sdd/2026-08-30-esc-usb-programming/reconcile-test.kicad_pcb', ...]
+args = ['C:\\Program Files\\KiCad\\9.0\\bin\\python.exe', '/workspace/legacy-baseline/tools/hardware/reconcile_esc_usb_footpr...'--output', '/workspace/legacy-baseline/.superpowers/sdd/2026-08-30-esc-usb-programming/reconcile-test.kicad_pcb', ...]
 executable = b'C:\\Program Files\\KiCad\\9.0\\bin\\python.exe'
 preexec_fn = None, close_fds = True, pass_fds = ()
-cwd = PosixPath('/workspace/drone-arm'), env = None, startupinfo = None
+cwd = PosixPath('/workspace/legacy-baseline'), env = None, startupinfo = None
 creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 11
 c2pwrite = 12, errread = 13, errwrite = 14, restore_signals = True, gid = None
 gids = None, uid = None, umask = -1, start_new_session = False
@@ -397,4 +397,4 @@ E                   FileNotFoundError: [Errno 2] No such file or directory: 'C:\
 =========================== short test summary info ============================
 FAILED tests/test_prepare_esc_quilter_upload.py::test_flat_package_preserves_165mm_board_and_has_exact_parity
 FAILED tests/test_reconcile_esc_usb_footprints.py::test_reconciliation_preserves_existing_board_and_adds_every_usb_reference
-2 failed, 23 passed in 0.77s
+2 failed, 23 passed in 0.98s

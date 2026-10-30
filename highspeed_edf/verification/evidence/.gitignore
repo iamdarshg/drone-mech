@@ -6,3 +6,4 @@ baseline/*
 !baseline/baseline_manifest.json
 !baseline/mech-pytest.log
 !baseline/arm-pytest.log
+!baseline/arm-framework-head-1b602e8-pytest.log

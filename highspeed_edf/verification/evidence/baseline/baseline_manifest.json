@@ -21,6 +21,18 @@
       "exit_code": 1,
       "outcome": "23 passed, 2 failed; both failures invoke unavailable hardcoded Windows KiCad Python path",
       "log": "highspeed_edf/verification/evidence/baseline/arm-pytest.log",
+      "log_sha256": "790853ec3522bdfc8d897e35009589742107c94e2ff6ca8e2a51825ef1b0a9db",
+      "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "run_date_utc": "2026-10-30",
+      "working_tree_state": "tracked files clean; untracked .superpowers/ directory present in the baseline worktree",
+      "supersedes": "Earlier tracked log was run from framework checkout HEAD 1b602e8f7984b3ed6103fe615422991f50b3dfd1; it is retained separately and is not evidence of the immutable baseline run."
+    },
+    {
+      "repository": "drone-arm framework checkout (prior provenance only)",
+      "command": "python -m pytest -q",
+      "source_revision": "1b602e8f7984b3ed6103fe615422991f50b3dfd1",
+      "outcome": "23 passed, 2 failed; preserved historical framework-checkout run; not the immutable baseline result",
+      "log": "highspeed_edf/verification/evidence/baseline/arm-framework-head-1b602e8-pytest.log",
       "log_sha256": "f757b6a77bb0f0d9ff0c2fdc8aac761ecdc7539baaa5badeef0707da299de25d"
     }
   ]
