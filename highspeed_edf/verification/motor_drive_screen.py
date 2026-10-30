@@ -364,9 +364,19 @@ def run_screen(repo_root: Path, inputs: dict[str, Any], input_path: Path,
                                   "can_length_mm": variant["can_length_mm"],
                                   "evidence_class": variant["evidence_class"], **bound})
 
+    # Conservative planning envelope: take the largest diameter and length
+    # independently across the recorded claims. This is an analytical box,
+    # not a measured or supplier-certified package.
+    planning_envelope = {
+        "diameter_mm": max(float(v["diameter_mm"]) for v in motor_variants),
+        "can_length_mm": max(float(v["can_length_mm"]) for v in motor_variants),
+        "dimension_policy": "independent maxima across source variants; planning envelope only",
+        "evidence_class": "unverified conservative analytical envelope; actual SKU dimensions unverified",
+    }
+
     model_length = float(constants["MOTOR_CAN_LENGTH"])
     model_diameter = float(constants["MOTOR_CAN_D"])
-    required_pitch = max(float(v["can_length_mm"]) for v in motor_variants)
+    required_pitch = planning_envelope["can_length_mm"]
     delta_pitch = max(0.0, required_pitch - pitch)
     row_gaps = max(0, len(rotor_z) - 1)
     # Explicit bound: preserve current first/last end-clearance allowances and
@@ -402,8 +412,8 @@ def run_screen(repo_root: Path, inputs: dict[str, Any], input_path: Path,
                          "assumption": "preserves existing row-train end allowances; omits motor service length, tolerances, supports, and installed hardware"},
          "remaining": "Full rotor/motor/stator/shaft solids and native aero/performance sensitivity are not defined."},
         {"id": "off_axis_motor_with_shaft_belt_or_gear", "status": "BLOCKED",
-         "in_bore_bounds": [in_bore_motor_separation(duct_id, float(v["diameter_mm"]))
-                             for v in motor_variants],
+         "planning_envelope": planning_envelope,
+         "in_bore_bounds": [in_bore_motor_separation(duct_id, planning_envelope["diameter_mm"])],
          "remaining": "External mount, transmission, bearings, shafts, cooling, wires, supports, service volume, and drive losses have no sourced dimensions/evidence."},
         {"id": "two_driven_stages_per_duct", "status": "BLOCKED",
          "scenario_assumption": {"driven_rows_per_duct": two_row_count, "resulting_motor_count": reduced_motor_count},
@@ -432,6 +442,7 @@ def run_screen(repo_root: Path, inputs: dict[str, Any], input_path: Path,
         },
         "native_motor_geometry": native,
         "motor_conflict_variants": dimension_variants,
+        "motor_planning_envelope": planning_envelope,
         "shared_installed_constraints": integration_constraints,
         "alternatives": candidates,
         "unavailable_release_evidence": inputs["unavailable_release_evidence"],

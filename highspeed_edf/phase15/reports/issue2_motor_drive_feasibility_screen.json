@@ -45,35 +45,14 @@
             "motor_can_diameter_mm": 42.0,
             "necessary_cross_section_bound": "FAIL",
             "shortfall_mm": 6.0
-          },
-          {
-            "assumption": "both equal motor cans fully inside a circular bore; shafts/transmission excluded",
-            "duct_inner_diameter_mm": 78.0,
-            "maximum_center_separation_within_bore_mm": 42.0,
-            "minimum_center_separation_for_nonoverlap_mm": 36.0,
-            "motor_can_diameter_mm": 36.0,
-            "necessary_cross_section_bound": "PASS",
-            "shortfall_mm": 0.0
-          },
-          {
-            "assumption": "both equal motor cans fully inside a circular bore; shafts/transmission excluded",
-            "duct_inner_diameter_mm": 78.0,
-            "maximum_center_separation_within_bore_mm": 42.0,
-            "minimum_center_separation_for_nonoverlap_mm": 36.0,
-            "motor_can_diameter_mm": 36.0,
-            "necessary_cross_section_bound": "PASS",
-            "shortfall_mm": 0.0
-          },
-          {
-            "assumption": "both equal motor cans fully inside a circular bore; shafts/transmission excluded",
-            "duct_inner_diameter_mm": 78.0,
-            "maximum_center_separation_within_bore_mm": 42.0,
-            "minimum_center_separation_for_nonoverlap_mm": 36.0,
-            "motor_can_diameter_mm": 36.0,
-            "necessary_cross_section_bound": "PASS",
-            "shortfall_mm": 0.0
           }
         ],
+        "planning_envelope": {
+          "can_length_mm": 72.0,
+          "diameter_mm": 42.0,
+          "dimension_policy": "independent maxima across source variants; planning envelope only",
+          "evidence_class": "unverified conservative analytical envelope; actual SKU dimensions unverified"
+        },
         "remaining": "External mount, transmission, bearings, shafts, cooling, wires, supports, service volume, and drive losses have no sourced dimensions/evidence.",
         "status": "BLOCKED"
       },
@@ -225,6 +204,12 @@
         "zero_clearance_minimum_pitch_mm": 60.0
       }
     ],
+    "motor_planning_envelope": {
+      "can_length_mm": 72.0,
+      "diameter_mm": 42.0,
+      "dimension_policy": "independent maxima across source variants; planning envelope only",
+      "evidence_class": "unverified conservative analytical envelope; actual SKU dimensions unverified"
+    },
     "native_motor_geometry": {
       "collision_count": 6,
       "imported_solids": [
@@ -719,7 +704,7 @@
   "runner": {
     "path": "highspeed_edf/verification/motor_drive_screen.py",
     "python_version": "3.12.14",
-    "sha256": "bdd1ceb710845bb017ccf3b077cc48cb732d65e7e2f8bdb861089b010452f3ca"
+    "sha256": "11142aded860c2239ea3eb92ac17348b2301d92db2ad50a02a6281c63c38b1d0"
   },
   "scope": "preliminary necessary-bound calculations; no candidate selection",
   "screen_id": "MECH-ISSUE2-MOTOR-DRIVE-FEASIBILITY-0.1",

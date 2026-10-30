@@ -51,6 +51,9 @@ def test_end_to_end_screen_reimports_baseline_and_source_pinned_interfaces():
                 ("donor_3670_note", 34.0),
                 ("donor_3660_note", 24.0),
             ]
+    assert screen["motor_planning_envelope"]["diameter_mm"] == 42.0
+    assert screen["motor_planning_envelope"]["can_length_mm"] == 72.0
+    assert "actual SKU dimensions unverified" in screen["motor_planning_envelope"]["evidence_class"]
     assert integration["board_outlines"]["main"]["measured_edge_centerline_mm"] == [140.0, 100.0]
     assert integration["board_outlines"]["esc"]["measured_edge_centerline_mm"] == [173.8, 282.93]
     assert integration["board_outlines"]["main"]["placeholder_comparison_status"] == "PASS"
