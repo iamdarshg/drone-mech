@@ -24,13 +24,6 @@
     "fluidCells": 49208,
     "fluidVolumeM3": 1.9664193948341346,
     "wingVolumeM3": 0.0019472769454825743,
-    "patchFaceCounts": {
-      "fsi": 65,
-      "rootWall": 1,
-      "inlet": 1,
-      "outlet": 1,
-      "farfield": 4
-    },
     "domainM": {
       "xMin": -0.53125,
       "xMax": 0.79125,
@@ -38,7 +31,22 @@
       "yMax": 0.35,
       "zMin": -0.6950000000000001,
       "zMax": 1.4312399911202995
-    }
+    },
+    "gmshSurfaceElementCounts": {
+      "fsi": 65,
+      "rootWall": 1,
+      "inlet": 1,
+      "outlet": 1,
+      "farfield": 4
+    },
+    "openFoamBoundaryFaceCounts": {
+      "fsi": 4938,
+      "rootWall": 298,
+      "inlet": 184,
+      "outlet": 184,
+      "farfield": 1512
+    },
+    "countSource": "native gmshToFoam OpenFOAM polyMesh/boundary nFaces; Gmsh surface entity counts listed separately"
   },
   "stepSHA256": "4d2a6eefd10cc547d45baadd9207218de688696730c3722ae2247bf9c86ef2e2",
   "meshSHA256": "1eeeeea4145aabd579c2d6dd209ec5bf38daefc73225b4a56d9b2c84fb8d45a6"
