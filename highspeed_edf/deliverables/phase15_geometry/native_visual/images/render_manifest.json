@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "sourceCommit": "6b07330c9d77193e0c37a87994838a0edba0ac82",
+    "sourceStep": "highspeed_edf/deliverables/phase15_geometry/step/phase15_airframe_full_assembly.step",
+    "sourceStepSha256": "9b83f3bfa5ea261c2055152c9fdd2147b9e16819634715c3c4ae23b45deae772",
+    "geometryGenerator": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+    "geometryGeneratorSha256": "86275054adf53b862dd91bfb3a66b84da3470e8ea400af8e57d5e339ef124caf",
+    "assemblyNodes": 73,
+    "tessellatedSolids": 516,
+    "triangles": 61534,
+    "tessellation": {
+      "linearToleranceMm": 1.4,
+      "angularToleranceRad": 0.55
+    },
+    "renderer": "Blender 4.3.2",
+    "renderEngine": "Blender Eevee Next",
+    "pythonVersion": "3.12.14",
+    "cadQueryVersion": "2.7.0",
+    "openCascadeVersion": "7.8.1.1",
+    "pillowVersion": "12.3.0",
+    "resolutionPixels": [
+      1600,
+      1100
+    ],
+    "materials": "Opaque category colors; no part is moved or made transparent.",
+    "intermediateMesh": "Temporary OBJ; deleted after rendering; not included in this evidence package."
+  },
+  "views": [
+    {
+      "image": "01_exterior_isometric.png",
+      "title": "01 \u00b7 Exterior isometric",
+      "shownOrHidden": "All STEP components included; all opaque. No part is hidden or displaced.",
+      "sha256": "585b10fccfdb07de0cbb031bd8969bbdbb685cbec82967d3ab0803dcec579690"
+    },
+    {
+      "image": "02_plan_packaging_hidden_skins.png",
+      "title": "02 \u00b7 Plan packaging view",
+      "shownOrHidden": "Hidden: 3 wing sectors + fuselage battery-bay shell. Remaining components opaque.",
+      "sha256": "bc0375432c594cb64fb36daad5b21eb15c6c749e45105bb47dff53336c261cd6"
+    },
+    {
+      "image": "03_nose_projection.png",
+      "title": "03 \u00b7 Nose projection",
+      "shownOrHidden": "All STEP components included; all opaque. View along \u2212Z, X lateral / Y vertical.",
+      "sha256": "63b34a379af4d5530b137aa741624ae0b04aebea730379c73e41cfc5855c3428"
+    },
+    {
+      "image": "04_motor_envelopes_only.png",
+      "title": "04 \u00b7 Motor-envelope detail",
+      "shownOrHidden": [
+        "Visible: six motor_* envelope parts only; all other STEP components hidden.",
+        "Per duct Z spans: R1 12\u201392, R2 48\u2013128, R3 84\u2013164 mm; adjacent spans overlap by 36 mm."
+      ],
+      "sha256": "8a63121d796cbb8f6d4a99a5d5ed7ce97f7018b9c5e819ec22a4bc42e9d9f9af"
+    }
+  ],
+  "limitations": [
+    "Visual inspection of tessellated STEP geometry only; no CFD, structural, thermal, fatigue, or flight validation is implied.",
+    "The motor Z-span comparison is an envelope placement observation; the image is not a motor installation or clearance certification."
+  ]
+}
