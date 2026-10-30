@@ -14,7 +14,6 @@
   "changes": [
     "PIMPLE transonic yes",
     "p pressure solver PBiCGStab with DILU",
-    "three non-orthogonal correctors",
     "limited corrected laplacian coefficient 0.33"
   ],
   "unchanged": [
@@ -143,6 +142,11 @@
     "The PIMPLE stability improvement is evidence, not a controlled proof of single-factor causation; pressure mode, pressure solver, non-orthogonal correction, and laplacian treatment changed together.",
     "Checkpoint pressure loads are transient and omit viscous stress.",
     "The inboard cut is not the aircraft centerline and makes the skin pressure integral open at the inboard section.",
-    "Function-object setup failed during dry-run with an OpenFOAM IOstream sha1 fatal; manual checkpoint integration was used."
-  ]
+    "Function-object setup failed during dry-run with an OpenFOAM IOstream sha1 fatal; manual checkpoint integration was used.",
+    "The original transonic case dictionaries accidentally duplicate nNonOrthogonalCorrectors (3 then 1); OpenFOAM 1912 resolves to 1. The later cleaned continuation uses 3 and is recorded separately."
+  ],
+  "effectiveDictionaryValues": {
+    "PIMPLE.nNonOrthogonalCorrectors": 1,
+    "verifiedBy": "foamDictionary -entry PIMPLE.nNonOrthogonalCorrectors -value"
+  }
 }

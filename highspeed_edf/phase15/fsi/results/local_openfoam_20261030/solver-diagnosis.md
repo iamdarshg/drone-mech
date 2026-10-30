@@ -18,7 +18,7 @@ The native mesh passes `checkMesh`, but it is a coarse tetrahedral mesh with 34,
 
 ## Current outcome
 
-The corrected transonic PIMPLE cases are bounded transient stability tests only. The run logs, case dictionaries, source pins, checkpoint mass fluxes, and pressure-only load calculations are under `experiments/pimple_transonic/`. The raw baseline logs and existing mesh evidence remain in `raw/logs/` and `experiments/mesh_refine2x/`.
+The transonic PIMPLE results have a mixed history: the original 75 s cases had duplicate correction entries and used effective value 1; the cleaned 3-correction restart from those checkpoints failed thermodynamically. A separate fresh-from-zero 3-correction pair is under a bounded native run, with status and results recorded in `experiments/pimple_transonic_10min_fresh/`. None of these runs establishes independent mesh or time-step convergence. The cases remain bounded transient tests only. The run logs, case dictionaries, source pins, checkpoint mass fluxes, and pressure-only load calculations are under `experiments/pimple_transonic/`. The raw baseline logs and existing mesh evidence remain in `raw/logs/` and `experiments/mesh_refine2x/`.
 
 No convergence, final CL/CD, design ranking, full-aircraft aerodynamics, rotating EDF behavior, or aeroelastic result is claimed. The wing-sector pressure loads are transient, omit viscous stress, and exclude a physically loaded inboard cut surface. Candidate status remains unpromoted.
 
