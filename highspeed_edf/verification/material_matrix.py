@@ -57,7 +57,57 @@ def _declared_densities(generator: Path) -> dict:
     raise ValueError("generator has no literal MATERIAL_DENSITY_KG_M3 register")
 
 
-def build_matrix(generator: Path, mass_csv: Path) -> dict:
+REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+PIN_MANIFEST = Path(__file__).with_name("material_sources.json")
+PIN_MANIFEST_SHA256 = "324fbd8a65cc7dbc65f529b945ca3aee58780ed03f91e894605e43104844c2a3"
+
+
+def _check_pinned_sources(actual: dict, expected: dict) -> tuple[list[str], str | None]:
+    if set(actual) != set(expected):
+        return ["material input paths differ from the declared source pin manifest"], "FAIL"
+    mismatches = [
+        f"stale material source {path}: expected {expected[path]}, got {digest}"
+        for path, digest in actual.items() if digest != expected[path]
+    ]
+    return mismatches, "FAIL" if mismatches else None
+
+
+def _repo_relative(path: Path) -> str | None:
+    try:
+        return path.resolve().relative_to(REPOSITORY_ROOT).as_posix()
+    except ValueError:
+        return None
+
+
+def _verify_source_pins(generator: Path, mass_csv: Path, pin_manifest: Path = PIN_MANIFEST) -> tuple[dict, list[str], str | None]:
+    """Require exact repo-relative inputs and hashes from the reviewed baseline."""
+    if not generator.is_file() or not mass_csv.is_file():
+        return {}, ["one or more required material inputs are absent"], "BLOCKED"
+    try:
+        pins = json.loads(pin_manifest.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return {}, [f"material source pin manifest is absent: {pin_manifest}"], "BLOCKED"
+    except (OSError, json.JSONDecodeError) as exc:
+        return {}, [f"material source pin manifest cannot be read: {type(exc).__name__}: {exc}"], "FAIL"
+    if pin_manifest.resolve() != PIN_MANIFEST.resolve() or sha256(pin_manifest) != PIN_MANIFEST_SHA256:
+        return {}, ["material source pin manifest is changed or is not the reviewed manifest"], "FAIL"
+    actual = {}
+    for path in (generator, mass_csv):
+        relative = _repo_relative(path)
+        if relative is None:
+            return {}, [f"material input is outside the pinned repository: {path.name}"], "FAIL"
+        actual[relative] = sha256(path)
+    expected = pins.get("sources", {})
+    errors, status = _check_pinned_sources(actual, expected)
+    return actual, errors, status
+
+
+def build_matrix(generator: Path, mass_csv: Path, *, enforce_pins: bool = True, pin_manifest: Path = PIN_MANIFEST) -> dict:
+    source_hashes, pin_errors, pin_status = _verify_source_pins(generator, mass_csv, pin_manifest)
+    if enforce_pins and pin_status:
+        return {"schema_version": 1, "requirement": "drone-mech#4", "status": pin_status,
+                "source_sha256": source_hashes, "parts": [], "errors": pin_errors,
+                "unresolved_gates": []}
     densities = _declared_densities(generator)
     with mass_csv.open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))
@@ -74,6 +124,23 @@ def build_matrix(generator: Path, mass_csv: Path) -> dict:
             continue
         seen.add(name)
         if material == "not-geometrized":
+            parts.append({
+                "component": name,
+                "material_label": material,
+                "part_label_provenance": "source_mass_table_explicit_non_geometrized",
+                "part_label_source": _repo_relative(mass_csv) or mass_csv.name,
+                "nominal_density_kg_m3": None,
+                "density_provenance": "not_applicable_to_point_mass",
+                "process_proposal": "not_applicable_point_mass",
+                "process_provenance": "explicitly_excluded_from_physical_material_inventory",
+                "material_scope": "excluded_from_material_property_validation",
+                "exclusion_reason": "source row is a non-geometrized point mass, not a material assignment",
+                "hot_side_screen": "not_classified_hot_side",
+                "allowables": None,
+                "layup_and_coupon_status": "NOT_APPLICABLE_POINT_MASS",
+                "temperature_and_adhesive_status": "NOT_APPLICABLE_POINT_MASS",
+                "measured_mass_status": "BLOCKED_SOURCE_POINT_MASS_NOT_WEIGHED",
+            })
             continue
         density = densities.get(material)
         if density is None:
@@ -92,7 +159,7 @@ def build_matrix(generator: Path, mass_csv: Path) -> dict:
             "component": name,
             "material_label": material,
             "part_label_provenance": "source_mass_table",
-            "part_label_source": str(mass_csv),
+            "part_label_source": _repo_relative(mass_csv) or mass_csv.name,
             "nominal_density_kg_m3": density,
             "density_provenance": "generator_nominal_design_input" if density is not None else "missing",
             "process_proposal": _process_proposal(material),
@@ -104,7 +171,6 @@ def build_matrix(generator: Path, mass_csv: Path) -> dict:
             "measured_mass_status": "BLOCKED_NOT_WEIGHED",
         })
 
-    sources = {str(path): sha256(path) for path in (generator, mass_csv)}
     unresolved = [
         "supplier identity and batch/condition for each structural material",
         "printed core/mold/mandrel material choice and whether retained or removed",
@@ -121,10 +187,14 @@ def build_matrix(generator: Path, mass_csv: Path) -> dict:
         "schema_version": 1,
         "requirement": "drone-mech#4",
         "status": status,
-        "source_sha256": sources,
+        "source_revision": json.loads(pin_manifest.read_text(encoding="utf-8")).get("source_revision") if enforce_pins else "test_fixture_override",
+        "source_manifest_sha256": sha256(pin_manifest) if enforce_pins else None,
+        "source_sha256": source_hashes,
         "provenance_note": "Declared labels/densities are design inputs; proposals are not sourced qualifications; no physical measurements are present.",
-        "materials_used": sorted({part["material_label"] for part in parts}),
+        "materials_used": sorted({part["material_label"] for part in parts if part["material_label"] != "not-geometrized"}),
         "parts": parts,
+        "source_row_count": len(rows),
+        "mapped_row_count": len(parts),
         "unresolved_gates": unresolved,
         "errors": errors,
     }
@@ -146,13 +216,19 @@ def main(argv=None) -> int:
     parser.add_argument("--mass-csv", type=Path, required=True)
     parser.add_argument("--json", type=Path)
     args = parser.parse_args(argv)
-    result = build_matrix(args.generator, args.mass_csv)
+    try:
+        result = build_matrix(args.generator, args.mass_csv)
+    except Exception as exc:
+        result = {"schema_version": 1, "requirement": "drone-mech#4", "status": "BLOCKED",
+                  "source_sha256": {}, "parts": [], "errors": [
+                      f"material inventory could not read or parse its required inputs: {type(exc).__name__}: {exc}"
+                  ], "unresolved_gates": ["repair missing or malformed pinned source inputs"]}
     blob = json.dumps(result, indent=2, sort_keys=True, allow_nan=False) + "\n"
     if args.json:
         args.json.parent.mkdir(parents=True, exist_ok=True)
         args.json.write_text(blob, encoding="utf-8")
     print(blob, end="")
-    return 1 if result["status"] == "FAIL" else 0
+    return 1 if result["status"] in ("FAIL", "BLOCKED") else 0
 
 
 if __name__ == "__main__":
