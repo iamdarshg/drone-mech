@@ -1,6 +1,6 @@
 # Phase 15 fuselage shell bounds discrepancy
 
-Status: evidence report; cause not yet confirmed. No geometry or acceptance files are changed by this report.
+Status: compound-cut reproduction confirmed; repair unproven. No geometry or acceptance files are changed by this report.
 
 ## Pinned inputs
 
@@ -36,8 +36,19 @@ This returns approximately `194.03697 76.05756 84.00000 253001.32803 2`.
 
 As a source-only check, the outer loft built from the generator's listed stations was valid and one solid, with bbox X −105.89…105.89, Y −48.46…48.46, Z −360…280 mm and volume 7,955,314.2 mm³. This confirms that the stated axial span exists before the Boolean cuts.
 
-An instrumented attempt to run cuts one at a time completed the outer-loft construction, then did not complete the first `outer.cut(cavity)` within more than two minutes and was interrupted. This is a runtime observation, not proof that the cavity cut is defective; it did not produce a post-cut shape to compare.
+An isolated reproduction used the `make_body_shell()` stations and tools from the pinned generator blob above with CadQuery 2.7.0 / OCP 7.8.1.1. The exact `outer.cut(cq.Compound.makeCompound(cut_tools))` pattern completed in 157.3 seconds and returned a valid shape with two solids, volume 253001.3280 mm³, and bounds X −97.01849…97.01849, Y −38.02878…38.02878, Z −112…−28 mm. These match the pinned STEP manifest and volume. The source and STEP pins were read-only during this experiment. This confirms that the compound-cut operation reproduces the loss before STEP export; it does not identify which member of the compound or which kernel behavior is responsible.
 
-## Next experiment
+The proposed fixed-order individual-cut experiment was only partly completed. Using the same source-pinned lofts and tools, each reported stage returned valid geometry:
 
-On an isolated candidate branch, compare the current compound cut with cuts applied individually in a fixed order (cavity, each duct bore, each side slot, hatch). Record time, `isValid()`, solid count, volume, and six-axis bounds after every operation; also compare a fused tool where valid. Preserve the full station span and verify that the cavity, duct bores, side capture slots, and service aperture remain represented. Import the final candidate STEP back through CadQuery/OCP and review axial, side, and isometric native views. Do not claim a fix until the reimported candidate has the intended full axial envelope and valid geometry.
+| Operation | Time | Solids | Volume (mm³) | Bounds Z (mm) |
+| --- | ---: | ---: | ---: | ---: |
+| `outer.cut(cavity)` | 52.6 s | 2 | 1039788.372 | −360…280 |
+| first duct bore | 34.0 s | 3 | 953528.323 | −360…280 |
+| second duct bore | 71.8 s | 4 | 867266.614 | −360…280 |
+| first side slot | 161.1 s | 4 | 844511.609 | −360…280 |
+
+The second slot did not return within a further 300 seconds and was interrupted. The hatch stage was therefore not run, and no completed individually-cut candidate was exported or round-tripped. Timings varied with machine load (the first cavity cut took 41.0 seconds in a separate run); these measurements are diagnostic runtime observations, not performance guarantees. The evidence shows that the cavity, both duct bores, and first slot do not individually collapse the axial bounds. It does not establish the result of the second slot or hatch in the fixed-order path.
+
+## Remaining experiment
+
+Continue with a bounded experiment that isolates the second slot and hatch behavior, and compare sequential cuts with staged/fused tools where valid. A candidate repair must preserve the full station span while representing the cavity, duct bores, both side capture slots, and service aperture. Export and reimport the completed candidate through CadQuery/OCP, then inspect axial, side, and isometric native views. Do not claim a fix until the round-tripped candidate has the intended envelope and valid geometry.
