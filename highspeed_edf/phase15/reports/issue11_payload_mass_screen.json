@@ -1,0 +1,101 @@
+{
+  "schema": "MECH-PAYLOAD-001",
+  "issue": 11,
+  "evidence_status": "SCREENING_ONLY_BLOCKED_FOR_INSTALLATION",
+  "candidate": {
+    "name": "DJI Action 2 Camera Unit",
+    "source_url": "https://www.dji.com/action-2/specs",
+    "source_type": "manufacturer product specifications",
+    "mass_kg": 0.056,
+    "dimensions_mm": [
+      39.0,
+      39.0,
+      22.3
+    ],
+    "dimensions_order": [
+      "length",
+      "width",
+      "height"
+    ],
+    "source_note": "DJI lists the Camera Unit at 56 g and 39 \u00d7 39 \u00d7 22.3 mm. This is an online catalog candidate only; no unit was purchased or measured."
+  },
+  "baseline_mass_kg": 6.540621725977448,
+  "baseline_cg_mm": {
+    "x": 0.11015658731633139,
+    "y": 6.731202912057852,
+    "z": -3.964559341474005
+  },
+  "non_payload_mass_kg": 5.540621725977448,
+  "legacy_payload": {
+    "mass_kg": 1.0,
+    "cg_mm": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": -320.0
+    }
+  },
+  "scenarios": [
+    {
+      "scenario": "camera_plus_0kg_supplemental",
+      "camera_mass_kg": 0.056,
+      "supplemental_mass_kg": 0.0,
+      "combined_payload_mass_kg": 0.056,
+      "payload_mass_change_vs_legacy_kg": -0.944,
+      "total_mass_kg": 5.596621725977448,
+      "cg_mm": {
+        "x": 0.1287370495162231,
+        "y": 7.8665763319708875,
+        "z": 49.34214434315711
+      },
+      "cg_shift_vs_legacy_mm": {
+        "x": 0.01858046219989172,
+        "y": 1.1353734199130354,
+        "z": 53.30670368463112
+      }
+    },
+    {
+      "scenario": "camera_plus_0.25kg_supplemental",
+      "camera_mass_kg": 0.056,
+      "supplemental_mass_kg": 0.25,
+      "combined_payload_mass_kg": 0.306,
+      "payload_mass_change_vs_legacy_kg": -0.694,
+      "total_mass_kg": 5.846621725977448,
+      "cg_mm": {
+        "x": 0.1232322872984015,
+        "y": 7.530203606803016,
+        "z": 33.54917185179031
+      },
+      "cg_shift_vs_legacy_mm": {
+        "x": 0.013075699982070102,
+        "y": 0.799000694745164,
+        "z": 37.51373119326432
+      }
+    },
+    {
+      "scenario": "camera_plus_0.944kg_supplemental",
+      "camera_mass_kg": 0.056,
+      "supplemental_mass_kg": 0.944,
+      "combined_payload_mass_kg": 1.0,
+      "payload_mass_change_vs_legacy_kg": 0.0,
+      "total_mass_kg": 6.540621725977448,
+      "cg_mm": {
+        "x": 0.11015658731633139,
+        "y": 6.731202912057852,
+        "z": -3.9645593414740015
+      },
+      "cg_shift_vs_legacy_mm": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 3.552713678800501e-15
+      }
+    }
+  ],
+  "blocked_gates": [
+    "payload bay/available envelope is unspecified; camera dimensions cannot be checked for fit",
+    "camera location is inherited from an analyst-selected point mass, not a mounting datum",
+    "mount, cable, power, thermal, vibration, hatch, and service envelopes are absent",
+    "online catalog values are not independently measured or physically validated"
+  ],
+  "source_manifest_sha256": "e94fcf30b4253205dc1cb9f4cb86f816e0d44f78c1748b5d7cd57c24ac5a769c",
+  "baseline_revision": "236056ff6e5036eaf5bed27b8ba361f84b1bb090"
+}
