@@ -19,9 +19,10 @@ from .native_adapters import (
 )
 
 MECH = Path(__file__).resolve().parents[2]
+HIGH_SPEED = MECH / "highspeed_edf"
 ARM = MECH.parent / "drone-arm"
-GEOMETRY = MECH / "deliverables/phase15_geometry"
-GENERATOR = MECH / "phase15/optimization/phase15_generate_geometry.py"
+GEOMETRY = HIGH_SPEED / "deliverables/phase15_geometry"
+GENERATOR = HIGH_SPEED / "phase15/optimization/phase15_generate_geometry.py"
 MASS_CSV = GEOMETRY / "reports/mass_cg.csv"
 
 
