@@ -17,7 +17,7 @@ with Mcas = CAS / sqrt(1.4 R 288.15 K). At 3 km, the corresponding Mach is recov
 | 700 km/h | 25,110.53 Pa | 0.676045 | 222.132 m/s |
 | 900 km/h | 43,729.58 Pa | 0.861815 | 283.172 m/s |
 
-These are the freestream conditions applied to the compressible cases. The 900 km/h point is high subsonic and is appropriate for a compressible assessment; this incomplete run does not establish shock behavior or aerodynamic coefficients.
+The velocities were applied to the compressible cases; Mach and true airspeed use the conversion reference pressure stated above. The 900 km/h point is high subsonic and is appropriate for a compressible assessment; this incomplete run does not establish shock behavior or aerodynamic coefficients.
 
 ## Solver and mesh evidence
 
