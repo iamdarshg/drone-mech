@@ -1,0 +1,162 @@
+"""Build a local FreeCAD CAM profile preview for one actual Sheet A rotor blank.
+
+Run from the repository after generating the Phase 15 geometry artifacts:
+  QT_QPA_PLATFORM=offscreen freecadcmd make_sheet_a_cam_preview.FCMacro
+This creates an FCStd and literal Path command dump beside this macro. It does
+not postprocess machine code or establish a usable machining process.
+"""
+import FreeCAD as App
+import Part
+import json
+import hashlib
+import os
+import traceback
+import Path.Main.Job as PathJob
+import Path.Main.Stock as PathStock
+import Path.Op.Profile as PathProfile
+import Path.Tool.Bit as PathToolBit
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../.."))
+SOURCE = os.path.join(ROOT, "highspeed_edf/deliverables/phase15_geometry/stock_nests/sheet_A_250x120x5_36rotors_63stators.step")
+OUT = os.path.dirname(__file__)
+
+try:
+    if not os.path.isfile(SOURCE):
+        raise FileNotFoundError("Generate Phase 15 geometry first: " + SOURCE)
+
+    doc = App.newDocument("Phase15_SheetA_CAM_Exploration")
+    Part.insert(SOURCE, doc.Name)
+    doc.recompute()
+    objects = [o for o in doc.Objects if hasattr(o, "Shape") and not o.Shape.isNull()]
+    rotors = [o for o in objects if abs(o.Shape.BoundBox.XLength - 29.0) < 0.1 and abs(o.Shape.BoundBox.ZLength - 5.0) < 0.1]
+    if len(rotors) != 36:
+        raise RuntimeError("Expected 36 29 mm rotor blanks; found %d" % len(rotors))
+    part = rotors[0]
+
+    job = PathJob.Create("Job", [part], None)
+    job.Label = "Exploratory profile job — one rotor blank only"
+    stock = PathStock.CreateBox(job, App.Vector(250, 120, 5), App.Placement(App.Vector(0, 0, 0), App.Rotation()))
+    job.Stock = stock
+
+    # Create a real FreeCAD ToolBit with the user-specified diameter, two
+    # flutes, carbide material and an 8 mm cutting-edge estimate. The saved
+    # bit geometry is a flute-only proxy: shank diameter and usable reach are
+    # explicitly unknown and not drawn as measured geometry.
+    tool_controller = job.Tools.Group[0]
+    tool = PathToolBit.Factory.CreateFromAttrs({
+        "shape": "endmill.fcstd",
+        "name": "2 mm two-flute carbide end mill (provisional)",
+        "parameter": {
+            "Diameter": "2 mm",
+            "CuttingEdgeHeight": "8 mm",
+            # The FreeCAD tool shape is intentionally clipped at the flute
+            # envelope. Its Length is not an assertion about actual OAL/reach.
+            "Length": "8 mm",
+            "ShankDiameter": "0 mm",
+            "Flutes": "2",
+            "Material": "Carbide",
+        },
+        "attribute": {},
+    }, "ToolBit_2mm_2flute_carbide")
+    tool.Label = "2 mm 2-flute carbide — 8 mm flute estimate; shank/reach unknown"
+    tool.Proxy._updateBitShape(tool)
+    tool.Proxy.unloadBitBody(tool)
+    tool.addProperty("App::PropertyString", "ShankMeasurement", "Assumptions")
+    tool.ShankMeasurement = "Unknown/unmeasured; native zero placeholder only disables shank geometry"
+    tool.addProperty("App::PropertyString", "ReachMeasurement", "Assumptions")
+    tool.ReachMeasurement = "Unknown; flute estimate is not usable reach or stickout"
+    tool.addProperty("App::PropertyString", "FluteLengthBasis", "Assumptions")
+    tool.FluteLengthBasis = "Approximate 8 mm, modeled at the low end of the user estimate 8–10 mm"
+    tool_controller.Tool = tool
+    tool_controller.Label = "2 mm 2-flute carbide — provisional geometry only"
+
+    # Face51 is the source blank's bottom planar face. Selecting it lets Path
+    # infer a 0 mm final depth from the exact 5 mm STEP solid.
+    op = PathProfile.Create("Profile")
+    op.Base = [(part, ["Face51"])]
+    op.Label = "Exploratory outer profile — one rotor blank"
+    op.Comment = "Geometry-only preview from supplied 5 mm STEP stock nest. Not fabrication-ready."
+    op.ToolController = tool_controller
+    op.SafeHeight = 10.0
+    op.ClearanceHeight = 15.0
+    job.addObject(op)
+    doc.recompute()
+
+    commands = op.Path.Commands
+    fcstd_path = os.path.join(OUT, "sheet_A_one_rotor_profile_exploratory.FCStd")
+    doc.saveAs(fcstd_path)
+    with open(os.path.join(OUT, "path_commands.txt"), "w", encoding="utf-8") as stream:
+        stream.write("\n".join(str(command) for command in commands) + "\n")
+
+    cutting_z = sorted({round(command.Parameters["Z"], 4) for command in commands
+                        if "Z" in command.Parameters and command.Name in ("G1", "G2", "G3")})
+    result = {
+        "source_step": os.path.relpath(SOURCE, ROOT),
+        "source_stock_mm": [250, 120, 5],
+        "requested_stock_mm": [250, 120, 6],
+        "source_thickness_preserved_mm": 5,
+        "source_blank_count_rotors": 36,
+        "operation_scope": "one rotor blank profile only",
+        "representative_blank_bounds_mm": [part.Shape.BoundBox.XLength, part.Shape.BoundBox.YLength, part.Shape.BoundBox.ZLength],
+        "nominal_tool_diameter_mm": float(op.OpToolDiameter),
+        "tool_material": tool.Material,
+        "tool_flute_count": int(tool.Flutes),
+        "tool_cutting_edge_height_estimate_mm": float(tool.CuttingEdgeHeight),
+        "tool_shape_envelope_mm": [tool.Shape.BoundBox.XLength, tool.Shape.BoundBox.YLength, tool.Shape.BoundBox.ZLength],
+        "tool_shape_scope": "flute-only envelope; shank and overall reach not modeled",
+        "shank_diameter": "unknown/unmeasured; no value inferred",
+        "usable_reach_or_stickout": "unknown/unmeasured; not represented by flute length",
+        "flute_length_basis": "approximate 8 mm, at lower end of user's 8–10 mm estimate",
+        "path_stepdown_property_mm": float(op.StepDown),
+        "cutting_z_levels_mm": cutting_z,
+        "path_command_count": len(commands),
+        "freecad_version": ".".join(App.Version()[:3]),
+        "source_step_sha256": hashlib.sha256(open(SOURCE, "rb").read()).hexdigest(),
+        "material_assumption": "6061 requested by user; STEP geometry does not encode machining material behavior",
+        "feed_and_spindle": "unspecified; no machinability claim",
+        "tool_maker_helix_center_cut_and_runout": "unspecified",
+        "fixturing_tabs_and_retention": "not modeled",
+        "machine_postprocessor": "not selected",
+        "nc_postprocessed": False,
+        "hardware_used": False,
+        "fabrication_ready": False,
+    }
+    with open(os.path.join(OUT, "result.json"), "w", encoding="utf-8") as stream:
+        json.dump(result, stream, indent=2)
+        stream.write("\n")
+
+    # Verify the saved native document rather than just the in-memory object.
+    App.closeDocument(doc.Name)
+    saved = App.openDocument(fcstd_path)
+    saved_tool = next(o for o in saved.Objects if hasattr(o, "FluteLengthBasis"))
+    saved_controller = next(o for o in saved.Objects if hasattr(o, "Tool") and o.Tool == saved_tool)
+    saved_profile = next(o for o in saved.Objects if o.Label == "Exploratory outer profile — one rotor blank")
+    checks = {
+        "diameter_mm": float(saved_tool.Diameter),
+        "flutes": int(saved_tool.Flutes),
+        "material": str(saved_tool.Material),
+        "cutting_edge_height_mm": float(saved_tool.CuttingEdgeHeight),
+        "tool_length_parameter_mm": float(saved_tool.Length),
+        "tool_length_parameter_scope": "8 mm flute-only shape proxy; not overall tool length or usable reach",
+        "shank_shape_suppression_parameter_mm": float(saved_tool.ShankDiameter),
+        "shape_bounds_mm": [saved_tool.Shape.BoundBox.XLength, saved_tool.Shape.BoundBox.YLength, saved_tool.Shape.BoundBox.ZLength],
+        "controller_diameter_mm": float(saved_profile.OpToolDiameter),
+        "shank_status": saved_tool.ShankMeasurement,
+        "reach_status": saved_tool.ReachMeasurement,
+    }
+    if checks["diameter_mm"] != 2 or checks["flutes"] != 2 or checks["material"] != "Carbide":
+        raise RuntimeError("Saved tool identity did not persist: %r" % checks)
+    if abs(checks["cutting_edge_height_mm"] - 8) > 1e-6 or any(
+        abs(actual - expected) > 1e-5
+        for actual, expected in zip(checks["shape_bounds_mm"], [2.0, 2.0, 8.0])
+    ):
+        raise RuntimeError("Saved tool geometry did not persist: %r" % checks)
+    if abs(checks["controller_diameter_mm"] - 2) > 1e-6:
+        raise RuntimeError("Saved Path operation is not linked to the 2 mm tool: %r" % checks)
+    with open(os.path.join(OUT, "tool_verification.json"), "w", encoding="utf-8") as stream:
+        json.dump(checks, stream, indent=2)
+        stream.write("\n")
+    print("CAM_PREVIEW_OK", len(commands), "commands; saved tool verified", checks)
+except Exception:
+    traceback.print_exc()
+    raise

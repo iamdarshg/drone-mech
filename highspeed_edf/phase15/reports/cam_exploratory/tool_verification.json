@@ -1,0 +1,17 @@
+{
+  "diameter_mm": 2.0,
+  "flutes": 2,
+  "material": "Carbide",
+  "cutting_edge_height_mm": 8.0,
+  "tool_length_parameter_mm": 8.0,
+  "tool_length_parameter_scope": "8 mm flute-only shape proxy; not overall tool length or usable reach",
+  "shank_shape_suppression_parameter_mm": 0.0,
+  "shape_bounds_mm": [
+    2.0000000000000004,
+    2.0000000000000018,
+    8.0
+  ],
+  "controller_diameter_mm": 2.0,
+  "shank_status": "Unknown/unmeasured; native zero placeholder only disables shank geometry",
+  "reach_status": "Unknown; flute estimate is not usable reach or stickout"
+}

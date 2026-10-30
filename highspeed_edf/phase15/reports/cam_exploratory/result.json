@@ -1,0 +1,51 @@
+{
+  "source_step": "highspeed_edf/deliverables/phase15_geometry/stock_nests/sheet_A_250x120x5_36rotors_63stators.step",
+  "source_stock_mm": [
+    250,
+    120,
+    5
+  ],
+  "requested_stock_mm": [
+    250,
+    120,
+    6
+  ],
+  "source_thickness_preserved_mm": 5,
+  "source_blank_count_rotors": 36,
+  "operation_scope": "one rotor blank profile only",
+  "representative_blank_bounds_mm": [
+    29.000000000000014,
+    8.564103626009286,
+    5.0
+  ],
+  "nominal_tool_diameter_mm": 2.0,
+  "tool_material": "Carbide",
+  "tool_flute_count": 2,
+  "tool_cutting_edge_height_estimate_mm": 8.0,
+  "tool_shape_envelope_mm": [
+    2.0000000000000004,
+    2.0000000000000018,
+    8.0
+  ],
+  "tool_shape_scope": "flute-only envelope; shank and overall reach not modeled",
+  "shank_diameter": "unknown/unmeasured; no value inferred",
+  "usable_reach_or_stickout": "unknown/unmeasured; not represented by flute length",
+  "flute_length_basis": "approximate 8 mm, at lower end of user's 8\u201310 mm estimate",
+  "path_stepdown_property_mm": 2.0,
+  "cutting_z_levels_mm": [
+    0.0,
+    1.0,
+    3.0
+  ],
+  "path_command_count": 44,
+  "freecad_version": "1.0.0",
+  "source_step_sha256": "f9a8b9f55d9711dcfafa27f25edf7447ae3189a4db49cd23a72c4497a2c0b233",
+  "material_assumption": "6061 requested by user; STEP geometry does not encode machining material behavior",
+  "feed_and_spindle": "unspecified; no machinability claim",
+  "tool_maker_helix_center_cut_and_runout": "unspecified",
+  "fixturing_tabs_and_retention": "not modeled",
+  "machine_postprocessor": "not selected",
+  "nc_postprocessed": false,
+  "hardware_used": false,
+  "fabrication_ready": false
+}
