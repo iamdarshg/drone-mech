@@ -1,0 +1,275 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/rhoSimpleFoam -case /workspace/openfoam-run/wing_ias700
+Date   : Oct 30 2026
+Time   : 14:23:22
+Host   : 19f430e79a8a
+PID    : 66810
+I/O    : uncollated
+Case   : /workspace/openfoam-run/wing_ias700
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+SIMPLE: convergence criteria
+    field p	 tolerance 1e-05
+    field U	 tolerance 1e-05
+    field h	 tolerance 1e-05
+    field k	 tolerance 1e-05
+    field omega	 tolerance 1e-05
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.5555555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+No MRF models present
+
+No finite volume options present
+
+Starting time loop
+
+Time = 1
+
+smoothSolver:  Solving for Ux, Initial residual = 1, Final residual = 0.02941820665, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 1, Final residual = 0.02096596882, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.9999999591, Final residual = 0.01951983981, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.9999678411, Final residual = 0.02362370608, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 8.051603846e-08, No Iterations 93
+DICPCG:  Solving for p, Initial residual = 0.1195306129, Final residual = 9.171133721e-08, No Iterations 59
+time step continuity errors : sum local = 8.615736274e-06, global = 6.324530893e-07, cumulative = 6.324530893e-07
+smoothSolver:  Solving for omega, Initial residual = 0.002545319122, Final residual = 5.540852973e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 1, Final residual = 0.03399510895, No Iterations 1
+ExecutionTime = 0.22 s  ClockTime = 0 s
+
+Time = 2
+
+smoothSolver:  Solving for Ux, Initial residual = 0.361326345, Final residual = 0.01033402258, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.3275109027, Final residual = 0.009318100355, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.3291327862, Final residual = 0.009285390453, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.9933506276, Final residual = 0.02105819112, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.2932769425, Final residual = 9.6356682e-08, No Iterations 82
+DICPCG:  Solving for p, Initial residual = 0.07114584257, Final residual = 9.729591807e-08, No Iterations 57
+time step continuity errors : sum local = 1.890837883e-05, global = 7.336777334e-07, cumulative = 1.366130823e-06
+smoothSolver:  Solving for omega, Initial residual = 0.00183928924, Final residual = 4.119776933e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.2128599872, Final residual = 0.00722653476, No Iterations 1
+ExecutionTime = 0.34 s  ClockTime = 0 s
+
+Time = 3
+
+smoothSolver:  Solving for Ux, Initial residual = 0.227206779, Final residual = 0.006345244488, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.2087488055, Final residual = 0.005798167681, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.2444200797, Final residual = 0.006873746021, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.4787877231, Final residual = 0.01120493321, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.3384058549, Final residual = 9.531631146e-08, No Iterations 77
+DICPCG:  Solving for p, Initial residual = 0.04038527906, Final residual = 8.480124625e-08, No Iterations 55
+time step continuity errors : sum local = 3.370582211e-05, global = 4.808817359e-08, cumulative = 1.414218996e-06
+smoothSolver:  Solving for omega, Initial residual = 0.001560523587, Final residual = 3.648191624e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.1137971761, Final residual = 0.003864180292, No Iterations 1
+ExecutionTime = 0.46 s  ClockTime = 0 s
+
+Time = 4
+
+smoothSolver:  Solving for Ux, Initial residual = 0.1716513194, Final residual = 0.004562664736, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.1528309863, Final residual = 0.00398390939, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.1874453772, Final residual = 0.004983420269, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.3285752733, Final residual = 0.008254333006, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.1382723965, Final residual = 8.303980517e-08, No Iterations 77
+DICPCG:  Solving for p, Initial residual = 0.04370931254, Final residual = 8.350183678e-08, No Iterations 55
+time step continuity errors : sum local = 3.534106846e-05, global = 1.079179695e-06, cumulative = 2.493398692e-06
+smoothSolver:  Solving for omega, Initial residual = 0.001414677904, Final residual = 3.457007381e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.07851606399, Final residual = 0.002678117814, No Iterations 1
+ExecutionTime = 0.59 s  ClockTime = 0 s
+
+Time = 5
+
+smoothSolver:  Solving for Ux, Initial residual = 0.1442063697, Final residual = 0.003638639254, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.1242776493, Final residual = 0.003142100557, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.1570127908, Final residual = 0.004024405022, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.2649453078, Final residual = 0.00705315583, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.1007051781, Final residual = 9.541958139e-08, No Iterations 76
+DICPCG:  Solving for p, Initial residual = 0.1309136276, Final residual = 9.915693941e-08, No Iterations 60
+time step continuity errors : sum local = 1.600506197e-05, global = -1.101544484e-06, cumulative = 1.391854208e-06
+smoothSolver:  Solving for omega, Initial residual = 0.001311722053, Final residual = 3.326544726e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.06027553455, Final residual = 0.002055457413, No Iterations 1
+ExecutionTime = 0.73 s  ClockTime = 0 s
+
+Time = 6
+
+smoothSolver:  Solving for Ux, Initial residual = 0.1229621545, Final residual = 0.002960251617, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.1032384656, Final residual = 0.00243530635, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.1445375847, Final residual = 0.00356562534, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.2318389026, Final residual = 0.006442004776, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.1149062302, Final residual = 9.922035207e-08, No Iterations 77
+DICPCG:  Solving for p, Initial residual = 0.0748883183, Final residual = 8.990678112e-08, No Iterations 57
+time step continuity errors : sum local = 3.160029183e-05, global = -4.189106412e-07, cumulative = 9.729435666e-07
+smoothSolver:  Solving for omega, Initial residual = 0.001190466618, Final residual = 3.122256033e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.04916959342, Final residual = 0.001670226792, No Iterations 1
+ExecutionTime = 0.85 s  ClockTime = 0 s
+
+Time = 7
+
+smoothSolver:  Solving for Ux, Initial residual = 0.1049715203, Final residual = 0.002411974062, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.08521934159, Final residual = 0.001887764674, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.1332791932, Final residual = 0.003193109023, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.2190122274, Final residual = 0.006119734902, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.2368622466, Final residual = 9.087920115e-08, No Iterations 78
+DICPCG:  Solving for p, Initial residual = 0.04610783179, Final residual = 8.815843031e-08, No Iterations 55
+time step continuity errors : sum local = 6.487666923e-05, global = -2.837029066e-06, cumulative = -1.8640855e-06
+smoothSolver:  Solving for omega, Initial residual = 0.001040368181, Final residual = 2.801960627e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.04107902635, Final residual = 0.001390422482, No Iterations 1
+ExecutionTime = 0.97 s  ClockTime = 0 s
+
+Time = 8
+
+smoothSolver:  Solving for Ux, Initial residual = 0.1046921977, Final residual = 0.002428119806, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.08145650986, Final residual = 0.001840277718, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.1299812329, Final residual = 0.003085676952, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.2203843655, Final residual = 0.005912193492, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.34498468, Final residual = 8.776411942e-08, No Iterations 80
+DICPCG:  Solving for p, Initial residual = 0.05355114095, Final residual = 7.631739081e-08, No Iterations 55
+time step continuity errors : sum local = 5.907495257e-05, global = -1.352440394e-06, cumulative = -3.216525894e-06
+smoothSolver:  Solving for omega, Initial residual = 0.0008817137572, Final residual = 2.42051505e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.03604359408, Final residual = 0.001219220215, No Iterations 1
+ExecutionTime = 1.09 s  ClockTime = 1 s
+
+Time = 9
+
+smoothSolver:  Solving for Ux, Initial residual = 0.140204801, Final residual = 0.003608060592, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.1064536534, Final residual = 0.00271255585, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.1551094705, Final residual = 0.003914767177, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.2334878783, Final residual = 0.006063327219, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.1753971204, Final residual = 9.798095025e-08, No Iterations 76
+DICPCG:  Solving for p, Initial residual = 0.1404585975, Final residual = 8.415474163e-08, No Iterations 58
+time step continuity errors : sum local = 2.821559466e-05, global = 2.24892834e-06, cumulative = -9.675975533e-07
+smoothSolver:  Solving for omega, Initial residual = 0.0007605282039, Final residual = 2.12907781e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.03492189957, Final residual = 0.001184565482, No Iterations 1
+ExecutionTime = 1.21 s  ClockTime = 1 s
+
+Time = 10
+
+smoothSolver:  Solving for Ux, Initial residual = 0.1621130091, Final residual = 0.004255420446, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.1262209435, Final residual = 0.003367196197, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.2069843929, Final residual = 0.005615928788, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.2557860923, Final residual = 0.00643411964, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.1842913181, Final residual = 7.67692812e-08, No Iterations 78
+DICPCG:  Solving for p, Initial residual = 0.09642422212, Final residual = 9.475315954e-08, No Iterations 56
+time step continuity errors : sum local = 5.532806092e-05, global = -6.791474817e-07, cumulative = -1.646745035e-06
+smoothSolver:  Solving for omega, Initial residual = 0.0007088817246, Final residual = 2.012937345e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.03529853034, Final residual = 0.001185674206, No Iterations 1
+ExecutionTime = 1.33 s  ClockTime = 1 s
+
+Time = 11
+
+smoothSolver:  Solving for Ux, Initial residual = 0.1487438395, Final residual = 0.00401869357, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.121968211, Final residual = 0.003273068903, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.2322081831, Final residual = 0.006250474854, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.2736875663, Final residual = 0.006883470563, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.3399204889, Final residual = 9.785228083e-08, No Iterations 79
+DICPCG:  Solving for p, Initial residual = 0.05594602995, Final residual = 9.336212612e-08, No Iterations 57
+time step continuity errors : sum local = 0.0001164067868, global = 5.978024111e-06, cumulative = 4.331279076e-06
+smoothSolver:  Solving for omega, Initial residual = 0.0007042690778, Final residual = 1.769527727e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.03804711217, Final residual = 0.001217076928, No Iterations 1
+ExecutionTime = 1.45 s  ClockTime = 1 s
+
+Time = 12
+
+smoothSolver:  Solving for Ux, Initial residual = 0.1362447332, Final residual = 0.003591620962, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.1161878598, Final residual = 0.002998879574, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.141730493, Final residual = 0.003839113546, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.2779124402, Final residual = 0.007296054241, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 0.3262516564, Final residual = 4.106526452e-08, No Iterations 288
+DICPCG:  Solving for p, Initial residual = 0.07225706441, Final residual = 5.349964603e-08, No Iterations 246
+time step continuity errors : sum local = 6.29479321e-05, global = 2.389454726e-06, cumulative = 6.720733802e-06
+smoothSolver:  Solving for omega, Initial residual = 0.001647719424, Final residual = 3.545131662e-05, No Iterations 1
+bounding omega, min: -43935.77413 max: 214600.649 average: 1149.578869
+smoothSolver:  Solving for k, Initial residual = 0.03663456776, Final residual = 0.001145088663, No Iterations 1
+ExecutionTime = 1.71 s  ClockTime = 1 s
+
+Time = 13
+
+smoothSolver:  Solving for Ux, Initial residual = 0.1346267347, Final residual = 0.003503655049, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.1396218673, Final residual = 0.003556892152, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.1019499196, Final residual = 0.002656212086, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.4299647155, Final residual = 0.01101764887, No Iterations 1
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::sigFpe::sigHandler(int) at ??:?
+#2  ? in /lib/x86_64-linux-gnu/libc.so.6
+#3  ? in /lib/x86_64-linux-gnu/libm.so.6
+#4  Foam::hePsiThermo<Foam::psiThermo, Foam::pureMixture<Foam::sutherlandTransport<Foam::species::thermo<Foam::hConstThermo<Foam::perfectGas<Foam::specie> >, Foam::sensibleEnthalpy> > > >::calculate(Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> const&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>&, Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>&, bool) at ??:?
+#5  Foam::hePsiThermo<Foam::psiThermo, Foam::pureMixture<Foam::sutherlandTransport<Foam::species::thermo<Foam::hConstThermo<Foam::perfectGas<Foam::specie> >, Foam::sensibleEnthalpy> > > >::correct() at ??:?
+#6  ? in /workspace/openfoam-deb/usr/bin/rhoSimpleFoam
+#7  ? in /lib/x86_64-linux-gnu/libc.so.6
+#8  __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+#9  ? in /workspace/openfoam-deb/usr/bin/rhoSimpleFoam
+[19f430e79a8a:66810:0:66810] Caught signal 8 (Floating point exception: tkill(2) or tgkill(2))
+==== backtrace (tid:  66810) ====
+ 0  /lib/x86_64-linux-gnu/libucs.so.0(ucs_handle_error+0x2bc) [0x7f7d9a68664c]
+ 1  /lib/x86_64-linux-gnu/libucs.so.0(+0x3182f) [0x7f7d9a68682f]
+ 2  /lib/x86_64-linux-gnu/libucs.so.0(+0x31afa) [0x7f7d9a686afa]
+ 3  /lib/x86_64-linux-gnu/libc.so.6(+0x3fd70) [0x7f7d9cffbd70]
+ 4  /lib/x86_64-linux-gnu/libc.so.6(+0x9469c) [0x7f7d9d05069c]
+ 5  /lib/x86_64-linux-gnu/libc.so.6(gsignal+0x12) [0x7f7d9cffbc42]
+ 6  /lib/x86_64-linux-gnu/libc.so.6(+0x3fd70) [0x7f7d9cffbd70]
+ 7  /lib/x86_64-linux-gnu/libm.so.6(+0x14f5c) [0x7f7d9d1f1f5c]
+ 8  /workspace/openfoam-deb/usr/lib/libfluidThermophysicalModels.so(_ZN4Foam11hePsiThermoINS_9psiThermoENS_11pureMixtureINS_19sutherlandTransportINS_7species6thermoINS_12hConstThermoINS_10perfectGasINS_6specieEEEEENS_16sensibleEnthalpyEEEEEEEE9calculateERKNS_14GeometricFieldIdNS_12fvPatchFieldENS_7volMeshEEERSJ_SM_SM_SM_SM_b+0x1500) [0x7f7d9f034eb0]
+ 9  /workspace/openfoam-deb/usr/lib/libfluidThermophysicalModels.so(_ZN4Foam11hePsiThermoINS_9psiThermoENS_11pureMixtureINS_19sutherlandTransportINS_7species6thermoINS_12hConstThermoINS_10perfectGasINS_6specieEEEEENS_16sensibleEnthalpyEEEEEEEE7correctEv+0x50) [0x7f7d9f034f40]
+10  /workspace/openfoam-deb/usr/bin/rhoSimpleFoam(+0x27f75) [0x56016ed7cf75]
+11  /lib/x86_64-linux-gnu/libc.so.6(+0x29ca8) [0x7f7d9cfe5ca8]
+12  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x85) [0x7f7d9cfe5d65]
+13  /workspace/openfoam-deb/usr/bin/rhoSimpleFoam(+0x2bb61) [0x56016ed80b61]
+=================================

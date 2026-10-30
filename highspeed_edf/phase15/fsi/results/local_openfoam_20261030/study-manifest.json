@@ -1,0 +1,73 @@
+{
+  "studyDate": "2026-10-30",
+  "repo": "iamdarshg/drone-mech",
+  "baseCommit": "6c0198b12ce0695f9a7f6eb48e9c66a6f26a1427",
+  "branch": "codex/local-openfoam-cfd-evidence-20261030",
+  "solverPackage": {
+    "name": "OpenFOAM",
+    "version": "1912.200626-3+b1",
+    "build": "OPENFOAM=1912 patch=200626",
+    "solverSteady": "rhoSimpleFoam",
+    "solverTransient": "rhoPimpleFoam"
+  },
+  "sourceGeometry": {
+    "candidate": "Phase-15 wing_t30mm",
+    "scope": "outboard wing sector x=80.33..260 mm; fixed rigid component only",
+    "fluidMesh": "highspeed_edf/phase15/fsi/cases/wing_t30mm/fluid/wing.msh",
+    "fluidMeshSHA256": "4f5a100ddf29afeb890f68626e60fccefe3d2530e777bc864d3e126dbf5c6cb4",
+    "wingSTEP": "highspeed_edf/phase15/fsi/cases/wing_t30mm/solid/wing.step",
+    "wingSTEPSHA256": "cbc8d038aade82a88a26515bb4d82f57c4b6dd290173214f2f03e8732186ce6d",
+    "gmshElements": 34166,
+    "openFoamCells": 34166,
+    "points": 7158,
+    "connectedRegions": 1
+  },
+  "conditions": {
+    "altitudeM": 3000,
+    "staticPressurePa": 70108,
+    "staticTemperatureK": 268.65,
+    "gamma": 1.4,
+    "gasConstantJkgK": 287.05,
+    "angleOfAttackDeg": 0.5,
+    "airspeedAssumption": "CAS approximately IAS; CAS converted to 3 km Mach and TAS with isentropic Pitot relations"
+  },
+  "cases": [
+    {
+      "casKmh": 700,
+      "pitotImpactPressurePa": 25110.5339446905,
+      "mach": 0.6760445412213765,
+      "tasMps": 222.13220429717072,
+      "meshCheck": "Mesh OK",
+      "steadySolver": "SIGFPE before convergence, approximately iteration 13 during thermodynamic correction after omega became strongly negative",
+      "transientSolver": "interrupted after 42.5 s wall time; latest log time 3.2305828e-05 s of 0.004 s; latest deltaT 1.96585377e-10 s; maxCo 0.40000005"
+    },
+    {
+      "casKmh": 900,
+      "pitotImpactPressurePa": 43729.5762637186,
+      "mach": 0.8618149633208082,
+      "tasMps": 283.1719595766233,
+      "meshCheck": "Mesh OK",
+      "steadySolver": "SIGFPE before convergence, approximately iteration 5 during thermodynamic correction",
+      "transientSolver": "interrupted after 3.9 s wall time; latest log time 8.7245773e-06 s of 0.004 s; latest deltaT 3.286305738e-07 s; maxCo 0.400568"
+    }
+  ],
+  "claims": {
+    "converged": false,
+    "forceCoefficientsAvailable": false,
+    "massFlowBalanceVerified": false,
+    "gridSensitivity": false,
+    "timeStepSensitivity": false,
+    "fullAircraft": false,
+    "rotatingEDF": false,
+    "preCICE": false,
+    "promoteCandidate": false
+  },
+  "evidencePaths": [
+    "raw/logs/gmshToFoam.log",
+    "raw/logs/checkMesh.log",
+    "raw/logs/rhoSimpleFoam_ias700.log",
+    "raw/logs/rhoSimpleFoam_ias900.log",
+    "raw/logs/rhoPimpleFoam_ias700.log",
+    "raw/logs/rhoPimpleFoam_ias900.log"
+  ]
+}

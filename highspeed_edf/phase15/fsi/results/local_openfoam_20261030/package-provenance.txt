@@ -1,0 +1,23 @@
+Local Debian snapshot used (no root install, no Docker):
+https://snapshot.debian.org/archive/debian/20260925T181338Z/
+Suite: trixie; architecture: amd64
+
+Package: openfoam
+Version: 1912.200626-3+b1
+Filename: pool/main/o/openfoam/openfoam_1912.200626-3+b1_amd64.deb
+Size: 24,123,176 bytes
+SHA256: 79959979587cae196dc92024e97501dc244768e1a36d75858776cb1fd49d386c
+Installed-Size: 155,860 KiB
+
+Package: libopenfoam
+Version: 1912.200626-3+b1
+Filename: pool/main/o/openfoam/libopenfoam_1912.200626-3+b1_amd64.deb
+Size: 45,434,872 bytes
+SHA256: 3ee623d08b2eb38caa06aa1bf608f7df83ef858d79fe010a70be70089a046ce6
+Installed-Size: 273,606 KiB
+
+Both packages were extracted with dpkg-deb -x to /workspace/openfoam-deb.
+ldd on rhoPimpleFoam resolves all listed shared libraries with
+LD_LIBRARY_PATH=/workspace/openfoam-deb/usr/lib. The OpenFOAM executable logs
+identify OPENFOAM=1912 patch=200626. The install_rootless.sh helper downloads
+these exact pinned files and verifies their hashes before extraction.

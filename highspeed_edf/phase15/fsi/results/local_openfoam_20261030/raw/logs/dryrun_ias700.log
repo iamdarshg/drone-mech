@@ -1,0 +1,102 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/rhoSimpleFoam -dry-run
+Date   : Oct 30 2026
+Time   : 14:22:04
+Host   : 19f430e79a8a
+PID    : 66676
+I/O    : uncollated
+Case   : /workspace/openfoam-run/wing_ias700
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Operating in 'dry-run' mode: case will run for 1 time step.  All checks assumed OK on a clean exit
+Creating simplified mesh using "/workspace/openfoam-run/wing_ias700/constant/polyMesh"
+Mesh bounds: (-0.4045757692 -0.35 -0.6204661212) (0.7449057692 0.35 1.320013837)
+Creating dummy zone fluid
+
+SIMPLE: convergence criteria
+    field p	 tolerance 1e-05
+    field U	 tolerance 1e-05
+    field h	 tolerance 1e-05
+    field k	 tolerance 1e-05
+    field omega	 tolerance 1e-05
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.5555555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+No MRF models present
+
+No finite volume options present
+
+Starting time loop
+
+Time = 1
+
+smoothSolver:  Solving for Uy, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for Uz, Initial residual = 1, Final residual = 0.0003112019308, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 1, Final residual = 0.09057197867, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.7945205477, Final residual = 0.623287671, No Iterations 1000
+GAMG:  Solving for p, Initial residual = 0.4008810572, Final residual = 0.9779735681, No Iterations 1000
+GAMG:  Solving for p, Initial residual = 0.9999999998, Final residual = 1.315315315, No Iterations 1000
+time step continuity errors : sum local = 4.330018923e-11, global = 2.06148037e-12, cumulative = 2.06148037e-12
+smoothSolver:  Solving for omega, Initial residual = 0.3530937571, Final residual = 5.204825381e-06, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 1, Final residual = 0.0003509427761, No Iterations 1
+ExecutionTime = 0.03 s  ClockTime = 0 s
+
+End
+

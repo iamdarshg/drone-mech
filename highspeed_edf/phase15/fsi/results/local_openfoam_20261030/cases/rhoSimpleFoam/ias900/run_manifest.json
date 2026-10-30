@@ -1,0 +1,23 @@
+{
+  "case": "wing_ias900",
+  "sourceCase": "highspeed_edf/phase15/fsi/cases/wing_t30mm/fluid",
+  "sourceMeshSHA256": "4f5a100ddf29afeb890f68626e60fccefe3d2530e777bc864d3e126dbf5c6cb4",
+  "sourceGeometrySHA256": "cbc8d038aade82a88a26515bb4d82f57c4b6dd290173214f2f03e8732186ce6d",
+  "sourceGmshMeshCells": 34166,
+  "openfoam": "Debian OpenFOAM 1912.200626-3+b1",
+  "solver": "rhoSimpleFoam",
+  "scope": "Rigid, fixed Phase-15 outboard wing sector; no preCICE, no moving/rotating EDF, not full aircraft",
+  "iasCasKmh": 900,
+  "altitudeM": 3000,
+  "staticPressurePa": 70108.0,
+  "staticTemperatureK": 268.65,
+  "calibratedPitotImpactPressurePa": 43729.57626371862,
+  "mach": 0.8618149633208082,
+  "tasMps": 283.1719595766233,
+  "angleOfAttackDeg": 0.5,
+  "turbulenceIntensity": 0.01,
+  "omegaInletPerS": 180,
+  "maxIterations": 1000,
+  "stopCriteria": "residualControl p,U,h,k,omega < 1e-5; otherwise iteration limit",
+  "meshCheck": "shared source mesh; gmshToFoam/checkMesh in parent evidence"
+}

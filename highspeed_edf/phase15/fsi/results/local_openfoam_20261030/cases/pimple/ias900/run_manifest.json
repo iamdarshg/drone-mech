@@ -1,0 +1,19 @@
+{
+  "case": "wing_ias900_pimple",
+  "sourceMeshSHA256": "4f5a100ddf29afeb890f68626e60fccefe3d2530e777bc864d3e126dbf5c6cb4",
+  "sourceGeometrySHA256": "cbc8d038aade82a88a26515bb4d82f57c4b6dd290173214f2f03e8732186ce6d",
+  "sourceGmshCells": 34166,
+  "solver": "rhoPimpleFoam OpenFOAM 1912.200626-3+b1",
+  "scope": "Rigid fixed outboard wing sector only; static mesh; no preCICE or moving/rotating EDF; not full aircraft",
+  "iasCasKmh": 900,
+  "altitudeM": 3000,
+  "pStaticPa": 70108.0,
+  "tStaticK": 268.65,
+  "pitotImpactPressurePa": 43729.57626371862,
+  "mach": 0.8618149633208082,
+  "tasMps": 283.1719595766233,
+  "aoaDeg": 0.5,
+  "timeHorizonSeconds": 0.004,
+  "maxCourant": 0.4,
+  "maxDeltaT": 2e-05
+}
