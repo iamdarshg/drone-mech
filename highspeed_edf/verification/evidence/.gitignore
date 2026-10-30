@@ -4,3 +4,5 @@
 !baseline/
 baseline/*
 !baseline/baseline_manifest.json
+!baseline/mech-pytest.log
+!baseline/arm-pytest.log

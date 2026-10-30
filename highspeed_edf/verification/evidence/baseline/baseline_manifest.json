@@ -4,7 +4,7 @@
     "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c",
     "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8"
   },
-  "python": "3.12.11",
+  "python": "3.12.x (patch version not captured during baseline)",
   "pytest": "8.4.2",
   "runs": [
     {
