@@ -25,7 +25,7 @@ For each 700 and 900 km/h CAS case, steady solver configuration was based on the
 
 Both terminated with SIGFPE before convergence; see the corresponding full logs.
 
-The fixed-wing transient cases use the same source mesh and static state, rhoPimpleFoam, Euler time stepping, maxCo 0.4, adaptive deltaT, and endTime 0.004 s. Both parser/dry-run checks passed. Actual commands were:
+The fixed-wing transient cases use the same source mesh, rhoPimpleFoam, Euler time stepping, maxCo 0.4, adaptive deltaT, and endTime 0.004 s. The CAS conversion reference pressure was 70,108 Pa, while the copied source 0/p dictionary retained 70,100 Pa; the pressure file was not rewritten. Both parser/dry-run checks passed. Actual commands were:
 
     rhoPimpleFoam -case /workspace/openfoam-run/wing_ias700_pimple
     rhoPimpleFoam -case /workspace/openfoam-run/wing_ias900_pimple

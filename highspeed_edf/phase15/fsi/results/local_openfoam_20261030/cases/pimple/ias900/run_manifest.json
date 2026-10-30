@@ -7,13 +7,15 @@
   "scope": "Rigid fixed outboard wing sector only; static mesh; no preCICE or moving/rotating EDF; not full aircraft",
   "iasCasKmh": 900,
   "altitudeM": 3000,
-  "pStaticPa": 70108.0,
   "tStaticK": 268.65,
   "pitotImpactPressurePa": 43729.57626371862,
-  "mach": 0.8618149633208082,
-  "tasMps": 283.1719595766233,
   "aoaDeg": 0.5,
   "timeHorizonSeconds": 0.004,
   "maxCourant": 0.4,
-  "maxDeltaT": 2e-05
+  "maxDeltaT": 2e-05,
+  "casConversionReferencePressurePa": 70108.0,
+  "solverStaticPressurePa": 70100.0,
+  "solverInitialAndBoundaryPressureSource": "copied from source case 0/p; preserved without rewrite",
+  "machFromCasConversion": 0.8618149633208082,
+  "tasAppliedInUFieldMps": 283.1719595766233
 }

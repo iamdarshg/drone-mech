@@ -9,15 +9,17 @@
   "scope": "Rigid, fixed Phase-15 outboard wing sector; no preCICE, no moving/rotating EDF, not full aircraft",
   "iasCasKmh": 700,
   "altitudeM": 3000,
-  "staticPressurePa": 70108.0,
-  "staticTemperatureK": 268.65,
   "calibratedPitotImpactPressurePa": 25110.5339446905,
-  "mach": 0.6760445412213765,
-  "tasMps": 222.13220429717072,
   "angleOfAttackDeg": 0.5,
   "turbulenceIntensity": 0.01,
   "omegaInletPerS": 180,
   "maxIterations": 1000,
   "stopCriteria": "residualControl p,U,h,k,omega < 1e-5; otherwise iteration limit",
-  "meshCheck": "shared source mesh; gmshToFoam/checkMesh in parent evidence"
+  "meshCheck": "shared source mesh; gmshToFoam/checkMesh in parent evidence",
+  "casConversionReferencePressurePa": 70108.0,
+  "solverStaticPressurePa": 70100.0,
+  "solverInitialAndBoundaryPressureSource": "copied from source case 0/p; preserved without rewrite",
+  "machFromCasConversion": 0.6760445412213765,
+  "tasAppliedInUFieldMps": 222.13220429717072,
+  "tStaticK": 268.65
 }

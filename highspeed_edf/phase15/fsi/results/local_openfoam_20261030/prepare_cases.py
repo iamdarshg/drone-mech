@@ -26,14 +26,18 @@ def main():
     env["LD_LIBRARY_PATH"] = str(foam / "usr/lib") + (":" + env["LD_LIBRARY_PATH"] if env.get("LD_LIBRARY_PATH") else "")
     logs = out / "logs"; logs.mkdir()
     for kmh in (700, 900):
-        p0, p, t0, t, R, gamma = 101325.0, 70108.0, 288.15, 268.65, 287.05, 1.4
+        p0, p_conversion, t0, t, R, gamma = 101325.0, 70108.0, 288.15, 268.65, 287.05, 1.4
         cas = kmh / 3.6
         mcas = cas / math.sqrt(gamma * R * t0)
         qc = p0 * ((1 + (gamma - 1) / 2 * mcas**2) ** (gamma / (gamma - 1)) - 1)
-        mach = math.sqrt(2 / (gamma - 1) * ((1 + qc / p) ** ((gamma - 1) / gamma) - 1))
+        mach = math.sqrt(2 / (gamma - 1) * ((1 + qc / p_conversion) ** ((gamma - 1) / gamma) - 1))
         tas = mach * math.sqrt(gamma * R * t)
         case = out / f"ias{kmh}"
         shutil.copytree(SOURCE, case)
+        p_match = re.search(r"internalField\s+uniform\s+([0-9.eE+-]+)\s*;", (case / "0/p").read_text())
+        if not p_match:
+            raise RuntimeError("Could not read preserved source static pressure from 0/p")
+        p_solver = float(p_match.group(1))
         with (logs / f"gmshToFoam_ias{kmh}.log").open("w") as f:
             subprocess.run([str(foam / "usr/bin/gmshToFoam"), "wing.msh"], cwd=case, env=env, stdout=f, stderr=subprocess.STDOUT, check=True)
         (case / "system/controlDict").write_text('''FoamFile { version 2.0; format ascii; class dictionary; location "system"; object controlDict; }
@@ -83,7 +87,25 @@ relaxationFactors { fields { p 0.3; } equations { U 0.5; h 0.5; k 0.5; omega 0.5
                 k = 1.5 * (.01 * tas)**2
                 s = s.replace("internalField uniform 6.0;", f"internalField uniform {k:.12g};").replace("value uniform 6.0;", f"value uniform {k:.12g};").replace("inletValue uniform 6.0;", f"inletValue uniform {k:.12g};")
             path.write_text(s)
-        manifest = {"case":f"ias{kmh}", "sourceMeshSHA256":hashlib.sha256((SOURCE/"wing.msh").read_bytes()).hexdigest(), "sourceGeometrySHA256":hashlib.sha256(STEP.read_bytes()).hexdigest(), "solver":"rhoPimpleFoam OpenFOAM 1912.200626-3+b1", "scope":"Fixed Phase-15 outboard wing sector; static mesh, no preCICE, no rotating EDF, not full aircraft", "iasCasKmh":kmh, "altitudeM":3000, "pStaticPa":p, "tStaticK":t, "impactPressurePa":qc, "mach":mach, "tasMps":tas, "aoaDeg":0.5, "endTimeSeconds":0.004, "maxCourant":0.4}
+        candidate = {
+            "candidate": f"wing_t30mm_ias{kmh}_rigid",
+            "sourceCandidate": "wing_t30mm",
+            "sourceGeometry": "Phase-15 nominal wing section schedule; outboard sector x=80.33..260 mm",
+            "thicknessVariantMm": "wing_30mm",
+            "inputAirspeedKmh": kmh,
+            "airspeedType": "CAS approximately IAS",
+            "flowSpeedMps": tas,
+            "altitudeM": 3000,
+            "staticTemperatureK": t,
+            "solverStaticPressurePa": p_solver,
+            "casConversionReferencePressurePa": p_conversion,
+            "angleOfAttackDeg": 0.5,
+            "machFromCasConversion": mach,
+            "solver": "rhoPimpleFoam",
+            "coupling": "none; rigid fixed geometry"
+        }
+        (case / "candidate.json").write_text(json.dumps(candidate, indent=2) + "\n")
+        manifest = {"case":f"ias{kmh}", "sourceMeshSHA256":hashlib.sha256((SOURCE/"wing.msh").read_bytes()).hexdigest(), "sourceGeometrySHA256":hashlib.sha256(STEP.read_bytes()).hexdigest(), "solver":"rhoPimpleFoam OpenFOAM 1912.200626-3+b1", "scope":"Fixed Phase-15 outboard wing sector; static mesh, no preCICE, no rotating EDF, not full aircraft", "iasCasKmh":kmh, "altitudeM":3000, "casConversionReferencePressurePa":p_conversion, "solverStaticPressurePa":p_solver, "solverInitialAndBoundaryPressureSource":"copied from source case 0/p; preserved without rewrite", "tStaticK":t, "impactPressurePa":qc, "machFromCasConversion":mach, "tasAppliedInUFieldMps":tas, "aoaDeg":0.5, "endTimeSeconds":0.004, "maxCourant":0.4}
         (case / "run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
         for tool in ("checkMesh", "rhoPimpleFoam"):
             argv = [str(foam / "usr/bin" / tool), "-case", str(case)]

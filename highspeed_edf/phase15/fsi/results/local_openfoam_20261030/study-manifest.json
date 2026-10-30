@@ -24,31 +24,37 @@
   },
   "conditions": {
     "altitudeM": 3000,
-    "staticPressurePa": 70108,
     "staticTemperatureK": 268.65,
     "gamma": 1.4,
     "gasConstantJkgK": 287.05,
     "angleOfAttackDeg": 0.5,
-    "airspeedAssumption": "CAS approximately IAS; CAS converted to 3 km Mach and TAS with isentropic Pitot relations"
+    "airspeedAssumption": "CAS approximately IAS; CAS converted to 3 km Mach and TAS with isentropic Pitot relations",
+    "casConversionReferencePressurePa": 70108,
+    "solverStaticPressurePa": 70100,
+    "solverInitialAndBoundaryPressureSource": "The copied source-case 0/p dictionary has internal, outlet and farfield values of 70100 Pa; those run inputs were preserved."
   },
   "cases": [
     {
       "casKmh": 700,
       "pitotImpactPressurePa": 25110.5339446905,
-      "mach": 0.6760445412213765,
-      "tasMps": 222.13220429717072,
       "meshCheck": "Mesh OK",
       "steadySolver": "SIGFPE before convergence, approximately iteration 13 during thermodynamic correction after omega became strongly negative",
-      "transientSolver": "interrupted after 42.5 s wall time; latest log time 3.2305828e-05 s of 0.004 s; latest deltaT 1.96585377e-10 s; maxCo 0.40000005"
+      "transientSolver": "interrupted after 42.5 s wall time; latest log time 3.2305828e-05 s of 0.004 s; latest deltaT 1.96585377e-10 s; maxCo 0.40000005",
+      "casConversionReferencePressurePa": 70108,
+      "solverStaticPressurePa": 70100,
+      "solverMachFromConversion": 0.6760445412213765,
+      "tasAppliedInUFieldMps": 222.13220429717072
     },
     {
       "casKmh": 900,
       "pitotImpactPressurePa": 43729.5762637186,
-      "mach": 0.8618149633208082,
-      "tasMps": 283.1719595766233,
       "meshCheck": "Mesh OK",
       "steadySolver": "SIGFPE before convergence, approximately iteration 5 during thermodynamic correction",
-      "transientSolver": "interrupted after 3.9 s wall time; latest log time 8.7245773e-06 s of 0.004 s; latest deltaT 3.286305738e-07 s; maxCo 0.400568"
+      "transientSolver": "interrupted after 3.9 s wall time; latest log time 8.7245773e-06 s of 0.004 s; latest deltaT 3.286305738e-07 s; maxCo 0.400568",
+      "casConversionReferencePressurePa": 70108,
+      "solverStaticPressurePa": 70100,
+      "solverMachFromConversion": 0.8618149633208082,
+      "tasAppliedInUFieldMps": 283.1719595766233
     }
   ],
   "claims": {
