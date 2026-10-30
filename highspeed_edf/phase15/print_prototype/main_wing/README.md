@@ -12,6 +12,10 @@ are below 180 mm. This establishes an envelope screen only: bed adhesion,
 support, orientation, wall thickness, printing, assembly, and strength remain
 unverified. The partition volume check does not claim a fused reconstruction.
 
+The software screen and one STEP-to-STL exchange export are documented in
+[`manufacturing-software-screen.md`](manufacturing-software-screen.md). No actual
+slicing or CAM path generation was completed.
+
 Regenerate from the repository root with Python, CadQuery 2.7.0, OCP 7.8.1.1,
 and Matplotlib 3.10.8:
 
