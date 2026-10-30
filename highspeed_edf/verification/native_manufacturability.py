@@ -444,7 +444,13 @@ def main() -> int:
         assert segmented["allSourcePartHashesMatch"]
         assert segmented["allPieceHashesMatchManifest"]
         assert segmented["allPiecesValid"] and segmented["allPiecesStrictAxisAlignedEnvelopeFit"]
-        assert segmented["slicerDiscovery"]["result"] == "BLOCKED_NO_SUPPORTED_SLICER_EXECUTABLE_FOUND"
+        slicer = segmented["slicerDiscovery"]
+        assert set(slicer["available"]).issubset(slicer["searchedCommands"])
+        expected_slicer_result = (
+            "SLICER_FOUND_NOT_A_PRINTABILITY_RESULT" if slicer["available"]
+            else "BLOCKED_NO_SUPPORTED_SLICER_EXECUTABLE_FOUND"
+        )
+        assert slicer["result"] == expected_slicer_result
         mesh_bounds = {row["asset"]: row["bboxMm"]
                        for row in data["nativeToolEvidence"]["freecad"]["freecadTessellationCrosschecks"]}
         for key, asset_key in (("wing_left", "wing_left"), ("wing_center", "wing_center"),

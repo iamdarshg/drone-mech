@@ -2,7 +2,7 @@
 
 **Disposition:** BLOCKED machine-specific CAM and FDM feasibility. Fabrication release is not supported by this screen.
 
-CAD input revision (commit containing the measured STEP files and parameter register): `e0f8946bb51cbb84d616de58ac434798e205532d`. Geometry, register and screen-program hashes are recorded in the companion JSON.
+CAD input revision (commit containing the measured STEP files and parameter register): `706709d4a3785c45ddbb2964164ab4a0c31cc506`. Geometry, register and screen-program hashes are recorded in the companion JSON.
 
 ## Native geometry findings
 
