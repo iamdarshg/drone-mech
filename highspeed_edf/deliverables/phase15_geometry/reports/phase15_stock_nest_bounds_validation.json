@@ -1391,9 +1391,769 @@
       ],
       "blank_count": 99,
       "clearance_check": {
-        "candidate_pairs_exactly_checked": 0,
+        "exact_distance_window_mm": 1e-06,
         "minimum_bbox_clearance_lower_bound_mm": 1.4999999999997122,
-        "spacing_failures": []
+        "minimum_occ_distance_among_threshold_pairs_mm": 1.5,
+        "pairs_exactly_checked_at_or_near_threshold": 126,
+        "spacing_failures": [],
+        "threshold_pair_measurements": [
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 1,
+            "occ_distance_mm": 1.5,
+            "right_index": 2
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 1,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 9
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 2,
+            "occ_distance_mm": 1.5,
+            "right_index": 3
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 2,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 10
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 3,
+            "occ_distance_mm": 1.5,
+            "right_index": 4
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 3,
+            "occ_distance_mm": 1.8615947690932413,
+            "right_index": 11
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 4,
+            "occ_distance_mm": 1.5,
+            "right_index": 5
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 4,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 12
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 5,
+            "occ_distance_mm": 1.5,
+            "right_index": 6
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 5,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 13
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 6,
+            "occ_distance_mm": 1.5,
+            "right_index": 7
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 6,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 14
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 7,
+            "occ_distance_mm": 1.5,
+            "right_index": 8
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 7,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 15
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 8,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 16
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 9,
+            "occ_distance_mm": 1.5,
+            "right_index": 10
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 9,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 17
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 10,
+            "occ_distance_mm": 1.5,
+            "right_index": 11
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 10,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 18
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 11,
+            "occ_distance_mm": 1.5,
+            "right_index": 12
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 11,
+            "occ_distance_mm": 1.8615947690932413,
+            "right_index": 19
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 12,
+            "occ_distance_mm": 1.5,
+            "right_index": 13
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 12,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 20
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 13,
+            "occ_distance_mm": 1.5,
+            "right_index": 14
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 13,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 21
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 14,
+            "occ_distance_mm": 1.5,
+            "right_index": 15
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 14,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 22
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 15,
+            "occ_distance_mm": 1.5,
+            "right_index": 16
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 15,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 23
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 16,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 24
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 17,
+            "occ_distance_mm": 1.5,
+            "right_index": 18
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 17,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 25
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 18,
+            "occ_distance_mm": 1.5,
+            "right_index": 19
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 18,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 26
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 19,
+            "occ_distance_mm": 1.5,
+            "right_index": 20
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 19,
+            "occ_distance_mm": 1.8615947690932413,
+            "right_index": 27
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 20,
+            "occ_distance_mm": 1.5,
+            "right_index": 21
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 20,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 28
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 21,
+            "occ_distance_mm": 1.5,
+            "right_index": 22
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 21,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 29
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 22,
+            "occ_distance_mm": 1.5,
+            "right_index": 23
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 22,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 30
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 23,
+            "occ_distance_mm": 1.5,
+            "right_index": 24
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 23,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 31
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 24,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 32
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 25,
+            "occ_distance_mm": 1.5,
+            "right_index": 26
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997158,
+            "left_index": 25,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 33
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 26,
+            "occ_distance_mm": 1.5,
+            "right_index": 27
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997158,
+            "left_index": 26,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 34
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 27,
+            "occ_distance_mm": 1.5,
+            "right_index": 28
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997158,
+            "left_index": 27,
+            "occ_distance_mm": 1.8615947690932413,
+            "right_index": 35
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 28,
+            "occ_distance_mm": 1.5,
+            "right_index": 29
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997158,
+            "left_index": 28,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 36
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 29,
+            "occ_distance_mm": 1.5,
+            "right_index": 30
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 30,
+            "occ_distance_mm": 1.5,
+            "right_index": 31
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 31,
+            "occ_distance_mm": 1.5,
+            "right_index": 32
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 33,
+            "occ_distance_mm": 1.5,
+            "right_index": 34
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 33,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 37
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 33,
+            "occ_distance_mm": 1.707736751770229,
+            "right_index": 38
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 34,
+            "occ_distance_mm": 1.5,
+            "right_index": 35
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 34,
+            "occ_distance_mm": 2.409939458178583,
+            "right_index": 38
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 34,
+            "occ_distance_mm": 1.6436343867640981,
+            "right_index": 39
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 34,
+            "occ_distance_mm": 2.063109998321319,
+            "right_index": 40
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 35,
+            "occ_distance_mm": 1.5,
+            "right_index": 36
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 35,
+            "occ_distance_mm": 2.242190127637932,
+            "right_index": 40
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 35,
+            "occ_distance_mm": 1.513563465884169,
+            "right_index": 41
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 35,
+            "occ_distance_mm": 2.5467861210440517,
+            "right_index": 42
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 36,
+            "occ_distance_mm": 2.207427125763653,
+            "right_index": 42
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 36,
+            "occ_distance_mm": 1.5346478169855975,
+            "right_index": 43
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 37,
+            "occ_distance_mm": 1.5,
+            "right_index": 38
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999929,
+            "left_index": 38,
+            "occ_distance_mm": 1.5,
+            "right_index": 39
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999929,
+            "left_index": 39,
+            "occ_distance_mm": 1.5,
+            "right_index": 40
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 40,
+            "occ_distance_mm": 1.5,
+            "right_index": 41
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 41,
+            "occ_distance_mm": 1.5,
+            "right_index": 42
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 42,
+            "occ_distance_mm": 1.5,
+            "right_index": 43
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 43,
+            "occ_distance_mm": 1.5,
+            "right_index": 44
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 44,
+            "occ_distance_mm": 1.5,
+            "right_index": 45
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 45,
+            "occ_distance_mm": 1.5,
+            "right_index": 46
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 46,
+            "occ_distance_mm": 1.5,
+            "right_index": 47
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 47,
+            "occ_distance_mm": 1.5,
+            "right_index": 48
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 49,
+            "occ_distance_mm": 1.5,
+            "right_index": 50
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 50,
+            "occ_distance_mm": 1.5,
+            "right_index": 51
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 51,
+            "occ_distance_mm": 1.5,
+            "right_index": 52
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 52,
+            "occ_distance_mm": 1.5,
+            "right_index": 53
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 53,
+            "occ_distance_mm": 1.5,
+            "right_index": 54
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 54,
+            "occ_distance_mm": 1.5,
+            "right_index": 55
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 55,
+            "occ_distance_mm": 1.5,
+            "right_index": 56
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 56,
+            "occ_distance_mm": 1.5,
+            "right_index": 57
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 57,
+            "occ_distance_mm": 1.5,
+            "right_index": 58
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 58,
+            "occ_distance_mm": 1.5,
+            "right_index": 59
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 59,
+            "occ_distance_mm": 1.5,
+            "right_index": 60
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 61,
+            "occ_distance_mm": 1.5,
+            "right_index": 62
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 62,
+            "occ_distance_mm": 1.5,
+            "right_index": 63
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 63,
+            "occ_distance_mm": 1.5,
+            "right_index": 64
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 64,
+            "occ_distance_mm": 1.5,
+            "right_index": 65
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 65,
+            "occ_distance_mm": 1.5,
+            "right_index": 66
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 66,
+            "occ_distance_mm": 1.5,
+            "right_index": 67
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 67,
+            "occ_distance_mm": 1.5,
+            "right_index": 68
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 68,
+            "occ_distance_mm": 1.5,
+            "right_index": 69
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 69,
+            "occ_distance_mm": 1.5,
+            "right_index": 70
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 70,
+            "occ_distance_mm": 1.5,
+            "right_index": 71
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 71,
+            "occ_distance_mm": 1.5,
+            "right_index": 72
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 73,
+            "occ_distance_mm": 1.5,
+            "right_index": 74
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 74,
+            "occ_distance_mm": 1.5,
+            "right_index": 75
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 75,
+            "occ_distance_mm": 1.5,
+            "right_index": 76
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 76,
+            "occ_distance_mm": 1.5,
+            "right_index": 77
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 77,
+            "occ_distance_mm": 1.5,
+            "right_index": 78
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 78,
+            "occ_distance_mm": 1.5,
+            "right_index": 79
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 79,
+            "occ_distance_mm": 1.5,
+            "right_index": 80
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 80,
+            "occ_distance_mm": 1.5,
+            "right_index": 81
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 81,
+            "occ_distance_mm": 1.5,
+            "right_index": 82
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 82,
+            "occ_distance_mm": 1.5,
+            "right_index": 83
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 83,
+            "occ_distance_mm": 1.5,
+            "right_index": 84
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 85,
+            "occ_distance_mm": 1.5,
+            "right_index": 86
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999929,
+            "left_index": 86,
+            "occ_distance_mm": 1.5,
+            "right_index": 87
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999929,
+            "left_index": 87,
+            "occ_distance_mm": 1.5,
+            "right_index": 88
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 88,
+            "occ_distance_mm": 1.5,
+            "right_index": 89
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 89,
+            "occ_distance_mm": 1.5,
+            "right_index": 90
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 90,
+            "occ_distance_mm": 1.5,
+            "right_index": 91
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 91,
+            "occ_distance_mm": 1.5,
+            "right_index": 92
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 92,
+            "occ_distance_mm": 1.5,
+            "right_index": 93
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 93,
+            "occ_distance_mm": 1.5,
+            "right_index": 94
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 94,
+            "occ_distance_mm": 1.5,
+            "right_index": 95
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 95,
+            "occ_distance_mm": 1.5,
+            "right_index": 96
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999961,
+            "left_index": 97,
+            "occ_distance_mm": 1.5,
+            "right_index": 98
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999645,
+            "left_index": 98,
+            "occ_distance_mm": 1.5,
+            "right_index": 99
+          }
+        ]
       },
       "declared_stock_mm": [
         250.0,
@@ -2816,9 +3576,769 @@
       ],
       "blank_count": 99,
       "clearance_check": {
-        "candidate_pairs_exactly_checked": 0,
+        "exact_distance_window_mm": 1e-06,
         "minimum_bbox_clearance_lower_bound_mm": 1.4999999999997122,
-        "spacing_failures": []
+        "minimum_occ_distance_among_threshold_pairs_mm": 1.5,
+        "pairs_exactly_checked_at_or_near_threshold": 126,
+        "spacing_failures": [],
+        "threshold_pair_measurements": [
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 1,
+            "occ_distance_mm": 1.5,
+            "right_index": 2
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 1,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 9
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 2,
+            "occ_distance_mm": 1.5,
+            "right_index": 3
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 2,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 10
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 3,
+            "occ_distance_mm": 1.5,
+            "right_index": 4
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 3,
+            "occ_distance_mm": 1.8615947690932413,
+            "right_index": 11
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 4,
+            "occ_distance_mm": 1.5,
+            "right_index": 5
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 4,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 12
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 5,
+            "occ_distance_mm": 1.5,
+            "right_index": 6
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 5,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 13
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 6,
+            "occ_distance_mm": 1.5,
+            "right_index": 7
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 6,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 14
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 7,
+            "occ_distance_mm": 1.5,
+            "right_index": 8
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 7,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 15
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 8,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 16
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 9,
+            "occ_distance_mm": 1.5,
+            "right_index": 10
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 9,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 17
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 10,
+            "occ_distance_mm": 1.5,
+            "right_index": 11
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 10,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 18
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 11,
+            "occ_distance_mm": 1.5,
+            "right_index": 12
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 11,
+            "occ_distance_mm": 1.8615947690932413,
+            "right_index": 19
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 12,
+            "occ_distance_mm": 1.5,
+            "right_index": 13
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 12,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 20
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 13,
+            "occ_distance_mm": 1.5,
+            "right_index": 14
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 13,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 21
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 14,
+            "occ_distance_mm": 1.5,
+            "right_index": 15
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 14,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 22
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 15,
+            "occ_distance_mm": 1.5,
+            "right_index": 16
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 15,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 23
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 16,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 24
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 17,
+            "occ_distance_mm": 1.5,
+            "right_index": 18
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 17,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 25
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 18,
+            "occ_distance_mm": 1.5,
+            "right_index": 19
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 18,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 26
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 19,
+            "occ_distance_mm": 1.5,
+            "right_index": 20
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 19,
+            "occ_distance_mm": 1.8615947690932413,
+            "right_index": 27
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 20,
+            "occ_distance_mm": 1.5,
+            "right_index": 21
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997122,
+            "left_index": 20,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 28
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 21,
+            "occ_distance_mm": 1.5,
+            "right_index": 22
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 21,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 29
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 22,
+            "occ_distance_mm": 1.5,
+            "right_index": 23
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 22,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 30
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 23,
+            "occ_distance_mm": 1.5,
+            "right_index": 24
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 23,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 31
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 24,
+            "occ_distance_mm": 1.8615947690932417,
+            "right_index": 32
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 25,
+            "occ_distance_mm": 1.5,
+            "right_index": 26
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997158,
+            "left_index": 25,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 33
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 26,
+            "occ_distance_mm": 1.5,
+            "right_index": 27
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997158,
+            "left_index": 26,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 34
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 27,
+            "occ_distance_mm": 1.5,
+            "right_index": 28
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997158,
+            "left_index": 27,
+            "occ_distance_mm": 1.8615947690932413,
+            "right_index": 35
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 28,
+            "occ_distance_mm": 1.5,
+            "right_index": 29
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999997158,
+            "left_index": 28,
+            "occ_distance_mm": 1.8615947690932408,
+            "right_index": 36
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 29,
+            "occ_distance_mm": 1.5,
+            "right_index": 30
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 30,
+            "occ_distance_mm": 1.5,
+            "right_index": 31
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999716,
+            "left_index": 31,
+            "occ_distance_mm": 1.5,
+            "right_index": 32
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 33,
+            "occ_distance_mm": 1.5,
+            "right_index": 34
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 33,
+            "occ_distance_mm": 1.861594769093241,
+            "right_index": 37
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 33,
+            "occ_distance_mm": 1.707736751770229,
+            "right_index": 38
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 34,
+            "occ_distance_mm": 1.5,
+            "right_index": 35
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 34,
+            "occ_distance_mm": 2.409939458178583,
+            "right_index": 38
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 34,
+            "occ_distance_mm": 1.6436343867640981,
+            "right_index": 39
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 34,
+            "occ_distance_mm": 2.063109998321319,
+            "right_index": 40
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999858,
+            "left_index": 35,
+            "occ_distance_mm": 1.5,
+            "right_index": 36
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 35,
+            "occ_distance_mm": 2.242190127637932,
+            "right_index": 40
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 35,
+            "occ_distance_mm": 1.513563465884169,
+            "right_index": 41
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 35,
+            "occ_distance_mm": 2.5467861210440517,
+            "right_index": 42
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 36,
+            "occ_distance_mm": 2.207427125763653,
+            "right_index": 42
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.5,
+            "left_index": 36,
+            "occ_distance_mm": 1.5346478169855975,
+            "right_index": 43
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 37,
+            "occ_distance_mm": 1.5,
+            "right_index": 38
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999929,
+            "left_index": 38,
+            "occ_distance_mm": 1.5,
+            "right_index": 39
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999929,
+            "left_index": 39,
+            "occ_distance_mm": 1.5,
+            "right_index": 40
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 40,
+            "occ_distance_mm": 1.5,
+            "right_index": 41
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 41,
+            "occ_distance_mm": 1.5,
+            "right_index": 42
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 42,
+            "occ_distance_mm": 1.5,
+            "right_index": 43
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 43,
+            "occ_distance_mm": 1.5,
+            "right_index": 44
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 44,
+            "occ_distance_mm": 1.5,
+            "right_index": 45
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 45,
+            "occ_distance_mm": 1.5,
+            "right_index": 46
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 46,
+            "occ_distance_mm": 1.5,
+            "right_index": 47
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 47,
+            "occ_distance_mm": 1.5,
+            "right_index": 48
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 49,
+            "occ_distance_mm": 1.5,
+            "right_index": 50
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 50,
+            "occ_distance_mm": 1.5,
+            "right_index": 51
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 51,
+            "occ_distance_mm": 1.5,
+            "right_index": 52
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 52,
+            "occ_distance_mm": 1.5,
+            "right_index": 53
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 53,
+            "occ_distance_mm": 1.5,
+            "right_index": 54
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 54,
+            "occ_distance_mm": 1.5,
+            "right_index": 55
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 55,
+            "occ_distance_mm": 1.5,
+            "right_index": 56
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 56,
+            "occ_distance_mm": 1.5,
+            "right_index": 57
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 57,
+            "occ_distance_mm": 1.5,
+            "right_index": 58
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 58,
+            "occ_distance_mm": 1.5,
+            "right_index": 59
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 59,
+            "occ_distance_mm": 1.5,
+            "right_index": 60
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 61,
+            "occ_distance_mm": 1.5,
+            "right_index": 62
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 62,
+            "occ_distance_mm": 1.5,
+            "right_index": 63
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 63,
+            "occ_distance_mm": 1.5,
+            "right_index": 64
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 64,
+            "occ_distance_mm": 1.5,
+            "right_index": 65
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 65,
+            "occ_distance_mm": 1.5,
+            "right_index": 66
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 66,
+            "occ_distance_mm": 1.5,
+            "right_index": 67
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 67,
+            "occ_distance_mm": 1.5,
+            "right_index": 68
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 68,
+            "occ_distance_mm": 1.5,
+            "right_index": 69
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 69,
+            "occ_distance_mm": 1.5,
+            "right_index": 70
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 70,
+            "occ_distance_mm": 1.5,
+            "right_index": 71
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 71,
+            "occ_distance_mm": 1.5,
+            "right_index": 72
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 73,
+            "occ_distance_mm": 1.5,
+            "right_index": 74
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 74,
+            "occ_distance_mm": 1.5,
+            "right_index": 75
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 75,
+            "occ_distance_mm": 1.5,
+            "right_index": 76
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 76,
+            "occ_distance_mm": 1.5,
+            "right_index": 77
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 77,
+            "occ_distance_mm": 1.5,
+            "right_index": 78
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 78,
+            "occ_distance_mm": 1.5,
+            "right_index": 79
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 79,
+            "occ_distance_mm": 1.5,
+            "right_index": 80
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 80,
+            "occ_distance_mm": 1.5,
+            "right_index": 81
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 81,
+            "occ_distance_mm": 1.5,
+            "right_index": 82
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 82,
+            "occ_distance_mm": 1.5,
+            "right_index": 83
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 83,
+            "occ_distance_mm": 1.5,
+            "right_index": 84
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999218,
+            "left_index": 85,
+            "occ_distance_mm": 1.5,
+            "right_index": 86
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999929,
+            "left_index": 86,
+            "occ_distance_mm": 1.5,
+            "right_index": 87
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999929,
+            "left_index": 87,
+            "occ_distance_mm": 1.5,
+            "right_index": 88
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 88,
+            "occ_distance_mm": 1.5,
+            "right_index": 89
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999147,
+            "left_index": 89,
+            "occ_distance_mm": 1.5,
+            "right_index": 90
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 90,
+            "occ_distance_mm": 1.5,
+            "right_index": 91
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999872,
+            "left_index": 91,
+            "occ_distance_mm": 1.5,
+            "right_index": 92
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 92,
+            "occ_distance_mm": 1.5,
+            "right_index": 93
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 93,
+            "occ_distance_mm": 1.5,
+            "right_index": 94
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 94,
+            "occ_distance_mm": 1.5,
+            "right_index": 95
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999998863,
+            "left_index": 95,
+            "occ_distance_mm": 1.5,
+            "right_index": 96
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.499999999999961,
+            "left_index": 97,
+            "occ_distance_mm": 1.5,
+            "right_index": 98
+          },
+          {
+            "bbox_clearance_lower_bound_mm": 1.4999999999999645,
+            "left_index": 98,
+            "occ_distance_mm": 1.5,
+            "right_index": 99
+          }
+        ]
       },
       "declared_stock_mm": [
         300.0,

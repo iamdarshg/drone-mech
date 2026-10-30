@@ -5,15 +5,33 @@
   "units": "mm",
   "baseline": {
     "repository": "iamdarshg/drone-mech",
-    "source_revision": "fd8decc7c6683692ab04150a06c201ee7138aa3a",
+    "source_revision": "ff670b80b2b3ce925b03d14a91329bb7940e73d7",
     "main_baseline_revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
     "local_sources": [
-      {"path": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py", "sha256": "86275054adf53b862dd91bfb3a66b84da3470e8ea400af8e57d5e339ef124caf"},
-      {"path": "highspeed_edf/verification/native_adapters.py", "sha256": "7d816527d306fd5a09b29be7b78f3bf6dc9483ea90d58d0bdc0c461897709387"},
-      {"path": "highspeed_edf/deliverables/phase15_geometry/reports/phase15_parameter_register.json", "sha256": "aaac69bc1e8a614439ace408fac0430b9579f03563de208950ec3e20d95f011e"},
-      {"path": "highspeed_edf/deliverables/phase15_geometry/reports/phase15_geometry_audit.json", "sha256": "868475875c6c0511bf90f5d2534b73bd46c2b93ab6ebfdf0c7577a5409ceb1d6"},
-      {"path": "highspeed_edf/phase15/results/phase15_motor_and_rewind_v2.md", "sha256": "ff3c725aae134f8738be605b2efb656b97c673a0c2f654fcbb31c6f17c8a69db"},
-      {"path": "highspeed_edf/phase15/configs/source_snapshots/drone-mech-issue-2.md", "sha256": "79abc541d6048292849fb9e4e7949515491d8d7f30cb1e83718c20b8d3236275"}
+      {
+        "path": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+        "sha256": "53353da1c6f46d8cd9df7431209946869c0984908b269fb94d01f25a1cfabd47"
+      },
+      {
+        "path": "highspeed_edf/verification/native_adapters.py",
+        "sha256": "7d816527d306fd5a09b29be7b78f3bf6dc9483ea90d58d0bdc0c461897709387"
+      },
+      {
+        "path": "highspeed_edf/deliverables/phase15_geometry/reports/phase15_parameter_register.json",
+        "sha256": "aaac69bc1e8a614439ace408fac0430b9579f03563de208950ec3e20d95f011e"
+      },
+      {
+        "path": "highspeed_edf/deliverables/phase15_geometry/reports/phase15_geometry_audit.json",
+        "sha256": "868475875c6c0511bf90f5d2534b73bd46c2b93ab6ebfdf0c7577a5409ceb1d6"
+      },
+      {
+        "path": "highspeed_edf/phase15/results/phase15_motor_and_rewind_v2.md",
+        "sha256": "ff3c725aae134f8738be605b2efb656b97c673a0c2f654fcbb31c6f17c8a69db"
+      },
+      {
+        "path": "highspeed_edf/phase15/configs/source_snapshots/drone-mech-issue-2.md",
+        "sha256": "79abc541d6048292849fb9e4e7949515491d8d7f30cb1e83718c20b8d3236275"
+      }
     ],
     "native_motor_step_glob": "highspeed_edf/deliverables/phase15_geometry/step/motor_*_3670_*_envelope.step",
     "native_motor_step_sha256": {
@@ -23,7 +41,8 @@
       "motor_B_R1_3670_42x72_envelope.step": "496c7c8162c62161600a4cf5280c7f3a4ccaf5d2dbb58b1210c2b3950405f17a",
       "motor_B_R2_3670_42x72_envelope.step": "30befea1fd430a63a1e2d044b11555c219da975a32ecfe02cac12474841a4495",
       "motor_B_R3_3670_42x72_envelope.step": "8c11d58fd44e325e669a5a6c881bef998dab4ffd4ae51adfccf6a4390d8fb607"
-    }
+    },
+    "prior_source_revision": "fd8decc7c6683692ab04150a06c201ee7138aa3a"
   },
   "external_sources": {
     "issue2_text_snapshot_path": "highspeed_edf/phase15/configs/source_snapshots/drone-mech-issue-2.md",

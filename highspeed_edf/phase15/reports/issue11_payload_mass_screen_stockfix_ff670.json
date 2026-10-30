@@ -1,0 +1,112 @@
+{
+  "schema": "MECH-PAYLOAD-001",
+  "issue": 11,
+  "evidence_status": "SCREENING_ONLY_BLOCKED_FOR_INSTALLATION",
+  "candidate": {
+    "name": "DJI Action 2 Camera Unit",
+    "source_url": "https://dl.djicdn.com/downloads/DJI_Action_2/20211028UM/DJI_Action_2_User_Manual_V1.0_EN-11.pdf",
+    "source_type": "DJI manufacturer user manual, English, version 1.0, published 2021-10-28",
+    "mass_kg": 0.056,
+    "dimensions_mm": [
+      39.0,
+      39.0,
+      22.3
+    ],
+    "dimensions_order": [
+      "length",
+      "width",
+      "height"
+    ],
+    "source_note": "The bundled PDF is the retrieved manufacturer manual snapshot. The file SHA-256 is enforced by the screen CLI. Its Camera Unit table lists dimensions 39\u00d739\u00d722.3 mm and weight 56 g. No unit was purchased or measured.",
+    "retrieved_utc": "2026-10-30",
+    "source_snapshot": "highspeed_edf/phase15/configs/source_snapshots/DJI_Action_2_User_Manual_V1.0_EN-11.pdf",
+    "source_snapshot_sha256": "c71167c3b9ef8dfbe571aa6ad000c718ef9029011686150f895bc62e620b5586",
+    "source_location": "Specifications, printed page 20 / PDF page 21; DJI Action 2 Camera Unit"
+  },
+  "source_manifest_sha256": "c8cfa078bc39d41785a834dcb7807a439503f08e9f98944ebcf2b4e2468e40c3",
+  "baseline_revision": "236056ff6e5036eaf5bed27b8ba361f84b1bb090",
+  "source_pins": {
+    "mass_csv_revision": "236056ff6e5036eaf5bed27b8ba361f84b1bb090",
+    "mass_csv_sha256": "f5fe8171121c9c5ee5777ec81504b89da62a465d9a4bd0e04be03e40dd547498",
+    "generator_source_revision": "ff670b80b2b3ce925b03d14a91329bb7940e73d7",
+    "generator_sha256": "53353da1c6f46d8cd9df7431209946869c0984908b269fb94d01f25a1cfabd47",
+    "historical_generator_sha256": "86275054adf53b862dd91bfb3a66b84da3470e8ea400af8e57d5e339ef124caf"
+  },
+  "baseline_mass_kg": 6.540621725977448,
+  "baseline_cg_mm": {
+    "x": 0.11015658731633139,
+    "y": 6.731202912057852,
+    "z": -3.964559341474005
+  },
+  "non_payload_mass_kg": 5.540621725977448,
+  "legacy_payload": {
+    "mass_kg": 1.0,
+    "cg_mm": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": -320.0
+    }
+  },
+  "scenarios": [
+    {
+      "scenario": "camera_plus_0kg_supplemental",
+      "camera_mass_kg": 0.056,
+      "supplemental_mass_kg": 0.0,
+      "combined_payload_mass_kg": 0.056,
+      "payload_mass_change_vs_legacy_kg": -0.944,
+      "total_mass_kg": 5.596621725977448,
+      "cg_mm": {
+        "x": 0.1287370495162231,
+        "y": 7.8665763319708875,
+        "z": 49.34214434315711
+      },
+      "cg_shift_vs_legacy_mm": {
+        "x": 0.01858046219989172,
+        "y": 1.1353734199130354,
+        "z": 53.30670368463112
+      }
+    },
+    {
+      "scenario": "camera_plus_0.25kg_supplemental",
+      "camera_mass_kg": 0.056,
+      "supplemental_mass_kg": 0.25,
+      "combined_payload_mass_kg": 0.306,
+      "payload_mass_change_vs_legacy_kg": -0.694,
+      "total_mass_kg": 5.846621725977448,
+      "cg_mm": {
+        "x": 0.1232322872984015,
+        "y": 7.530203606803016,
+        "z": 33.54917185179031
+      },
+      "cg_shift_vs_legacy_mm": {
+        "x": 0.013075699982070102,
+        "y": 0.799000694745164,
+        "z": 37.51373119326432
+      }
+    },
+    {
+      "scenario": "camera_plus_0.944kg_supplemental",
+      "camera_mass_kg": 0.056,
+      "supplemental_mass_kg": 0.944,
+      "combined_payload_mass_kg": 1.0,
+      "payload_mass_change_vs_legacy_kg": 0.0,
+      "total_mass_kg": 6.540621725977448,
+      "cg_mm": {
+        "x": 0.11015658731633139,
+        "y": 6.731202912057852,
+        "z": -3.9645593414740015
+      },
+      "cg_shift_vs_legacy_mm": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 3.552713678800501e-15
+      }
+    }
+  ],
+  "blocked_gates": [
+    "payload bay/available envelope is unspecified; camera dimensions cannot be checked for fit",
+    "camera location is inherited from an analyst-selected point mass, not a mounting datum",
+    "mount, cable, power, thermal, vibration, hatch, and service envelopes are absent",
+    "online catalog values are not independently measured or physically validated"
+  ]
+}

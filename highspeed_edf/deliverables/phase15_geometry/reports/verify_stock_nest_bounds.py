@@ -17,6 +17,7 @@ STOCK = ROOT / "stock_nests"
 REPORT = ROOT / "reports" / "phase15_stock_nest_bounds_validation.json"
 EDGE_MARGIN_MM = 1.0
 MIN_PART_SPACING_MM = 1.5
+EXACT_DISTANCE_WINDOW_MM = 1e-6
 EXPECTED = {
     "sheet_A_250x120x5_36rotors_63stators.step": (250.0, 120.0, 5.0),
     "sheet_B_300x120x5_36rotors_63stators.step": (300.0, 120.0, 5.0),
@@ -87,11 +88,12 @@ def record_sheet(path: Path, stock_size: tuple[float, float, float]) -> dict:
         errors.append(f"could not classify blank solids at indices {unknown}")
 
     # A bounding-box separation is a conservative lower bound on solid
-    # clearance. If that bound is at least the limit, the pair cannot fail;
-    # run exact OCC distance only for possible violations.
+    # clearance. Run exact OCC distance for all pairs at or near the specified
+    # threshold, including pairs whose lower bound is exactly 1.5 mm.
     min_clearance_lower_bound = math.inf
+    min_exact_threshold_distance = math.inf
     clearance_failures = []
-    candidates = 0
+    threshold_pairs = []
     for i, left in enumerate(blanks):
         a = left.BoundingBox()
         for j in range(i + 1, len(blanks)):
@@ -101,10 +103,13 @@ def record_sheet(path: Path, stock_size: tuple[float, float, float]) -> dict:
             dy = max(0.0, a.ymin - b.ymax, b.ymin - a.ymax)
             lower_bound = math.hypot(dx, dy)
             min_clearance_lower_bound = min(min_clearance_lower_bound, lower_bound)
-            if lower_bound >= MIN_PART_SPACING_MM - 1e-6:
+            if lower_bound > MIN_PART_SPACING_MM + EXACT_DISTANCE_WINDOW_MM:
                 continue
-            candidates += 1
             distance = float(left.distance(right))
+            threshold_pairs.append({"left_index": i + 1, "right_index": j + 1,
+                                    "bbox_clearance_lower_bound_mm": lower_bound,
+                                    "occ_distance_mm": distance})
+            min_exact_threshold_distance = min(min_exact_threshold_distance, distance)
             if distance < MIN_PART_SPACING_MM - 1e-5:
                 clearance_failures.append({"left_index": i + 1, "right_index": j + 1,
                                            "clearance_mm": distance})
@@ -121,8 +126,11 @@ def record_sheet(path: Path, stock_size: tuple[float, float, float]) -> dict:
         "out_of_bounds_blanks": [r for r in blank_records if any(
             e.startswith(f"blank {r['index']} crosses") for e in errors)],
         "blank_bounds_mm": blank_records,
-        "clearance_check": {"candidate_pairs_exactly_checked": candidates,
+        "clearance_check": {"exact_distance_window_mm": EXACT_DISTANCE_WINDOW_MM,
+                             "pairs_exactly_checked_at_or_near_threshold": len(threshold_pairs),
+                             "minimum_occ_distance_among_threshold_pairs_mm": min_exact_threshold_distance,
                              "minimum_bbox_clearance_lower_bound_mm": min_clearance_lower_bound,
+                             "threshold_pair_measurements": threshold_pairs,
                              "spacing_failures": clearance_failures},
         "valid": not errors, "errors": errors,
     }
@@ -146,6 +154,8 @@ def main() -> int:
                                   "blank_count": r.get("blank_count"),
                                   "rotor_count": r.get("rotor_count"),
                                   "stator_count": r.get("stator_count"),
+                                  "pairs_exactly_checked_at_or_near_threshold": r.get("clearance_check", {}).get("pairs_exactly_checked_at_or_near_threshold"),
+                                  "minimum_occ_distance_among_threshold_pairs_mm": r.get("clearance_check", {}).get("minimum_occ_distance_among_threshold_pairs_mm"),
                                   "minimum_bbox_clearance_lower_bound_mm": r.get("clearance_check", {}).get("minimum_bbox_clearance_lower_bound_mm"),
                                   "errors": r.get("errors")} for r in reports]}, indent=2))
     return 0 if result["status"] == "PASS" else 1

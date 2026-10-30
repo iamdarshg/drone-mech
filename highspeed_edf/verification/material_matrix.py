@@ -59,7 +59,7 @@ def _declared_densities(generator: Path) -> dict:
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 PIN_MANIFEST = Path(__file__).with_name("material_sources.json")
-PIN_MANIFEST_SHA256 = "324fbd8a65cc7dbc65f529b945ca3aee58780ed03f91e894605e43104844c2a3"
+PIN_MANIFEST_SHA256 = "ef0e2c1ebdf71cf6f03e5150ee6ed7885ded7a6c05f2d39654ce213533c8c894"
 
 
 def _check_pinned_sources(actual: dict, expected: dict) -> tuple[list[str], str | None]:

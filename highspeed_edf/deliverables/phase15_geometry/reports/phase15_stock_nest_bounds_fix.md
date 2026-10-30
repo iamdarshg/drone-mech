@@ -8,8 +8,8 @@ The updated STEP files retain the declared sheets and quantities: 250×120×5 mm
 
 - all 100 solids are positive-volume valid STEP solids (one stock solid plus 99 blanks);
 - all 36 rotor and 63 stator blanks fit inside X/Y stock bounds with the 1 mm edge margin and fit within the 5 mm thickness;
-- no blank pair can be closer than 1.5 mm, using conservative bounding-box clearance lower bounds with exact OCC distance checks for any pair whose lower bound could fail the requirement;
-- no out-of-bounds blanks or clearance failures were found.
+- no blank pair can be closer than 1.5 mm; for each sheet, the checker evaluated exact OCC distances for 126 pairs whose bounding-box lower bound was at or within 1e-6 mm of the 1.5 mm threshold (including the adjacent-row/column pairs at the threshold), and used conservative bounding-box lower bounds to rule out failures for all other pairs;
+- the minimum exact OCC distance among those threshold pairs was 1.500000 mm; no out-of-bounds blanks or clearance failures were found.
 
 Run `python highspeed_edf/deliverables/phase15_geometry/reports/verify_stock_nest_bounds.py` to regenerate the native evidence at `phase15_stock_nest_bounds_validation.json`. The STEP file hashes and per-blank bounds are recorded there. `phase15_stock_nest_views.png` is a top-down projection rendered from the re-imported STEP meshes.
 
