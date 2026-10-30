@@ -1,0 +1,7 @@
+# Phase-15 stock-fix acceptance review
+
+The candidate mechanical source revision is `ff670b80b2b3ce925b03d14a91329bb7940e73d7`. Its candidate acceptance configuration is maintained in the separate `drone-arm` repository; the historical Issue-21 baseline remains pinned to the prior mechanical revision.
+
+The full CAD profile run `e8f93a67fabac089f6934081f9562a5a5f844d60de26ac453cd13ad4bb5e4efd` had intact source integrity and ran 12 checks: five passed, four failed, and three were blocked. BASE-002 was reported as failed because the schema runner used the default baseline config instead of the explicitly selected candidate config. This was corrected in the arm repo (`1979c9884be8491186d7f1f65319340081ab4d1a`) and covered with a regression test. A post-fix candidate smoke run `89c950e60674dc47961c115d4a934715ed3a5bed4b0cf1b39ae17f43790c1e79` confirms BASE-002 now passes with source integrity intact.
+
+The other full-CAD outcomes were: BASE-005 failed on placeholder PCB dimensions; BASE-008 failed with six native motor intersections; BASE-010 failed battery-bay bounding-box fit; BASE-011 connector access, BASE-012 mass overrides, and BASE-022 payload/electronics geometry evidence were blocked. BASE-016 firmware source absence failed in the post-fix smoke profile. These results remain acceptance blockers and are not resolved by the sheet-nest correction. No production or fabrication readiness is implied.

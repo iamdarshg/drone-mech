@@ -5,9 +5,11 @@
     "repository": "iamdarshg/drone-mech",
     "revision": "236056ff6e5036eaf5bed27b8ba361f84b1bb090",
     "generator": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
-    "generator_sha256": "86275054adf53b862dd91bfb3a66b84da3470e8ea400af8e57d5e339ef124caf",
+    "generator_sha256": "53353da1c6f46d8cd9df7431209946869c0984908b269fb94d01f25a1cfabd47",
     "mass_csv": "highspeed_edf/deliverables/phase15_geometry/reports/mass_cg.csv",
-    "mass_csv_sha256": "f5fe8171121c9c5ee5777ec81504b89da62a465d9a4bd0e04be03e40dd547498"
+    "mass_csv_sha256": "f5fe8171121c9c5ee5777ec81504b89da62a465d9a4bd0e04be03e40dd547498",
+    "historical_generator_sha256": "86275054adf53b862dd91bfb3a66b84da3470e8ea400af8e57d5e339ef124caf",
+    "generator_source_revision": "ff670b80b2b3ce925b03d14a91329bb7940e73d7"
   },
   "candidate": {
     "name": "DJI Action 2 Camera Unit",
@@ -24,7 +26,7 @@
       "width",
       "height"
     ],
-    "source_note": "The bundled PDF is the retrieved manufacturer manual snapshot. The file SHA-256 is enforced by the screen CLI. Its Camera Unit table lists dimensions 39×39×22.3 mm and weight 56 g. No unit was purchased or measured.",
+    "source_note": "The bundled PDF is the retrieved manufacturer manual snapshot. The file SHA-256 is enforced by the screen CLI. Its Camera Unit table lists dimensions 39\u00d739\u00d722.3 mm and weight 56 g. No unit was purchased or measured.",
     "retrieved_utc": "2026-10-30",
     "source_snapshot": "highspeed_edf/phase15/configs/source_snapshots/DJI_Action_2_User_Manual_V1.0_EN-11.pdf",
     "source_snapshot_sha256": "c71167c3b9ef8dfbe571aa6ad000c718ef9029011686150f895bc62e620b5586",
