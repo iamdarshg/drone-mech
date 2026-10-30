@@ -1,0 +1,282 @@
+{
+  "title": "Phase-15 preliminary wing load-demand screen",
+  "status": "BLOCKED: preliminary load demand only; no structural pass/fail",
+  "evidenceClass": "reproducible analytical load screen, not FEA and not structural validation",
+  "nativeSolverAvailability": {
+    "gmsh": null,
+    "ccx": null,
+    "CalculiX": null,
+    "rhoPimpleFoam": null,
+    "gmshToFoam": null
+  },
+  "existingFsiEvidence": {
+    "attemptReceipt": "highspeed_edf/phase15/fsi/results/attempts/20260930T134329Z/worker_output/wing_t36mm_receipt.json",
+    "attemptStatus": "coupled_solver_failed_or_not_converged; fluid return code 1, solid return code -6; no tip-displacement result",
+    "fluidDiagnostic": "FOAM FATAL IO ERROR: Entry 'div(meshPhi,p)' not found in dictionary system/fvSchemes/divSchemes",
+    "solidDiagnostic": "preCICE received EOF from the fluid participant after its fatal exit; no valid coupled load/displacement history",
+    "equivalentSolidMaterial": "existing deck uses isotropic E=10 GPa, nu=0.30, density=150 kg/m^3; a screening seed, not a sourced hand-laid laminate"
+  },
+  "sources": [
+    {
+      "path": "highspeed_edf/design/PHASE15_DESIGN_SPEC.md",
+      "sha256": "d63eb7f3ae8b23476d8077ebb739165a50afba152972269690ccf834446aa5aa"
+    },
+    {
+      "path": "highspeed_edf/phase15/optimization/phase15_aero_multiphysics_screen.py",
+      "sha256": "1bb1f7818bf348d1cd3c72c82f3a6644a85af7b709cf4921578b43a30bc20e00"
+    },
+    {
+      "path": "highspeed_edf/phase15/optimization/phase15_fsi_casegen.py",
+      "sha256": "f2ea9705c2ea10d5a5ce5145df32944f0c80fbeba35fb4a70961dfea7c36acce"
+    },
+    {
+      "path": "highspeed_edf/phase15/fsi/cases/wing_t36mm/solid/wing.inp",
+      "sha256": "ae81cd06d2a976b1a1c4d55ec3c8505a01c7a0ca0b588d041e98427a9f7dd390"
+    },
+    {
+      "path": "highspeed_edf/phase15/fsi/results/attempts/20260930T134329Z/worker_output/wing_t36mm_receipt.json",
+      "sha256": "0a6f87e6c8a3ecef48f683d83e472162059d41c6f4f396453989a91f435c02d4"
+    },
+    {
+      "path": "highspeed_edf/phase15/fsi/results/attempts/20260930T134329Z/worker_output/wing_t36mm/rhoPimpleFoam.log",
+      "sha256": "8123486174e8c3c11665850ca3cb7cbc32b873aa7b720337c719af996ef74fca"
+    }
+  ],
+  "inputs": {
+    "candidateAircraftMassKg": 6.541,
+    "wingPlanformAreaM2": 0.19,
+    "fullSpanM": 0.52,
+    "rootChordM": 0.425,
+    "tipChordM": 0.305,
+    "taperRatio": 0.7176470588235294,
+    "airDensityKgM3": 0.909,
+    "flightSpeedMps": 200.0,
+    "gravityMps2": 9.80665,
+    "dynamicPressurePa": 18180.0,
+    "requiredCLAt1g": 0.018570232658792197,
+    "loadFactorCasesG": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "specSafetyFactors": [
+      2.0,
+      3.0,
+      4.5
+    ],
+    "specSafetyFactorSource": "PHASE15_DESIGN_SPEC.md \u00a79: Wing structure FOS 2.0 / 3.0 / 4.5; this is applied as a factor on the illustrative load demand, not inferred as an aircraft maneuver envelope."
+  },
+  "method": {
+    "model": "steady symmetric lift; each half-wing carries half the aircraft lift",
+    "spanwiseLoad": "lift per unit span proportional to linearly varying chord (constant sectional CL); centroid integrated analytically",
+    "rootMoment": "(n * m * g / 2) * (b/2) * (c_root + 2*c_tip) / (3*(c_root+c_tip))",
+    "sectionModulusSensitivity": "Z_required = root moment * specification safety factor / hypothetical allowable",
+    "excluded": [
+      "gust and maneuver envelope",
+      "aerodynamic pressure map / CFD loads",
+      "wing self-weight and inertia relief",
+      "sweep-axis torsion",
+      "skin/core/spar/joint load paths",
+      "buckling, shear, fatigue, impact and flutter"
+    ]
+  },
+  "loadCases": [
+    {
+      "symmetricLoadFactorG": 1.0,
+      "totalWingLiftN": 64.14529765,
+      "halfWingLiftN": 32.072648825,
+      "liftCentroidOutboardOfRootM": 0.12287671232876712,
+      "rootBendingMomentNm": 3.9409816432910962,
+      "requiredSectionModulusSensitivity": [
+        {
+          "specSafetyFactor": 2.0,
+          "hypotheticalAllowableMPa": 100.0,
+          "requiredSectionModulusMm3": 78.81963286582193,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 2.0,
+          "hypotheticalAllowableMPa": 250.0,
+          "requiredSectionModulusMm3": 31.527853146328773,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 2.0,
+          "hypotheticalAllowableMPa": 500.0,
+          "requiredSectionModulusMm3": 15.763926573164387,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 3.0,
+          "hypotheticalAllowableMPa": 100.0,
+          "requiredSectionModulusMm3": 118.2294492987329,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 3.0,
+          "hypotheticalAllowableMPa": 250.0,
+          "requiredSectionModulusMm3": 47.29177971949316,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 3.0,
+          "hypotheticalAllowableMPa": 500.0,
+          "requiredSectionModulusMm3": 23.64588985974658,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 4.5,
+          "hypotheticalAllowableMPa": 100.0,
+          "requiredSectionModulusMm3": 177.34417394809935,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 4.5,
+          "hypotheticalAllowableMPa": 250.0,
+          "requiredSectionModulusMm3": 70.93766957923974,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 4.5,
+          "hypotheticalAllowableMPa": 500.0,
+          "requiredSectionModulusMm3": 35.46883478961987,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        }
+      ]
+    },
+    {
+      "symmetricLoadFactorG": 2.0,
+      "totalWingLiftN": 128.2905953,
+      "halfWingLiftN": 64.14529765,
+      "liftCentroidOutboardOfRootM": 0.12287671232876712,
+      "rootBendingMomentNm": 7.8819632865821925,
+      "requiredSectionModulusSensitivity": [
+        {
+          "specSafetyFactor": 2.0,
+          "hypotheticalAllowableMPa": 100.0,
+          "requiredSectionModulusMm3": 157.63926573164386,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 2.0,
+          "hypotheticalAllowableMPa": 250.0,
+          "requiredSectionModulusMm3": 63.05570629265755,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 2.0,
+          "hypotheticalAllowableMPa": 500.0,
+          "requiredSectionModulusMm3": 31.527853146328773,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 3.0,
+          "hypotheticalAllowableMPa": 100.0,
+          "requiredSectionModulusMm3": 236.4588985974658,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 3.0,
+          "hypotheticalAllowableMPa": 250.0,
+          "requiredSectionModulusMm3": 94.58355943898631,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 3.0,
+          "hypotheticalAllowableMPa": 500.0,
+          "requiredSectionModulusMm3": 47.29177971949316,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 4.5,
+          "hypotheticalAllowableMPa": 100.0,
+          "requiredSectionModulusMm3": 354.6883478961987,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 4.5,
+          "hypotheticalAllowableMPa": 250.0,
+          "requiredSectionModulusMm3": 141.87533915847948,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 4.5,
+          "hypotheticalAllowableMPa": 500.0,
+          "requiredSectionModulusMm3": 70.93766957923974,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        }
+      ]
+    },
+    {
+      "symmetricLoadFactorG": 3.0,
+      "totalWingLiftN": 192.43589295,
+      "halfWingLiftN": 96.217946475,
+      "liftCentroidOutboardOfRootM": 0.12287671232876712,
+      "rootBendingMomentNm": 11.82294492987329,
+      "requiredSectionModulusSensitivity": [
+        {
+          "specSafetyFactor": 2.0,
+          "hypotheticalAllowableMPa": 100.0,
+          "requiredSectionModulusMm3": 236.4588985974658,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 2.0,
+          "hypotheticalAllowableMPa": 250.0,
+          "requiredSectionModulusMm3": 94.58355943898631,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 2.0,
+          "hypotheticalAllowableMPa": 500.0,
+          "requiredSectionModulusMm3": 47.29177971949316,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 3.0,
+          "hypotheticalAllowableMPa": 100.0,
+          "requiredSectionModulusMm3": 354.6883478961987,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 3.0,
+          "hypotheticalAllowableMPa": 250.0,
+          "requiredSectionModulusMm3": 141.87533915847948,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 3.0,
+          "hypotheticalAllowableMPa": 500.0,
+          "requiredSectionModulusMm3": 70.93766957923974,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 4.5,
+          "hypotheticalAllowableMPa": 100.0,
+          "requiredSectionModulusMm3": 532.032521844298,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 4.5,
+          "hypotheticalAllowableMPa": 250.0,
+          "requiredSectionModulusMm3": 212.8130087377192,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        },
+        {
+          "specSafetyFactor": 4.5,
+          "hypotheticalAllowableMPa": 500.0,
+          "requiredSectionModulusMm3": 106.4065043688596,
+          "status": "ILLUSTRATIVE_ONLY; no sourced laminate allowable"
+        }
+      ]
+    }
+  ],
+  "unavailablePhysicalInputs": [
+    "as-built wing CAD including carbon skins, spar/web, core and joints",
+    "hand layup ply orientations, count, fiber volume fraction, cured thickness and resin system",
+    "coupon-derived tension/compression/shear allowables and hot/wet/environment knockdowns",
+    "validated 3D CFD pressure field or defined gust/maneuver design envelope",
+    "measured aircraft mass distribution and wing mass for inertia relief"
+  ],
+  "gate": "BLOCKED: because section properties and material allowables are absent, no actual stress, reserve factor, displacement, or structural acceptance can be calculated. Hypothetical allowable rows are sensitivity arithmetic only."
+}
