@@ -354,9 +354,9 @@ def inspect_materials(generator_path: Path, mass_csv: Path) -> dict:
             "errors":(["source mass table references material with no density entry: "+", ".join(unknown)] if unknown else ["material labels and nominal densities parsed, but physical layup/coupon evidence is absent"])}
 
 
-def inspect_manufacturing(geometry_dir: Path) -> dict:
+def inspect_manufacturing(geometry_dir: Path, stock_dir: Path | None = None) -> dict:
     """Reimport stock-nest STEP solids and report unsupported process gates."""
-    stock=geometry_dir/"stock_nests"
+    stock=stock_dir or geometry_dir/"stock_nests"
     files=sorted(p for p in stock.glob("*.step"))
     if len(files)!=3:
         return {"status":"BLOCKED","stock_file_count":len(files),"errors":[f"expected 3 native stock-nest STEP files; found {len(files)}"]}
@@ -388,6 +388,7 @@ def main(argv=None) -> int:
     parser.add_argument("--generator", type=Path)
     parser.add_argument("--mass-csv", type=Path)
     parser.add_argument("--datum", type=Path)
+    parser.add_argument("--stock-dir", type=Path)
     args = parser.parse_args(argv)
     if args.mode == "step":
         data = import_all_step(args.geometry_dir)
@@ -419,7 +420,7 @@ def main(argv=None) -> int:
         else:
             data = inspect_materials(args.generator,args.mass_csv)
     elif args.mode == "manufacture":
-        data = inspect_manufacturing(args.geometry_dir)
+        data = inspect_manufacturing(args.geometry_dir, args.stock_dir)
     else:
         if not args.generator or not args.mass_csv:
             data = {"status": "BLOCKED", "errors": ["generator and mass source CSV are required"]}
