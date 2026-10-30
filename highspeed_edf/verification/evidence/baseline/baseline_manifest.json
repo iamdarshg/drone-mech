@@ -1,0 +1,27 @@
+{
+  "baseline_before_edits": true,
+  "source_revisions": {
+    "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+    "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8"
+  },
+  "python": "3.12.11",
+  "pytest": "8.4.2",
+  "runs": [
+    {
+      "repository": "drone-mech",
+      "command": "python -m pytest -q",
+      "exit_code": 5,
+      "outcome": "no tests ran",
+      "log": "highspeed_edf/verification/evidence/baseline/mech-pytest.log",
+      "log_sha256": "acd8b299dcb968189f608351bfc89fb0c2281ab96ded14734263552d13aa0e8e"
+    },
+    {
+      "repository": "drone-arm",
+      "command": "python -m pytest -q",
+      "exit_code": 1,
+      "outcome": "23 passed, 2 failed; both failures invoke unavailable hardcoded Windows KiCad Python path",
+      "log": "highspeed_edf/verification/evidence/baseline/arm-pytest.log",
+      "log_sha256": "f757b6a77bb0f0d9ff0c2fdc8aac761ecdc7539baaa5badeef0707da299de25d"
+    }
+  ]
+}

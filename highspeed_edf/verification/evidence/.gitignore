@@ -1,0 +1,6 @@
+# Raw native results and baseline logs are retained as local/CI artifacts, not Git blobs.
+*
+!.gitignore
+!baseline/
+baseline/*
+!baseline/baseline_manifest.json

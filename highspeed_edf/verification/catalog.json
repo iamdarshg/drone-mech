@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "iamdarshg/drone-mech",
+    "issue": 14,
+    "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+  },
+  "checks": [
+    {
+      "id": "MECH-MATERIAL-001",
+      "requirement": "Material names and nominal densities are parsed from the pinned generator; physical properties and coupon evidence remain required.",
+      "native_inputs": ["highspeed_edf/phase15/optimization/phase15_generate_geometry.py", "highspeed_edf/deliverables/phase15_geometry/reports/mass_cg.csv"],
+      "runner": "inspect_materials",
+      "status_rule": "FAIL for unknown declared material; BLOCKED when physical layup/coupon evidence is missing; PASS is not available from nominal density metadata alone."
+    },
+    {
+      "id": "MECH-MANUFACTURE-001",
+      "requirement": "Native stock-nest STEP solids import and have positive volume; finished rotor machining, fixtures, tool reach and containment require separate evidence.",
+      "native_inputs": ["highspeed_edf/deliverables/phase15_geometry/stock_nests/*.step"],
+      "runner": "inspect_manufacturing",
+      "status_rule": "FAIL for invalid/missing stock solids; BLOCKED when machine/process and finished-rotor evidence is missing; stock blanks alone cannot PASS manufacturing release."
+    }
+  ]
+}
