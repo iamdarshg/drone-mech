@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "screen_id": "MECH-ISSUE2-MOTOR-DRIVE-FEASIBILITY-0.1",
+  "purpose": "Preliminary, source-pinned geometric bounds for issue 2 drive alternatives; no design selection or release authority.",
+  "units": "mm",
+  "baseline": {
+    "repository": "iamdarshg/drone-mech",
+    "source_revision": "fd8decc7c6683692ab04150a06c201ee7138aa3a",
+    "main_baseline_revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+    "local_sources": [
+      {"path": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py", "sha256": "86275054adf53b862dd91bfb3a66b84da3470e8ea400af8e57d5e339ef124caf"},
+      {"path": "highspeed_edf/verification/native_adapters.py", "sha256": "7d816527d306fd5a09b29be7b78f3bf6dc9483ea90d58d0bdc0c461897709387"},
+      {"path": "highspeed_edf/deliverables/phase15_geometry/reports/phase15_parameter_register.json", "sha256": "aaac69bc1e8a614439ace408fac0430b9579f03563de208950ec3e20d95f011e"},
+      {"path": "highspeed_edf/deliverables/phase15_geometry/reports/phase15_geometry_audit.json", "sha256": "868475875c6c0511bf90f5d2534b73bd46c2b93ab6ebfdf0c7577a5409ceb1d6"},
+      {"path": "highspeed_edf/phase15/results/phase15_motor_and_rewind_v2.md", "sha256": "ff3c725aae134f8738be605b2efb656b97c673a0c2f654fcbb31c6f17c8a69db"},
+      {"path": "highspeed_edf/phase15/configs/source_snapshots/drone-mech-issue-2.md", "sha256": "79abc541d6048292849fb9e4e7949515491d8d7f30cb1e83718c20b8d3236275"}
+    ],
+    "native_motor_step_glob": "highspeed_edf/deliverables/phase15_geometry/step/motor_*_3670_*_envelope.step",
+    "native_motor_step_sha256": {
+      "motor_A_R1_3670_42x72_envelope.step": "6f1f3b8f26b35d9eb569afc260ac2e4bd657ddb4f483642a083e52aefe388f0b",
+      "motor_A_R2_3670_42x72_envelope.step": "0d8b11483be6013dee00520b70ec8eaed640d4118766c7875feb18a5c8e865bd",
+      "motor_A_R3_3670_42x72_envelope.step": "34edb55c92763c3d332f71aeee91efe91ff7b7d1c9a15304d055375d4ee2023a",
+      "motor_B_R1_3670_42x72_envelope.step": "496c7c8162c62161600a4cf5280c7f3a4ccaf5d2dbb58b1210c2b3950405f17a",
+      "motor_B_R2_3670_42x72_envelope.step": "30befea1fd430a63a1e2d044b11555c219da975a32ecfe02cac12474841a4495",
+      "motor_B_R3_3670_42x72_envelope.step": "8c11d58fd44e325e669a5a6c881bef998dab4ffd4ae51adfccf6a4390d8fb607"
+    }
+  },
+  "external_sources": {
+    "issue2_text_snapshot_path": "highspeed_edf/phase15/configs/source_snapshots/drone-mech-issue-2.md",
+    "donor_motor_note_path": "highspeed_edf/phase15/results/phase15_motor_and_rewind_v2.md",
+    "motor_dimension_policy": "Parse textual issue/donor variants and generator constants at run time; never use these sources as measured supplier-native CAD.",
+    "arm_repository": "iamdarshg/drone-arm",
+    "arm_source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "arm_source_files": {
+      "main_pcb": "hardware/main/rev_b/main_rev_b.kicad_pcb",
+      "esc_pcb": "hardware/esc/rev_b/esc_rev_b.kicad_pcb",
+      "mcu_pinmap": "hardware/main/rev_b/mcu_pinmap.json",
+      "architecture": "docs/hardware/REV_B_ARCHITECTURE.md"
+    },
+    "arm_expected_git_blob_sha1": {
+      "hardware/main/rev_b/main_rev_b.kicad_pcb": "3e74cec512c826c2f922da347dfb475695a16d2a",
+      "hardware/esc/rev_b/esc_rev_b.kicad_pcb": "a86be5a3b33554ebd7845c8d244f98067e6fe3c7",
+      "hardware/main/rev_b/mcu_pinmap.json": "d30ae146f2c907bf41c628565de8079ceb0f6ea6",
+      "docs/hardware/REV_B_ARCHITECTURE.md": "7330567b6d86be1e6ab6518c66ae8822d0233066"
+    },
+    "actuator_count_source": "highspeed_edf/deliverables/phase15_geometry/reports/phase15_geometry_audit.json:checks.servoPositions",
+    "motor_channel_count_source": "docs/hardware/REV_B_ARCHITECTURE.md:Design basis Motors row",
+    "board_measurement_adapter": "highspeed_edf/verification/native_adapters.py:import_kicad_board",
+    "board_measurement_method": "PR34 native adapter Edge.Cuts primitive centerline coordinates; PR36 graphic bounding boxes are excluded because stroke width inflates dimensions.",
+    "release_authority": "NONE_DECLARED"
+  },
+  "screen_assumptions": {
+    "zero_clearance_pitch_is_only_a_lower_bound": true,
+    "candidate_motor_can_axes_parallel": true,
+    "in_bore_motor_can_must_fit_inside_duct_id": true,
+    "axial_spacing_module_length_preserves_original_end_clearance": true,
+    "reduced_stage_scenario_stages_per_duct": 2,
+    "all_assumptions_are_screens_not_design_facts": true
+  },
+  "unavailable_release_evidence": [
+    "manufacturer-native motor CAD or measured drawing for the exact selected SKU",
+    "bearing and end-cap stack, shaft shoulder/protrusion and coupling interface",
+    "motor winding/can cooling access and wire bend/service volume",
+    "gear, belt or shaft transmission dimensions, loss and containment evidence",
+    "rotor/stator schedules and native aero comparison for altered stage count or spacing",
+    "board component solid heights, mounting-hole/connector service volumes and integrated board fit",
+    "fastener, tolerance, thermal expansion, assembly and removal sequence evidence",
+    "measured motor mass, rpm qualification, thermal evidence and rotor containment"
+  ]
+}

@@ -1,0 +1,789 @@
+{
+  "candidate_ranking": "NOT_APPLICABLE",
+  "claims": {
+    "flight_claim": false,
+    "geometry_redesign": false,
+    "hardware_run": false,
+    "native_solver_run": false,
+    "overall_evidence_class": "PRELIMINARY ANALYTICAL BOUNDS"
+  },
+  "errors": [],
+  "input_path": "highspeed_edf/phase15/configs/motor_drive_screen_sources.json",
+  "input_sha256": "473ff7a001cf32973afc350b98b3848b242bf07e17e0e34f3924a374b7de9274",
+  "issue": "iamdarshg/drone-mech#2",
+  "overall_status": "FAIL",
+  "preliminary_screen": {
+    "alternatives": [
+      {
+        "finding": "Existing layout has positive-volume motor-solid intersections; baseline geometry remains unchanged.",
+        "id": "current_six_motor_inline_direct_drive",
+        "native_collision_pair_count": 6,
+        "native_geometry": "measured existing STEP envelopes",
+        "status": "FAIL"
+      },
+      {
+        "id": "increase_axial_station_spacing",
+        "lower_bound": {
+          "assumption": "preserves existing row-train end allowances; omits motor service length, tolerances, supports, and installed hardware",
+          "current_pitch_mm": 36.0,
+          "minimum_pitch_increase_mm": 36.0,
+          "module_length_formula": "110 + 2 * 36",
+          "module_length_lower_bound_mm": 182.0,
+          "required_zero_clearance_pitch_mm": 72.0
+        },
+        "remaining": "Full rotor/motor/stator/shaft solids and native aero/performance sensitivity are not defined.",
+        "status": "BLOCKED"
+      },
+      {
+        "id": "off_axis_motor_with_shaft_belt_or_gear",
+        "in_bore_bounds": [
+          {
+            "assumption": "both equal motor cans fully inside a circular bore; shafts/transmission excluded",
+            "duct_inner_diameter_mm": 78.0,
+            "maximum_center_separation_within_bore_mm": 36.0,
+            "minimum_center_separation_for_nonoverlap_mm": 42.0,
+            "motor_can_diameter_mm": 42.0,
+            "necessary_cross_section_bound": "FAIL",
+            "shortfall_mm": 6.0
+          }
+        ],
+        "planning_envelope": {
+          "can_length_mm": 72.0,
+          "diameter_mm": 42.0,
+          "dimension_policy": "independent maxima across source variants; planning envelope only",
+          "evidence_class": "unverified conservative analytical envelope; actual SKU dimensions unverified"
+        },
+        "remaining": "External mount, transmission, bearings, shafts, cooling, wires, supports, service volume, and drive losses have no sourced dimensions/evidence.",
+        "status": "BLOCKED"
+      },
+      {
+        "component_motor_mass_delta_kg_screen_only": [
+          -0.552,
+          -0.54
+        ],
+        "id": "two_driven_stages_per_duct",
+        "motor_channel_contract": {
+          "existing_channels": 6,
+          "scenario_channels": 4,
+          "status": "FAIL",
+          "unused_channels": 2
+        },
+        "remaining": "No rotor/stator schedule, measured per-row load allocation, aero rerun, power closure, or companion ESC contract exists.",
+        "scenario_assumption": {
+          "driven_rows_per_duct": 2,
+          "resulting_motor_count": 4
+        },
+        "status": "BLOCKED"
+      },
+      {
+        "id": "shorter_direct_drive_motor_at_current_pitch",
+        "per_source_variant": [
+          {
+            "can_length_mm": 72.0,
+            "clearance_status": "BLOCKED: no sourced tolerance or operating-clearance value",
+            "diameter_mm": 42.0,
+            "evidence_class": "literal generator constants; generated envelope, not supplier-native geometry",
+            "id": "phase15_generated_can",
+            "operating_clearance_mm": null,
+            "station_pitch_mm": 36.0,
+            "zero_clearance_axial_overlap_mm": 36.0,
+            "zero_clearance_minimum_pitch_mm": 72.0
+          },
+          {
+            "can_length_mm": 72.0,
+            "clearance_status": "BLOCKED: no sourced tolerance or operating-clearance value",
+            "diameter_mm": 36.0,
+            "evidence_class": "dimension parsed from SHA-pinned GitHub issue body snapshot",
+            "id": "issue2_text_claim",
+            "operating_clearance_mm": null,
+            "station_pitch_mm": 36.0,
+            "zero_clearance_axial_overlap_mm": 36.0,
+            "zero_clearance_minimum_pitch_mm": 72.0
+          },
+          {
+            "can_length_mm": 70.0,
+            "clearance_status": "BLOCKED: no sourced tolerance or operating-clearance value",
+            "diameter_mm": 36.0,
+            "evidence_class": "secondary sourcing note with stated OEM dimensions; not independently measured",
+            "id": "donor_3670_note",
+            "operating_clearance_mm": null,
+            "station_pitch_mm": 36.0,
+            "zero_clearance_axial_overlap_mm": 34.0,
+            "zero_clearance_minimum_pitch_mm": 70.0
+          },
+          {
+            "can_length_mm": 60.0,
+            "clearance_status": "BLOCKED: no sourced tolerance or operating-clearance value",
+            "diameter_mm": 36.0,
+            "evidence_class": "secondary donor shortlist; not selected or measured",
+            "id": "donor_3660_note",
+            "operating_clearance_mm": null,
+            "station_pitch_mm": 36.0,
+            "zero_clearance_axial_overlap_mm": 24.0,
+            "zero_clearance_minimum_pitch_mm": 60.0
+          }
+        ],
+        "remaining": "Every documented motor can exceeds the 36 mm stage pitch at zero clearance; the donor dimensions are not supplier-native measurements.",
+        "status": "FAIL"
+      }
+    ],
+    "design_sources": {
+      "datum": {
+        "fanPlaneZmm": 0,
+        "units": "mm",
+        "x": "lateral",
+        "y": "vertical",
+        "z": "aft"
+      },
+      "duct_inner_diameter_mm": 78.0,
+      "module_length_mm": 110.0,
+      "motor_can_model_mm": {
+        "diameter": 42.0,
+        "length": 72.0,
+        "mass_kg": 0.274
+      },
+      "parameter_register": [
+        "design/HANDOFF_GEOMETRY_AGENT.md",
+        "design/PHASE15_DESIGN_SPEC.md",
+        "design/PHASE15_CONTROL_SURFACES.md",
+        "design/DESIGN_DECISIONS_FOR_VERDICT.md",
+        "phase15/results/phase15_motor_and_rewind_v2.md",
+        "phase15/configs/phase15_sourcing.json"
+      ],
+      "rotor_chord_mm": 16.0,
+      "rotor_pitch_mm": 36.0,
+      "rotor_station_z_mm": [
+        12.0,
+        48.0,
+        84.0
+      ]
+    },
+    "motor_conflict_variants": [
+      {
+        "can_length_mm": 72.0,
+        "clearance_status": "BLOCKED: no sourced tolerance or operating-clearance value",
+        "diameter_mm": 42.0,
+        "evidence_class": "literal generator constants; generated envelope, not supplier-native geometry",
+        "id": "phase15_generated_can",
+        "operating_clearance_mm": null,
+        "station_pitch_mm": 36.0,
+        "zero_clearance_axial_overlap_mm": 36.0,
+        "zero_clearance_minimum_pitch_mm": 72.0
+      },
+      {
+        "can_length_mm": 72.0,
+        "clearance_status": "BLOCKED: no sourced tolerance or operating-clearance value",
+        "diameter_mm": 36.0,
+        "evidence_class": "dimension parsed from SHA-pinned GitHub issue body snapshot",
+        "id": "issue2_text_claim",
+        "operating_clearance_mm": null,
+        "station_pitch_mm": 36.0,
+        "zero_clearance_axial_overlap_mm": 36.0,
+        "zero_clearance_minimum_pitch_mm": 72.0
+      },
+      {
+        "can_length_mm": 70.0,
+        "clearance_status": "BLOCKED: no sourced tolerance or operating-clearance value",
+        "diameter_mm": 36.0,
+        "evidence_class": "secondary sourcing note with stated OEM dimensions; not independently measured",
+        "id": "donor_3670_note",
+        "operating_clearance_mm": null,
+        "station_pitch_mm": 36.0,
+        "zero_clearance_axial_overlap_mm": 34.0,
+        "zero_clearance_minimum_pitch_mm": 70.0
+      },
+      {
+        "can_length_mm": 60.0,
+        "clearance_status": "BLOCKED: no sourced tolerance or operating-clearance value",
+        "diameter_mm": 36.0,
+        "evidence_class": "secondary donor shortlist; not selected or measured",
+        "id": "donor_3660_note",
+        "operating_clearance_mm": null,
+        "station_pitch_mm": 36.0,
+        "zero_clearance_axial_overlap_mm": 24.0,
+        "zero_clearance_minimum_pitch_mm": 60.0
+      }
+    ],
+    "motor_planning_envelope": {
+      "can_length_mm": 72.0,
+      "diameter_mm": 42.0,
+      "dimension_policy": "independent maxima across source variants; planning envelope only",
+      "evidence_class": "unverified conservative analytical envelope; actual SKU dimensions unverified"
+    },
+    "native_motor_geometry": {
+      "collision_count": 6,
+      "imported_solids": [
+        {
+          "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_A_R1_3670_42x72_envelope.step",
+          "sha256": "6f1f3b8f26b35d9eb569afc260ac2e4bd657ddb4f483642a083e52aefe388f0b",
+          "solid_count": 1,
+          "solids": [
+            {
+              "bbox_mm": [
+                -65.0,
+                -21.0,
+                12.0,
+                -23.0,
+                21.0,
+                92.0
+              ],
+              "dimensions_mm": [
+                42.0,
+                42.0,
+                80.0
+              ],
+              "solid_index": 0,
+              "valid_brep": true,
+              "volume_mm3": 99908.9295694645
+            }
+          ],
+          "valid": true
+        },
+        {
+          "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_A_R2_3670_42x72_envelope.step",
+          "sha256": "0d8b11483be6013dee00520b70ec8eaed640d4118766c7875feb18a5c8e865bd",
+          "solid_count": 1,
+          "solids": [
+            {
+              "bbox_mm": [
+                -65.0,
+                -21.0,
+                48.0,
+                -23.0,
+                21.0,
+                128.0
+              ],
+              "dimensions_mm": [
+                42.0,
+                42.0,
+                80.0
+              ],
+              "solid_index": 0,
+              "valid_brep": true,
+              "volume_mm3": 99908.9295694645
+            }
+          ],
+          "valid": true
+        },
+        {
+          "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_A_R3_3670_42x72_envelope.step",
+          "sha256": "34edb55c92763c3d332f71aeee91efe91ff7b7d1c9a15304d055375d4ee2023a",
+          "solid_count": 1,
+          "solids": [
+            {
+              "bbox_mm": [
+                -65.0,
+                -21.0,
+                84.0,
+                -23.0,
+                21.0,
+                164.0
+              ],
+              "dimensions_mm": [
+                42.0,
+                42.0,
+                80.0
+              ],
+              "solid_index": 0,
+              "valid_brep": true,
+              "volume_mm3": 99908.9295694645
+            }
+          ],
+          "valid": true
+        },
+        {
+          "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_B_R1_3670_42x72_envelope.step",
+          "sha256": "496c7c8162c62161600a4cf5280c7f3a4ccaf5d2dbb58b1210c2b3950405f17a",
+          "solid_count": 1,
+          "solids": [
+            {
+              "bbox_mm": [
+                23.0,
+                -21.0,
+                12.0,
+                65.0,
+                21.0,
+                92.0
+              ],
+              "dimensions_mm": [
+                42.0,
+                42.0,
+                80.0
+              ],
+              "solid_index": 0,
+              "valid_brep": true,
+              "volume_mm3": 99908.9295694645
+            }
+          ],
+          "valid": true
+        },
+        {
+          "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_B_R2_3670_42x72_envelope.step",
+          "sha256": "30befea1fd430a63a1e2d044b11555c219da975a32ecfe02cac12474841a4495",
+          "solid_count": 1,
+          "solids": [
+            {
+              "bbox_mm": [
+                23.0,
+                -21.0,
+                48.0,
+                65.0,
+                21.0,
+                128.0
+              ],
+              "dimensions_mm": [
+                42.0,
+                42.0,
+                80.0
+              ],
+              "solid_index": 0,
+              "valid_brep": true,
+              "volume_mm3": 99908.9295694645
+            }
+          ],
+          "valid": true
+        },
+        {
+          "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_B_R3_3670_42x72_envelope.step",
+          "sha256": "8c11d58fd44e325e669a5a6c881bef998dab4ffd4ae51adfccf6a4390d8fb607",
+          "solid_count": 1,
+          "solids": [
+            {
+              "bbox_mm": [
+                23.0,
+                -21.0,
+                84.0,
+                65.0,
+                21.0,
+                164.0
+              ],
+              "dimensions_mm": [
+                42.0,
+                42.0,
+                80.0
+              ],
+              "solid_index": 0,
+              "valid_brep": true,
+              "volume_mm3": 99908.9295694645
+            }
+          ],
+          "valid": true
+        }
+      ],
+      "motor_count": 6,
+      "pair_measurements": [
+        {
+          "axial_center_pitch_mm": 36.0,
+          "axial_envelope_overlap_mm": 44.0,
+          "clearance_fails": false,
+          "collides": true,
+          "exact_intersection_mm3": 50033.00460107198,
+          "left": "motor_A_R1_3670_42x72_envelope.step",
+          "measured_clearance_mm": 0.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 36.0,
+          "required_clearance_mm": 0,
+          "right": "motor_A_R2_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 72.0,
+          "axial_envelope_overlap_mm": 8.0,
+          "clearance_fails": false,
+          "collides": true,
+          "exact_intersection_mm3": 157.07963267948963,
+          "left": "motor_A_R1_3670_42x72_envelope.step",
+          "measured_clearance_mm": 0.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 0.0,
+          "required_clearance_mm": 0,
+          "right": "motor_A_R3_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 0.0,
+          "axial_envelope_overlap_mm": 80.0,
+          "clearance_fails": false,
+          "collides": false,
+          "exact_intersection_mm3": 0.0,
+          "left": "motor_A_R1_3670_42x72_envelope.step",
+          "measured_clearance_mm": 46.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 72.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R1_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 36.0,
+          "axial_envelope_overlap_mm": 44.0,
+          "clearance_fails": false,
+          "collides": false,
+          "exact_intersection_mm3": 0.0,
+          "left": "motor_A_R1_3670_42x72_envelope.step",
+          "measured_clearance_mm": 46.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 36.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R2_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 72.0,
+          "axial_envelope_overlap_mm": 8.0,
+          "clearance_fails": false,
+          "collides": false,
+          "exact_intersection_mm3": 0.0,
+          "left": "motor_A_R1_3670_42x72_envelope.step",
+          "measured_clearance_mm": 46.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 0.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R3_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 36.0,
+          "axial_envelope_overlap_mm": 44.0,
+          "clearance_fails": false,
+          "collides": true,
+          "exact_intersection_mm3": 50033.00460107198,
+          "left": "motor_A_R2_3670_42x72_envelope.step",
+          "measured_clearance_mm": 0.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 36.0,
+          "required_clearance_mm": 0,
+          "right": "motor_A_R3_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 36.0,
+          "axial_envelope_overlap_mm": 44.0,
+          "clearance_fails": false,
+          "collides": false,
+          "exact_intersection_mm3": 0.0,
+          "left": "motor_A_R2_3670_42x72_envelope.step",
+          "measured_clearance_mm": 46.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 36.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R1_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 0.0,
+          "axial_envelope_overlap_mm": 80.0,
+          "clearance_fails": false,
+          "collides": false,
+          "exact_intersection_mm3": 0.0,
+          "left": "motor_A_R2_3670_42x72_envelope.step",
+          "measured_clearance_mm": 46.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 72.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R2_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 36.0,
+          "axial_envelope_overlap_mm": 44.0,
+          "clearance_fails": false,
+          "collides": false,
+          "exact_intersection_mm3": 0.0,
+          "left": "motor_A_R2_3670_42x72_envelope.step",
+          "measured_clearance_mm": 46.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 36.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R3_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 72.0,
+          "axial_envelope_overlap_mm": 8.0,
+          "clearance_fails": false,
+          "collides": false,
+          "exact_intersection_mm3": 0.0,
+          "left": "motor_A_R3_3670_42x72_envelope.step",
+          "measured_clearance_mm": 46.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 0.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R1_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 36.0,
+          "axial_envelope_overlap_mm": 44.0,
+          "clearance_fails": false,
+          "collides": false,
+          "exact_intersection_mm3": 0.0,
+          "left": "motor_A_R3_3670_42x72_envelope.step",
+          "measured_clearance_mm": 46.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 36.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R2_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 0.0,
+          "axial_envelope_overlap_mm": 80.0,
+          "clearance_fails": false,
+          "collides": false,
+          "exact_intersection_mm3": 0.0,
+          "left": "motor_A_R3_3670_42x72_envelope.step",
+          "measured_clearance_mm": 46.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 72.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R3_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 36.0,
+          "axial_envelope_overlap_mm": 44.0,
+          "clearance_fails": false,
+          "collides": true,
+          "exact_intersection_mm3": 50033.00460107198,
+          "left": "motor_B_R1_3670_42x72_envelope.step",
+          "measured_clearance_mm": 0.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 36.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R2_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 72.0,
+          "axial_envelope_overlap_mm": 8.0,
+          "clearance_fails": false,
+          "collides": true,
+          "exact_intersection_mm3": 157.07963267948963,
+          "left": "motor_B_R1_3670_42x72_envelope.step",
+          "measured_clearance_mm": 0.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 0.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R3_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        },
+        {
+          "axial_center_pitch_mm": 36.0,
+          "axial_envelope_overlap_mm": 44.0,
+          "clearance_fails": false,
+          "collides": true,
+          "exact_intersection_mm3": 50033.00460107198,
+          "left": "motor_B_R2_3670_42x72_envelope.step",
+          "measured_clearance_mm": 0.0,
+          "motor_can_length_mm": 72.0,
+          "motor_can_overlap_mm": 36.0,
+          "required_clearance_mm": 0,
+          "right": "motor_B_R3_3670_42x72_envelope.step",
+          "shaft_length_assumption_mm": 8.0
+        }
+      ],
+      "pairs_checked": 15,
+      "status": "FAIL",
+      "tool_versions": {
+        "cadquery": "2.7.0",
+        "cadquery-ocp": "7.8.1.1.post1"
+      }
+    },
+    "shared_installed_constraints": {
+      "actuator_channel_status": "FAIL",
+      "board_outlines": {
+        "esc": {
+          "cad_placeholder_mm": [
+            150.0,
+            150.0
+          ],
+          "difference_mm": [
+            23.80000000000001,
+            132.93
+          ],
+          "edge_primitive_count": 4,
+          "git_blob_sha1": "a86be5a3b33554ebd7845c8d244f98067e6fe3c7",
+          "measured_edge_centerline_mm": [
+            173.8,
+            282.93
+          ],
+          "pcb_sha256": "f29a6e12e82d9ec70c63ca5fce95e5cd4436479599c4c4069c4733e7d7af4805",
+          "pcbnew_version": "9.0.2+dfsg-1",
+          "placeholder_comparison_status": "FAIL"
+        },
+        "main": {
+          "cad_placeholder_mm": [
+            140.0,
+            100.0
+          ],
+          "difference_mm": [
+            0.0,
+            0.0
+          ],
+          "edge_primitive_count": 4,
+          "git_blob_sha1": "3e74cec512c826c2f922da347dfb475695a16d2a",
+          "measured_edge_centerline_mm": [
+            140.0,
+            100.0
+          ],
+          "pcb_sha256": "6dd4a727e8d01b344d45afcbb34907a1895a705e2e8a31d2b6acbe28c0a19606",
+          "pcbnew_version": "9.0.2+dfsg-1",
+          "placeholder_comparison_status": "PASS"
+        }
+      },
+      "component_solid_heights": "BLOCKED: pcbnew audit has no native component-solid vertical bounds",
+      "distinct_pwm_count": 6,
+      "fabrication_release_authority": "NONE_DECLARED",
+      "independent_effector_count_from_mech_native_audit": 7,
+      "independent_motor_channel_count_from_arm_architecture": 6,
+      "integrated_board_fit_status": "BLOCKED: component heights, mounting/service volumes, and body-to-board datum are unavailable",
+      "mcu_pwm_nets": [
+        "PWM_ESC1",
+        "PWM_ESC2",
+        "PWM_ESC3",
+        "PWM_ESC4",
+        "PWM_ESC5",
+        "PWM_ESC6"
+      ],
+      "measurement_adapter": "highspeed_edf/verification/native_adapters.py:import_kicad_board",
+      "outline_method": "Edge.Cuts endpoint/arc-center coordinates from native pcbnew; stroke extents excluded",
+      "source_checkout_root": "../drone-arm",
+      "source_files": {
+        "architecture": {
+          "expected_git_blob_sha1": "7330567b6d86be1e6ab6518c66ae8822d0233066",
+          "path": "docs/hardware/REV_B_ARCHITECTURE.md",
+          "revision_git_blob_sha1": "7330567b6d86be1e6ab6518c66ae8822d0233066",
+          "sha256": "a2bc568eec378645fdfe37582ca3d69fa23fca63e694a16889817969aff41001",
+          "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+          "status": "PASS",
+          "working_tree_git_blob_sha1": "7330567b6d86be1e6ab6518c66ae8822d0233066"
+        },
+        "esc_pcb": {
+          "expected_git_blob_sha1": "a86be5a3b33554ebd7845c8d244f98067e6fe3c7",
+          "path": "hardware/esc/rev_b/esc_rev_b.kicad_pcb",
+          "revision_git_blob_sha1": "a86be5a3b33554ebd7845c8d244f98067e6fe3c7",
+          "sha256": "f29a6e12e82d9ec70c63ca5fce95e5cd4436479599c4c4069c4733e7d7af4805",
+          "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+          "status": "PASS",
+          "working_tree_git_blob_sha1": "a86be5a3b33554ebd7845c8d244f98067e6fe3c7"
+        },
+        "main_pcb": {
+          "expected_git_blob_sha1": "3e74cec512c826c2f922da347dfb475695a16d2a",
+          "path": "hardware/main/rev_b/main_rev_b.kicad_pcb",
+          "revision_git_blob_sha1": "3e74cec512c826c2f922da347dfb475695a16d2a",
+          "sha256": "6dd4a727e8d01b344d45afcbb34907a1895a705e2e8a31d2b6acbe28c0a19606",
+          "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+          "status": "PASS",
+          "working_tree_git_blob_sha1": "3e74cec512c826c2f922da347dfb475695a16d2a"
+        },
+        "mcu_pinmap": {
+          "expected_git_blob_sha1": "d30ae146f2c907bf41c628565de8079ceb0f6ea6",
+          "path": "hardware/main/rev_b/mcu_pinmap.json",
+          "revision_git_blob_sha1": "d30ae146f2c907bf41c628565de8079ceb0f6ea6",
+          "sha256": "3ad236d7872970e1fad866d7f1e440e516afb5499d6c4f71e04457bb498e5739",
+          "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+          "status": "PASS",
+          "working_tree_git_blob_sha1": "d30ae146f2c907bf41c628565de8079ceb0f6ea6"
+        }
+      },
+      "source_repository_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "status": "PASS"
+    },
+    "unavailable_release_evidence": [
+      "manufacturer-native motor CAD or measured drawing for the exact selected SKU",
+      "bearing and end-cap stack, shaft shoulder/protrusion and coupling interface",
+      "motor winding/can cooling access and wire bend/service volume",
+      "gear, belt or shaft transmission dimensions, loss and containment evidence",
+      "rotor/stator schedules and native aero comparison for altered stage count or spacing",
+      "board component solid heights, mounting-hole/connector service volumes and integrated board fit",
+      "fastener, tolerance, thermal expansion, assembly and removal sequence evidence",
+      "measured motor mass, rpm qualification, thermal evidence and rotor containment"
+    ]
+  },
+  "runner": {
+    "path": "highspeed_edf/verification/motor_drive_screen.py",
+    "python_version": "3.12.14",
+    "sha256": "11142aded860c2239ea3eb92ac17348b2301d92db2ad50a02a6281c63c38b1d0"
+  },
+  "scope": "preliminary necessary-bound calculations; no candidate selection",
+  "screen_id": "MECH-ISSUE2-MOTOR-DRIVE-FEASIBILITY-0.1",
+  "source_integrity": {
+    "checked": [
+      {
+        "actual_sha256": "86275054adf53b862dd91bfb3a66b84da3470e8ea400af8e57d5e339ef124caf",
+        "expected_sha256": "86275054adf53b862dd91bfb3a66b84da3470e8ea400af8e57d5e339ef124caf",
+        "path": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "7d816527d306fd5a09b29be7b78f3bf6dc9483ea90d58d0bdc0c461897709387",
+        "expected_sha256": "7d816527d306fd5a09b29be7b78f3bf6dc9483ea90d58d0bdc0c461897709387",
+        "path": "highspeed_edf/verification/native_adapters.py",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "aaac69bc1e8a614439ace408fac0430b9579f03563de208950ec3e20d95f011e",
+        "expected_sha256": "aaac69bc1e8a614439ace408fac0430b9579f03563de208950ec3e20d95f011e",
+        "path": "highspeed_edf/deliverables/phase15_geometry/reports/phase15_parameter_register.json",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "868475875c6c0511bf90f5d2534b73bd46c2b93ab6ebfdf0c7577a5409ceb1d6",
+        "expected_sha256": "868475875c6c0511bf90f5d2534b73bd46c2b93ab6ebfdf0c7577a5409ceb1d6",
+        "path": "highspeed_edf/deliverables/phase15_geometry/reports/phase15_geometry_audit.json",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "ff3c725aae134f8738be605b2efb656b97c673a0c2f654fcbb31c6f17c8a69db",
+        "expected_sha256": "ff3c725aae134f8738be605b2efb656b97c673a0c2f654fcbb31c6f17c8a69db",
+        "path": "highspeed_edf/phase15/results/phase15_motor_and_rewind_v2.md",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "79abc541d6048292849fb9e4e7949515491d8d7f30cb1e83718c20b8d3236275",
+        "expected_sha256": "79abc541d6048292849fb9e4e7949515491d8d7f30cb1e83718c20b8d3236275",
+        "path": "highspeed_edf/phase15/configs/source_snapshots/drone-mech-issue-2.md",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "6f1f3b8f26b35d9eb569afc260ac2e4bd657ddb4f483642a083e52aefe388f0b",
+        "expected_sha256": "6f1f3b8f26b35d9eb569afc260ac2e4bd657ddb4f483642a083e52aefe388f0b",
+        "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_A_R1_3670_42x72_envelope.step",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "0d8b11483be6013dee00520b70ec8eaed640d4118766c7875feb18a5c8e865bd",
+        "expected_sha256": "0d8b11483be6013dee00520b70ec8eaed640d4118766c7875feb18a5c8e865bd",
+        "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_A_R2_3670_42x72_envelope.step",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "34edb55c92763c3d332f71aeee91efe91ff7b7d1c9a15304d055375d4ee2023a",
+        "expected_sha256": "34edb55c92763c3d332f71aeee91efe91ff7b7d1c9a15304d055375d4ee2023a",
+        "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_A_R3_3670_42x72_envelope.step",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "496c7c8162c62161600a4cf5280c7f3a4ccaf5d2dbb58b1210c2b3950405f17a",
+        "expected_sha256": "496c7c8162c62161600a4cf5280c7f3a4ccaf5d2dbb58b1210c2b3950405f17a",
+        "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_B_R1_3670_42x72_envelope.step",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "30befea1fd430a63a1e2d044b11555c219da975a32ecfe02cac12474841a4495",
+        "expected_sha256": "30befea1fd430a63a1e2d044b11555c219da975a32ecfe02cac12474841a4495",
+        "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_B_R2_3670_42x72_envelope.step",
+        "status": "PASS"
+      },
+      {
+        "actual_sha256": "8c11d58fd44e325e669a5a6c881bef998dab4ffd4ae51adfccf6a4390d8fb607",
+        "expected_sha256": "8c11d58fd44e325e669a5a6c881bef998dab4ffd4ae51adfccf6a4390d8fb607",
+        "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_B_R3_3670_42x72_envelope.step",
+        "status": "PASS"
+      }
+    ],
+    "errors": [],
+    "status": "PASS"
+  }
+}
