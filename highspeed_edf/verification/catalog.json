@@ -14,6 +14,13 @@
       "status_rule": "FAIL for unknown declared material; BLOCKED when physical layup/coupon evidence is missing; PASS is not available from nominal density metadata alone."
     },
     {
+      "id": "MECH-MATERIAL-002",
+      "requirement": "Map each source mass-table part to its declared material and explicitly label sourced inputs, process proposals, and missing measured/qualified properties.",
+      "native_inputs": ["highspeed_edf/phase15/optimization/phase15_generate_geometry.py", "highspeed_edf/deliverables/phase15_geometry/reports/mass_cg.csv"],
+      "runner": "python -m highspeed_edf.verification.material_matrix",
+      "status_rule": "FAIL for duplicate/missing parts, absent/non-positive density, or a PLA/carbon-rod/servo-envelope assignment to the duct/hot-side screening class; otherwise BLOCKED because no allowables, coupon evidence, measured mass, thermal history, adhesive/bolt details, or complete process traveler are supplied. This inventory cannot PASS manufacturing or structural acceptance."
+    },
+    {
       "id": "MECH-MANUFACTURE-001",
       "requirement": "Native stock-nest STEP solids import and have positive volume; finished rotor machining, fixtures, tool reach and containment require separate evidence.",
       "native_inputs": ["highspeed_edf/deliverables/phase15_geometry/stock_nests/*.step"],
