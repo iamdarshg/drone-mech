@@ -1,0 +1,601 @@
+{
+  "classification": "EXPERIMENTAL PRINT SEGMENTATION PROTOTYPE; NOT A FABRICATION OR FLIGHT RELEASE",
+  "sourceRepositoryCommit": "a055d113c931c2cd070e837fdb24e9afada066a8",
+  "method": {
+    "partition": "Left/right sectors each split 2 equal X-span bins \u00d7 3 equal Z-chordwise bins; centre bridge split into 3 equal Z-chordwise bins.",
+    "printEnvelopeMm": [
+      180,
+      180,
+      180
+    ],
+    "pieceCount": 15,
+    "seams": "Planar butt cuts, exact coordinate mating, no added joints or clearances.",
+    "previewOffsets": "Small Y offsets are used for visualization only. STEP outputs preserve source coordinates."
+  },
+  "checks": {
+    "allSourcesValidSingleSolid": true,
+    "allPieceStepsRoundTripValidSingleSolid": true,
+    "allPiecesStrictlyBelow180mmInAllAxes": true,
+    "maximumPieceAxisExtentMm": 166.2023925413082,
+    "maximumRoundtripPieceAxisExtentMm": 166.20239254127023,
+    "allBooleanCutPiecesValidSingleSolid": true,
+    "eachComponentPartitionVolumeMatchesSourceWithinTolerance": true,
+    "partitionVolumeRelativeTolerance": 1e-06,
+    "fusedReconstructionPerformed": false
+  },
+  "components": [
+    {
+      "id": "left_sector",
+      "path": "highspeed_edf/deliverables/phase15_geometry/step/lifting_wing_left_sector_with_duct_and_elevon_reliefs.step",
+      "sha256": "b1fb7cd66f98e8b5e9c65ecb25c703993bb32218cf2ada2c3baa3d1559e7121b",
+      "sourceBoundsMm": [
+        -260.0000001,
+        -80.32970351133474,
+        -13.7193691158956,
+        25.371289351245842,
+        -231.71129119713436,
+        266.8958858261681
+      ],
+      "sourceVolumeMm3": 1354555.798301372,
+      "pieceCount": 6,
+      "pieceIds": [
+        "wing_left_sector_x1_z1",
+        "wing_left_sector_x1_z2",
+        "wing_left_sector_x1_z3",
+        "wing_left_sector_x2_z1",
+        "wing_left_sector_x2_z2",
+        "wing_left_sector_x2_z3"
+      ],
+      "pieceVolumeSumMm3": 1354555.6036448884,
+      "partitionVolumeDifferenceMm3": -0.1946564835961908,
+      "relativePartitionVolumeError": 1.437050314503782e-07,
+      "sourceCoverageFractionByPartitionVolume": 0.9999998562949686,
+      "partitionVolumeRelativeTolerance": 1e-06,
+      "coverageMethod": "Every piece is a valid source\u2229slab boolean; axis-aligned bins tile the source bounding box with disjoint interiors; additive piece volume agrees with source volume within stated OCC tolerance. No solid fusion/reconstructed STEP was run."
+    },
+    {
+      "id": "centre_bridge",
+      "path": "highspeed_edf/deliverables/phase15_geometry/step/lifting_wing_centre_bridge_sector_with_duct_and_elevon_reliefs.step",
+      "sha256": "9e7c2fc06e9be6c9e5e1a12a102e52b2df9e822bf094a025c9bc360715e8bc7d",
+      "sourceBoundsMm": [
+        -8.963929728099297,
+        8.963929728101,
+        -12.42396498746045,
+        24.056678442934,
+        -270.0000000999802,
+        155.05358199854803
+      ],
+      "sourceVolumeMm3": 57099.46067890365,
+      "pieceCount": 3,
+      "pieceIds": [
+        "wing_centre_bridge_x1_z1",
+        "wing_centre_bridge_x1_z2",
+        "wing_centre_bridge_x1_z3"
+      ],
+      "pieceVolumeSumMm3": 57099.460687344865,
+      "partitionVolumeDifferenceMm3": 8.44121677801013e-06,
+      "relativePartitionVolumeError": 1.4783356405901883e-10,
+      "sourceCoverageFractionByPartitionVolume": 1.0000000001478335,
+      "partitionVolumeRelativeTolerance": 1e-06,
+      "coverageMethod": "Every piece is a valid source\u2229slab boolean; axis-aligned bins tile the source bounding box with disjoint interiors; additive piece volume agrees with source volume within stated OCC tolerance. No solid fusion/reconstructed STEP was run."
+    },
+    {
+      "id": "right_sector",
+      "path": "highspeed_edf/deliverables/phase15_geometry/step/lifting_wing_right_sector_with_duct_and_elevon_reliefs.step",
+      "sha256": "90687229e733623ccd40ee8839a10d711f38367b46e70e7ae0d86a330b7c358f",
+      "sourceBoundsMm": [
+        80.32970351134114,
+        260.0000001000001,
+        -13.71936911589585,
+        25.371289351245654,
+        -231.71129119719998,
+        266.8958858260383
+      ],
+      "sourceVolumeMm3": 1354555.7983011054,
+      "pieceCount": 6,
+      "pieceIds": [
+        "wing_right_sector_x1_z1",
+        "wing_right_sector_x1_z2",
+        "wing_right_sector_x1_z3",
+        "wing_right_sector_x2_z1",
+        "wing_right_sector_x2_z2",
+        "wing_right_sector_x2_z3"
+      ],
+      "pieceVolumeSumMm3": 1354555.8385383843,
+      "partitionVolumeDifferenceMm3": 0.04023727891035378,
+      "relativePartitionVolumeError": 2.9705146853913066e-08,
+      "sourceCoverageFractionByPartitionVolume": 1.0000000297051468,
+      "partitionVolumeRelativeTolerance": 1e-06,
+      "coverageMethod": "Every piece is a valid source\u2229slab boolean; axis-aligned bins tile the source bounding box with disjoint interiors; additive piece volume agrees with source volume within stated OCC tolerance. No solid fusion/reconstructed STEP was run."
+    }
+  ],
+  "pieces": [
+    {
+      "id": "wing_left_sector_x1_z1",
+      "volumeMm3": 236035.99615884313,
+      "boundsMm": [
+        -260.00000020000004,
+        -170.1648517056673,
+        -13.7193691158956,
+        24.020693709093948,
+        -188.69386486274448,
+        -65.50889875603315
+      ],
+      "extentsMm": [
+        89.83514849433274,
+        37.74006282498955,
+        123.18496610671133
+      ],
+      "roundtripBoundsMm": [
+        -260.00000020000004,
+        -170.1648517055999,
+        -13.7193691158956,
+        24.020693709093877,
+        -188.69386486276196,
+        -65.50889875600913
+      ],
+      "roundtripExtentsMm": [
+        89.83514849440016,
+        37.74006282498948,
+        123.18496610675282
+      ],
+      "sha256": "569157a7ad28a5942300d0cf818770f2e48c7a08fc240d316e3ce59135399f42",
+      "step": "wing_left_sector_x1_z1.step"
+    },
+    {
+      "id": "wing_left_sector_x1_z2",
+      "volumeMm3": 405994.4878385138,
+      "boundsMm": [
+        -260.00000020000004,
+        -170.1648517056671,
+        -13.706059715310941,
+        25.371289351245842,
+        -65.5088989560336,
+        100.69349358506821
+      ],
+      "extentsMm": [
+        89.83514849433294,
+        39.077349066556785,
+        166.2023925411018
+      ],
+      "roundtripBoundsMm": [
+        -260.00000020000004,
+        -170.1648517055999,
+        -13.706059715303041,
+        25.371289351245842,
+        -65.50889895604857,
+        100.69349358509842
+      ],
+      "roundtripExtentsMm": [
+        89.83514849440016,
+        39.077349066548884,
+        166.202392541147
+      ],
+      "sha256": "34a38f1bd159371f360867529650957858d73236b4efb6321fb19b5259edd27a",
+      "step": "wing_left_sector_x1_z2.step"
+    },
+    {
+      "id": "wing_left_sector_x1_z3",
+      "volumeMm3": 105779.72491964187,
+      "boundsMm": [
+        -260.00000020000004,
+        -170.1648517056674,
+        -8.812890354671067,
+        19.977350258245323,
+        100.69349338506676,
+        266.89588592616815
+      ],
+      "extentsMm": [
+        89.83514849433266,
+        28.790240612916392,
+        166.2023925411014
+      ],
+      "roundtripBoundsMm": [
+        -260.00000020000004,
+        -170.1648517055995,
+        -8.812890354670813,
+        19.97735025824556,
+        100.69349338504323,
+        266.89588592616
+      ],
+      "roundtripExtentsMm": [
+        89.83514849440056,
+        28.790240612916374,
+        166.2023925411168
+      ],
+      "sha256": "56c4d23306779927ddeaed42d69ed7e5efc19b81159d004def693aebf1d7b47e",
+      "step": "wing_left_sector_x1_z3.step"
+    },
+    {
+      "id": "wing_left_sector_x2_z1",
+      "volumeMm3": 344712.7525006194,
+      "boundsMm": [
+        -170.16485190566829,
+        -80.32970351133633,
+        -13.017334580801705,
+        22.05453785330394,
+        -231.7112911971346,
+        -65.50889875603227
+      ],
+      "extentsMm": [
+        89.83514839433195,
+        35.07187243410564,
+        166.20239244110235
+      ],
+      "roundtripBoundsMm": [
+        -170.16485190564558,
+        -80.32970351133633,
+        -13.017334580801695,
+        22.05453785330394,
+        -231.7112911971346,
+        -65.50889875603
+      ],
+      "roundtripExtentsMm": [
+        89.83514839430924,
+        35.071872434105636,
+        166.20239244110462
+      ],
+      "sha256": "ba1ca492390bf50a6be4797a47603ec1a334fcfb358301572b42517531ef7b58",
+      "step": "wing_left_sector_x2_z1.step"
+    },
+    {
+      "id": "wing_left_sector_x2_z2",
+      "volumeMm3": 258976.07928076744,
+      "boundsMm": [
+        -170.16485190566888,
+        -81.70569945719453,
+        -10.396688555089597,
+        20.002717300872504,
+        -65.50889895603353,
+        100.69349358507077
+      ],
+      "extentsMm": [
+        88.45915244847436,
+        30.3994058559621,
+        166.2023925411043
+      ],
+      "roundtripBoundsMm": [
+        -170.16485190560687,
+        -81.70569945719244,
+        -10.396688555087378,
+        20.00271730087265,
+        -65.50889895603922,
+        100.69349358506848
+      ],
+      "roundtripExtentsMm": [
+        88.45915244841443,
+        30.399405855960026,
+        166.2023925411077
+      ],
+      "sha256": "06adb0a7b303d49b00bf05f0cc570eb3aeb57a224e4cf8730ac7295713acbbb4",
+      "step": "wing_left_sector_x2_z2.step"
+    },
+    {
+      "id": "wing_left_sector_x2_z3",
+      "volumeMm3": 3056.562946502837,
+      "boundsMm": [
+        -170.16485190566803,
+        -103.06393314878359,
+        -1.8389416241498338,
+        4.238264012234252,
+        100.69349338505637,
+        126.56235988992569
+      ],
+      "extentsMm": [
+        67.10091875688444,
+        6.077205636384086,
+        25.868866504869317
+      ],
+      "roundtripBoundsMm": [
+        -170.1648519056004,
+        -103.0639331487,
+        -1.8389416241498626,
+        4.238264012234281,
+        100.69349338501769,
+        126.56235988992405
+      ],
+      "roundtripExtentsMm": [
+        67.10091875690038,
+        6.077205636384144,
+        25.868866504906364
+      ],
+      "sha256": "920003e165b13aaadf2d09a5f3e34b608fe782d28737a0a38951858736ef35ff",
+      "step": "wing_left_sector_x2_z3.step"
+    },
+    {
+      "id": "wing_centre_bridge_x1_z1",
+      "volumeMm3": 23508.344634004225,
+      "boundsMm": [
+        -8.963929728099297,
+        8.963929728101,
+        -12.42396498746045,
+        24.056678442934,
+        -270.0000000999849,
+        -128.3154726338041
+      ],
+      "extentsMm": [
+        17.927859456200295,
+        36.48064343039445,
+        141.6845274661808
+      ],
+      "roundtripBoundsMm": [
+        -8.963929728112912,
+        8.963929728101,
+        -12.42396498746075,
+        24.056678442934,
+        -270.00000009998456,
+        -128.31547263379983
+      ],
+      "roundtripExtentsMm": [
+        17.927859456213913,
+        36.48064343039475,
+        141.68452746618473
+      ],
+      "sha256": "93284123106b832534c072bd9b8325df825c31111df20d1a7abddcac59f124d3",
+      "step": "wing_centre_bridge_x1_z1.step"
+    },
+    {
+      "id": "wing_centre_bridge_x1_z2",
+      "volumeMm3": 26268.304222920167,
+      "boundsMm": [
+        -8.962729969779216,
+        8.96272996977631,
+        -11.71961945771055,
+        24.054931025318428,
+        -128.3154728338041,
+        13.369054732371957
+      ],
+      "extentsMm": [
+        17.925459939555527,
+        35.774550483028975,
+        141.68452756617606
+      ],
+      "roundtripBoundsMm": [
+        -8.962729969779216,
+        8.962729969776305,
+        -11.71961945770644,
+        24.054931025318346,
+        -128.3154728338,
+        13.369054732372028
+      ],
+      "roundtripExtentsMm": [
+        17.925459939555523,
+        35.77455048302478,
+        141.68452756617202
+      ],
+      "sha256": "46fa0da6bac22fd968b1b9c9ed690a44d69338dd074b09fca82caaa32999501b",
+      "step": "wing_centre_bridge_x1_z2.step"
+    },
+    {
+      "id": "wing_centre_bridge_x1_z3",
+      "volumeMm3": 7322.811830420474,
+      "boundsMm": [
+        -5.07541434173916,
+        5.0754143417380035,
+        -6.822726800153721,
+        17.0624332074973,
+        13.36905453237195,
+        155.05358199854803
+      ],
+      "extentsMm": [
+        10.150828683477163,
+        23.88516000765102,
+        141.68452746617606
+      ],
+      "roundtripBoundsMm": [
+        -5.075414341739156,
+        5.075414341738011,
+        -6.822726800153718,
+        17.06243320749767,
+        13.369054532372,
+        155.05358199854803
+      ],
+      "roundtripExtentsMm": [
+        10.150828683477167,
+        23.885160007651386,
+        141.68452746617604
+      ],
+      "sha256": "790ee6adeddeec55319d6a6082b7c64bec527e9d5192cb012d77a185d26fa15b",
+      "step": "wing_centre_bridge_x1_z3.step"
+    },
+    {
+      "id": "wing_right_sector_x1_z1",
+      "volumeMm3": 344712.75249939575,
+      "boundsMm": [
+        80.32970351134114,
+        170.1648519056727,
+        -13.017334580802627,
+        22.054537853305444,
+        -231.71129119719998,
+        -65.50889875611824
+      ],
+      "extentsMm": [
+        89.83514839433155,
+        35.07187243410807,
+        166.20239244108174
+      ],
+      "roundtripBoundsMm": [
+        80.32970351134114,
+        170.16485190569867,
+        -13.017334580802627,
+        22.054537853305444,
+        -231.71129119719998,
+        -65.5088987561186
+      ],
+      "roundtripExtentsMm": [
+        89.83514839435753,
+        35.07187243410807,
+        166.20239244108137
+      ],
+      "sha256": "65c545a6a8ae636f988a05a7d92679b803cee5d1f45bcb994ca43bb3f7a13c14",
+      "step": "wing_right_sector_x1_z1.step"
+    },
+    {
+      "id": "wing_right_sector_x1_z2",
+      "volumeMm3": 258976.1934919176,
+      "boundsMm": [
+        81.70569945719605,
+        170.1648519056723,
+        -10.396688555094387,
+        20.00271730087863,
+        -65.5088989561206,
+        100.69349358496163
+      ],
+      "extentsMm": [
+        88.45915244847625,
+        30.399405855973015,
+        166.20239254108225
+      ],
+      "roundtripBoundsMm": [
+        81.70569945719603,
+        170.1648519056744,
+        -10.396688555087378,
+        20.00271730087865,
+        -65.50889895612002,
+        100.69349358496264
+      ],
+      "roundtripExtentsMm": [
+        88.45915244847836,
+        30.39940585596603,
+        166.20239254108265
+      ],
+      "sha256": "00b04bb044380a7ed0b4835b934d61b78c21a00ea1d48ad57a28731ab6cb47fa",
+      "step": "wing_right_sector_x1_z2.step"
+    },
+    {
+      "id": "wing_right_sector_x1_z3",
+      "volumeMm3": 3056.5768390146236,
+      "boundsMm": [
+        103.06393314866456,
+        170.16485190567138,
+        -1.8389416241186207,
+        4.238264012172643,
+        100.69349338495539,
+        126.5623598899198
+      ],
+      "extentsMm": [
+        67.10091875700682,
+        6.077205636291264,
+        25.868866504964416
+      ],
+      "roundtripBoundsMm": [
+        103.06393314866,
+        170.16485190567033,
+        -1.8389416241187235,
+        4.238264012172743,
+        100.69349338495,
+        126.56235988991999
+      ],
+      "roundtripExtentsMm": [
+        67.10091875701033,
+        6.077205636291467,
+        25.868866504969986
+      ],
+      "sha256": "57f7dec1aef21dbf35a8a5145918a684d3eec009d6842991edd7d4b5beec8bfb",
+      "step": "wing_right_sector_x1_z3.step"
+    },
+    {
+      "id": "wing_right_sector_x2_z1",
+      "volumeMm3": 236036.03012122546,
+      "boundsMm": [
+        170.164851705669,
+        260.0000002000001,
+        -13.719369115895878,
+        24.020693709075157,
+        -188.6938648627683,
+        -65.50889875610464
+      ],
+      "extentsMm": [
+        89.8351484943311,
+        37.740062824971034,
+        123.18496610666365
+      ],
+      "roundtripBoundsMm": [
+        170.1648517056699,
+        260.00000020000004,
+        -13.71936911589581,
+        24.02069370907533,
+        -188.69386486275408,
+        -65.50889875608492
+      ],
+      "roundtripExtentsMm": [
+        89.83514849433016,
+        37.74006282497114,
+        123.18496610666917
+      ],
+      "sha256": "ec5b7168f1c0f9237ce9e01c1e4e9c4f84b0a6d8ba06ddc8d556395ccc23684f",
+      "step": "wing_right_sector_x2_z1.step"
+    },
+    {
+      "id": "wing_right_sector_x2_z2",
+      "volumeMm3": 405994.5595416937,
+      "boundsMm": [
+        170.1648517056694,
+        260.0000002000001,
+        -13.706059715316476,
+        25.371289351245544,
+        -65.50889895615002,
+        100.69349358515818
+      ],
+      "extentsMm": [
+        89.8351484943307,
+        39.07734906656202,
+        166.2023925413082
+      ],
+      "roundtripBoundsMm": [
+        170.16485170566932,
+        260.00000020000004,
+        -13.706059715313543,
+        25.371289351245768,
+        -65.50889895615487,
+        100.69349358511536
+      ],
+      "roundtripExtentsMm": [
+        89.83514849433072,
+        39.07734906655931,
+        166.20239254127023
+      ],
+      "sha256": "8e5787db1e62f2630bc35e05767b658dc8d9c9a57917ed00112e7d683f085976",
+      "step": "wing_right_sector_x2_z2.step"
+    },
+    {
+      "id": "wing_right_sector_x2_z3",
+      "volumeMm3": 105779.72604513723,
+      "boundsMm": [
+        170.1648517056696,
+        260.0000002000001,
+        -8.81289035415944,
+        19.97735025877795,
+        100.69349338493177,
+        266.89588592603826
+      ],
+      "extentsMm": [
+        89.8351484943305,
+        28.79024061293739,
+        166.2023925411065
+      ],
+      "roundtripBoundsMm": [
+        170.1648517056696,
+        260.00000020000004,
+        -8.812890354159725,
+        19.97735025877768,
+        100.69349338488286,
+        266.89588592603
+      ],
+      "roundtripExtentsMm": [
+        89.83514849433044,
+        28.790240612937403,
+        166.20239254114716
+      ],
+      "sha256": "0d0eb9c2d96e5a33360d8b4626e364a8f3d6684fbd9acb8114fa43781c04ca76",
+      "step": "wing_right_sector_x2_z3.step"
+    }
+  ],
+  "preview": "phase15_main_wing_segments_views.png",
+  "limitations": [
+    "These are the existing Phase-15 left and right 498 mm wing sectors and 425 mm centre bridge components, not the FSI wing_t36mm test article or the full aircraft assembly.",
+    "Geometric partition and STEP round trips do not establish printer fit, support strategy, strength, load transfer, alignment, fastening, fatigue, tolerances, or structural integrity.",
+    "No slicer, printer, material, coupon, structural, flight, or fabrication validation was performed.",
+    "No fabrication or flight suitability is claimed; joint design and structural integration remain unproven."
+  ]
+}
