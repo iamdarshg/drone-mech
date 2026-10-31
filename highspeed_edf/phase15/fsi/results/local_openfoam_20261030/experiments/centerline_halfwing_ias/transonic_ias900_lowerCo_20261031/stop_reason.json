@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-31T14:43:21.483658+00:00",
+  "reason": "SIGTERM: thermodynamic/velocity bound exceeded",
+  "checkpoint": {
+    "timeSeconds": 5.6100292e-06,
+    "checkpoint": "5.6100292e-06",
+    "minTemperatureK": 234.619538,
+    "maxTemperatureK": 299.8082955,
+    "minTotalTemperatureK": 262.8138356160373,
+    "maxTotalTemperatureK": 353.6439794016941,
+    "minPressurePa": 59477.58381,
+    "maxPressurePa": 84946.84834,
+    "minDensityKgM3": 0.6911123137,
+    "maxDensityKgM3": 1.232382501,
+    "minSpeedMps": 237.99652079519763,
+    "maxSpeedMps": 328.8706264756758
+  }
+}

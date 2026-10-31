@@ -1,0 +1,60 @@
+{
+  "runWorktreeCommit": "8c59486231f4458bc3b73e3f55a31ca2edeaf7f4",
+  "sourceMainSnapshotCommit": "398ffd17264e05a98dfbaf93206766f22daaee52",
+  "remoteMainAtPublicationStart": "513e26979fc117f7dc907bd213a14a2ccdbf061e",
+  "sourceMeshSHA256": "1eeeeea4145aabd579c2d6dd209ec5bf38daefc73225b4a56d9b2c84fb8d45a6",
+  "polyMeshFilesSHA256": {
+    "boundary": "b1f63631ffc96ca38196ebc6e99cac496cd14a15b3b21e47c5a2940aa891e1a2",
+    "cellZones": "620bb623218b4b7f1b6b783e20660ee7b32c124d231b9ede6e92672b0b40ffa5",
+    "faceZones": "1a3fc3f2f2c7f76c597df378690ccbf4b8a8013456e58f0c87dcf4ecaca5220f",
+    "faces": "7abfdb6984bbfa6d407bd5b82906ef4ccf9e686c2cb5960082cc88e3a17a25b6",
+    "neighbour": "980d82b92fe49b430e7fcd77ecf6608632111396acd962633bcac38b4071b505",
+    "owner": "04bef0bfa0e6f3f1b2fa1fb2f4489265bfca9897b4be9c2ce968ac7b0b00e6d1",
+    "pointZones": "a4a6a2dcd51a046ec166f12f8fb6f70d0cc21e238dc6ae1d1db90effcf542a29",
+    "points": "9bd673a2f9c12bc71c8950b53831c4c1b27f66a2e0e4ff00fa165a022ce195db"
+  },
+  "inputSHA256": {
+    "0/T": "1808e61786dff2bb955c053b31214adbef18b48d64c7706d3dcb81cde9f43423",
+    "0/U": "f1359ad183554b7fdff3423be1452bd85d931cf71da508f336f87893676f6880",
+    "0/rho": "5f3b4a89ff2a21a05b52f46761396639afea6fe4f4705837c3434e79eb23b2a7",
+    "0/h": "da2561ef4279b7d0f08d1a1f6c9220de9f7950a3523e00890efe1ab9b1487f9e",
+    "0/omega": "f07b9c28320aebf79b67c54bdfd492513d4150a248892f6fa23d367e57f08b22",
+    "0/nut": "f1a01d6a761871da3c042f3ea302231167e11a2f1dd025800d34a5ff98ef1e4b",
+    "0/pointDisplacement": "c08548aaa99e5ce91f67e5d18f05e5ccb4a0b72e5cc77c056c000be2ca533eba",
+    "0/k": "411bc7879e04f0e68ee6e1b2875747b2c28c465d3d0b90e7ff8a20f4229e07fb",
+    "0/p": "cba72e16b86e4a563e9ff2fd7e20530c11a983d990094950edd3365ccd01b423",
+    "0/alphat": "c5795daa70d40f675e31074e7ff516f933d00f379879d9a44a38f4066bfa1489",
+    "system/controlDict": "1d9f577c97066e03203d070ccf5004c14ba994261fe53c3c6ba49b8007f0dc62",
+    "system/fvSolution": "dbd448162083d1d55f4b8ea1d7a95939312c18074f7f197093b5fe40c7fa69bf",
+    "system/fvSchemes": "9ee261174a6d32cf718a43031a01bccbbf55e6509b404d29d0ca95d2ace87151",
+    "constant/thermophysicalProperties": "7b9d89986c4ae5f406473eedafed8c95f236b887a4c11b553786d303bbd9eb7b",
+    "constant/turbulenceProperties": "1592efafe43e9340773157778056f2d9ffed815808d5ef2cc824afb649dfe475"
+  },
+  "candidateSHA256": "bf39987c84866dda8c4a027cd5b1bd46a33ab64750f2140f6b5597c16b9c68f2",
+  "checkpointFieldSHA256": {
+    "T": "5846b6a830b2ecf04d645a5dfc59f7ed659383cdff3437d7ca597465542c333c",
+    "U": "21873b8b3eb3ff6489817daafaa413c79fffbe36c4c3b17ec68c4d4fb4e03f51",
+    "alphat": "c3397f5c910815294b64e00ddc546705400f4a0f2139b909a5906530adeb629d",
+    "k": "8ced463af025f7643c0adbdb71df049711ddb083ecec39efb303260b1032508c",
+    "nut": "41e73d8c2986dbbc5bf114863ffd3fc6eaf58c737f5eded05bf3a2000c1bbe5a",
+    "omega": "91b10332e62b86c84936b39d23f54c6ce80deea4b8e548d915ebfe5556fabc81",
+    "p": "acf7dbbfd38b6a722d36aa86b56a811b13dfe18bcc82be709444e3cbe5f9142d",
+    "phi": "3dc3c11ddd3f409a590fabe87b9b9f505e140f8474a712bb315525eb9899530a",
+    "rho": "7d504a00c325695d1f151cba461094d93a166a7afb0ccdcf35fb721df7c693e1"
+  },
+  "openFoamPackageProvenanceSHA256": "43cb43f4261692695bdb89bf822fa5f84ab20e291b7015092205c02c3086f8e9",
+  "solverBinarySHA256": "925288f3e89e39b06f66e401542c5985eea0a538e9f9d781f1ef09c39155c586",
+  "evidenceSHA256": {
+    "checkMesh.log": "d414d95f21d252531caf7edd69e1879279f2957d4ea5a7d5fc8fb37d2df72738",
+    "dryrun.log": "34cffa273a84cc08a03bc01d170d159ac7038bfad5c8c31b798df437da742554",
+    "rhoPimpleFoam_ias900.log": "6f085558dc2d486c407f4b51be7065c17b6772fb328c1c7052781b64bf351a03",
+    "status.txt": "fae8b7d8122b1d5affab2834d69e94966726639a0022ee9c2e7c5c78d3248337",
+    "monitor.jsonl": "7702cdaba5b04f73a45257b3b3a584a72739ffbada8fd1f1e65d3caa2d20cb54",
+    "stop_reason.json": "42b1b8c82a1e965429732292d2587d704a7920922a5d65bd9f11c703845b59c4",
+    "launch_record.json": "b87a2cd5ea018a18e4a24271c1706c839be7d1f71a97d03d9890da24c12737d5",
+    "run_ias900.sh": "426ee210c9b751bd2f0b4b8263efeffaf7ca52c603dc2eb9b5ee5c967cc9fc18",
+    "monitor.py": "151a9d3067ddcbd16cecc8dbce84f7f8e80ef08db796ef21b0afa3e1d50ed12e",
+    "checkpoint_bounds.py": "a9801e3c5c4f1c2e53203bd56022201b64719afb34e301a93450fee9a07dd368",
+    "README.md": "4b69b82231a7d9df9040acd09c0385ae333b7be86b0ea192bef579c6cd3b0336"
+  }
+}

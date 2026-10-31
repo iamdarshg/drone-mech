@@ -1,0 +1,133 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/rhoPimpleFoam -case /workspace/drone-mech-transonic/highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/transonic_ias900_lowerCo_20261031/ias900 -dry-run
+Date   : Oct 31 2026
+Time   : 14:41:12
+Host   : 904f5b3ad6e3
+PID    : 13784
+I/O    : uncollated
+Case   : /workspace/drone-mech-transonic/highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/transonic_ias900_lowerCo_20261031/ias900
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Operating in 'dry-run' mode: case will run for 1 time step.  All checks assumed OK on a clean exit
+Selecting simplified mesh model staticFvMesh
+Creating simplified mesh using "/workspace/drone-mech-transonic/highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/transonic_ias900_lowerCo_20261031/ias900/constant/polyMesh"
+Mesh bounds: (-0.53125 -0.35 -0.695) (0.79125 0.35 1.431239991)
+Creating dummy zone fluid
+
+PIMPLE: no residual control data found. Calculations will employ 2 corrector loops
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.5555555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+Creating field dpdt
+
+Creating field kinetic energy K
+
+No MRF models present
+
+No finite volume options present
+Courant Number mean: 0.0005274324943 max: 0.0007032433258
+
+Starting time loop
+
+Courant Number mean: 0.0005274324943 max: 0.0007032433258
+deltaT = 6e-06
+Time = 6e-06
+
+PIMPLE: iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for Uy, Initial residual = 0.9998774797, Final residual = 2.21818814e-11, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 1, Final residual = 2.639744227e-11, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 1, Final residual = 2.086223097e-11, No Iterations 1
+GAMG:  Solving for p, Initial residual = 1, Final residual = 5.105627343e-11, No Iterations 1
+GAMG:  Solving for p, Initial residual = 3.978587778e-11, Final residual = 3.978587778e-11, No Iterations 0
+GAMG:  Solving for p, Initial residual = 3.978587778e-11, Final residual = 3.978587778e-11, No Iterations 0
+GAMG:  Solving for p, Initial residual = 3.978587778e-11, Final residual = 3.978587778e-11, No Iterations 0
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.405163854e-05, global = -1.007371799e-05, cumulative = -1.007371799e-05
+GAMG:  Solving for p, Initial residual = 0.6451714674, Final residual = 3.361229674e-11, No Iterations 1
+GAMG:  Solving for p, Initial residual = 2.841848407e-11, Final residual = 2.841848407e-11, No Iterations 0
+GAMG:  Solving for p, Initial residual = 2.841848407e-11, Final residual = 2.841848407e-11, No Iterations 0
+GAMG:  Solving for p, Initial residual = 2.841848407e-11, Final residual = 2.841848407e-11, No Iterations 0
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.405163858e-05, global = -1.007371803e-05, cumulative = -2.014743602e-05
+PIMPLE: iteration 2
+smoothSolver:  Solving for Uy, Initial residual = 0.999357433, Final residual = 1.007401491e-11, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.4307403883, Final residual = 4.252706415e-12, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.06891643205, Final residual = 2.05514489e-12, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.6147212871, Final residual = 1.411193535e-10, No Iterations 1
+GAMG:  Solving for p, Initial residual = 1.14171534e-10, Final residual = 1.14171534e-10, No Iterations 0
+GAMG:  Solving for p, Initial residual = 1.14171534e-10, Final residual = 1.14171534e-10, No Iterations 0
+GAMG:  Solving for p, Initial residual = 1.14171534e-10, Final residual = 1.14171534e-10, No Iterations 0
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.809145174e-15, global = 2.238896078e-31, cumulative = -2.014743602e-05
+GAMG:  Solving for p, Initial residual = 3.425146021e-10, Final residual = 3.425146021e-10, No Iterations 0
+GAMG:  Solving for p, Initial residual = 3.425146021e-10, Final residual = 3.425146021e-10, No Iterations 0
+GAMG:  Solving for p, Initial residual = 3.425146021e-10, Final residual = 3.425146021e-10, No Iterations 0
+GAMG:  Solving for p, Initial residual = 3.425146021e-10, Final residual = 3.425146021e-10, No Iterations 0
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 8.335832961e-15, global = -9.160256001e-17, cumulative = -2.014743602e-05
+smoothSolver:  Solving for omega, Initial residual = 0.0001188820723, Final residual = 7.832001083e-16, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 1, Final residual = 1.108542887e-11, No Iterations 1
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+End
+
