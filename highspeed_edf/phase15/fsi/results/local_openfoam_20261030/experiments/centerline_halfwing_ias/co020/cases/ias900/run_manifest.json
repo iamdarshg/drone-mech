@@ -18,7 +18,7 @@
   "solverInitialAndBoundaryPressureSource": "copied from source case 0/p; preserved without rewrite",
   "machFromCasConversion": 0.8618149633208082,
   "tasAppliedInUFieldMps": 283.1719595766233,
-  "sourceGeometryDescription": "Experimental half-wing STEP, root schedule extrapolated to x=0; no fuselage or root fillet",
+  "sourceGeometryDescription": "Experimental half-wing STEP, source schedule extrapolated from x=80.33 mm to x=0; no fuselage or root fillet",
   "deltaTInitial": 5e-06,
   "stopCondition": "Per-segment 300 s and 600 s wall-clock caps; continuation from latest complete checkpoint; both terminated by timeout exit 124 without End marker",
   "lastLoggedSolverTimeS": 0.00013398241,
@@ -47,5 +47,10 @@
     "outlet": 184,
     "farfield": 1512
   },
-  "rootWallType": "symmetryPlane"
+  "rootWallType": "symmetryPlane",
+  "sourceMeshArtifact": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/mesh/wing_centerline.msh",
+  "sourceGeometryArtifact": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/geometry/halfwing_x0_to_260mm_t30.step",
+  "sourceCaseGenerator": "highspeed_edf/phase15/optimization/phase15_fsi_casegen.py",
+  "openFoamPackageProvenance": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/package-provenance.txt",
+  "openFoamPackageProvenanceSHA256": "43cb43f4261692695bdb89bf822fa5f84ab20e291b7015092205c02c3086f8e9"
 }
