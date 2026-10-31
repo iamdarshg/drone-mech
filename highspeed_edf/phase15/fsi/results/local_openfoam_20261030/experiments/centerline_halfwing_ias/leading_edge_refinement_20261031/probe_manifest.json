@@ -1,0 +1,29 @@
+{
+  "experiment": "leading_edge_refinement_20261031",
+  "status": "generation_completed_but_probe_stopped_before_mesh_write_due_to_size",
+  "sourceGitCommit": "86d8385206e9a213fa9e1fe66e506d8bb1477cbb",
+  "gitBranch": "codex/transonic-solver-ias700-900",
+  "phase15Generator": "highspeed_edf/phase15/optimization/phase15_fsi_casegen.py",
+  "phase15GeneratorSHA256": "f2ea9705c2ea10d5a5ce5145df32944f0c80fbeba35fb4a70961dfea7c36acce",
+  "probeScriptSHA256": "5a83d262d8911aa20b2722334903b6ab35d27789283d8171019c33e93c7657c6",
+  "prepareCasesScriptSHA256": "264fe7a0a6772026a10cbd93391ab76b784c374bc84269615b1868c783ff72fd",
+  "geometrySHA256": "e636235213323c9ef7e06a6e9c6b42bac74d95b882b3e12e4f573c4d04568cfb",
+  "sourceCenterlineMeshSHA256": "1eeeeea4145aabd579c2d6dd209ec5bf38daefc73225b4a56d9b2c84fb8d45a6",
+  "sourceCenterlineFluidCells": 49208,
+  "gmshPythonBinding": "4.15.2",
+  "gmshRuntime": "4.13.1",
+  "requestedLeadingEdgeSizing": {
+    "localSizeMinM": 0.006,
+    "localSizeMaxM": 0.012,
+    "distanceMinM": 0.002,
+    "distanceMaxM": 0.01
+  },
+  "preOptimizationDelaunay": {
+    "nodes": 934944,
+    "tetrahedra": 5693285
+  },
+  "outputMeshWritten": false,
+  "openFoamImportOrCheckMeshRun": false,
+  "solverRun": false,
+  "stopReason": "The generated 5,693,285 tetrahedra are about 115.7 times the source 49,208-cell mesh; stopped before writing/importing because a paired transient was not resource-defensible."
+}
