@@ -1,0 +1,201 @@
+{
+  "experiment": "centerline-halfwing nominal 3.5mm Box sizing request, clamped to global minimum",
+  "evidenceClass": "failed transient mesh-sizing probe; no converged result",
+  "mesh": {
+    "artifact": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/wing_nominal_box_clamped.msh",
+    "sha256": "44fe5a490fa1d6d45a3a00d85131835527a3dbb0dc3a6f73beb72bfcbbb7e173",
+    "cells": 53366,
+    "requestedBoxVInM": 0.0035,
+    "effectiveMeshSizeMinM": 0.012,
+    "globalSizeMaxM": 0.12
+  },
+  "geometry": {
+    "candidate": "experimental centerline half-wing, t30mm",
+    "sourceGeneratorSHA256": "f2ea9705c2ea10d5a5ce5145df32944f0c80fbeba35fb4a70961dfea7c36acce",
+    "centerlineMeshGeneratorSHA256": "9d9df53f5f72fa80ae90822a6c8401d9914674ecfdfecc076be12436eb4e1b8d",
+    "baseCenterlineMeshSHA256": "1eeeeea4145aabd579c2d6dd209ec5bf38daefc73225b4a56d9b2c84fb8d45a6",
+    "sourceFiles": {
+      "highspeed_edf/phase15/optimization/phase15_fsi_casegen.py": "f2ea9705c2ea10d5a5ce5145df32944f0c80fbeba35fb4a70961dfea7c36acce",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/generate_centerline_mesh.py": "9d9df53f5f72fa80ae90822a6c8401d9914674ecfdfecc076be12436eb4e1b8d",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/mesh/wing_centerline.msh": "1eeeeea4145aabd579c2d6dd209ec5bf38daefc73225b4a56d9b2c84fb8d45a6",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/candidate.json": "49916016f97b15529599eef893f29c7ee89e3f40095664193ddd7550483467f2",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/run_manifest.json": "53f592fe7ec35eae78977fc2a74909a1bf7b9e024e5dddeb5628658a456142c0",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/system/controlDict": "04b4539e7e8d73757cafdd89b14c568411c0138c01c10ebb97c522f4c527dbd4",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/system/fvSchemes": "9ee261174a6d32cf718a43031a01bccbbf55e6509b404d29d0ca95d2ace87151",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/system/fvSolution": "877368802b0b89cb34d95226cca2bda747508ab29c5cf3f81812d7b24aa6d913",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/T": "1808e61786dff2bb955c053b31214adbef18b48d64c7706d3dcb81cde9f43423",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/U": "f6c58e4462e5c1ff6573ccc368691befb2c640baef31ac425e1da065e3f6f3d0",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/rho": "5f3b4a89ff2a21a05b52f46761396639afea6fe4f4705837c3434e79eb23b2a7",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/h": "da2561ef4279b7d0f08d1a1f6c9220de9f7950a3523e00890efe1ab9b1487f9e",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/omega": "f07b9c28320aebf79b67c54bdfd492513d4150a248892f6fa23d367e57f08b22",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/nut": "f1a01d6a761871da3c042f3ea302231167e11a2f1dd025800d34a5ff98ef1e4b",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/pointDisplacement": "c08548aaa99e5ce91f67e5d18f05e5ccb4a0b72e5cc77c056c000be2ca533eba",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/k": "51e2189bae34b1069306771fba580909aff572168e6947baca2e3a1c5125827e",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/p": "cba72e16b86e4a563e9ff2fd7e20530c11a983d990094950edd3365ccd01b423",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/alphat": "c5795daa70d40f675e31074e7ff516f933d00f379879d9a44a38f4066bfa1489",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/candidate.json": "4020734bd2c63573ea761876e47550a60fff7ee9a2dcadcb2e4b1dbd6b04548c",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/run_manifest.json": "9c3c4112117d03768b5231a6dda6b667ff8616431aeaeea6e17a6d5ae3627719",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/system/controlDict": "04b4539e7e8d73757cafdd89b14c568411c0138c01c10ebb97c522f4c527dbd4",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/system/fvSchemes": "9ee261174a6d32cf718a43031a01bccbbf55e6509b404d29d0ca95d2ace87151",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/system/fvSolution": "877368802b0b89cb34d95226cca2bda747508ab29c5cf3f81812d7b24aa6d913",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/T": "1808e61786dff2bb955c053b31214adbef18b48d64c7706d3dcb81cde9f43423",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/U": "7bc85a44573a52e377aad5bc1d9a79b420b43fe57391fe2e1384dd1c44b16a89",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/rho": "5f3b4a89ff2a21a05b52f46761396639afea6fe4f4705837c3434e79eb23b2a7",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/h": "da2561ef4279b7d0f08d1a1f6c9220de9f7950a3523e00890efe1ab9b1487f9e",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/omega": "f07b9c28320aebf79b67c54bdfd492513d4150a248892f6fa23d367e57f08b22",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/nut": "f1a01d6a761871da3c042f3ea302231167e11a2f1dd025800d34a5ff98ef1e4b",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/pointDisplacement": "c08548aaa99e5ce91f67e5d18f05e5ccb4a0b72e5cc77c056c000be2ca533eba",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/k": "411bc7879e04f0e68ee6e1b2875747b2c28c465d3d0b90e7ff8a20f4229e07fb",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/p": "cba72e16b86e4a563e9ff2fd7e20530c11a983d990094950edd3365ccd01b423",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/alphat": "c5795daa70d40f675e31074e7ff516f933d00f379879d9a44a38f4066bfa1489",
+      "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/geometry/halfwing_x0_to_260mm_t30.step": "4d2a6eefd10cc547d45baadd9207218de688696730c3722ae2247bf9c86ef2e2"
+    }
+  },
+  "meshQuality": {
+    "nativeTool": "OpenFOAM checkMesh, OpenFOAM 1912.200626-3+b1",
+    "result": "Mesh OK",
+    "maxAspectRatio": 20.15686664,
+    "minCellVolumeM3": 1.306225684e-09,
+    "maxNonOrthogonalityDeg": 83.4644433,
+    "averageNonOrthogonalityDeg": 22.23101906,
+    "facesAbove70Deg": 95,
+    "maxSkewness": 2.77434426
+  },
+  "meshGeneration": {
+    "python": "3.12.14",
+    "gmshPythonBinding": "4.15.2",
+    "gmshLinkedRuntime": "4.13.1",
+    "netgenOptimizer": "disabled; not compiled in runtime",
+    "generatorScript": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/generate_clamped_box_mesh.py",
+    "generatorScriptSHA256": "2521a8b267cb1fc1fc841b17aac6d298c6ec49a7d9515ef5c95170e2095231d1"
+  },
+  "solver": {
+    "application": "rhoPimpleFoam",
+    "version": "OpenFOAM 1912.200626-3+b1",
+    "executableSHA256": "925288f3e89e39b06f66e401542c5985eea0a538e9f9d781f1ef09c39155c586",
+    "controls": "inputs/controlDict_fresh and inputs/controlDict_continuation",
+    "controlsSha256": {
+      "controlDict_fresh": "378c96a9cb50fd6d5f3bdb7cb07134c2b57a57c0d9662ca971e99a5c52e0cf74",
+      "controlDict_continuation": "6dbe5978ee29fd4016674d05ca707db9db0a812555762ae505f97b7203891a79"
+    },
+    "fvSchemesSHA256": "9ee261174a6d32cf718a43031a01bccbbf55e6509b404d29d0ca95d2ace87151",
+    "fvSolutionSHA256": "877368802b0b89cb34d95226cca2bda747508ab29c5cf3f81812d7b24aa6d913",
+    "actualControls": {
+      "deltaT_s": 1e-05,
+      "adjustTimeStep": true,
+      "maxCo": 0.4,
+      "maxDeltaT_s": 2e-05,
+      "writeIntervalTimeSteps": 10,
+      "writeFormat": "ascii"
+    },
+    "initialFieldsBySpeed": {
+      "IAS700": {
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/T": "1808e61786dff2bb955c053b31214adbef18b48d64c7706d3dcb81cde9f43423",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/U": "f6c58e4462e5c1ff6573ccc368691befb2c640baef31ac425e1da065e3f6f3d0",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/rho": "5f3b4a89ff2a21a05b52f46761396639afea6fe4f4705837c3434e79eb23b2a7",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/h": "da2561ef4279b7d0f08d1a1f6c9220de9f7950a3523e00890efe1ab9b1487f9e",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/omega": "f07b9c28320aebf79b67c54bdfd492513d4150a248892f6fa23d367e57f08b22",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/nut": "f1a01d6a761871da3c042f3ea302231167e11a2f1dd025800d34a5ff98ef1e4b",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/pointDisplacement": "c08548aaa99e5ce91f67e5d18f05e5ccb4a0b72e5cc77c056c000be2ca533eba",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/k": "51e2189bae34b1069306771fba580909aff572168e6947baca2e3a1c5125827e",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/p": "cba72e16b86e4a563e9ff2fd7e20530c11a983d990094950edd3365ccd01b423",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias700/0/alphat": "c5795daa70d40f675e31074e7ff516f933d00f379879d9a44a38f4066bfa1489"
+      },
+      "IAS900": {
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/T": "1808e61786dff2bb955c053b31214adbef18b48d64c7706d3dcb81cde9f43423",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/U": "7bc85a44573a52e377aad5bc1d9a79b420b43fe57391fe2e1384dd1c44b16a89",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/rho": "5f3b4a89ff2a21a05b52f46761396639afea6fe4f4705837c3434e79eb23b2a7",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/h": "da2561ef4279b7d0f08d1a1f6c9220de9f7950a3523e00890efe1ab9b1487f9e",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/omega": "f07b9c28320aebf79b67c54bdfd492513d4150a248892f6fa23d367e57f08b22",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/nut": "f1a01d6a761871da3c042f3ea302231167e11a2f1dd025800d34a5ff98ef1e4b",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/pointDisplacement": "c08548aaa99e5ce91f67e5d18f05e5ccb4a0b72e5cc77c056c000be2ca533eba",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/k": "411bc7879e04f0e68ee6e1b2875747b2c28c465d3d0b90e7ff8a20f4229e07fb",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/p": "cba72e16b86e4a563e9ff2fd7e20530c11a983d990094950edd3365ccd01b423",
+        "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/cases/ias900/0/alphat": "c5795daa70d40f675e31074e7ff516f933d00f379879d9a44a38f4066bfa1489"
+      }
+    }
+  },
+  "runs": {
+    "IAS700": {
+      "wallSegments": [
+        "90s fresh start",
+        "180s continuation",
+        "180s continuation stopped by SIGFPE"
+      ],
+      "latestCompleteTimeS": 0.00018019075,
+      "midStepLastPrintedTimeS": 0.00018036477,
+      "termination": "SIGFPE in hePsiThermo::calculate; no End",
+      "lastFieldExtrema": {
+        "T_K": [
+          53.83214272,
+          1551.824847
+        ],
+        "p_Pa": [
+          13449.12049,
+          524284.9541
+        ],
+        "rho_kgm3": [
+          0.04946003331,
+          3.160006378
+        ],
+        "maxSpeed_ms": 2984.762028,
+        "maxTemperatureCellCenterM": [
+          0.0037505,
+          -0.0206323,
+          -0.2035266
+        ],
+        "maxSpeedCellCenterM": [
+          0.0041818,
+          -0.0190445,
+          -0.19483295
+        ]
+      }
+    },
+    "IAS900": {
+      "wallSegments": [
+        "180s fresh start",
+        "180s continuation",
+        "180s continuation"
+      ],
+      "latestCompleteTimeS": 0.00016493441,
+      "midStepLastPrintedTimeS": 0.00016588612,
+      "termination": "wall cap exit 124, interrupted mid-iteration; no End",
+      "lastFieldExtrema": {
+        "T_K": [
+          162.3644738,
+          1163.414545
+        ],
+        "p_Pa": [
+          20680.40148,
+          330671.5778
+        ],
+        "rho_kgm3": [
+          0.1018654661,
+          3.206091095
+        ],
+        "maxSpeed_ms": 2327.541185,
+        "maxTemperatureCellCenterM": [
+          0.1950577,
+          0.00149655,
+          0.15672247
+        ],
+        "maxSpeedCellCenterM": [
+          0.16817018,
+          -0.01880246,
+          -0.13100277
+        ]
+      }
+    }
+  },
+  "logs": {
+    "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/logs/checkMesh.log": "2f6f7a4c8a4612e6dd61b9f5fa8a5c9220364a3e52429fadf437be50c7b218d1",
+    "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/logs/gmshToFoam.log": "910ddf738eed72b15f8a061d2eac80992c86ad2884b1d34614ce92a9b161f5ae",
+    "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/logs/gmsh_regeneration.log": "14ca9ed2371f6b9431b0335609aecb390f33aeb9a663e24b488a22ddd48f9a2c",
+    "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/logs/rhoPimpleFoam_ias700_continue1_180s.log": "af348df99ba426af8a937677f83f007a347ac139f4f08f8a10c3c742d54f1ccc",
+    "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/logs/rhoPimpleFoam_ias700_continue2_sigfpe.log": "a3e82c5e63dd80f7b9d3c96ba451a48aabf2ab952b40dd404239b07f861ed2d1",
+    "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/logs/rhoPimpleFoam_ias700_fresh_90s.log": "a6aac1894d139f2d6c218d41a87ae40c059caafdbdf1aed3938ca57939eb502a",
+    "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/logs/rhoPimpleFoam_ias900_continue1_180s.log": "b5f749a2906b12c1ddf8e71af004a2dacc60ef143d7c5b8060ee5e270faf4e9c",
+    "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/logs/rhoPimpleFoam_ias900_continue2_180s.log": "99ab29627d849cb01185b98e672a44885f42344bbeaaafce72873380f8972471",
+    "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/box_field_clamp_probe_20261031/logs/rhoPimpleFoam_ias900_fresh_180s.log": "b6b6fa279a98c2738165c9105548ff2857a55ac74aa071b94bc678661b5e7c7e"
+  }
+}
