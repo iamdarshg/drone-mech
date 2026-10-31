@@ -1,0 +1,591 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/snappyHexMesh -case . -overwrite
+Date   : Oct 31 2026
+Time   : 14:50:06
+Host   : 904f5b3ad6e3
+PID    : 15276
+I/O    : uncollated
+Case   : /tmp/snappy-wing-half-domain
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Read mesh in = 0.14 s
+
+Overall mesh bounding box  : (0 -0.35 -0.695) (0.79125 0.35 1.43124)
+Relative tolerance         : 1e-06
+Absolute matching distance : 2.37423e-06
+
+Reading refinement surfaces.
+Read refinement surfaces in = 0.05 s
+
+Reading refinement shells.
+Refinement level 5 for all cells inside leBox
+Refinement level 6 for all cells inside rootTEBox
+Refinement level 4 for all cells inside wakeBox
+Read refinement shells in = 0 s
+
+Setting refinement level of surface to be consistent with shells.
+For geometry halfwing.stl detected 326 uncached triangles out of 22148
+Checked shell refinement in = 0.08 s
+
+Reading features.
+Read edgeMesh halfwing.eMesh
+    points      : 633
+    edges       : 638
+    boundingBox : (0 -0.0152345 -0.27) (0.26 0.0148911 0.15624)
+
+Refinement level according to distance to "halfwing.eMesh" (633 points, 638 edges).
+    level 4 for all cells within 0 metre.
+Read features in = 0 s
+
+
+Determining initial surface intersections
+-----------------------------------------
+
+Edge intersection testing:
+    Number of edges             : 102564
+    Number of edges to retest   : 0
+    Number of intersected edges : 0
+Edge intersection testing:
+    Number of edges             : 102564
+    Number of edges to retest   : 102564
+    Number of intersected edges : 107
+Calculated surface intersections in = 0.11 s
+
+Initial mesh : cells:33048  faces:102564  points:36575
+Cells per refinement level:
+    0	33048
+
+Adding patches for surface regions
+----------------------------------
+
+Patch Type                Region                        
+----- ----                ------                        
+halfwing:
+
+4     wall                halfwing_fsi                  
+5     symmetryPlane       halfwing_rootWall             
+
+Added patches in = 0 s
+
+Edge intersection testing:
+    Number of edges             : 102564
+    Number of edges to retest   : 0
+    Number of intersected edges : 107
+Selecting decompositionMethod none [1]
+
+Refinement phase
+----------------
+
+Found point (0.4 0 0) in cell 10727 on processor 0
+
+Feature refinement iteration 0
+------------------------------
+
+Marked for refinement due to explicit features             : 76 cells.
+Determined cells to refine in = 0.23 s
+Selected for feature refinement : 76 cells (out of 33048)
+Edge intersection testing:
+    Number of edges             : 104520
+    Number of edges to retest   : 3048
+    Number of intersected edges : 316
+Refined mesh in = 0.08 s
+After refinement feature refinement iteration 0 : cells:33580  faces:104520  points:37511
+Cells per refinement level:
+    0	32972
+    1	608
+
+Feature refinement iteration 1
+------------------------------
+
+Marked for refinement due to explicit features             : 134 cells.
+Determined cells to refine in = 0.23 s
+Selected for feature refinement : 190 cells (out of 33580)
+Edge intersection testing:
+    Number of edges             : 109287
+    Number of edges to retest   : 7322
+    Number of intersected edges : 1011
+Refined mesh in = 0.09 s
+After refinement feature refinement iteration 1 : cells:34910  faces:109287  points:39705
+Cells per refinement level:
+    0	32916
+    1	922
+    2	1072
+
+Feature refinement iteration 2
+------------------------------
+
+Marked for refinement due to explicit features             : 271 cells.
+Determined cells to refine in = 0.2 s
+Selected for feature refinement : 479 cells (out of 34910)
+Edge intersection testing:
+    Number of edges             : 121227
+    Number of edges to retest   : 18495
+    Number of intersected edges : 2810
+Refined mesh in = 0.11 s
+After refinement feature refinement iteration 2 : cells:38263  faces:121227  points:45141
+Cells per refinement level:
+    0	32864
+    1	1182
+    2	2049
+    3	2168
+
+Feature refinement iteration 3
+------------------------------
+
+Marked for refinement due to explicit features             : 589 cells.
+Determined cells to refine in = 0.23 s
+Selected for feature refinement : 1075 cells (out of 38263)
+Edge intersection testing:
+    Number of edges             : 147903
+    Number of edges to retest   : 41173
+    Number of intersected edges : 6213
+Refined mesh in = 0.17 s
+After refinement feature refinement iteration 3 : cells:45788  faces:147903  points:57187
+Cells per refinement level:
+    0	32818
+    1	1438
+    2	2589
+    3	4455
+    4	4488
+
+Feature refinement iteration 4
+------------------------------
+
+Marked for refinement due to explicit features             : 0 cells.
+Determined cells to refine in = 0.28 s
+Selected for feature refinement : 0 cells (out of 45788)
+Stopping refining since too few cells selected.
+
+
+Surface refinement iteration 0
+------------------------------
+
+Marked for refinement due to surface intersection          : 1161 cells.
+Marked for refinement due to curvature/regions             : 278 cells.
+Determined cells to refine in = 0.03 s
+Selected for refinement : 1616 cells (out of 45788)
+Edge intersection testing:
+    Number of edges             : 184971
+    Number of edges to retest   : 55317
+    Number of intersected edges : 9996
+Refined mesh in = 0.19 s
+After refinement surface refinement iteration 0 : cells:57100  faces:184971  points:71648
+Cells per refinement level:
+    0	32659
+    1	2370
+    2	4815
+    3	7916
+    4	8284
+    5	1056
+
+Surface refinement iteration 1
+------------------------------
+
+Marked for refinement due to surface intersection          : 1930 cells.
+Marked for refinement due to curvature/regions             : 514 cells.
+Determined cells to refine in = 0.05 s
+Selected for refinement : 2683 cells (out of 57100)
+Edge intersection testing:
+    Number of edges             : 244521
+    Number of edges to retest   : 88851
+    Number of intersected edges : 15539
+Refined mesh in = 0.26 s
+After refinement surface refinement iteration 1 : cells:75881  faces:244521  points:93631
+Cells per refinement level:
+    0	32560
+    1	2352
+    2	10603
+    3	12721
+    4	13853
+    5	3216
+    6	576
+
+Surface refinement iteration 2
+------------------------------
+
+Marked for refinement due to surface intersection          : 643 cells.
+Marked for refinement due to curvature/regions             : 1084 cells.
+Determined cells to refine in = 0.07 s
+Selected for refinement : 1816 cells (out of 75881)
+Edge intersection testing:
+    Number of edges             : 285228
+    Number of edges to retest   : 65820
+    Number of intersected edges : 20588
+Refined mesh in = 0.32 s
+After refinement surface refinement iteration 2 : cells:88593  faces:285228  points:108907
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9491
+    3	21220
+    4	17946
+    5	4018
+    6	1008
+
+Surface refinement iteration 3
+------------------------------
+
+Marked for refinement due to surface intersection          : 72 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.08 s
+Selected for refinement : 87 cells (out of 88593)
+Edge intersection testing:
+    Number of edges             : 287274
+    Number of edges to retest   : 5512
+    Number of intersected edges : 20804
+Refined mesh in = 0.24 s
+After refinement surface refinement iteration 3 : cells:89202  faces:287274  points:109741
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9490
+    3	21180
+    4	18296
+    5	4286
+    6	1040
+
+Surface refinement iteration 4
+------------------------------
+
+Marked for refinement due to surface intersection          : 9 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.09 s
+Selected for refinement : 15 cells (out of 89202)
+Edge intersection testing:
+    Number of edges             : 287619
+    Number of edges to retest   : 1154
+    Number of intersected edges : 20828
+Refined mesh in = 0.23 s
+After refinement surface refinement iteration 4 : cells:89307  faces:287619  points:109878
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21191
+    4	18328
+    5	4350
+    6	1040
+
+Surface refinement iteration 5
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.09 s
+Selected for refinement : 1 cells (out of 89307)
+Edge intersection testing:
+    Number of edges             : 287643
+    Number of edges to retest   : 94
+    Number of intersected edges : 20835
+Refined mesh in = 0.24 s
+After refinement surface refinement iteration 5 : cells:89314  faces:287643  points:109888
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21190
+    4	18336
+    5	4350
+    6	1040
+
+Surface refinement iteration 6
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.08 s
+Selected for refinement : 1 cells (out of 89314)
+Edge intersection testing:
+    Number of edges             : 287667
+    Number of edges to retest   : 94
+    Number of intersected edges : 20842
+Refined mesh in = 0.22 s
+After refinement surface refinement iteration 6 : cells:89321  faces:287667  points:109898
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21189
+    4	18344
+    5	4350
+    6	1040
+
+Surface refinement iteration 7
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.08 s
+Selected for refinement : 1 cells (out of 89321)
+Edge intersection testing:
+    Number of edges             : 287691
+    Number of edges to retest   : 94
+    Number of intersected edges : 20849
+Refined mesh in = 0.23 s
+After refinement surface refinement iteration 7 : cells:89328  faces:287691  points:109908
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21188
+    4	18352
+    5	4350
+    6	1040
+
+Surface refinement iteration 8
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.09 s
+Selected for refinement : 1 cells (out of 89328)
+Edge intersection testing:
+    Number of edges             : 287715
+    Number of edges to retest   : 94
+    Number of intersected edges : 20856
+Refined mesh in = 0.23 s
+After refinement surface refinement iteration 8 : cells:89335  faces:287715  points:109918
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21187
+    4	18360
+    5	4350
+    6	1040
+
+Surface refinement iteration 9
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.09 s
+Selected for refinement : 1 cells (out of 89335)
+Edge intersection testing:
+    Number of edges             : 287739
+    Number of edges to retest   : 94
+    Number of intersected edges : 20863
+Refined mesh in = 0.22 s
+After refinement surface refinement iteration 9 : cells:89342  faces:287739  points:109928
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21186
+    4	18368
+    5	4350
+    6	1040
+
+Surface refinement iteration 10
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.08 s
+Selected for refinement : 1 cells (out of 89342)
+Edge intersection testing:
+    Number of edges             : 287763
+    Number of edges to retest   : 94
+    Number of intersected edges : 20870
+Refined mesh in = 0.24 s
+After refinement surface refinement iteration 10 : cells:89349  faces:287763  points:109938
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21185
+    4	18376
+    5	4350
+    6	1040
+
+Surface refinement iteration 11
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.08 s
+Selected for refinement : 1 cells (out of 89349)
+Edge intersection testing:
+    Number of edges             : 287787
+    Number of edges to retest   : 94
+    Number of intersected edges : 20877
+Refined mesh in = 0.26 s
+After refinement surface refinement iteration 11 : cells:89356  faces:287787  points:109948
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21184
+    4	18384
+    5	4350
+    6	1040
+
+Surface refinement iteration 12
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.09 s
+Selected for refinement : 1 cells (out of 89356)
+Edge intersection testing:
+    Number of edges             : 287811
+    Number of edges to retest   : 94
+    Number of intersected edges : 20884
+Refined mesh in = 0.22 s
+After refinement surface refinement iteration 12 : cells:89363  faces:287811  points:109958
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21183
+    4	18392
+    5	4350
+    6	1040
+
+Surface refinement iteration 13
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.09 s
+Selected for refinement : 1 cells (out of 89363)
+Edge intersection testing:
+    Number of edges             : 287835
+    Number of edges to retest   : 94
+    Number of intersected edges : 20891
+Refined mesh in = 0.25 s
+After refinement surface refinement iteration 13 : cells:89370  faces:287835  points:109968
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21182
+    4	18400
+    5	4350
+    6	1040
+
+Surface refinement iteration 14
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.08 s
+Selected for refinement : 1 cells (out of 89370)
+Edge intersection testing:
+    Number of edges             : 287859
+    Number of edges to retest   : 94
+    Number of intersected edges : 20898
+Refined mesh in = 0.23 s
+After refinement surface refinement iteration 14 : cells:89377  faces:287859  points:109978
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21181
+    4	18408
+    5	4350
+    6	1040
+
+Surface refinement iteration 15
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.1 s
+Selected for refinement : 1 cells (out of 89377)
+Edge intersection testing:
+    Number of edges             : 287883
+    Number of edges to retest   : 100
+    Number of intersected edges : 20901
+Refined mesh in = 0.24 s
+After refinement surface refinement iteration 15 : cells:89384  faces:287883  points:109988
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9488
+    3	21180
+    4	18416
+    5	4350
+    6	1040
+
+Surface refinement iteration 16
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.09 s
+Selected for refinement : 2 cells (out of 89384)
+Edge intersection testing:
+    Number of edges             : 287931
+    Number of edges to retest   : 179
+    Number of intersected edges : 20901
+Refined mesh in = 0.23 s
+After refinement surface refinement iteration 16 : cells:89398  faces:287931  points:110008
+Cells per refinement level:
+    0	32560
+    1	2350
+    2	9487
+    3	21187
+    4	18424
+    5	4350
+    6	1040
+
+Surface refinement iteration 17
+------------------------------
+
+Marked for refinement due to surface intersection          : 0 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.09 s
+Selected for refinement : 0 cells (out of 89398)
+Stopping refining since too few cells selected.
+
+
+Removing mesh beyond surface intersections
+------------------------------------------
+
+Setting cellZones according to locationsInMesh:
+Location : (0.4 0 0)
+    cellZone : none
+
+For cellZone none found point (0.4 0 0) in global region 0 out of 3 regions.
+Keeping all cells containing inside points
+Selected for keeping : 89398 cells.
+Edge intersection testing:
+    Number of edges             : 287931
+    Number of edges to retest   : 0
+    Number of intersected edges : 20901
+Setting cellZones according to locationsInMesh:
+Location : (0.4 0 0)
+    cellZone : none
+
+For cellZone none found point (0.4 0 0) in global region 0 out of 3 regions.
+Keeping all cells containing inside points
+Selected for keeping : 82177 cells.
+
+
+--> FOAM FATAL ERROR: 
+Symmetry plane 'halfwing_rootWall' is not planar.
+At local face at (0.00218176 0.00121528 -0.261877) the normal (-1.90825e-14 1.14194e-14 -1) differs from the average normal (0.708543 -0.155779 -0.00502513) by 1.51627
+Either split the patch into planar parts or use the symmetry patch type
+
+    From function virtual void Foam::symmetryPlanePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/symmetryPlane/symmetryPlanePolyPatch.C at line 66.
+
+FOAM exiting
+

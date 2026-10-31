@@ -1,0 +1,38 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/checkMesh -case . -allGeometry -allTopology
+Date   : Oct 31 2026
+Time   : 14:49:48
+Host   : 904f5b3ad6e3
+PID    : 15250
+I/O    : uncollated
+Case   : /tmp/snappy-wing-probe
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+
+--> FOAM FATAL ERROR: 
+Symmetry plane 'halfwing_rootWall' is not planar.
+At local face at (-0.00127757 -0.00229087 -0.22495) the normal (1 0 0) differs from the average normal (0.852723 2.15646e-06 9.99502e-05) by 0.0216905
+Either split the patch into planar parts or use the symmetry patch type
+
+    From function virtual void Foam::symmetryPlanePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/symmetryPlane/symmetryPlanePolyPatch.C at line 66.
+
+FOAM exiting
+

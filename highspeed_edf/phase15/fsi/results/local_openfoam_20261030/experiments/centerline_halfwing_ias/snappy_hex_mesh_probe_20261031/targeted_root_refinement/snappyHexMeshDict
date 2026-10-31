@@ -1,0 +1,106 @@
+FoamFile
+{
+ version 2.0;
+ format ascii;
+ class dictionary;
+ object snappyHexMeshDict;
+}
+castellatedMesh true;
+snap true;
+addLayers false;
+geometry
+{
+ halfwing.stl
+ {
+  type triSurfaceMesh;
+  name halfwing;
+ }
+ leBox { type searchableBox; min (0.060 -0.025 -0.260); max (0.085 0.025 -0.220); }
+ rootTEBox { type searchableBox; min (0.017 -0.010 0.151); max (0.026 0.004 0.159); }
+ wakeBox { type searchableBox; min (-0.020 -0.060 0.120); max (0.300 0.060 0.450); }
+ rootDetBox { type searchableBox; min (0.000 0.005 0.022); max (0.010 0.012 0.042); }
+}
+castellatedMeshControls
+{
+ maxLocalCells 300000;
+ maxGlobalCells 2000000;
+ minRefinementCells 0;
+ maxLoadUnbalance 0.10;
+ nCellsBetweenLevels 2;
+ features
+ (
+  { file "halfwing.eMesh"; level 4; }
+ );
+ refinementSurfaces
+ {
+  halfwing
+  {
+   level (2 3);
+   regions
+   {
+    fsi { level (2 3); patchInfo { type wall; } }
+   }
+  }
+ }
+ resolveFeatureAngle 30;
+ refinementRegions
+ {
+  leBox { mode inside; levels ((1e15 5)); }
+  rootTEBox { mode inside; levels ((1e15 6)); }
+  wakeBox { mode inside; levels ((1e15 4)); }
+  rootDetBox { mode inside; levels ((1e15 6)); }
+ }
+ locationInMesh (0.40 0.0 0.0);
+ allowFreeStandingZoneFaces true;
+}
+snapControls
+{
+ nSmoothPatch 3;
+ tolerance 2.0;
+ nSolveIter 30;
+ nRelaxIter 5;
+ nFeatureSnapIter 10;
+ implicitFeatureSnap false;
+ explicitFeatureSnap true;
+ multiRegionFeatureSnap true;
+ strictRegionSnap true;
+}
+addLayersControls
+{
+ relativeSizes true;
+ layers {};
+ expansionRatio 1.0;
+ finalLayerThickness 0.3;
+ minThickness 0.1;
+ nGrow 0;
+ featureAngle 60;
+ slipFeatureAngle 30;
+ nRelaxIter 5;
+ nSmoothSurfaceNormals 1;
+ nSmoothNormals 3;
+ nSmoothThickness 10;
+ maxFaceThicknessRatio 0.5;
+ maxThicknessToMedialRatio 0.3;
+ minMedianAxisAngle 90;
+ nBufferCellsNoExtrude 0;
+ nLayerIter 50;
+}
+meshQualityControls
+{
+ maxNonOrtho 65;
+ maxBoundarySkewness 20;
+ maxInternalSkewness 4;
+ maxConcave 80;
+ minVol 1e-13;
+ minTetQuality 1e-9;
+ minArea 1e-15;
+ minTwist 0.05;
+ minDeterminant 0.001;
+ minFaceWeight 0.05;
+ minVolRatio 0.01;
+ minTriangleTwist -1;
+ nSmoothScale 4;
+ errorReduction 0.75;
+}
+writeFlags (scalarLevels layerSets layerFields);
+mergeTolerance 1e-6;

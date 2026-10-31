@@ -1,0 +1,85 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/surfaceFeatureExtract -case .
+Date   : Oct 31 2026
+Time   : 14:50:48
+Host   : 904f5b3ad6e3
+PID    : 15374
+I/O    : uncollated
+Case   : /tmp/snappy-wing-half-open-root
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+Note: Feature line extraction only valid on closed manifold surfaces
+
+Reading surfaceFeatureExtractDict
+
+Surfaces     : halfwing.stl
+Output       : halfwing
+Load options : offset
+Write options: writeObj=yes writeVTK=off
+
+Statistics:
+Triangles    : 20956 in 1 region(s)
+Vertices     : 10583
+Bounding Box : (0 -0.0152345 -0.27) (0.26 0.0148911 0.15624)
+
+Constructing feature set from included angle 160
+Selecting edges based purely on geometric tests: no
+
+Initial Feature set:
+    points : 10
+    edges  : 638
+    of which
+        region edges   : 208
+        external edges : 430
+        internal edges : 0
+
+Final Feature set:
+    points : 633
+    of which
+        convex             : 5
+        concave            : 0
+        mixed              : 5
+        non-feature        : 623
+    edges  : 638
+    of which
+        external edges     : 430
+        internal edges     : 0
+        flat edges         : 0
+        open edges         : 208
+        multiply connected : 0
+
+Writing extendedFeatureEdgeMesh to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing.extendedFeatureEdgeMesh"
+
+Writing extendedEdgeMesh components to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing"
+Writing 5 convex feature points to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_convexFeaturePts.obj"
+Writing 0 concave feature points to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_concaveFeaturePts.obj"
+Writing 5 mixed feature points to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_mixedFeaturePts.obj"
+Writing 5 mixed feature point structure to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_mixedFeaturePtsStructure.obj"
+Writing 430 external edges to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_externalEdges.obj"
+Writing 0 internal edges to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_internalEdges.obj"
+Writing 0 flat edges to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_flatEdges.obj"
+Writing 208 open edges to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_openEdges.obj"
+Writing 0 multiple edges to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_multipleEdges.obj"
+Writing 208 region edges to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_regionEdges.obj"
+Writing 638 edge directions to "/tmp/snappy-wing-half-open-root/constant/extendedFeatureEdgeMesh/halfwing_edgeDirections.obj"
+
+Writing featureEdgeMesh to "/tmp/snappy-wing-half-open-root/constant/triSurface/halfwing.eMesh"
+ExecutionTime = 0.1 s  ClockTime = 0 s
+
+End
+
