@@ -1,0 +1,2388 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/snappyHexMesh -case /workspace/snappy-rootcap-fine-20261031/case -overwrite
+Date   : Oct 31 2026
+Time   : 15:28:05
+Host   : 904f5b3ad6e3
+PID    : 21806
+I/O    : uncollated
+Case   : /workspace/snappy-rootcap-fine-20261031/case
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Read mesh in = 0.12 s
+
+Overall mesh bounding box  : (0 -0.35 -0.695) (0.79125 0.35 1.43124)
+Relative tolerance         : 1e-06
+Absolute matching distance : 2.37423e-06
+
+Reading refinement surfaces.
+Read refinement surfaces in = 0.26 s
+
+Reading refinement shells.
+Refinement level 5 for all cells inside leBox
+Refinement level 6 for all cells inside rootTEBox
+Refinement level 4 for all cells inside wakeBox
+Read refinement shells in = 0 s
+
+Setting refinement level of surface to be consistent with shells.
+For geometry halfwing.stl detected 772 uncached triangles out of 123022
+Checked shell refinement in = 0.46 s
+
+Reading features.
+Read edgeMesh halfwing.eMesh
+    points      : 1497
+    edges       : 1502
+    boundingBox : (0 -0.0152345 -0.27) (0.26 0.0148911 0.15624)
+
+Refinement level according to distance to "halfwing.eMesh" (1497 points, 1502 edges).
+    level 4 for all cells within 0 metre.
+Read features in = 0 s
+
+
+Determining initial surface intersections
+-----------------------------------------
+
+Edge intersection testing:
+    Number of edges             : 102564
+    Number of edges to retest   : 0
+    Number of intersected edges : 0
+Edge intersection testing:
+    Number of edges             : 102564
+    Number of edges to retest   : 102564
+    Number of intersected edges : 107
+Calculated surface intersections in = 0.1 s
+
+Initial mesh : cells:33048  faces:102564  points:36575
+Cells per refinement level:
+    0	33048
+
+Adding patches for surface regions
+----------------------------------
+
+Patch Type                Region                        
+----- ----                ------                        
+halfwing:
+
+4     wall                halfwing                      
+
+Added patches in = 0.01 s
+
+Edge intersection testing:
+    Number of edges             : 102564
+    Number of edges to retest   : 0
+    Number of intersected edges : 107
+Selecting decompositionMethod none [1]
+
+Refinement phase
+----------------
+
+Found point (0.4 0 0) in cell 10727 on processor 0
+
+Feature refinement iteration 0
+------------------------------
+
+Marked for refinement due to explicit features             : 76 cells.
+Determined cells to refine in = 0.2 s
+Selected for feature refinement : 76 cells (out of 33048)
+Edge intersection testing:
+    Number of edges             : 104520
+    Number of edges to retest   : 3048
+    Number of intersected edges : 289
+Refined mesh in = 0.1 s
+After refinement feature refinement iteration 0 : cells:33580  faces:104520  points:37511
+Cells per refinement level:
+    0	32972
+    1	608
+
+Feature refinement iteration 1
+------------------------------
+
+Marked for refinement due to explicit features             : 113 cells.
+Determined cells to refine in = 0.2 s
+Selected for feature refinement : 169 cells (out of 33580)
+Edge intersection testing:
+    Number of edges             : 108726
+    Number of edges to retest   : 6449
+    Number of intersected edges : 824
+Refined mesh in = 0.09 s
+After refinement feature refinement iteration 1 : cells:34763  faces:108726  points:39420
+Cells per refinement level:
+    0	32916
+    1	943
+    2	904
+
+Feature refinement iteration 2
+------------------------------
+
+Marked for refinement due to explicit features             : 248 cells.
+Determined cells to refine in = 0.19 s
+Selected for feature refinement : 426 cells (out of 34763)
+Edge intersection testing:
+    Number of edges             : 119316
+    Number of edges to retest   : 16575
+    Number of intersected edges : 2449
+Refined mesh in = 0.1 s
+After refinement feature refinement iteration 2 : cells:37745  faces:119316  points:44222
+Cells per refinement level:
+    0	32872
+    1	1140
+    2	1917
+    3	1816
+
+Feature refinement iteration 3
+------------------------------
+
+Marked for refinement due to explicit features             : 537 cells.
+Determined cells to refine in = 0.27 s
+Selected for feature refinement : 997 cells (out of 37745)
+Edge intersection testing:
+    Number of edges             : 143979
+    Number of edges to retest   : 38033
+    Number of intersected edges : 5483
+Refined mesh in = 0.21 s
+After refinement feature refinement iteration 3 : cells:44724  faces:143979  points:55300
+Cells per refinement level:
+    0	32820
+    1	1428
+    2	2595
+    3	4113
+    4	3768
+
+Feature refinement iteration 4
+------------------------------
+
+Marked for refinement due to explicit features             : 49 cells.
+Determined cells to refine in = 0.33 s
+Selected for feature refinement : 70 cells (out of 44724)
+Edge intersection testing:
+    Number of edges             : 145773
+    Number of edges to retest   : 2997
+    Number of intersected edges : 5678
+Refined mesh in = 0.16 s
+After refinement feature refinement iteration 4 : cells:45214  faces:145773  points:56151
+Cells per refinement level:
+    0	32814
+    1	1464
+    2	2649
+    3	4439
+    4	3848
+
+Feature refinement iteration 5
+------------------------------
+
+Marked for refinement due to explicit features             : 165 cells.
+Determined cells to refine in = 0.37 s
+Selected for feature refinement : 251 cells (out of 45214)
+Edge intersection testing:
+    Number of edges             : 152235
+    Number of edges to retest   : 9784
+    Number of intersected edges : 6284
+Refined mesh in = 0.17 s
+After refinement feature refinement iteration 5 : cells:46971  faces:152235  points:59243
+Cells per refinement level:
+    0	32810
+    1	1487
+    2	2648
+    3	4858
+    4	5168
+
+Feature refinement iteration 6
+------------------------------
+
+Marked for refinement due to explicit features             : 0 cells.
+Determined cells to refine in = 0.82 s
+Selected for feature refinement : 0 cells (out of 46971)
+Stopping refining since too few cells selected.
+
+
+Surface refinement iteration 0
+------------------------------
+
+Marked for refinement due to surface intersection          : 1156 cells.
+Marked for refinement due to curvature/regions             : 247 cells.
+Determined cells to refine in = 0.07 s
+Selected for refinement : 1573 cells (out of 46971)
+Edge intersection testing:
+    Number of edges             : 188208
+    Number of edges to retest   : 54448
+    Number of intersected edges : 9879
+Refined mesh in = 0.5 s
+After refinement surface refinement iteration 0 : cells:57982  faces:188208  points:73200
+Cells per refinement level:
+    0	32657
+    1	2375
+    2	4873
+    3	8073
+    4	8948
+    5	1056
+
+Surface refinement iteration 1
+------------------------------
+
+Marked for refinement due to surface intersection          : 1929 cells.
+Marked for refinement due to curvature/regions             : 514 cells.
+Determined cells to refine in = 0.34 s
+Selected for refinement : 2682 cells (out of 57982)
+Edge intersection testing:
+    Number of edges             : 247734
+    Number of edges to retest   : 88785
+    Number of intersected edges : 15422
+Refined mesh in = 0.64 s
+After refinement surface refinement iteration 1 : cells:76756  faces:247734  points:95173
+Cells per refinement level:
+    0	32558
+    1	2357
+    2	10661
+    3	12879
+    4	14509
+    5	3216
+    6	576
+
+Surface refinement iteration 2
+------------------------------
+
+Marked for refinement due to surface intersection          : 643 cells.
+Marked for refinement due to curvature/regions             : 1084 cells.
+Determined cells to refine in = 0.12 s
+Selected for refinement : 1816 cells (out of 76756)
+Edge intersection testing:
+    Number of edges             : 288441
+    Number of edges to retest   : 65820
+    Number of intersected edges : 20471
+Refined mesh in = 0.51 s
+After refinement surface refinement iteration 2 : cells:89468  faces:288441  points:110449
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9549
+    3	21378
+    4	18602
+    5	4018
+    6	1008
+
+Surface refinement iteration 3
+------------------------------
+
+Marked for refinement due to surface intersection          : 72 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.3 s
+Selected for refinement : 87 cells (out of 89468)
+Edge intersection testing:
+    Number of edges             : 290487
+    Number of edges to retest   : 5512
+    Number of intersected edges : 20687
+Refined mesh in = 0.39 s
+After refinement surface refinement iteration 3 : cells:90077  faces:290487  points:111283
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9548
+    3	21338
+    4	18952
+    5	4286
+    6	1040
+
+Surface refinement iteration 4
+------------------------------
+
+Marked for refinement due to surface intersection          : 9 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.32 s
+Selected for refinement : 15 cells (out of 90077)
+Edge intersection testing:
+    Number of edges             : 290832
+    Number of edges to retest   : 1154
+    Number of intersected edges : 20711
+Refined mesh in = 0.59 s
+After refinement surface refinement iteration 4 : cells:90182  faces:290832  points:111420
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21349
+    4	18984
+    5	4350
+    6	1040
+
+Surface refinement iteration 5
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.21 s
+Selected for refinement : 1 cells (out of 90182)
+Edge intersection testing:
+    Number of edges             : 290856
+    Number of edges to retest   : 94
+    Number of intersected edges : 20718
+Refined mesh in = 0.55 s
+After refinement surface refinement iteration 5 : cells:90189  faces:290856  points:111430
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21348
+    4	18992
+    5	4350
+    6	1040
+
+Surface refinement iteration 6
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.29 s
+Selected for refinement : 1 cells (out of 90189)
+Edge intersection testing:
+    Number of edges             : 290880
+    Number of edges to retest   : 94
+    Number of intersected edges : 20725
+Refined mesh in = 0.36 s
+After refinement surface refinement iteration 6 : cells:90196  faces:290880  points:111440
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21347
+    4	19000
+    5	4350
+    6	1040
+
+Surface refinement iteration 7
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.28 s
+Selected for refinement : 1 cells (out of 90196)
+Edge intersection testing:
+    Number of edges             : 290904
+    Number of edges to retest   : 94
+    Number of intersected edges : 20732
+Refined mesh in = 0.51 s
+After refinement surface refinement iteration 7 : cells:90203  faces:290904  points:111450
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21346
+    4	19008
+    5	4350
+    6	1040
+
+Surface refinement iteration 8
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.16 s
+Selected for refinement : 1 cells (out of 90203)
+Edge intersection testing:
+    Number of edges             : 290928
+    Number of edges to retest   : 94
+    Number of intersected edges : 20739
+Refined mesh in = 0.28 s
+After refinement surface refinement iteration 8 : cells:90210  faces:290928  points:111460
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21345
+    4	19016
+    5	4350
+    6	1040
+
+Surface refinement iteration 9
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.16 s
+Selected for refinement : 1 cells (out of 90210)
+Edge intersection testing:
+    Number of edges             : 290952
+    Number of edges to retest   : 94
+    Number of intersected edges : 20746
+Refined mesh in = 0.33 s
+After refinement surface refinement iteration 9 : cells:90217  faces:290952  points:111470
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21344
+    4	19024
+    5	4350
+    6	1040
+
+Surface refinement iteration 10
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.2 s
+Selected for refinement : 1 cells (out of 90217)
+Edge intersection testing:
+    Number of edges             : 290976
+    Number of edges to retest   : 94
+    Number of intersected edges : 20753
+Refined mesh in = 0.42 s
+After refinement surface refinement iteration 10 : cells:90224  faces:290976  points:111480
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21343
+    4	19032
+    5	4350
+    6	1040
+
+Surface refinement iteration 11
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.26 s
+Selected for refinement : 1 cells (out of 90224)
+Edge intersection testing:
+    Number of edges             : 291000
+    Number of edges to retest   : 94
+    Number of intersected edges : 20760
+Refined mesh in = 0.59 s
+After refinement surface refinement iteration 11 : cells:90231  faces:291000  points:111490
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21342
+    4	19040
+    5	4350
+    6	1040
+
+Surface refinement iteration 12
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.17 s
+Selected for refinement : 1 cells (out of 90231)
+Edge intersection testing:
+    Number of edges             : 291024
+    Number of edges to retest   : 94
+    Number of intersected edges : 20767
+Refined mesh in = 0.26 s
+After refinement surface refinement iteration 12 : cells:90238  faces:291024  points:111500
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21341
+    4	19048
+    5	4350
+    6	1040
+
+Surface refinement iteration 13
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.12 s
+Selected for refinement : 1 cells (out of 90238)
+Edge intersection testing:
+    Number of edges             : 291048
+    Number of edges to retest   : 94
+    Number of intersected edges : 20774
+Refined mesh in = 0.31 s
+After refinement surface refinement iteration 13 : cells:90245  faces:291048  points:111510
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21340
+    4	19056
+    5	4350
+    6	1040
+
+Surface refinement iteration 14
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.15 s
+Selected for refinement : 1 cells (out of 90245)
+Edge intersection testing:
+    Number of edges             : 291072
+    Number of edges to retest   : 94
+    Number of intersected edges : 20781
+Refined mesh in = 0.38 s
+After refinement surface refinement iteration 14 : cells:90252  faces:291072  points:111520
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21339
+    4	19064
+    5	4350
+    6	1040
+
+Surface refinement iteration 15
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.21 s
+Selected for refinement : 1 cells (out of 90252)
+Edge intersection testing:
+    Number of edges             : 291096
+    Number of edges to retest   : 100
+    Number of intersected edges : 20784
+Refined mesh in = 0.25 s
+After refinement surface refinement iteration 15 : cells:90259  faces:291096  points:111530
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9546
+    3	21338
+    4	19072
+    5	4350
+    6	1040
+
+Surface refinement iteration 16
+------------------------------
+
+Marked for refinement due to surface intersection          : 1 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.15 s
+Selected for refinement : 2 cells (out of 90259)
+Edge intersection testing:
+    Number of edges             : 291144
+    Number of edges to retest   : 179
+    Number of intersected edges : 20784
+Refined mesh in = 0.27 s
+After refinement surface refinement iteration 16 : cells:90273  faces:291144  points:111550
+Cells per refinement level:
+    0	32558
+    1	2355
+    2	9545
+    3	21345
+    4	19080
+    5	4350
+    6	1040
+
+Surface refinement iteration 17
+------------------------------
+
+Marked for refinement due to surface intersection          : 0 cells.
+Marked for refinement due to curvature/regions             : 0 cells.
+Determined cells to refine in = 0.15 s
+Selected for refinement : 0 cells (out of 90273)
+Stopping refining since too few cells selected.
+
+
+Removing mesh beyond surface intersections
+------------------------------------------
+
+Setting cellZones according to locationsInMesh:
+Location : (0.4 0 0)
+    cellZone : none
+
+For cellZone none found point (0.4 0 0) in global region 0 out of 3 regions.
+Keeping all cells containing inside points
+Selected for keeping : 90273 cells.
+Edge intersection testing:
+    Number of edges             : 291144
+    Number of edges to retest   : 0
+    Number of intersected edges : 20784
+Setting cellZones according to locationsInMesh:
+Location : (0.4 0 0)
+    cellZone : none
+
+For cellZone none found point (0.4 0 0) in global region 0 out of 3 regions.
+Keeping all cells containing inside points
+Selected for keeping : 83001 cells.
+Edge intersection testing:
+    Number of edges             : 274170
+    Number of edges to retest   : 10500
+    Number of intersected edges : 20784
+
+Shell refinement iteration 0
+----------------------------
+
+Marked for refinement due to distance to explicit features : 0 cells.
+Marked for refinement due to refinement shells             : 4937 cells.
+Determined cells to refine in = 0.93 s
+Selected for internal refinement : 9923 cells (out of 83001)
+Edge intersection testing:
+    Number of edges             : 491328
+    Number of edges to retest   : 353655
+    Number of intersected edges : 24375
+Refined mesh in = 0.94 s
+After refinement shell refinement iteration 0 : cells:152462  faces:491328  points:186880
+Cells per refinement level:
+    0	32126
+    1	5094
+    2	11444
+    3	39063
+    4	51240
+    5	10623
+    6	2872
+
+Shell refinement iteration 1
+----------------------------
+
+Marked for refinement due to distance to explicit features : 0 cells.
+Marked for refinement due to refinement shells             : 13106 cells.
+Determined cells to refine in = 0.12 s
+Selected for internal refinement : 14536 cells (out of 152462)
+Edge intersection testing:
+    Number of edges             : 804051
+    Number of edges to retest   : 458856
+    Number of intersected edges : 25137
+Refined mesh in = 1.4 s
+After refinement shell refinement iteration 1 : cells:254214  faces:804051  points:296156
+Cells per refinement level:
+    0	31978
+    1	4021
+    2	26210
+    3	58521
+    4	104586
+    5	22594
+    6	6304
+
+Shell refinement iteration 2
+----------------------------
+
+Marked for refinement due to distance to explicit features : 0 cells.
+Marked for refinement due to refinement shells             : 41436 cells.
+Determined cells to refine in = 0.23 s
+Selected for internal refinement : 43718 cells (out of 254214)
+Edge intersection testing:
+    Number of edges             : 1734798
+    Number of edges to retest   : 1154148
+    Number of intersected edges : 25146
+Refined mesh in = 3.85 s
+After refinement shell refinement iteration 2 : cells:560240  faces:1734798  points:614909
+Cells per refinement level:
+    0	31713
+    1	4989
+    2	18344
+    3	172328
+    4	285192
+    5	39898
+    6	7776
+
+Shell refinement iteration 3
+----------------------------
+
+Marked for refinement due to distance to explicit features : 0 cells.
+Marked for refinement due to refinement shells             : 131010 cells.
+Determined cells to refine in = 0.28 s
+Selected for internal refinement : 135672 cells (out of 560240)
+Edge intersection testing:
+    Number of edges             : 4604925
+    Number of edges to retest   : 3407245
+    Number of intersected edges : 25146
+Refined mesh in = 7.81 s
+After refinement shell refinement iteration 3 : cells:1509944  faces:4604925  points:1585683
+Cells per refinement level:
+    0	31563
+    1	5944
+    2	16255
+    3	74049
+    4	1330009
+    5	44300
+    6	7824
+
+Shell refinement iteration 4
+----------------------------
+
+No cells marked for refinement since reached limit 1200000.
+Determined cells to refine in = 0.76 s
+Selected for internal refinement : 1696 cells (out of 1509944)
+Edge intersection testing:
+    Number of edges             : 4641042
+    Number of edges to retest   : 102065
+    Number of intersected edges : 25146
+Refined mesh in = 4.77 s
+After refinement shell refinement iteration 4 : cells:1521816  faces:4641042  points:1598060
+Cells per refinement level:
+    0	31506
+    1	5388
+    2	23791
+    3	78466
+    4	1330509
+    5	44332
+    6	7824
+
+Shell refinement iteration 5
+----------------------------
+
+No cells marked for refinement since reached limit 1200000.
+Determined cells to refine in = 0.6 s
+Selected for internal refinement : 446 cells (out of 1521816)
+Edge intersection testing:
+    Number of edges             : 4650558
+    Number of edges to retest   : 28398
+    Number of intersected edges : 25146
+Refined mesh in = 4.29 s
+After refinement shell refinement iteration 5 : cells:1524938  faces:4650558  points:1601331
+Cells per refinement level:
+    0	31284
+    1	6960
+    2	25403
+    3	78626
+    4	1330509
+    5	44332
+    6	7824
+
+Shell refinement iteration 6
+----------------------------
+
+No cells marked for refinement since reached limit 1200000.
+Determined cells to refine in = 0.59 s
+Selected for internal refinement : 60 cells (out of 1524938)
+Edge intersection testing:
+    Number of edges             : 4651836
+    Number of edges to retest   : 4630
+    Number of intersected edges : 25146
+Refined mesh in = 4.17 s
+After refinement shell refinement iteration 6 : cells:1525358  faces:4651836  points:1601769
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	25419
+    3	78626
+    4	1330509
+    5	44332
+    6	7824
+
+Shell refinement iteration 7
+----------------------------
+
+No cells marked for refinement since reached limit 1200000.
+Determined cells to refine in = 0.6 s
+Selected for internal refinement : 0 cells (out of 1525358)
+Stopping refining since too few cells selected.
+
+
+Dangling coarse cells refinement iteration 0
+--------------------------------------------
+
+Determined cells to refine in = 0.04 s
+Selected for refinement : 3 cells (out of 1525358)
+Edge intersection testing:
+    Number of edges             : 4651881
+    Number of edges to retest   : 375
+    Number of intersected edges : 25149
+Refined mesh in = 3.96 s
+After refinement coarse cell refinement iteration 0 : cells:1525379  faces:4651881  points:1601775
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	25418
+    3	78633
+    4	1330516
+    5	44340
+    6	7824
+
+Dangling coarse cells refinement iteration 1
+--------------------------------------------
+
+Determined cells to refine in = 0.06 s
+Selected for refinement : 0 cells (out of 1525379)
+Stopping refining since too few cells selected.
+
+
+Dangling coarse cells refinement iteration 0
+--------------------------------------------
+
+Determined cells to refine in = 0.04 s
+Selected for refinement : 0 cells (out of 1525379)
+Stopping refining since too few cells selected.
+
+
+Refinement transition refinement iteration 0
+--------------------------------------------
+
+Determined cells to refine in = 0.05 s
+Selected for refinement : 40 cells (out of 1525379)
+Edge intersection testing:
+    Number of edges             : 4652841
+    Number of edges to retest   : 3388
+    Number of intersected edges : 25272
+Refined mesh in = 4.14 s
+After refinement interface cell refinement iteration 0 : cells:1525659  faces:4652841  points:1602170
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	25417
+    3	78608
+    4	1330774
+    5	44388
+    6	7824
+
+Refinement transition refinement iteration 1
+--------------------------------------------
+
+Determined cells to refine in = 0.05 s
+Selected for refinement : 0 cells (out of 1525659)
+Stopping refining since too few cells selected.
+
+
+Splitting mesh at surface intersections
+---------------------------------------
+
+Introducing baffles for 25272 faces that are intersected by the surface.
+
+Setting cellZones according to locationsInMesh:
+Location : (0.4 0 0)
+    cellZone : none
+
+For cellZone none found point (0.4 0 0) in global region 0 out of 2 regions.
+Edge intersection testing:
+    Number of edges             : 4678111
+    Number of edges to retest   : 174549
+    Number of intersected edges : 49128
+Created baffles in = 3.71 s
+
+
+After introducing baffles : cells:1525659  faces:4678111  points:1602170
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	25417
+    3	78608
+    4	1330774
+    5	44388
+    6	7824
+
+Introducing baffles to block off problem cells
+----------------------------------------------
+
+markFacesOnProblemCells : marked 16235 additional internal faces to be converted into baffles.
+Analyzed problem cells in = 3.65 s
+
+
+Introducing baffles to delete problem cells.
+
+Edge intersection testing:
+    Number of edges             : 4694346
+    Number of edges to retest   : 60919
+    Number of intersected edges : 49129
+Created baffles in = 2.96 s
+
+
+After introducing baffles : cells:1525659  faces:4694346  points:1602170
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	25417
+    3	78608
+    4	1330774
+    5	44388
+    6	7824
+Setting cellZones according to locationsInMesh:
+Location : (0.4 0 0)
+    cellZone : none
+
+For cellZone none found point (0.4 0 0) in global region 0 out of 6935 regions.
+Edge intersection testing:
+    Number of edges             : 4694346
+    Number of edges to retest   : 186849
+    Number of intersected edges : 49129
+
+Remove unreachable sections of mesh
+-----------------------------------
+
+Keeping all cells containing points 1((0.4 0 0))
+Selected for keeping : 1495779 cells.
+Edge intersection testing:
+    Number of edges             : 4566982
+    Number of edges to retest   : 0
+    Number of intersected edges : 24954
+Split mesh in = 7.28 s
+
+
+After subsetting : cells:1495779  faces:4566982  points:1575993
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	24783
+    3	64657
+    4	1318454
+    5	41907
+    6	7330
+
+Introducing zones for interfaces
+--------------------------------
+
+Setting cellZones according to locationsInMesh:
+Location : (0.4 0 0)
+    cellZone : none
+
+For cellZone none found point (0.4 0 0) in global region 0 out of 1 regions.
+Setting faceZones according to neighbouring cellZones:
+
+Edge intersection testing:
+    Number of edges             : 4566982
+    Number of edges to retest   : 0
+    Number of intersected edges : 24954
+
+Handling cells with snap problems
+---------------------------------
+
+Introducing baffles for 24954 faces that are intersected by the surface.
+
+Setting cellZones according to locationsInMesh:
+Location : (0.4 0 0)
+    cellZone : none
+
+For cellZone none found point (0.4 0 0) in global region 0 out of 1 regions.
+Edge intersection testing:
+    Number of edges             : 4566982
+    Number of edges to retest   : 93075
+    Number of intersected edges : 24954
+Created baffles in = 7.43 s
+
+
+After introducing baffles : cells:1495779  faces:4566982  points:1575993
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	24783
+    3	64657
+    4	1318454
+    5	41907
+    6	7330
+
+Introducing baffles to block off problem cells
+----------------------------------------------
+
+markFacesOnProblemCells : marked 0 additional internal faces to be converted into baffles.
+Analyzed problem cells in = 3.75 s
+
+
+Introducing baffles to delete problem cells.
+
+Created baffles in = 0.59 s
+
+
+After introducing baffles : cells:1495779  faces:4566982  points:1575993
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	24783
+    3	64657
+    4	1318454
+    5	41907
+    6	7330
+Setting cellZones according to locationsInMesh:
+Location : (0.4 0 0)
+    cellZone : none
+
+For cellZone none found point (0.4 0 0) in global region 0 out of 1 regions.
+Edge intersection testing:
+    Number of edges             : 4566982
+    Number of edges to retest   : 93075
+    Number of intersected edges : 24954
+
+Remove unreachable sections of mesh
+-----------------------------------
+
+Split mesh in = 5.09 s
+
+
+After subsetting : cells:1495779  faces:4566982  points:1575993
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	24783
+    3	64657
+    4	1318454
+    5	41907
+    6	7330
+
+Merge free-standing baffles
+---------------------------
+
+freeStandingBaffles : detected 222 free-standing baffles out of 585
+
+freeStandingBaffles : detected 0 planar (within 30 degrees) free-standing baffles out of 222
+
+Detected free-standing baffles : 0
+Merged free-standing baffles in = 0.87 s
+
+
+dupNonManifoldPoints : Found : 597 non-manifold points (out of 1575993)
+Edge intersection testing:
+    Number of edges             : 4566982
+    Number of edges to retest   : 0
+    Number of intersected edges : 24954
+Detected unsplittable baffles : 0
+
+Merge refined boundary faces
+----------------------------
+
+Merging 252 sets of faces.
+
+Edge intersection testing:
+    Number of edges             : 4566662
+    Number of edges to retest   : 1829
+    Number of intersected edges : 24628
+
+Undo iteration 0
+----------------
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+
+Merging all points on surface that
+- are used by only two boundary faces and
+- make an angle with a cosine of more than 0.707107.
+
+Removing 302 straight edge points ...
+
+Edge intersection testing:
+    Number of edges             : 4566662
+    Number of edges to retest   : 2166
+    Number of intersected edges : 24628
+
+Undo iteration 0
+----------------
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Refined mesh : cells:1495779  faces:4566662  points:1576254
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	24783
+    3	64657
+    4	1318454
+    5	41907
+    6	7330
+Writing mesh to time constant
+Wrote mesh in = 21.94 s.
+Mesh refined in = 110.96 s.
+
+Morphing phase
+--------------
+
+Duplicating 0 points on faceZones of type boundary
+Snapping to features in 10 iterations ...
+Constructing mesh displacer ...
+Using mesh parameters 
+{
+    maxNonOrtho     65;
+    maxBoundarySkewness 20;
+    maxInternalSkewness 4;
+    maxConcave      80;
+    minVol          1e-13;
+    minTetQuality   1e-09;
+    minArea         1e-15;
+    minTwist        0.05;
+    minDeterminant  0.001;
+    minFaceWeight   0.05;
+    minVolRatio     0.01;
+    minTriangleTwist -1;
+    nSmoothScale    4;
+    errorReduction  0.75;
+}
+
+
+Checking initial mesh ...
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Detected 0 illegal faces (concave, zero area or negative cell pyramid volume)
+Checked initial mesh in = 5.26 s
+
+
+Smoothing patch points ...
+Smoothing iteration 0
+Found 1182 non-manifold point(s).
+
+Scaling iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+
+Smoothing iteration 1
+Found 0 non-manifold point(s).
+
+Scaling iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+
+Smoothing iteration 2
+Found 0 non-manifold point(s).
+
+Scaling iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+
+Patch points smoothed in = 19.21 s
+
+
+
+Morph iteration 0
+-----------------
+Calculating patchDisplacement as distance to nearest surface point ...
+    non-zone points : attract to local region on surface only
+    zone points     : attract to local region on surface only
+
+Wanted displacement : average:0.000808632 min:2.78338e-10 max:0.00574262
+Calculated surface displacement in = 0.47 s
+
+
+Detecting near surfaces ...
+Overriding nearest with intersection of close gaps at 289 out of 26331 points.
+Overriding displacement on features :
+   implicit features    : false
+   explicit features    : true
+   multi-patch features : true
+
+Detected 144 baffle edges out of 51861 edges.
+Baffle points     : 148 of which attracted to :
+    feature point : 0
+    feature edge  : 148
+    rest          : 0
+
+Initially selected 1261 mesh points out of 26331 for reverse attraction.
+Selected 3329 mesh points out of 26331 for reverse attraction.
+Stringing feature edges : changed 87 points
+Stringing feature edges : changed 6 points
+Stringing feature edges : changed 0 points
+Attraction:
+    linear   : max:(1.01786e-05 -0.00574255 -2.77085e-05) avg:(-1.61084e-05 1.84856e-05 5.0174e-06)
+    feature  : max:(0 -3.61344e-05 0.00267375) avg:(4.31181e-06 2.98024e-06 1.61693e-06)
+Feature analysis : total master points :26331 of which attracted to :
+    feature point   : 7
+    feature edge    : 1259
+    nearest surface : 0
+    rest            : 25065
+
+--> FOAM Warning : Displacement (1.26113e-06 9.47308e-06 -2.50255e-06) at mesh point 49535 coord (0.0232141 0.00197187 -0.258817) points through the surrounding patch faces
+Smoothing displacement ...
+Iteration 0
+Iteration 10
+Iteration 20
+Displacement smoothed in = 9.6 s
+
+
+Moving mesh ...
+
+Iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+Moved mesh in = 4.71 s
+
+
+
+Morph iteration 1
+-----------------
+Calculating patchDisplacement as distance to nearest surface point ...
+    non-zone points : attract to local region on surface only
+    zone points     : attract to local region on surface only
+
+Wanted displacement : average:0.000750382 min:2.01804e-08 max:0.00538772
+Calculated surface displacement in = 0.11 s
+
+
+Detecting near surfaces ...
+Overriding nearest with intersection of close gaps at 286 out of 26331 points.
+Overriding displacement on features :
+   implicit features    : false
+   explicit features    : true
+   multi-patch features : true
+
+Detected 179 baffle edges out of 51861 edges.
+Baffle points     : 182 of which attracted to :
+    feature point : 0
+    feature edge  : 182
+    rest          : 0
+
+Initially selected 1266 mesh points out of 26331 for reverse attraction.
+Selected 3332 mesh points out of 26331 for reverse attraction.
+Stringing feature edges : changed 87 points
+Stringing feature edges : changed 6 points
+Stringing feature edges : changed 0 points
+Attraction:
+    linear   : max:(9.54953e-06 -0.00538765 -2.59961e-05) avg:(-1.50703e-05 1.65772e-05 4.74406e-06)
+    feature  : max:(0 -5.42286e-05 0.00264534) avg:(4.24461e-06 2.10938e-06 6.54595e-07)
+Feature analysis : total master points :26331 of which attracted to :
+    feature point   : 7
+    feature edge    : 1260
+    nearest surface : 0
+    rest            : 25064
+
+--> FOAM Warning : Displacement (1.86382e-06 2.44406e-05 -3.09605e-06) at mesh point 49535 coord (0.0232153 0.00198134 -0.258819) points through the surrounding patch faces
+Smoothing displacement ...
+Iteration 0
+Iteration 10
+Iteration 20
+Displacement smoothed in = 7.45 s
+
+
+Moving mesh ...
+
+Iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+Moved mesh in = 5.15 s
+
+
+
+Morph iteration 2
+-----------------
+Calculating patchDisplacement as distance to nearest surface point ...
+    non-zone points : attract to local region on surface only
+    zone points     : attract to local region on surface only
+
+Wanted displacement : average:0.000640001 min:6.9767e-08 max:0.00468224
+Calculated surface displacement in = 0.15 s
+
+
+Detecting near surfaces ...
+Overriding nearest with intersection of close gaps at 287 out of 26331 points.
+Overriding displacement on features :
+   implicit features    : false
+   explicit features    : true
+   multi-patch features : true
+
+Detected 179 baffle edges out of 51861 edges.
+Baffle points     : 182 of which attracted to :
+    feature point : 0
+    feature edge  : 182
+    rest          : 0
+
+Initially selected 1275 mesh points out of 26331 for reverse attraction.
+Selected 3347 mesh points out of 26331 for reverse attraction.
+Stringing feature edges : changed 85 points
+Stringing feature edges : changed 5 points
+Stringing feature edges : changed 0 points
+Attraction:
+    linear   : max:(7.38723e-06 -0.00468219 -1.98153e-05) avg:(-1.30505e-05 1.32034e-05 4.19192e-06)
+    feature  : max:(0 -8.1589e-05 0.00253685) avg:(3.98889e-06 2.13649e-06 6.74636e-07)
+Feature analysis : total master points :26331 of which attracted to :
+    feature point   : 7
+    feature edge    : 1262
+    nearest surface : 0
+    rest            : 25062
+
+--> FOAM Warning : Displacement (1.13987e-06 4.22709e-05 -4.75993e-08) at mesh point 49535 coord (0.0232172 0.00200578 -0.258822) points through the surrounding patch faces
+Smoothing displacement ...
+Iteration 0
+Iteration 10
+Iteration 20
+Displacement smoothed in = 9.84 s
+
+
+Moving mesh ...
+
+Iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+Moved mesh in = 4.49 s
+
+
+
+Morph iteration 3
+-----------------
+Calculating patchDisplacement as distance to nearest surface point ...
+    non-zone points : attract to local region on surface only
+    zone points     : attract to local region on surface only
+
+Wanted displacement : average:0.00049692 min:1.33791e-08 max:0.0037414
+Calculated surface displacement in = 0.1 s
+
+
+Detecting near surfaces ...
+Overriding nearest with intersection of close gaps at 311 out of 26331 points.
+Overriding displacement on features :
+   implicit features    : false
+   explicit features    : true
+   multi-patch features : true
+
+Detected 182 baffle edges out of 51861 edges.
+Baffle points     : 186 of which attracted to :
+    feature point : 0
+    feature edge  : 186
+    rest          : 0
+
+Initially selected 1284 mesh points out of 26331 for reverse attraction.
+Selected 3348 mesh points out of 26331 for reverse attraction.
+Stringing feature edges : changed 77 points
+Stringing feature edges : changed 3 points
+Stringing feature edges : changed 0 points
+Attraction:
+    linear   : max:(5.90286e-06 -0.00374136 -1.58337e-05) avg:(-1.03499e-05 9.13998e-06 3.42356e-06)
+    feature  : max:(-0.00246088 -6.54147e-06 -1.26064e-05) avg:(3.53795e-06 2.15727e-06 7.02351e-07)
+Feature analysis : total master points :26331 of which attracted to :
+    feature point   : 7
+    feature edge    : 1262
+    nearest surface : 0
+    rest            : 25062
+
+--> FOAM Warning : Displacement (-1.72464e-06 5.86205e-05 8.60457e-06) at mesh point 49535 coord (0.0232183 0.00204805 -0.258822) points through the surrounding patch faces
+Smoothing displacement ...
+Iteration 0
+Iteration 10
+Iteration 20
+Displacement smoothed in = 8.01 s
+
+
+Moving mesh ...
+
+Iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+Moved mesh in = 10.11 s
+
+
+
+Morph iteration 4
+-----------------
+Calculating patchDisplacement as distance to nearest surface point ...
+    non-zone points : attract to local region on surface only
+    zone points     : attract to local region on surface only
+
+Wanted displacement : average:0.000349747 min:1.57873e-08 max:0.00269913
+Calculated surface displacement in = 0.27 s
+
+
+Detecting near surfaces ...
+Overriding nearest with intersection of close gaps at 355 out of 26331 points.
+Overriding displacement on features :
+   implicit features    : false
+   explicit features    : true
+   multi-patch features : true
+
+Detected 183 baffle edges out of 51861 edges.
+Baffle points     : 186 of which attracted to :
+    feature point : 0
+    feature edge  : 186
+    rest          : 0
+
+Initially selected 1300 mesh points out of 26331 for reverse attraction.
+Selected 3363 mesh points out of 26331 for reverse attraction.
+Stringing feature edges : changed 56 points
+Stringing feature edges : changed 0 points
+Attraction:
+    linear   : max:(3.77553e-06 -0.00269911 -9.87017e-06) avg:(-7.37101e-06 5.31748e-06 2.57081e-06)
+    feature  : max:(8.05314e-05 0.00014253 0.00199874) avg:(2.92029e-06 2.06387e-06 7.30318e-07)
+Feature analysis : total master points :26331 of which attracted to :
+    feature point   : 6
+    feature edge    : 1262
+    nearest surface : 0
+    rest            : 25063
+
+--> FOAM Warning : Displacement (-7.4968e-06 6.71414e-05 2.39076e-05) at mesh point 49535 coord (0.0232166 0.00210667 -0.258814) points through the surrounding patch faces
+Smoothing displacement ...
+Iteration 0
+Iteration 10
+Iteration 20
+Displacement smoothed in = 10.11 s
+
+
+Moving mesh ...
+
+Iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 1
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 1
+Moving mesh using displacement scaling : min:0.75  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 1
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 2
+Moving mesh using displacement scaling : min:0.5625  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+Moved mesh in = 7.81 s
+
+
+
+Morph iteration 5
+-----------------
+Calculating patchDisplacement as distance to nearest surface point ...
+    non-zone points : attract to local region on surface only
+    zone points     : attract to local region on surface only
+
+Wanted displacement : average:0.000220759 min:5.16813e-09 max:0.00174325
+Calculated surface displacement in = 0.08 s
+
+
+Detecting near surfaces ...
+Overriding nearest with intersection of close gaps at 390 out of 26331 points.
+Overriding displacement on features :
+   implicit features    : false
+   explicit features    : true
+   multi-patch features : true
+
+Detected 213 baffle edges out of 51861 edges.
+Baffle points     : 215 of which attracted to :
+    feature point : 0
+    feature edge  : 215
+    rest          : 0
+
+Initially selected 1316 mesh points out of 26331 for reverse attraction.
+Selected 3373 mesh points out of 26331 for reverse attraction.
+Stringing feature edges : changed 47 points
+Stringing feature edges : changed 0 points
+Attraction:
+    linear   : max:(2.43845e-06 -0.00174324 -6.37471e-06) avg:(-4.59747e-06 2.44695e-06 1.80527e-06)
+    feature  : max:(5.03333e-05 0.000124714 0.00174889) avg:(2.23106e-06 1.59658e-06 7.81623e-07)
+Feature analysis : total master points :26331 of which attracted to :
+    feature point   : 6
+    feature edge    : 1271
+    nearest surface : 0
+    rest            : 25054
+
+--> FOAM Warning : Displacement (-3.74254e-06 -6.89714e-06 -6.20017e-06) at mesh point 164254 coord (0.0856871 -0.00798111 -0.211177) points through the surrounding patch faces
+Smoothing displacement ...
+Iteration 0
+Iteration 10
+Iteration 20
+Displacement smoothed in = 8.61 s
+
+
+Moving mesh ...
+
+Iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 3
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 3
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 1
+Moving mesh using displacement scaling : min:0.75  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 1
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 4
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 2
+Moving mesh using displacement scaling : min:0.5625  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 3
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 3
+Moving mesh using displacement scaling : min:0.421875  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 2
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 4
+Moving mesh using displacement scaling : min:0.316406  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 1
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 5
+Displacement scaling for error reduction set to 0.
+Moving mesh using displacement scaling : min:0.237305  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 1
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 6
+Moving mesh using displacement scaling : min:0  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+Moved mesh in = 15.86 s
+
+
+
+Morph iteration 6
+-----------------
+Calculating patchDisplacement as distance to nearest surface point ...
+    non-zone points : attract to local region on surface only
+    zone points     : attract to local region on surface only
+
+Wanted displacement : average:0.000121624 min:1.17269e-08 max:0.000957629
+Calculated surface displacement in = 0.1 s
+
+
+Detecting near surfaces ...
+Overriding nearest with intersection of close gaps at 482 out of 26331 points.
+Overriding displacement on features :
+   implicit features    : false
+   explicit features    : true
+   multi-patch features : true
+
+Detected 212 baffle edges out of 51861 edges.
+Baffle points     : 215 of which attracted to :
+    feature point : 0
+    feature edge  : 215
+    rest          : 0
+
+Initially selected 1275 mesh points out of 26331 for reverse attraction.
+Selected 3329 mesh points out of 26331 for reverse attraction.
+Stringing feature edges : changed 34 points
+Stringing feature edges : changed 0 points
+Attraction:
+    linear   : max:(6.14373e-06 -0.00095743 -1.85054e-05) avg:(-2.36506e-06 7.75328e-07 1.11657e-06)
+    feature  : max:(0 -7.17775e-05 0.000927008) avg:(1.42374e-06 1.10616e-06 5.08447e-07)
+Feature analysis : total master points :26331 of which attracted to :
+    feature point   : 5
+    feature edge    : 1268
+    nearest surface : 0
+    rest            : 25058
+
+--> FOAM Warning : Displacement (-9.74753e-08 -2.71203e-05 -8.70329e-06) at mesh point 164254 coord (0.0856833 -0.00798801 -0.211183) points through the surrounding patch faces
+Smoothing displacement ...
+Iteration 0
+Iteration 10
+Iteration 20
+Displacement smoothed in = 10.83 s
+
+
+Moving mesh ...
+
+Iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 51
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 2
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 1
+Moving mesh using displacement scaling : min:0.75  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 31
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 1
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 2
+Moving mesh using displacement scaling : min:0.5625  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 7
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 6
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 3
+Moving mesh using displacement scaling : min:0.421875  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 4
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 5
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 4
+Moving mesh using displacement scaling : min:0.316406  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 6
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 5
+Displacement scaling for error reduction set to 0.
+Moving mesh using displacement scaling : min:0.237305  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 5
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 6
+Moving mesh using displacement scaling : min:0  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+Moved mesh in = 18.63 s
+
+
+
+Morph iteration 7
+-----------------
+Calculating patchDisplacement as distance to nearest surface point ...
+    non-zone points : attract to local region on surface only
+    zone points     : attract to local region on surface only
+
+Wanted displacement : average:5.56928e-05 min:3.7456e-10 max:0.000431375
+Calculated surface displacement in = 0.1 s
+
+
+Detecting near surfaces ...
+Overriding nearest with intersection of close gaps at 589 out of 26331 points.
+Overriding displacement on features :
+   implicit features    : false
+   explicit features    : true
+   multi-patch features : true
+
+Detected 214 baffle edges out of 51861 edges.
+Baffle points     : 216 of which attracted to :
+    feature point : 0
+    feature edge  : 216
+    rest          : 0
+
+Initially selected 1273 mesh points out of 26331 for reverse attraction.
+Selected 3324 mesh points out of 26331 for reverse attraction.
+Stringing feature edges : changed 28 points
+Stringing feature edges : changed 0 points
+Attraction:
+    linear   : max:(-0.000328913 -0.00049327 -0.000849201) avg:(-8.32357e-07 -5.30058e-07 5.92707e-07)
+    feature  : max:(-1.42049e-06 -0.000635377 5.70884e-05) avg:(8.30628e-07 6.86686e-07 1.97334e-07)
+Feature analysis : total master points :26331 of which attracted to :
+    feature point   : 5
+    feature edge    : 1266
+    nearest surface : 0
+    rest            : 25060
+
+--> FOAM Warning : Displacement (-3.77858e-07 -4.19474e-06 -1.39904e-06) at mesh point 235844 coord (0.0866327 -0.00795547 -0.211232) points through the surrounding patch faces
+Smoothing displacement ...
+Iteration 0
+Iteration 10
+Iteration 20
+Displacement smoothed in = 8.47 s
+
+
+Moving mesh ...
+
+Iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 1
+    faces with face pyramid volume < 1e-13                 : 2
+    faces with face-decomposition tet quality < 1e-09      : 86
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 18
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 1
+Moving mesh using displacement scaling : min:0.75  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 66
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 7
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 2
+Moving mesh using displacement scaling : min:0.5625  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 60
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 7
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 3
+Moving mesh using displacement scaling : min:0.421875  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 56
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 8
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 4
+Moving mesh using displacement scaling : min:0.316406  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 51
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 9
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 5
+Displacement scaling for error reduction set to 0.
+Moving mesh using displacement scaling : min:0.237305  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 33
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 8
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 6
+Moving mesh using displacement scaling : min:0  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 2
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 7
+Moving mesh using displacement scaling : min:0  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+Moved mesh in = 17.12 s
+
+
+
+Morph iteration 8
+-----------------
+Calculating patchDisplacement as distance to nearest surface point ...
+    non-zone points : attract to local region on surface only
+    zone points     : attract to local region on surface only
+
+Wanted displacement : average:2.02232e-05 min:1.80648e-10 max:0.000414701
+Calculated surface displacement in = 0.08 s
+
+
+Detecting near surfaces ...
+Overriding nearest with intersection of close gaps at 682 out of 26331 points.
+Overriding displacement on features :
+   implicit features    : false
+   explicit features    : true
+   multi-patch features : true
+
+Detected 214 baffle edges out of 51861 edges.
+Baffle points     : 216 of which attracted to :
+    feature point : 0
+    feature edge  : 216
+    rest          : 0
+
+Initially selected 1273 mesh points out of 26331 for reverse attraction.
+Selected 3323 mesh points out of 26331 for reverse attraction.
+Stringing feature edges : changed 27 points
+Stringing feature edges : changed 0 points
+Attraction:
+    linear   : max:(-0.000375975 -0.000557467 -0.000952494) avg:(-1.05659e-07 -2.35723e-07 3.51372e-07)
+    feature  : max:(0.000611478 -9.74038e-05 4.58055e-06) avg:(5.44889e-07 7.65155e-07 -1.09536e-07)
+Feature analysis : total master points :26331 of which attracted to :
+    feature point   : 5
+    feature edge    : 1265
+    nearest surface : 0
+    rest            : 25061
+
+--> FOAM Warning : Displacement (3.29947e-07 -5.46975e-06 -1.24904e-06) at mesh point 235844 coord (0.0866324 -0.00795967 -0.211233) points through the surrounding patch faces
+Smoothing displacement ...
+Iteration 0
+Iteration 10
+Iteration 20
+Displacement smoothed in = 8.93 s
+
+
+Moving mesh ...
+
+Iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 1
+    faces with face pyramid volume < 1e-13                 : 31
+    faces with face-decomposition tet quality < 1e-09      : 94
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 8
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 1
+Moving mesh using displacement scaling : min:0.75  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 1
+    faces with face pyramid volume < 1e-13                 : 5
+    faces with face-decomposition tet quality < 1e-09      : 103
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 14
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 2
+Moving mesh using displacement scaling : min:0.5625  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 89
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 21
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 3
+Moving mesh using displacement scaling : min:0.421875  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 75
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 26
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 4
+Moving mesh using displacement scaling : min:0.316406  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 66
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 24
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 5
+Displacement scaling for error reduction set to 0.
+Moving mesh using displacement scaling : min:0.237305  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 61
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 21
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 6
+Moving mesh using displacement scaling : min:0  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+Moved mesh in = 17.39 s
+
+
+
+Morph iteration 9
+-----------------
+Calculating patchDisplacement as distance to nearest surface point ...
+    non-zone points : attract to local region on surface only
+    zone points     : attract to local region on surface only
+
+Wanted displacement : average:5.92053e-06 min:1.11153e-10 max:0.000349994
+Calculated surface displacement in = 0.06 s
+
+
+Detecting near surfaces ...
+Overriding nearest with intersection of close gaps at 682 out of 26331 points.
+Overriding displacement on features :
+   implicit features    : false
+   explicit features    : true
+   multi-patch features : true
+
+Detected 214 baffle edges out of 51861 edges.
+Baffle points     : 216 of which attracted to :
+    feature point : 0
+    feature edge  : 216
+    rest          : 0
+
+Initially selected 1275 mesh points out of 26331 for reverse attraction.
+Selected 3323 mesh points out of 26331 for reverse attraction.
+Stringing feature edges : changed 25 points
+Stringing feature edges : changed 0 points
+Attraction:
+    linear   : max:(-0.00043097 -0.000638427 -0.00109038) avg:(5.25347e-08 -6.83174e-07 1.20154e-07)
+    feature  : max:(0.000189211 -0.00102253 -0.000405897) avg:(4.5708e-07 7.53359e-07 -2.84439e-07)
+Feature analysis : total master points :26331 of which attracted to :
+    feature point   : 5
+    feature edge    : 1266
+    nearest surface : 0
+    rest            : 25060
+
+--> FOAM Warning : Displacement (2.35821e-07 6.97517e-07 -5.07098e-07) at mesh point 147495 coord (0.0865105 0.00374304 -0.227669) points through the surrounding patch faces
+Smoothing displacement ...
+Iteration 0
+Iteration 10
+Iteration 20
+Displacement smoothed in = 8.29 s
+
+
+Moving mesh ...
+
+Iteration 0
+Moving mesh using displacement scaling : min:1  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 1
+    faces with face pyramid volume < 1e-13                 : 39
+    faces with face-decomposition tet quality < 1e-09      : 94
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 25
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 1
+Moving mesh using displacement scaling : min:0.75  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 1
+    faces with face pyramid volume < 1e-13                 : 32
+    faces with face-decomposition tet quality < 1e-09      : 88
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 12
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 2
+Moving mesh using displacement scaling : min:0.5625  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 15
+    faces with face-decomposition tet quality < 1e-09      : 96
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 13
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 3
+Moving mesh using displacement scaling : min:0.421875  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 100
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 17
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 4
+Moving mesh using displacement scaling : min:0.316406  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 80
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 34
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 5
+Displacement scaling for error reduction set to 0.
+Moving mesh using displacement scaling : min:0.237305  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 69
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 36
+    faces on cells with determinant < 0.001                : 0
+
+Iteration 6
+Moving mesh using displacement scaling : min:0  max:1
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Successfully moved mesh
+Moved mesh in = 17.28 s
+
+
+Repatching faces according to nearest surface ...
+Repatched 0 faces in = 0.18 s
+
+
+Edge intersection testing:
+    Number of edges             : 4566662
+    Number of edges to retest   : 152739
+    Number of intersected edges : 25531
+Merging 3329 sets of faces.
+
+Edge intersection testing:
+    Number of edges             : 4562732
+    Number of edges to retest   : 14007
+    Number of intersected edges : 21601
+
+Undo iteration 0
+----------------
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+
+Merging all points on surface that
+- are used by only two boundary faces and
+- make an angle with a cosine of more than 0.866025.
+
+Removing 2720 straight edge points ...
+
+Edge intersection testing:
+    Number of edges             : 4562732
+    Number of edges to retest   : 13399
+    Number of intersected edges : 21601
+
+Undo iteration 0
+----------------
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Snapped mesh : cells:1495779  faces:4562732  points:1572933
+Cells per refinement level:
+    0	31226
+    1	7422
+    2	24783
+    3	64657
+    4	1318454
+    5	41907
+    6	7330
+Writing mesh to time constant
+Wrote mesh in = 22.76 s.
+Mesh snapped in = 257.62 s.
+Checking final mesh ...
+Checking faces in error :
+    non-orthogonality > 65  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with face-decomposition tet quality < 1e-09      : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with area < 1e-15 m^2                            : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.05                           : 0
+    faces on cells with determinant < 0.001                : 0
+Finished meshing without any errors
+Finished meshing in = 374.33 s.
+End
+
