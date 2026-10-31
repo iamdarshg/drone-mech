@@ -1,0 +1,207 @@
+{
+  "candidateStatus": "round-trip-invalid",
+  "booleanOrder": "ducts-first",
+  "runtime": {
+    "python": "3.12.14",
+    "cadQuery": "2.7.0",
+    "openCascade": "7.8.1.1"
+  },
+  "baseGenerator": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+  "baseGeneratorSha256": "53353da1c6f46d8cd9df7431209946869c0984908b269fb94d01f25a1cfabd47",
+  "candidateGenerator": "highspeed_edf/phase15/optimization/phase15_generate_fuselage_shell_candidate.py",
+  "candidateGeneratorSha256": "84c5aac03d485fd9a08602d991d9cbfeff0b0a77a866397a9ec5d7a76ac20155",
+  "step": "highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell_candidate_brep.step",
+  "stepSha256": "c8df4de3dcb3901e93dd4495c1b7bb1ed9a23f6794ffbd0a2cc9eac209ee35bd",
+  "brep": "highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell_candidate.brep",
+  "brepSha256": "8e85424ee435d72a5d143a32b30a71d6814517e20ea57b1bef6299b682b4b981",
+  "units": "mm",
+  "stationAxis": "Z",
+  "stages": [
+    {
+      "index": 1,
+      "seconds": 7.6,
+      "valid": true,
+      "solidCount": 1,
+      "volumeMm3": 5986615.208769565,
+      "boundsMm": {
+        "x": [
+          -105.89184608066255,
+          105.89184608066253
+        ],
+        "y": [
+          -48.458737853409566,
+          48.458737853409566
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "seconds": 8.1,
+      "valid": true,
+      "solidCount": 1,
+      "volumeMm3": 4015403.427654614,
+      "boundsMm": {
+        "x": [
+          -105.89184608066255,
+          105.89184608066253
+        ],
+        "y": [
+          -48.458737853409566,
+          48.458737853409566
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "seconds": 73.9,
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 867266.6131363382,
+      "boundsMm": {
+        "x": [
+          -105.8918460806625,
+          105.8918460806625
+        ],
+        "y": [
+          -48.458737853409545,
+          48.458737853409545
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "seconds": 211.7,
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 844511.6093505347,
+      "boundsMm": {
+        "x": [
+          -105.8918460806625,
+          105.8918460806625
+        ],
+        "y": [
+          -48.458737853409545,
+          48.458737853409545
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "seconds": 197.2,
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 821756.6132408897,
+      "boundsMm": {
+        "x": [
+          -105.8918460806625,
+          105.8918460806625
+        ],
+        "y": [
+          -48.458737853409545,
+          48.458737853409545
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "seconds": 202.2,
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 744004.684568362,
+      "boundsMm": {
+        "x": [
+          -105.8918460806625,
+          105.8918460806625
+        ],
+        "y": [
+          -48.458737853409545,
+          45.41363327196203
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    }
+  ],
+  "preExport": {
+    "valid": true,
+    "solidCount": 4,
+    "volumeMm3": 744004.684568362,
+    "boundsMm": {
+      "x": [
+        -105.8918460806625,
+        105.8918460806625
+      ],
+      "y": [
+        -48.458737853409545,
+        45.41363327196203
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001000001
+      ]
+    }
+  },
+  "brepRoundTrip": {
+    "valid": true,
+    "solidCount": 4,
+    "volumeMm3": 744004.684568368,
+    "boundsMm": {
+      "x": [
+        -105.89184608066256,
+        105.89184608066256
+      ],
+      "y": [
+        -48.45873785340955,
+        45.413633271962034
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001000001
+      ]
+    }
+  },
+  "roundTrip": {
+    "valid": false,
+    "solidCount": 4,
+    "volumeMm3": 744004.6817747279,
+    "boundsMm": {
+      "x": [
+        -105.891846080653,
+        105.89184608066236
+      ],
+      "y": [
+        -48.45873785340276,
+        45.41363327196221
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001
+      ]
+    }
+  },
+  "limitations": [
+    "Standalone geometry candidate only; no aircraft assembly, manufacturing, structural, or flight validation is implied."
+  ]
+}

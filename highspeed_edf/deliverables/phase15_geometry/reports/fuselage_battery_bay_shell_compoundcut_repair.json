@@ -1,0 +1,51 @@
+{
+  "runtime": {
+    "cadQuery": "2.7.0",
+    "openCascade": "7.8.1.1",
+    "python": "3.12.14"
+  },
+  "sourceGenerator": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+  "sourceGeneratorSha256": "7a1fd210c5b895ed1eedf84669c65f4e585676a61e7c554f35e7abf5f1ec5601",
+  "step": "highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell_compoundcut_repair.step",
+  "stepSha256": "e5eb85825d2a67c3cdfd2114cb4492b42b37a1d4f79daa256430962147c18aee",
+  "preExport": {
+    "valid": true,
+    "solidCount": 4,
+    "volumeMm3": 744004.68410873,
+    "boundsMm": {
+      "x": [
+        -105.89184608066255,
+        105.89184608066255
+      ],
+      "y": [
+        -48.458737853409545,
+        45.41363327196203
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001000001
+      ]
+    }
+  },
+  "roundTrip": {
+    "valid": false,
+    "solidCount": 4,
+    "volumeMm3": 744004.681317564,
+    "boundsMm": {
+      "x": [
+        -105.891846080653,
+        105.89184608066236
+      ],
+      "y": [
+        -48.45873785340276,
+        45.41363327196221
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001
+      ]
+    }
+  },
+  "units": "mm",
+  "axes": "generator XYZ; body station axis is Z"
+}

@@ -1,0 +1,221 @@
+{
+  "candidateStatus": "round-trip-valid",
+  "booleanOrder": "ducts-first",
+  "ductRadiusMm": 42.6,
+  "baselineDuctRadiusMm": 42.5,
+  "ductDiameterChangeMm": 0.2,
+  "geometryAdjustment": "Increase both duct-bore cutter radii equally by 0.1 mm (0.2 mm diameter) to clear the exact tangent at the 3 mm terminal body section; stations and endpoint coordinates are unchanged.",
+  "runtime": {
+    "python": "3.12.14",
+    "cadQuery": "2.7.0",
+    "openCascade": "7.8.1.1"
+  },
+  "baseGenerator": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+  "baseGeneratorSha256": "53353da1c6f46d8cd9df7431209946869c0984908b269fb94d01f25a1cfabd47",
+  "candidateGenerator": "highspeed_edf/phase15/optimization/phase15_generate_fuselage_shell_endpoint_relief.py",
+  "candidateGeneratorSha256": "fd09c1fbf8cd15a568912ff00014c46e0d952feb76e728b0f646790b1f91a1ba",
+  "step": "highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell_endpoint_relief_42_6.step",
+  "stepSha256": "c00acd3287965dca80fce109b4a5ab61f376b2794ee5746ffe23e8e5aba3d057",
+  "brep": "highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell_endpoint_relief_42_6.brep",
+  "brepSha256": "764169f409ea40ce38d937a2d3049f97d46baae18e511efbc0cc0a534fc941d5",
+  "units": "mm",
+  "stationAxis": "Z",
+  "stages": [
+    {
+      "index": 1,
+      "seconds": 7.3,
+      "valid": true,
+      "solidCount": 1,
+      "volumeMm3": 5979465.233859785,
+      "boundsMm": {
+        "x": [
+          -105.89184608066253,
+          105.89184608066253
+        ],
+        "y": [
+          -48.458737853409566,
+          48.458737853409566
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "seconds": 7.5,
+      "valid": true,
+      "solidCount": 1,
+      "volumeMm3": 4001690.5182095845,
+      "boundsMm": {
+        "x": [
+          -105.89184608066253,
+          105.89184608066253
+        ],
+        "y": [
+          -48.458737853409566,
+          48.458737853409566
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "seconds": 36.2,
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 865419.1830694018,
+      "boundsMm": {
+        "x": [
+          -105.89184608066252,
+          105.89184608066252
+        ],
+        "y": [
+          -48.458737853409545,
+          48.458737853409545
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "seconds": 108.6,
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 842737.9220860128,
+      "boundsMm": {
+        "x": [
+          -105.89184608066252,
+          105.89184608066252
+        ],
+        "y": [
+          -48.458737853409545,
+          48.458737853409545
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "seconds": 115.4,
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 820056.665723102,
+      "boundsMm": {
+        "x": [
+          -105.89184608066252,
+          105.89184608066252
+        ],
+        "y": [
+          -48.458737853409545,
+          48.458737853409545
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "seconds": 117.6,
+      "valid": true,
+      "solidCount": 4,
+      "volumeMm3": 742305.5263759661,
+      "boundsMm": {
+        "x": [
+          -105.89184608066252,
+          105.89184608066252
+        ],
+        "y": [
+          -48.458737853409545,
+          45.41363327196203
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    }
+  ],
+  "preExport": {
+    "valid": true,
+    "solidCount": 4,
+    "volumeMm3": 742305.5263759661,
+    "boundsMm": {
+      "x": [
+        -105.89184608066252,
+        105.89184608066252
+      ],
+      "y": [
+        -48.458737853409545,
+        45.41363327196203
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001000001
+      ]
+    }
+  },
+  "brepRoundTrip": {
+    "valid": true,
+    "solidCount": 4,
+    "volumeMm3": 742305.5263759706,
+    "boundsMm": {
+      "x": [
+        -105.89184608066253,
+        105.89184608066253
+      ],
+      "y": [
+        -48.45873785340955,
+        45.413633271962034
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001000001
+      ]
+    }
+  },
+  "roundTrip": {
+    "valid": true,
+    "solidCount": 4,
+    "volumeMm3": 742305.5263753232,
+    "boundsMm": {
+      "x": [
+        -105.891846080653,
+        105.89184608066236
+      ],
+      "y": [
+        -48.45873785340276,
+        45.41363327196221
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001
+      ]
+    }
+  },
+  "limitations": [
+    "Standalone geometry candidate only; no aircraft assembly, manufacturing, structural, or flight validation is implied."
+  ],
+  "designCompromise": "Each axial bore is 0.2 mm larger in diameter than the source generator. This removes a thin amount of terminal shell material to preserve four disconnected shell solids and round-trip validity; bore clearance and remaining local wall thickness need design review.",
+  "comparison": {
+    "smallerRadiusTest": "The 42.4 mm radius variant (0.2 mm diameter reduction) also round-tripped valid but produced two solids, so it does not preserve the four-piece result.",
+    "selectedVariant": "42.6 mm radius; four solids before export, after BREP round-trip, and after STEP round-trip."
+  },
+  "visualEvidence": {
+    "manifest": "highspeed_edf/deliverables/phase15_geometry/reports/fuselage_shell_endpoint_relief_42_6_views/fuselage_shell_render_manifest.json",
+    "manifestSha256": "4e796599417f91e70d12e704a9e104225cf8a349ed93f45ddd6804149c12b01f",
+    "observations": "Rendered STEP import shows four components in native locations: two duct-side shell walls, a lower shell section, and the separated upper shell section."
+  }
+}

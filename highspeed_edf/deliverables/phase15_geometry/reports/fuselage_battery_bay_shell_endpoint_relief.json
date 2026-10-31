@@ -1,0 +1,213 @@
+{
+  "candidateStatus": "round-trip-valid",
+  "booleanOrder": "ducts-first",
+  "ductRadiusMm": 42.4,
+  "baselineDuctRadiusMm": 42.5,
+  "ductDiameterChangeMm": -0.2,
+  "geometryAdjustment": "Reduce both duct-bore cutter radii equally to remove the 0.1 mm exact tangent at the 3 mm terminal body section; stations and endpoint coordinates are unchanged.",
+  "runtime": {
+    "python": "3.12.14",
+    "cadQuery": "2.7.0",
+    "openCascade": "7.8.1.1"
+  },
+  "baseGenerator": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+  "baseGeneratorSha256": "53353da1c6f46d8cd9df7431209946869c0984908b269fb94d01f25a1cfabd47",
+  "candidateGenerator": "highspeed_edf/phase15/optimization/phase15_generate_fuselage_shell_endpoint_relief.py",
+  "candidateGeneratorSha256": "fd09c1fbf8cd15a568912ff00014c46e0d952feb76e728b0f646790b1f91a1ba",
+  "step": "highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell_endpoint_relief.step",
+  "stepSha256": "87f6bb382c2ea4e0ab07bc62ad5c15f46afbc1893de6d39e91152df16353bf64",
+  "brep": "highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell_endpoint_relief.brep",
+  "brepSha256": "45caae16dd9829b6977f926a80bdd973287d6c7f61c39f9036a9ff2c7b334a7f",
+  "units": "mm",
+  "stationAxis": "Z",
+  "stages": [
+    {
+      "index": 1,
+      "seconds": 12.0,
+      "valid": true,
+      "solidCount": 1,
+      "volumeMm3": 5993633.197002386,
+      "boundsMm": {
+        "x": [
+          -105.89184608066255,
+          105.89184608066253
+        ],
+        "y": [
+          -48.458737853409566,
+          48.458737853409566
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "seconds": 16.4,
+      "valid": true,
+      "solidCount": 1,
+      "volumeMm3": 4029381.5821695854,
+      "boundsMm": {
+        "x": [
+          -105.89184608066255,
+          105.89184608066255
+        ],
+        "y": [
+          -48.458737853409566,
+          48.458737853409566
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "seconds": 52.3,
+      "valid": true,
+      "solidCount": 2,
+      "volumeMm3": 869205.7320030188,
+      "boundsMm": {
+        "x": [
+          -105.8918460806625,
+          105.89184608066255
+        ],
+        "y": [
+          -48.458737853409545,
+          48.458737853409545
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "seconds": 79.4,
+      "valid": true,
+      "solidCount": 2,
+      "volumeMm3": 846381.6438482017,
+      "boundsMm": {
+        "x": [
+          -105.8918460806625,
+          105.89184608066255
+        ],
+        "y": [
+          -48.458737853409545,
+          48.458737853409545
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "seconds": 86.0,
+      "valid": true,
+      "solidCount": 2,
+      "volumeMm3": 823557.837756181,
+      "boundsMm": {
+        "x": [
+          -105.8918460806625,
+          105.89184608066255
+        ],
+        "y": [
+          -48.458737853409545,
+          48.458737853409545
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "seconds": 67.7,
+      "valid": true,
+      "solidCount": 2,
+      "volumeMm3": 745805.1064005777,
+      "boundsMm": {
+        "x": [
+          -105.8918460806625,
+          105.89184608066255
+        ],
+        "y": [
+          -48.458737853409545,
+          45.41363327196203
+        ],
+        "z": [
+          -360.0000001,
+          280.0000001000001
+        ]
+      }
+    }
+  ],
+  "preExport": {
+    "valid": true,
+    "solidCount": 2,
+    "volumeMm3": 745805.1064005777,
+    "boundsMm": {
+      "x": [
+        -105.8918460806625,
+        105.89184608066255
+      ],
+      "y": [
+        -48.458737853409545,
+        45.41363327196203
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001000001
+      ]
+    }
+  },
+  "brepRoundTrip": {
+    "valid": true,
+    "solidCount": 2,
+    "volumeMm3": 745805.1064005771,
+    "boundsMm": {
+      "x": [
+        -105.89184608066255,
+        105.89184608066255
+      ],
+      "y": [
+        -48.45873785340955,
+        45.413633271962034
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001000001
+      ]
+    }
+  },
+  "roundTrip": {
+    "valid": true,
+    "solidCount": 2,
+    "volumeMm3": 745805.1063959934,
+    "boundsMm": {
+      "x": [
+        -105.891846080653,
+        105.89184608066236
+      ],
+      "y": [
+        -48.45873785340276,
+        45.41363327196221
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001
+      ]
+    }
+  },
+  "limitations": [
+    "Standalone geometry candidate only; no aircraft assembly, manufacturing, structural, or flight validation is implied."
+  ],
+  "designCompromise": "Each axial bore is 0.2 mm smaller in diameter than the source generator. This variant round-trips valid but yields two solids, so it loses the four-piece result.",
+  "comparisonNote": "Compared with the 42.6 mm radius endpoint-relief candidate, this smaller 42.4 mm radius increases terminal material but joins the intended split into two solids."
+}
