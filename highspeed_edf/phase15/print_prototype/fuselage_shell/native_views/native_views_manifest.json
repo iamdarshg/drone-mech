@@ -1,0 +1,53 @@
+{
+  "nativeStep": "highspeed_edf/phase15/print_prototype/fuselage_shell/fuselage_shell_segmented_assembly.step",
+  "nativeStepSha256": "c2776fc62e5002f9cba3fe45e5b849a7c6bd3d36f469286e852833a7e103c673",
+  "nativeStepValid": true,
+  "nativeStepSolidCount": 20,
+  "nativeStepVolumeMm3": 742306.4996477447,
+  "boundsMm": {
+    "x": [
+      -107.22498968327977,
+      107.07374070449154
+    ],
+    "y": [
+      -49.00448647624353,
+      46.25194179409806
+    ],
+    "z": [
+      -361.3336311844136,
+      280.85139914093395
+    ]
+  },
+  "tessellation": {
+    "linearToleranceMm": 0.6,
+    "angularToleranceRad": 0.35
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "cadQuery": "2.7.0",
+    "openCascade": "7.8.1.1"
+  },
+  "images": [
+    {
+      "file": "01_shell_isometric.png",
+      "title": "Segmented fuselage \u00b7 isometric",
+      "note": "20 valid solids \u00b7 10 pieces \u00b7 original assembled station coordinates",
+      "sha256": "67efd31f1ff17e3a67d087afb5d6b45215ff4cf48da31bf65aeb9cc6e0e8f720"
+    },
+    {
+      "file": "02_shell_side.png",
+      "title": "Segmented fuselage \u00b7 side",
+      "note": "640 mm envelope \u00b7 transverse cut planes at prototype stations",
+      "sha256": "6bf664265c003dd78ec6168e1a9953f2fe1e9aa9bf5af5df283f7873e03fb3c2"
+    },
+    {
+      "file": "03_shell_top.png",
+      "title": "Segmented fuselage \u00b7 top",
+      "note": "Centerline section split \u00b7 no retention hardware modeled",
+      "sha256": "820b9dad0e20b48c62a6842cf3eb894d62ea7cbe6579e8e66aa87104e5b2d37b"
+    }
+  ],
+  "limitations": [
+    "Rendered assembled STEP surfaces in native coordinates; this does not validate fit of bond, seal, or fastener hardware."
+  ]
+}

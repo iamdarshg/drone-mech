@@ -1,0 +1,1193 @@
+{
+  "status": "prototype-round-trip-valid",
+  "sourceStep": "highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell_endpoint_relief_42_6.step",
+  "sourceStepSha256": "c00acd3287965dca80fce109b4a5ab61f376b2794ee5746ffe23e8e5aba3d057",
+  "sourceReport": "highspeed_edf/deliverables/phase15_geometry/reports/fuselage_battery_bay_shell_endpoint_relief_42_6.json",
+  "sourceReportSha256": "1fc96f29ad7f48da0c4bf7efde86c9317fdd08dac901370c94a85d5a7cc4bc1d",
+  "sourceEnvelopeMm": {
+    "valid": true,
+    "solidCount": 4,
+    "volumeMm3": 742305.5263753232,
+    "boundsMm": {
+      "x": [
+        -105.891846080653,
+        105.89184608066236
+      ],
+      "y": [
+        -48.45873785340276,
+        45.41363327196221
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001
+      ]
+    },
+    "sizeMm": [
+      211.78369216131534,
+      93.87237112536496,
+      640.0000002
+    ]
+  },
+  "splitter": {
+    "algorithm": "OpenCascade BRepAlgoAPI_Splitter via CadQuery Shape.split",
+    "transverseCutPlaneStationsMm": [
+      -240.0,
+      -128.0,
+      0.0,
+      136.0
+    ],
+    "transversePlaneCount": 4,
+    "axialBandCount": 5,
+    "additionalCenterlinePlaneXmm": 0.0,
+    "seconds": 8.12,
+    "splitSolidCount": 20
+  },
+  "volumeConservation": {
+    "sourceMm3": 742305.5263753232,
+    "segmentsMm3": 742306.4180200215,
+    "absoluteDifferenceMm3": 0.8916446983348578,
+    "toleranceMm3": 7.423055263753232
+  },
+  "sourceEvidence": {
+    "bodyStationSpanMm": 640.0,
+    "stationEndpointsMm": [
+      -360.0,
+      280.0
+    ],
+    "bodyWidthMm": 186.0,
+    "bodyHeightMm": 88.0,
+    "bodyShellMm": 1.2,
+    "documentedJointIntent": "sealed scarf/flange joints; source states section into <=260 mm pieces at modeled frames z=-100/+100 mm",
+    "sourceDoc": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+    "intermediateSeamsSourceBacked": false
+  },
+  "inheritedEndpointReliefTopology": {
+    "solidCount": 4,
+    "reportedComponents": [
+      "two duct-side shell walls",
+      "lower shell section",
+      "separated upper shell section"
+    ],
+    "sourceReportObservation": "Rendered STEP import shows four components in native locations.",
+    "integratedShellContinuity": "not established; sectioning preserves the candidate's disconnected topology"
+  },
+  "prototypeAssumptions": {
+    "transverseCutStationsMm": [
+      -240.0,
+      -128.0,
+      0.0,
+      136.0
+    ],
+    "additionalCenterlineSplitXmm": 0.0,
+    "sourceFrameStationsNotUsedMm": [
+      -100.0,
+      100.0
+    ],
+    "seamRule": "four transverse planar cuts create five axial bands; one centerline plane divides each band port/starboard; geometric cuts only, with no modeled adhesive, wrap, fasteners, or flange hardware",
+    "placementRotationAboutZDeg": 0.0,
+    "rotationRequiredForFit": false,
+    "segmentationPurpose": "fit each exported shell compound inside the 180x180x180 mm A1 mini profile envelope in the source XYZ orientation"
+  },
+  "printerProfile": {
+    "name": "Bambu Lab A1 mini 0.4 nozzle",
+    "profileFile": "highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-machine.json",
+    "profileSha256": "85632b53bc044034e1606685cb83e3bbc405815a7920b5583e0e4bab99e59bb7",
+    "printableAreaMm": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        180.0,
+        0.0
+      ],
+      [
+        180.0,
+        180.0
+      ],
+      [
+        0.0,
+        180.0
+      ]
+    ],
+    "printableHeightMm": 180.0
+  },
+  "segmentCount": 10,
+  "segments": [
+    {
+      "index": 1,
+      "sectionIndex": 1,
+      "sideOfCenterPlane": "port",
+      "actualBoundsZMm": [
+        -360.0000001,
+        -239.9999998999883
+      ],
+      "seconds": 8.12,
+      "step": "fuselage_shell_segment_01_port.step",
+      "stepSha256": "3bc7a9ca1cb37417d5feac6b926354317e2f41e588442fa25e766f813efed667",
+      "brep": "fuselage_shell_segment_01_port.brep",
+      "brepSha256": "2edaf3b27d1a8f2ebb4a2afb0a665dd8ed108ad1074a66f47b36de97ae40c7ed",
+      "preExport": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 278617.701191616,
+        "boundsMm": {
+          "x": [
+            -105.89184608065298,
+            1.0002926332444311e-07
+          ],
+          "y": [
+            -48.458737853402766,
+            41.770474329581
+          ],
+          "z": [
+            -360.0000001,
+            -239.99999989999998
+          ]
+        },
+        "sizeMm": [
+          105.89184618068225,
+          90.22921218298376,
+          120.00000020000004
+        ]
+      },
+      "stepRoundTrip": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 278617.7011915965,
+        "boundsMm": {
+          "x": [
+            -105.89184608065301,
+            1.0002926332444311e-07
+          ],
+          "y": [
+            -48.45873785340275,
+            41.770474329581
+          ],
+          "z": [
+            -360.0000001,
+            -239.9999998999883
+          ]
+        },
+        "sizeMm": [
+          105.89184618068228,
+          90.22921218298376,
+          120.00000020001173
+        ]
+      },
+      "brepRoundTrip": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 278617.7011916159,
+        "boundsMm": {
+          "x": [
+            -105.89184608065301,
+            1.0002926332444311e-07
+          ],
+          "y": [
+            -48.45873785340275,
+            41.770474329581
+          ],
+          "z": [
+            -360.0000001,
+            -239.99999989999984
+          ]
+        },
+        "sizeMm": [
+          105.89184618068228,
+          90.22921218298376,
+          120.00000020000019
+        ]
+      },
+      "a1MiniPlacement": {
+        "rotationAboutZDeg": 0.0,
+        "printAxisMapping": "model X/Y/Z to printer X/Y/build Z",
+        "rotatedEnvelopeMm": [
+          105.89184618068228,
+          90.22921218298376,
+          120.00000020001173
+        ],
+        "profileEnvelopeMm": [
+          180.0,
+          180.0,
+          180.0
+        ],
+        "fitsAxisAlignedProfileEnvelope": true
+      }
+    },
+    {
+      "index": 2,
+      "sectionIndex": 1,
+      "sideOfCenterPlane": "starboard",
+      "actualBoundsZMm": [
+        -360.0000001,
+        -239.99999989999887
+      ],
+      "seconds": 0.0,
+      "step": "fuselage_shell_segment_02_starboard.step",
+      "stepSha256": "09b109856b6f1be6d75c6a44c1ff66b3b6c143d7e2a2930d7a1c22efccbfe7d8",
+      "brep": "fuselage_shell_segment_02_starboard.brep",
+      "brepSha256": "26a10fcf3da68771f0ba1e79dd9bea8724e2521ae7c7e0ecc7735539b8bc4050",
+      "preExport": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 278617.70118942,
+        "boundsMm": {
+          "x": [
+            -1.0008318639500023e-07,
+            105.89184608066236
+          ],
+          "y": [
+            -48.458737853402766,
+            41.770474329581
+          ],
+          "z": [
+            -360.0000001,
+            -239.99999989999995
+          ]
+        },
+        "sizeMm": [
+          105.89184618074555,
+          90.22921218298376,
+          120.00000020000007
+        ]
+      },
+      "stepRoundTrip": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 278617.701189418,
+        "boundsMm": {
+          "x": [
+            -1.0008318639500023e-07,
+            105.89184608066236
+          ],
+          "y": [
+            -48.45873785340275,
+            41.770474329581
+          ],
+          "z": [
+            -360.0000001,
+            -239.99999989999887
+          ]
+        },
+        "sizeMm": [
+          105.89184618074555,
+          90.22921218298376,
+          120.00000020000115
+        ]
+      },
+      "brepRoundTrip": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 278617.70118942,
+        "boundsMm": {
+          "x": [
+            -1.0008318639500023e-07,
+            105.89184608066235
+          ],
+          "y": [
+            -48.45873785340275,
+            41.770474329581
+          ],
+          "z": [
+            -360.0000001,
+            -239.99999989999984
+          ]
+        },
+        "sizeMm": [
+          105.89184618074553,
+          90.22921218298376,
+          120.00000020000019
+        ]
+      },
+      "a1MiniPlacement": {
+        "rotationAboutZDeg": 0.0,
+        "printAxisMapping": "model X/Y/Z to printer X/Y/build Z",
+        "rotatedEnvelopeMm": [
+          105.89184618074555,
+          90.22921218298376,
+          120.00000020000115
+        ],
+        "profileEnvelopeMm": [
+          180.0,
+          180.0,
+          180.0
+        ],
+        "fitsAxisAlignedProfileEnvelope": true
+      }
+    },
+    {
+      "index": 3,
+      "sectionIndex": 2,
+      "sideOfCenterPlane": "port",
+      "actualBoundsZMm": [
+        -240.00000010000002,
+        -189.09843268009993
+      ],
+      "seconds": 0.0,
+      "step": "fuselage_shell_segment_03_port.step",
+      "stepSha256": "1ff237f041e0c5be6029665ead3714483e569cc7f8b1ce74d25a056fbb4ff914",
+      "brep": "fuselage_shell_segment_03_port.brep",
+      "brepSha256": "c27ba37579a721a63edb41caf7eb217d88ff8aed50f2bb65b7d4ec01ddbd4977",
+      "preExport": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 33767.56373236802,
+        "boundsMm": {
+          "x": [
+            -104.34608090645656,
+            1e-07
+          ],
+          "y": [
+            -47.93084864659509,
+            40.6289849639495
+          ],
+          "z": [
+            -240.00000010000016,
+            -189.09843268009993
+          ]
+        },
+        "sizeMm": [
+          104.34608100645656,
+          88.55983361054459,
+          50.90156741990023
+        ]
+      },
+      "stepRoundTrip": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 33767.563732349154,
+        "boundsMm": {
+          "x": [
+            -104.34608090645493,
+            1e-07
+          ],
+          "y": [
+            -47.93084864659506,
+            40.62898496394948
+          ],
+          "z": [
+            -240.00000010000002,
+            -189.09843268009993
+          ]
+        },
+        "sizeMm": [
+          104.34608100645492,
+          88.55983361054453,
+          50.90156741990009
+        ]
+      },
+      "brepRoundTrip": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 33767.56373236827,
+        "boundsMm": {
+          "x": [
+            -104.34608090645662,
+            1e-07
+          ],
+          "y": [
+            -47.930848646595116,
+            40.6289849639495
+          ],
+          "z": [
+            -240.00000010000016,
+            -189.09843268010022
+          ]
+        },
+        "sizeMm": [
+          104.34608100645661,
+          88.55983361054462,
+          50.90156741989995
+        ]
+      },
+      "a1MiniPlacement": {
+        "rotationAboutZDeg": 0.0,
+        "printAxisMapping": "model X/Y/Z to printer X/Y/build Z",
+        "rotatedEnvelopeMm": [
+          104.34608100645492,
+          88.55983361054453,
+          50.90156741990009
+        ],
+        "profileEnvelopeMm": [
+          180.0,
+          180.0,
+          180.0
+        ],
+        "fitsAxisAlignedProfileEnvelope": true
+      }
+    },
+    {
+      "index": 4,
+      "sectionIndex": 2,
+      "sideOfCenterPlane": "starboard",
+      "actualBoundsZMm": [
+        -240.00000010000008,
+        -189.09843268009993
+      ],
+      "seconds": 0.0,
+      "step": "fuselage_shell_segment_04_starboard.step",
+      "stepSha256": "ed75b2df99b88b7c312c1f8a504e0b709dc19831b01894e560b9690bfd3d3317",
+      "brep": "fuselage_shell_segment_04_starboard.brep",
+      "brepSha256": "f8bc042f31a9f05a92ed0582bafd13e506556430e6b2ff5f55438f9aa1e22604",
+      "preExport": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 33767.563732833674,
+        "boundsMm": {
+          "x": [
+            -1.0008202369017633e-07,
+            104.34608090646653
+          ],
+          "y": [
+            -47.93084864659509,
+            40.628984963947914
+          ],
+          "z": [
+            -240.00000010000016,
+            -189.09843268009993
+          ]
+        },
+        "sizeMm": [
+          104.34608100654854,
+          88.559833610543,
+          50.90156741990023
+        ]
+      },
+      "stepRoundTrip": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 33767.56373282579,
+        "boundsMm": {
+          "x": [
+            -1.0008202369017633e-07,
+            104.34608090646631
+          ],
+          "y": [
+            -47.93084864659506,
+            40.628984963948
+          ],
+          "z": [
+            -240.00000010000008,
+            -189.09843268009993
+          ]
+        },
+        "sizeMm": [
+          104.34608100654833,
+          88.55983361054305,
+          50.90156741990015
+        ]
+      },
+      "brepRoundTrip": {
+        "valid": true,
+        "solidCount": 1,
+        "volumeMm3": 33767.563732833834,
+        "boundsMm": {
+          "x": [
+            -1.0008202369017633e-07,
+            104.34608090646655
+          ],
+          "y": [
+            -47.930848646595116,
+            40.628984963947914
+          ],
+          "z": [
+            -240.00000010000016,
+            -189.09843268010022
+          ]
+        },
+        "sizeMm": [
+          104.34608100654857,
+          88.55983361054302,
+          50.90156741989995
+        ]
+      },
+      "a1MiniPlacement": {
+        "rotationAboutZDeg": 0.0,
+        "printAxisMapping": "model X/Y/Z to printer X/Y/build Z",
+        "rotatedEnvelopeMm": [
+          104.34608100654833,
+          88.55983361054305,
+          50.90156741990015
+        ],
+        "profileEnvelopeMm": [
+          180.0,
+          180.0,
+          180.0
+        ],
+        "fitsAxisAlignedProfileEnvelope": true
+      }
+    },
+    {
+      "index": 5,
+      "sectionIndex": 3,
+      "sideOfCenterPlane": "port",
+      "actualBoundsZMm": [
+        -111.93299828020123,
+        1.0000069633188104e-07
+      ],
+      "seconds": 0.0,
+      "step": "fuselage_shell_segment_05_port.step",
+      "stepSha256": "4bf36a7c0c5ebecc95ad54a14a590136e11bbcce7451b64c0ed714652e220ad3",
+      "brep": "fuselage_shell_segment_05_port.brep",
+      "brepSha256": "9980ee7c9e097598f23a841cf45a5dbf32b1cff83b4b15100479d1a1ecf5d492",
+      "preExport": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 24608.50718052963,
+        "boundsMm": {
+          "x": [
+            -95.28204183743999,
+            1.0003274534541539e-07
+          ],
+          "y": [
+            -45.413633271958396,
+            45.41363327196221
+          ],
+          "z": [
+            -111.93299828020123,
+            1.0000005684341886e-07
+          ]
+        },
+        "sizeMm": [
+          95.28204193747274,
+          90.82726654392062,
+          111.93299838020128
+        ]
+      },
+      "stepRoundTrip": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 24608.507180526114,
+        "boundsMm": {
+          "x": [
+            -95.28204183743999,
+            1.0003274534541539e-07
+          ],
+          "y": [
+            -45.413633271958396,
+            45.41363327196221
+          ],
+          "z": [
+            -111.93299828020123,
+            1.0000069633188104e-07
+          ]
+        },
+        "sizeMm": [
+          95.28204193747274,
+          90.82726654392062,
+          111.93299838020192
+        ]
+      },
+      "brepRoundTrip": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 24608.507180530378,
+        "boundsMm": {
+          "x": [
+            -95.28204183743999,
+            1.0003274534541539e-07
+          ],
+          "y": [
+            -45.413633271958396,
+            45.41363327196221
+          ],
+          "z": [
+            -111.93299828020109,
+            1.0000022737367544e-07
+          ]
+        },
+        "sizeMm": [
+          95.28204193747274,
+          90.82726654392062,
+          111.93299838020131
+        ]
+      },
+      "a1MiniPlacement": {
+        "rotationAboutZDeg": 0.0,
+        "printAxisMapping": "model X/Y/Z to printer X/Y/build Z",
+        "rotatedEnvelopeMm": [
+          95.28204193747274,
+          90.82726654392062,
+          111.93299838020192
+        ],
+        "profileEnvelopeMm": [
+          180.0,
+          180.0,
+          180.0
+        ],
+        "fitsAxisAlignedProfileEnvelope": true
+      }
+    },
+    {
+      "index": 6,
+      "sectionIndex": 3,
+      "sideOfCenterPlane": "starboard",
+      "actualBoundsZMm": [
+        -111.93299828020123,
+        1.0000022737367544e-07
+      ],
+      "seconds": 0.0,
+      "step": "fuselage_shell_segment_06_starboard.step",
+      "stepSha256": "408a72a9d44045bc9d961c210bf8b5a6572d781fd4819e8cdef39d0bba2f62a5",
+      "brep": "fuselage_shell_segment_06_starboard.brep",
+      "brepSha256": "8d017746548a489f1ebcc60a0e22d55e0a9bcf881381e7b4c03380422cb292fd",
+      "preExport": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 24608.478365585805,
+        "boundsMm": {
+          "x": [
+            -1.0007619745221022e-07,
+            95.282041837449
+          ],
+          "y": [
+            -45.413633271958396,
+            45.41363327196221
+          ],
+          "z": [
+            -111.93299828020123,
+            1.0000005684341886e-07
+          ]
+        },
+        "sizeMm": [
+          95.2820419375252,
+          90.82726654392062,
+          111.93299838020128
+        ]
+      },
+      "stepRoundTrip": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 24608.47836558095,
+        "boundsMm": {
+          "x": [
+            -1.0007619745221022e-07,
+            95.282041837449
+          ],
+          "y": [
+            -45.413633271958396,
+            45.41363327196221
+          ],
+          "z": [
+            -111.93299828020123,
+            1.0000022737367544e-07
+          ]
+        },
+        "sizeMm": [
+          95.2820419375252,
+          90.82726654392062,
+          111.93299838020145
+        ]
+      },
+      "brepRoundTrip": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 24608.478365586325,
+        "boundsMm": {
+          "x": [
+            -1.0007619745221022e-07,
+            95.282041837449
+          ],
+          "y": [
+            -45.413633271958396,
+            45.41363327196221
+          ],
+          "z": [
+            -111.93299828020109,
+            1.0000022737367544e-07
+          ]
+        },
+        "sizeMm": [
+          95.2820419375252,
+          90.82726654392062,
+          111.93299838020131
+        ]
+      },
+      "a1MiniPlacement": {
+        "rotationAboutZDeg": 0.0,
+        "printAxisMapping": "model X/Y/Z to printer X/Y/build Z",
+        "rotatedEnvelopeMm": [
+          95.2820419375252,
+          90.82726654392062,
+          111.93299838020145
+        ],
+        "profileEnvelopeMm": [
+          180.0,
+          180.0,
+          180.0
+        ],
+        "fitsAxisAlignedProfileEnvelope": true
+      }
+    },
+    {
+      "index": 7,
+      "sectionIndex": 4,
+      "sideOfCenterPlane": "port",
+      "actualBoundsZMm": [
+        -1.0000138375422231e-07,
+        136.0000001000019
+      ],
+      "seconds": 0.0,
+      "step": "fuselage_shell_segment_07_port.step",
+      "stepSha256": "038b8f10878e6c6b98347654849e0626844ba56b4ba93a3feeed3aea0be493b7",
+      "brep": "fuselage_shell_segment_07_port.brep",
+      "brepSha256": "ab9ed1ae3f7048e877c290e3d20e116b230ec88ef818956f7343db1626e5912f",
+      "preExport": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 13247.3484641898,
+        "boundsMm": {
+          "x": [
+            -93.2352769589562,
+            1.0003147928463504e-07
+          ],
+          "y": [
+            -44.021302573799424,
+            44.02130257380401
+          ],
+          "z": [
+            -1.0000020961010704e-07,
+            136.00000010000184
+          ]
+        },
+        "sizeMm": [
+          93.23527705898769,
+          88.04260514760344,
+          136.00000020000206
+        ]
+      },
+      "stepRoundTrip": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 13247.348464165503,
+        "boundsMm": {
+          "x": [
+            -93.2352769589562,
+            1.0003147928463504e-07
+          ],
+          "y": [
+            -44.021302573799424,
+            44.02130257380401
+          ],
+          "z": [
+            -1.0000138375422231e-07,
+            136.0000001000019
+          ]
+        },
+        "sizeMm": [
+          93.23527705898769,
+          88.04260514760344,
+          136.00000020000329
+        ]
+      },
+      "brepRoundTrip": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 13247.348464189252,
+        "boundsMm": {
+          "x": [
+            -93.23527695895619,
+            1.0003147928463504e-07
+          ],
+          "y": [
+            -44.021302573799424,
+            44.02130257380401
+          ],
+          "z": [
+            -1.0000030553337637e-07,
+            136.00000010000178
+          ]
+        },
+        "sizeMm": [
+          93.23527705898768,
+          88.04260514760344,
+          136.0000002000021
+        ]
+      },
+      "a1MiniPlacement": {
+        "rotationAboutZDeg": 0.0,
+        "printAxisMapping": "model X/Y/Z to printer X/Y/build Z",
+        "rotatedEnvelopeMm": [
+          93.23527705898769,
+          88.04260514760344,
+          136.00000020000329
+        ],
+        "profileEnvelopeMm": [
+          180.0,
+          180.0,
+          180.0
+        ],
+        "fitsAxisAlignedProfileEnvelope": true
+      }
+    },
+    {
+      "index": 8,
+      "sectionIndex": 4,
+      "sideOfCenterPlane": "starboard",
+      "actualBoundsZMm": [
+        -1.0000043876013933e-07,
+        136.00000010000184
+      ],
+      "seconds": 0.0,
+      "step": "fuselage_shell_segment_08_starboard.step",
+      "stepSha256": "304946546ebc0e027c6bf9446e94b40b9e643fc74cae6fc7ed2c172ebff53853",
+      "brep": "fuselage_shell_segment_08_starboard.brep",
+      "brepSha256": "72f5bb40ef54594acfab3265418dae114c0cf4eddf12dde4683ea2c5faca62bb",
+      "preExport": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 13247.348462184658,
+        "boundsMm": {
+          "x": [
+            -1.0007328940641385e-07,
+            93.2352769589866
+          ],
+          "y": [
+            -44.021302573799424,
+            44.02130257380401
+          ],
+          "z": [
+            -1.0000052402526762e-07,
+            136.00000010000184
+          ]
+        },
+        "sizeMm": [
+          93.2352770590599,
+          88.04260514760344,
+          136.00000020000238
+        ]
+      },
+      "stepRoundTrip": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 13247.348462163733,
+        "boundsMm": {
+          "x": [
+            -1.0007328940641385e-07,
+            93.2352769589866
+          ],
+          "y": [
+            -44.021302573799424,
+            44.02130257380401
+          ],
+          "z": [
+            -1.0000043876013933e-07,
+            136.00000010000184
+          ]
+        },
+        "sizeMm": [
+          93.2352770590599,
+          88.04260514760344,
+          136.0000002000023
+        ]
+      },
+      "brepRoundTrip": {
+        "valid": true,
+        "solidCount": 3,
+        "volumeMm3": 13247.348462184207,
+        "boundsMm": {
+          "x": [
+            -1.0007328940641385e-07,
+            93.23527695898659
+          ],
+          "y": [
+            -44.021302573799424,
+            44.02130257380401
+          ],
+          "z": [
+            -1.0000030553337637e-07,
+            136.00000010000193
+          ]
+        },
+        "sizeMm": [
+          93.23527705905988,
+          88.04260514760344,
+          136.00000020000223
+        ]
+      },
+      "a1MiniPlacement": {
+        "rotationAboutZDeg": 0.0,
+        "printAxisMapping": "model X/Y/Z to printer X/Y/build Z",
+        "rotatedEnvelopeMm": [
+          93.2352770590599,
+          88.04260514760344,
+          136.0000002000023
+        ],
+        "profileEnvelopeMm": [
+          180.0,
+          180.0,
+          180.0
+        ],
+        "fitsAxisAlignedProfileEnvelope": true
+      }
+    },
+    {
+      "index": 9,
+      "sectionIndex": 5,
+      "sideOfCenterPlane": "port",
+      "actualBoundsZMm": [
+        135.9999998999996,
+        280.0000001
+      ],
+      "seconds": 0.0,
+      "step": "fuselage_shell_segment_09_port.step",
+      "stepSha256": "862b1131f213e4fd8d79186c148cbac0bc16589327b4ae61e2629d286b9519a1",
+      "brep": "fuselage_shell_segment_09_port.brep",
+      "brepSha256": "7e4e3024c29a177210cd564411933d24f963f3bcbac8c5690dc72445ce882f61",
+      "preExport": {
+        "valid": true,
+        "solidCount": 2,
+        "volumeMm3": 20912.103243036905,
+        "boundsMm": {
+          "x": [
+            -93.23479979599082,
+            1.0003147928463504e-07
+          ],
+          "y": [
+            -43.98939894729774,
+            43.9893989473024
+          ],
+          "z": [
+            135.99999989999932,
+            280.0000001
+          ]
+        },
+        "sizeMm": [
+          93.23479989602231,
+          87.97879789460013,
+          144.0000002000007
+        ]
+      },
+      "stepRoundTrip": {
+        "valid": true,
+        "solidCount": 2,
+        "volumeMm3": 20912.103243032725,
+        "boundsMm": {
+          "x": [
+            -93.23479979599082,
+            1.0003147928463504e-07
+          ],
+          "y": [
+            -43.98939894729773,
+            43.9893989473024
+          ],
+          "z": [
+            135.9999998999996,
+            280.0000001
+          ]
+        },
+        "sizeMm": [
+          93.23479989602231,
+          87.97879789460012,
+          144.00000020000041
+        ]
+      },
+      "brepRoundTrip": {
+        "valid": true,
+        "solidCount": 2,
+        "volumeMm3": 20912.10324303638,
+        "boundsMm": {
+          "x": [
+            -93.23479979599081,
+            1.0003147928463504e-07
+          ],
+          "y": [
+            -43.98939894729772,
+            43.9893989473024
+          ],
+          "z": [
+            135.99999989999927,
+            280.0000001
+          ]
+        },
+        "sizeMm": [
+          93.2347998960223,
+          87.97879789460012,
+          144.00000020000076
+        ]
+      },
+      "a1MiniPlacement": {
+        "rotationAboutZDeg": 0.0,
+        "printAxisMapping": "model X/Y/Z to printer X/Y/build Z",
+        "rotatedEnvelopeMm": [
+          93.23479989602231,
+          87.97879789460012,
+          144.00000020000041
+        ],
+        "profileEnvelopeMm": [
+          180.0,
+          180.0,
+          180.0
+        ],
+        "fitsAxisAlignedProfileEnvelope": true
+      }
+    },
+    {
+      "index": 10,
+      "sectionIndex": 5,
+      "sideOfCenterPlane": "starboard",
+      "actualBoundsZMm": [
+        135.99999989999966,
+        280.0000001
+      ],
+      "seconds": 0.0,
+      "step": "fuselage_shell_segment_10_starboard.step",
+      "stepSha256": "f6e57fd2914cfe648b20ecf885178db44667799f6c8ff2b576561d45be02d6b0",
+      "brep": "fuselage_shell_segment_10_starboard.brep",
+      "brepSha256": "8df0ec70d5484d221c9c688dc9cf3320129c7d7915b9ea5c37d2a23fc8ccb1df",
+      "preExport": {
+        "valid": true,
+        "solidCount": 2,
+        "volumeMm3": 20912.102458362944,
+        "boundsMm": {
+          "x": [
+            -1.0007328940641385e-07,
+            93.23479979602132
+          ],
+          "y": [
+            -43.98939894729774,
+            43.9893989473024
+          ],
+          "z": [
+            135.99999989999932,
+            280.0000001
+          ]
+        },
+        "sizeMm": [
+          93.23479989609461,
+          87.97879789460013,
+          144.0000002000007
+        ]
+      },
+      "stepRoundTrip": {
+        "valid": true,
+        "solidCount": 2,
+        "volumeMm3": 20912.102458363057,
+        "boundsMm": {
+          "x": [
+            -1.0007328940641385e-07,
+            93.23479979602132
+          ],
+          "y": [
+            -43.98939894729773,
+            43.9893989473024
+          ],
+          "z": [
+            135.99999989999966,
+            280.0000001
+          ]
+        },
+        "sizeMm": [
+          93.23479989609461,
+          87.97879789460012,
+          144.00000020000036
+        ]
+      },
+      "brepRoundTrip": {
+        "valid": true,
+        "solidCount": 2,
+        "volumeMm3": 20912.10245836254,
+        "boundsMm": {
+          "x": [
+            -1.0007328940641385e-07,
+            93.23479979602129
+          ],
+          "y": [
+            -43.98939894729772,
+            43.9893989473024
+          ],
+          "z": [
+            135.99999989999927,
+            280.0000001
+          ]
+        },
+        "sizeMm": [
+          93.23479989609459,
+          87.97879789460012,
+          144.00000020000076
+        ]
+      },
+      "a1MiniPlacement": {
+        "rotationAboutZDeg": 0.0,
+        "printAxisMapping": "model X/Y/Z to printer X/Y/build Z",
+        "rotatedEnvelopeMm": [
+          93.23479989609461,
+          87.97879789460012,
+          144.00000020000036
+        ],
+        "profileEnvelopeMm": [
+          180.0,
+          180.0,
+          180.0
+        ],
+        "fitsAxisAlignedProfileEnvelope": true
+      }
+    }
+  ],
+  "segmentedAssemblyStep": "fuselage_shell_segmented_assembly.step",
+  "segmentedAssemblyStepSha256": "c2776fc62e5002f9cba3fe45e5b849a7c6bd3d36f469286e852833a7e103c673",
+  "segmentedAssemblyBrep": "fuselage_shell_segmented_assembly.brep",
+  "segmentedAssemblyBrepSha256": "f46c8746d92b17067e8b530d67024b2260f6b6be30c379bd4e5b4919ee55305c",
+  "assemblyStepRoundTrip": {
+    "valid": true,
+    "solidCount": 20,
+    "volumeMm3": 742306.4996477447,
+    "boundsMm": {
+      "x": [
+        -105.89184608065301,
+        105.89184608066236
+      ],
+      "y": [
+        -48.45873785340275,
+        45.41363327196221
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001
+      ]
+    },
+    "sizeMm": [
+      211.78369216131537,
+      93.87237112536496,
+      640.0000002
+    ]
+  },
+  "assemblyBrepRoundTrip": {
+    "valid": true,
+    "solidCount": 20,
+    "volumeMm3": 742306.4996477445,
+    "boundsMm": {
+      "x": [
+        -105.891846080653,
+        105.89184608066235
+      ],
+      "y": [
+        -48.45873785340275,
+        45.41363327196221
+      ],
+      "z": [
+        -360.0000001,
+        280.0000001
+      ]
+    },
+    "sizeMm": [
+      211.78369216131534,
+      93.87237112536496,
+      640.0000002
+    ]
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "cadQuery": "2.7.0",
+    "openCascade": "7.8.1.1"
+  },
+  "limitations": [
+    "Prototype shell segmentation only; original production shell and aircraft assembly are unchanged.",
+    "Section faces provide only coincident butt boundaries. Bond, seal, alignment, flange, or fastener construction is absent and requires engineering design.",
+    "The inherited endpoint-relief STEP is already four disconnected shell components; this segmentation does not repair those gaps or make a closed monocoque.",
+    "The four transverse cuts [-240,-128,0,136] mm and centerline split at X=0 are layout assumptions; they do not use the source-backed frames at Z=-100/+100 mm and are not tested structural joints.",
+    "Profile-envelope fit is geometric only; no slicer validation, support review, print test, structural assessment, or flight validation is implied.",
+    "The inherited 42.6 mm duct-bore relief changes each bore by +0.2 mm diameter relative to the source; its local wall/interface implications remain open."
+  ]
+}
