@@ -1,0 +1,18 @@
+Info    : Reading '/workspace/drone-mech-transonic/highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/geometry/halfwing_x0_to_260mm_t30.step'...
+Info    :  - Label 'Shapes/Open CASCADE STEP translator 7.8 1' (3D)
+Info    : Done reading '/workspace/drone-mech-transonic/highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/geometry/halfwing_x0_to_260mm_t30.step'
+{
+  "step": "geometry/halfwing_x0_to_260mm_t30.step",
+  "sha256": "4d2a6eefd10cc547d45baadd9207218de688696730c3722ae2247bf9c86ef2e2",
+  "gmshRuntime": "4.13.1",
+  "solidCount": 1,
+  "volumeM3": 0.0019472769454789076,
+  "boundsM": [
+    -1e-07,
+    -0.015234612509483872,
+    -0.2700001000001301,
+    0.2600001,
+    0.01489118218037,
+    0.15624009112000742
+  ]
+}

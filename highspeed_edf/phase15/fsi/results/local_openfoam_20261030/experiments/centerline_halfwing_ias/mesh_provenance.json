@@ -1,0 +1,53 @@
+{
+  "candidate": "experimental centerline half-wing, 30 mm thickness",
+  "geometryDeviation": "extends the source generator wing schedule from x=80.33 mm to x=0; preserves its linear chord/sweep and NACA-like section formula. No fuselage or root fillet is included.",
+  "rootSymmetryPlaneXM": 0.0,
+  "sourceGenerator": "highspeed_edf/phase15/optimization/phase15_fsi_casegen.py",
+  "sourceGeneratorSHA256": "f2ea9705c2ea10d5a5ce5145df32944f0c80fbeba35fb4a70961dfea7c36acce",
+  "generatorScriptSHA256": "9d9df53f5f72fa80ae90822a6c8401d9914674ecfdfecc076be12436eb4e1b8d",
+  "gmshPythonBinding": "4.15.2",
+  "gmshRuntime": "4.13.1 bundled",
+  "netgenOptimization": "disabled; unavailable in pinned runtime",
+  "wingVolumeM3": 0.0019472769454825743,
+  "stationParameters": {
+    "xRootM": 0.0,
+    "xTipM": 0.26,
+    "rootChordM": 0.425,
+    "tipChordM": 0.305,
+    "rootLeadingEdgeZM": -0.27,
+    "tipLeadingEdgeZM": -0.14876000887970037,
+    "rootThicknessM": 0.03,
+    "tipThicknessM": 0.03
+  },
+  "meshSummary": {
+    "mesh": "wing_centerline.msh",
+    "fluidCells": 49208,
+    "fluidVolumeM3": 1.9664193948341346,
+    "wingVolumeM3": 0.0019472769454825743,
+    "domainM": {
+      "xMin": -0.53125,
+      "xMax": 0.79125,
+      "yMin": -0.35,
+      "yMax": 0.35,
+      "zMin": -0.6950000000000001,
+      "zMax": 1.4312399911202995
+    },
+    "gmshSurfaceElementCounts": {
+      "fsi": 65,
+      "rootWall": 1,
+      "inlet": 1,
+      "outlet": 1,
+      "farfield": 4
+    },
+    "openFoamBoundaryFaceCounts": {
+      "fsi": 4938,
+      "rootWall": 298,
+      "inlet": 184,
+      "outlet": 184,
+      "farfield": 1512
+    },
+    "countSource": "native gmshToFoam OpenFOAM polyMesh/boundary nFaces; Gmsh surface entity counts listed separately"
+  },
+  "stepSHA256": "4d2a6eefd10cc547d45baadd9207218de688696730c3722ae2247bf9c86ef2e2",
+  "meshSHA256": "1eeeeea4145aabd579c2d6dd209ec5bf38daefc73225b4a56d9b2c84fb8d45a6"
+}

@@ -1,0 +1,56 @@
+{
+  "case": "wing_ias700_pimple",
+  "sourceMeshSHA256": "1eeeeea4145aabd579c2d6dd209ec5bf38daefc73225b4a56d9b2c84fb8d45a6",
+  "sourceGeometrySHA256": "4d2a6eefd10cc547d45baadd9207218de688696730c3722ae2247bf9c86ef2e2",
+  "sourceGmshCells": 49208,
+  "solver": "rhoPimpleFoam OpenFOAM 1912.200626-3+b1",
+  "scope": "Rigid fixed experimental centerline half-wing sector; static mesh; no fuselage, EDF, preCICE, or moving mesh; not full aircraft",
+  "iasCasKmh": 700,
+  "altitudeM": 3000,
+  "tStaticK": 268.65,
+  "pitotImpactPressurePa": 25110.5339446905,
+  "aoaDeg": 0.5,
+  "timeHorizonSeconds": 0.004,
+  "maxCourant": 0.2,
+  "maxDeltaT": 1e-05,
+  "casConversionReferencePressurePa": 70108.0,
+  "solverStaticPressurePa": 70100.0,
+  "solverInitialAndBoundaryPressureSource": "copied from source case 0/p; preserved without rewrite",
+  "machFromCasConversion": 0.6760445412213765,
+  "tasAppliedInUFieldMps": 222.13220429717072,
+  "sourceGeometryDescription": "Experimental half-wing STEP, source schedule extrapolated from x=80.33 mm to x=0; no fuselage or root fillet",
+  "deltaTInitial": 5e-06,
+  "stopCondition": "Per-segment 300 s and 600 s wall-clock caps; continuation from latest complete checkpoint; both terminated by timeout exit 124 without End marker",
+  "lastLoggedSolverTimeS": 0.00015721079,
+  "latestPersistedCheckpointS": 0.00015442106,
+  "latestCheckpointHistory": "../cases/checkpoint_history_ias700.json",
+  "runSegments": [
+    {
+      "kind": "fresh t=0",
+      "wallCapS": 300,
+      "log": "../logs/rhoPimpleFoam_ias700_300s.log",
+      "termination": "timeout at wall cap; log ends during an iteration"
+    },
+    {
+      "kind": "continuation from latestTime",
+      "wallCapS": 600,
+      "log": "../logs/rhoPimpleFoam_ias700_continuation_600s.log",
+      "exitCode": 124,
+      "termination": "timeout at wall cap; log ends during an iteration"
+    }
+  ],
+  "sourceCaseGeneratorSHA256": "f2ea9705c2ea10d5a5ce5145df32944f0c80fbeba35fb4a70961dfea7c36acce",
+  "boundaryFaceCounts": {
+    "fsi": 4938,
+    "rootWall": 298,
+    "inlet": 184,
+    "outlet": 184,
+    "farfield": 1512
+  },
+  "rootWallType": "symmetryPlane",
+  "sourceMeshArtifact": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/mesh/wing_centerline.msh",
+  "sourceGeometryArtifact": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/geometry/halfwing_x0_to_260mm_t30.step",
+  "sourceCaseGenerator": "highspeed_edf/phase15/optimization/phase15_fsi_casegen.py",
+  "openFoamPackageProvenance": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/package-provenance.txt",
+  "openFoamPackageProvenanceSHA256": "43cb43f4261692695bdb89bf822fa5f84ab20e291b7015092205c02c3086f8e9"
+}

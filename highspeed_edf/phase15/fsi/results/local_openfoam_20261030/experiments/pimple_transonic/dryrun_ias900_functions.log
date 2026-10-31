@@ -1,0 +1,99 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/rhoPimpleFoam -case highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/pimple_transonic/ias900 -dry-run
+Date   : Oct 30 2026
+Time   : 16:16:10
+Host   : 19f430e79a8a
+PID    : 72231
+I/O    : uncollated
+Case   : /workspace/drone-mech-transonic/highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/pimple_transonic/ias900
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Operating in 'dry-run' mode: case will run for 1 time step.  All checks assumed OK on a clean exit
+Selecting simplified mesh model staticFvMesh
+Creating simplified mesh using "/workspace/drone-mech-transonic/highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/pimple_transonic/ias900/constant/polyMesh"
+Mesh bounds: (-0.4045757692 -0.35 -0.6204661212) (0.7449057692 0.35 1.320013837)
+Creating dummy zone fluid
+
+PIMPLE: no residual control data found. Calculations will employ 2 corrector loops
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.5555555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+Creating field dpdt
+
+Creating field kinetic energy K
+
+No MRF models present
+
+No finite volume options present
+Courant Number mean: 0.001094466185 max: 0.001459288247
+
+
+--> FOAM FATAL IO ERROR: 
+error in IOstream "sha1" for operation Foam::Ostream& Foam::operator<<(Ostream&, const word&)
+
+file: sha1 at line 0.
+
+    From function virtual bool Foam::IOstream::check(const char*) const
+    in file db/IOstreams/IOstreams/IOstream.C at line 55.
+
+FOAM exiting
+

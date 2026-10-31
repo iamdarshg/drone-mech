@@ -1,0 +1,152 @@
+{
+  "study": "Phase-15 rigid outboard wing-sector transonic pressure-formulation experiment",
+  "baseCommit": "508a5ca9d624220be1ea67d3ce4218fdeb5c75cc",
+  "sourceMesh": "highspeed_edf/phase15/fsi/cases/wing_t30mm/fluid/wing.msh",
+  "sourceMeshSHA256": "4f5a100ddf29afeb890f68626e60fccefe3d2530e777bc864d3e126dbf5c6cb4",
+  "sourceGeometry": "highspeed_edf/phase15/fsi/cases/wing_t30mm/solid/wing.step",
+  "sourceGeometrySHA256": "cbc8d038aade82a88a26515bb4d82f57c4b6dd290173214f2f03e8732186ce6d",
+  "sourceCaseGenerator": "highspeed_edf/phase15/optimization/phase15_fsi_casegen.py",
+  "sourceCaseGeneratorSHA256": "f2ea9705c2ea10d5a5ce5145df32944f0c80fbeba35fb4a70961dfea7c36acce",
+  "openFoamPackageProvenance": "package-provenance.txt",
+  "openFoamPackageProvenanceSHA256": "43cb43f4261692695bdb89bf822fa5f84ab20e291b7015092205c02c3086f8e9",
+  "solver": "OpenFOAM 1912.200626-3+b1; rhoPimpleFoam and rhoSimpleFoam; local Debian snapshot package",
+  "mesh": "Tracked 34,166-cell tetrahedral mesh; shared source polyMesh via relative symlink; native checkMesh Mesh OK",
+  "changes": [
+    "PIMPLE transonic yes",
+    "p pressure solver PBiCGStab with DILU",
+    "limited corrected laplacian coefficient 0.33"
+  ],
+  "unchanged": [
+    "source mesh",
+    "initial fields",
+    "boundary conditions",
+    "thermophysical model",
+    "turbulence model"
+  ],
+  "dictionarySHA256": {
+    "700": {
+      "controlDict": "04b4539e7e8d73757cafdd89b14c568411c0138c01c10ebb97c522f4c527dbd4",
+      "fvSolution": "f1a382c8950c0f7299b103cc5623157819ccffb196c475bbe48465beb78e6c8c",
+      "fvSchemes": "9ee261174a6d32cf718a43031a01bccbbf55e6509b404d29d0ca95d2ace87151"
+    },
+    "900": {
+      "controlDict": "04b4539e7e8d73757cafdd89b14c568411c0138c01c10ebb97c522f4c527dbd4",
+      "fvSolution": "f1a382c8950c0f7299b103cc5623157819ccffb196c475bbe48465beb78e6c8c",
+      "fvSchemes": "9ee261174a6d32cf718a43031a01bccbbf55e6509b404d29d0ca95d2ace87151"
+    },
+    "experiment": {
+      "rhoPimpleFoam_ias700.log": "fc2b2ea6df9d37f141f26b40a8fcfe93505f50513f78218b223e131df4b92d40",
+      "rhoPimpleFoam_ias900.log": "358c3dd367aca7c92319e4bae88cce2f90d044a60b936cebf06751d5eb782135",
+      "checkpoint_flux_and_pressure_loads.json": "b3587f88e6cf876839ad7511a4b1dde697a6048b6e9454270230296d7b207eef",
+      "analyze_checkpoints.py": "d06fffcd41799b9604fdd7786ee76400b4b2a589e437a50b3b074792df685465",
+      "commands.md": "1b1fa5dd2826968a39b8e8f5c2489f23c4086086d5acd5d1be7b16aee7a04930"
+    }
+  },
+  "runStatus": {
+    "IAS700": {
+      "wallCapSeconds": 75,
+      "lastLoggedTimeSeconds": 6.5416606e-05,
+      "lastLoggedDeltaTSeconds": 3.944560936e-07,
+      "lastLoggedMaxCourant": 0.4035120276,
+      "lastPersistedTimeSeconds": 4.0626955e-05,
+      "normalEndMarker": false,
+      "converged": false
+    },
+    "IAS900": {
+      "wallCapSeconds": 75,
+      "lastLoggedTimeSeconds": 5.7153228e-05,
+      "lastLoggedDeltaTSeconds": 2.712123439e-07,
+      "lastLoggedMaxCourant": 0.4071211932,
+      "lastPersistedTimeSeconds": 3.1610796e-05,
+      "normalEndMarker": false,
+      "converged": false
+    }
+  },
+  "baselineIAS700AtCollapse": {
+    "timeSeconds": 3.2305828e-05,
+    "deltaTSeconds": 1.96585377e-10,
+    "meanCourant": 1.528827943e-06,
+    "maxCourant": 0.4000000501,
+    "pPaRangeAtNearbyCheckpoint": [
+      13.01834453,
+      225359.2311
+    ],
+    "TKRangeAtNearbyCheckpoint": [
+      209.0144515,
+      796.2962216
+    ],
+    "rhoKgM3RangeAtNearbyCheckpoint": [
+      5.695345364e-05,
+      2.879052718
+    ],
+    "maxSpeedMpsAtNearbyCheckpoint": 340.1004716838877
+  },
+  "modifiedCheckpointRanges": {
+    "IAS700": {
+      "timeSeconds": 4.0626955e-05,
+      "pPa": [
+        53588.97747,
+        124436.1615
+      ],
+      "TK": [
+        209.3975272,
+        307.9035042
+      ],
+      "rhoKgM3": [
+        0.6273882609,
+        1.883429327
+      ],
+      "speedMps": [
+        72.4266241176762,
+        287.0052545559301
+      ]
+    },
+    "IAS900": {
+      "timeSeconds": 3.1610796e-05,
+      "pPa": [
+        48735.75437,
+        154995.8696
+      ],
+      "TK": [
+        195.7984119,
+        308.709604
+      ],
+      "rhoKgM3": [
+        0.6151660759,
+        2.710064726
+      ],
+      "speedMps": [
+        138.54561372180592,
+        357.2328106637921
+      ]
+    }
+  },
+  "steadyIAS700Diagnostics": {
+    "PCGTransonicPressureMatrix": "rejected; see experiments/transonic_ias700/pcg_rejected/rhoSimpleFoam_PCG_rejected.log",
+    "PBiCGStabTransonic": "thermodynamic floating-point exception at iteration 26; no convergence",
+    "DampedUpwind": "thermodynamic floating-point exception at iteration 5; no convergence"
+  },
+  "checkpointAnalysis": "experiments/pimple_transonic/checkpoint_flux_and_pressure_loads.json",
+  "claims": {
+    "converged": false,
+    "finalCoefficients": false,
+    "meshSensitivityComplete": false,
+    "timestepSensitivityComplete": false,
+    "fullAircraft": false,
+    "rotatingEDF": false,
+    "preCICE": false,
+    "promotion": false
+  },
+  "limitations": [
+    "The 75 s runs were interrupted before the 0.004 s horizon.",
+    "The PIMPLE stability improvement is evidence, not a controlled proof of single-factor causation; pressure mode, pressure solver, non-orthogonal correction, and laplacian treatment changed together.",
+    "Checkpoint pressure loads are transient and omit viscous stress.",
+    "The inboard cut is not the aircraft centerline and makes the skin pressure integral open at the inboard section.",
+    "Function-object setup failed during dry-run with an OpenFOAM IOstream sha1 fatal; manual checkpoint integration was used.",
+    "The original transonic case dictionaries accidentally duplicate nNonOrthogonalCorrectors (3 then 1); OpenFOAM 1912 resolves to 1. The later cleaned continuation uses 3 and is recorded separately."
+  ],
+  "effectiveDictionaryValues": {
+    "PIMPLE.nNonOrthogonalCorrectors": 1,
+    "verifiedBy": "foamDictionary -entry PIMPLE.nNonOrthogonalCorrectors -value"
+  }
+}
