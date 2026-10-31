@@ -1,0 +1,23 @@
+{
+  "candidate": "centerline_halfwing_t30mm_ias700",
+  "sourceCandidate": "wing_t30mm",
+  "sourceGeometry": "Experimental source-schedule extension from x=80.33 mm to x=0 m; no fuselage/root fillet",
+  "thicknessVariantMm": "wing_30mm",
+  "inputAirspeedKmh": 700,
+  "airspeedType": "CAS approximately IAS",
+  "flowSpeedMps": 222.13220429717072,
+  "altitudeM": 3000,
+  "staticTemperatureK": 268.65,
+  "solverStaticPressurePa": 70100.0,
+  "casConversionReferencePressurePa": 70108.0,
+  "angleOfAttackDeg": 0.5,
+  "machFromCasConversion": 0.6760445412213765,
+  "solver": "rhoPimpleFoam OpenFOAM 1912.200626-3+b1",
+  "coupling": "none; rigid fixed geometry",
+  "sourceGeometryArtifact": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/geometry/halfwing_x0_to_260mm_t30.step",
+  "sourceGeometrySHA256": "4d2a6eefd10cc547d45baadd9207218de688696730c3722ae2247bf9c86ef2e2",
+  "meshArtifact": "highspeed_edf/phase15/fsi/results/local_openfoam_20261030/experiments/centerline_halfwing_ias/mesh/wing_centerline.msh",
+  "meshSHA256": "1eeeeea4145aabd579c2d6dd209ec5bf38daefc73225b4a56d9b2c84fb8d45a6",
+  "meshCells": 49208,
+  "rootSymmetryPlaneXM": 0.0
+}
