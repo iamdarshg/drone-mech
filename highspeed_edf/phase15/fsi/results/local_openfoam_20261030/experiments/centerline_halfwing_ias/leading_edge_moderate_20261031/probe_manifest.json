@@ -1,0 +1,32 @@
+{
+  "experiment": "leading_edge_moderate_20261031",
+  "status": "generation_stopped_before_mesh_write; no native checkMesh or refined transient",
+  "sourceGitCommit": "da842dbc2765c70062d509aa59dd9f1c0deb2723",
+  "phase15Generator": "highspeed_edf/phase15/optimization/phase15_fsi_casegen.py",
+  "phase15GeneratorSHA256": "f2ea9705c2ea10d5a5ce5145df32944f0c80fbeba35fb4a70961dfea7c36acce",
+  "probeScriptSHA256": "fce8f51ffb802bc2408162a1c358af65331c0278ca7da0717304ff62f4b4cc70",
+  "prepareCasesScriptSHA256": "225884d540e5ff86cd5315b598c7d057c2467f2222b37b10e7dac08da13a9b88",
+  "geometrySHA256": "d690f16cb7cfe9521f5f44ba4a168ec6ea7439a265824ee4b642f85b5fa5e992",
+  "gmshPythonBinding": "4.13.1",
+  "sourceCenterlineFluidCells": 49208,
+  "requestedLeadingEdgeSizing": {
+    "localSizeMinM": 0.01,
+    "localSizeMaxM": 0.012,
+    "distanceMinM": 0.002,
+    "distanceMaxM": 0.006
+  },
+  "observedGenerationProgress": {
+    "volumeNodesCreatedBeforeStop": 540448,
+    "meshWritten": false
+  },
+  "priorBroaderBandAttempt": {
+    "localSizeMinM": 0.01,
+    "localSizeMaxM": 0.012,
+    "distanceMinM": 0.01,
+    "distanceMaxM": 0.03,
+    "observedVolumeNodesCreatedBeforeStop": 646000
+  },
+  "openFoamImportOrCheckMeshRun": false,
+  "solverRun": false,
+  "reason": "Both moderate-size attempts exceeded a practical node budget before output; current working tree has only 3.3 GB free. The matched co0.1 source cases terminate near 0.12\u20130.14 ms rather than the 4 ms target."
+}
