@@ -1,0 +1,54 @@
+{
+  "sourceStep": "/workspace/fuselage-shell-repair/highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell_candidate.brep",
+  "sourceStepSha256": "8e85424ee435d72a5d143a32b30a71d6814517e20ea57b1bef6299b682b4b981",
+  "viewedNativeStepSolids": 4,
+  "tessellation": {
+    "linearToleranceMm": 0.6,
+    "angularToleranceRad": 0.35,
+    "triangles": 4350
+  },
+  "boundsMm": {
+    "x": [
+      -105.89184608066256,
+      105.89184608066256
+    ],
+    "y": [
+      -48.45873785340955,
+      45.413633271962034
+    ],
+    "z": [
+      -360.0000001,
+      280.0000001000001
+    ]
+  },
+  "renderer": "Blender 4.3.2",
+  "runtime": {
+    "python": "3.12.14",
+    "cadQuery": "2.7.0",
+    "openCascade": "7.8.1.1",
+    "pillow": "12.3.0"
+  },
+  "images": [
+    {
+      "file": "01_shell_isometric.png",
+      "title": "Fuselage shell \u00b7 isometric",
+      "note": "Opaque STEP geometry; shell openings are left in their modeled state.",
+      "sha256": "f6878306b3386e7046fa5588fa1ddb0fc613921cbd764151b74c9e0872108889"
+    },
+    {
+      "file": "02_shell_side.png",
+      "title": "Fuselage shell \u00b7 side view",
+      "note": "Axial station axis Z; full span \u2212360 to +280 mm.",
+      "sha256": "3d9157c5570b33b2c040927a0c31e1c016200dd08e45a0a077997f1054436237"
+    },
+    {
+      "file": "03_shell_top.png",
+      "title": "Fuselage shell \u00b7 top view",
+      "note": "Service aperture and interior cavity shown from +Y.",
+      "sha256": "330397d4ffc7a289f48d64e943c8d7af5dda93427038c1b7ece4dc8681dc4afb"
+    }
+  ],
+  "limitations": [
+    "Rendered surface geometry only; these images do not establish manufacturing suitability, structural performance, or flight readiness."
+  ]
+}
