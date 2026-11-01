@@ -1,7 +1,17 @@
 {
   "status": "envelope_screen_only_not_machine_ready",
   "cnc_identity": "user called it a 233018 Pro; exact manufacturer/model remains unresolved",
-  "cnc_machine_travel_source": "none in repository; only generic 3018-class envelope assumption visualized",
+  "cnc_machine_travel_source": "SainSmart official product listing, 3018-PRO option row; conditional on exact machine identity",
+  "cnc_machine_travel_source_url": "https://www.sainsmart.com/products/sainsmart-genmitsu-cnc-router-3018-pro-diy-kit?variant=13086288150601",
+  "cnc_source_retrieved_utc_date": "2026-11-01",
+  "cnc_exact_user_machine_identity_verified": false,
+  "cnc_identity_caveat": "233018 Pro was user-provided wording; it has not been verified as the SainSmart Genmitsu 3018-PRO. The listing also shows other variants with different work areas.",
+  "cnc_conditional_model": "SainSmart Genmitsu 3018-PRO",
+  "cnc_conditional_work_area_mm": [
+    300,
+    180,
+    45
+  ],
   "cnc_nominal_assumption_mm": [
     300,
     180,
@@ -28,8 +38,24 @@
     8
   ],
   "cnc_stock_fit_under_assumed_envelope": true,
+  "cnc_layout_fit_conditional_sainsmart_3018_pro": true,
+  "cnc_stock_xy_edge_margins_mm": [
+    25,
+    25,
+    30,
+    30
+  ],
+  "cnc_keepout_xy_edge_margins_mm": [
+    15,
+    15,
+    20,
+    20
+  ],
   "cnc_fixture_status": "illustrative 10mm perimeter keepout only; no clamp geometry/workholding verified",
   "cnc_feed_post_tool_holder_collision_checks": "not performed",
+  "a1_official_source_url": "https://cdn1.bambulab.com/documentation/quick-start-f507128172bdf/Quick%20start%20guide%20-%20A1%20mini-EN.pdf",
+  "a1_official_source_retrieved_utc_date": "2026-11-01",
+  "a1_official_source_retrieval_note": "Official quick-start PDF source; direct fetch from this prepared environment returned HTTP 402. Profile dimensions independently confirmed from the bundled slicer profile.",
   "a1_machine_profile_name": "Bambu Lab A1 mini 0.4 nozzle",
   "a1_machine_profile_sha256": "85632b53bc044034e1606685cb83e3bbc405815a7920b5583e0e4bab99e59bb7",
   "a1_profile_printable_height_mm": 180.0,
