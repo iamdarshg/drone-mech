@@ -1,0 +1,133 @@
+{
+  "verification": "all archived compressed native field files byte-identical to source outputs before cleanup",
+  "checkpoints": [
+    {
+      "time": "2.294948e-07",
+      "field": "T.gz",
+      "bytes": 2698586,
+      "sha256": "3da873f2f2dd9a8065fed1e28f5dbb0aeed5698a05f2250ddafab97014ab8c5f",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "2.294948e-07",
+      "field": "U.gz",
+      "bytes": 11806329,
+      "sha256": "6ba18179b2bb7b92545833fadbafde24311e203bdba6661c1e0ef611a81d7879",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "2.294948e-07",
+      "field": "alphat.gz",
+      "bytes": 3967941,
+      "sha256": "57d5c79f2f88dd9389f8ca759a9f1ec3f9278ceaa0054a5c3b8de9d3a99d1840",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "2.294948e-07",
+      "field": "k.gz",
+      "bytes": 3376306,
+      "sha256": "0728fe5f9f3649e077c7e5c51d9b38ae961153a1cf2566aba484c7241f41e163",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "2.294948e-07",
+      "field": "nut.gz",
+      "bytes": 3975757,
+      "sha256": "6f10ab324efd50cae211523841786dac45352122c862dddaebe7a5325744d0f7",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "2.294948e-07",
+      "field": "omega.gz",
+      "bytes": 3393688,
+      "sha256": "b871c1089ff3350c259e12bc885e737469b0bf5b15ef87396e8c524e52fde3a0",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "2.294948e-07",
+      "field": "p.gz",
+      "bytes": 2899533,
+      "sha256": "742107c0f3e44e01f1e2c79a564b988502e58b8281d9dad8cb9a3452dd580802",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "2.294948e-07",
+      "field": "rho.gz",
+      "bytes": 3121306,
+      "sha256": "dd8e7316d2cd59d9489a942690a655f6cf3d34de35f70bed1660998e2a52ce2a",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "5.2086889e-07",
+      "field": "T.gz",
+      "bytes": 2757318,
+      "sha256": "4de8c2b4d735be45227146fcc61bb63527099059239df6d1c9dcbe74a03da27c",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "5.2086889e-07",
+      "field": "U.gz",
+      "bytes": 11972147,
+      "sha256": "6fe424741e2ab5b00bd1daf9a913297ddd5df965aa592cac20e9b56925502b96",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "5.2086889e-07",
+      "field": "alphat.gz",
+      "bytes": 4061061,
+      "sha256": "4df4f771d641834677b3ca24b8318617fe12d34e7c949424e9b5b405cfb4a014",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "5.2086889e-07",
+      "field": "k.gz",
+      "bytes": 3424269,
+      "sha256": "0c3513f2c23b8f39ae45fa576880a03798297b1cdce7fd691d4517245958bb91",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "5.2086889e-07",
+      "field": "nut.gz",
+      "bytes": 4096244,
+      "sha256": "d2da7f2acc7d371744418b6576ab1c9316aa963a0db5d4ae9031681768a32700",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "5.2086889e-07",
+      "field": "omega.gz",
+      "bytes": 3506068,
+      "sha256": "7212be3f93893cfbf3617afc68868b09496a04e8e35c5827b690ab576221b815",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "5.2086889e-07",
+      "field": "p.gz",
+      "bytes": 2962779,
+      "sha256": "16ba7d43c910c3a4e8cd79ba4d2fe1cd147c7bd9c2a67c2cf787cbd2827a02cd",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    },
+    {
+      "time": "5.2086889e-07",
+      "field": "rho.gz",
+      "bytes": 3192191,
+      "sha256": "e511974d2b1ebb78e1a137f440e80494de87b5f082a5a67074ad137bd9272767",
+      "sourceAndArchiveByteIdentical": true,
+      "gzipIntegrity": "passed"
+    }
+  ]
+}

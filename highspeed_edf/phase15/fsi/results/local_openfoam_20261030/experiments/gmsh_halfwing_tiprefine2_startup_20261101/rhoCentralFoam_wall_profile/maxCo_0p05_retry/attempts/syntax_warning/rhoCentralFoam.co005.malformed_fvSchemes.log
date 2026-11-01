@@ -1,0 +1,132 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/rhoCentralFoam -case /tmp/gmsh_halfwing_fluid/rhoCentral_bl_case
+Date   : Nov 01 2026
+Time   : 12:16:44
+Host   : ebaa71603c78
+PID    : 14711
+I/O    : uncollated
+Case   : /tmp/gmsh_halfwing_fluid/rhoCentral_bl_case
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+--> FOAM Warning : 
+    From function virtual Foam::Istream& Foam::ISstream::read(Foam::word&)
+    in file db/IOstreams/Sstreams/ISstream.C at line 472
+    Reading "/tmp/gmsh_halfwing_fluid/rhoCentral_bl_case/system/fvSchemes" at line 15
+    Missing 1 closing ')' while parsing
+
+div(((muEff*dev2(T(grad(U)))))
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.5555555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+fluxScheme: Kurganov
+
+Starting time loop
+
+Mean and max Courant Numbers = 0.0004766373235 0.01716256285
+deltaT = 1.2e-08
+Time = 1.2e-08
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUy, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUz, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for Ux, Initial residual = 9.87589708e-06, Final residual = 1.102965268e-12, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 7.385874052e-06, Final residual = 6.841477254e-13, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 6.292930735e-08, Final residual = 6.292930735e-08, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for h, Initial residual = 6.894133117e-08, Final residual = 6.894133117e-08, No Iterations 0
+smoothSolver:  Solving for omega, Initial residual = 3.022097694e-06, Final residual = 7.413248736e-13, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 1.775813642e-06, Final residual = 7.570727775e-13, No Iterations 1
+ExecutionTime = 14.14 s  ClockTime = 15 s
+
+Mean and max Courant Numbers = 0.000571966536 0.0205897621
+deltaT = 1.44e-08
+Time = 2.64e-08
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUy, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUz, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for Ux, Initial residual = 1.022774662e-05, Final residual = 1.311331654e-12, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 6.533808061e-06, Final residual = 5.472076976e-13, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 5.209050385e-08, Final residual = 5.209050385e-08, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for h, Initial residual = 5.906079907e-08, Final residual = 5.906079907e-08, No Iterations 0
+smoothSolver:  Solving for omega, Initial residual = 3.607560741e-06, Final residual = 1.265834169e-12, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 2.129267153e-06, Final residual = 1.33106955e-12, No Iterations 1
+ExecutionTime = 22.44 s  ClockTime = 23 s
+
+Mean and max Courant Numbers = 0.000686359587 0.02470005614
+deltaT = 1.728e-08
+Time = 4.368e-08
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUy, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUz, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for Ux, Initial residual = 1.237421371e-05, Final residual = 2.005080886e-12, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 6.322518379e-06, Final residual = 5.066302373e-13, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 5.049856973e-08, Final residual = 5.049856973e-08, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for h, Initial residual = 5.754939946e-08, Final residual = 5.754939946e-08, No Iterations 0
+smoothSolver:  Solving for omega, Initial residual = 4.321933881e-06, Final residual = 2.161886268e-12, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 2.553127208e-06, Final residual = 2.27943879e-12, No Iterations 1
+ExecutionTime = 29.38 s  ClockTime = 30 s
+

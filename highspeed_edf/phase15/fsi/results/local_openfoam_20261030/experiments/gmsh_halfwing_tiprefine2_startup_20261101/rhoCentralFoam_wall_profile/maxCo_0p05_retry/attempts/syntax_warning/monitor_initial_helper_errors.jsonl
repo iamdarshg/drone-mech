@@ -1,0 +1,2 @@
+{"utc": "2026-11-01T12:17:56.616888+00:00", "pids": [14947], "lastLoggedTime": null, "diskFreeBytes": 1877970944, "checkpointError": "CalledProcessError(2, ['python3', '/tmp/gmsh_halfwing_fluid/checkpoint_bounds_bl.py', '/tmp/gmsh_halfwing_fluid/rhoCentral_bl_case'])"}
+{"utc": "2026-11-01T12:18:26.857162+00:00", "pids": [14947], "lastLoggedTime": "Time = 1.2e-08", "diskFreeBytes": 1877962752, "checkpointError": "CalledProcessError(2, ['python3', '/tmp/gmsh_halfwing_fluid/checkpoint_bounds_bl.py', '/tmp/gmsh_halfwing_fluid/rhoCentral_bl_case'])"}

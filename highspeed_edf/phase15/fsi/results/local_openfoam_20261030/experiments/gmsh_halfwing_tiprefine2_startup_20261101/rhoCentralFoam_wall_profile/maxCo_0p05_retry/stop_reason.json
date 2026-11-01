@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-01T12:28:11.851844+00:00",
+  "reason": "SIGTERM: disk free below 1.5 GB",
+  "checkpoint": {
+    "timeSeconds": 5.2086889e-07,
+    "checkpoint": "5.2086889e-07",
+    "minTemperatureK": 268.2140694,
+    "maxTemperatureK": 333.71234,
+    "maxTotalTemperatureK": 334.1679615428771,
+    "maxTotalTemperatureCell": 315323,
+    "maxMach": 1.050600491479806,
+    "maxMachCell": 172394,
+    "maxSpeedMps": 345.12077909235865,
+    "minPressurePa": 69117.34524,
+    "maxPressurePa": 152618.6452,
+    "minDensityKgM3": 0.8977273407,
+    "maxDensityKgM3": 1.593214633
+  }
+}
