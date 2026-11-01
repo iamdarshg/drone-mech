@@ -1,0 +1,1018 @@
+{
+  "status": "native_step_imports_verified_by_trimmed_face_tessellation_not_print_release",
+  "freecad_version": [
+    "1",
+    "0",
+    "0",
+    "",
+    "https://code.launchpad.net/~vcs-imports/freecad/trunk",
+    "2026/08/25 11:49:11"
+  ],
+  "reference_geometry_adapter": "CadQuery STEP importer used by committed segmentation manifests",
+  "raw_occ_bbox_note": "freecad_raw_occ_control_pole_span_mm is a conservative diagnostic and is not a trimmed part dimension or used for A1 fit. Raw OCC bounds can include B-spline surface poles beyond trimmed face boundaries; use freecad_tessellated_bbox_mm cross-checked against manifest bounds.",
+  "source_manifest_sha256": {
+    "main_wing": "d80231fa8de429d2649f0bd1a9bb7b1b06945bd6649f06340136a8ba2cf8d265",
+    "fuselage_shell": "0c2d2a264037885a0b851366a873e25b45a0d6be832b8f72c7248871bb47046b",
+    "a1_machine_profile": "85632b53bc044034e1606685cb83e3bbc405815a7920b5583e0e4bab99e59bb7"
+  },
+  "a1_profile": {
+    "name": "Bambu Lab A1 mini 0.4 nozzle",
+    "printable_area": [
+      "0x0",
+      "180x0",
+      "180x180",
+      "0x180"
+    ],
+    "printable_height_mm": 180.0,
+    "profile_envelope_mm": [
+      180,
+      180,
+      180
+    ]
+  },
+  "part_count": 25,
+  "native_step_imports": [
+    {
+      "group": "main_wing",
+      "id": "wing_left_sector_x1_z1",
+      "step": "wing_left_sector_x1_z1.step",
+      "step_sha256": "569157a7ad28a5942300d0cf818770f2e48c7a08fc240d316e3ce59135399f42",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        88.642966,
+        1906.748983
+      ],
+      "freecad_tessellated_bbox_mm": [
+        89.835148,
+        37.739273,
+        123.184966
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 26268,
+      "manifest_extents_mm": [
+        89.835148,
+        37.740063,
+        123.184966
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.000789615,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_left_sector_x1_z2",
+      "step": "wing_left_sector_x1_z2.step",
+      "step_sha256": "34a38f1bd159371f360867529650957858d73236b4efb6321fb19b5259edd27a",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        88.642966,
+        3300.774367
+      ],
+      "freecad_tessellated_bbox_mm": [
+        89.835148,
+        39.077333,
+        166.202392
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 25916,
+      "manifest_extents_mm": [
+        89.835148,
+        39.077349,
+        166.202393
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 1.6168e-05,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_left_sector_x1_z3",
+      "step": "wing_left_sector_x1_z3.step",
+      "step_sha256": "56c4d23306779927ddeaed42d69ed7e5efc19b81159d004def693aebf1d7b47e",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        77.353798,
+        3409.594861
+      ],
+      "freecad_tessellated_bbox_mm": [
+        89.835148,
+        28.789756,
+        166.202392
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 8618,
+      "manifest_extents_mm": [
+        89.835148,
+        28.790241,
+        166.202393
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.000485086,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_left_sector_x2_z1",
+      "step": "wing_left_sector_x2_z1.step",
+      "step_sha256": "ba1ca492390bf50a6be4797a47603ec1a334fcfb358301572b42517531ef7b58",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        88.642966,
+        2229.343737
+      ],
+      "freecad_tessellated_bbox_mm": [
+        89.835148,
+        35.071872,
+        166.202392
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 710,
+      "manifest_extents_mm": [
+        89.835148,
+        35.071872,
+        166.202392
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 2e-07,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_left_sector_x2_z2",
+      "step": "wing_left_sector_x2_z2.step",
+      "step_sha256": "06adb0a7b303d49b00bf05f0cc570eb3aeb57a224e4cf8730ac7295713acbbb4",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        88.642966,
+        3409.594861
+      ],
+      "freecad_tessellated_bbox_mm": [
+        88.459152,
+        30.398906,
+        166.202392
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 888,
+      "manifest_extents_mm": [
+        88.459152,
+        30.399406,
+        166.202393
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.000499959,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_left_sector_x2_z3",
+      "step": "wing_left_sector_x2_z3.step",
+      "step_sha256": "920003e165b13aaadf2d09a5f3e34b608fe782d28737a0a38951858736ef35ff",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        25.107442,
+        3409.594861
+      ],
+      "freecad_tessellated_bbox_mm": [
+        67.100919,
+        6.076819,
+        25.868866
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 342,
+      "manifest_extents_mm": [
+        67.100919,
+        6.077206,
+        25.868867
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.000387098,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_centre_bridge_x1_z1",
+      "step": "wing_centre_bridge_x1_z1.step",
+      "step_sha256": "93284123106b832534c072bd9b8325df825c31111df20d1a7abddcac59f124d3",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        1193.868957,
+        88.642966,
+        1748.211449
+      ],
+      "freecad_tessellated_bbox_mm": [
+        17.927859,
+        36.480626,
+        141.684527
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 398,
+      "manifest_extents_mm": [
+        17.927859,
+        36.480643,
+        141.684527
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 1.7522e-05,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_centre_bridge_x1_z2",
+      "step": "wing_centre_bridge_x1_z2.step",
+      "step_sha256": "46fa0da6bac22fd968b1b9c9ed690a44d69338dd074b09fca82caaa32999501b",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        1193.868957,
+        88.642966,
+        2540.946341
+      ],
+      "freecad_tessellated_bbox_mm": [
+        17.92546,
+        35.77455,
+        141.684527
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 356,
+      "manifest_extents_mm": [
+        17.92546,
+        35.77455,
+        141.684528
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 2e-07,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_centre_bridge_x1_z3",
+      "step": "wing_centre_bridge_x1_z3.step",
+      "step_sha256": "790ee6adeddeec55319d6a6082b7c64bec527e9d5192cb012d77a185d26fa15b",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        1193.868957,
+        70.255002,
+        3409.594861
+      ],
+      "freecad_tessellated_bbox_mm": [
+        10.150828,
+        23.88516,
+        141.684527
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 272,
+      "manifest_extents_mm": [
+        10.150829,
+        23.88516,
+        141.684527
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 2e-07,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_right_sector_x1_z1",
+      "step": "wing_right_sector_x1_z1.step",
+      "step_sha256": "65c545a6a8ae636f988a05a7d92679b803cee5d1f45bcb994ca43bb3f7a13c14",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        88.642966,
+        2229.343737
+      ],
+      "freecad_tessellated_bbox_mm": [
+        89.835148,
+        35.071872,
+        166.202392
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 720,
+      "manifest_extents_mm": [
+        89.835148,
+        35.071872,
+        166.202392
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 2e-07,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_right_sector_x1_z2",
+      "step": "wing_right_sector_x1_z2.step",
+      "step_sha256": "00b04bb044380a7ed0b4835b934d61b78c21a00ea1d48ad57a28731ab6cb47fa",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        88.642966,
+        3409.594861
+      ],
+      "freecad_tessellated_bbox_mm": [
+        88.459152,
+        30.398906,
+        166.202392
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 914,
+      "manifest_extents_mm": [
+        88.459152,
+        30.399406,
+        166.202393
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.000499959,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_right_sector_x1_z3",
+      "step": "wing_right_sector_x1_z3.step",
+      "step_sha256": "57f7dec1aef21dbf35a8a5145918a684d3eec009d6842991edd7d4b5beec8bfb",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        25.107442,
+        3409.594861
+      ],
+      "freecad_tessellated_bbox_mm": [
+        67.100919,
+        6.076819,
+        25.868866
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 320,
+      "manifest_extents_mm": [
+        67.100919,
+        6.077206,
+        25.868867
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.000387046,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_right_sector_x2_z1",
+      "step": "wing_right_sector_x2_z1.step",
+      "step_sha256": "ec5b7168f1c0f9237ce9e01c1e4e9c4f84b0a6d8ba06ddc8d556395ccc23684f",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        88.642966,
+        1906.748983
+      ],
+      "freecad_tessellated_bbox_mm": [
+        89.835148,
+        37.739415,
+        123.184966
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 25266,
+      "manifest_extents_mm": [
+        89.835148,
+        37.740063,
+        123.184966
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.000648187,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_right_sector_x2_z2",
+      "step": "wing_right_sector_x2_z2.step",
+      "step_sha256": "8e5787db1e62f2630bc35e05767b658dc8d9c9a57917ed00112e7d683f085976",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        88.642966,
+        3300.774367
+      ],
+      "freecad_tessellated_bbox_mm": [
+        89.835148,
+        39.077247,
+        166.202392
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 22062,
+      "manifest_extents_mm": [
+        89.835148,
+        39.077349,
+        166.202393
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.000101651,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "main_wing",
+      "id": "wing_right_sector_x2_z3",
+      "step": "wing_right_sector_x2_z3.step",
+      "step_sha256": "0d0eb9c2d96e5a33360d8b4626e364a8f3d6684fbd9acb8114fa43781c04ca76",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        933.225785,
+        77.353798,
+        3409.594861
+      ],
+      "freecad_tessellated_bbox_mm": [
+        89.835148,
+        28.788483,
+        166.202392
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 8342,
+      "manifest_extents_mm": [
+        89.835148,
+        28.790241,
+        166.202393
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.001757673,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "fuselage_shell",
+      "id": "fuselage_shell_segment_01_port.step",
+      "step": "fuselage_shell_segment_01_port.step",
+      "step_sha256": "3bc7a9ca1cb37417d5feac6b926354317e2f41e588442fa25e766f813efed667",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        186.212492,
+        158.328071,
+        607.0
+      ],
+      "freecad_tessellated_bbox_mm": [
+        105.891777,
+        90.219533,
+        120.0
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 3754,
+      "manifest_extents_mm": [
+        105.891846,
+        90.229212,
+        120.0
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.00967921,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "fuselage_shell",
+      "id": "fuselage_shell_segment_02_starboard.step",
+      "step": "fuselage_shell_segment_02_starboard.step",
+      "step_sha256": "09b109856b6f1be6d75c6a44c1ff66b3b6c143d7e2a2930d7a1c22efccbfe7d8",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        186.212492,
+        158.328071,
+        607.0
+      ],
+      "freecad_tessellated_bbox_mm": [
+        105.891777,
+        90.219533,
+        120.0
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 3756,
+      "manifest_extents_mm": [
+        105.891846,
+        90.229212,
+        120.0
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.00967921,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "fuselage_shell",
+      "id": "fuselage_shell_segment_03_port.step",
+      "step": "fuselage_shell_segment_03_port.step",
+      "step_sha256": "1ff237f041e0c5be6029665ead3714483e569cc7f8b1ce74d25a056fbb4ff914",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        186.212492,
+        147.066454,
+        607.0
+      ],
+      "freecad_tessellated_bbox_mm": [
+        104.346081,
+        88.559833,
+        50.901567
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 630,
+      "manifest_extents_mm": [
+        104.346081,
+        88.559834,
+        50.901567
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 2e-07,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "fuselage_shell",
+      "id": "fuselage_shell_segment_04_starboard.step",
+      "step": "fuselage_shell_segment_04_starboard.step",
+      "step_sha256": "ed75b2df99b88b7c312c1f8a504e0b709dc19831b01894e560b9690bfd3d3317",
+      "solid_count": 1,
+      "expected_solid_count": 1,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 0,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        186.212492,
+        147.066454,
+        607.0
+      ],
+      "freecad_tessellated_bbox_mm": [
+        104.346081,
+        88.559833,
+        50.901567
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 630,
+      "manifest_extents_mm": [
+        104.346081,
+        88.559834,
+        50.901567
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 2e-07,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "fuselage_shell",
+      "id": "fuselage_shell_segment_05_port.step",
+      "step": "fuselage_shell_segment_05_port.step",
+      "step_sha256": "4bf36a7c0c5ebecc95ad54a14a590136e11bbcce7451b64c0ed714652e220ad3",
+      "solid_count": 3,
+      "expected_solid_count": 3,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 6,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        177.51239,
+        158.328071,
+        640.0
+      ],
+      "freecad_tessellated_bbox_mm": [
+        95.282042,
+        90.816514,
+        111.932998
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 1128,
+      "manifest_extents_mm": [
+        95.282042,
+        90.827267,
+        111.932998
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.010752808,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "fuselage_shell",
+      "id": "fuselage_shell_segment_06_starboard.step",
+      "step": "fuselage_shell_segment_06_starboard.step",
+      "step_sha256": "408a72a9d44045bc9d961c210bf8b5a6572d781fd4819e8cdef39d0bba2f62a5",
+      "solid_count": 3,
+      "expected_solid_count": 3,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 6,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        177.51239,
+        158.328071,
+        640.0
+      ],
+      "freecad_tessellated_bbox_mm": [
+        95.282042,
+        90.816514,
+        111.932998
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 1128,
+      "manifest_extents_mm": [
+        95.282042,
+        90.827267,
+        111.932998
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.010752808,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "fuselage_shell",
+      "id": "fuselage_shell_segment_07_port.step",
+      "step": "fuselage_shell_segment_07_port.step",
+      "step_sha256": "038b8f10878e6c6b98347654849e0626844ba56b4ba93a3feeed3aea0be493b7",
+      "solid_count": 3,
+      "expected_solid_count": 3,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 6,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        139.561958,
+        125.828347,
+        578.8
+      ],
+      "freecad_tessellated_bbox_mm": [
+        93.2348,
+        88.03298,
+        136.0
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 1096,
+      "manifest_extents_mm": [
+        93.235277,
+        88.042605,
+        136.0
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.009625622,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "fuselage_shell",
+      "id": "fuselage_shell_segment_08_starboard.step",
+      "step": "fuselage_shell_segment_08_starboard.step",
+      "step_sha256": "304946546ebc0e027c6bf9446e94b40b9e643fc74cae6fc7ed2c172ebff53853",
+      "solid_count": 3,
+      "expected_solid_count": 3,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 6,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        139.561958,
+        125.828347,
+        578.8
+      ],
+      "freecad_tessellated_bbox_mm": [
+        93.2348,
+        88.03298,
+        136.0
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 1096,
+      "manifest_extents_mm": [
+        93.235277,
+        88.042605,
+        136.0
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 0.009625622,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "fuselage_shell",
+      "id": "fuselage_shell_segment_09_port.step",
+      "step": "fuselage_shell_segment_09_port.step",
+      "step_sha256": "862b1131f213e4fd8d79186c148cbac0bc16589327b4ae61e2629d286b9519a1",
+      "solid_count": 2,
+      "expected_solid_count": 2,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 4,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        139.561958,
+        125.828347,
+        578.8
+      ],
+      "freecad_tessellated_bbox_mm": [
+        93.2348,
+        87.978798,
+        144.0
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 2122,
+      "manifest_extents_mm": [
+        93.2348,
+        87.978798,
+        144.0
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 2e-07,
+      "manifest_extent_match_within_0_02mm": true
+    },
+    {
+      "group": "fuselage_shell",
+      "id": "fuselage_shell_segment_10_starboard.step",
+      "step": "fuselage_shell_segment_10_starboard.step",
+      "step_sha256": "f6e57fd2914cfe648b20ecf885178db44667799f6c8ff2b576561d45be02d6b0",
+      "solid_count": 2,
+      "expected_solid_count": 2,
+      "solid_count_match": true,
+      "step_length_units_millimetres": true,
+      "step_representation_transform_relationship_count": 4,
+      "freecad_object_placement_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "imported_document_placement_is_origin": true,
+      "freecad_raw_occ_control_pole_span_mm": [
+        139.561958,
+        125.828347,
+        578.8
+      ],
+      "freecad_tessellated_bbox_mm": [
+        93.2348,
+        87.978798,
+        144.0
+      ],
+      "freecad_step_import_operation": "Part.insert(STEP path, current document name)",
+      "tessellation_deflection_mm": 0.05,
+      "tessellation_angular_tolerance_rad": "FreeCAD API accepts a single deflection here; not specified",
+      "tessellated_triangle_count": 2114,
+      "manifest_extents_mm": [
+        93.2348,
+        87.978798,
+        144.0
+      ],
+      "fits_a1_axis_aligned_180_cube": true,
+      "max_extent_difference_mm": 2e-07,
+      "manifest_extent_match_within_0_02mm": true
+    }
+  ],
+  "all_part_imports_match_segment_manifest_within_0_02mm": true,
+  "all_step_solid_counts_match_manifest": true,
+  "all_step_units_mm": true,
+  "all_document_placements_at_origin": true,
+  "all_parts_fit_axis_aligned_profile_envelope": true,
+  "physical_printer_or_printability_verified": false,
+  "assembly_or_structural_verification_performed": false
+}

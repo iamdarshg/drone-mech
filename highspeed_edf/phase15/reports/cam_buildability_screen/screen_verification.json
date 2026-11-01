@@ -1,0 +1,85 @@
+{
+  "status": "screen_only_no_cut_approval",
+  "freecad_native_import_count": 25,
+  "checks": {
+    "all_25_step_files_hash_and_solid_count_recorded": true,
+    "all_native_tessellated_bounds_match_segment_manifest_within_0_02mm": true,
+    "all_step_units_are_mm": true,
+    "all_step_import_object_placements_at_origin": true,
+    "all_a1_parts_fit_axis_aligned_180mm_profile_cube_by_tessellated_geometry": true,
+    "6mm_rotor_cam_job_is_2mm_2flute_geometry_preview": true,
+    "6mm_stator_cam_job_is_2mm_2flute_geometry_preview": true,
+    "6mm_saved_paths_planar_envelope_inside_assumed_subblank": true,
+    "6mm_depth_has_nominal_latest_flute_margin_only": true,
+    "6mm_depth_fails_earlier_5mm_provisional_tool_estimate": true,
+    "20mm_one_side_exceeds_latest_2mm_tool_flute_estimate": true,
+    "two_sided_8mm_flute_leaves_midweb": true,
+    "two_sided_10mm_flute_has_zero_nominal_midweb": true,
+    "no_controller_nc_or_physical_test": true,
+    "exact_user_cnc_identity_unverified": true,
+    "conditional_sainsmart_envelope_layout_fits": true,
+    "all_part_hashes_match_import_log": true
+  },
+  "derived_reach_arithmetic_mm": {
+    "6mm_stock_single_face_flute_margin_for_latest_estimate": [
+      2.0,
+      4.0
+    ],
+    "6mm_stock_single_face_margin_for_earlier_5mm_estimate": -1.0,
+    "20mm_one_side_depth_deficit_for_latest_estimate": [
+      10.0,
+      12.0
+    ],
+    "20mm_two_side_cut_depth_per_side": 10.0,
+    "20mm_two_side_residual_midweb_for_latest_estimate": [
+      4.0,
+      0.0
+    ],
+    "20mm_two_side_residual_web_if_reserving_2mm_flute_margin_each_side": [
+      8.0,
+      4.0
+    ],
+    "20mm_to_5mm_nest_blank_total_face_reduction": 15.0,
+    "balanced_two_face_reduction_per_face_for_20_to_5mm": [
+      7.5,
+      7.5
+    ],
+    "balanced_20_to_5mm_face_reduction_flute_margin_for_latest_estimate": [
+      0.5,
+      2.5
+    ]
+  },
+  "limitations": [
+    "Arithmetic is a reach screen only. Flute length is a user estimate, not measured or backed by cutter-maker data.",
+    "No holder/shank, workholding, alignment pins, spoilboard, stock flatness, machine datum, spindle, feeds/speeds, postprocessor, or 3D collision simulation was verified.",
+    "6mm path fixtures omit negative-Z spoilboard overtravel, so they do not establish a complete severance path.",
+    "20mm calculations are not toolpaths. A two-sided flip requires registered setups and actual axial reach/clearance; zero nominal web is not clearance.",
+    "CAD envelope fit and slicer volume fit do not establish print success, strength, assembly fit, or CNC feasibility."
+  ],
+  "source_inputs": {
+    "highspeed_edf/deliverables/phase15_geometry/stock_nests/sheet_A_250x120x5_36rotors_63stators.step": "f9a8b9f55d9711dcfafa27f25edf7447ae3189a4db49cd23a72c4497a2c0b233",
+    "highspeed_edf/phase15/reports/cam_6mm_stock_probe/result.json": "3df71a4e77605f093fcdb36865c733292963e8c26b900e94f12b96700963c034",
+    "highspeed_edf/phase15/reports/cam_6mm_stock_probe/sheet_A_one_rotor_6mm_stock_probe.FCStd": "a505062dc10a97dad13c2aeec420b72a2e7f8157c571525275e6f7502ebe383f",
+    "highspeed_edf/phase15/reports/cam_6mm_stock_probe/make_sheet_a_6mm_cam_preview.FCMacro": "2cf2d7a9dab541edc3d8fefbe9d95f0341550dbc9d56220537d5174776b2d307",
+    "highspeed_edf/phase15/reports/cam_6mm_stock_probe/facing_commands.txt": "dba3db9cbcb2936e8ceaa95c8732beb7b583dc7ba8b38be4a48dd45703d7d575",
+    "highspeed_edf/phase15/reports/cam_6mm_stock_probe/profile_commands.txt": "3d118ff63e08329f73e7ef2bda1c2e8f04a28d8312275a40f4095a09695d2863",
+    "highspeed_edf/phase15/reports/cam_6mm_stock_probe/stock_envelope_check.py": "cc4329c8039ad329ee77c8b236873a1350473eeeee7c620ba1a09a524215947b",
+    "highspeed_edf/phase15/reports/cam_6mm_stock_probe/saved_job_verification.json": "4223c594cbc01b7b9dd3faafe51b627397eb1c795fe86a85ac676d2683797efa",
+    "highspeed_edf/phase15/reports/cam_6mm_stock_probe/stock_envelope_check.json": "7458c2a9664206895c148e04d66df4fd7b221d09d5f9ae6a66bc984d8ab87161",
+    "highspeed_edf/phase15/reports/cam_6mm_stator_probe/result.json": "eefe738cceeb0dfe790e2075718340988178e2e034c3a46ce28fcfde20f37cc9",
+    "highspeed_edf/phase15/reports/cam_6mm_stator_probe/sheet_A_one_stator_6mm_stock_probe.FCStd": "0a186b382e4023ab32abe23aea955d1c39d461e3b487891ab7338ff585716b5e",
+    "highspeed_edf/phase15/reports/cam_6mm_stator_probe/make_sheet_a_6mm_stator_cam_preview.FCMacro": "088fa1a428546b22a51f8fff98f3d0f8e52ca39258a98e045dc2bb1d7063f154",
+    "highspeed_edf/phase15/reports/cam_6mm_stator_probe/facing_commands.txt": "73815f89aaf944e9617ab434541eb88b32a3400ada276cc3d8a40aa278952d88",
+    "highspeed_edf/phase15/reports/cam_6mm_stator_probe/profile_commands.txt": "ae99a71a1e07fc89ec5f75780b59fc7c4bbc4f4c612ffe5b3152963c2c6bb7a5",
+    "highspeed_edf/phase15/reports/cam_6mm_stator_probe/stock_envelope_check.py": "e4e7d09d4e761ed93551b64c616269c7ff244e03589b16b4334e8163993e81cb",
+    "highspeed_edf/phase15/reports/cam_6mm_stator_probe/saved_job_verification.json": "1a45f62ac56119f8170a60046b7d6749c0c8c879a061e13d962e82c20baeae9d",
+    "highspeed_edf/phase15/reports/cam_6mm_stator_probe/stock_envelope_check.json": "f6d5f63fbccc431ca44b8e1ae961b319c646dfcc4123c10d64d989c918cc8c8a",
+    "highspeed_edf/phase15/print_prototype/main_wing/segmentation_manifest.json": "d80231fa8de429d2649f0bd1a9bb7b1b06945bd6649f06340136a8ba2cf8d265",
+    "highspeed_edf/phase15/print_prototype/fuselage_shell/segmentation_manifest.json": "0c2d2a264037885a0b851366a873e25b45a0d6be832b8f72c7248871bb47046b",
+    "highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-machine.json": "85632b53bc044034e1606685cb83e3bbc405815a7920b5583e0e4bab99e59bb7",
+    "highspeed_edf/phase15/print_prototype/main_wing/software_slice/plate_1.gcode": "d461ee9069ff1fda844ff18df17b6c8fe55cb5aeef9885ec34653d9f2f552685",
+    "highspeed_edf/phase15/reports/machine_envelope_screen/envelope_screen.json": "41736be0191ed1a431fbb40462be01c2f5e46d347bdcf6569f2b753b6f844744",
+    "highspeed_edf/phase15/reports/machine_envelope_screen/machine_envelopes_and_stock.FCStd": "2949985ca4ba4d175f589d3c7182e6d5373bf7cedf0af51c4aed111187587f84"
+  },
+  "all_checks_pass": true
+}

@@ -1,0 +1,46 @@
+{
+  "status": "user_reported_assumptions_not_independently_measured",
+  "cnc": {
+    "user_description": "233018 Pro",
+    "exact_make_model_verified": false,
+    "conditional_reference_model": "SainSmart Genmitsu 3018-PRO",
+    "conditional_work_area_mm": [300, 180, 45],
+    "source_url": "https://www.sainsmart.com/products/sainsmart-genmitsu-cnc-router-3018-pro-diy-kit?variant=13086288150601",
+    "source_retrieval_date": "2026-11-01",
+    "conditions": "Only applies if owner's machine is this exact SainSmart 3018-PRO option; identity not established. The page also offers variants with different work areas."
+  },
+  "stock": {
+    "user_reported_alloy": "6061 aluminum, not heat-treated",
+    "thicknesses_mm": [6, 20],
+    "sheet_xy_dimensions_mm": null,
+    "material_certificates_or_hardness": null,
+    "source_cad_tag": "The Sheet A source nest generator labels source stock 6061-T6; this conflicts with the user's description and must be reconciled before process planning."
+  },
+  "cutters": {
+    "user_reported_type": "carbide PCB cutters",
+    "user_reported_flutes": 2,
+    "diameter_range_mm": [0.1, 2.0],
+    "latest_user_estimate_flute_length_mm": [8, 10],
+    "scope_of_latest_estimate": "User said the larger 2 mm cutters have longer flutes and smaller cutters have shorter flutes; the 8-10 mm estimate is not measured and does not apply to every diameter.",
+    "earlier_user_provisional_estimate_mm": 5,
+    "per_diameter_tool_drawings": null,
+    "holder_stickout_and_shank_reach_mm": null,
+    "runout_and_toolmaker_limits": null,
+    "feeds_speeds_and_controller_post": null
+  },
+  "printer": {
+    "user_reported_machine": "Bambu Lab A1 mini",
+    "profile_envelope_mm": [180, 180, 180],
+    "official_source_url": "https://cdn1.bambulab.com/documentation/quick-start-f507128172bdf/Quick%20start%20guide%20-%20A1%20mini-EN.pdf",
+    "source_retrieval_date": "2026-11-01",
+    "profile_file_sha256": "85632b53bc044034e1606685cb83e3bbc405815a7920b5583e0e4bab99e59bb7",
+    "physical_printer_configuration_verified": false,
+    "material_and_nozzle_verified": false
+  },
+  "authorization_boundary": {
+    "physical_hardware_tested": false,
+    "controller_ready_nc_emitted": false,
+    "cut_authorized": false,
+    "paid_cloud_used": false
+  }
+}

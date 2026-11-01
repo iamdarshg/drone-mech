@@ -1,0 +1,44 @@
+import FreeCAD as App, Part, os, json, hashlib, math
+ROOT=os.path.abspath(os.getcwd())
+OUT=ROOT+'/highspeed_edf/phase15/reports/cam_buildability_screen'
+WING_MANIFEST=ROOT+'/highspeed_edf/phase15/print_prototype/main_wing/segmentation_manifest.json'
+FUSE_MANIFEST=ROOT+'/highspeed_edf/phase15/print_prototype/fuselage_shell/segmentation_manifest.json'
+WING_DIR=ROOT+'/highspeed_edf/phase15/print_prototype/main_wing'
+FUSE_DIR=ROOT+'/highspeed_edf/phase15/print_prototype/fuselage_shell'
+sha=lambda p:hashlib.sha256(open(p,'rb').read()).hexdigest()
+wing=json.load(open(WING_MANIFEST)); fuse=json.load(open(FUSE_MANIFEST))
+items=[]
+for group,entries,directory in [('main_wing',wing['pieces'],WING_DIR),('fuselage_shell',[{'id':s['step'],'step':s['step']} for s in fuse['segments']],FUSE_DIR)]:
+ for entry in entries:
+  rel=entry['step']; path=os.path.join(directory,rel)
+  if not os.path.isfile(path): raise RuntimeError('missing source STEP '+path)
+  doc=App.newDocument('PartExtentProbe'); Part.insert(path,doc.Name); doc.recompute()
+  new=[o for o in doc.Objects if hasattr(o,'Shape') and not o.Shape.isNull()]
+  if not new: raise RuntimeError('no native B-rep imported from '+path)
+  solids=sum(len(o.Shape.Solids) for o in new)
+  raw_boxes=[o.Shape.BoundBox for o in new]
+  raw_min=[min(getattr(b,k) for b in raw_boxes) for k in ('XMin','YMin','ZMin')]
+  raw_max=[max(getattr(b,k) for b in raw_boxes) for k in ('XMax','YMax','ZMax')]
+  raw_ext=[raw_max[i]-raw_min[i] for i in range(3)]
+  verts=[]; triangles=0
+  for o in new:
+   vs,ts=o.Shape.tessellate(0.05); verts.extend(vs); triangles+=len(ts)
+  mesh_min=[min(getattr(v,k) for v in verts) for k in ('x','y','z')]
+  mesh_max=[max(getattr(v,k) for v in verts) for k in ('x','y','z')]
+  ext=[mesh_max[i]-mesh_min[i] for i in range(3)]
+  placement=[round(float(getattr(new[0].Placement.Base,k)),9) for k in ('x','y','z')]
+  step_text=open(path,errors='replace').read()
+  units_mm=('SI_UNIT(.MILLI.,.METRE.)' in step_text.replace('\n','').replace('\r',''))
+  transform_entities=step_text.count('ITEM_DEFINED_TRANSFORMATION')+step_text.count('REPRESENTATION_RELATIONSHIP_WITH_TRANSFORMATION')
+  expected_solids=1
+  expected=None
+  if group=='main_wing': expected=entry['extentsMm']
+  else:
+   seg=next(s for s in fuse['segments'] if s['step']==rel); expected=seg['stepRoundTrip']['sizeMm']; expected_solids=seg['stepRoundTrip']['solidCount']
+  error=max(abs(a-b) for a,b in zip(ext,expected))
+  items.append({'group':group,'id':entry.get('id',rel),'step':rel,'step_sha256':sha(path),'solid_count':solids,'expected_solid_count':expected_solids,'solid_count_match':solids==expected_solids,'step_length_units_millimetres':units_mm,'step_representation_transform_relationship_count':transform_entities,'freecad_object_placement_mm':placement,'imported_document_placement_is_origin':all(abs(v)<1e-9 for v in placement),'freecad_raw_occ_control_pole_span_mm':[round(v,6) for v in raw_ext],'freecad_tessellated_bbox_mm':[round(v,6) for v in ext],'freecad_step_import_operation':'Part.insert(STEP path, current document name)','tessellation_deflection_mm':0.05,'tessellation_angular_tolerance_rad':'FreeCAD API accepts a single deflection here; not specified','tessellated_triangle_count':triangles,'manifest_extents_mm':[round(v,6) for v in expected],'fits_a1_axis_aligned_180_cube':all(v<=180.0+1e-6 for v in ext),'max_extent_difference_mm':round(error,9),'manifest_extent_match_within_0_02mm':error<=0.02})
+  App.closeDocument(doc.Name)
+profile=json.load(open(ROOT+'/highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-machine.json'))
+result={'status':'native_step_imports_verified_by_trimmed_face_tessellation_not_print_release','freecad_version':App.Version(),'reference_geometry_adapter':'CadQuery STEP importer used by committed segmentation manifests','raw_occ_bbox_note':'freecad_raw_occ_control_pole_span_mm is a conservative diagnostic and is not a trimmed part dimension or used for A1 fit. Raw OCC bounds can include B-spline surface poles beyond trimmed face boundaries; use freecad_tessellated_bbox_mm cross-checked against manifest bounds.','source_manifest_sha256':{'main_wing':sha(WING_MANIFEST),'fuselage_shell':sha(FUSE_MANIFEST),'a1_machine_profile':sha(ROOT+'/highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-machine.json')},'a1_profile':{'name':profile['name'],'printable_area':profile['printable_area'],'printable_height_mm':float(profile['printable_height']),'profile_envelope_mm':[180,180,180]},'part_count':len(items),'native_step_imports':items,'all_part_imports_match_segment_manifest_within_0_02mm':all(x['manifest_extent_match_within_0_02mm'] for x in items),'all_step_solid_counts_match_manifest':all(x['solid_count_match'] for x in items),'all_step_units_mm':all(x['step_length_units_millimetres'] for x in items),'all_document_placements_at_origin':all(x['imported_document_placement_is_origin'] for x in items),'all_parts_fit_axis_aligned_profile_envelope':all(x['fits_a1_axis_aligned_180_cube'] for x in items),'physical_printer_or_printability_verified':False,'assembly_or_structural_verification_performed':False}
+with open(OUT+'/native_part_extent_verification.json','w') as f:json.dump(result,f,indent=2)
+print(json.dumps({'part_count':len(items),'all_parts_fit_axis_aligned_profile_envelope':result['all_parts_fit_axis_aligned_profile_envelope'],'max_axis_extent_mm':max(max(x['freecad_tessellated_bbox_mm']) for x in items)},indent=2))

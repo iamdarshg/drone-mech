@@ -1,0 +1,240 @@
+Buildability subset run 2026-11-01T12:12:04Z
+FreeCAD 1.0.0 Revision:
+[1/5] Import all 25 wing/fuselage STEP parts, compare tessellated extents
+{
+  "part_count": 25,
+  "all_parts_fit_axis_aligned_profile_envelope": true,
+  "max_axis_extent_mm": 166.202392
+}
+FreeCAD 1.0.0, Libs: 1.0.0R
+(C) 2001-2024 FreeCAD contributors
+FreeCAD is free and open-source software licensed under the terms of LGPL2+ license.
+
+Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(100 %)									Recompute......
+						(33 %)							(66 %)							(100 %)									Recompute......
+						(33 %)							(66 %)							(100 %)									Recompute......
+						(33 %)							(66 %)							(100 %)									Recompute......
+						(33 %)							(66 %)							(100 %)									Recompute......
+						(33 %)							(66 %)							(100 %)									Recompute......
+						(33 %)							(66 %)							(100 %)									Recompute......
+						(33 %)							(66 %)							(100 %)									Recompute......
+						(33 %)							(66 %)							(100 %)									Recompute......
+						(50 %)							(100 %)									Recompute......
+						(50 %)							(100 %)									Recompute......
+						(50 %)							(100 %)									Recompute......
+						(50 %)							(100 %)									[2/5] Reopen and verify the 6 mm rotor FreeCAD Path job
+{'stock_bbox_mm': [0.0, 0.0, 0.0, 40.0, 20.0, 6.0], 'part_bbox_mm': [5.0, 4.999999999999713, 0.0, 34.000000000000014, 13.564103626009, 5.0], 'face_path_commands': 61, 'profile_path_commands': 43, 'tool_diameter_mm': 2.0, 'tool_flutes': 2, 'tool_flute_len_mm': 8.0, 'tool_shank_diameter_placeholder_mm': 0.0, 'xy_endpoint_bbox_mm': [4.0, 4.012695, 35.0, 14.499874], 'z_command_range_mm': [1e-06, 11.0], 'profile_final_depth_mm': 0.0, 'profile_stepdown_mm': 2.0, 'all_xy_endpoints_within_stock': True, 'origin': 'stock corner at (0,0,0) by geometry convention only; machine datum not established'}
+FreeCAD 1.0.0, Libs: 1.0.0R
+(C) 2001-2024 FreeCAD contributors
+FreeCAD is free and open-source software licensed under the terms of LGPL2+ license.
+
+Importing project files......
+						(0 %)							(1 %)							(2 %)							(3 %)							(4 %)							(5 %)							(6 %)							(7 %)							(8 %)							(9 %)							(10 %)							(11 %)							(12 %)							(13 %)							(14 %)							(15 %)							(16 %)							(17 %)							(18 %)							(19 %)							(20 %)							(21 %)							(22 %)							(23 %)							(24 %)							(25 %)							(26 %)							(27 %)							(28 %)							(29 %)							(30 %)							(31 %)							(32 %)							(33 %)							(34 %)							(35 %)							(36 %)							(37 %)							(38 %)							(39 %)							(40 %)							(41 %)							(42 %)							(43 %)							(44 %)							(45 %)							(46 %)							(47 %)							(48 %)							(49 %)							(50 %)							(51 %)							(52 %)							(53 %)							(54 %)							(55 %)							(56 %)							(57 %)							(58 %)							(59 %)							(60 %)							(61 %)							(62 %)							(63 %)							(64 %)							(65 %)							(66 %)							(67 %)							(68 %)							(69 %)							(70 %)							(71 %)							(72 %)							(73 %)							(74 %)							(75 %)							(76 %)							(77 %)							(78 %)							(79 %)							(80 %)							(81 %)							(82 %)							(83 %)							(84 %)							(85 %)							(86 %)							(87 %)							(88 %)							(89 %)							(90 %)							(91 %)							(92 %)							(93 %)							(94 %)							(95 %)							(96 %)							(97 %)							(98 %)							(99 %)							(100 %)									Postprocessing......
+						(100 %)									[3/5] Reopen and verify the 6 mm stator FreeCAD Path job
+{'stock_bbox_mm': [0.0, 0.0, 0.0, 30.0, 20.0, 6.0], 'part_bbox_mm': [5.0, 5.0, 0.0, 21.000000000000078, 12.073507002435, 5.0], 'face_commands': 41, 'profile_commands': 37, 'final_depth_mm': 0.0, 'stepdown_mm': 2.0, 'tool_diameter_mm': 2.0, 'flutes': 2, 'flute_length_mm': 8.0}
+FreeCAD 1.0.0, Libs: 1.0.0R
+(C) 2001-2024 FreeCAD contributors
+FreeCAD is free and open-source software licensed under the terms of LGPL2+ license.
+
+Importing project files......
+						(0 %)							(1 %)							(2 %)							(3 %)							(4 %)							(5 %)							(6 %)							(7 %)							(8 %)							(9 %)							(10 %)							(11 %)							(12 %)							(13 %)							(14 %)							(15 %)							(16 %)							(17 %)							(18 %)							(19 %)							(20 %)							(21 %)							(22 %)							(23 %)							(24 %)							(25 %)							(26 %)							(27 %)							(28 %)							(29 %)							(30 %)							(31 %)							(32 %)							(33 %)							(34 %)							(35 %)							(36 %)							(37 %)							(38 %)							(39 %)							(40 %)							(41 %)							(42 %)							(43 %)							(44 %)							(45 %)							(46 %)							(47 %)							(48 %)							(49 %)							(50 %)							(51 %)							(52 %)							(53 %)							(54 %)							(55 %)							(56 %)							(57 %)							(58 %)							(59 %)							(60 %)							(61 %)							(62 %)							(63 %)							(64 %)							(65 %)							(66 %)							(67 %)							(68 %)							(69 %)							(70 %)							(71 %)							(72 %)							(73 %)							(74 %)							(75 %)							(76 %)							(77 %)							(78 %)							(79 %)							(80 %)							(81 %)							(82 %)							(83 %)							(84 %)							(85 %)							(86 %)							(87 %)							(88 %)							(89 %)							(90 %)							(91 %)							(92 %)							(93 %)							(94 %)							(95 %)							(96 %)							(97 %)							(98 %)							(99 %)							(100 %)									Postprocessing......
+						(100 %)									[4/5] Check the retained planar toolpath envelopes
+[
+  {
+    "file": "facing_commands.txt",
+    "move_count": 55,
+    "centerline_xy_bounds_mm": [
+      4.973982978879604,
+      4.972006486302287,
+      34.035,
+      13.565945552042422
+    ],
+    "tool_radius_mm": 1.0,
+    "expanded_xy_bounds_mm": [
+      3.9739829788796044,
+      3.972006486302287,
+      35.035,
+      14.565945552042422
+    ],
+    "stock_xy_bounds_mm": [
+      0.0,
+      0.0,
+      40.0,
+      20.0
+    ],
+    "swept_planar_tool_envelope_inside_stock": true,
+    "arc_radius_mismatch_count": 0,
+    "largest_arc_radius_mismatch_mm": 0.0
+  },
+  {
+    "file": "profile_commands.txt",
+    "move_count": 36,
+    "centerline_xy_bounds_mm": [
+      3.9999659975580135,
+      4.00001313661342,
+      35.000382712189854,
+      14.546818233276042
+    ],
+    "tool_radius_mm": 1.0,
+    "expanded_xy_bounds_mm": [
+      2.9999659975580135,
+      3.00001313661342,
+      36.000382712189854,
+      15.546818233276042
+    ],
+    "stock_xy_bounds_mm": [
+      0.0,
+      0.0,
+      40.0,
+      20.0
+    ],
+    "swept_planar_tool_envelope_inside_stock": true,
+    "arc_radius_mismatch_count": 0,
+    "largest_arc_radius_mismatch_mm": 0.0
+  }
+]
+[
+  {
+    "file": "facing_commands.txt",
+    "move_count": 35,
+    "centerline_xy_bounds_mm": [
+      4.973773807368476,
+      5.137098990896543,
+      21.042,
+      12.104603724038528
+    ],
+    "tool_radius_mm": 1.0,
+    "expanded_xy_bounds_mm": [
+      3.9737738073684756,
+      4.137098990896543,
+      22.042,
+      13.104603724038528
+    ],
+    "stock_xy_bounds_mm": [
+      0.0,
+      0.0,
+      30.0,
+      20.0
+    ],
+    "swept_planar_tool_envelope_inside_stock": true,
+    "arc_radius_mismatch_count": 0,
+    "largest_arc_radius_mismatch_mm": 0.0
+  },
+  {
+    "file": "profile_commands.txt",
+    "move_count": 30,
+    "centerline_xy_bounds_mm": [
+      4.0,
+      4.0000410990948945,
+      22.0,
+      13.084046060031667
+    ],
+    "tool_radius_mm": 1.0,
+    "expanded_xy_bounds_mm": [
+      3.0,
+      3.0000410990948945,
+      23.0,
+      14.084046060031667
+    ],
+    "stock_xy_bounds_mm": [
+      0.0,
+      0.0,
+      30.0,
+      20.0
+    ],
+    "swept_planar_tool_envelope_inside_stock": true,
+    "arc_radius_mismatch_count": 0,
+    "largest_arc_radius_mismatch_mm": 0.0
+  }
+]
+[5/5] Verify source pins and reach arithmetic
+{
+  "all_checks_pass": true,
+  "checks": {
+    "all_25_step_files_hash_and_solid_count_recorded": true,
+    "all_native_tessellated_bounds_match_segment_manifest_within_0_02mm": true,
+    "all_step_units_are_mm": true,
+    "all_step_import_object_placements_at_origin": true,
+    "all_a1_parts_fit_axis_aligned_180mm_profile_cube_by_tessellated_geometry": true,
+    "6mm_rotor_cam_job_is_2mm_2flute_geometry_preview": true,
+    "6mm_stator_cam_job_is_2mm_2flute_geometry_preview": true,
+    "6mm_saved_paths_planar_envelope_inside_assumed_subblank": true,
+    "6mm_depth_has_nominal_latest_flute_margin_only": true,
+    "6mm_depth_fails_earlier_5mm_provisional_tool_estimate": true,
+    "20mm_one_side_exceeds_latest_2mm_tool_flute_estimate": true,
+    "two_sided_8mm_flute_leaves_midweb": true,
+    "two_sided_10mm_flute_has_zero_nominal_midweb": true,
+    "no_controller_nc_or_physical_test": true,
+    "exact_user_cnc_identity_unverified": true,
+    "conditional_sainsmart_envelope_layout_fits": true,
+    "all_part_hashes_match_import_log": true
+  },
+  "derived_reach_arithmetic_mm": {
+    "6mm_stock_single_face_flute_margin_for_latest_estimate": [
+      2.0,
+      4.0
+    ],
+    "6mm_stock_single_face_margin_for_earlier_5mm_estimate": -1.0,
+    "20mm_one_side_depth_deficit_for_latest_estimate": [
+      10.0,
+      12.0
+    ],
+    "20mm_two_side_cut_depth_per_side": 10.0,
+    "20mm_two_side_residual_midweb_for_latest_estimate": [
+      4.0,
+      0.0
+    ],
+    "20mm_two_side_residual_web_if_reserving_2mm_flute_margin_each_side": [
+      8.0,
+      4.0
+    ],
+    "20mm_to_5mm_nest_blank_total_face_reduction": 15.0,
+    "balanced_two_face_reduction_per_face_for_20_to_5mm": [
+      7.5,
+      7.5
+    ],
+    "balanced_20_to_5mm_face_reduction_flute_margin_for_latest_estimate": [
+      0.5,
+      2.5
+    ]
+  }
+}
+All software-only checks passed; no machine or printer was operated.

@@ -1,0 +1,38 @@
+{
+  "source_commit": "849e99bf817534006bf90510eba4290b27c1f984",
+  "source_repo": "iamdarshg/drone-mech",
+  "files": {
+    "README.md": {
+      "sha256": "fd9e8896682fb3bf364964dd8a664638a2978d6fe3038f863dc826772f5ebe64",
+      "bytes": 11326
+    },
+    "build_cad_extent_screen.FCMacro": {
+      "sha256": "37088cc75996962d23d8e12c1cd6286badf4db4f16bff728ed659ff1ac0c6fc8",
+      "bytes": 5466
+    },
+    "check_buildability_screen.py": {
+      "sha256": "dc2b420ff2bbf966692421e9311ed673c2c2dce86343fddf36cfc957ab690bac",
+      "bytes": 7540
+    },
+    "execution.log": {
+      "sha256": "2d33e13e889672c4a92a8137cf29bf537d59e5c01d7b6b1c47795415e4280fac",
+      "bytes": 11185
+    },
+    "native_part_extent_verification.json": {
+      "sha256": "93a838da887a49ee8c85a714c06d2bd0435549a7f307e1e70c73b7ca04baa380",
+      "bytes": 33926
+    },
+    "run_acceptance_subset.sh": {
+      "sha256": "f5d751bbaf6eae24864dc16a03524e7eee3241d24c5fc0d78a847bee17b45b1c",
+      "bytes": 1352
+    },
+    "screen_verification.json": {
+      "sha256": "dfa00166a1dc0f6ec83299dca6fb5ddf7e55da78ac333f0387c4782187fe4e1b",
+      "bytes": 6181
+    },
+    "user_setup_assumptions.json": {
+      "sha256": "d36c2fb92fe84a21e26abfd18d24dfa0858ac381f973e49162de61b9b7b43b4a",
+      "bytes": 2274
+    }
+  }
+}
