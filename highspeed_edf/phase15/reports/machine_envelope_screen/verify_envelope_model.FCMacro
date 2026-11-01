@@ -1,5 +1,5 @@
 import FreeCAD as App, json, os, hashlib
-root='/workspace/drone-mech'; out=root+'/highspeed_edf/phase15/reports/machine_envelope_screen'
+root=os.path.abspath(os.getcwd()); out=root+'/highspeed_edf/phase15/reports/machine_envelope_screen'
 doc=App.openDocument(out+'/machine_envelopes_and_stock.FCStd')
 get=lambda name:doc.getObject(name)
 cnc=get('CNC_Nominal_Envelope').Shape.BoundBox

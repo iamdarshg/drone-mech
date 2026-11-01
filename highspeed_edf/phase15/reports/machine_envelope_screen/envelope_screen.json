@@ -51,7 +51,7 @@
     141.6845245361328
   ],
   "a1_slicer_manifest_sha256": "470d9095a3bcd9bc7b30a35319f592baa9ec61c08b1446b31083a6e8cdc5b435",
-  "a1_existing_software_slice_report": "/workspace/drone-mech/highspeed_edf/phase15/print_prototype/main_wing/manufacturing-software-screen.md",
+  "a1_existing_software_slice_report": "highspeed_edf/phase15/print_prototype/main_wing/manufacturing-software-screen.md",
   "a1_geometry_envelope_fit": true,
   "physical_printer_verified": false,
   "physical_cnc_verified": false,
