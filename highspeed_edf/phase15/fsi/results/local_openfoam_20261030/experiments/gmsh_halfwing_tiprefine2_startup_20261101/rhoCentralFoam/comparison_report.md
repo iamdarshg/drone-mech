@@ -1,0 +1,17 @@
+# rhoCentralFoam startup comparison
+
+**Disposition:** The central-upwind `rhoCentralFoam` configuration passed its one-step dry-run on the same strict-passed 822,395-cell tetra mesh and matching five patches. The detached case produced two complete checkpoints, then was deliberately stopped when pointwise total-temperature proxy exceeded the input-derived 5% tolerance. This is not developed flow, a converged CFD solution, or evidence of transonic behavior.
+
+## Setup and run
+
+OpenFOAM 1912 `rhoCentralFoam` SHA-256 is pinned in parent `../evidence.sha256`. The solver uses `Kurganov` central-upwind flux with limited-linear reconstruction and kOmegaSST, on the same Gmsh half-wing mesh and the original initial field/BC state in `../case_config`. Changed solver dictionaries are captured alongside this report. All ten initial fields match the mesh patches `symmetryPlane`, `farfield`, `outlet`, `inlet`, `halfwing`. The `rhoCentralFoam -dry-run` log exits `End`/0 at `1.2e-8 s`; the executable was run detached from 11:39:32Z to 11:43:50Z. The run used `maxCo=0.1`, output every 10 steps, `endTime=0.004 s`; it only reached `8.3991625e-7 s` in the log and did not approach endTime.
+
+The first complete checkpoint at `2.7087809e-7 s` remained within the derived guard: maximum `T+|U|^2/(2Cp)=319.680 K`; static T range 256.952–280.321 K; p range 57.459–84.956 kPa; rho range 0.7790–1.0558 kg/m³; speed range 279.144–287.064 m/s; maximum Mach 0.88483. The maximum total-temperature cell is 115521, the same wall-adjacent x=0 root cell identified in the PIMPLE diagnostic.
+
+The second complete checkpoint at `6.793357e-7 s` exceeded the guard. At max total-temperature cell 115521: `T=294.804 K`, `|U|=272.978 m/s`, `p=105.875 kPa`, `rho=1.2511 kg/m³`, `Mach=0.79308`, `Tt=331.889 K`; tetra centroid `(0.00140809, 0.00238671, -0.26898484) m`, adjacent to the halfwing wall. The distinct max-Mach cell 320404 reached Mach 0.94916 at `T=253.611 K`, speed 303.019 m/s, p 54.020 kPa, rho 0.7420 kg/m³. No cell reached Mach 1.0 and no shock was resolved in this startup.
+
+Input values are `T=268.65 K`, `p=70.1 kPa`, `rho=0.909 kg/m³`, `U=(2.4711,0,283.1612) m/s`, `Cp=1004.685 J/(kg K)`. They are thermodynamically consistent to rounding (`rho=p/(RT)`, `h=CpT`) and give freestream total temperature `308.56 K`. For adiabatic, no-shaft-work flow, total enthalpy should remain within a declared tolerance; the monitor used a 5% tolerance, `Tt <= 1.05*308.56 = 324.0 K`. The second checkpoint violated it, so SIGTERM was sent at 11:43:20Z; wrapper exit code 143 is the deliberate stop, not a solver crash. The exact checkpoint, monitor timeline, stop reason and full logs are included. Do not increase the bound without validating the energy-equation configuration and wall/startup treatment.
+
+Both checkpoints are gzip compressed; their uncompressed hashes, every copied artifact hash, the source STEP SHA-256, strict-passed mesh SHA-256 and solver SHA-256 are in `../evidence.sha256`. Mesh cell center and wall-face connectivity are independently documented in the parent `../cell_center.py` and `../acceptance_report.md`.
+
+The uniform internal velocity still conflicts with the no-slip wall BC at t=0, and there is no resolved boundary layer or y+ validation. This short transient cannot be used for force coefficients, drag, lift, shock behavior, transonic performance, structural sizing, fabrication readiness, or flight-readiness.

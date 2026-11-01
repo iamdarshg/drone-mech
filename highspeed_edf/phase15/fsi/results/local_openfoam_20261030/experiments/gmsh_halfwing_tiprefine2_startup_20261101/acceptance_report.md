@@ -42,3 +42,8 @@ The run was performed in `/tmp/gmsh_halfwing_fluid/`; the reviewable evidence be
 - Cell/max-field analysis: `analyze_checkpoint.py`, `cell_center.py`
 
 No fabrication readiness, aircraft readiness, successful transonic solution, or physical-test authorization is implied.
+
+
+## Density-based solver comparison
+
+A separate Kurganov `rhoCentralFoam` startup on the same mesh is recorded in [`rhoCentralFoam/comparison_report.md`](rhoCentralFoam/comparison_report.md). Its first complete checkpoint passed a 5% input total-temperature tolerance; the second exceeded it and was deliberately stopped. It remained subsonic (max Mach 0.9492) and is not developed flow or a transonic result.

@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-01T11:43:20Z",
+  "reason": "SIGTERM: checkpoint Tt exceeds input-derived 1.05 margin (324.0 K)",
+  "checkpoint": {
+    "timeSeconds": 6.793357e-07,
+    "checkpoint": "6.793357e-07",
+    "maxTotalTemperatureK": 331.8889984337643,
+    "maxTotalTemperatureCell": 115521,
+    "maxStaticTemperatureK": 294.8041882,
+    "speedAtMaxTotalTemperatureMps": 272.978213671749,
+    "pressureAtMaxTotalTemperaturePa": 105874.6134,
+    "densityAtMaxTotalTemperatureKgM3": 1.251114759,
+    "maxMach": 0.949163190165897,
+    "maxMachCell": 320404,
+    "maxSpeedMps": 303.0188188974269,
+    "maxSpeedCell": 320404,
+    "minStaticTemperatureK": 240.2308068,
+    "minStaticTemperatureCell": 36858,
+    "cellCenterMaxTtM": [
+      0.00140808748425,
+      0.00238670517115,
+      -0.26898484005
+    ],
+    "cellPatch": "halfwing wall adjacent; boundary cell as previously mapped"
+  }
+}
