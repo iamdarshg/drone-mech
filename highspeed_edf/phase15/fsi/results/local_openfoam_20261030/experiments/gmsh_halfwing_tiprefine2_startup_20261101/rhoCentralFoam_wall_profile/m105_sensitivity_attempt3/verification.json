@@ -1,5 +1,5 @@
 {
-  "independentFullFieldCheckCommand": "python3 ../../ias900_target/scripts/verify_checkpoint.py checkpoints/5.2086889e-07 --cp 1004.685",
+  "independentFullFieldCheckCommand": "python3 scripts/verify_checkpoint.py checkpoints/5.2086889e-07 --cp 1004.685",
   "result": {
     "cells": 822395,
     "maxTotalTemperatureK": 334.1679615428771,
