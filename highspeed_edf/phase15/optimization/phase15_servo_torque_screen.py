@@ -71,7 +71,9 @@ def load_inputs(pins: dict) -> tuple[dict, list[int], list[int], dict]:
     control_config = json.loads(src["control_contract"].read_text(encoding="utf-8"))
     with (src["speed_envelope"]).open(newline="", encoding="utf-8") as handle:
         anchors = sorted({int(float(row["speed_kmh"])) for row in csv.DictReader(handle) if float(row["speed_kmh"]) > 0})
-    speeds = sorted(set(range(50, 901, 50)) | set(anchors))
+    # Include the user's explicit 50–60 km/h control band, not only the
+    # regular 50 km/h sweep and Phase-14 anchor speeds.
+    speeds = sorted(set(range(50, 901, 50)) | set(anchors) | {60})
     return g, speeds, [int(x) for x in anchors], control_config
 
 
@@ -154,6 +156,7 @@ def generate() -> tuple[list[dict], dict]:
         "source_commit": pins["source_commit"],
         "source_pins": pins["sources"],
         "indicated_speeds_kmh": speeds,
+        "low_speed_control_ias_kmh": [50, 60],
         "phase14_anchor_ias_kmh": anchors,
         "airspeed_convention": "Requested speed is treated as indicated airspeed (IAS); CAS≈IAS is an explicit ideal instrument/calibration assumption.",
         "pitot_conversion": "Subsonic compressible impact-pressure relation: compute sea-level calibrated qc from IAS, then solve qc/p=(1+0.2M²)^3.5−1 at ambient static pressure.",
@@ -195,22 +198,35 @@ def write_outputs() -> None:
         "",
         "**Result: servo adequacy is undetermined.** The source design contains no selected servo product or rated torque. The CAD's 23×12×29 mm, 25 g item is an analyst envelope placeholder, not a servo datasheet. There is consequently no valid actual-servo margin comparison and no manufacturer torque sheet to cite for a selected unit.",
         "",
-        "The input speeds are indicated airspeeds (IAS), per the clarified design convention; this executable explicitly assumes CAS≈IAS with ideal instrument calibration. It computes hinge-axis torque sensitivities at all Phase-14 speed anchors and every 50 km/h from 50 through 900 km/h for both sea level and the primary altitude from the pinned Phase-14 airframe configuration. A subsonic compressible pitot relation converts IAS to Mach and TAS at each pressure altitude, and dynamic pressure is computed as `q = 0.5 γ p M²`. The 3,000 m density is derived from the ISA atmosphere and is close to the pinned Phase-14 0.90913 kg/m³ input. It evaluates `H = q S c Ch` at |Ch| = 0.01, 0.05, 0.10, and 0.20. These are illustrative analyst-selected sensitivity values, not literature-derived bounds, not measured coefficients, and not predictions. The 1.5 multiplier is borrowed from the Phase-14 strong control-authority reserve requirement as a display-only demand reserve; it is not a servo design standard.",
+        "The input speeds are indicated airspeeds (IAS), per the clarified design convention; this executable explicitly assumes CAS≈IAS with ideal instrument calibration. It computes hinge-axis torque sensitivities at all Phase-14 speed anchors, every 50 km/h from 50 through 900 km/h, and at 60 km/h explicitly for the requested low-speed band, for both sea level and the primary altitude from the pinned Phase-14 airframe configuration. A subsonic compressible pitot relation converts IAS to Mach and TAS at each pressure altitude, and dynamic pressure is computed as `q = 0.5 γ p M²`. The 3,000 m density is derived from the ISA atmosphere and is close to the pinned Phase-14 0.90913 kg/m³ input. It evaluates `H = q S c Ch` at |Ch| = 0.01, 0.05, 0.10, and 0.20. These are illustrative analyst-selected sensitivity values, not literature-derived bounds, not measured coefficients, and not predictions. The 1.5 multiplier is borrowed from the Phase-14 strong control-authority reserve requirement as a display-only demand reserve; it is not a servo design standard.",
         "",
         "Elevons and rudder use freestream dynamic pressure. For each vector vane, the output includes local-vane/freestream velocity ratios of 1, 2, and 4, so vane dynamic pressure scales by 1, 4, and 16 while retaining the same freestream density. This velocity-only adjustment is a hypothetical sensitivity, not jet-flow physics: actual jet velocity, density, swirl, pressure, and vane incidence are unknown. Powered static vane loading is not represented by freestream scaling. Outputs are absolute hinge-axis torques; converting these to required servo output torque needs linkage ratios and losses that are absent from the design.",
         "",
+        "## IAS conversion and freestream dynamic pressure at 3 km",
+        "",
+        "| IAS (km/h) | Mach | TAS (m/s) | q (Pa) |",
+        "|---:|---:|---:|---:|"
+    ]
+    for speed in (50, 60, 700, 800, 900):
+        flight = next(r for r in rows if r["indicated_airspeed_kmh"] == speed and r["environment"] == "primary_design_altitude")
+        lines.append(f"| {speed} | {flight['freestream_mach']:.5f} | {flight['tas_m_s']:.2f} | {flight['freestream_q_pa']:.1f} |")
+    lines += [
+        "",
         "## Example envelope results",
         "",
-        "At |Ch|=0.20 and the Phase-14 1.5 reserve, primary-altitude hinge-axis torque demand rises from 50 to 900 km/h IAS. Vector vane is shown at local-velocity ratio 1; actual jet scenario can be higher or lower.",
+        "At |Ch|=0.20 and the Phase-14 1.5 reserve, primary-altitude hinge-axis torque demand is tabulated at the requested 50–60 km/h low-speed band and at 700/800/900 km/h IAS. Vector vane is shown at local-velocity ratio 1; actual jet scenario can be higher or lower.",
         "",
-        "| Surface | 50 IAS, primary altitude (kgf·cm) | 900 IAS, primary altitude (kgf·cm) | 900 IAS, sea level (kgf·cm) |",
-        "|---|---:|---:|---:|"
+        "| Surface | 50 IAS, 3 km (kgf·cm) | 60 IAS, 3 km | 700 IAS, 3 km | 800 IAS, 3 km | 900 IAS, 3 km | 900 IAS, sea level |",
+        "|---|---:|---:|---:|---:|---:|---:|"
     ]
     for name in ("elevon_left", "elevon_right", "rudder_right", "vector_vane_A1", "vector_vane_A2", "vector_vane_B1", "vector_vane_B2"):
         lo = next(r for r in rows if r["surface"] == name and r["indicated_airspeed_kmh"] == 50 and r["environment"] == "primary_design_altitude" and r["hinge_coefficient_scenario"] == 0.2 and r["local_velocity_ratio"] == 1.0)
+        slow = next(r for r in rows if r["surface"] == name and r["indicated_airspeed_kmh"] == 60 and r["environment"] == "primary_design_altitude" and r["hinge_coefficient_scenario"] == 0.2 and r["local_velocity_ratio"] == 1.0)
+        fast700 = next(r for r in rows if r["surface"] == name and r["indicated_airspeed_kmh"] == 700 and r["environment"] == "primary_design_altitude" and r["hinge_coefficient_scenario"] == 0.2 and r["local_velocity_ratio"] == 1.0)
+        fast800 = next(r for r in rows if r["surface"] == name and r["indicated_airspeed_kmh"] == 800 and r["environment"] == "primary_design_altitude" and r["hinge_coefficient_scenario"] == 0.2 and r["local_velocity_ratio"] == 1.0)
         hi = next(r for r in rows if r["surface"] == name and r["indicated_airspeed_kmh"] == 900 and r["environment"] == "primary_design_altitude" and r["hinge_coefficient_scenario"] == 0.2 and r["local_velocity_ratio"] == 1.0)
         sea = next(r for r in rows if r["surface"] == name and r["indicated_airspeed_kmh"] == 900 and r["environment"] == "sea_level" and r["hinge_coefficient_scenario"] == 0.2 and r["local_velocity_ratio"] == 1.0)
-        lines.append(f"| {name} | {lo['screen_required_torque_kgf_cm_at_control_reserve']:.3f} | {hi['screen_required_torque_kgf_cm_at_control_reserve']:.3f} | {sea['screen_required_torque_kgf_cm_at_control_reserve']:.3f} |")
+        lines.append(f"| {name} | {lo['screen_required_torque_kgf_cm_at_control_reserve']:.3f} | {slow['screen_required_torque_kgf_cm_at_control_reserve']:.3f} | {fast700['screen_required_torque_kgf_cm_at_control_reserve']:.3f} | {fast800['screen_required_torque_kgf_cm_at_control_reserve']:.3f} | {hi['screen_required_torque_kgf_cm_at_control_reserve']:.3f} | {sea['screen_required_torque_kgf_cm_at_control_reserve']:.3f} |")
     lines += [
         "",
         "These values are not pass/fail points: coefficient sensitivity dominates the range, local vane flow is unknown, and no servo rating or linkage ratio exists. The pitot conversion accounts for compressibility in the IAS-to-Mach and q conversion, but compressibility-dependent hinge coefficients are not modeled. CAS≈IAS itself is only an ideal calibration assumption; real instrument position error and installation corrections are absent. At 900 km/h IAS, the conversion gives Mach 0.862 and TAS about 1,019 km/h at 3,000 m, versus Mach 0.735 at sea level. The requested maximum remains subsonic, but compressibility is material.",

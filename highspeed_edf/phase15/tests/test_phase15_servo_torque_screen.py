@@ -17,6 +17,8 @@ class ServoTorqueScreenTests(unittest.TestCase):
     def test_pinned_inputs_cover_anchor_speeds_and_full_requested_envelope(self):
         rows, summary = servo_screen.generate()
         self.assertIn(900, summary["indicated_speeds_kmh"])
+        self.assertTrue({50, 60, 700, 800, 900}.issubset(summary["indicated_speeds_kmh"]))
+        self.assertEqual(summary["low_speed_control_ias_kmh"], [50, 60])
         self.assertEqual(set(summary["phase14_anchor_ias_kmh"]), {50, 100, 150, 200, 500, 650, 700, 720})
         self.assertTrue(set(range(50, 901, 50)).issubset(summary["indicated_speeds_kmh"]))
         self.assertEqual(summary["rows"], len(rows))
