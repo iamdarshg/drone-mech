@@ -1,0 +1,61 @@
+{
+  "status": "software_only_support_variant_review_not_print_release",
+  "test_limit": "One support-on variant; no alternate orientation job was executed.",
+  "source": {
+    "step": "highspeed_edf/phase15/print_prototype/fuselage_shell/fuselage_shell_segment_01_port.step",
+    "step_sha256": "3bc7a9ca1cb37417d5feac6b926354317e2f41e588442fa25e766f813efed667",
+    "stl": "fuselage_shell_segment_01_port.stl",
+    "stl_sha256": "e3c2ef1dcc003a62ce176f6db27f8dc8d61970a74b9cd92f02589bdfb3559bba"
+  },
+  "slicer": {
+    "name": "OrcaSlicer",
+    "version": "2.4.2",
+    "appimage_sha256": "d12fb8c8eac1aecd2dfb6377acd48f994f8fa439ed5292fa532dd82880f029fd",
+    "datadir_isolated": true,
+    "orient_option": 1,
+    "arrange_option": 1,
+    "slice_plate": 0
+  },
+  "settings_delta_from_baseline_process": {
+    "enable_support": [
+      "0",
+      "1"
+    ]
+  },
+  "trial_process_sha256": "b3303041eda091fa90430b2024c9f3ebf5028dd2ef50469f407a0b23ff7a2f36",
+  "result": {
+    "return_code": 0,
+    "error_string": "Success.",
+    "warning_message": "",
+    "triangle_count": 3754,
+    "layer_height_mm": 0.20000000298023224,
+    "wall_loops": 2,
+    "sparse_infill_density_percent": 15.0,
+    "slicer_elapsed_s": 44
+  },
+  "gcode": {
+    "path": "fuselage_trial_support_on.gcode",
+    "sha256": "6d0d3298629cb2c8f9e7e860da1b6183fcc9febc6179ea9ec0d4c7c3990b8144",
+    "bytes": 16115686,
+    "model_print_time": "4h 16m 50s",
+    "total_estimated_time": "4h 22m 48s",
+    "layers": 529,
+    "max_z_mm": 105.8,
+    "support_feature_markers": 757
+  },
+  "baseline_comparison": {
+    "baseline_warning": "It seems object fuselage_shell_segment_01_port.stl has floating cantilever. Please re-orient the object or enable support generation.",
+    "baseline_warning_cleared_by_slicer": true,
+    "baseline_support_feature_markers": 0,
+    "variant_support_feature_markers": 757,
+    "baseline_total_estimated_time": "2h 58m 7s",
+    "variant_total_estimated_time": "4h 22m 48s"
+  },
+  "boundary": {
+    "software_only": true,
+    "physical_print_performed": false,
+    "structural_print_success_established": false,
+    "adhesion_orientation_strength_fit_or_fabrication_verified": false,
+    "production_release": false
+  }
+}

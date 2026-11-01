@@ -36,7 +36,25 @@ for part in report['parts']:
 check(report['boundary']['physical_printer_used'] is False, 'physical printer boundary changed')
 check(report['boundary']['adhesion_orientation_and_strength_verified'] is False, 'unsupported verification claim')
 check(report['boundary']['fabrication_or_aircraft_release'] is False, 'unsupported release claim')
+# The support-on subset is separate and must not rewrite baseline evidence.
+trial = load(HERE / 'support_orientation_subset.json')
+trial_process = load(HERE / 'fuselage_trial_support_on_process.json')
+base_process = load(PROFILE / 'effective-process.json')
+trial_gcode = HERE / trial['gcode']['path']
+trial_result = load(HERE / 'fuselage_trial_support_on_result.json')
+changes = {k: [base_process.get(k), trial_process.get(k)] for k in set(base_process) | set(trial_process) if base_process.get(k) != trial_process.get(k)}
+check(changes == {'enable_support': ['0', '1']}, 'support trial changed more than enable_support')
+check(sha(HERE / 'fuselage_trial_support_on_process.json') == trial['trial_process_sha256'], 'support trial process hash mismatch')
+check(trial['source']['step_sha256'] == next(p['step_source_sha256'] for p in report['parts'] if p['part'] == 'fuselage_shell_segment_01_port'), 'support variant source STEP mismatch')
+check(trial_gcode.exists() and sha(trial_gcode) == trial['gcode']['sha256'], 'support variant G-code hash mismatch')
+check(trial_result['return_code'] == 0 and trial_result['sliced_plates'][0]['warning_message'] == '', 'support variant slicer warning/result mismatch')
+if trial_gcode.exists():
+    trial_text = trial_gcode.read_text(errors='replace')
+    trial_supports = len(re.findall(r'^; FEATURE: Support\b|^;TYPE:Support\b', trial_text, re.M | re.I))
+    check(trial_supports == trial['gcode']['support_feature_markers'] and trial_supports > 0, 'support feature marker count mismatch')
+check(trial['baseline_comparison']['baseline_warning_cleared_by_slicer'] is True, 'support-on warning clearance not recorded')
+check(trial['boundary']['physical_print_performed'] is False and trial['boundary']['structural_print_success_established'] is False and trial['boundary']['production_release'] is False, 'unsupported physical/readiness claim')
 if errors:
     print('\n'.join('FAIL: ' + e for e in errors), file=sys.stderr)
     raise SystemExit(1)
-print(f'PASS: {len(report["parts"])} exact-source slicer records and boundaries verify; slicer warning is preserved.')
+print(f'PASS: baseline records and one support-on variant verify; baseline warning preserved and support-on warning clearance independently confirmed.')

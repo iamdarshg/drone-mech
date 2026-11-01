@@ -31,3 +31,9 @@ For regeneration, first install/use FreeCAD 1.0.0 with the `MeshPart` module and
 ## Boundaries
 
 No physical printer was used. Adhesion, orientation, support strategy, layer strength, shell integrity, assembly fit, material suitability, dimensional tolerance, thermal behavior and flight loads remain unverified. In particular, the slicer's fuselage floating-cantilever warning is an open defect. Neither part nor aircraft is declared build-ready, fabrication-ready or flight-ready. Do not send these G-code files to a printer as a release.
+
+## Bounded fuselage support-on variant
+
+A separate, single-parameter software trial uses the same exact fuselage STEP-derived STL and the same OrcaSlicer 2.4.2 profile. Only `enable_support` changed from `0` to `1`; the slicer's automatic orientation option remained enabled. The original baseline files and warning are unchanged. The support-on slicer result has no warning and its G-code includes 757 support feature markers. Estimated total time rose from 2h 58m 7s to 4h 22m 48s, with the same 529 layers and 105.8 mm maximum Z. See `support_orientation_subset.json` and the exact changed process JSON for pinned details; `verify_slice_evidence.py` independently checks the setting delta, source/output hashes, support markers, and no-warning result.
+
+This only clears the slicer's floating-cantilever warning. It does not establish that the support strategy is removable, that the part adheres or prints successfully, or that the shell has sufficient strength or fits its mating parts. No physical print or production release is implied. An alternate orientation was not run.
