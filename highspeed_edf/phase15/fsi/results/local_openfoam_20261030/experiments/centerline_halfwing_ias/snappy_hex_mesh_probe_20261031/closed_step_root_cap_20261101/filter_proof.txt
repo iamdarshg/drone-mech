@@ -1,0 +1,6 @@
+points=1497
+original_edges=1502
+removed_edges=462
+retained_edges=1040
+removed endpoints checked: both x == 0 within 1e-10 m
+removed_edge_sha256=6a63b2b930dd83d0d17de04eb7f9c480d9f23d54345acc38d691c1514b14d01c

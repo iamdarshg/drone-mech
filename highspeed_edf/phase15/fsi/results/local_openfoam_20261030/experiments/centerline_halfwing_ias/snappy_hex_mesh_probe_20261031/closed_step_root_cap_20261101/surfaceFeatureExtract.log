@@ -1,0 +1,85 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/surfaceFeatureExtract -case /workspace/snappy-rootcap-closed
+Date   : Nov 01 2026
+Time   : 11:13:22
+Host   : ebaa71603c78
+PID    : 1764
+I/O    : uncollated
+Case   : /workspace/snappy-rootcap-closed
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+Note: Feature line extraction only valid on closed manifold surfaces
+
+Reading surfaceFeatureExtractDict
+
+Surfaces     : halfwing.stl
+Output       : halfwing
+Load options : offset
+Write options: writeObj=yes writeVTK=off
+
+Statistics:
+Triangles    : 128934 in 2 region(s)
+Vertices     : 64469
+Bounding Box : (0 -0.0152345 -0.27) (0.26 0.0148911 0.15624)
+
+Constructing feature set from included angle 160
+Selecting edges based purely on geometric tests: no
+
+Initial Feature set:
+    points : 10
+    edges  : 1502
+    of which
+        region edges   : 462
+        external edges : 1040
+        internal edges : 0
+
+Final Feature set:
+    points : 1497
+    of which
+        convex             : 10
+        concave            : 0
+        mixed              : 0
+        non-feature        : 1487
+    edges  : 1502
+    of which
+        external edges     : 1502
+        internal edges     : 0
+        flat edges         : 0
+        open edges         : 0
+        multiply connected : 0
+
+Writing extendedFeatureEdgeMesh to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing.extendedFeatureEdgeMesh"
+
+Writing extendedEdgeMesh components to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing"
+Writing 10 convex feature points to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_convexFeaturePts.obj"
+Writing 0 concave feature points to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_concaveFeaturePts.obj"
+Writing 0 mixed feature points to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_mixedFeaturePts.obj"
+Writing 0 mixed feature point structure to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_mixedFeaturePtsStructure.obj"
+Writing 1502 external edges to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_externalEdges.obj"
+Writing 0 internal edges to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_internalEdges.obj"
+Writing 0 flat edges to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_flatEdges.obj"
+Writing 0 open edges to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_openEdges.obj"
+Writing 0 multiple edges to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_multipleEdges.obj"
+Writing 462 region edges to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_regionEdges.obj"
+Writing 1502 edge directions to "/workspace/snappy-rootcap-closed/constant/extendedFeatureEdgeMesh/halfwing_edgeDirections.obj"
+
+Writing featureEdgeMesh to "/workspace/snappy-rootcap-closed/constant/triSurface/halfwing.eMesh"
+ExecutionTime = 0.47 s  ClockTime = 0 s
+
+End
+
