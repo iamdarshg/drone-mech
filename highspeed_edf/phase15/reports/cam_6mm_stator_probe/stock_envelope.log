@@ -1,0 +1,54 @@
+[
+  {
+    "file": "facing_commands.txt",
+    "move_count": 35,
+    "centerline_xy_bounds_mm": [
+      4.973773807368476,
+      5.137098990896543,
+      21.042,
+      12.104603724038528
+    ],
+    "tool_radius_mm": 1.0,
+    "expanded_xy_bounds_mm": [
+      3.9737738073684756,
+      4.137098990896543,
+      22.042,
+      13.104603724038528
+    ],
+    "stock_xy_bounds_mm": [
+      0.0,
+      0.0,
+      30.0,
+      20.0
+    ],
+    "swept_planar_tool_envelope_inside_stock": true,
+    "arc_radius_mismatch_count": 0,
+    "largest_arc_radius_mismatch_mm": 0.0
+  },
+  {
+    "file": "profile_commands.txt",
+    "move_count": 30,
+    "centerline_xy_bounds_mm": [
+      4.0,
+      4.0000410990948945,
+      22.0,
+      13.084046060031667
+    ],
+    "tool_radius_mm": 1.0,
+    "expanded_xy_bounds_mm": [
+      3.0,
+      3.0000410990948945,
+      23.0,
+      14.084046060031667
+    ],
+    "stock_xy_bounds_mm": [
+      0.0,
+      0.0,
+      30.0,
+      20.0
+    ],
+    "swept_planar_tool_envelope_inside_stock": true,
+    "arc_radius_mismatch_count": 0,
+    "largest_arc_radius_mismatch_mm": 0.0
+  }
+]

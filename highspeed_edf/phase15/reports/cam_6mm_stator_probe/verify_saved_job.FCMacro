@@ -1,0 +1,7 @@
+import FreeCAD as App,json,os
+base=os.path.dirname(__file__); d=App.openDocument(base+'/sheet_A_one_stator_6mm_stock_probe.FCStd')
+j=d.getObject('Job');f=d.getObject('Face');p=d.getObject('Profile');t=d.getObject('ToolBit2mm');bb=j.Stock.Shape.BoundBox;part=j.Model.Group[0];pb=part.Shape.BoundBox
+summary={'stock_bbox_mm':[bb.XMin,bb.YMin,bb.ZMin,bb.XMax,bb.YMax,bb.ZMax],'part_bbox_mm':[pb.XMin,pb.YMin,pb.ZMin,pb.XMax,pb.YMax,pb.ZMax],'face_commands':len(f.Path.Commands),'profile_commands':len(p.Path.Commands),'final_depth_mm':float(p.FinalDepth),'stepdown_mm':float(p.StepDown),'tool_diameter_mm':float(t.Diameter),'flutes':int(t.Flutes),'flute_length_mm':float(t.CuttingEdgeHeight)}
+with open(base+'/saved_job_verification.json','w') as fp:json.dump(summary,fp,indent=2)
+print(summary)
+if bb.XMin>pb.XMin or bb.XMax<pb.XMax or bb.YMin>pb.YMin or bb.YMax<pb.YMax: raise RuntimeError('part lies outside stock')

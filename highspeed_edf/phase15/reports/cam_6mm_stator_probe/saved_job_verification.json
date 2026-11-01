@@ -1,0 +1,25 @@
+{
+  "stock_bbox_mm": [
+    0.0,
+    0.0,
+    0.0,
+    30.0,
+    20.0,
+    6.0
+  ],
+  "part_bbox_mm": [
+    5.0,
+    5.0,
+    0.0,
+    21.000000000000078,
+    12.073507002435,
+    5.0
+  ],
+  "face_commands": 41,
+  "profile_commands": 37,
+  "final_depth_mm": 0.0,
+  "stepdown_mm": 2.0,
+  "tool_diameter_mm": 2.0,
+  "flutes": 2,
+  "flute_length_mm": 8.0
+}
