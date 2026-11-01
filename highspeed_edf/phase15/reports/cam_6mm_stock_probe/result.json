@@ -1,0 +1,54 @@
+{
+  "stock_mm": [
+    40,
+    20,
+    6
+  ],
+  "part_bounds": [
+    29.000000000000014,
+    8.564103626009288,
+    5.0
+  ],
+  "topface": [
+    52,
+    5.0,
+    5.0,
+    1.0,
+    194.30000000001291
+  ],
+  "facing_commands": 61,
+  "profile_commands": 43,
+  "source_nest_stock_mm": [
+    250,
+    120,
+    5
+  ],
+  "part_translation_mm": [
+    4,
+    4,
+    0
+  ],
+  "face_boundary": "Face Region",
+  "face_clear_edges": true,
+  "face_start": 6.0,
+  "face_final": 5.0,
+  "profile_start": 6.0,
+  "profile_final": 0.0,
+  "stepdown": 2.0,
+  "hardware_used": false,
+  "postprocessed_nc": false,
+  "source_step_sha256": "f9a8b9f55d9711dcfafa27f25edf7447ae3189a4db49cd23a72c4497a2c0b233",
+  "nominal_tool_mm": {
+    "diameter": 2.0,
+    "flutes": 2,
+    "material": "carbide",
+    "approx_flute_length_mm": 8.0,
+    "shank_reach": "unknown; not modeled"
+  },
+  "through_cut_note": "profile path terminates at stock bottom z=0; no negative spoilboard overtravel",
+  "feeds_speeds": "unspecified",
+  "controller_and_postprocessor": "not selected",
+  "tool_reach_and_shank": "unknown/unmeasured; shank omitted from CAD tool shape",
+  "machine_travel_and_workholding": "unverified; 40x20 mm subblank is an assumption",
+  "manufacturing_status": "geometry-only preview; not a cut-approved feed/speed or NC program"
+}

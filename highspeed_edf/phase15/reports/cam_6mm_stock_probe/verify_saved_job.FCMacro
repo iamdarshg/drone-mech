@@ -1,0 +1,18 @@
+import FreeCAD as App,json,hashlib,os
+p=os.path.join(os.path.dirname(__file__),'sheet_A_one_rotor_6mm_stock_probe.FCStd')
+d=App.openDocument(p)
+job=d.getObject('Job'); face=d.getObject('Face'); profile=d.getObject('Profile'); tool=d.getObject('ToolBit2mm')
+bb=job.Stock.Shape.BoundBox
+part=job.Model.Group[0]
+pbb=part.Shape.BoundBox
+pts=[]; z_values=[]
+for op in (face,profile):
+ for c in op.Path.Commands:
+  if c.Name in ('G0','G1','G2','G3'):
+   a=c.Parameters
+   if 'Z' in a: z_values.append(float(a['Z']))
+   if 'X' in a and 'Y' in a: pts.append((op.Name,float(a['X']),float(a['Y']),float(a.get('Z',0))))
+summary={'stock_bbox_mm':[bb.XMin,bb.YMin,bb.ZMin,bb.XMax,bb.YMax,bb.ZMax],'part_bbox_mm':[pbb.XMin,pbb.YMin,pbb.ZMin,pbb.XMax,pbb.YMax,pbb.ZMax],'face_path_commands':len(face.Path.Commands),'profile_path_commands':len(profile.Path.Commands),'tool_diameter_mm':float(tool.Diameter),'tool_flutes':int(tool.Flutes),'tool_flute_len_mm':float(tool.CuttingEdgeHeight),'tool_shank_diameter_placeholder_mm':float(tool.ShankDiameter),'xy_endpoint_bbox_mm':[min(p[1] for p in pts),min(p[2] for p in pts),max(p[1] for p in pts),max(p[2] for p in pts)],'z_command_range_mm':[min(z_values),max(z_values)],'profile_final_depth_mm':float(profile.FinalDepth),'profile_stepdown_mm':float(profile.StepDown),'all_xy_endpoints_within_stock':all(bb.XMin<=p[1]<=bb.XMax and bb.YMin<=p[2]<=bb.YMax for p in pts),'origin':'stock corner at (0,0,0) by geometry convention only; machine datum not established'}
+with open(os.path.join(os.path.dirname(__file__),'saved_job_verification.json'),'w') as f:json.dump(summary,f,indent=2)
+print(summary)
+if not summary['all_xy_endpoints_within_stock']: raise RuntimeError('Path endpoints exceed stock')

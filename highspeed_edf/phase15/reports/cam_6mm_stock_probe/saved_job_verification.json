@@ -1,0 +1,38 @@
+{
+  "stock_bbox_mm": [
+    0.0,
+    0.0,
+    0.0,
+    40.0,
+    20.0,
+    6.0
+  ],
+  "part_bbox_mm": [
+    5.0,
+    4.999999999999713,
+    0.0,
+    34.000000000000014,
+    13.564103626009,
+    5.0
+  ],
+  "face_path_commands": 61,
+  "profile_path_commands": 43,
+  "tool_diameter_mm": 2.0,
+  "tool_flutes": 2,
+  "tool_flute_len_mm": 8.0,
+  "tool_shank_diameter_placeholder_mm": 0.0,
+  "xy_endpoint_bbox_mm": [
+    4.0,
+    4.012695,
+    35.0,
+    14.499874
+  ],
+  "z_command_range_mm": [
+    1e-06,
+    11.0
+  ],
+  "profile_final_depth_mm": 0.0,
+  "profile_stepdown_mm": 2.0,
+  "all_xy_endpoints_within_stock": true,
+  "origin": "stock corner at (0,0,0) by geometry convention only; machine datum not established"
+}

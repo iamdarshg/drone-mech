@@ -1,0 +1,48 @@
+import FreeCAD as App, Part, os, json, traceback, hashlib
+import Path.Main.Job as PathJob
+import Path.Main.Stock as PathStock
+import Path.Op.MillFace as PathMillFace
+import Path.Op.Profile as PathProfile
+import Path.Tool.Bit as PathToolBit
+ROOT='/workspace/drone-mech'
+SOURCE=ROOT+'/highspeed_edf/deliverables/phase15_geometry/stock_nests/sheet_A_250x120x5_36rotors_63stators.step'
+OUT=os.path.dirname(__file__)
+try:
+ d=App.newDocument('Stock6_CAM_Probe'); Part.insert(SOURCE,d.Name); d.recompute()
+ solids=[o for o in d.Objects if hasattr(o,'Shape') and not o.Shape.isNull()]
+ rotors=[o for o in solids if abs(o.Shape.BoundBox.XLength-29.0)<0.1 and abs(o.Shape.BoundBox.ZLength-5.0)<0.1]
+ print('objects',len(solids),'rotors',len(rotors))
+ if len(rotors)!=36: raise RuntimeError('expected 36 rotors')
+ part=rotors[0]
+ print('partbb',part.Shape.BoundBox)
+ # identify planar top/bottom faces by z bounds and face normals
+ zfaces=[]
+ for i,f in enumerate(part.Shape.Faces,1):
+  bb=f.BoundBox
+  try:n=f.normalAt(0,0)
+  except:n=App.Vector(0,0,0)
+  if abs(n.z)>0.999 and abs(bb.ZLength)<1e-5:
+   zfaces.append((i,bb.ZMin,bb.ZMax,n.z, f.Area))
+ print('zfaces',zfaces)
+ part.Placement.Base = part.Placement.Base + App.Vector(4,4,0)
+ j=PathJob.Create('Job',[part],None); j.Label='6 mm stock face + one rotor profile geometry probe'
+ stock=PathStock.CreateBox(j,App.Vector(40,20,6),App.Placement(App.Vector(0,0,0),App.Rotation()))
+ j.Stock=stock
+ tc=j.Tools.Group[0]
+ t=PathToolBit.Factory.CreateFromAttrs({'shape':'endmill.fcstd','name':'2mm 2 flute carbide approximate','parameter':{'Diameter':'2 mm','CuttingEdgeHeight':'8 mm','Length':'8 mm','ShankDiameter':'0 mm','Flutes':'2','Material':'Carbide'},'attribute':{}},'ToolBit2mm')
+ t.Proxy._updateBitShape(t); t.Proxy.unloadBitBody(t); tc.Tool=t
+ # preserve 0..5 mm target model, stock 0..6 mm. Facing to model top removes 1mm from stock.
+ top=max(zfaces,key=lambda x:x[1])
+ face=PathMillFace.Create('Face'); face.Base=[(part,['Face%d'%top[0]])]; face.Label='Probe: face 1 mm excess from nominal 6mm stock'; face.ToolController=tc; face.BoundaryShape='Face Region'; face.ClearEdges=True; face.ExcludeRaisedAreas=False
+ j.addObject(face); d.recompute(); facecmds=face.Path.Commands
+ print('face props',face.OpStartDepth,face.OpFinalDepth,'moves',len(facecmds))
+ profile=PathProfile.Create('Profile'); profile.Base=[(part,['Face51'])]; profile.Label='Probe: profile one rotor through 6mm stock'; profile.ToolController=tc; profile.SafeHeight=10; profile.ClearanceHeight=15; profile.UseComp=True
+ j.addObject(profile); d.recompute(); profile.StepDown='1.5 mm'; profile.FinalDepth='-0.2 mm'; d.recompute(); profcmds=profile.Path.Commands
+ print('profile props',profile.OpStartDepth,profile.OpFinalDepth,'stepdown',profile.StepDown,'levels', sorted(set(c.Parameters.get('Z') for c in profcmds if c.Name in ['G1','G2','G3'] and 'Z' in c.Parameters)),'moves',len(profcmds))
+ # make outputs
+ d.recompute(); d.saveAs(OUT+'/sheet_A_one_rotor_6mm_stock_probe.FCStd')
+ with open(OUT+'/facing_commands.txt','w') as f:f.write('\n'.join(map(str,facecmds))+'\n')
+ with open(OUT+'/profile_commands.txt','w') as f:f.write('\n'.join(map(str,profcmds))+'\n')
+ with open(OUT+'/result.json','w') as f: json.dump({'stock_mm':[40,20,6],'part_bounds':[part.Shape.BoundBox.XLength,part.Shape.BoundBox.YLength,part.Shape.BoundBox.ZLength], 'topface':top,'facing_commands':len(facecmds),'profile_commands':len(profcmds),'source_nest_stock_mm':[250,120,5],'part_translation_mm':[4,4,0],'face_boundary':str(face.BoundaryShape),'face_clear_edges':bool(face.ClearEdges),'face_start':float(face.OpStartDepth),'face_final':float(face.OpFinalDepth),'profile_start':float(profile.OpStartDepth),'profile_final':float(profile.FinalDepth),'stepdown':float(profile.StepDown),'hardware_used':False,'postprocessed_nc':False,'source_step_sha256':hashlib.sha256(open(SOURCE,'rb').read()).hexdigest(),'nominal_tool_mm':{'diameter':2.0,'flutes':2,'material':'carbide','approx_flute_length_mm':8.0,'shank_reach':'unknown; not modeled'},'through_cut_note':'profile path terminates at stock bottom z=0; no negative spoilboard overtravel','feeds_speeds':'unspecified','controller_and_postprocessor':'not selected','tool_reach_and_shank':'unknown/unmeasured; shank omitted from CAD tool shape','machine_travel_and_workholding':'unverified; 40x20 mm subblank is an assumption','manufacturing_status':'geometry-only preview; not a cut-approved feed/speed or NC program'},f,indent=2)
+except Exception:
+ traceback.print_exc(); raise
