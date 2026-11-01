@@ -1,0 +1,70 @@
+{
+  "status": "FAIL",
+  "reserved_bay_mm": {
+    "x": 135.0,
+    "y": 75.0,
+    "z": 200.0
+  },
+  "reserved_bay_bounds_mm": {
+    "xmin": -67.5,
+    "xmax": 67.5,
+    "ymin": -37.5,
+    "ymax": 37.5,
+    "zmin": -307.5,
+    "zmax": -107.5
+  },
+  "source_declared_pack_mm": {
+    "pack_x_mm": 65.0,
+    "pack_y_mm": 55.0,
+    "pack_z_mm": 185.0
+  },
+  "native_shell_path": "/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell.step",
+  "native_shell_bbox_mm": {
+    "xmin": -97.01848571732712,
+    "xmax": 97.01848571734897,
+    "ymin": -38.02877765137843,
+    "ymax": 38.02877765138484,
+    "zmin": -112.0000001,
+    "zmax": -27.999999899989998
+  },
+  "native_shell_spans_reserved_bay": false,
+  "packs": [
+    {
+      "path": "/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/step/Bonka_6S_1600_pack_1_185x65x55.step",
+      "bbox_mm": {
+        "xmin": -65.5,
+        "xmax": -0.5,
+        "ymin": -27.5,
+        "ymax": 27.5,
+        "zmin": -300.0,
+        "zmax": -115.0
+      },
+      "within_reserved_bay": true
+    },
+    {
+      "path": "/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/step/Bonka_6S_1600_pack_2_185x65x55.step",
+      "bbox_mm": {
+        "xmin": 0.5,
+        "xmax": 65.5,
+        "ymin": -27.5,
+        "ymax": 27.5,
+        "zmin": -300.0,
+        "zmax": -115.0
+      },
+      "within_reserved_bay": true
+    }
+  ],
+  "errors": [
+    "native fuselage battery-bay shell BBox does not span the reserved bay envelope"
+  ],
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "from pathlib import Path; import json; from highspeed_edf.verification.native_adapters import battery_bay_fit; r=battery_bay_fit(Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry'),Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/phase15/optimization/phase15_generate_geometry.py')); Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/verification/evidence/runs/8d8e4fb9a2a7506959044c0d7c025edbea366f5eacf8bf1b3824e32d94c4b547/native_battery_bay_fit.json').write_text(json.dumps(r,indent=2)+'\\n'); print(json.dumps(r))"
+  ],
+  "runner_exit_code": 0,
+  "tool_versions": {
+    "cadquery": "2.7.0",
+    "cadquery-ocp": "7.8.1.1.post1"
+  }
+}

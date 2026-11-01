@@ -1,0 +1,42 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "from pathlib import Path; import json; from highspeed_edf.verification.native_adapters import import_all_step,validate_cad_datum; r=import_all_step(Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry')); r['datum']=validate_cad_datum(Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/reports/phase15_parameter_register.json')); r['status']='FAIL' if r['status']=='FAIL' or r['datum']['status']=='FAIL' else 'PASS'; r['errors'] += r['datum']['errors']; Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/verification/evidence/runs/8d8e4fb9a2a7506959044c0d7c025edbea366f5eacf8bf1b3824e32d94c4b547/native_step_import.json').write_text(json.dumps(r,indent=2)+'\\n'); print(json.dumps({k:r[k] for k in ('status','file_count','imported_count','valid_count','datum','errors','tool_versions','python_executable')}))"
+  ],
+  "errors": [],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile cad --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-004",
+  "measured": {
+    "datum": {
+      "errors": [],
+      "measured": {
+        "fanPlaneZmm": 0,
+        "units": "mm",
+        "x": "lateral",
+        "y": "vertical",
+        "z": "aft"
+      },
+      "status": "PASS"
+    },
+    "errors": [],
+    "file_count": 81,
+    "imported_count": 81,
+    "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "status": "PASS",
+    "tool_versions": {
+      "cadquery": "2.7.0",
+      "cadquery-ocp": "7.8.1.1.post1"
+    },
+    "valid_count": 81
+  },
+  "runner": "cad_occ",
+  "source": {
+    "issue": 14,
+    "repo": "drone-mech",
+    "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+    "url": "https://github.com/iamdarshg/drone-mech/issues/14"
+  },
+  "source_revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+  "status": "PASS"
+}

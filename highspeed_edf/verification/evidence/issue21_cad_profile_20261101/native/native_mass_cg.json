@@ -1,0 +1,936 @@
+{
+  "status": "BLOCKED",
+  "total_mass_kg": 6.540621725978429,
+  "cg_mm": [
+    0.11015658731765292,
+    6.73120291205657,
+    -3.9645593414990445
+  ],
+  "component_count": 74,
+  "components_using_mass_override": [
+    "lifting_wing_left_sector_with_duct_and_elevon_reliefs",
+    "lifting_wing_centre_bridge_sector_with_duct_and_elevon_reliefs",
+    "lifting_wing_right_sector_with_duct_and_elevon_reliefs",
+    "motor_A_R1_3670_42x72_envelope",
+    "motor_A_R2_3670_42x72_envelope",
+    "motor_A_R3_3670_42x72_envelope",
+    "servo_mount_vane_A1",
+    "servo_mount_vane_A2",
+    "motor_B_R1_3670_42x72_envelope",
+    "motor_B_R2_3670_42x72_envelope",
+    "motor_B_R3_3670_42x72_envelope",
+    "servo_mount_vane_B1",
+    "servo_mount_vane_B2",
+    "servo_mount_right_fin_rudder",
+    "servo_mount_elevon_left",
+    "servo_mount_elevon_right",
+    "Bonka_6S_1600_pack_1_185x65x55",
+    "Bonka_6S_1600_pack_2_185x65x55"
+  ],
+  "assumptions": [
+    "payload point mass and analyst/sourced mass overrides are retained from source CSV"
+  ],
+  "components": [
+    {
+      "component": "fuselage_battery_bay_shell",
+      "material": "PLA-core-CF-wrap",
+      "volume_mm3": 253001.32803018438,
+      "mass_kg": 0.3921520584467858,
+      "center_mm": [
+        3.625743068393133e-11,
+        5.39252035891592e-12,
+        -68.9620333437162
+      ],
+      "basis": "native STEP volume \u00d7 source density 1550.0 kg/m^3"
+    },
+    {
+      "component": "fuselage_internal_bay_side_rails",
+      "material": "high-temp-CF-composite",
+      "volume_mm3": 4863.999999999994,
+      "mass_kg": 0.00802559999999999,
+      "center_mm": [
+        0.0,
+        8.21565038222617e-15,
+        0.0
+      ],
+      "basis": "native STEP volume \u00d7 source density 1650.0 kg/m^3"
+    },
+    {
+      "component": "lifting_wing_left_sector_with_duct_and_elevon_reliefs",
+      "material": "PLA-core-CF-wrap",
+      "volume_mm3": 1354555.798301372,
+      "mass_kg": 0.2603378326911043,
+      "center_mm": [
+        -177.63064357626683,
+        4.075949403739519,
+        -38.26060321025528
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "lifting_wing_centre_bridge_sector_with_duct_and_elevon_reliefs",
+      "material": "PLA-core-CF-wrap",
+      "volume_mm3": 57099.46067890365,
+      "mass_kg": 0.05281725565256508,
+      "center_mm": [
+        -9.275368629669319e-12,
+        8.786571412688222,
+        -98.3481449736933
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "lifting_wing_right_sector_with_duct_and_elevon_reliefs",
+      "material": "PLA-core-CF-wrap",
+      "volume_mm3": 1354555.7983011054,
+      "mass_kg": 0.2603378326910937,
+      "center_mm": [
+        177.63064357628,
+        4.07594940373838,
+        -38.2606032102912
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "wing_center_joiner_web",
+      "material": "carbon-rod",
+      "volume_mm3": 10368.0,
+      "mass_kg": 0.0165888,
+      "center_mm": [
+        2.5506859998621942e-17,
+        2.741291418827547e-17,
+        -88.0
+      ],
+      "basis": "native STEP volume \u00d7 source density 1600.0 kg/m^3"
+    },
+    {
+      "component": "elevon_left_40x150",
+      "material": "PLA-core-CF-wrap",
+      "volume_mm3": 9474.872314991513,
+      "mass_kg": 0.014686052088236846,
+      "center_mm": [
+        -129.9999999999989,
+        0.12264469452789364,
+        131.9799248890176
+      ],
+      "basis": "native STEP volume \u00d7 source density 1550.0 kg/m^3"
+    },
+    {
+      "component": "elevon_right_40x150",
+      "material": "PLA-core-CF-wrap",
+      "volume_mm3": 9474.872314991513,
+      "mass_kg": 0.014686052088236846,
+      "center_mm": [
+        129.9999999999989,
+        0.12264469452789364,
+        131.9799248890176
+      ],
+      "basis": "native STEP volume \u00d7 source density 1550.0 kg/m^3"
+    },
+    {
+      "component": "duct_A_82OD_78ID_L110",
+      "material": "high-temp-CF-composite",
+      "volume_mm3": 55292.030703181576,
+      "mass_kg": 0.09123185066024961,
+      "center_mm": [
+        -43.999999999999254,
+        -2.0403639594252894e-14,
+        55.000000000000064
+      ],
+      "basis": "native STEP volume \u00d7 source density 1650.0 kg/m^3"
+    },
+    {
+      "component": "duct_A_side_inlet_100mm",
+      "material": "high-temp-CF-composite",
+      "volume_mm3": 54349.44250544543,
+      "mass_kg": 0.08967658013398497,
+      "center_mm": [
+        -59.32034163475042,
+        7.069310640871476e-08,
+        -49.42196966529695
+      ],
+      "basis": "native STEP volume \u00d7 source density 1650.0 kg/m^3"
+    },
+    {
+      "component": "duct_A_separate_nozzle_and_exit_lip",
+      "material": "high-temp-CF-composite",
+      "volume_mm3": 67858.40131754096,
+      "mass_kg": 0.1119663621739426,
+      "center_mm": [
+        -43.99999999999926,
+        -2.2529047562095525e-14,
+        177.5000000000001
+      ],
+      "basis": "native STEP volume \u00d7 source density 1650.0 kg/m^3"
+    },
+    {
+      "component": "duct_A_rotor_containment_collar",
+      "material": "6061-T6",
+      "volume_mm3": 1555.0883635269802,
+      "mass_kg": 0.004198738581522847,
+      "center_mm": [
+        -43.99999999999907,
+        2.4711171701820174e-15,
+        6.000000000000003
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "duct_A_rotor_R1_N13",
+      "material": "6061-T6",
+      "volume_mm3": 26988.359043508823,
+      "mass_kg": 0.07286856941747383,
+      "center_mm": [
+        -43.99999999999829,
+        8.237510274076694e-13,
+        11.746427066245882
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "motor_A_R1_3670_42x72_envelope",
+      "material": "electronics-envelope",
+      "volume_mm3": 99908.9295694645,
+      "mass_kg": 0.274,
+      "center_mm": [
+        -43.999999999999645,
+        -1.016196960117252e-16,
+        55.93711087352988
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "duct_A_rotor_R2_N12",
+      "material": "6061-T6",
+      "volume_mm3": 26434.309818347298,
+      "mass_kg": 0.07137263650953769,
+      "center_mm": [
+        -43.99999999999875,
+        -9.463326995926235e-14,
+        47.76102674859144
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "motor_A_R2_3670_42x72_envelope",
+      "material": "electronics-envelope",
+      "volume_mm3": 99908.9295694645,
+      "mass_kg": 0.274,
+      "center_mm": [
+        -43.999999999999645,
+        -1.016196960117252e-16,
+        91.93711087352989
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "duct_A_rotor_R3_N11",
+      "material": "6061-T6",
+      "volume_mm3": 25880.260593181913,
+      "mass_kg": 0.06987670360159116,
+      "center_mm": [
+        -43.999999999998636,
+        8.720413071532202e-13,
+        83.77625153613316
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "motor_A_R3_3670_42x72_envelope",
+      "material": "electronics-envelope",
+      "volume_mm3": 99908.9295694645,
+      "mass_kg": 0.274,
+      "center_mm": [
+        -43.999999999999645,
+        -1.016196960117252e-16,
+        127.9371108735299
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "duct_A_stator_S1_N23",
+      "material": "6061-T6",
+      "volume_mm3": 4714.6804042928925,
+      "mass_kg": 0.01272963709159081,
+      "center_mm": [
+        -43.999999999996476,
+        1.312134286532382e-13,
+        29.647791893341118
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "duct_A_stator_S2_N21",
+      "material": "6061-T6",
+      "volume_mm3": 4486.4506961441875,
+      "mass_kg": 0.012113416879589306,
+      "center_mm": [
+        -43.99999999999795,
+        1.8588933494360493e-12,
+        65.66205955980728
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "duct_A_stator_S3_N19",
+      "material": "6061-T6",
+      "volume_mm3": 4258.220987993434,
+      "mass_kg": 0.011497196667582274,
+      "center_mm": [
+        -43.99999999999771,
+        1.863086196133635e-12,
+        101.67785664682755
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "duct_A_vector_vane_bearing_ring",
+      "material": "6061-T6",
+      "volume_mm3": 7828.848892745938,
+      "mass_kg": 0.021137892010414033,
+      "center_mm": [
+        -43.999999999999,
+        -4.751964304147943e-15,
+        251.99999999999994
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "duct_A_vector_vane_1_30x40",
+      "material": "6061-T6",
+      "volume_mm3": 2617.646003293855,
+      "mass_kg": 0.007067644208893408,
+      "center_mm": [
+        -44.00000000000001,
+        44.12835960232102,
+        260.3484046348713
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "servo_mount_vane_A1",
+      "material": "electronics-envelope",
+      "volume_mm3": 10153.999999999996,
+      "mass_kg": 0.025,
+      "center_mm": [
+        -44.00000000000001,
+        60.541461493007695,
+        260.09690762261175
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "duct_A_vector_vane_2_30x40",
+      "material": "6061-T6",
+      "volume_mm3": 2617.646003293855,
+      "mass_kg": 0.007067644208893408,
+      "center_mm": [
+        -44.00000000000001,
+        -44.12835960232102,
+        260.3484046348713
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "servo_mount_vane_A2",
+      "material": "electronics-envelope",
+      "volume_mm3": 10153.999999999996,
+      "mass_kg": 0.025,
+      "center_mm": [
+        -44.00000000000001,
+        -63.458538506992355,
+        260.09690762261175
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "duct_B_82OD_78ID_L110",
+      "material": "high-temp-CF-composite",
+      "volume_mm3": 55292.030703181576,
+      "mass_kg": 0.09123185066024961,
+      "center_mm": [
+        44.00000000000094,
+        -2.466689600881369e-14,
+        55.000000000000064
+      ],
+      "basis": "native STEP volume \u00d7 source density 1650.0 kg/m^3"
+    },
+    {
+      "component": "duct_B_side_inlet_100mm",
+      "material": "high-temp-CF-composite",
+      "volume_mm3": 54350.008636875085,
+      "mass_kg": 0.0896775142508439,
+      "center_mm": [
+        59.32053821052257,
+        -3.5022670266310476e-05,
+        -49.42235834442865
+      ],
+      "basis": "native STEP volume \u00d7 source density 1650.0 kg/m^3"
+    },
+    {
+      "component": "duct_B_separate_nozzle_and_exit_lip",
+      "material": "high-temp-CF-composite",
+      "volume_mm3": 67858.40131754096,
+      "mass_kg": 0.1119663621739426,
+      "center_mm": [
+        44.00000000000075,
+        -2.679230397665631e-14,
+        177.5000000000001
+      ],
+      "basis": "native STEP volume \u00d7 source density 1650.0 kg/m^3"
+    },
+    {
+      "component": "duct_B_rotor_containment_collar",
+      "material": "6061-T6",
+      "volume_mm3": 1555.0883635269802,
+      "mass_kg": 0.004198738581522847,
+      "center_mm": [
+        44.00000000000087,
+        1.5524356532396112e-15,
+        6.000000000000003
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "duct_B_rotor_R1_N13",
+      "material": "6061-T6",
+      "volume_mm3": 26988.359043509372,
+      "mass_kg": 0.0728685694174753,
+      "center_mm": [
+        44.00000000000062,
+        8.383092193500559e-13,
+        11.746427066245879
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "motor_B_R1_3670_42x72_envelope",
+      "material": "electronics-envelope",
+      "volume_mm3": 99908.9295694645,
+      "mass_kg": 0.274,
+      "center_mm": [
+        44.000000000000355,
+        -2.1185954462877136e-17,
+        55.937110873529875
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "duct_B_rotor_R2_N12",
+      "material": "6061-T6",
+      "volume_mm3": 26434.309818346526,
+      "mass_kg": 0.07137263650953563,
+      "center_mm": [
+        44.000000000000554,
+        2.3881095320387535e-13,
+        47.761026748591256
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "motor_B_R2_3670_42x72_envelope",
+      "material": "electronics-envelope",
+      "volume_mm3": 99908.9295694645,
+      "mass_kg": 0.274,
+      "center_mm": [
+        44.000000000000355,
+        -2.1185954462877136e-17,
+        91.93711087352989
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "duct_B_rotor_R3_N11",
+      "material": "6061-T6",
+      "volume_mm3": 25880.26059318214,
+      "mass_kg": 0.06987670360159177,
+      "center_mm": [
+        44.00000000000055,
+        7.471803281161428e-13,
+        83.77625153613302
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "motor_B_R3_3670_42x72_envelope",
+      "material": "electronics-envelope",
+      "volume_mm3": 99908.9295694645,
+      "mass_kg": 0.274,
+      "center_mm": [
+        44.000000000000355,
+        -2.1185954462877136e-17,
+        127.9371108735299
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "duct_B_stator_S1_N23",
+      "material": "6061-T6",
+      "volume_mm3": 4714.680404293096,
+      "mass_kg": 0.01272963709159136,
+      "center_mm": [
+        44.00000000000183,
+        -4.5276240701715515e-13,
+        29.64779189334112
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "duct_B_stator_S2_N21",
+      "material": "6061-T6",
+      "volume_mm3": 4486.450696143846,
+      "mass_kg": 0.012113416879588383,
+      "center_mm": [
+        44.00000000000109,
+        1.2576899138036233e-12,
+        65.66205955980699
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "duct_B_stator_S3_N19",
+      "material": "6061-T6",
+      "volume_mm3": 4258.220987993522,
+      "mass_kg": 0.011497196667582508,
+      "center_mm": [
+        44.00000000000091,
+        2.137126740524126e-12,
+        101.67785664682732
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "duct_B_vector_vane_bearing_ring",
+      "material": "6061-T6",
+      "volume_mm3": 7828.848892745938,
+      "mass_kg": 0.021137892010414033,
+      "center_mm": [
+        44.00000000000096,
+        -4.7519643041479395e-15,
+        251.99999999999994
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "duct_B_vector_vane_1_30x40",
+      "material": "6061-T6",
+      "volume_mm3": 2617.646003293855,
+      "mass_kg": 0.007067644208893408,
+      "center_mm": [
+        43.999999999999986,
+        44.12835960232102,
+        260.3484046348713
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "servo_mount_vane_B1",
+      "material": "electronics-envelope",
+      "volume_mm3": 10153.999999999996,
+      "mass_kg": 0.025,
+      "center_mm": [
+        44.00000000000001,
+        60.541461493007695,
+        260.09690762261175
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "duct_B_vector_vane_2_30x40",
+      "material": "6061-T6",
+      "volume_mm3": 2617.646003293855,
+      "mass_kg": 0.007067644208893408,
+      "center_mm": [
+        44.00000000000001,
+        -44.12835960232102,
+        260.3484046348713
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "servo_mount_vane_B2",
+      "material": "electronics-envelope",
+      "volume_mm3": 10153.999999999996,
+      "mass_kg": 0.025,
+      "center_mm": [
+        44.00000000000001,
+        -63.458538506992355,
+        260.09690762261175
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "canted_tail_fin_left_70x90",
+      "material": "PLA-core-CF-wrap",
+      "volume_mm3": 38735.10671708471,
+      "mass_kg": 0.0600394154114813,
+      "center_mm": [
+        -31.099973085417968,
+        29.964494510082854,
+        337.88239121896436
+      ],
+      "basis": "native STEP volume \u00d7 source density 1550.0 kg/m^3"
+    },
+    {
+      "component": "canted_tail_fin_right_70x90_with_rudder_cut",
+      "material": "PLA-core-CF-wrap",
+      "volume_mm3": 34528.733439264484,
+      "mass_kg": 0.05351953683085995,
+      "center_mm": [
+        31.164719368298503,
+        29.927113226232205,
+        333.51179860991607
+      ],
+      "basis": "native STEP volume \u00d7 source density 1550.0 kg/m^3"
+    },
+    {
+      "component": "single_right_fin_rudder_27mm",
+      "material": "PLA-core-CF-wrap",
+      "volume_mm3": 3353.399999999889,
+      "mass_kg": 0.005197769999999827,
+      "center_mm": [
+        30.500000000001837,
+        30.310889132454495,
+        376.5
+      ],
+      "basis": "native STEP volume \u00d7 source density 1550.0 kg/m^3"
+    },
+    {
+      "component": "twin_carbon_tail_support_booms",
+      "material": "carbon-rod",
+      "volume_mm3": 7037.167544041138,
+      "mass_kg": 0.011259468070465822,
+      "center_mm": [
+        1.3885716113328362e-12,
+        -2.9841718500994595e-16,
+        265.0
+      ],
+      "basis": "native STEP volume \u00d7 source density 1600.0 kg/m^3"
+    },
+    {
+      "component": "servo_mount_right_fin_rudder",
+      "material": "electronics-envelope",
+      "volume_mm3": 10153.999999999996,
+      "mass_kg": 0.025,
+      "center_mm": [
+        31.0,
+        16.54146149300767,
+        330.09690762261226
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "servo_mount_elevon_left",
+      "material": "electronics-envelope",
+      "volume_mm3": 10153.999999999996,
+      "mass_kg": 0.025,
+      "center_mm": [
+        -125.00000000000003,
+        -28.458538506992323,
+        112.09690762261175
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "elevon_pushrod_left",
+      "material": "6061-T6",
+      "volume_mm3": 119.3805208364122,
+      "mass_kg": 0.0003223274062583129,
+      "center_mm": [
+        -124.99999999999999,
+        3.9999999999999996,
+        116.00000000000001
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "servo_mount_elevon_right",
+      "material": "electronics-envelope",
+      "volume_mm3": 10153.999999999996,
+      "mass_kg": 0.025,
+      "center_mm": [
+        125.00000000000003,
+        -28.458538506992323,
+        112.09690762261175
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "elevon_pushrod_right",
+      "material": "6061-T6",
+      "volume_mm3": 119.3805208364122,
+      "mass_kg": 0.0003223274062583129,
+      "center_mm": [
+        124.99999999999999,
+        3.9999999999999996,
+        116.00000000000001
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "Bonka_6S_1600_pack_1_185x65x55",
+      "material": "battery-envelope",
+      "volume_mm3": 661375.0,
+      "mass_kg": 0.28,
+      "center_mm": [
+        -32.99999999999999,
+        -3.02534620132367e-16,
+        -207.5
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "Bonka_6S_1600_pack_2_185x65x55",
+      "material": "battery-envelope",
+      "volume_mm3": 661375.0,
+      "mass_kg": 0.28,
+      "center_mm": [
+        32.99999999999999,
+        -3.02534620132367e-16,
+        -207.5
+      ],
+      "basis": "sourced/analyst mass override; native STEP volume and CG used"
+    },
+    {
+      "component": "battery_sliding_rails_and_6g_end_stops",
+      "material": "6061-T6",
+      "volume_mm3": 4591.999999999993,
+      "mass_kg": 0.01239839999999998,
+      "center_mm": [
+        -7.010458802707126e-16,
+        -30.111498257839717,
+        -207.50000000000017
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "battery_retention_straps",
+      "material": "high-temp-CF-composite",
+      "volume_mm3": 1359.999999999999,
+      "mass_kg": 0.0022439999999999986,
+      "center_mm": [
+        1.112835314094863e-15,
+        31.0,
+        -199.99999999999997
+      ],
+      "basis": "native STEP volume \u00d7 source density 1650.0 kg/m^3"
+    },
+    {
+      "component": "battery_service_hatch_and_fastener_envelopes",
+      "material": "PLA-core-CF-wrap",
+      "volume_mm3": 70067.0867210542,
+      "mass_kg": 0.10860398441763403,
+      "center_mm": [
+        -2.0602235507765956e-15,
+        45.00023243461484,
+        -207.49418913462836
+      ],
+      "basis": "native STEP volume \u00d7 source density 1550.0 kg/m^3"
+    },
+    {
+      "component": "six_hot_side_motor_carrier_frames",
+      "material": "6061-T6",
+      "volume_mm3": 14532.53000029613,
+      "mass_kg": 0.03923783100079955,
+      "center_mm": [
+        2.1529930940968097e-12,
+        -7.510004397756444e-16,
+        48.0
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "twin_landing_skids_and_legs",
+      "material": "carbon-rod",
+      "volume_mm3": 27168.493268245125,
+      "mass_kg": 0.043469589229192196,
+      "center_mm": [
+        2.3093876710778767e-11,
+        -58.40055504162814,
+        -8.68871415357194
+      ],
+      "basis": "native STEP volume \u00d7 source density 1600.0 kg/m^3"
+    },
+    {
+      "component": "esc_pcb",
+      "material": "FR4-PCB",
+      "volume_mm3": 35948.52814596346,
+      "mass_kg": 0.0665047770700324,
+      "center_mm": [
+        -6.641227653216207e-17,
+        51.99999999999999,
+        219.99999999999986
+      ],
+      "basis": "native STEP volume \u00d7 source density 1850.0 kg/m^3"
+    },
+    {
+      "component": "esc_36_mosfet_packages",
+      "material": "electronics-envelope",
+      "volume_mm3": 4435.199999999994,
+      "mass_kg": 0.005322239999999994,
+      "center_mm": [
+        -1.4354398702224264e-15,
+        52.80000000000009,
+        219.99999999999994
+      ],
+      "basis": "native STEP volume \u00d7 source density 1200.0 kg/m^3"
+    },
+    {
+      "component": "esc_logic_and_passives",
+      "material": "electronics-envelope",
+      "volume_mm3": 3012.0000000000036,
+      "mass_kg": 0.003614400000000004,
+      "center_mm": [
+        -3.8207171314741064,
+        53.76414342629479,
+        215.78884462151385
+      ],
+      "basis": "native STEP volume \u00d7 source density 1200.0 kg/m^3"
+    },
+    {
+      "component": "esc_six_60A_fuse_envelopes",
+      "material": "electronics-envelope",
+      "volume_mm3": 3780.0,
+      "mass_kg": 0.004536,
+      "center_mm": [
+        -1.319344398575715e-16,
+        55.0,
+        219.99999999999994
+      ],
+      "basis": "native STEP volume \u00d7 source density 1200.0 kg/m^3"
+    },
+    {
+      "component": "esc_six_copper_busbars",
+      "material": "copper",
+      "volume_mm3": 1415.9999999999989,
+      "mass_kg": 0.012687359999999991,
+      "center_mm": [
+        8.671029995716484e-15,
+        53.40000000000002,
+        220.00000000000009
+      ],
+      "basis": "native STEP volume \u00d7 source density 8960.0 kg/m^3"
+    },
+    {
+      "component": "esc_battery_motor_temp_and_CAN_connectors",
+      "material": "electronics-envelope",
+      "volume_mm3": 8723.999999999996,
+      "mass_kg": 0.010468799999999997,
+      "center_mm": [
+        -1.6680324654249035e-15,
+        55.21664374140305,
+        210.5804676753782
+      ],
+      "basis": "native STEP volume \u00d7 source density 1200.0 kg/m^3"
+    },
+    {
+      "component": "esc_150x150_spreader_and_flow_aligned_fins",
+      "material": "6061-T6",
+      "volume_mm3": 49380.0,
+      "mass_kg": 0.133326,
+      "center_mm": [
+        -4.604570179085299e-15,
+        57.693924665856635,
+        220.0
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "flight_control_pcb",
+      "material": "FR4-PCB",
+      "volume_mm3": 22348.5281459635,
+      "mass_kg": 0.04134477707003248,
+      "center_mm": [
+        -7.121792172206632e-17,
+        52.0,
+        344.99999999999994
+      ],
+      "basis": "native STEP volume \u00d7 source density 1850.0 kg/m^3"
+    },
+    {
+      "component": "flight_control_components",
+      "material": "electronics-envelope",
+      "volume_mm3": 3456.0,
+      "mass_kg": 0.0041472,
+      "center_mm": [
+        4.210623619319112e-15,
+        53.900000000000006,
+        345.0
+      ],
+      "basis": "native STEP volume \u00d7 source density 1200.0 kg/m^3"
+    },
+    {
+      "component": "flight_6ch_PWM_and_feedback_headers",
+      "material": "electronics-envelope",
+      "volume_mm3": 1440.0,
+      "mass_kg": 0.001728,
+      "center_mm": [
+        1.5158245029548804e-14,
+        53.99999999999999,
+        344.99999999999983
+      ],
+      "basis": "native STEP volume \u00d7 source density 1200.0 kg/m^3"
+    },
+    {
+      "component": "fc_100x80_spreader",
+      "material": "6061-T6",
+      "volume_mm3": 7999.999999999999,
+      "mass_kg": 0.021599999999999998,
+      "center_mm": [
+        3.9968028886505636e-16,
+        54.699999999999996,
+        345.00000000000006
+      ],
+      "basis": "native STEP volume \u00d7 source density 2700.0 kg/m^3"
+    },
+    {
+      "component": "esc_fc_open_ended_cooling_tunnel",
+      "material": "high-temp-CF-composite",
+      "volume_mm3": 201079.9999999999,
+      "mass_kg": 0.33178199999999985,
+      "center_mm": [
+        -9.379054569439292e-15,
+        60.5,
+        270.0000000000001
+      ],
+      "basis": "native STEP volume \u00d7 source density 1650.0 kg/m^3"
+    },
+    {
+      "component": "board_isolator_standoffs",
+      "material": "high-temp-CF-composite",
+      "volume_mm3": 1638.4000000000015,
+      "mass_kg": 0.0027033600000000023,
+      "center_mm": [
+        -4.440892098500622e-15,
+        49.600000000000016,
+        282.49999999999994
+      ],
+      "basis": "native STEP volume \u00d7 source density 1650.0 kg/m^3"
+    },
+    {
+      "component": "payload_point_mass",
+      "material": "not-geometrized",
+      "volume_mm3": 0.0,
+      "mass_kg": 1.0,
+      "center_mm": [
+        0.0,
+        0.0,
+        -320.0
+      ],
+      "basis": "source point mass; not geometrized"
+    }
+  ],
+  "errors": [
+    "mass/CG arithmetic recomputed from native STEP volumes and centers, but mass overrides remain assumptions: lifting_wing_left_sector_with_duct_and_elevon_reliefs, lifting_wing_centre_bridge_sector_with_duct_and_elevon_reliefs, lifting_wing_right_sector_with_duct_and_elevon_reliefs, motor_A_R1_3670_42x72_envelope, motor_A_R2_3670_42x72_envelope, motor_A_R3_3670_42x72_envelope, servo_mount_vane_A1, servo_mount_vane_A2, motor_B_R1_3670_42x72_envelope, motor_B_R2_3670_42x72_envelope, motor_B_R3_3670_42x72_envelope, servo_mount_vane_B1, servo_mount_vane_B2, servo_mount_right_fin_rudder, servo_mount_elevon_left, servo_mount_elevon_right, Bonka_6S_1600_pack_1_185x65x55, Bonka_6S_1600_pack_2_185x65x55"
+  ],
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "from pathlib import Path; import json; from highspeed_edf.verification.native_adapters import recalculate_mass_cg; r=recalculate_mass_cg(Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry'),Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/reports/mass_cg.csv'),Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/phase15/optimization/phase15_generate_geometry.py')); Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/verification/evidence/runs/8d8e4fb9a2a7506959044c0d7c025edbea366f5eacf8bf1b3824e32d94c4b547/native_mass_cg.json').write_text(json.dumps(r,indent=2)+'\\n'); print(json.dumps({k:r[k] for k in ('status','total_mass_kg','cg_mm','component_count','components_using_mass_override','errors')}))"
+  ],
+  "runner_exit_code": 0,
+  "tool_versions": {
+    "cadquery": "2.7.0",
+    "cadquery-ocp": "7.8.1.1.post1"
+  }
+}

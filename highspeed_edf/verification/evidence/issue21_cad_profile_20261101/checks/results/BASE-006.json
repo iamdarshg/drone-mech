@@ -1,0 +1,346 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-c",
+    "<pcbnew Edge.Cuts extraction>",
+    "/tmp/acceptance-baseline/drone-arm/hardware/main/rev_b/main_rev_b.kicad_pcb"
+  ],
+  "errors": [],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile cad --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-006",
+  "measured": {
+    "board": "/tmp/acceptance-baseline/drone-arm/hardware/main/rev_b/main_rev_b.kicad_pcb",
+    "cad_placeholder_comparison": {
+      "actual_edge_cuts_mm": [
+        140.0,
+        100.0
+      ],
+      "cad_placeholder_mm": [
+        140.0,
+        100.0
+      ],
+      "difference_mm": [
+        0.0,
+        0.0
+      ],
+      "status": "PASS"
+    },
+    "command": [
+      "/usr/bin/python3",
+      "-c",
+      "<pcbnew Edge.Cuts extraction>",
+      "/tmp/acceptance-baseline/drone-arm/hardware/main/rev_b/main_rev_b.kicad_pcb"
+    ],
+    "edge_bbox_mm": [
+      0.0,
+      0.0,
+      140.0,
+      100.0
+    ],
+    "edge_cuts": [
+      {
+        "end": [
+          0.0,
+          100.0
+        ],
+        "kind": "segment",
+        "start": [
+          140.0,
+          100.0
+        ]
+      },
+      {
+        "end": [
+          0.0,
+          0.0
+        ],
+        "kind": "segment",
+        "start": [
+          0.0,
+          100.0
+        ]
+      },
+      {
+        "end": [
+          140.0,
+          0.0
+        ],
+        "kind": "segment",
+        "start": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "end": [
+          140.0,
+          100.0
+        ],
+        "kind": "segment",
+        "start": [
+          140.0,
+          0.0
+        ]
+      }
+    ],
+    "edge_graphic_count": 4,
+    "height_mm": 100.0,
+    "holes": [
+      {
+        "center": [
+          112.3,
+          63.05
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U41:17"
+      },
+      {
+        "center": [
+          112.3,
+          62.25
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U41:17"
+      },
+      {
+        "center": [
+          112.3,
+          61.45
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U41:17"
+      },
+      {
+        "center": [
+          111.5,
+          63.05
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U41:17"
+      },
+      {
+        "center": [
+          111.5,
+          62.25
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U41:17"
+      },
+      {
+        "center": [
+          111.5,
+          61.45
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U41:17"
+      },
+      {
+        "center": [
+          110.7,
+          63.05
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U41:17"
+      },
+      {
+        "center": [
+          110.7,
+          62.25
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U41:17"
+      },
+      {
+        "center": [
+          110.7,
+          61.45
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U41:17"
+      },
+      {
+        "center": [
+          93.0,
+          60.0
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U40:33"
+      },
+      {
+        "center": [
+          93.0,
+          61.0
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U40:33"
+      },
+      {
+        "center": [
+          93.0,
+          62.0
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U40:33"
+      },
+      {
+        "center": [
+          94.0,
+          60.0
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U40:33"
+      },
+      {
+        "center": [
+          94.0,
+          61.0
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U40:33"
+      },
+      {
+        "center": [
+          94.0,
+          62.0
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U40:33"
+      },
+      {
+        "center": [
+          95.0,
+          60.0
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U40:33"
+      },
+      {
+        "center": [
+          95.0,
+          61.0
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U40:33"
+      },
+      {
+        "center": [
+          95.0,
+          62.0
+        ],
+        "drill_mm": [
+          0.2,
+          0.2
+        ],
+        "ref": "U40:33"
+      },
+      {
+        "center": [
+          2.895,
+          80.32
+        ],
+        "drill_mm": [
+          0.6,
+          1.7
+        ],
+        "ref": "J1:S1"
+      },
+      {
+        "center": [
+          7.075,
+          80.32
+        ],
+        "drill_mm": [
+          0.6,
+          1.4
+        ],
+        "ref": "J1:S1"
+      },
+      {
+        "center": [
+          2.895,
+          71.68
+        ],
+        "drill_mm": [
+          0.6,
+          1.7
+        ],
+        "ref": "J1:S1"
+      },
+      {
+        "center": [
+          7.075,
+          71.68
+        ],
+        "drill_mm": [
+          0.6,
+          1.4
+        ],
+        "ref": "J1:S1"
+      }
+    ],
+    "sha256": "6dd4a727e8d01b344d45afcbb34907a1895a705e2e8a31d2b6acbe28c0a19606",
+    "status": "PASS",
+    "version": "9.0.2+dfsg-1",
+    "width_mm": 140.0
+  },
+  "runner": "kicad_edge_cuts",
+  "source": {
+    "issue": 21,
+    "repo": "drone-arm",
+    "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "url": "https://github.com/iamdarshg/drone-arm/issues/21"
+  },
+  "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+  "status": "PASS"
+}

@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "ducts": [
+    {
+      "left_path": "/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell.step",
+      "right_path": "/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/step/duct_A_82OD_78ID_L110.step",
+      "left_solid_count": 2,
+      "right_solid_count": 1,
+      "intersections": [],
+      "status": "PASS"
+    },
+    {
+      "left_path": "/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell.step",
+      "right_path": "/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/step/duct_B_82OD_78ID_L110.step",
+      "left_solid_count": 2,
+      "right_solid_count": 1,
+      "intersections": [],
+      "status": "PASS"
+    }
+  ],
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "from pathlib import Path; import json; from highspeed_edf.verification.native_adapters import boolean_interference; p=Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/step'); r=[boolean_interference(p/'fuselage_battery_bay_shell.step',p/f'duct_{d}_82OD_78ID_L110.step') for d in ('A','B')]; o={'status':'FAIL' if any(x['status']=='FAIL' for x in r) else 'PASS','ducts':r}; Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/verification/evidence/runs/8d8e4fb9a2a7506959044c0d7c025edbea366f5eacf8bf1b3824e32d94c4b547/native_duct_body_interference.json').write_text(json.dumps(o,indent=2)+'\\n'); print(json.dumps(o))"
+  ],
+  "runner_exit_code": 0,
+  "tool_versions": {
+    "cadquery": "2.7.0",
+    "cadquery-ocp": "7.8.1.1.post1"
+  }
+}

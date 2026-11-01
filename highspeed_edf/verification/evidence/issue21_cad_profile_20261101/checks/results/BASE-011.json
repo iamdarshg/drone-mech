@@ -1,0 +1,35 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "from pathlib import Path; import json; from highspeed_edf.verification.native_adapters import connector_access_screen; r=connector_access_screen(Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry')); Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/verification/evidence/runs/8d8e4fb9a2a7506959044c0d7c025edbea366f5eacf8bf1b3824e32d94c4b547/native_connector_access.json').write_text(json.dumps(r,indent=2)+'\\n'); print(json.dumps(r))"
+  ],
+  "errors": [
+    "connector access cannot be qualified without mating and service envelopes"
+  ],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile cad --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-011",
+  "measured": {
+    "body_intersections": [],
+    "body_shell_solid_count": 2,
+    "connector_solid_count": 21,
+    "errors": [
+      "connector access cannot be qualified without mating and service envelopes"
+    ],
+    "missing_inputs": [
+      "mating plug solids",
+      "cable bend radius/route",
+      "tool and finger access envelope"
+    ],
+    "status": "BLOCKED"
+  },
+  "runner": "assembly_access",
+  "source": {
+    "issue": 14,
+    "repo": "drone-mech",
+    "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+    "url": "https://github.com/iamdarshg/drone-mech/issues/14"
+  },
+  "source_revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+  "status": "BLOCKED"
+}

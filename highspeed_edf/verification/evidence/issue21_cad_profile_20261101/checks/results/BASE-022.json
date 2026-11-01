@@ -1,0 +1,30 @@
+{
+  "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile cad --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "errors": [
+    "inert-only policy is declared, but no native payload geometry/electronics receipt proves the installed optional payload envelope"
+  ],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile cad --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-022",
+  "measured": {
+    "contract": {
+      "cg_m": {
+        "reason": "no sourced aircraft CG coordinate",
+        "status": "BLOCKED",
+        "value": null
+      },
+      "modeled_payload_mass_kg": 1.0,
+      "radar_active": false
+    },
+    "native_payload_receipt": false,
+    "radar_active": false
+  },
+  "runner": "payload_claim_audit",
+  "source": {
+    "issue": 14,
+    "repo": "drone-mech",
+    "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+    "url": "https://github.com/iamdarshg/drone-mech/issues/14"
+  },
+  "source_revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+  "status": "BLOCKED"
+}

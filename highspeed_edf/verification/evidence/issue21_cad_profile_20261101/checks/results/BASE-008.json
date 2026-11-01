@@ -1,0 +1,112 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "from pathlib import Path; import json; from highspeed_edf.verification.native_adapters import import_step,motor_bbox_collision; p=Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/step'); m=[import_step(x) for x in sorted(p.glob('motor_*_3670_*_envelope.step'))]; r=motor_bbox_collision(m); Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/verification/evidence/runs/8d8e4fb9a2a7506959044c0d7c025edbea366f5eacf8bf1b3824e32d94c4b547/native_motor_interference.json').write_text(json.dumps(r,indent=2)+'\\n'); print(json.dumps({k:r[k] for k in ('status','pairs_checked','collisions','clearance_failures')}))"
+  ],
+  "errors": [
+    "native motor Boolean found 6 intersecting pairs"
+  ],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile cad --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-008",
+  "measured": {
+    "clearance_failures": [],
+    "collisions": [
+      {
+        "axial_center_pitch_mm": 36.0,
+        "axial_envelope_overlap_mm": 44.0,
+        "clearance_fails": false,
+        "collides": true,
+        "exact_intersection_mm3": 50033.00460107198,
+        "left": "motor_A_R1_3670_42x72_envelope.step",
+        "measured_clearance_mm": 0.0,
+        "motor_can_length_mm": 72.0,
+        "motor_can_overlap_mm": 36.0,
+        "required_clearance_mm": 0,
+        "right": "motor_A_R2_3670_42x72_envelope.step",
+        "shaft_length_assumption_mm": 8.0
+      },
+      {
+        "axial_center_pitch_mm": 72.0,
+        "axial_envelope_overlap_mm": 8.0,
+        "clearance_fails": false,
+        "collides": true,
+        "exact_intersection_mm3": 157.07963267948963,
+        "left": "motor_A_R1_3670_42x72_envelope.step",
+        "measured_clearance_mm": 0.0,
+        "motor_can_length_mm": 72.0,
+        "motor_can_overlap_mm": 0.0,
+        "required_clearance_mm": 0,
+        "right": "motor_A_R3_3670_42x72_envelope.step",
+        "shaft_length_assumption_mm": 8.0
+      },
+      {
+        "axial_center_pitch_mm": 36.0,
+        "axial_envelope_overlap_mm": 44.0,
+        "clearance_fails": false,
+        "collides": true,
+        "exact_intersection_mm3": 50033.00460107198,
+        "left": "motor_A_R2_3670_42x72_envelope.step",
+        "measured_clearance_mm": 0.0,
+        "motor_can_length_mm": 72.0,
+        "motor_can_overlap_mm": 36.0,
+        "required_clearance_mm": 0,
+        "right": "motor_A_R3_3670_42x72_envelope.step",
+        "shaft_length_assumption_mm": 8.0
+      },
+      {
+        "axial_center_pitch_mm": 36.0,
+        "axial_envelope_overlap_mm": 44.0,
+        "clearance_fails": false,
+        "collides": true,
+        "exact_intersection_mm3": 50033.00460107198,
+        "left": "motor_B_R1_3670_42x72_envelope.step",
+        "measured_clearance_mm": 0.0,
+        "motor_can_length_mm": 72.0,
+        "motor_can_overlap_mm": 36.0,
+        "required_clearance_mm": 0,
+        "right": "motor_B_R2_3670_42x72_envelope.step",
+        "shaft_length_assumption_mm": 8.0
+      },
+      {
+        "axial_center_pitch_mm": 72.0,
+        "axial_envelope_overlap_mm": 8.0,
+        "clearance_fails": false,
+        "collides": true,
+        "exact_intersection_mm3": 157.07963267948963,
+        "left": "motor_B_R1_3670_42x72_envelope.step",
+        "measured_clearance_mm": 0.0,
+        "motor_can_length_mm": 72.0,
+        "motor_can_overlap_mm": 0.0,
+        "required_clearance_mm": 0,
+        "right": "motor_B_R3_3670_42x72_envelope.step",
+        "shaft_length_assumption_mm": 8.0
+      },
+      {
+        "axial_center_pitch_mm": 36.0,
+        "axial_envelope_overlap_mm": 44.0,
+        "clearance_fails": false,
+        "collides": true,
+        "exact_intersection_mm3": 50033.00460107198,
+        "left": "motor_B_R2_3670_42x72_envelope.step",
+        "measured_clearance_mm": 0.0,
+        "motor_can_length_mm": 72.0,
+        "motor_can_overlap_mm": 36.0,
+        "required_clearance_mm": 0,
+        "right": "motor_B_R3_3670_42x72_envelope.step",
+        "shaft_length_assumption_mm": 8.0
+      }
+    ],
+    "pairs_checked": 15,
+    "status": "FAIL"
+  },
+  "runner": "cad_interference",
+  "source": {
+    "issue": 14,
+    "repo": "drone-mech",
+    "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+    "url": "https://github.com/iamdarshg/drone-mech/issues/14"
+  },
+  "source_revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+  "status": "FAIL"
+}

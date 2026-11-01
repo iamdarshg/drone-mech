@@ -1,0 +1,85 @@
+{
+  "run_id": "8d8e4fb9a2a7506959044c0d7c025edbea366f5eacf8bf1b3824e32d94c4b547",
+  "profile": "cad",
+  "runner_repository_commit": "a860c13ba2bf31abe90467b5f60f1760ca04b265",
+  "native_adapter_source_commit": "849e99bf817534006bf90510eba4290b27c1f984",
+  "native_adapter_path": "highspeed_edf/verification/native_adapters.py",
+  "native_adapter_sha256": "7d816527d306fd5a09b29be7b78f3bf6dc9483ea90d58d0bdc0c461897709387",
+  "pinned_source_revisions": {
+    "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+  },
+  "environment_setup": "Current acceptance runner/catalog and exact current drone-mech native adapter were overlaid unchanged on detached worktrees at both pinned source revisions; mech worktree was sparse over all configured artifacts plus the 81-file STEP set and native adapter. Tests and expectations were unchanged.",
+  "command": [
+    "python3",
+    "-m",
+    "engineering_acceptance",
+    "run",
+    "--profile",
+    "cad"
+  ],
+  "tool_versions": {
+    "CadQuery": "2.7.0",
+    "cadquery-ocp": "7.8.1.1.post1",
+    "KiCad CLI": "9.0.2"
+  },
+  "counts": {
+    "PASS": 6,
+    "FAIL": 3,
+    "BLOCKED": 3,
+    "NOT_RUN": 0,
+    "NOT_APPLICABLE": 0
+  },
+  "release_critical_pass": 6,
+  "release_critical_total": 12,
+  "integrity_ok": true,
+  "results_by_id": {
+    "BASE-001": "PASS",
+    "BASE-002": "PASS",
+    "BASE-003": "PASS",
+    "BASE-004": "PASS",
+    "BASE-005": "FAIL",
+    "BASE-006": "PASS",
+    "BASE-008": "FAIL",
+    "BASE-009": "PASS",
+    "BASE-010": "FAIL",
+    "BASE-011": "BLOCKED",
+    "BASE-012": "BLOCKED",
+    "BASE-022": "BLOCKED"
+  },
+  "step_import": {
+    "status": "PASS",
+    "file_count": 81,
+    "imported_count": 81,
+    "valid_brep_count": 81,
+    "native_step_result_sha256": "e430d29053b135936f23fcef2d5a53539cbe157b1091f08a96aced98615bc44f"
+  },
+  "ledger_validation": "PASS (python3 -m engineering_acceptance verify-evidence)",
+  "acceptance_manifest_sha256": "6c12312f8bcd3ec3fa6cc62290272926d7ec26b081a502fbe6ef8a83f69518c0",
+  "artifacts": {
+    "acceptance-run-manifest.json": "6c12312f8bcd3ec3fa6cc62290272926d7ec26b081a502fbe6ef8a83f69518c0",
+    "checks/results/BASE-001.json": "313dbc73f5e83c7e8e146e9462c030821832780c545dde66c8396fec0d275b9c",
+    "checks/results/BASE-002.json": "7a1a2fcf58bc39496c35b61cbe598da8a5464d5614446d63fa6938bf1933840b",
+    "checks/results/BASE-003.json": "3d32301da16ce10ce7de62def57d03601708ac15656a19038f3ecd4aa48f88a9",
+    "checks/results/BASE-004.json": "3686906ec6dd51c4864910745e6941c50f42b3ae439f1abd912a62ad65cd1659",
+    "checks/results/BASE-005.json": "2dacaf0aa7d0eed6320318dad6dcaa581e7424b4f841df8c66c4e1a6d4d15bcc",
+    "checks/results/BASE-006.json": "c9035c8a2069ae59738b7bf500db269ec1229fbb9da00c113cc3ac1f3f3075b1",
+    "checks/results/BASE-008.json": "02e82bb528c791cd8239b65a96a2e0ec0a62e2fcbacd5c98fd6b40011f0f31a5",
+    "checks/results/BASE-009.json": "6e4653658e336098c01e38898241955608f749bde14c324526a5a26624dbf89a",
+    "checks/results/BASE-010.json": "29108b6a06d8346092bb924cc3a7db6860a5af1d012a9ee86a88422837b97735",
+    "checks/results/BASE-011.json": "6efe009d8d754d71981fbdd41919f627535590cd994192bfa7ca48030595f047",
+    "checks/results/BASE-012.json": "0b458f8db335627a6304549caec156189af4aeab1dfd12587c00f3dfd18c3094",
+    "checks/results/BASE-022.json": "a4d7c39345c75b38dbac6c900af3047c6ca775a6d9f8603a1f41e9f503cc8c9d",
+    "junit.xml": "fd6c4112d206e7a5f90305afa5796d74af6f86d46dca140eaafd708e61ee773b",
+    "ledger-evidence.jsonl": "86345b8d529d96918ffc14ac4d82fa5d3ba3fa09e21baaa5b5c0b5ba809e410b",
+    "native/native_battery_bay_fit.json": "d028318b41e49a9a41ebdf1d103105d7a9e96654ff02eabf19eb372bbea2554a",
+    "native/native_connector_access.json": "de972444ac5f82109666b45405c224244bb79ebd00e6c5945a86d3633cf167f1",
+    "native/native_duct_body_interference.json": "65a7435bae8d097d0ffafe0cdfb870751df8e20399c777f9242fedc104053fe3",
+    "native/native_mass_cg.json": "f29e6f04f6c362b882363f1a14aea0e84658fec211516369a5b127a122c3107a",
+    "native/native_motor_interference.json": "5034e3a34b8184f8b4f9e1148735b931e1abd158690ef3b65b7bc54247ce9d3b",
+    "native/native_step_import.json": "e430d29053b135936f23fcef2d5a53539cbe157b1091f08a96aced98615bc44f",
+    "report.html": "d157c522b8052a2380226cac50a6160d582f76a4aff18f8a2157abef089e2cc1",
+    "report.json": "9e780cdeb1e55ac1b314f7036c8d7e211170e2d55b6dfc5428b5e4c0872236b8"
+  },
+  "interpretation": "This subset imports 81 native STEP files and both native PCB files. It reports three actual failures and three blocked gates; geometry is not fabrication-ready and no flight or certification claim is made."
+}

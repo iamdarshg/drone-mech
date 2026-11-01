@@ -1,0 +1,54 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "from pathlib import Path; import json; from highspeed_edf.verification.native_adapters import recalculate_mass_cg; r=recalculate_mass_cg(Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry'),Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry/reports/mass_cg.csv'),Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/phase15/optimization/phase15_generate_geometry.py')); Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/verification/evidence/runs/8d8e4fb9a2a7506959044c0d7c025edbea366f5eacf8bf1b3824e32d94c4b547/native_mass_cg.json').write_text(json.dumps(r,indent=2)+'\\n'); print(json.dumps({k:r[k] for k in ('status','total_mass_kg','cg_mm','component_count','components_using_mass_override','errors')}))"
+  ],
+  "errors": [
+    "mass/CG arithmetic recomputed from native STEP volumes and centers, but mass overrides remain assumptions: lifting_wing_left_sector_with_duct_and_elevon_reliefs, lifting_wing_centre_bridge_sector_with_duct_and_elevon_reliefs, lifting_wing_right_sector_with_duct_and_elevon_reliefs, motor_A_R1_3670_42x72_envelope, motor_A_R2_3670_42x72_envelope, motor_A_R3_3670_42x72_envelope, servo_mount_vane_A1, servo_mount_vane_A2, motor_B_R1_3670_42x72_envelope, motor_B_R2_3670_42x72_envelope, motor_B_R3_3670_42x72_envelope, servo_mount_vane_B1, servo_mount_vane_B2, servo_mount_right_fin_rudder, servo_mount_elevon_left, servo_mount_elevon_right, Bonka_6S_1600_pack_1_185x65x55, Bonka_6S_1600_pack_2_185x65x55"
+  ],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile cad --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-012",
+  "measured": {
+    "cg_mm": [
+      0.11015658731765292,
+      6.73120291205657,
+      -3.9645593414990445
+    ],
+    "component_count": 74,
+    "components_using_mass_override": [
+      "lifting_wing_left_sector_with_duct_and_elevon_reliefs",
+      "lifting_wing_centre_bridge_sector_with_duct_and_elevon_reliefs",
+      "lifting_wing_right_sector_with_duct_and_elevon_reliefs",
+      "motor_A_R1_3670_42x72_envelope",
+      "motor_A_R2_3670_42x72_envelope",
+      "motor_A_R3_3670_42x72_envelope",
+      "servo_mount_vane_A1",
+      "servo_mount_vane_A2",
+      "motor_B_R1_3670_42x72_envelope",
+      "motor_B_R2_3670_42x72_envelope",
+      "motor_B_R3_3670_42x72_envelope",
+      "servo_mount_vane_B1",
+      "servo_mount_vane_B2",
+      "servo_mount_right_fin_rudder",
+      "servo_mount_elevon_left",
+      "servo_mount_elevon_right",
+      "Bonka_6S_1600_pack_1_185x65x55",
+      "Bonka_6S_1600_pack_2_185x65x55"
+    ],
+    "errors": [
+      "mass/CG arithmetic recomputed from native STEP volumes and centers, but mass overrides remain assumptions: lifting_wing_left_sector_with_duct_and_elevon_reliefs, lifting_wing_centre_bridge_sector_with_duct_and_elevon_reliefs, lifting_wing_right_sector_with_duct_and_elevon_reliefs, motor_A_R1_3670_42x72_envelope, motor_A_R2_3670_42x72_envelope, motor_A_R3_3670_42x72_envelope, servo_mount_vane_A1, servo_mount_vane_A2, motor_B_R1_3670_42x72_envelope, motor_B_R2_3670_42x72_envelope, motor_B_R3_3670_42x72_envelope, servo_mount_vane_B1, servo_mount_vane_B2, servo_mount_right_fin_rudder, servo_mount_elevon_left, servo_mount_elevon_right, Bonka_6S_1600_pack_1_185x65x55, Bonka_6S_1600_pack_2_185x65x55"
+    ],
+    "status": "BLOCKED",
+    "total_mass_kg": 6.540621725978429
+  },
+  "runner": "cad_mass_cg",
+  "source": {
+    "issue": 14,
+    "repo": "drone-mech",
+    "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+    "url": "https://github.com/iamdarshg/drone-mech/issues/14"
+  },
+  "source_revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+  "status": "BLOCKED"
+}

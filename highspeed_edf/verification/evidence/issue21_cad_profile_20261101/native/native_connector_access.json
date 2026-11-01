@@ -1,0 +1,24 @@
+{
+  "status": "BLOCKED",
+  "connector_solid_count": 21,
+  "body_shell_solid_count": 2,
+  "body_intersections": [],
+  "missing_inputs": [
+    "mating plug solids",
+    "cable bend radius/route",
+    "tool and finger access envelope"
+  ],
+  "errors": [
+    "connector access cannot be qualified without mating and service envelopes"
+  ],
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "from pathlib import Path; import json; from highspeed_edf.verification.native_adapters import connector_access_screen; r=connector_access_screen(Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/deliverables/phase15_geometry')); Path('/tmp/acceptance-baseline/drone-mech/highspeed_edf/verification/evidence/runs/8d8e4fb9a2a7506959044c0d7c025edbea366f5eacf8bf1b3824e32d94c4b547/native_connector_access.json').write_text(json.dumps(r,indent=2)+'\\n'); print(json.dumps(r))"
+  ],
+  "runner_exit_code": 0,
+  "tool_versions": {
+    "cadquery": "2.7.0",
+    "cadquery-ocp": "7.8.1.1.post1"
+  }
+}
