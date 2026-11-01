@@ -55,3 +55,5 @@ A separate coarse wall-profile initialization followed by `rhoCentralFoam` is do
 The steady `rhoSimpleFoam` attempts and their exact settings/logs are itemized in [`rhoSimpleFoam_failures/report.md`](rhoSimpleFoam_failures/report.md); attempts either diverged or raised floating-point errors. No convergence, shock, force, lift, drag, or performance result is established.
 
 The narrow `maxCo=0.05` wall-profile sensitivity run and syntax correction are recorded in [`rhoCentralFoam_wall_profile/maxCo_0p05_retry/REPORT.md`](rhoCentralFoam_wall_profile/maxCo_0p05_retry/REPORT.md). It was stopped on the unchanged 1.5 GB free-disk guard before a developed flow; two complete checkpoints are retained and independently recomputed.
+
+The repository-mapped 900 km/h IAS / 3 km half-wing target case setup and guarded partial startup are recorded in [`rhoCentralFoam_wall_profile/ias900_target/REPORT.md`](rhoCentralFoam_wall_profile/ias900_target/REPORT.md). It was stopped before the first checkpoint when shared `/tmp` fell below its unchanged 1.5 GB floor; this is a storage stop only and yields no flow result.

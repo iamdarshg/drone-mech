@@ -1,0 +1,55 @@
+{
+  "sourcePath": "/tmp/gmsh_halfwing_fluid/rhoCentral_bl_case/constant/polyMesh",
+  "targetPath": "/workspace/cfd-run-900ias-20261101/case/constant/polyMesh",
+  "files": [
+    {
+      "file": "boundary",
+      "bytes": 1639,
+      "sha256": "83cb42d67e6551952d9596322039951b787d1c7d632093c0e7a10660f096d855",
+      "sourceAndRunCopyIdentical": true
+    },
+    {
+      "file": "cellZones",
+      "bytes": 5646604,
+      "sha256": "ac4e802c04ec3ca230f0f82cee1f35aae5b4f12b08b6b05df1a20f57700bc1f9",
+      "sourceAndRunCopyIdentical": true
+    },
+    {
+      "file": "faceZones",
+      "bytes": 876,
+      "sha256": "1a3fc3f2f2c7f76c597df378690ccbf4b8a8013456e58f0c87dcf4ecaca5220f",
+      "sourceAndRunCopyIdentical": true
+    },
+    {
+      "file": "faces",
+      "bytes": 37643031,
+      "sha256": "a1f1bdae39f57edddd5dce707a5fba2953b49a957256c35d552d19c0c423aa9a",
+      "sourceAndRunCopyIdentical": true
+    },
+    {
+      "file": "neighbour",
+      "bytes": 11117969,
+      "sha256": "bf98593ab3bd33214597e320ab8a92edb177cd159df68e975b45f1cbc366b96d",
+      "sourceAndRunCopyIdentical": true
+    },
+    {
+      "file": "owner",
+      "bytes": 11466593,
+      "sha256": "300cc1b2896b60c58bab625f5abd348497f75868006fde00be419a7c69544b5f",
+      "sourceAndRunCopyIdentical": true
+    },
+    {
+      "file": "pointZones",
+      "bytes": 877,
+      "sha256": "a4a6a2dcd51a046ec166f12f8fb6f70d0cc21e238dc6ae1d1db90effcf542a29",
+      "sourceAndRunCopyIdentical": true
+    },
+    {
+      "file": "points",
+      "bytes": 7007445,
+      "sha256": "b711decae29a5901df548ca711ae81c555d1f7bf8c25f2b36e881dea2f439538",
+      "sourceAndRunCopyIdentical": true
+    }
+  ],
+  "canonicalSha256": "861a472b9774b4672549ecc7b4c2b29216bb488bb974f1dfd68e2d7ddb335e91"
+}

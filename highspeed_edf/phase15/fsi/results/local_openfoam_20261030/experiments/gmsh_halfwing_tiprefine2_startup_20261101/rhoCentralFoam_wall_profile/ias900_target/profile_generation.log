@@ -1,0 +1,6 @@
+points=163103 faces=1694197 cells=822395 internalFaces=1595383
+wall faces=79004 start=1615193; query nearest wall triangles...
+Vinf=283.171960 m/s Mach=0.861815 alpha=+0.5 deg; T0=308.556219 K p0=113824.073 Pa rhoInf=0.909020
+BL delta=0.003 m, affected cell centers=411117/822395, dwall[0.5,50,99]mm=[ 12.00582171 370.53844354 671.2524412 ]
+initialized T=268.6500..308.5562 K; speed=0.1341..283.1720 m/s; Tt=308.556219..308.556219 K; maxTt deviation=5.684e-14 K
+max |p-rhoRT|=2.910e-11 Pa; max |h-CpT|=0.000e+00 J/kg; kInf=12.027954 omega range=180.000..100000.000 1/s

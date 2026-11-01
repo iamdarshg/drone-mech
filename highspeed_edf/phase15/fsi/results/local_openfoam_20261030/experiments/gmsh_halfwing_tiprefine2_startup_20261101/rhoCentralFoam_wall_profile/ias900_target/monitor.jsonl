@@ -1,0 +1,3 @@
+{"utc": "2026-11-01T12:40:17.852899+00:00", "pids": [17642], "lastLoggedTime": null, "tmpFreeBytes": 1510981632, "overlayFreeBytes": 890171392, "checkpointUnavailable": "no complete checkpoint yet or write in progress"}
+{"utc": "2026-11-01T12:40:48.044641+00:00", "pids": [17642], "lastLoggedTime": "Time = 1.2e-08", "tmpFreeBytes": 1510981632, "overlayFreeBytes": 890159104, "checkpointUnavailable": "no complete checkpoint yet or write in progress"}
+{"utc": "2026-11-01T12:41:18.233030+00:00", "pids": [17642], "lastLoggedTime": "Time = 2.64e-08", "tmpFreeBytes": 1115529216, "overlayFreeBytes": 890150912, "checkpointUnavailable": "no complete checkpoint yet or write in progress", "action": "SIGTERM: /tmp free space below 1500000000 bytes"}

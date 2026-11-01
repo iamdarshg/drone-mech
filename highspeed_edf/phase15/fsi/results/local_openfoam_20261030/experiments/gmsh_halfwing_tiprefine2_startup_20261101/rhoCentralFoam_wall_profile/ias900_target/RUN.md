@@ -1,0 +1,11 @@
+# 900 km/h IAS, 3 km target startup
+
+This is a local, source-pinned OpenFOAM setup for the specified indicated-speed target. The repository's compressible IAS900 mapping gives TAS `283.1719595766233 m/s` at 3 km, with `T_inf=268.65 K`, `p_inf=70.1 kPa`, `a_inf=328.576286 m/s`, `M_inf=0.8618149633`, and `alpha=+0.5 deg`. It uses the strict-passed existing half-wing mesh, a fresh wall-compatible initial profile, and `rhoCentralFoam` with Kurganov flux. It does not claim that this freestream is supersonic or that the run resolves a shock.
+
+For the stated freestream and `Cp=1004.685 J/(kg K)`, `Tt_inf = T_inf + V_inf^2/(2 Cp) = 308.556218711 K`; the unchanged 5% proxy guard is `323.984029646 K`. The monitor also stops on non-positive checkpoint `T/p/rho`, speed above 700 m/s, `/tmp` free space below 1,500,000,000 bytes, or overlay free space below 300,000,000 bytes. It treats a missing/in-progress checkpoint as expected, reading the last complete checkpoint. These physical and storage guards are not relaxed.
+
+`scripts/prepare_ias900_bl_profile.py <case>` initializes a coarse smooth 3 mm wall-compatible velocity layer and reconstructs `T,p,rho,h` isentropically from the input state. Its initial total-temperature deviation was `5.684e-14 K`; ideal-gas residual was `2.910e-11 Pa`; `|h-CpT|` residual was zero. This is an initialization, not a resolved boundary layer. `checkMesh.strict.log` and `rhoCentralFoam.dry-run.log` show the copied mesh's strict quality pass and a one-step parser/BC smoke test. The initial state was then validated again before launch.
+
+The solver run directory is `/workspace/cfd-run-900ias-20261101/case`, outside the Git worktree, to use the overlay filesystem for CFD output while preserving the tmpfs disk floor. The case copy and output storage were preflighted with `df` and `du`; the monitor checks both filesystems continuously. `system/controlDict` starts from time zero with `maxCo=0.05`, output every ten steps and `purgeWrite=2` to keep the bounded case below its storage floor. No paid cloud compute or physical test is involved.
+
+No convergence, aerodynamic forces, drag, lift, transonic shock, structural safety, fabrication readiness, or flight performance is implied by startup logs or a short transient. See `REPORT.md` for the actual guarded stop and evidence disposition.

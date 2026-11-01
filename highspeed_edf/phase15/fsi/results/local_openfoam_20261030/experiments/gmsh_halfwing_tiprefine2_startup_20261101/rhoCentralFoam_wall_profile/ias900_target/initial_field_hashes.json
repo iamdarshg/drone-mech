@@ -1,0 +1,74 @@
+{
+  "fields": [
+    {
+      "file": "T",
+      "bytes": 7766713,
+      "rawSha256": "3633aa70308ad49e83284ef843f13f8998992ee2f367bc027a0c5277f38a95b2",
+      "compressedSha256": "b6cd0eb0a0686f9f7ce22d6d3445fc64cdcc51f0389e381bb3bf3283d7eb55b5",
+      "matchesRunCase": true
+    },
+    {
+      "file": "U",
+      "bytes": 27191714,
+      "rawSha256": "2b115786ad018552429180c06796e5c53f3f2dc1af3951af5fba65337baeb750",
+      "compressedSha256": "4ed04fb08179de4a188c87f021c80adab836f6dfdb512de42d6b0025be25aa43",
+      "matchesRunCase": true
+    },
+    {
+      "file": "alphat",
+      "bytes": 12464980,
+      "rawSha256": "a4344ccd30a7ff682b96a88011551d8f694f2285f693b94e644d5ede6c66656f",
+      "compressedSha256": "6d6d26f16272b6cc796f9f971d39c92ef30dfb95509a7436b9427df5c83e2928",
+      "matchesRunCase": true
+    },
+    {
+      "file": "h",
+      "bytes": 9823054,
+      "rawSha256": "be212648b57b730bb75961ca83cfbca3129723050750425d8de9894fcd2aae11",
+      "compressedSha256": "9071af21ef51dfa71aeec7d08c0e209c9be3b912ee69badff38a164ebcbd23bd",
+      "matchesRunCase": true
+    },
+    {
+      "file": "k",
+      "bytes": 9499292,
+      "rawSha256": "13635a3d6bf5c54ce9376965d9b3a1e8d076df26511ca0807fff912fe7bb6e19",
+      "compressedSha256": "f7e570a580dcb936e8e4ecb23047f9479eaba097c73fcad46c538707d8ec69d2",
+      "matchesRunCase": true
+    },
+    {
+      "file": "nut",
+      "bytes": 12467298,
+      "rawSha256": "ca42fff54973a24b46c3cb0b6e79e3cbabd14e6ea73629018e53755584d8dc21",
+      "compressedSha256": "4bed80c507363d286437bd9df826eca1b7e0bb00f8a6358d9545a1356af5aba5",
+      "matchesRunCase": true
+    },
+    {
+      "file": "omega",
+      "bytes": 4751304,
+      "rawSha256": "61daef525f16285a4afce56e0d28b6c1df8bc2e6de2cd16302c372b72d48f8e1",
+      "compressedSha256": "19da1b05e23f0f29db816dc2664c4354ad861f042aa68d096b263de8e777294c",
+      "matchesRunCase": true
+    },
+    {
+      "file": "p",
+      "bytes": 7355661,
+      "rawSha256": "b57a66f239ff1c51d6771a8ebaa285acde44cd8bab5682999e9fff4d9aadc74d",
+      "compressedSha256": "a180dfcbe7db3178c5f5d16506124954e5f439009b9a83e6fbd28369ee7bbdc7",
+      "matchesRunCase": true
+    },
+    {
+      "file": "pointDisplacement",
+      "bytes": 462,
+      "rawSha256": "712f6ab8b9b4881355bf4566a549a0ddc17e5db0dcc744376e2fd492510e9bd7",
+      "compressedSha256": "d0ee41bafe46d4d9bccc87837b515a1db378b92fdf57a6d400e9d5d4988d730b",
+      "matchesRunCase": true
+    },
+    {
+      "file": "rho",
+      "bytes": 10340495,
+      "rawSha256": "0c1caaa5744c7259b4fd252f4a45576d21c68e17aaaa6d23cc06b998eb6ca551",
+      "compressedSha256": "3e9b88327d62b2ac09bff65e2acd0d50367d47195de1ba2fd9e331e483be2d26",
+      "matchesRunCase": true
+    }
+  ]
+}

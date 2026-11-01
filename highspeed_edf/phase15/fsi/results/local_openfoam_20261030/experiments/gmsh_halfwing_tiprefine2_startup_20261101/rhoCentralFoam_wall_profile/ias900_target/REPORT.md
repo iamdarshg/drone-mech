@@ -1,0 +1,15 @@
+# IAS900 exact-target startup disposition
+
+## Source-mapped input and setup checks
+
+The case uses the repository's existing IAS900 compressible mapping: TAS `283.1719595766233 m/s`, altitude 3,000 m, static temperature `268.65 K`, solver static pressure `70.1 kPa`, and +0.5 degree AoA. The computed freestream Mach is `0.8618149633208082`. The same Gmsh half-wing mesh passed strict `checkMesh -constant -allTopology -allGeometry -meshQuality` on the overlay copy: 822,395 tetrahedra, one region, minimum determinant `0.0011330`, maximum nonorthogonality `60.77°`, skewness `1.05255`, and `Mesh OK`. The corrected viscous-stress `fvSchemes` key was used. The exact target case completed a one-step `rhoCentralFoam -dry-run` with `End` and no parser warnings.
+
+The fresh wall-compatible profile uses the exact mapped TAS and +0.5 degree vector. It initialized to `T=268.65..308.556219 K`, speed `0.1341..283.1720 m/s`, and constant pointwise `Tt=308.556218711 K` within `5.684e-14 K`; `max|p-rhoRT|=2.910e-11 Pa` and `max|h-CpT|=0`. Initial raw fields match the compressed archived inputs byte-for-byte after decompression, with all ten fields mapped to the exact five mesh patches. Mesh and field hashes are retained in `mesh_file_hashes.json` and `initial_field_hashes.json`.
+
+## Guarded solver attempt
+
+`rhoCentralFoam` started at 12:40:17 UTC from time zero with `maxCo=0.05`, the same Kurganov setup, 10-step output interval, and `purgeWrite=2`. The fixed energy proxy guard was derived from the mapped input state: `Tt_inf = T_inf + V_inf²/(2 Cp) = 308.556218711 K`; the 5% bound was `323.984029646 K`. The monitor additionally guarded positive T/p/rho, speed below 700 m/s, `/tmp` free space of at least 1,500,000,000 bytes, and overlay free space of at least 300,000,000 bytes.
+
+At 12:41:18 UTC, `/tmp` free space fell to `1,115,529,216 bytes`, below its fixed floor. The monitor sent SIGTERM; the process wrapper exited 143 at 12:41:18 UTC. The solver log had reached only `t=2.64e-8 s` (two steps) and no writeInterval checkpoint existed. The stop reason is a shared-storage safety bound, not a solver or physical flow failure. The contemporaneous overlay free space was `890,150,912 bytes`, so that filesystem guard remained satisfied. The bounded OrcaSlicer follow-up using the shared tmpfs is documented by the parent task; this CFD run did not cause the `/tmp` decrease.
+
+No solver convergence, developed flow, local transonic region, shock, force, lift, drag, or aerodynamic performance is established. There is no solver output checkpoint beyond the initial state. The exact partial log, monitor samples, stop record, status, dictionaries, dry-run and strict mesh log are retained. There is no active solver or watcher. A further attempt should wait until shared `/tmp` has at least 1.5 GB free plus the requested 300 MB safety margin; this report does not authorize relaxing either guard.

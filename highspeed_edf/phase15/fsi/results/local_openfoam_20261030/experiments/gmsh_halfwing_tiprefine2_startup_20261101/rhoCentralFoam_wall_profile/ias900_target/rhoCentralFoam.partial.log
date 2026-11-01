@@ -1,0 +1,103 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/rhoCentralFoam -case /workspace/cfd-run-900ias-20261101/case
+Date   : Nov 01 2026
+Time   : 12:40:18
+Host   : ebaa71603c78
+PID    : 17642
+I/O    : uncollated
+Case   : /workspace/cfd-run-900ias-20261101/case
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.5555555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+fluxScheme: Kurganov
+
+Starting time loop
+
+Mean and max Courant Numbers = 0.0004469546401 0.01650233597
+deltaT = 1.2e-08
+Time = 1.2e-08
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUy, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUz, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for Ux, Initial residual = 6.718043027e-06, Final residual = 3.423516718e-13, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 5.265450247e-06, Final residual = 2.234967976e-13, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 4.223064709e-08, Final residual = 4.223064709e-08, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for h, Initial residual = 4.634228089e-08, Final residual = 4.634228089e-08, No Iterations 0
+smoothSolver:  Solving for omega, Initial residual = 2.359788132e-06, Final residual = 3.64628674e-13, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 1.461102385e-06, Final residual = 4.006765182e-13, No Iterations 1
+ExecutionTime = 16.68 s  ClockTime = 37 s
+
+Mean and max Courant Numbers = 0.0005363471504 0.01979929077
+deltaT = 1.44e-08
+Time = 2.64e-08
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUy, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUz, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for Ux, Initial residual = 6.993796065e-06, Final residual = 4.12585503e-13, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 4.891864973e-06, Final residual = 2.001605555e-13, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 3.688832385e-08, Final residual = 3.688832385e-08, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+smoothSolver:  Solving for h, Initial residual = 4.171348905e-08, Final residual = 4.171348905e-08, No Iterations 0

@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-01T12:41:18.233030+00:00",
+  "reason": "SIGTERM: /tmp free space below 1500000000 bytes",
+  "checkpoint": null,
+  "tmpFreeBytes": 1115529216,
+  "overlayFreeBytes": 890150912
+}
