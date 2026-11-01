@@ -1,0 +1,1305 @@
+{
+  "run_id": "6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b",
+  "drone_arm_sha": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+  "drone_mech_sha": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+  "profile": "smoke",
+  "requirements_declared": 11,
+  "checks_discovered": 25,
+  "checks_attempted": 6,
+  "counts": {
+    "PASS": 5,
+    "FAIL": 1,
+    "BLOCKED": 0,
+    "NOT_RUN": 0,
+    "NOT_APPLICABLE": 0
+  },
+  "release_critical_pass": 5,
+  "release_critical_total": 6,
+  "results": [
+    {
+      "applicability": "all",
+      "artifact_paths": [
+        "git:drone-arm",
+        "git:drone-mech",
+        "git:drone-arm",
+        "git:drone-mech",
+        "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-001.json"
+      ],
+      "artifact_sha256": "e64672e0c6ee5feb646109882d594b5f047df1b189ec60d9ed9b24b98f0dfb11",
+      "artifacts": [
+        {
+          "kind": "git_commit",
+          "path": "git:drone-arm",
+          "sha256": "744994a096ca73e872b396a9b0636c58e7c1afe8"
+        },
+        {
+          "kind": "git_commit",
+          "path": "git:drone-mech",
+          "sha256": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+        },
+        {
+          "kind": "git_commit",
+          "path": "git:drone-arm",
+          "sha256": "744994a096ca73e872b396a9b0636c58e7c1afe8"
+        },
+        {
+          "kind": "git_commit",
+          "path": "git:drone-mech",
+          "sha256": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+        },
+        {
+          "path": "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-001.json",
+          "sha256": "8fc9836793e4c5af32755f50fa346997500907420ec7bde3a6eea5397affb344"
+        }
+      ],
+      "blocking": true,
+      "catalog_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "check_exit_code": 0,
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_path": "/tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_present": true,
+      "config_sha256": "0112688d9b685e7c983d491aba0fd94e0fee8c997eccd4690e690dfe46601b0c",
+      "drone_arm_sha": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "drone_mech_sha": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+      "errors": [],
+      "evidence_required": true,
+      "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "id": "BASE-001",
+      "measured": {
+        "baseline_is_ancestor": {
+          "drone_arm": true,
+          "drone_mech": true
+        },
+        "current_head": {
+          "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+          "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+        },
+        "immutable_baseline": {
+          "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+          "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+        },
+        "source_integrity": {
+          "aggregate_sha256": "55932187bea7469654b8132dd4a95f9d54caddff743cf86117ac0bdb7050897b",
+          "artifacts": [
+            {
+              "git_blob_sha1": "e1b8ccaf24e9c013954454810dc397ced07c86ff",
+              "key": "actuator_interface",
+              "matches_pinned": true,
+              "path": "highspeed_edf/design/PHASE15_CONTROL_SURFACES.md",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "fac431960f7458aff64f099d75bf1cda265765bc13dcb32d1906ffa5dba0bd72"
+            },
+            {
+              "git_blob_sha1": "7330567b6d86be1e6ab6518c66ae8822d0233066",
+              "key": "architecture",
+              "matches_pinned": true,
+              "path": "docs/hardware/REV_B_ARCHITECTURE.md",
+              "repo": "drone-arm",
+              "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+              "sha256": "a2bc568eec378645fdfe37582ca3d69fa23fca63e694a16889817969aff41001"
+            },
+            {
+              "git_blob_sha1": "a86be5a3b33554ebd7845c8d244f98067e6fe3c7",
+              "key": "esc_board",
+              "matches_pinned": true,
+              "path": "hardware/esc/rev_b/esc_rev_b.kicad_pcb",
+              "repo": "drone-arm",
+              "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+              "sha256": "f29a6e12e82d9ec70c63ca5fce95e5cd4436479599c4c4069c4733e7d7af4805"
+            },
+            {
+              "git_blob_sha1": "52a2b1f752567c21631a431372c637513253d010",
+              "key": "geometry_generator",
+              "matches_pinned": true,
+              "path": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "86275054adf53b862dd91bfb3a66b84da3470e8ea400af8e57d5e339ef124caf"
+            },
+            {
+              "git_blob_sha1": "52e5060759d12f02096954eaa833108e3bbb9eb7",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/Bonka_6S_1600_pack_1_185x65x55.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "eb3e2ccf95f63f4b183185c406c69d3459fef566a3ea6bd48940e6b842f29c3d"
+            },
+            {
+              "git_blob_sha1": "31153fe64f517623ab767092bfb4b9c6b9e025be",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/Bonka_6S_1600_pack_2_185x65x55.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "9be425fe2778201441e4036f95b905ef849e308c9466161d692479854b56be4c"
+            },
+            {
+              "git_blob_sha1": "4a78e7e9fa54a2bf5d329d791f386a1b10f94435",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/battery_retention_straps.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "fded54162024ee8a5abce20302257171cc0e13822bb12b871aef29e45d003ddd"
+            },
+            {
+              "git_blob_sha1": "bc68e823b661f3aa4acbe9ee4f53a4115cbd21c7",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/battery_service_hatch_and_fastener_envelopes.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "18a08787050e980870c58983d60854fd80a96915887bb78d970ba67e5e12a48d"
+            },
+            {
+              "git_blob_sha1": "1a600abca65337fcdf1620eb1f27d6c1bd337eef",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/battery_sliding_rails_and_6g_end_stops.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "084307fdae2749cbe88a60d25ed646f8c7af87e843eeae3a5a96380769c73486"
+            },
+            {
+              "git_blob_sha1": "3a1fe5bebfb7e608c19a66122f44796b485537fc",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/board_isolator_standoffs.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "44c28b41888eb1eca0e4cf5e8490effd4ddacbc47b141ec938c80bfe1042de54"
+            },
+            {
+              "git_blob_sha1": "dc84c613e2dc78ec40bea855dac54d5adc2f3402",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/canted_tail_fin_left_70x90.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "b0f16a59507314b7902d3f32d26216f9cc5bb4995c025868d99d794079ef33cd"
+            },
+            {
+              "git_blob_sha1": "640e9192aa48f4b7ce01c3ca555cb133fc36ef7c",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/canted_tail_fin_right_70x90_with_rudder_cut.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "237f3353b9a7787942e8f7f38867b9ae5c7482bc8762aad744982a93b0ef2979"
+            },
+            {
+              "git_blob_sha1": "4148f9f36ac31f8616124924f470d7a7e56f8ae2",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_82OD_78ID_L110.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "82f92fdb3c6748915cbfc1fc424e53171d89965129bcf390db19849f8c218d2a"
+            },
+            {
+              "git_blob_sha1": "73ab7f2f72dae8a3c6064461baf56cd2b3bac4d8",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_rotor_R1_N13.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "6f964563de6ef122520bfa6afef2167b939695e071ed3d9b33efa6c9e500e67b"
+            },
+            {
+              "git_blob_sha1": "a4ff69796f61fb2db47b5d2bb8f4ec0dd39c13bf",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_rotor_R2_N12.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "7945f8b799631bc4632f354134deaaf2d4b0e541a19c624cf3dacb2f83f4cbfa"
+            },
+            {
+              "git_blob_sha1": "fdecd21f082fb7f26e06c8f791b1f94874a76ea0",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_rotor_R3_N11.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "8ded170141c1d644975cd0c6f5ed894069979acaca9d7ce77f5a2934a121228f"
+            },
+            {
+              "git_blob_sha1": "f95e2f53438cb05f91adb247f82747deef575ce5",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_rotor_containment_collar.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "7c3a7d198241114bb96e49b8c028dfc978cc6a3044da9edd28e012b7a0af63c1"
+            },
+            {
+              "git_blob_sha1": "7c432a767e02d9f8f4f438c5ab15146cd05fbb0b",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_separate_nozzle_and_exit_lip.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "6e3fc174cfa5d2121674542b147d497e4b31eaf9b823f8fb49a940571fdff824"
+            },
+            {
+              "git_blob_sha1": "4a565683ce3b3fc977b38efbe83f1a8946a2a2dc",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_side_inlet_100mm.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "cb0f19679379ac0a708a5e4b2785439676d254a6317dcde750bcf120c57b92bc"
+            },
+            {
+              "git_blob_sha1": "fb22cc8ee13916fcb821a7d4ddfce07d2d57350d",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_stator_S1_N23.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "fcaaa5132eef5d02de7a70efbe9eebae047c8e2081abbe0f03e125552777c547"
+            },
+            {
+              "git_blob_sha1": "ba80ed7b7963ea4b4cae728e9d5ac12f9c45d2a8",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_stator_S2_N21.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "21cabf3dd639ecb0f199042eca3ea78880d29a69eb687ad3bdff4f37b61a6188"
+            },
+            {
+              "git_blob_sha1": "8e72868c6be250607bcb5499e9d4a853a8a08bb8",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_stator_S3_N19.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "4545bb096b8a701d465f679f5fdd8fd3f959a5591ba5332df504e715521e145c"
+            },
+            {
+              "git_blob_sha1": "58176df3fa7c2b4facd9239c18955473f0ed7c4e",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_vector_vane_1_30x40.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "e7f8bf410b758c9c2abca3f25e9e776c37d4264458c868d1733fcdf2cc30777a"
+            },
+            {
+              "git_blob_sha1": "d0f91518983fad1c84bb195e62f4063c69f1c64e",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_vector_vane_2_30x40.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "9e6922bbd97fc20e203a2e272dad42c72f0b56c78be0012e30288d2ef4b4d9fc"
+            },
+            {
+              "git_blob_sha1": "aa387d65caaac4ed03bf928c2958d7905e3f9228",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_A_vector_vane_bearing_ring.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "0bce6baa2722afdc1f3563456039876ca6834f5165fe3415ad770ebcb58f6abb"
+            },
+            {
+              "git_blob_sha1": "2dc439c01420ad5abffccbb89066c344cb9feba1",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_82OD_78ID_L110.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "d99c21e0d80eaf2e93bd52a3c785fa885e57df11c5d1b857ad3981f198385132"
+            },
+            {
+              "git_blob_sha1": "4e995abe656a39c77a193e9f131799b7b0d29724",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_rotor_R1_N13.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "f63be6b095dfd2093a91af5b7747a76e3a7d2c9d8a8894b7c1bbfcfdc64316a3"
+            },
+            {
+              "git_blob_sha1": "c76dfd4b0ce49482654a4535aff4ccefb65185b4",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_rotor_R2_N12.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "f02d38a1717b37705d1b7b84a6deb13c04e27ee53b0be7f909553cb51cfbe565"
+            },
+            {
+              "git_blob_sha1": "ba8868cd9a7b1ebb6b8d74843205fba7595e387d",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_rotor_R3_N11.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "691b510e4ae6c56633db4de224beaeeaecb6f3c6909d9a8dad63a87932714b60"
+            },
+            {
+              "git_blob_sha1": "88c4e0c1f80dbeb9c8fc164ed7b52de33bdfc20b",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_rotor_containment_collar.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "da27bce988aa3396ad9ccb8f4ef64549409ed28dabfb0722f335b82b9401e1df"
+            },
+            {
+              "git_blob_sha1": "841a84e96e48e16310335ff639827cd808ade5d2",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_separate_nozzle_and_exit_lip.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "ac8b7ef3f2ccdcbf52e2177cf9ae3d8c6a6eb3b1c486dce104f23a1fce4578a0"
+            },
+            {
+              "git_blob_sha1": "24f42c90edb94ad0f8bd9c938a839f2a85d6f221",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_side_inlet_100mm.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "693e691b1e3bcac16ef2d7839434dea78c341cffc3189e861dfa49a8275e9fa2"
+            },
+            {
+              "git_blob_sha1": "7573a0bf449ca2c036ad0c48ff085b59b5210d6f",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_stator_S1_N23.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "215e48ffcde0df8b6c831855511c4cb5c0edebdb0be97cd0948bd50e7fb1c9b7"
+            },
+            {
+              "git_blob_sha1": "6c5a43f81653e09653fba93cf16045414aa16622",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_stator_S2_N21.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "11e5324ec555e7fbe862186af3e3b059e08f8655d72293dfb9196bbba04db057"
+            },
+            {
+              "git_blob_sha1": "9cc99310d6492b9bb8923acbd2db282f608b141b",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_stator_S3_N19.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "870daa54a02f5f416deab8145c02f3e2404f693222981645323ddb5bb373772c"
+            },
+            {
+              "git_blob_sha1": "96f30caa39e8f48d85dda708372a4f1541d23587",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_vector_vane_1_30x40.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "6d25e82fa3ab05ca31397bfe5756329ea6979e341bdfb52f1fb8ff26abf5f20e"
+            },
+            {
+              "git_blob_sha1": "47d4433abe8b22e5e9e0587bf13a913c18297fd9",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_vector_vane_2_30x40.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "e22a6550b282f2c525b443ca2626f1b5aaef3542973aa601cfa61c0c7957a208"
+            },
+            {
+              "git_blob_sha1": "a4da6e63e3e20353ddf89531a9c3153a6a4a518f",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/duct_B_vector_vane_bearing_ring.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "c457f221ce7a26cc037a37290fa20d064a1b6185f195d4ed391a4ed7c7657692"
+            },
+            {
+              "git_blob_sha1": "a5ab560958f9d3fd719e476971f3d232c56604af",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/elevon_left_40x150.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "28e477ea1a4f5c6f8db475807cf497e8e26f66e33dd099ddf7780efdb82a03a5"
+            },
+            {
+              "git_blob_sha1": "5604f59326ce5426e113b4bee920159a1649e8fc",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/elevon_pushrod_left.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "d9f21a7b9f59fa083555d92edfc0c692e90d0ffa44c66cdad451b484f16d6306"
+            },
+            {
+              "git_blob_sha1": "327bce1b6bb2e16386a69348c597467b82211b72",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/elevon_pushrod_right.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "407ab22896f7f389a814d8a26b179f9651dee84bce0800a2e7407827f32351b2"
+            },
+            {
+              "git_blob_sha1": "9acfb1bd9a081fa9af2fcbe9441c3628b342ab6c",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/elevon_right_40x150.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "df2e8b44a4fd62f0a4614027a66f3fda9f93dae10e97e1be0acba4e3b3c4aec3"
+            },
+            {
+              "git_blob_sha1": "f77b37f3d3bb3d8190c94835be3075c9835d9685",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/esc_150x150_spreader_and_flow_aligned_fins.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "fa9a342c8577cc6188190a6c4b3af0b9ecc86b4807de20282d8c6e13e92c6be2"
+            },
+            {
+              "git_blob_sha1": "9a95aa7fd61055b27357724bc7f1dc7a2ebaec5c",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/esc_36_mosfet_packages.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "16bf31c652ba48603a18ca06eb7fdda3ca823ac69ace2c624967c5e62d4ed90f"
+            },
+            {
+              "git_blob_sha1": "b89c4cb85acc72cd1c169d9418d6cef747ce429e",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/esc_battery_motor_temp_and_CAN_connectors.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "d23fdcfd1f8e94b5356905b640275f2b6139233b8c357f8d615a7d0848686e7c"
+            },
+            {
+              "git_blob_sha1": "d4c0fc7ba15abc2d4741adf19a22e61c2ff7aab8",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/esc_fc_open_ended_cooling_tunnel.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "1713efd7f76333cca72bf104217ed733df62432558deee35105febf90edad151"
+            },
+            {
+              "git_blob_sha1": "88267ab731d741d4d7749ba65474d2b9bfd0e283",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/esc_logic_and_passives.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "58c63d45d9477a3e649f5503a78253a4a393224d8afc6d47116e966ca3550015"
+            },
+            {
+              "git_blob_sha1": "8d45cfdf682b73e054a3d9d5eeb6e8b28c9c252e",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/esc_pcb.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "d9b82f3665a56c496546a57e71527fc3fd994aeed2cbe5b2d40bcd8ec73ea3f6"
+            },
+            {
+              "git_blob_sha1": "67eb5d7e7c63d94d703a13d91caa773a133d350e",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/esc_six_60A_fuse_envelopes.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "2f94e182f4ee82d794cda1fa4922027e433f3bf8c191726db85472364ba432ef"
+            },
+            {
+              "git_blob_sha1": "f992de275cb098c2576518ff07306eff2e8c2821",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/esc_six_copper_busbars.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "b01bcaee98f3c7e559837175a355438b478bee296f2a43aaf99ca3e823c4d426"
+            },
+            {
+              "git_blob_sha1": "e8fdfbb7ab29ed8af0687dee42504701e3a1fb5b",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/fc_100x80_spreader.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "7f560038c39f6fd658e1c527bef931f07307795cc6bd5882a0ca95e853003dc1"
+            },
+            {
+              "git_blob_sha1": "3fa0205e88757ce093e966b165071909100661c1",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/flight_6ch_PWM_and_feedback_headers.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "73963e64725a6842c491fe639234e35e6d7c29cfec8d0c1a3272e26978438638"
+            },
+            {
+              "git_blob_sha1": "49ce3a386fbf1f0f9afeca056bf9e84845c1eb73",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/flight_control_components.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "ff12cf86cf68aac2c5de0491f4701deaacb96c65fc6f450b0cee3a3da005501b"
+            },
+            {
+              "git_blob_sha1": "283017eec6773b3b53f9ebdfbf4c7bc7ddb27a04",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/flight_control_pcb.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "ff129ea75fd1f3abe3bd7dc91c07e344e61007a2bd522d6570a08a21c1c687ed"
+            },
+            {
+              "git_blob_sha1": "a823c614fb67f3bc19c08e3065f82e3db7267912",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/fuselage_battery_bay_shell.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "d5b4b081c42f0929f7ceb72766f5419989bcf033f941cc16c87df091bda7ede6"
+            },
+            {
+              "git_blob_sha1": "f684df3e033f40a0690cf9b48d3a80c8fdcf56a8",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/fuselage_internal_bay_side_rails.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "5672708733c759f6b3e8067ce130f473d2ff70148dcb326448c7372f74122b9d"
+            },
+            {
+              "git_blob_sha1": "413fefb6791c8cd24037423a4ecaec1165904ca1",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/lifting_wing_centre_bridge_sector_with_duct_and_elevon_reliefs.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "9e7c2fc06e9be6c9e5e1a12a102e52b2df9e822bf094a025c9bc360715e8bc7d"
+            },
+            {
+              "git_blob_sha1": "9456d16c757cb4ed427b73b3280e2c905355c68f",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/lifting_wing_left_sector_with_duct_and_elevon_reliefs.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "b1fb7cd66f98e8b5e9c65ecb25c703993bb32218cf2ada2c3baa3d1559e7121b"
+            },
+            {
+              "git_blob_sha1": "00062745574f7603c9d56a5c693c32231b25e6f6",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/lifting_wing_right_sector_with_duct_and_elevon_reliefs.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "90687229e733623ccd40ee8839a10d711f38367b46e70e7ae0d86a330b7c358f"
+            },
+            {
+              "git_blob_sha1": "0f1ce026e67dae008de7d5a963b00f2da443c589",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_A_R1_3670_42x72_envelope.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "6f1f3b8f26b35d9eb569afc260ac2e4bd657ddb4f483642a083e52aefe388f0b"
+            },
+            {
+              "git_blob_sha1": "1af393e7056c4ccde7b5e76bc633f6eace66bb93",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_A_R2_3670_42x72_envelope.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "0d8b11483be6013dee00520b70ec8eaed640d4118766c7875feb18a5c8e865bd"
+            },
+            {
+              "git_blob_sha1": "b668d176d35bd7b5737c20db38ab35b195771530",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_A_R3_3670_42x72_envelope.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "34edb55c92763c3d332f71aeee91efe91ff7b7d1c9a15304d055375d4ee2023a"
+            },
+            {
+              "git_blob_sha1": "a904024425e334db5feca83e1496db4ad7c6eb0f",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_B_R1_3670_42x72_envelope.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "496c7c8162c62161600a4cf5280c7f3a4ccaf5d2dbb58b1210c2b3950405f17a"
+            },
+            {
+              "git_blob_sha1": "438b5530a398b602ae072e7db40b94fc203b6c6a",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_B_R2_3670_42x72_envelope.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "30befea1fd430a63a1e2d044b11555c219da975a32ecfe02cac12474841a4495"
+            },
+            {
+              "git_blob_sha1": "2cde81224fe17ee5062ac1635a29c8e3f0f5194b",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/motor_B_R3_3670_42x72_envelope.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "8c11d58fd44e325e669a5a6c881bef998dab4ffd4ae51adfccf6a4390d8fb607"
+            },
+            {
+              "git_blob_sha1": "5fc47d068a97b6e754467ef3d5f361556be1eb03",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/phase15_airframe_full_assembly.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "9b83f3bfa5ea261c2055152c9fdd2147b9e16819634715c3c4ae23b45deae772"
+            },
+            {
+              "git_blob_sha1": "994f9d0faa632cf133595d603eac547e33db0a4c",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/phase15_esc_cooling_assembly.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "687d04546b746cb3887cc953ee6355cf306c6e2b3cdb85248ec8122202097124"
+            },
+            {
+              "git_blob_sha1": "6fc820a1ab8825845df14c873391641042abf3c6",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/phase15_fc_spreader.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "65d632a8fd6ab656b9df458e84419bd5434f8e499c9fcf65499176faa39362b5"
+            },
+            {
+              "git_blob_sha1": "2f1b324da1df6ebde2356e7b01cd7381f847a6cd",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/phase15_flight_board_assembly.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "cc88345f19d76e23a94f58aa0949bf1f8901d739dfe80e71046839f968189c99"
+            },
+            {
+              "git_blob_sha1": "cabbad6a3e00e866ad2212ce4e5243f530b162f8",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/phase15_twin_ducts_and_fans.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "0607b18b2e99007ccd79a81a3f2c758cae5403f03e2119f18e6d53ff9df3bff2"
+            },
+            {
+              "git_blob_sha1": "fc18fc28e13e39e6170d1a16de509ee94ac1387b",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/servo_mount_elevon_left.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "de80b6ee4b0e1d13f69bd988cfa573bd33335d5ad2c48eab26829a406e06bd20"
+            },
+            {
+              "git_blob_sha1": "aa003afd94b20179b5b9262153c86de52ab22375",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/servo_mount_elevon_right.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "edfab9d49577fb80894457af9e7a2013f66aff5327d73166922fdb7a1c91a324"
+            },
+            {
+              "git_blob_sha1": "1cc340edec00ebae546c1ffe2b40c417d50729c9",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/servo_mount_right_fin_rudder.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "63561d8d1087fb6ab0d0a1c0f8d5b7037e8e025f90b67601200c6952971394a0"
+            },
+            {
+              "git_blob_sha1": "bb61fd812eb5020ccfa130c970af29fc37785a02",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/servo_mount_vane_A1.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "9678db426b0c6638552d82e40333c92eca1e481f68e0b5d9971be148b0232fac"
+            },
+            {
+              "git_blob_sha1": "3803e0ae848c0d6715c328b65b454e355829deec",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/servo_mount_vane_A2.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "907087d143c5e99940da34aeac358414506389267c0382a418b6c02cea8758ab"
+            },
+            {
+              "git_blob_sha1": "105c78fadeaa517a851e7a4feffbf9d329c2fb42",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/servo_mount_vane_B1.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "faaca38b481fd7c7fc7efbf496a574d05b7d7ddc5bd5da116416d20cc0181e3b"
+            },
+            {
+              "git_blob_sha1": "fbefccd269327eb1a41768f937d59e323d6282a6",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/servo_mount_vane_B2.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "7b79d04ef4731a1dcd97e704c46c5f5ee91f990da7f13ee892c54a452b739af8"
+            },
+            {
+              "git_blob_sha1": "e5eddab775ac30b7fb55b8b9fe267ccb159053ee",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/single_right_fin_rudder_27mm.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "1b23555d8aed128aff3e28d2e508cdc32d15ddf4e0045a84057cab2243af5e9f"
+            },
+            {
+              "git_blob_sha1": "9ed2b46d630f6de9199cc5e580506010f3efb25e",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/six_hot_side_motor_carrier_frames.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "9a8258b6e768cd76437dc2a80047e5b941263c9aa544da7776078a2ff1ddef52"
+            },
+            {
+              "git_blob_sha1": "ffcfd13d176e63e183f6609c716875817f775380",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/twin_carbon_tail_support_booms.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "8fac589779e62adcc3315c5eb20e7d728b95b1cdbeaf6ae817fae65c2e3f1764"
+            },
+            {
+              "git_blob_sha1": "7c90504eca8c470dcf35020d9e36a70a44688a1d",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/twin_landing_skids_and_legs.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "376de38c9bc2c9baf23205945eacf72d7202b4e5ca33e2d8fab43509f9708123"
+            },
+            {
+              "git_blob_sha1": "3ce39338bc06a77d632bbbd4ef54a9b8b7300622",
+              "key": "geometry_step",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/step/wing_center_joiner_web.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "2117e3216e999a29fb336d4d2165593136a1bfe46094d7ef80cd0f839dbefaac"
+            },
+            {
+              "git_blob_sha1": "3e74cec512c826c2f922da347dfb475695a16d2a",
+              "key": "main_board",
+              "matches_pinned": true,
+              "path": "hardware/main/rev_b/main_rev_b.kicad_pcb",
+              "repo": "drone-arm",
+              "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+              "sha256": "6dd4a727e8d01b344d45afcbb34907a1895a705e2e8a31d2b6acbe28c0a19606"
+            },
+            {
+              "git_blob_sha1": "44b56443b5a60c2cb175501d57ef5507aa56f1e8",
+              "key": "mass_properties",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/reports/mass_cg.csv",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "f5fe8171121c9c5ee5777ec81504b89da62a465d9a4bd0e04be03e40dd547498"
+            },
+            {
+              "git_blob_sha1": "5d2b92d6c6fe3ea8b952b963591e2946c66a3f7d",
+              "key": "parameter_register",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/reports/phase15_parameter_register.json",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "aaac69bc1e8a614439ace408fac0430b9579f03563de208950ec3e20d95f011e"
+            },
+            {
+              "git_blob_sha1": "571fad135f77c6dcc3bff0ed060f40ccb218f58d",
+              "key": "stock_nests",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/stock_nests/sheet_A_250x120x5_36rotors_63stators.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "57d27f7fb433158b25809b10be02ca24e239934b7925de758b049869a4236acd"
+            },
+            {
+              "git_blob_sha1": "888244e9c0a92c75c986c729fdddb6f7c5e3c78e",
+              "key": "stock_nests",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/stock_nests/sheet_B_300x120x5_36rotors_63stators.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "b72b319bc7f84cb2cafaa81a234fce4fe0def66f0b407459a648b63372389ae4"
+            },
+            {
+              "git_blob_sha1": "875c048aef6f1a57afef7463738c5c0bae0416fb",
+              "key": "stock_nests",
+              "matches_pinned": true,
+              "path": "highspeed_edf/deliverables/phase15_geometry/stock_nests/six_hubs_300x50x16_bar.step",
+              "repo": "drone-mech",
+              "revision": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+              "sha256": "ad4029d4f7ef532376bca0d10ca962ea48eb192faed1b0973795b37d11baa470"
+            }
+          ],
+          "errors": [],
+          "status": "PASS"
+        }
+      },
+      "previous_record_sha256": null,
+      "profile": "smoke",
+      "python_version": "3.12.14",
+      "record_sha256": "cb8de5882e9f06a65b6e70136b139a45b8383255494a04e0f1912aa033eb6149",
+      "repository_heads_at_end": {
+        "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+      },
+      "required": {
+        "condition": "both repo HEAD SHAs and artifact/source SHA provenance present and internally consistent"
+      },
+      "requirement_id": "REQ-PROVENANCE",
+      "run_id": "6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b",
+      "run_integrity_ok": true,
+      "run_manifest_path": "engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b.json",
+      "run_manifest_sha256": "c8c3af016adb2c3b923849dc138b425aad83e0daab281477d1f5750f6f59e63e",
+      "runner": "provenance",
+      "severity": "P0",
+      "source": {
+        "issue": 21,
+        "repo": "drone-arm",
+        "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "url": "https://github.com/iamdarshg/drone-arm/issues/21"
+      },
+      "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "status": "PASS",
+      "system": "twin_electric_ducted_fan_aircraft",
+      "test_definition_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "timestamp_utc": "2026-11-01T11:57:38.108774+00:00",
+      "tool_version": "0.1.0",
+      "tool_versions": {
+        "PyYAML": "6.0.3",
+        "jsonschema": "4.26.0"
+      },
+      "unit": null,
+      "variant": "all"
+    },
+    {
+      "applicability": "all",
+      "artifact_paths": [
+        "git:drone-arm",
+        "drone-arm/engineering_acceptance/aircraft_system.yaml",
+        "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-002.json"
+      ],
+      "artifact_sha256": "e9139c65dbee4ba11eb45fce0ae2421f92447915089c7eadd1476b785a1d84c4",
+      "artifacts": [
+        {
+          "kind": "git_commit",
+          "path": "git:drone-arm",
+          "sha256": "744994a096ca73e872b396a9b0636c58e7c1afe8"
+        },
+        {
+          "path": "drone-arm/engineering_acceptance/aircraft_system.yaml",
+          "sha256": "0112688d9b685e7c983d491aba0fd94e0fee8c997eccd4690e690dfe46601b0c"
+        },
+        {
+          "path": "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-002.json",
+          "sha256": "7e1c85864d435b1efcceb5b68191c96a3db800bac41ec59bb7bd5b93c3ac4b85"
+        }
+      ],
+      "blocking": true,
+      "catalog_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "check_exit_code": 0,
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_path": "/tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_present": true,
+      "config_sha256": "0112688d9b685e7c983d491aba0fd94e0fee8c997eccd4690e690dfe46601b0c",
+      "drone_arm_sha": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "drone_mech_sha": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+      "errors": [],
+      "evidence_required": true,
+      "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "id": "BASE-002",
+      "measured": {
+        "errors": []
+      },
+      "previous_record_sha256": "cb8de5882e9f06a65b6e70136b139a45b8383255494a04e0f1912aa033eb6149",
+      "profile": "smoke",
+      "python_version": "3.12.14",
+      "record_sha256": "2d53ed7757870f8d6cee267f422629664e7e40d65f2e76f7e3d17493ff7576a9",
+      "repository_heads_at_end": {
+        "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+      },
+      "required": {
+        "condition": "valid fixture accepted; missing fields, unsupported source revision, invalid unit, NaN/Inf and inconsistent coordinates rejected"
+      },
+      "requirement_id": "REQ-SCHEMA-UNITS",
+      "run_id": "6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b",
+      "run_integrity_ok": true,
+      "run_manifest_path": "engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b.json",
+      "run_manifest_sha256": "c8c3af016adb2c3b923849dc138b425aad83e0daab281477d1f5750f6f59e63e",
+      "runner": "schema_validation",
+      "severity": "P0",
+      "source": {
+        "issue": 21,
+        "repo": "drone-arm",
+        "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "url": "https://github.com/iamdarshg/drone-arm/issues/21"
+      },
+      "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "status": "PASS",
+      "system": "twin_electric_ducted_fan_aircraft",
+      "test_definition_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "timestamp_utc": "2026-11-01T11:57:39.929314+00:00",
+      "tool_version": "0.1.0",
+      "tool_versions": {
+        "PyYAML": "6.0.3",
+        "jsonschema": "4.26.0"
+      },
+      "unit": null,
+      "variant": "all"
+    },
+    {
+      "applicability": "all",
+      "artifact_paths": [
+        "drone-arm/engineering_acceptance/units.py",
+        "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-003.json"
+      ],
+      "artifact_sha256": "c449bb6deb76251923d29a9dbe783bc08553ab2150b5cebb33bc3fa19b4febe6",
+      "artifacts": [
+        {
+          "path": "drone-arm/engineering_acceptance/units.py",
+          "sha256": "9b2baf25ee698f12d8d9e5e4df19531ab53cc3e51ec5e29009ec78ea271e9d98"
+        },
+        {
+          "path": "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-003.json",
+          "sha256": "040bf1fcf4e973195c1894e8f627c4ed035848053b9f1a2c96b0e5882b8356d2"
+        }
+      ],
+      "blocking": true,
+      "catalog_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "check_exit_code": 0,
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_path": "/tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_present": true,
+      "config_sha256": "0112688d9b685e7c983d491aba0fd94e0fee8c997eccd4690e690dfe46601b0c",
+      "drone_arm_sha": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "drone_mech_sha": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+      "errors": [],
+      "evidence_required": true,
+      "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "id": "BASE-003",
+      "measured": {
+        "1000mm_to_m": 1.0,
+        "180deg_to_rad": 3.141592653589793,
+        "1Wh_to_J": 3600.0
+      },
+      "previous_record_sha256": "2d53ed7757870f8d6cee267f422629664e7e40d65f2e76f7e3d17493ff7576a9",
+      "profile": "smoke",
+      "python_version": "3.12.14",
+      "record_sha256": "ce3c422ab48ba2392dc705785b00199ffdbb7ef5a34ce388db3a8de41d6f82ea",
+      "repository_heads_at_end": {
+        "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+      },
+      "required": {
+        "condition": "dimensionally valid conversions preserve quantity; invalid dimensions are rejected",
+        "values": "Each conversion case records its own input_unit and output_unit"
+      },
+      "requirement_id": "REQ-SCHEMA-UNITS",
+      "run_id": "6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b",
+      "run_integrity_ok": true,
+      "run_manifest_path": "engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b.json",
+      "run_manifest_sha256": "c8c3af016adb2c3b923849dc138b425aad83e0daab281477d1f5750f6f59e63e",
+      "runner": "unit_conversion",
+      "severity": "P0",
+      "source": {
+        "issue": 21,
+        "repo": "drone-arm",
+        "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "url": "https://github.com/iamdarshg/drone-arm/issues/21"
+      },
+      "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "status": "PASS",
+      "system": "twin_electric_ducted_fan_aircraft",
+      "test_definition_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "timestamp_utc": "2026-11-01T11:57:39.930686+00:00",
+      "tool_version": "0.1.0",
+      "tool_versions": {
+        "PyYAML": "6.0.3",
+        "jsonschema": "4.26.0"
+      },
+      "unit": null,
+      "variant": "all"
+    },
+    {
+      "applicability": "current_twin_edf",
+      "artifact_paths": [
+        "drone-arm/docs/hardware/REV_B_ARCHITECTURE.md",
+        "git:drone-arm",
+        "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-007.json"
+      ],
+      "artifact_sha256": "f00f9f8d0f0fba2d09fc12ef2108229533e365e3073c23437a86eebf81b9f463",
+      "artifacts": [
+        {
+          "path": "drone-arm/docs/hardware/REV_B_ARCHITECTURE.md",
+          "sha256": "a2bc568eec378645fdfe37582ca3d69fa23fca63e694a16889817969aff41001"
+        },
+        {
+          "kind": "git_commit",
+          "path": "git:drone-arm",
+          "sha256": "744994a096ca73e872b396a9b0636c58e7c1afe8"
+        },
+        {
+          "path": "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-007.json",
+          "sha256": "39463c38216268e13d617d72669b89974e4e31a9fe7c8a8f7f67d671ebdcdb9a"
+        }
+      ],
+      "blocking": true,
+      "catalog_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "check_exit_code": 0,
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_path": "/tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_present": true,
+      "config_sha256": "0112688d9b685e7c983d491aba0fd94e0fee8c997eccd4690e690dfe46601b0c",
+      "drone_arm_sha": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "drone_mech_sha": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+      "errors": [],
+      "evidence_required": true,
+      "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "id": "BASE-007",
+      "measured": {
+        "architecture_source": "docs/hardware/REV_B_ARCHITECTURE.md",
+        "independent_fused_language": true,
+        "parsed_numbered_channels": 0,
+        "six_stage_language": true
+      },
+      "previous_record_sha256": "ce3c422ab48ba2392dc705785b00199ffdbb7ef5a34ce388db3a8de41d6f82ea",
+      "profile": "smoke",
+      "python_version": "3.12.14",
+      "record_sha256": "54378becefc7723fc9feea66668e032591ab5711ba5c4e66c449902a4e103366",
+      "repository_heads_at_end": {
+        "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+      },
+      "required": {
+        "condition": "six separately controlled motor power stages remain represented; architecture is two ducts with three nominal stages per duct",
+        "ducts": 2,
+        "independent_power_stages": 6,
+        "stages_per_duct": 3
+      },
+      "requirement_id": "REQ-POWER-TOPOLOGY",
+      "run_id": "6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b",
+      "run_integrity_ok": true,
+      "run_manifest_path": "engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b.json",
+      "run_manifest_sha256": "c8c3af016adb2c3b923849dc138b425aad83e0daab281477d1f5750f6f59e63e",
+      "runner": "electrical_contract",
+      "severity": "P0",
+      "source": {
+        "issue": 21,
+        "repo": "drone-arm",
+        "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "url": "https://github.com/iamdarshg/drone-arm/issues/21"
+      },
+      "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "status": "PASS",
+      "system": "twin_electric_ducted_fan_aircraft",
+      "test_definition_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "timestamp_utc": "2026-11-01T11:57:39.933073+00:00",
+      "tool_version": "0.1.0",
+      "tool_versions": {
+        "PyYAML": "6.0.3",
+        "jsonschema": "4.26.0"
+      },
+      "unit": "1",
+      "variant": "current_twin_edf"
+    },
+    {
+      "applicability": "firmware_target",
+      "artifact_paths": [
+        "drone-arm/meson.build",
+        "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-016.json"
+      ],
+      "artifact_sha256": "8cdf4603fd87d3683c8f11bb2f3393ddef47e1a4836caf7614d2dc5df1af7199",
+      "artifacts": [
+        {
+          "path": "drone-arm/meson.build",
+          "sha256": "2fa5bbf42d020c0f87daeee89118a617317b3517089625bc334d35b29af048e3"
+        },
+        {
+          "path": "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-016.json",
+          "sha256": "d299243c635c131cef55f74fe4cbafc0f9ea4d8212b65352b668d3b6db35e8b6"
+        }
+      ],
+      "blocking": true,
+      "catalog_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "check_exit_code": 1,
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_path": "/tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_present": true,
+      "config_sha256": "0112688d9b685e7c983d491aba0fd94e0fee8c997eccd4690e690dfe46601b0c",
+      "drone_arm_sha": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "drone_mech_sha": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+      "errors": [
+        "firmware source files are absent: src/main_board/main.c, src/esc_controller/esc.c"
+      ],
+      "evidence_required": true,
+      "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "id": "BASE-016",
+      "measured": {
+        "missing": [
+          "src/main_board/main.c",
+          "src/esc_controller/esc.c"
+        ],
+        "present": []
+      },
+      "previous_record_sha256": "54378becefc7723fc9feea66668e032591ab5711ba5c4e66c449902a4e103366",
+      "profile": "smoke",
+      "python_version": "3.12.14",
+      "record_sha256": "fbefa723fdea99f0e3c37cd3f6733e84be4b33956bd67f50db5313c473fe3384",
+      "repository_heads_at_end": {
+        "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+      },
+      "required": {
+        "condition": "declared target firmware source and required includes exist in pinned tracked tree; absent files fail/block and cannot be inferred from README"
+      },
+      "requirement_id": "REQ-FIRMWARE",
+      "run_id": "6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b",
+      "run_integrity_ok": true,
+      "run_manifest_path": "engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b.json",
+      "run_manifest_sha256": "c8c3af016adb2c3b923849dc138b425aad83e0daab281477d1f5750f6f59e63e",
+      "runner": "firmware_source_presence",
+      "severity": "P0",
+      "source": {
+        "issue": 22,
+        "repo": "drone-arm",
+        "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "url": "https://github.com/iamdarshg/drone-arm/issues/22"
+      },
+      "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "status": "FAIL",
+      "system": "twin_electric_ducted_fan_aircraft",
+      "test_definition_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "timestamp_utc": "2026-11-01T11:57:39.934598+00:00",
+      "tool_version": "0.1.0",
+      "tool_versions": {
+        "PyYAML": "6.0.3",
+        "jsonschema": "4.26.0"
+      },
+      "unit": null,
+      "variant": "firmware_target"
+    },
+    {
+      "applicability": "cross_repo",
+      "artifact_paths": [
+        "git:drone-arm",
+        "git:drone-mech",
+        "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-025.json"
+      ],
+      "artifact_sha256": "691d58b362a4abe58e9b75d189c7e68f634103b8d74ece04f1dacb9429c8460b",
+      "artifacts": [
+        {
+          "kind": "git_commit",
+          "path": "git:drone-arm",
+          "sha256": "744994a096ca73e872b396a9b0636c58e7c1afe8"
+        },
+        {
+          "kind": "git_commit",
+          "path": "git:drone-mech",
+          "sha256": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+        },
+        {
+          "path": "drone-arm/engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b/results/BASE-025.json",
+          "sha256": "1ed2d6e5440f35e7a71bd8511bc42afe785d339064abb0aff2108ce0ec9e8286"
+        }
+      ],
+      "blocking": true,
+      "catalog_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "check_exit_code": 0,
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_path": "/tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "config_present": true,
+      "config_sha256": "0112688d9b685e7c983d491aba0fd94e0fee8c997eccd4690e690dfe46601b0c",
+      "drone_arm_sha": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "drone_mech_sha": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+      "errors": [],
+      "evidence_required": true,
+      "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+      "id": "BASE-025",
+      "measured": {
+        "controller_named_paths": [],
+        "tracked_native_code_files": []
+      },
+      "previous_record_sha256": "fbefa723fdea99f0e3c37cd3f6733e84be4b33956bd67f50db5313c473fe3384",
+      "profile": "smoke",
+      "python_version": "3.12.14",
+      "record_sha256": "873932a10686f7fe2135af77b97327baf094d67f67171d8cfb1ebc825e5d16bc",
+      "repository_heads_at_end": {
+        "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+      },
+      "required": {
+        "condition": "production flight-control code and SIL control implementation remain owned by drone-arm; drone-mech contains no duplicated production controller"
+      },
+      "requirement_id": "REQ-CLAIMS",
+      "run_id": "6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b",
+      "run_integrity_ok": true,
+      "run_manifest_path": "engineering_acceptance/reports/runs/6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b.json",
+      "run_manifest_sha256": "c8c3af016adb2c3b923849dc138b425aad83e0daab281477d1f5750f6f59e63e",
+      "runner": "repository_boundary",
+      "severity": "P0",
+      "source": {
+        "issue": 21,
+        "repo": "drone-arm",
+        "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+        "url": "https://github.com/iamdarshg/drone-arm/issues/21"
+      },
+      "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "status": "PASS",
+      "system": "twin_electric_ducted_fan_aircraft",
+      "test_definition_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+      "timestamp_utc": "2026-11-01T11:57:39.942906+00:00",
+      "tool_version": "0.1.0",
+      "tool_versions": {
+        "PyYAML": "6.0.3",
+        "jsonschema": "4.26.0"
+      },
+      "unit": null,
+      "variant": "cross_repo"
+    }
+  ],
+  "notice": "Not a flight or certification approval."
+}

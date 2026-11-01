@@ -1,0 +1,24 @@
+{
+  "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "errors": [
+    "firmware source files are absent: src/main_board/main.c, src/esc_controller/esc.c"
+  ],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-016",
+  "measured": {
+    "missing": [
+      "src/main_board/main.c",
+      "src/esc_controller/esc.c"
+    ],
+    "present": []
+  },
+  "runner": "firmware_source_presence",
+  "source": {
+    "issue": 22,
+    "repo": "drone-arm",
+    "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "url": "https://github.com/iamdarshg/drone-arm/issues/22"
+  },
+  "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+  "status": "FAIL"
+}

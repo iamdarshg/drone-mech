@@ -1,0 +1,21 @@
+{
+  "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "errors": [],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile smoke --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-007",
+  "measured": {
+    "architecture_source": "docs/hardware/REV_B_ARCHITECTURE.md",
+    "independent_fused_language": true,
+    "parsed_numbered_channels": 0,
+    "six_stage_language": true
+  },
+  "runner": "electrical_contract",
+  "source": {
+    "issue": 21,
+    "repo": "drone-arm",
+    "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "url": "https://github.com/iamdarshg/drone-arm/issues/21"
+  },
+  "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+  "status": "PASS"
+}

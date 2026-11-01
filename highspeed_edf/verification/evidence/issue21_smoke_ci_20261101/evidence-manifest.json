@@ -1,0 +1,40 @@
+{
+  "run_id": "6657adf93067e32ef5af0065f7a63c76f11d58ae52f661776435330e7beb047b",
+  "profile": "smoke",
+  "source_revisions": {
+    "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+  },
+  "runner_source_commit": "a860c13ba2bf31abe90467b5f60f1760ca04b265",
+  "runner_overlaid_unchanged_on_detached_source_pinned_arm_worktree": true,
+  "environment": {
+    "hardware_tests": false,
+    "paid_or_remote_compute": false,
+    "physical_tests": false
+  },
+  "counts": {
+    "PASS": 5,
+    "FAIL": 1,
+    "BLOCKED": 0,
+    "NOT_RUN": 0,
+    "NOT_APPLICABLE": 0
+  },
+  "release_critical_pass": 5,
+  "release_critical_total": 6,
+  "integrity_ok": true,
+  "manifest_sha256": "c8c3af016adb2c3b923849dc138b425aad83e0daab281477d1f5750f6f59e63e",
+  "artifacts": {
+    "evidence.jsonl": "c990918f3a217d01296ac376f2bfc2fc3117d6d5a040cac21231f7e0e366cc12",
+    "junit.xml": "b8ac5e6c6bd3917520dae3a2d22c2ccd29c7d2a3810cc66590163a0808fbc30a",
+    "report.html": "56ae7b2ddef32f5714d04466f5166011e9ac95773a032457ea1d2b191e50f2cd",
+    "report.json": "c2bca4fd5f63e5cd7df499f4a208b032675c2474511483e4cdde51c9e8317c96",
+    "results/BASE-001.json": "8fc9836793e4c5af32755f50fa346997500907420ec7bde3a6eea5397affb344",
+    "results/BASE-002.json": "7e1c85864d435b1efcceb5b68191c96a3db800bac41ec59bb7bd5b93c3ac4b85",
+    "results/BASE-003.json": "040bf1fcf4e973195c1894e8f627c4ed035848053b9f1a2c96b0e5882b8356d2",
+    "results/BASE-007.json": "39463c38216268e13d617d72669b89974e4e31a9fe7c8a8f7f67d671ebdcdb9a",
+    "results/BASE-016.json": "d299243c635c131cef55f74fe4cbafc0f9ea4d8212b65352b668d3b6db35e8b6",
+    "results/BASE-025.json": "1ed2d6e5440f35e7a71bd8511bc42afe785d339064abb0aff2108ce0ec9e8286",
+    "run-manifest.json": "c8c3af016adb2c3b923849dc138b425aad83e0daab281477d1f5750f6f59e63e"
+  },
+  "interpretation": "BASE-016 fails because firmware source files are absent; the smoke profile exits nonzero for that release-critical gate. Five checks pass. No acceptance expectations were altered. This is not an aircraft, fabrication, or flight approval."
+}
