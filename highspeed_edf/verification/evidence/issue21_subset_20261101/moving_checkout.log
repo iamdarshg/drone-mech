@@ -1,0 +1,48 @@
+........F......F.....                                                    [100%]
+=================================== FAILURES ===================================
+____ test_end_to_end_screen_reimports_baseline_and_source_pinned_interfaces ____
+
+    def test_end_to_end_screen_reimports_baseline_and_source_pinned_interfaces():
+        report = run_screen(REPO, _inputs(), DEFAULT_INPUTS, ARM_ROOT)
+        screen = report["preliminary_screen"]
+        integration = screen["shared_installed_constraints"]
+        assert report["overall_status"] == "FAIL"
+        assert report["source_integrity"]["status"] == "PASS"
+        assert screen["native_motor_geometry"]["pairs_checked"] == 15
+        assert screen["native_motor_geometry"]["collision_count"] == 6
+        assert sum(bool(pair["collides"]) for pair in screen["native_motor_geometry"]["pair_measurements"]) == 6
+        assert [(v["id"], v["zero_clearance_axial_overlap_mm"])
+                for v in screen["motor_conflict_variants"]] == [
+                    ("phase15_generated_can", 36.0),
+                    ("issue2_text_claim", 36.0),
+                    ("donor_3670_note", 34.0),
+                    ("donor_3660_note", 24.0),
+                ]
+        assert screen["motor_planning_envelope"]["diameter_mm"] == 42.0
+        assert screen["motor_planning_envelope"]["can_length_mm"] == 72.0
+        assert "actual SKU dimensions unverified" in screen["motor_planning_envelope"]["evidence_class"]
+>       assert integration["board_outlines"]["main"]["measured_edge_centerline_mm"] == [140.0, 100.0]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'board_outlines'
+
+highspeed_edf/verification/tests/test_motor_drive_screen.py:57: KeyError
+________________ test_external_board_blob_mutation_is_rejected _________________
+
+    def test_external_board_blob_mutation_is_rejected():
+        inputs = _inputs()
+        ext = inputs["external_sources"]
+        main_path = ext["arm_source_files"]["main_pcb"]
+        expected = ext["arm_expected_git_blob_sha1"][main_path]
+        good = git_blob_provenance(ARM_ROOT, ext["arm_source_revision"], main_path, expected)
+        forged_pin = git_blob_provenance(ARM_ROOT, ext["arm_source_revision"], main_path, "0" * 40)
+>       assert good["status"] == "PASS"
+E       AssertionError: assert 'FAIL' == 'PASS'
+E         
+E         - PASS
+E         + FAIL
+
+highspeed_edf/verification/tests/test_motor_drive_screen.py:170: AssertionError
+=========================== short test summary info ============================
+FAILED highspeed_edf/verification/tests/test_motor_drive_screen.py::test_end_to_end_screen_reimports_baseline_and_source_pinned_interfaces
+FAILED highspeed_edf/verification/tests/test_motor_drive_screen.py::test_external_board_blob_mutation_is_rejected
+2 failed, 19 passed in 4.77s

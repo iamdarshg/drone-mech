@@ -1,0 +1,215 @@
+.........F...FF.F....                                                    [100%]
+=================================== FAILURES ===================================
+_____ test_obb_positive_but_occ_boolean_disjoint_is_not_a_false_collision ______
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-3/test_obb_positive_but_occ_bool0')
+
+    def test_obb_positive_but_occ_boolean_disjoint_is_not_a_false_collision(tmp_path: Path):
+        """Two spheres have overlapping AABBs but are disjoint under exact OCC Boolean."""
+        first = cq.Solid.makeSphere(1.0, cq.Vector(0.0, 0.0, 0.0))
+        second = cq.Solid.makeSphere(1.0, cq.Vector(1.5, 1.5, 0.0))
+        first_path, second_path = tmp_path / "first.step", tmp_path / "second.step"
+        cq.exporters.export(first, str(first_path))
+        cq.exporters.export(second, str(second_path))
+>       first_record, second_record = import_step(first_path), import_step(second_path)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+
+highspeed_edf/verification/tests/test_motor_drive_screen.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+highspeed_edf/verification/native_adapters.py:38: in import_step
+    shape = cq.importers.importStep(str(path)).val()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fileName = '/tmp/pytest-of-agent/pytest-3/test_obb_positive_but_occ_bool0/first.step'
+
+    def importStep(fileName: str) -> "cq.Workplane":
+        """
+        Accepts a file name and loads the STEP file into a cadquery Workplane
+    
+        :param fileName: The path and name of the STEP file to be imported
+        """
+    
+        # Now read and return the shape
+        reader = STEPControl_Reader()
+        readStatus = reader.ReadFile(fileName)
+        if readStatus != OCP.IFSelect.IFSelect_RetDone:
+>           raise ValueError("STEP File could not be loaded")
+E           ValueError: STEP File could not be loaded
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/cadquery/occ_impl/importers/__init__.py:90: ValueError
+__________________ test_pinned_source_tampering_fails_closed ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-3/test_pinned_source_tampering_f0')
+
+    def test_pinned_source_tampering_fails_closed(tmp_path: Path):
+        inputs = _inputs()
+        for row in inputs["baseline"]["local_sources"]:
+            source = REPO / row["path"]
+            dest = tmp_path / row["path"]
+            dest.parent.mkdir(parents=True, exist_ok=True)
+>           shutil.copy2(source, dest)
+
+highspeed_edf/verification/tests/test_motor_drive_screen.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py:475: in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py:273: in copyfile
+    _fastcopy_sendfile(fsrc, fdst)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py:164: in _fastcopy_sendfile
+    raise err from None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fsrc = <_io.BufferedReader name='/workspace/drone-mech/highspeed_edf/phase15/optimization/phase15_generate_geometry.py'>
+fdst = <_io.BufferedWriter name='/tmp/pytest-of-agent/pytest-3/test_pinned_source_tampering_f0/highspeed_edf/phase15/optimization/phase15_generate_geometry.py'>
+
+    def _fastcopy_sendfile(fsrc, fdst):
+        """Copy data from one regular mmap-like fd to another by using
+        high-performance sendfile(2) syscall.
+        This should work on Linux >= 2.6.33 only.
+        """
+        # Note: copyfileobj() is left alone in order to not introduce any
+        # unexpected breakage. Possible risks by using zero-copy calls
+        # in copyfileobj() are:
+        # - fdst cannot be open in "a"(ppend) mode
+        # - fsrc and fdst may be open in "t"(ext) mode
+        # - fsrc may be a BufferedReader (which hides unread data in a buffer),
+        #   GzipFile (which decompresses data), HTTPResponse (which decodes
+        #   chunks).
+        # - possibly others (e.g. encrypted fs/partition?)
+        global _USE_CP_SENDFILE
+        try:
+            infd = fsrc.fileno()
+            outfd = fdst.fileno()
+        except Exception as err:
+            raise _GiveupOnFastCopy(err)  # not a regular file
+    
+        # Hopefully the whole file will be copied in a single call.
+        # sendfile() is called in a loop 'till EOF is reached (0 return)
+        # so a bufsize smaller or bigger than the actual file size
+        # should not make any difference, also in case the file content
+        # changes while being copied.
+        try:
+            blocksize = max(os.fstat(infd).st_size, 2 ** 23)  # min 8MiB
+        except OSError:
+            blocksize = 2 ** 27  # 128MiB
+        # On 32-bit architectures truncate to 1GiB to avoid OverflowError,
+        # see bpo-38319.
+        if sys.maxsize < 2 ** 32:
+            blocksize = min(blocksize, 2 ** 30)
+    
+        offset = 0
+        while True:
+            try:
+>               sent = os.sendfile(outfd, infd, offset, blocksize)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               OSError: [Errno 28] No space left on device: '/workspace/drone-mech/highspeed_edf/phase15/optimization/phase15_generate_geometry.py' -> '/tmp/pytest-of-agent/pytest-3/test_pinned_source_tampering_f0/highspeed_edf/phase15/optimization/phase15_generate_geometry.py'
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py:150: OSError
+_________________ test_missing_native_motor_part_fails_closed __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-3/test_missing_native_motor_part0')
+
+    def test_missing_native_motor_part_fails_closed(tmp_path: Path):
+        inputs = _inputs()
+        for row in inputs["baseline"]["local_sources"]:
+            source = REPO / row["path"]
+            dest = tmp_path / row["path"]
+            dest.parent.mkdir(parents=True, exist_ok=True)
+>           shutil.copy2(source, dest)
+
+highspeed_edf/verification/tests/test_motor_drive_screen.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py:475: in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py:273: in copyfile
+    _fastcopy_sendfile(fsrc, fdst)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py:164: in _fastcopy_sendfile
+    raise err from None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fsrc = <_io.BufferedReader name='/workspace/drone-mech/highspeed_edf/phase15/optimization/phase15_generate_geometry.py'>
+fdst = <_io.BufferedWriter name='/tmp/pytest-of-agent/pytest-3/test_missing_native_motor_part0/highspeed_edf/phase15/optimization/phase15_generate_geometry.py'>
+
+    def _fastcopy_sendfile(fsrc, fdst):
+        """Copy data from one regular mmap-like fd to another by using
+        high-performance sendfile(2) syscall.
+        This should work on Linux >= 2.6.33 only.
+        """
+        # Note: copyfileobj() is left alone in order to not introduce any
+        # unexpected breakage. Possible risks by using zero-copy calls
+        # in copyfileobj() are:
+        # - fdst cannot be open in "a"(ppend) mode
+        # - fsrc and fdst may be open in "t"(ext) mode
+        # - fsrc may be a BufferedReader (which hides unread data in a buffer),
+        #   GzipFile (which decompresses data), HTTPResponse (which decodes
+        #   chunks).
+        # - possibly others (e.g. encrypted fs/partition?)
+        global _USE_CP_SENDFILE
+        try:
+            infd = fsrc.fileno()
+            outfd = fdst.fileno()
+        except Exception as err:
+            raise _GiveupOnFastCopy(err)  # not a regular file
+    
+        # Hopefully the whole file will be copied in a single call.
+        # sendfile() is called in a loop 'till EOF is reached (0 return)
+        # so a bufsize smaller or bigger than the actual file size
+        # should not make any difference, also in case the file content
+        # changes while being copied.
+        try:
+            blocksize = max(os.fstat(infd).st_size, 2 ** 23)  # min 8MiB
+        except OSError:
+            blocksize = 2 ** 27  # 128MiB
+        # On 32-bit architectures truncate to 1GiB to avoid OverflowError,
+        # see bpo-38319.
+        if sys.maxsize < 2 ** 32:
+            blocksize = min(blocksize, 2 ** 30)
+    
+        offset = 0
+        while True:
+            try:
+>               sent = os.sendfile(outfd, infd, offset, blocksize)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               OSError: [Errno 28] No space left on device: '/workspace/drone-mech/highspeed_edf/phase15/optimization/phase15_generate_geometry.py' -> '/tmp/pytest-of-agent/pytest-3/test_missing_native_motor_part0/highspeed_edf/phase15/optimization/phase15_generate_geometry.py'
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py:150: OSError
+______________ test_external_worktree_board_mutation_is_rejected _______________
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-3/test_external_worktree_board_m0')
+
+    def test_external_worktree_board_mutation_is_rejected(tmp_path: Path):
+        source_root = tmp_path / "arm-source"
+        board = source_root / "hardware/main/rev_b/main_rev_b.kicad_pcb"
+        board.parent.mkdir(parents=True)
+>       board.write_text("(kicad_pcb (version 1))\n", encoding="utf-8")
+
+highspeed_edf/verification/tests/test_motor_drive_screen.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/tmp/pytest-of-agent/pytest-3/test_external_worktree_board_m0/arm-source/hardware/main/rev_b/main_rev_b.kicad_pcb')
+data = '(kicad_pcb (version 1))\n', encoding = 'utf-8', errors = None
+newline = None
+
+    def write_text(self, data, encoding=None, errors=None, newline=None):
+        """
+        Open the file in text mode, write to it, and close the file.
+        """
+        if not isinstance(data, str):
+            raise TypeError('data must be str, not %s' %
+                            data.__class__.__name__)
+        encoding = io.text_encoding(encoding)
+>       with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       OSError: [Errno 28] No space left on device
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1047: OSError
+=========================== short test summary info ============================
+FAILED highspeed_edf/verification/tests/test_motor_drive_screen.py::test_obb_positive_but_occ_boolean_disjoint_is_not_a_false_collision
+FAILED highspeed_edf/verification/tests/test_motor_drive_screen.py::test_pinned_source_tampering_fails_closed
+FAILED highspeed_edf/verification/tests/test_motor_drive_screen.py::test_missing_native_motor_part_fails_closed
+FAILED highspeed_edf/verification/tests/test_motor_drive_screen.py::test_external_worktree_board_mutation_is_rejected
+4 failed, 17 passed in 11.17s

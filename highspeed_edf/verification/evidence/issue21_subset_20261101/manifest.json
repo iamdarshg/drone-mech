@@ -1,0 +1,69 @@
+{
+  "drone_mech_source_revision": "8dd140240f7fc0a8c11205404a542f4c6e94ec30",
+  "arm_pinned_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+  "expectations_modified": false,
+  "runs": [
+    {
+      "name": "moving_checkout",
+      "command": [
+        "python3",
+        "-m",
+        "pytest",
+        "-q",
+        "highspeed_edf/verification/test_material_matrix.py",
+        "highspeed_edf/verification/test_payload_mass_screen.py",
+        "highspeed_edf/verification/tests/test_motor_drive_screen.py",
+        "highspeed_edf/verification/tests/test_wing_load_stress_gate.py"
+      ],
+      "source_repository": "iamdarshg/drone-arm",
+      "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "source_checkout": "/workspace/drone-arm",
+      "exit_code": 1,
+      "log": "moving_checkout.log",
+      "log_sha256": "073bca24dd97da4654215e503a63e0ff69e974458e79afec3ecfbc6b0394a760",
+      "output": "........F......F.....                                                    [100%]\n=================================== FAILURES ===================================\n____ test_end_to_end_screen_reimports_baseline_and_source_pinned_interfaces ____\n\n    def test_end_to_end_screen_reimports_baseline_and_source_pinned_interfaces():\n        report = run_screen(REPO, _inputs(), DEFAULT_INPUTS, ARM_ROOT)\n        screen = report[\"preliminary_screen\"]\n        integration = screen[\"shared_installed_constraints\"]\n        assert report[\"overall_status\"] == \"FAIL\"\n        assert report[\"source_integrity\"][\"status\"] == \"PASS\"\n        assert screen[\"native_motor_geometry\"][\"pairs_checked\"] == 15\n        assert screen[\"native_motor_geometry\"][\"collision_count\"] == 6\n        assert sum(bool(pair[\"collides\"]) for pair in screen[\"native_motor_geometry\"][\"pair_measurements\"]) == 6\n        assert [(v[\"id\"], v[\"zero_clearance_axial_overlap_mm\"])\n                for v in screen[\"motor_conflict_variants\"]] == [\n                    (\"phase15_generated_can\", 36.0),\n                    (\"issue2_text_claim\", 36.0),\n                    (\"donor_3670_note\", 34.0),\n                    (\"donor_3660_note\", 24.0),\n                ]\n        assert screen[\"motor_planning_envelope\"][\"diameter_mm\"] == 42.0\n        assert screen[\"motor_planning_envelope\"][\"can_length_mm\"] == 72.0\n        assert \"actual SKU dimensions unverified\" in screen[\"motor_planning_envelope\"][\"evidence_class\"]\n>       assert integration[\"board_outlines\"][\"main\"][\"measured_edge_centerline_mm\"] == [140.0, 100.0]\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'board_outlines'\n\nhighspeed_edf/verification/tests/test_motor_drive_screen.py:57: KeyError\n________________ test_external_board_blob_mutation_is_rejected _________________\n\n    def test_external_board_blob_mutation_is_rejected():\n        inputs = _inputs()\n        ext = inputs[\"external_sources\"]\n        main_path = ext[\"arm_source_files\"][\"main_pcb\"]\n        expected = ext[\"arm_expected_git_blob_sha1\"][main_path]\n        good = git_blob_provenance(ARM_ROOT, ext[\"arm_source_revision\"], main_path, expected)\n        forged_pin = git_blob_provenance(ARM_ROOT, ext[\"arm_source_revision\"], main_path, \"0\" * 40)\n>       assert good[\"status\"] == \"PASS\"\nE       AssertionError: assert 'FAIL' == 'PASS'\nE         \nE         - PASS\nE         + FAIL\n\nhighspeed_edf/verification/tests/test_motor_drive_screen.py:170: AssertionError\n=========================== short test summary info ============================\nFAILED highspeed_edf/verification/tests/test_motor_drive_screen.py::test_end_to_end_screen_reimports_baseline_and_source_pinned_interfaces\nFAILED highspeed_edf/verification/tests/test_motor_drive_screen.py::test_external_board_blob_mutation_is_rejected\n2 failed, 19 passed in 4.77s"
+    },
+    {
+      "name": "source_pinned_retry",
+      "command": [
+        "python3",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=/tmp/pytest-issue21-rerun",
+        "highspeed_edf/verification/test_material_matrix.py",
+        "highspeed_edf/verification/test_payload_mass_screen.py",
+        "highspeed_edf/verification/tests/test_motor_drive_screen.py",
+        "highspeed_edf/verification/tests/test_wing_load_stress_gate.py"
+      ],
+      "source_repository": "iamdarshg/drone-arm",
+      "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "source_checkout": "/tmp/drone-arm-source-744994a",
+      "exit_code": 0,
+      "log": "source_pinned_retry.log",
+      "log_sha256": "745818791cdc7def77b676d14e371ed71853cfefc248b62aed29826368531b1e",
+      "note": "Successful rerun after transient ENOSPC; test expectations unchanged; 21 passed."
+    },
+    {
+      "name": "source_pinned_first_attempt",
+      "command": [
+        "python3",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=/tmp/pytest-issue21-rerun",
+        "highspeed_edf/verification/test_material_matrix.py",
+        "highspeed_edf/verification/test_payload_mass_screen.py",
+        "highspeed_edf/verification/tests/test_motor_drive_screen.py",
+        "highspeed_edf/verification/tests/test_wing_load_stress_gate.py"
+      ],
+      "source_repository": "iamdarshg/drone-arm",
+      "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+      "source_checkout": "/tmp/drone-arm-source-744994a",
+      "exit_code": 1,
+      "log": "source_pinned.log",
+      "log_sha256": "b04410083a8196e92f97341c8fae0f6f4e9efb4a7e87e4995ec692e755fd3e6a",
+      "note": "Four test fixture operations failed with ENOSPC while other CFD artifacts were being written. Repeated after disposable cases were removed; retry passed."
+    }
+  ]
+}
