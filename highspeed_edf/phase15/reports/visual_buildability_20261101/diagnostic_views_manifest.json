@@ -1,0 +1,378 @@
+{
+  "sourceStep": "deliverables/phase15_geometry/step/phase15_airframe_full_assembly.step",
+  "sourceStepSha256": "9b83f3bfa5ea261c2055152c9fdd2147b9e16819634715c3c4ae23b45deae772",
+  "rendererScriptSha256": "05cdbb07f5653a74e2d82c3cb89574756b734687050f66a4db89fb212b765e5d",
+  "cadTessellatorSha256": "98563a8a79a27dd8ce1b1a7c9a8193cc3037a756f49e6b3bbf73dc153b09c160",
+  "tessellatedSolids": 516,
+  "triangles": 61534,
+  "rendering": "Blender orthographic projections, opaque category colors, source placements unchanged; named parts hidden only as specified. Final PNG annotation uses a title and explicit world-axis footer; image hashes cover annotated outputs.",
+  "limitations": [
+    "Visual evidence only; opaque projections and selective hiding do not prove physical contact, clearance, alignment, assembly access, or buildability.",
+    "No geometry was moved; no collision solver, CFD, structural analysis, CAM simulation, or physical test was run."
+  ],
+  "views": [
+    {
+      "image": "05_drive_a_side_projection.png",
+      "cameraDirection": [
+        1,
+        0,
+        0
+      ],
+      "worldUp": [
+        0,
+        1,
+        0
+      ],
+      "targetMm": [
+        -44,
+        0,
+        88
+      ],
+      "orthoScaleMm": 270,
+      "screenHorizontalWorldAxis": "-Z (aft points left)",
+      "screenVerticalWorldAxis": "+Y",
+      "includedPrefixes": [
+        "duct_A_rotor_R",
+        "duct_A_stator_S",
+        "motor_A_R",
+        "six_hot_side_motor_carrier_frames"
+      ],
+      "purpose": "Show axial placement of the three motor-can envelopes against Rotor A and stator stations, with other duct and airframe parts hidden.",
+      "sha256": "295f4b83e89a5b16e295217f685633976af86dadcfe2834518173f92d6aebe6c",
+      "imageLabel": "Duct A side projection \u00b7 motor envelopes and rotor stations",
+      "imageAxes": "Screen-right \u2212Z; +Z aft points left. Screen-up +Y. Projection only; no clearance claim."
+    },
+    {
+      "image": "06_battery_electronics_side_projection.png",
+      "cameraDirection": [
+        1,
+        0,
+        0
+      ],
+      "worldUp": [
+        0,
+        1,
+        0
+      ],
+      "targetMm": [
+        0.0,
+        21.0,
+        43.25
+      ],
+      "orthoScaleMm": 790.1600000000001,
+      "screenHorizontalWorldAxis": "-Z (aft points left)",
+      "screenVerticalWorldAxis": "+Y",
+      "includedPrefixes": [
+        "Bonka_",
+        "battery_",
+        "esc_",
+        "flight_control_",
+        "flight_6ch_",
+        "fc_",
+        "board_isolator_"
+      ],
+      "purpose": "Show battery and board/spreader/cooling group axial distribution with wing, ducts and skins hidden; this view does not imply those parts are adjacent or assembled as one package.",
+      "includedComponentNames": [
+        "Bonka_6S_1600_pack_1_185x65x55",
+        "Bonka_6S_1600_pack_2_185x65x55",
+        "battery_retention_straps",
+        "battery_service_hatch_and_fastener_envelopes",
+        "battery_sliding_rails_and_6g_end_stops",
+        "board_isolator_standoffs",
+        "esc_150x150_spreader_and_flow_aligned_fins",
+        "esc_36_mosfet_packages",
+        "esc_battery_motor_temp_and_CAN_connectors",
+        "esc_fc_open_ended_cooling_tunnel",
+        "esc_logic_and_passives",
+        "esc_pcb",
+        "esc_six_60A_fuse_envelopes",
+        "esc_six_copper_busbars",
+        "fc_100x80_spreader",
+        "flight_6ch_PWM_and_feedback_headers",
+        "flight_control_components",
+        "flight_control_pcb"
+      ],
+      "componentBoundsMm": {
+        "battery_retention_straps": {
+          "min": [
+            -68.0,
+            30.5,
+            -277.5
+          ],
+          "max": [
+            68.0,
+            31.5,
+            -122.5
+          ]
+        },
+        "battery_service_hatch_and_fastener_envelopes": {
+          "min": [
+            -71.5,
+            43.79999923706055,
+            -309.5
+          ],
+          "max": [
+            71.5,
+            46.79999923706055,
+            -105.5
+          ]
+        },
+        "battery_sliding_rails_and_6g_end_stops": {
+          "min": [
+            -68.0,
+            -33.0,
+            -300.0
+          ],
+          "max": [
+            68.0,
+            -27.0,
+            -115.0
+          ]
+        },
+        "board_isolator_standoffs": {
+          "min": [
+            -69.0,
+            48.0,
+            156.0
+          ],
+          "max": [
+            69.0,
+            51.20000076293945,
+            384.0
+          ]
+        },
+        "Bonka_6S_1600_pack_1_185x65x55": {
+          "min": [
+            -65.5,
+            -27.5,
+            -300.0
+          ],
+          "max": [
+            -0.5,
+            27.5,
+            -115.0
+          ]
+        },
+        "Bonka_6S_1600_pack_2_185x65x55": {
+          "min": [
+            0.5,
+            -27.5,
+            -300.0
+          ],
+          "max": [
+            65.5,
+            27.5,
+            -115.0
+          ]
+        },
+        "esc_150x150_spreader_and_flow_aligned_fins": {
+          "min": [
+            -75.0,
+            54.20000076293945,
+            145.0
+          ],
+          "max": [
+            75.0,
+            65.19999694824219,
+            295.0
+          ]
+        },
+        "esc_36_mosfet_packages": {
+          "min": [
+            -51.5,
+            52.099998474121094,
+            158.5
+          ],
+          "max": [
+            51.5,
+            53.5,
+            281.5
+          ]
+        },
+        "esc_battery_motor_temp_and_CAN_connectors": {
+          "min": [
+            -73.0,
+            53.0,
+            147.0
+          ],
+          "max": [
+            73.0,
+            58.0,
+            290.0
+          ]
+        },
+        "esc_fc_open_ended_cooling_tunnel": {
+          "min": [
+            -85.0,
+            46.0,
+            144.0
+          ],
+          "max": [
+            85.0,
+            75.0,
+            396.0
+          ]
+        },
+        "esc_logic_and_passives": {
+          "min": [
+            -60.5,
+            52.79999923706055,
+            150.0
+          ],
+          "max": [
+            58.0,
+            54.79999923706055,
+            288.5
+          ]
+        },
+        "esc_pcb": {
+          "min": [
+            -75.0,
+            51.20000076293945,
+            145.0
+          ],
+          "max": [
+            75.0,
+            52.79999923706055,
+            295.0
+          ]
+        },
+        "esc_six_60A_fuse_envelopes": {
+          "min": [
+            -9.0,
+            52.5,
+            159.0
+          ],
+          "max": [
+            9.0,
+            57.5,
+            281.0
+          ]
+        },
+        "esc_six_copper_busbars": {
+          "min": [
+            -66.0,
+            52.900001525878906,
+            161.0
+          ],
+          "max": [
+            66.0,
+            53.900001525878906,
+            279.0
+          ]
+        },
+        "fc_100x80_spreader": {
+          "min": [
+            -50.0,
+            54.20000076293945,
+            305.0
+          ],
+          "max": [
+            50.0,
+            55.20000076293945,
+            385.0
+          ]
+        },
+        "flight_6ch_PWM_and_feedback_headers": {
+          "min": [
+            -52.0,
+            52.5,
+            298.5
+          ],
+          "max": [
+            52.0,
+            55.5,
+            391.5
+          ]
+        },
+        "flight_control_components": {
+          "min": [
+            -61.0,
+            52.5,
+            316.0
+          ],
+          "max": [
+            61.0,
+            55.5,
+            374.0
+          ]
+        },
+        "flight_control_pcb": {
+          "min": [
+            -70.0,
+            51.20000076293945,
+            295.0
+          ],
+          "max": [
+            70.0,
+            52.79999923706055,
+            395.0
+          ]
+        }
+      },
+      "worldBoundsMm": {
+        "min": [
+          -85.0,
+          -33.0,
+          -309.5
+        ],
+        "max": [
+          85.0,
+          75.0,
+          396.0
+        ]
+      },
+      "projectedSpanMm": {
+        "horizontal": 705.5,
+        "vertical": 108.0
+      },
+      "screenRight": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "screenUp": [
+        -0.0,
+        1.0,
+        0.0
+      ],
+      "imageLabel": "Battery and avionics groups \u00b7 actual STEP axial distribution",
+      "sha256": "1d0f411eaefe585d1f29fdb28f6a9307a7d39657416faf81a8f72c333a0be496",
+      "imageAxes": "Screen-right \u2212Z; +Z aft points left. Screen-up +Y. Projection only; no clearance claim."
+    },
+    {
+      "image": "07_duct_a_top_projection.png",
+      "cameraDirection": [
+        0,
+        1,
+        0
+      ],
+      "worldUp": [
+        0,
+        0,
+        1
+      ],
+      "targetMm": [
+        -44,
+        0,
+        88
+      ],
+      "orthoScaleMm": 310,
+      "screenHorizontalWorldAxis": "-X",
+      "screenVerticalWorldAxis": "+Z (aft)",
+      "includedPrefixes": [
+        "duct_A_rotor_R",
+        "duct_A_stator_S",
+        "duct_A_vector_vane",
+        "motor_A_",
+        "servo_mount_vane_A"
+      ],
+      "purpose": "Show Rotor A and stator rows against motor envelopes, with the outer duct and airframe hidden.",
+      "sha256": "c4479fef4740d368a3c8cb3955e273da758af0223c6408cc75b39d7085046cd3",
+      "imageLabel": "Duct A axial stack \u00b7 outer duct hidden",
+      "imageAxes": "Screen-right \u2212X. Screen-up +Z aft. Projection only; no clearance claim."
+    }
+  ],
+  "rendererWorkerSha256": "05cdbb07f5653a74e2d82c3cb89574756b734687050f66a4db89fb212b765e5d",
+  "orchestratorAndAnnotationSha256": "156d3850a16c230f5cb6526e276c73d58ea60432b10f16b2e96aaff1f48a7933"
+}
