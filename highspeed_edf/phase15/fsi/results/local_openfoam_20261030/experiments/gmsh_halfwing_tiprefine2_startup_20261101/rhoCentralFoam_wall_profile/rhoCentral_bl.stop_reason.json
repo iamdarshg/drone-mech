@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-01T12:09:05Z",
+  "reason": "SIGTERM: adiabatic input Tt guard > 1.05*327.886735 K =344.281 K",
+  "checkpoint": {
+    "timeSeconds": 2.6249203e-06,
+    "checkpoint": "2.6249203e-06",
+    "maxTotalTemperatureK": 345.5197375178918,
+    "maxTotalTemperatureCell": 642623,
+    "maxMach": 1.0527615410063305,
+    "maxMachCell": 457493,
+    "maxSpeedMps": 346.260354503859,
+    "minTemperatureK": 267.0232901,
+    "maxTemperatureK": 339.9753468,
+    "minPressurePa": 66822.17533,
+    "maxPressurePa": 161417.659,
+    "minDensityKgM3": 0.8707389659,
+    "maxDensityKgM3": 1.656497753
+  }
+}

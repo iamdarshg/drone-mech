@@ -1,0 +1,133 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/rhoSimpleFoam -case /tmp/gmsh_halfwing_fluid/rhoSimple_case
+Date   : Nov 01 2026
+Time   : 11:52:31
+Host   : ebaa71603c78
+PID    : 10168
+I/O    : uncollated
+Case   : /tmp/gmsh_halfwing_fluid/rhoSimple_case
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+--> FOAM Warning : 
+    From function virtual Foam::Istream& Foam::ISstream::read(Foam::word&)
+    in file db/IOstreams/Sstreams/ISstream.C at line 472
+    Reading "/tmp/gmsh_halfwing_fluid/rhoSimple_case/system/fvSchemes" at line 14
+    Missing 1 closing ')' while parsing
+
+div(((muEff*dev2(T(grad(U)))))
+
+
+SIMPLE: no convergence criteria found. Calculations will run for 1 steps.
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.5555555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+No MRF models present
+
+No finite volume options present
+
+Starting time loop
+
+Time = 1
+
+smoothSolver:  Solving for Ux, Initial residual = 0.2300295293, Final residual = 0.006898129909, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.2031492455, Final residual = 0.006850587711, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.0008904030238, Final residual = 2.469707159e-05, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.000315583015, Final residual = 6.871985495e-06, No Iterations 1
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::sigFpe::sigHandler(int) at ??:?
+#2  ? in /lib/x86_64-linux-gnu/libc.so.6
+#3  Foam::scalarProduct<double, double>::type Foam::sumProd<double>(Foam::UList<double> const&, Foam::UList<double> const&) at ??:?
+#4  Foam::PBiCGStab::scalarSolve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+#5  Foam::GAMGSolver::solveCoarsestLevel(Foam::Field<double>&, Foam::Field<double> const&) const at ??:?
+#6  Foam::GAMGSolver::Vcycle(Foam::PtrList<Foam::lduMatrix::smoother> const&, Foam::Field<double>&, Foam::Field<double> const&, Foam::Field<double>&, Foam::Field<double>&, Foam::Field<double>&, Foam::Field<double>&, Foam::Field<double>&, Foam::PtrList<Foam::Field<double> >&, Foam::PtrList<Foam::Field<double> >&, unsigned char) const at ??:?
+#7  Foam::GAMGSolver::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+#8  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+#9  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+#10  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+#11  Foam::fvMatrix<double>::solve() in /workspace/openfoam-deb/usr/bin/rhoSimpleFoam
+#12  ? in /workspace/openfoam-deb/usr/bin/rhoSimpleFoam
+#13  ? in /lib/x86_64-linux-gnu/libc.so.6
+#14  __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+#15  ? in /workspace/openfoam-deb/usr/bin/rhoSimpleFoam
+[ebaa71603c78:10168:0:10168] Caught signal 8 (Floating point exception: tkill(2) or tgkill(2))
+==== backtrace (tid:  10168) ====
+ 0  /lib/x86_64-linux-gnu/libucs.so.0(ucs_handle_error+0x2bc) [0x7f5c9680464c]
+ 1  /lib/x86_64-linux-gnu/libucs.so.0(+0x3182f) [0x7f5c9680482f]
+ 2  /lib/x86_64-linux-gnu/libucs.so.0(+0x31afa) [0x7f5c96804afa]
+ 3  /lib/x86_64-linux-gnu/libc.so.6(+0x3fd70) [0x7f5c99179d70]
+ 4  /lib/x86_64-linux-gnu/libc.so.6(+0x9469c) [0x7f5c991ce69c]
+ 5  /lib/x86_64-linux-gnu/libc.so.6(gsignal+0x12) [0x7f5c99179c42]
+ 6  /lib/x86_64-linux-gnu/libc.so.6(+0x3fd70) [0x7f5c99179d70]
+ 7  /workspace/openfoam-deb/usr/lib/libOpenFOAM.so(_ZN4Foam7sumProdIdEENS_13scalarProductIT_S2_E4typeERKNS_5UListIS2_EES8_+0x6e) [0x7f5c99f7dace]
+ 8  /workspace/openfoam-deb/usr/lib/libOpenFOAM.so(_ZNK4Foam9PBiCGStab11scalarSolveERNS_5FieldIdEERKS2_h+0x72e) [0x7f5c99d4282e]
+ 9  /workspace/openfoam-deb/usr/lib/libOpenFOAM.so(_ZNK4Foam10GAMGSolver18solveCoarsestLevelERNS_5FieldIdEERKS2_+0xb5) [0x7f5c99d624b5]
+10  /workspace/openfoam-deb/usr/lib/libOpenFOAM.so(_ZNK4Foam10GAMGSolver6VcycleERKNS_7PtrListINS_9lduMatrix8smootherEEERNS_5FieldIdEERKS8_S9_S9_S9_S9_S9_RNS1_IS8_EESD_h+0x642) [0x7f5c99d648c2]
+11  /workspace/openfoam-deb/usr/lib/libOpenFOAM.so(_ZNK4Foam10GAMGSolver5solveERNS_5FieldIdEERKS2_h+0x540) [0x7f5c99d66d80]
+12  /workspace/openfoam-deb/usr/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x1a9) [0x7f5c9db056b9]
+13  /workspace/openfoam-deb/usr/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x594) [0x7f5c9ceed584]
+14  /workspace/openfoam-deb/usr/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0x25) [0x7f5c9ce8ced5]
+15  /workspace/openfoam-deb/usr/bin/rhoSimpleFoam(_ZN4Foam8fvMatrixIdE5solveEv+0x21f) [0x55bc9558386f]
+16  /workspace/openfoam-deb/usr/bin/rhoSimpleFoam(+0x28a43) [0x55bc95562a43]
+17  /lib/x86_64-linux-gnu/libc.so.6(+0x29ca8) [0x7f5c99163ca8]
+18  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x85) [0x7f5c99163d65]
+19  /workspace/openfoam-deb/usr/bin/rhoSimpleFoam(+0x2bb61) [0x55bc95565b61]
+=================================

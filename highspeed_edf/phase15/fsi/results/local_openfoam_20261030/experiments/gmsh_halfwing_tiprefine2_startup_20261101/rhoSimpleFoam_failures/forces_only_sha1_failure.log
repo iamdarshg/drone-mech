@@ -1,0 +1,102 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/rhoSimpleFoam -case /tmp/gmsh_halfwing_fluid/rhoSimple_dry_force -dry-run
+Date   : Nov 01 2026
+Time   : 11:51:13
+Host   : ebaa71603c78
+PID    : 9841
+I/O    : uncollated
+Case   : /tmp/gmsh_halfwing_fluid/rhoSimple_dry_force
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Operating in 'dry-run' mode: case will run for 1 time step.  All checks assumed OK on a clean exit
+Creating simplified mesh using "/tmp/gmsh_halfwing_fluid/rhoSimple_dry_force/constant/polyMesh"
+Mesh bounds: (0 -0.35 -0.695) (0.79125 0.35 1.43124)
+--> FOAM Warning : 
+    From function virtual Foam::Istream& Foam::ISstream::read(Foam::word&)
+    in file db/IOstreams/Sstreams/ISstream.C at line 472
+    Reading "/tmp/gmsh_halfwing_fluid/rhoSimple_dry_force/system/fvSchemes" at line 14
+    Missing 1 closing ')' while parsing
+
+div(((muEff*dev2(T(grad(U)))))
+
+Creating dummy zone fluid
+
+SIMPLE: no convergence criteria found. Calculations will run for 1e+15 steps.
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.5555555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+No MRF models present
+
+No finite volume options present
+
+Starting time loop
+
+
+
+--> FOAM FATAL IO ERROR: 
+error in IOstream "sha1" for operation Foam::Ostream& Foam::operator<<(Ostream&, const word&)
+
+file: sha1 at line 0.
+
+    From function virtual bool Foam::IOstream::check(const char*) const
+    in file db/IOstreams/IOstreams/IOstream.C at line 55.
+
+FOAM exiting
+

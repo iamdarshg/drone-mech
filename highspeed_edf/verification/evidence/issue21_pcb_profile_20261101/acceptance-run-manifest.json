@@ -1,0 +1,88 @@
+{
+  "config_path": "/tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "config_present": true,
+  "config_sha256": "0112688d9b685e7c983d491aba0fd94e0fee8c997eccd4690e690dfe46601b0c",
+  "drone_arm_sha": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+  "drone_mech_sha": "5246c90657071772e220b118967fa5f3e7c9ff7c",
+  "integrity_ok": true,
+  "profile": "pcb",
+  "python_version": "3.12.14",
+  "repository_heads_at_end": {
+    "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+  },
+  "results": [
+    {
+      "artifact_sha256": "a4d26c6d68f61dc27f014d14ef02c85828c21ce673a603ec0bd8cbf29f044460",
+      "check_exit_code": 0,
+      "evidence_required": true,
+      "id": "BASE-001",
+      "status": "PASS"
+    },
+    {
+      "artifact_sha256": "a9d1d6288f8af3f70996ccbe2791fc5938fcc20250f31a40481c843ab765501d",
+      "check_exit_code": 0,
+      "evidence_required": true,
+      "id": "BASE-002",
+      "status": "PASS"
+    },
+    {
+      "artifact_sha256": "1b0b0621e7f6d092bf9f91bf51da1aaa5d02fa52a291f9111d8073e75432c270",
+      "check_exit_code": 1,
+      "evidence_required": true,
+      "id": "BASE-005",
+      "status": "FAIL"
+    },
+    {
+      "artifact_sha256": "374dc4f64701a7819be5a5c24e4fe9b9ae0276399e6071e22173e26d80566886",
+      "check_exit_code": 0,
+      "evidence_required": true,
+      "id": "BASE-006",
+      "status": "PASS"
+    },
+    {
+      "artifact_sha256": "e48fd0678bc6c9f105f85bcc3c1739faace27f08bbd4dabeec32dec59db3ab05",
+      "check_exit_code": 0,
+      "evidence_required": true,
+      "id": "BASE-007",
+      "status": "PASS"
+    },
+    {
+      "artifact_sha256": "355b504fd258a4dac7c2b06e91e98275fc7a279b54918f4413ba5d66ea855565",
+      "check_exit_code": 1,
+      "evidence_required": true,
+      "id": "BASE-013",
+      "status": "FAIL"
+    },
+    {
+      "artifact_sha256": "85e6c28911be34b45e83d8fe5d6b8902bbb9b64400ab0cbd54d37397a5145dcf",
+      "check_exit_code": 1,
+      "evidence_required": true,
+      "id": "BASE-014",
+      "status": "FAIL"
+    },
+    {
+      "artifact_sha256": "4d232f36148bebcd479d7a03efb13de9460ee635afd547386c00721e98a23be0",
+      "check_exit_code": 0,
+      "evidence_required": true,
+      "id": "BASE-015",
+      "status": "PASS"
+    },
+    {
+      "artifact_sha256": "c6767f6e6e602de8aaed6835b2d33ac7fbb6283ce19de94058205a23c707557c",
+      "check_exit_code": 1,
+      "evidence_required": true,
+      "id": "BASE-018",
+      "status": "FAIL"
+    }
+  ],
+  "run_id": "492b5203198235943c67b70e3a13bcc03d15179e90fce796404f8e176f7744ce",
+  "test_definition_sha256": "9baf04ed130248d68c4c3c5c88f537ce0db8cc69c1051581aff02abec66cfc23",
+  "timestamp_utc": "2026-11-01T12:13:34.160475+00:00",
+  "tool_version": "0.1.0",
+  "tool_versions": {
+    "PyYAML": "6.0.3",
+    "jsonschema": "4.26.0",
+    "kicad_cli": "9.0.2"
+  }
+}

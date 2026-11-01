@@ -1,0 +1,26 @@
+{
+  "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile pcb --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "errors": [
+    "cannot establish safe neutral output and CAN-readback arm inhibit: firmware sources are absent"
+  ],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile pcb --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-014",
+  "measured": {
+    "lost_can_readback_arm_inhibited_proven": false,
+    "missing": [
+      "src/main_board/low_level/pwm.c",
+      "src/esc_controller/esc.c"
+    ],
+    "neutral_on_reset_proven": false,
+    "startup_sources_present": []
+  },
+  "runner": "actuator_safe_start",
+  "source": {
+    "issue": 21,
+    "repo": "drone-arm",
+    "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "url": "https://github.com/iamdarshg/drone-arm/issues/21"
+  },
+  "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+  "status": "FAIL"
+}

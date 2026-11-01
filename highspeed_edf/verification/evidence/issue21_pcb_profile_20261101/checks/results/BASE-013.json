@@ -1,0 +1,22 @@
+{
+  "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile pcb --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "errors": [
+    "7 independent effectors exceed 6 controller outputs"
+  ],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile pcb --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-013",
+  "measured": {
+    "controller_outputs": 6,
+    "independent_effectors": 7,
+    "unallocated": 1
+  },
+  "runner": "actuator_allocation",
+  "source": {
+    "issue": 20,
+    "repo": "drone-arm",
+    "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "url": "https://github.com/iamdarshg/drone-arm/issues/20"
+  },
+  "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+  "status": "FAIL"
+}

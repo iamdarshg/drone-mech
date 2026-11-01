@@ -1,0 +1,7 @@
+# Reproduction and evidence notes
+
+The experiment was launched from a clone of the parent experiment case using OpenFOAM Foundation 1912 (build patch 200626), `rhoCentralFoam`, and the native `system/controlDict`, `system/fvSchemes`, and `system/fvSolution` retained here. The governing run used the Gmsh-imported `tiprefine2` mesh and a wall-compatible initial condition produced by `prepare_bl_profile.py`. The monitor command was `python3 monitor_rhoCentral_bl.py --case <case> --log <log> --monitor <jsonl> --stop-reason <json>`, running concurrently with `rhoCentralFoam -case <case>`. Exact run arguments are retained in `run_rhoCentral_bl.sh`; the run was detached and the monitor sent SIGTERM when the fixed 5% freestream-total-temperature proxy guard was breached.
+
+The five interval checkpoints and final guarded state are in `checkpoint_<time>/`. Files ending `.gz` are OpenFOAM's own compressed ASCII output. The step-50 directory includes every field actually written at that time. This solver did not write the energy variable `h`; `h_from_T.gz` is a separately derived field for review, reproducible from `T.gz` with `derive_checkpoint_h.py`, and must not be treated as native output. The monitor calculation independently uses the actual T and U arrays and case Cp. Inputs and outputs are pinned in the parent `evidence.sha256` manifest.
+
+No result in this package establishes a converged or developed flow solution, a resolved shock, lift/drag, or flight performance. The guard breach is an unresolved startup diagnostic.

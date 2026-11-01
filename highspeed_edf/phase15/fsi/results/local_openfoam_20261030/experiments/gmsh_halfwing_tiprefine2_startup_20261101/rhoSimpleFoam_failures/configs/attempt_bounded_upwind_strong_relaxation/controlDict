@@ -1,0 +1,3 @@
+FoamFile { version 2.0; format ascii; class dictionary; location "system"; object controlDict; }
+application rhoSimpleFoam; startFrom startTime; startTime 0; deltaT 1; stopAt endTime; endTime 1;
+writeControl timeStep; writeInterval 1; purgeWrite 2; writeFormat ascii; writePrecision 10; writeCompression off; timeFormat general; timePrecision 8; runTimeModifiable false;

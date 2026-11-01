@@ -47,3 +47,9 @@ No fabrication readiness, aircraft readiness, successful transonic solution, or 
 ## Density-based solver comparison
 
 A separate Kurganov `rhoCentralFoam` startup on the same mesh is recorded in [`rhoCentralFoam/comparison_report.md`](rhoCentralFoam/comparison_report.md). Its first complete checkpoint passed a 5% input total-temperature tolerance; the second exceeded it and was deliberately stopped. It remained subsonic (max Mach 0.9492) and is not developed flow or a transonic result.
+
+## Wall-compatible startup and steady-solver attempts
+
+A separate coarse wall-profile initialization followed by `rhoCentralFoam` is documented in [`rhoCentralFoam_wall_profile/comparison_report.md`](rhoCentralFoam_wall_profile/comparison_report.md). The monitor stopped this step-50 startup at `2.6249203e-6 s` after the pointwise total-temperature proxy reached `345.5197 K`, exceeding the unchanged 5% input stagnation-temperature guard (`344.281 K`) by `1.2387 K`. This is an unresolved startup guard breach, not proof of physical heating and not an aerodynamic result. Full compressed checkpoint fields and source/runtime pins are retained in this experiment directory.
+
+The steady `rhoSimpleFoam` attempts and their exact settings/logs are itemized in [`rhoSimpleFoam_failures/report.md`](rhoSimpleFoam_failures/report.md); attempts either diverged or raised floating-point errors. No convergence, shock, force, lift, drag, or performance result is established.

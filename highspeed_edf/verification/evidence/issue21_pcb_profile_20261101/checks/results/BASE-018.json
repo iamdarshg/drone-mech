@@ -1,0 +1,63 @@
+{
+  "command": [
+    [
+      "/usr/bin/kicad-cli",
+      "pcb",
+      "drc",
+      "--severity-all",
+      "--exit-code-violations",
+      "--format",
+      "json",
+      "--output",
+      "/tmp/acceptance-baseline/drone-arm/engineering_acceptance/reports/native/492b5203198235943c67b70e3a13bcc03d15179e90fce796404f8e176f7744ce/esc-native-drc.json",
+      "/tmp/acceptance-baseline/drone-arm/hardware/esc/rev_b/esc_rev_b.kicad_pcb"
+    ],
+    [
+      "/usr/bin/kicad-cli",
+      "pcb",
+      "drc",
+      "--severity-all",
+      "--exit-code-violations",
+      "--format",
+      "json",
+      "--output",
+      "/tmp/acceptance-baseline/drone-arm/engineering_acceptance/reports/native/492b5203198235943c67b70e3a13bcc03d15179e90fce796404f8e176f7744ce/main-native-drc.json",
+      "/tmp/acceptance-baseline/drone-arm/hardware/main/rev_b/main_rev_b.kicad_pcb"
+    ]
+  ],
+  "errors": [
+    "native KiCad DRC found 600 DRC/open-net findings"
+  ],
+  "exact_command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m engineering_acceptance run --profile pcb --config /tmp/acceptance-baseline/drone-arm/engineering_acceptance/aircraft_system.yaml",
+  "id": "BASE-018",
+  "measured": {
+    "boards": {
+      "esc": {
+        "board_sha256": "f29a6e12e82d9ec70c63ca5fce95e5cd4436479599c4c4069c4733e7d7af4805",
+        "exit_code": 5,
+        "kicad_version": "9.0.2",
+        "source": "/tmp/acceptance-baseline/drone-arm/hardware/esc/rev_b/esc_rev_b.kicad_pcb",
+        "unconnected_items": 499,
+        "violations": 24
+      },
+      "main": {
+        "board_sha256": "6dd4a727e8d01b344d45afcbb34907a1895a705e2e8a31d2b6acbe28c0a19606",
+        "exit_code": 5,
+        "kicad_version": "9.0.2",
+        "source": "/tmp/acceptance-baseline/drone-arm/hardware/main/rev_b/main_rev_b.kicad_pcb",
+        "unconnected_items": 70,
+        "violations": 7
+      }
+    },
+    "total_drc_and_open_net_findings": 600
+  },
+  "runner": "kicad_drc",
+  "source": {
+    "issue": 23,
+    "repo": "drone-arm",
+    "revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "url": "https://github.com/iamdarshg/drone-arm/issues/23"
+  },
+  "source_revision": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+  "status": "FAIL"
+}

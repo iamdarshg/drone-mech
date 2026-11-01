@@ -1,0 +1,84 @@
+{
+  "run_id": "492b5203198235943c67b70e3a13bcc03d15179e90fce796404f8e176f7744ce",
+  "profile": "pcb",
+  "runner_repository_commit": "a860c13ba2bf31abe90467b5f60f1760ca04b265",
+  "native_adapter_source_commit": "849e99bf817534006bf90510eba4290b27c1f984",
+  "native_adapter_git_blob": "7176c80c39163a4535cc17f50745510967c16b04",
+  "native_adapter_sha256": "7d816527d306fd5a09b29be7b78f3bf6dc9483ea90d58d0bdc0c461897709387",
+  "pinned_source_revisions": {
+    "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+  },
+  "environment_setup": "Current acceptance runner/catalog and exact current drone-mech native adapter were overlaid unchanged on detached worktrees at both pinned source revisions; no test expectations or repository source artifacts were modified.",
+  "command": [
+    "python3",
+    "-m",
+    "engineering_acceptance",
+    "run",
+    "--profile",
+    "pcb"
+  ],
+  "tool_versions": {
+    "KiCad CLI": "9.0.2"
+  },
+  "counts": {
+    "PASS": 5,
+    "FAIL": 4,
+    "BLOCKED": 0,
+    "NOT_RUN": 0,
+    "NOT_APPLICABLE": 0
+  },
+  "release_critical_pass": 5,
+  "release_critical_total": 9,
+  "integrity_ok": true,
+  "results_by_id": {
+    "BASE-001": "PASS",
+    "BASE-002": "PASS",
+    "BASE-005": "FAIL",
+    "BASE-006": "PASS",
+    "BASE-007": "PASS",
+    "BASE-013": "FAIL",
+    "BASE-014": "FAIL",
+    "BASE-015": "PASS",
+    "BASE-018": "FAIL"
+  },
+  "board_drc_measurements": {
+    "esc": {
+      "board_sha256": "f29a6e12e82d9ec70c63ca5fce95e5cd4436479599c4c4069c4733e7d7af4805",
+      "exit_code": 5,
+      "kicad_version": "9.0.2",
+      "source": "/tmp/acceptance-baseline/drone-arm/hardware/esc/rev_b/esc_rev_b.kicad_pcb",
+      "unconnected_items": 499,
+      "violations": 24
+    },
+    "main": {
+      "board_sha256": "6dd4a727e8d01b344d45afcbb34907a1895a705e2e8a31d2b6acbe28c0a19606",
+      "exit_code": 5,
+      "kicad_version": "9.0.2",
+      "source": "/tmp/acceptance-baseline/drone-arm/hardware/main/rev_b/main_rev_b.kicad_pcb",
+      "unconnected_items": 70,
+      "violations": 7
+    }
+  },
+  "ledger_validation": "PASS (python3 -m engineering_acceptance verify-evidence)",
+  "acceptance_manifest_sha256": "73cffbe62dd7e08012a8c7c775ce26eb574c07a4ecb22233cdd1010ec8568289",
+  "artifacts": {
+    "acceptance-run-manifest.json": "73cffbe62dd7e08012a8c7c775ce26eb574c07a4ecb22233cdd1010ec8568289",
+    "checks/results/BASE-001.json": "43a1f9e664eaa9af772703bb44d373dba4f5533025fb2b5c1e4de71a93641753",
+    "checks/results/BASE-002.json": "49bd1317adee511491205b6a03d94ee1ba485a5b1ad15f057286935739c13ce5",
+    "checks/results/BASE-005.json": "cfc250b8ec6c89ead9932cc3c5ef6292f75d7a9e4490a88794405992f1316f22",
+    "checks/results/BASE-006.json": "fee055c54bd86449dad38170f3ad00a7706b87c47884cfa96d29d7ed8722c890",
+    "checks/results/BASE-007.json": "5baad1206583a215cec7a4bca0273a39cbfb4b39856a2d005224f22bf53046d6",
+    "checks/results/BASE-013.json": "9cfd26b382c58bc2b1b3fd982f993f11c2ff35d39b7228535ebfcfc2bdb6323e",
+    "checks/results/BASE-014.json": "c41089dcc815473ff694bd02ce25dc14c62e189589fcfa320e842612186fb560",
+    "checks/results/BASE-015.json": "31968e32e96299ca0e97c8ef17e624c2279bb27944c5657c9cdf70fc61f157d1",
+    "checks/results/BASE-018.json": "f4b225bfab7d66c58360eaa1023fbfcca94f1f622769f03f6669db3bf5f0eb0f",
+    "junit.xml": "ed005c622589a4d2c7bba6d61fc9157bc7f290c84cc1d5a0ce529c40b526a506",
+    "ledger-evidence.jsonl": "41e10ab193ec59d4bd5c18a09e74090970dbdddbde97db352940c526fab1576f",
+    "native/esc-native-drc.json": "de2db696ca38fdcdb32880f4aec924da9002ff2665dd46e7405e00197305f72b",
+    "native/main-native-drc.json": "7e06e194861d2d76c185ffcd61f8d0e8c34d3677eb8ac6e96ef8b9a51902857c",
+    "report.html": "03ad14669eb28a0d6eb54b574d5aa9f5a1be9bd745251c78509e3dbcb172f2f3",
+    "report.json": "8544c73b2a76142ee61b7492e7943f1d6b3a90db39af5a3349a894cb4db93765"
+  },
+  "interpretation": "Both native KiCad boards imported and DRC ran. Four PCB release checks fail: ESC placeholder dimensions, 7 effectors vs 6 outputs, missing firmware safe-start sources, and 600 total DRC/open-net findings (ESC 523, main 77). No fabrication claim."
+}

@@ -1,0 +1,110 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /workspace/openfoam-deb/usr/bin/rhoSimpleFoam -case /tmp/gmsh_halfwing_fluid/rhoSimple_case
+Date   : Nov 01 2026
+Time   : 11:53:00
+Host   : ebaa71603c78
+PID    : 10286
+I/O    : uncollated
+Case   : /tmp/gmsh_halfwing_fluid/rhoSimple_case
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+--> FOAM Warning : 
+    From function virtual Foam::Istream& Foam::ISstream::read(Foam::word&)
+    in file db/IOstreams/Sstreams/ISstream.C at line 472
+    Reading "/tmp/gmsh_halfwing_fluid/rhoSimple_case/system/fvSchemes" at line 14
+    Missing 1 closing ')' while parsing
+
+div(((muEff*dev2(T(grad(U)))))
+
+
+SIMPLE: no convergence criteria found. Calculations will run for 1 steps.
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.5555555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+No MRF models present
+
+No finite volume options present
+
+Starting time loop
+
+Time = 1
+
+smoothSolver:  Solving for Ux, Initial residual = 0.2300295293, Final residual = 0.006898129909, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.2031492455, Final residual = 0.006850587711, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 0.0008904030238, Final residual = 2.469707159e-05, No Iterations 1
+smoothSolver:  Solving for h, Initial residual = 0.000315583015, Final residual = 6.871985495e-06, No Iterations 1
+
+
+--> FOAM FATAL IO ERROR: 
+Unknown asymmetric matrix solver type PCG
+
+Valid asymmetric matrix solver types :
+4(GAMG PBiCG PBiCGStab smoothSolver)
+
+
+file: /tmp/gmsh_halfwing_fluid/rhoSimple_case/system/fvSolution.solvers.p at line 4.
+
+    From function static Foam::autoPtr<Foam::lduMatrix::solver> Foam::lduMatrix::solver::New(const Foam::word&, const Foam::lduMatrix&, const Foam::FieldField<Foam::Field, double>&, const Foam::FieldField<Foam::Field, double>&, const Foam::lduInterfaceFieldPtrsList&, const Foam::dictionary&)
+    in file matrices/lduMatrix/lduMatrix/lduMatrixSolver.C at line 105.
+
+FOAM exiting
+
