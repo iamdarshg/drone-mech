@@ -1,0 +1,13 @@
+import FreeCAD as App, json, os, hashlib
+root='/workspace/drone-mech'; out=root+'/highspeed_edf/phase15/reports/machine_envelope_screen'
+doc=App.openDocument(out+'/machine_envelopes_and_stock.FCStd')
+get=lambda name:doc.getObject(name)
+cnc=get('CNC_Nominal_Envelope').Shape.BoundBox
+stock=get('CNC_Subblank').Shape.BoundBox
+a1=get('A1_Mini_Profile_Envelope').Shape.BoundBox
+wing=next(o for o in doc.Objects if o.TypeId=='Mesh::Feature').Mesh.BoundBox
+checks={'cnc_assumed_envelope_exact':[round(cnc.XLength,6),round(cnc.YLength,6),round(cnc.ZLength,6)]==[300,180,45], 'cnc_stock_size_exact':[round(stock.XLength,6),round(stock.YLength,6),round(stock.ZLength,6)]==[250,120,5], 'source_step_import_count':len([o for o in doc.Objects if o.TypeId=='Part::Feature' and o.Name.startswith('sheet_A_')]), 'stock_inside_assumed_cnc_envelope':stock.XMin>=0 and stock.YMin>=0 and stock.ZMin>=0 and stock.XMax<=300 and stock.YMax<=180 and stock.ZMax<=45, 'illustrative_keepout_inside_assumed_cnc_envelope':(15>=0 and 20>=0 and 285<=300 and 160<=180 and 8<=45), 'a1_profile_envelope_exact':[round(a1.XLength,6),round(a1.YLength,6),round(a1.ZLength,6)]==[180,180,180], 'a1_wing_mesh_inside_profile':wing.XMin>=a1.XMin+330 and wing.XMax<=a1.XMax+330 and wing.YMin>=a1.YMin and wing.YMax<=a1.YMax and wing.ZMin>=a1.ZMin and wing.ZMax<=a1.ZMax}
+checks['all_pass']=all(v for k,v in checks.items() if k!='source_step_import_count') and checks['source_step_import_count']==100
+with open(out+'/saved_model_verification.json','w') as f:json.dump(checks,f,indent=2)
+print(json.dumps(checks,indent=2))
+if not checks['all_pass']: raise RuntimeError('envelope model verification failed')

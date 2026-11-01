@@ -1,0 +1,28 @@
+import FreeCAD as App, Part, Mesh, os, json, hashlib
+ROOT='/workspace/drone-mech'
+OUT=ROOT+'/highspeed_edf/phase15/reports/machine_envelope_screen'
+NEST=ROOT+'/highspeed_edf/deliverables/phase15_geometry/stock_nests/sheet_A_250x120x5_36rotors_63stators.step'
+WING=ROOT+'/highspeed_edf/phase15/print_prototype/main_wing/wing_centre_bridge_x1_z1.stl'
+DOC=App.newDocument('MachineEnvelopeScreen')
+Part.insert(NEST,DOC.Name); DOC.recompute()
+stepobjs=[o for o in DOC.Objects if hasattr(o,'Shape') and not o.Shape.isNull()]
+for source_object in stepobjs: source_object.Placement.Base=source_object.Placement.Base+App.Vector(25,30,0)
+# Preserve the original STEP import as the actual source nest inside a nominal 3018-class work envelope.
+cnc_env=DOC.addObject('Part::Feature','CNC_Nominal_Envelope'); cnc_env.Label='Assumed generic 3018 class envelope 300x180x45 mm (not machine verified)'; cnc_env.Shape=Part.makeBox(300,180,45)
+cnc_stock=DOC.addObject('Part::Feature','CNC_Subblank'); cnc_stock.Label='Existing STEP nest envelope 250x120x5 mm; stock setup unresolved'; cnc_stock.Shape=Part.makeBox(250,120,5); cnc_stock.Placement.Base=App.Vector(25,30,0)
+# Show a conservative hypothetical clamp exclusion ring, clearly separate from proven fixture geometry.
+clamp=DOC.addObject('Part::Feature','CNC_Fixture_Clearance_Illustration'); clamp.Label='Illustrative 10 mm perimeter keepout; clamp design not defined'; outer=Part.makeBox(270,140,8); outer.translate(App.Vector(15,20,0)); inner=Part.makeBox(250,120,10); inner.translate(App.Vector(25,30,-1)); clamp.Shape=outer.cut(inner)
+# Profile-derived A1 Mini envelope and the actual STL used in the saved OrcaSlicer software slice.
+a1env=DOC.addObject('Part::Feature','A1_Mini_Profile_Envelope'); a1env.Label='A1 mini bundled slicer profile envelope 180x180x180 mm'; a1env.Shape=Part.makeBox(180,180,180)
+Mesh.insert(WING,DOC.Name); meshobj=[o for o in DOC.Objects if o.TypeId=='Mesh::Feature'][0]; bb=meshobj.Mesh.BoundBox
+meshobj.Label='Actual wing centre bridge STL translated into profile envelope'; meshobj.Placement.Base=App.Vector(340-bb.XMin,10-bb.YMin,-bb.ZMin)
+DOC.recompute(); DOC.saveAs(OUT+'/machine_envelopes_and_stock.FCStd')
+# profile dimensions read from source Orca machine profile and source hashes
+profile=json.load(open(ROOT+'/highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-machine.json'))
+manifest=json.load(open(ROOT+'/highspeed_edf/phase15/print_prototype/main_wing/software_slice/slice_manifest.json'))
+sha=lambda p:hashlib.sha256(open(p,'rb').read()).hexdigest()
+cncbb=stepobjs[0].Shape.BoundBox if stepobjs else None
+out={'status':'envelope_screen_only_not_machine_ready','cnc_identity':'user called it a 233018 Pro; exact manufacturer/model remains unresolved','cnc_machine_travel_source':'none in repository; only generic 3018-class envelope assumption visualized','cnc_nominal_assumption_mm':[300,180,45],'cnc_source_nest_step_sha256':sha(NEST),'cnc_source_step_bounds_mm':[cncbb.XLength,cncbb.YLength,cncbb.ZLength] if cncbb else None,'cnc_source_step_object_count':len(stepobjs),'cnc_stock_layout_origin_mm':[25,30,0],'cnc_fixturing_keepout_bounds_mm':[15,20,0,285,160,8],'cnc_stock_fit_under_assumed_envelope':bool(cncbb and cncbb.XLength<=300 and cncbb.YLength<=180 and cncbb.ZLength<=45),'cnc_fixture_status':'illustrative 10mm perimeter keepout only; no clamp geometry/workholding verified','cnc_feed_post_tool_holder_collision_checks':'not performed','a1_machine_profile_name':profile.get('name'),'a1_machine_profile_sha256':sha(ROOT+'/highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-machine.json'),'a1_profile_printable_height_mm':float(profile['printable_height']),'a1_profile_printable_area':profile['printable_area'],'a1_profile_envelope_mm':[180,180,180],'a1_source_wing_stl_sha256':sha(WING),'a1_source_wing_stl_bounds_mm':[bb.XLength,bb.YLength,bb.ZLength],'a1_slicer_manifest_sha256':sha(ROOT+'/highspeed_edf/phase15/print_prototype/main_wing/software_slice/slice_manifest.json'),'a1_existing_software_slice_report':ROOT+'/highspeed_edf/phase15/print_prototype/main_wing/manufacturing-software-screen.md','a1_geometry_envelope_fit':bool(bb.XLength<=180 and bb.YLength<=180 and bb.ZLength<=180),'physical_printer_verified':False,'physical_cnc_verified':False,'nc_postprocessed':False,'cut_authorized':False}
+with open(OUT+'/envelope_screen.json','w') as f:json.dump(out,f,indent=2)
+print(json.dumps(out,indent=2))
+import traceback

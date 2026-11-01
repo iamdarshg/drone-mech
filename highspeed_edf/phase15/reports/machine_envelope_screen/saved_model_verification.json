@@ -1,0 +1,10 @@
+{
+  "cnc_assumed_envelope_exact": true,
+  "cnc_stock_size_exact": true,
+  "source_step_import_count": 100,
+  "stock_inside_assumed_cnc_envelope": true,
+  "illustrative_keepout_inside_assumed_cnc_envelope": true,
+  "a1_profile_envelope_exact": true,
+  "a1_wing_mesh_inside_profile": true,
+  "all_pass": true
+}

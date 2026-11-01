@@ -1,0 +1,60 @@
+{
+  "status": "envelope_screen_only_not_machine_ready",
+  "cnc_identity": "user called it a 233018 Pro; exact manufacturer/model remains unresolved",
+  "cnc_machine_travel_source": "none in repository; only generic 3018-class envelope assumption visualized",
+  "cnc_nominal_assumption_mm": [
+    300,
+    180,
+    45
+  ],
+  "cnc_source_nest_step_sha256": "f9a8b9f55d9711dcfafa27f25edf7447ae3189a4db49cd23a72c4497a2c0b233",
+  "cnc_source_step_bounds_mm": [
+    250.0,
+    120.0,
+    5.0
+  ],
+  "cnc_source_step_object_count": 100,
+  "cnc_stock_layout_origin_mm": [
+    25,
+    30,
+    0
+  ],
+  "cnc_fixturing_keepout_bounds_mm": [
+    15,
+    20,
+    0,
+    285,
+    160,
+    8
+  ],
+  "cnc_stock_fit_under_assumed_envelope": true,
+  "cnc_fixture_status": "illustrative 10mm perimeter keepout only; no clamp geometry/workholding verified",
+  "cnc_feed_post_tool_holder_collision_checks": "not performed",
+  "a1_machine_profile_name": "Bambu Lab A1 mini 0.4 nozzle",
+  "a1_machine_profile_sha256": "85632b53bc044034e1606685cb83e3bbc405815a7920b5583e0e4bab99e59bb7",
+  "a1_profile_printable_height_mm": 180.0,
+  "a1_profile_printable_area": [
+    "0x0",
+    "180x0",
+    "180x180",
+    "0x180"
+  ],
+  "a1_profile_envelope_mm": [
+    180,
+    180,
+    180
+  ],
+  "a1_source_wing_stl_sha256": "f582a95d8921aa3106b7a30755579406d6b761b49d1d1f2c9268f9454d4fafa9",
+  "a1_source_wing_stl_bounds_mm": [
+    17.927858352661133,
+    36.48062610626221,
+    141.6845245361328
+  ],
+  "a1_slicer_manifest_sha256": "470d9095a3bcd9bc7b30a35319f592baa9ec61c08b1446b31083a6e8cdc5b435",
+  "a1_existing_software_slice_report": "/workspace/drone-mech/highspeed_edf/phase15/print_prototype/main_wing/manufacturing-software-screen.md",
+  "a1_geometry_envelope_fit": true,
+  "physical_printer_verified": false,
+  "physical_cnc_verified": false,
+  "nc_postprocessed": false,
+  "cut_authorized": false
+}
