@@ -1,0 +1,36 @@
+{
+  "purpose": "Issue 21 acceptance framework subset in prepared source-pinned environment",
+  "runner_repository": "iamdarshg/drone-arm",
+  "runner_commit": "a860c13ba2bf31abe90467b5f60f1760ca04b265",
+  "source_repositories": {
+    "drone_arm": "744994a096ca73e872b396a9b0636c58e7c1afe8",
+    "drone_mech": "5246c90657071772e220b118967fa5f3e7c9ff7c"
+  },
+  "setup": "The tests and acceptance runner files were copied unchanged from runner_commit onto detached source-pinned worktrees; the mech worktree is sparse over exactly the files selected by aircraft_system.yaml. No test expectations or repository source artifacts were modified.",
+  "overlay_file_hashes": {
+    "engineering_acceptance": {
+      "tree_sha256": "394a7acd99f72db9834b3224cf617bf6fba278f50f595e630d20727a85364206",
+      "files": 35
+    },
+    "tests/acceptance": {
+      "tree_sha256": "bd0b276c74ec86e5851871089d32e766a577dff7901e72d86cf675fab4f82518",
+      "files": 7
+    },
+    ".github/workflows/engineering-acceptance.yml": "7f4543bdd13813f2cfccf9def9763e0f4624f4dfe45025309b06e1840bafd733",
+    "aircraft_interfaces/system_interface.json": "4ee5b436023e811d333f13003c2cbe52e937fe45b533bd9f575d3ad9dd0d7c95"
+  },
+  "command": [
+    "python3",
+    "-m",
+    "pytest",
+    "-q",
+    "--basetemp=/tmp/pytest-issue21-framework-baseline",
+    "tests/acceptance"
+  ],
+  "exit_code": 0,
+  "result": ".........................................................                [100%]\n57 passed in 5.14s",
+  "log": "acceptance_framework_pinned_baseline.log",
+  "log_sha256": "12a146fd16e10f57e448c46e3f4e5fe68c3f133520cf5bef637fa0d34bf3f2b3",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "pytest": "pytest 8.4.2"
+}
