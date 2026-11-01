@@ -1,0 +1,53 @@
+{
+  "checkpointTimeSeconds": 2.3549807e-06,
+  "nativeFields": [
+    {
+      "field": "T.gz",
+      "bytes": 2839042,
+      "sha256": "08c4cd3f2839918520d33eab577412374f3dfd6889088af5884e2b93f4bdb53b",
+      "gzipIntegrity": "pass"
+    },
+    {
+      "field": "U.gz",
+      "bytes": 12279316,
+      "sha256": "6eccec79a06c355f9df1aaf7e391724245c86013452c982155bdb06875b296c2",
+      "gzipIntegrity": "pass"
+    },
+    {
+      "field": "alphat.gz",
+      "bytes": 4167136,
+      "sha256": "6ee25f54190b00c4cafa75254bf9e3d8ae279190a802726fbb1fa82432d1f986",
+      "gzipIntegrity": "pass"
+    },
+    {
+      "field": "k.gz",
+      "bytes": 3584396,
+      "sha256": "e98ed05d73cece42bd865853b8582601073dc62861a3e7f4a49123cebc54c627",
+      "gzipIntegrity": "pass"
+    },
+    {
+      "field": "nut.gz",
+      "bytes": 4155908,
+      "sha256": "1381ab2815b8def7f6e34643035663534ea6b2e8ce91dfa1e1e23a013636fa74",
+      "gzipIntegrity": "pass"
+    },
+    {
+      "field": "omega.gz",
+      "bytes": 3763486,
+      "sha256": "0a9c58cdc66ef667a9622afe897a4e414060b5ab6dd499cebe61c7f348be6901",
+      "gzipIntegrity": "pass"
+    },
+    {
+      "field": "p.gz",
+      "bytes": 3099267,
+      "sha256": "48ce89de7b529ef7f60b66c6de970e142eb0be044fa78390e837b3b6877d3566",
+      "gzipIntegrity": "pass"
+    },
+    {
+      "field": "rho.gz",
+      "bytes": 3319821,
+      "sha256": "846496ad3b4a3158047e5a38b3861464233aa631643f32b8eb00286a24548b73",
+      "gzipIntegrity": "pass"
+    }
+  ]
+}

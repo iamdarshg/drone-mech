@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-01T12:58:36.145483+00:00",
+  "reason": "SIGTERM: total-temperature proxy > 1.05*Tt_inf (323.984030 K)",
+  "checkpoint": {
+    "timeSeconds": 2.6595984e-06,
+    "checkpoint": "2.6595984e-06",
+    "minTemperatureK": 266.1608321,
+    "maxTemperatureK": 319.9959583,
+    "maxTotalTemperatureK": 324.18534543661787,
+    "maxTotalTemperatureCell": 642623,
+    "maxMach": 0.8638326933167552,
+    "maxMachCell": 28691,
+    "maxSpeedMps": 283.8207337376734,
+    "minPressurePa": 66217.12103,
+    "maxPressurePa": 131271.7926,
+    "minDensityKgM3": 0.8655035631,
+    "maxDensityKgM3": 1.431962561
+  },
+  "tmpFreeBytes": 1871691776,
+  "overlayFreeBytes": 475484160
+}
