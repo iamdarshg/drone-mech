@@ -1,0 +1,23 @@
+# Fresh Mach 1.05 rhoCentralFoam sensitivity startup
+
+## Input and method
+
+This sequential sensitivity probe uses the same Gmsh half-wing fluid mesh and the archived wall-compatible Mach 1.05, +0.5 degree initial profile. The prescribed freestream follows `prepare_bl_profile.py`: static `T_inf=268.65 K`, `p_inf=70.1 kPa`, `gamma=1.4`, `Cp=1004.685 J/(kg K)`, `a_inf=sqrt(gamma R T_inf)`, and `V_inf=1.05 a_inf` (about 345.0 m/s). Its input total-temperature proxy is `Tt_inf=327.886735 K`; the unchanged 5% ceiling is `344.281 K`. The 3 mm wall-compatible ramp is only a coarse startup profile, not a resolved boundary layer.
+
+The run used `rhoCentralFoam` with the existing Kurganov flux setup, `maxCo=0.05`, `maxDeltaT=1e-7`, `endTime=0.004 s`, output every 10 steps and `purgeWrite=2`. It began fresh from time zero after the IAS900 run had stopped and been archived. The runtime mesh uses gzip-compressed native OpenFOAM polyMesh files to fit storage; every decompressed mesh file SHA-256 matches the earlier strict-passed mesh manifest exactly. All ten M1.05 initial fields match the archived compressed source files by hash. Strict `checkMesh -constant -allTopology -allGeometry -meshQuality` returned `Mesh OK`; one-step `rhoCentralFoam -dry-run` returned `End` without parser errors. The exact case source/mesh/field hashes are in `case_source_manifest.json`; the solver executable and library hashes are in the parent `source_pins.md`.
+
+The persistent command is retained in `run_m105_attempt3.sh`; `monitor_m105_attempt3.py` polled the exact solver PID and complete checkpoints. It enforced the unchanged 344.281 K pointwise Tt proxy bound, positive T/p/rho, 700 m/s speed ceiling, `/tmp` free-space floor 1,500,000,000 bytes and overlay floor 300,000,000 bytes. The monitor samples are retained in `monitor.m105_attempt3.jsonl`.
+
+## Observed startup and stop
+
+The first complete output was `t=2.294948e-7 s`, with max Tt proxy `331.51585 K`, max Mach `1.050149`, max speed `345.0276 m/s`, and positive fields. The last complete checkpoint is `t=5.2086889e-7 s`. Independent recomputation from the archived native `T,U,p,rho` fields gives max Tt proxy `334.1679615 K` (cell 315323), max Mach `1.0506005` (cell 172394), max speed `345.1208 m/s`, `T=268.2141..333.7123 K`, `p=69.117..152.619 kPa`, and `rho=0.897727..1.593215 kg/m^3`. The unchanged Tt ceiling was not breached and all checked fields are finite and positive. `verification.json` and `scripts/verify_checkpoint.py` expose the independent calculation; all eight native OpenFOAM output fields are retained compressed under `checkpoints/5.2086889e-07/` with hashes and gzip integrity.
+
+At 13:07:54 UTC, `/tmp` free space was `1,505,755,136 bytes`, only `5,755,136 bytes` above the unchanged floor. The solver was sent SIGTERM at 13:08:04 UTC before another write/poll could cross the floor. The wrapper exited 143. The log advanced to `t=6.9544241e-7 s` while terminating; that later time is incomplete and is not treated as a checkpoint. The exact log, monitor, status and stop record are retained. No solver process remains. This was a storage-limited startup stop, not a physical guard breach.
+
+## Limits
+
+This short startup only establishes that the copied M1.05 case parses and advances through at least 20 output steps before a storage stop. The maximum cell Mach is essentially the imposed inlet Mach; this does not show a developed transonic flow, shock, or verified transonic solution. It does not provide lift, drag, drag coefficient, servo loads, structural strength, convergence or aircraft performance. The tetra mesh has no demonstrated y+ suitability or wall-resolved boundary layer, and viscous loads are not validated. No fabrication, flight readiness, physical hardware testing or paid cloud execution is claimed.
+
+## Continuation feasibility
+
+The completed transient advanced 20 output steps in approximately 233 s of wall time, about 11.7 s/step including initialization and output, with adaptive timestep near `2.91e-8 s`. Reaching the configured `0.004 s` end time from `5.2087e-7 s` at that measured timestep requires roughly 137,000 further steps, or about 1.6 million seconds (18.5 days) at the observed rate. A 100-step extension alone would take about 20 minutes and remain startup. At stop, `/tmp` had only 5.7 MB above its unchanged 1.5 GB floor; the complete checkpoint is archived separately. Switching to binary writes could reduce storage but would not remedy the measured multi-day runtime, so no continuation was launched. This is a local runtime capability limit; the short probe provides no converged or developed transonic solution.

@@ -1,0 +1,21 @@
+{
+  "startedUTC": "2026-11-01T13:04:09Z",
+  "sigtermUTC": "2026-11-01T13:08:04Z",
+  "exitCode": 143,
+  "reason": "Proactive SIGTERM requested by root after /tmp free space fell to 1,505,755,136 bytes (5,755,136 bytes above the unchanged 1,500,000,000-byte floor); stopping before the next monitor poll/output could cross the floor. No physical guard breached.",
+  "lastCompleteCheckpoint": {
+    "timeSeconds": 5.2086889e-07,
+    "maxTotalTemperatureK": 334.1679615428771,
+    "guardK": 344.28107175,
+    "maxMach": 1.050600491479806,
+    "maxSpeedMps": 345.12077909235865,
+    "minTemperatureK": 268.2140694,
+    "maxTemperatureK": 333.71234,
+    "minPressurePa": 69117.34524,
+    "maxPressurePa": 152618.6452,
+    "minDensityKgM3": 0.8977273407,
+    "maxDensityKgM3": 1.593214633
+  },
+  "lastLoggedIncompleteTimeSeconds": 6.9544241e-07,
+  "solverRemainsActive": false
+}

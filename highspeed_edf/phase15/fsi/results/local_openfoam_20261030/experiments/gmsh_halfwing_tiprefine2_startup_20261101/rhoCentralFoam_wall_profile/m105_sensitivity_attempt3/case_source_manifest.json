@@ -1,0 +1,116 @@
+{
+  "sourceCase": "/workspace/cfd-run-900ias-20261101/case",
+  "targetCase": "/tmp/cfd-run-m105-20261101/case",
+  "mesh": {
+    "boundary": {
+      "bytes_uncompressed": 1639,
+      "sha256_uncompressed": "83cb42d67e6551952d9596322039951b787d1c7d632093c0e7a10660f096d855",
+      "sha256_gzip": "d99dc71706a68d153e6f4e4047e5b2d54ed980fa6464f911162db0b98e7db967",
+      "gzip_bytes": 451
+    },
+    "cellZones": {
+      "bytes_uncompressed": 5646604,
+      "sha256_uncompressed": "ac4e802c04ec3ca230f0f82cee1f35aae5b4f12b08b6b05df1a20f57700bc1f9",
+      "sha256_gzip": "650374a40b2cd010db13b17a50d515550bec636a952ce6137827dc0b5c4f9e83",
+      "gzip_bytes": 1740158
+    },
+    "faceZones": {
+      "bytes_uncompressed": 876,
+      "sha256_uncompressed": "1a3fc3f2f2c7f76c597df378690ccbf4b8a8013456e58f0c87dcf4ecaca5220f",
+      "sha256_gzip": "c315be1ef17a9429cef60d6be5f1b55cc7f9f4dbb30f559488d71775be89195f",
+      "gzip_bytes": 305
+    },
+    "faces": {
+      "bytes_uncompressed": 37643031,
+      "sha256_uncompressed": "a1f1bdae39f57edddd5dce707a5fba2953b49a957256c35d552d19c0c423aa9a",
+      "sha256_gzip": "9e4e3621e5d00f9dd85e1424eb590e5cf1e190a95c0210a82db43e804411fdc8",
+      "gzip_bytes": 10755826
+    },
+    "neighbour": {
+      "bytes_uncompressed": 11117969,
+      "sha256_uncompressed": "bf98593ab3bd33214597e320ab8a92edb177cd159df68e975b45f1cbc366b96d",
+      "sha256_gzip": "1e824a7be4bf6f80fcb3e68f39859faebf17b9bbd5777668f47d2be73708dc40",
+      "gzip_bytes": 4392239
+    },
+    "owner": {
+      "bytes_uncompressed": 11466593,
+      "sha256_uncompressed": "300cc1b2896b60c58bab625f5abd348497f75868006fde00be419a7c69544b5f",
+      "sha256_gzip": "cc1da536863dcdf523f466e04ed40fd91c63a535f13163b6792672d0bf384cfb",
+      "gzip_bytes": 1511258
+    },
+    "pointZones": {
+      "bytes_uncompressed": 877,
+      "sha256_uncompressed": "a4a6a2dcd51a046ec166f12f8fb6f70d0cc21e238dc6ae1d1db90effcf542a29",
+      "sha256_gzip": "f363544264c23328acc297a3d925479dc715bda68b0cb7bec718dd752a0120c0",
+      "gzip_bytes": 307
+    },
+    "points": {
+      "bytes_uncompressed": 7007445,
+      "sha256_uncompressed": "b711decae29a5901df548ca711ae81c555d1f7bf8c25f2b36e881dea2f439538",
+      "sha256_gzip": "6b89745d505842b8af9043b4536c15919e372442aff85d73dabacd8badb9fd4a",
+      "gzip_bytes": 2798990
+    }
+  },
+  "initialFields": {
+    "T": {
+      "sha256_uncompressed": "071cf4b1998e1642bbdd9db530e3156d6b0639a26d0e3b8388434a9f03261107",
+      "sha256_gzip": "9e1878977cb3d003064769feb180211fa6d42467ef5f8bb3f850718f5ea05863",
+      "bytes_uncompressed": 7766987,
+      "gzip_bytes": 2386113
+    },
+    "U": {
+      "sha256_uncompressed": "ace8c40b451bd3a298c17472c07e870c7d670f856771fb5591b086473ff94fa1",
+      "sha256_gzip": "6da182a0dc7cc5bc08c39f2e48af0cb6349c2ce5e050b188fd531edf8a8aa672",
+      "bytes_uncompressed": 27159424,
+      "gzip_bytes": 7756269
+    },
+    "alphat": {
+      "sha256_uncompressed": "b75fc85181ca7e809b88637c9a3300715887a1ff5d1cbfdb542fdf96d4fb8d21",
+      "sha256_gzip": "76bcb1f881e0523094afcf9dd896c20c858af8fac76216a0c5f4666bd12d3977",
+      "bytes_uncompressed": 12446630,
+      "gzip_bytes": 2822807
+    },
+    "h": {
+      "sha256_uncompressed": "1e2c133ade7b2c1502c091226e5c93672b75d56a44b79cc2c0c394dd55e186da",
+      "sha256_gzip": "66a896d0ce08a03c983fe5ba2374262e8fd9f9658ed28921abfb21d4013b0a05",
+      "bytes_uncompressed": 9823258,
+      "gzip_bytes": 2500817
+    },
+    "k": {
+      "sha256_uncompressed": "da7df05be9cf7fcf56e9362d292caef739d16fce9f38b54715f8123ba86df620",
+      "sha256_gzip": "a03ce332baf40514d3d6ba01f2dd44a20e9565435559c7daf4b139d7746046e6",
+      "bytes_uncompressed": 9903249,
+      "gzip_bytes": 2611660
+    },
+    "nut": {
+      "sha256_uncompressed": "9a9dac7ed6dc4a19a88ebf9eb69718c42539935aeabe562689f33391bd142704",
+      "sha256_gzip": "11ad7d329640803db4e67493291ef9c0ca286213d1953f24f7c19f4464d2141f",
+      "bytes_uncompressed": 12451854,
+      "gzip_bytes": 2823682
+    },
+    "omega": {
+      "sha256_uncompressed": "6475522bf6db6f31d3c056b71757661cf1573a5a9d44fd9deedfb4be5f70cedc",
+      "sha256_gzip": "303e6ee4cd315830059e33f6e66f3e9db16a93b213e970dda133ad3e2b763344",
+      "bytes_uncompressed": 4740820,
+      "gzip_bytes": 1278873
+    },
+    "p": {
+      "sha256_uncompressed": "60c9e0c0d08fadfdd8ddacc739f46a04481aae8a4b5b47891fdf1c244e7720a7",
+      "sha256_gzip": "4889157741ccb77b512726283a836107bc048d728bd7bb5ae715ec2c8e54e120",
+      "bytes_uncompressed": 7355795,
+      "gzip_bytes": 2517757
+    },
+    "pointDisplacement": {
+      "sha256_uncompressed": "712f6ab8b9b4881355bf4566a549a0ddc17e5db0dcc744376e2fd492510e9bd7",
+      "sha256_gzip": "b6733bdf50f4b6aa527cb1ff50629072de38170a5a167764e62a4f9248e7f5fa",
+      "bytes_uncompressed": 462,
+      "gzip_bytes": 218
+    },
+    "rho": {
+      "sha256_uncompressed": "c329c0a9c4322269b3e6e3289d12e7d39236b781a3166374444a70f9aacaee7c",
+      "sha256_gzip": "0b37d2d997962614e7e931d490aa7b5d6aaa2661e96e1aa6971212037efcdf67",
+      "bytes_uncompressed": 10311231,
+      "gzip_bytes": 2411479
+    }
+  }
+}
