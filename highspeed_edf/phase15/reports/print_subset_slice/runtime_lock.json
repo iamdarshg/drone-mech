@@ -1,0 +1,22 @@
+{
+  "orca_slicer": {
+    "version": "2.4.2",
+    "appimage_url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.4.2/OrcaSlicer_Linux_AppImage_Ubuntu2404_V2.4.2.AppImage",
+    "appimage_sha256": "d12fb8c8eac1aecd2dfb6377acd48f994f8fa439ed5292fa532dd82880f029fd",
+    "extraction": "AppImage --appimage-extract, then execute squashfs-root/bin/orca-slicer directly"
+  },
+  "runtime_os": "Debian GNU/Linux 13 (trixie)",
+  "debian_snapshot": "https://snapshot.debian.org/archive/debian/20260925T181338Z/",
+  "runtime_deb_packages": [
+    {"name":"libgles2","version":"1.7.0-1+b2","sha256":"e12c18aa77939d122ee1dea520ba0440b97dc19200b7396e03dff03a3ece74c1"},
+    {"name":"libharfbuzz-icu0","version":"10.2.0-1+deb13u1","sha256":"0b45d951629e98673c0da73b2bcd0886a467d833bb3b7499892a168f247165d2"},
+    {"name":"libhidapi-hidraw0","version":"0.14.0-1+b2","sha256":"89c546cb55be403ce63fe668baff2515979100a30fa07e2b97de186b9c07f01e"},
+    {"name":"libhyphen0","version":"2.8.8-7+b2","sha256":"fa9dca7b8cf1381fd52800c44a385c5725a78a88bd705f7c39b1046a5293435e"},
+    {"name":"libjavascriptcoregtk-4.1-0","version":"2.52.6-1~deb13u1","sha256":"3383ebb3e13f31225c65f41112420be58493a3de112b5993cf5c417cfedc47c8"},
+    {"name":"libmanette-0.2-0","version":"0.2.12-1","sha256":"98841a467692c46fd1870275113235691ebbfe71a3524f6b2a0fa7e9c33c6e56"},
+    {"name":"libmspack0t64","version":"0.11-1.1+b1","sha256":"b6039006e2758fa91a0e02ea1cbeded53ae0a5955298e1b0dddbe5a91784b510"},
+    {"name":"libwebkit2gtk-4.1-0","version":"2.52.6-1~deb13u1","sha256":"6471d989a61a56a7801e88e420789aa6b0eaba630a9787365bba8b9576b7ba1c"},
+    {"name":"xdg-dbus-proxy","version":"0.1.6-1+deb13u3","sha256":"29bd2f3e1172640ce40289fadfcb632bc3fed33a6bf342c3976b25ad9026da0f"}
+  ],
+  "installation_scope": "All runtime packages were unpacked into a private /tmp prefix; no host package installation, hardware, or paid cloud execution."
+}

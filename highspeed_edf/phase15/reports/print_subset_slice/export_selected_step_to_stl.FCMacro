@@ -1,0 +1,22 @@
+import FreeCAD as App, Part, Mesh, MeshPart, os, json, hashlib
+ROOT=os.path.abspath(os.getcwd())
+OUT=ROOT+'/highspeed_edf/phase15/reports/print_subset_slice'
+SOURCES={
+ 'wing_left_sector_x1_z1':ROOT+'/highspeed_edf/phase15/print_prototype/main_wing/wing_left_sector_x1_z1.step',
+ 'fuselage_shell_segment_01_port':ROOT+'/highspeed_edf/phase15/print_prototype/fuselage_shell/fuselage_shell_segment_01_port.step'
+}
+sha=lambda p:hashlib.sha256(open(p,'rb').read()).hexdigest()
+results=[]
+for name,path in SOURCES.items():
+ doc=App.newDocument('SliceSubset_'+name)
+ Part.insert(path,doc.Name); doc.recompute()
+ objects=[o for o in doc.Objects if hasattr(o,'Shape') and not o.Shape.isNull()]
+ if not objects: raise RuntimeError('No B-rep imported: '+path)
+ shape=objects[0].Shape
+ mesh=MeshPart.meshFromShape(Shape=shape,LinearDeflection=0.05,AngularDeflection=0.1,Relative=False)
+ dest=OUT+'/'+name+'.stl'; mesh.write(dest)
+ bb=mesh.BoundBox
+ item={'part':name,'source_step':os.path.relpath(path,ROOT),'source_step_sha256':sha(path),'source_step_solids':sum(len(o.Shape.Solids) for o in objects),'mesh_conversion':'FreeCAD 1.0.0 MeshPart.meshFromShape, linear_deflection=0.05 mm, angular_deflection=0.1 rad, relative=False','stl':os.path.basename(dest),'stl_sha256':sha(dest),'stl_bytes':os.path.getsize(dest),'mesh_facets':len(mesh.Facets),'mesh_bounds_mm':[bb.XLength,bb.YLength,bb.ZLength],'stl_unit_note':'STL has no unit metadata; millimetres inherited from source STEP units.'}
+ results.append(item); App.closeDocument(doc.Name)
+with open(OUT+'/step_mesh_conversion.json','w') as f:json.dump({'status':'software_mesh_conversion_only','freecad_version':App.Version(),'parts':results,'physical_printer_used':False,'printer_release':False},f,indent=2)
+print(json.dumps(results,indent=2))

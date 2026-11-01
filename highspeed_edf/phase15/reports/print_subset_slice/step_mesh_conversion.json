@@ -1,0 +1,49 @@
+{
+  "status": "software_mesh_conversion_only",
+  "freecad_version": [
+    "1",
+    "0",
+    "0",
+    "",
+    "https://code.launchpad.net/~vcs-imports/freecad/trunk",
+    "2026/08/25 11:49:11"
+  ],
+  "parts": [
+    {
+      "part": "wing_left_sector_x1_z1",
+      "source_step": "highspeed_edf/phase15/print_prototype/main_wing/wing_left_sector_x1_z1.step",
+      "source_step_sha256": "569157a7ad28a5942300d0cf818770f2e48c7a08fc240d316e3ce59135399f42",
+      "source_step_solids": 1,
+      "mesh_conversion": "FreeCAD 1.0.0 MeshPart.meshFromShape, linear_deflection=0.05 mm, angular_deflection=0.1 rad, relative=False",
+      "stl": "wing_left_sector_x1_z1.stl",
+      "stl_sha256": "d4e7d403924495952b4176e05659df7aad1b73e70a79a30191865dd28d1cb2ec",
+      "stl_bytes": 1313484,
+      "mesh_facets": 26268,
+      "mesh_bounds_mm": [
+        89.83514404296875,
+        37.73927307128906,
+        123.18496704101562
+      ],
+      "stl_unit_note": "STL has no unit metadata; millimetres inherited from source STEP units."
+    },
+    {
+      "part": "fuselage_shell_segment_01_port",
+      "source_step": "highspeed_edf/phase15/print_prototype/fuselage_shell/fuselage_shell_segment_01_port.step",
+      "source_step_sha256": "3bc7a9ca1cb37417d5feac6b926354317e2f41e588442fa25e766f813efed667",
+      "source_step_solids": 1,
+      "mesh_conversion": "FreeCAD 1.0.0 MeshPart.meshFromShape, linear_deflection=0.05 mm, angular_deflection=0.1 rad, relative=False",
+      "stl": "fuselage_shell_segment_01_port.stl",
+      "stl_sha256": "e3c2ef1dcc003a62ce176f6db27f8dc8d61970a74b9cd92f02589bdfb3559bba",
+      "stl_bytes": 187784,
+      "mesh_facets": 3754,
+      "mesh_bounds_mm": [
+        105.89177703860348,
+        90.21953201293945,
+        120.0
+      ],
+      "stl_unit_note": "STL has no unit metadata; millimetres inherited from source STEP units."
+    }
+  ],
+  "physical_printer_used": false,
+  "printer_release": false
+}

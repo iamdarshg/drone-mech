@@ -1,0 +1,141 @@
+{
+  "status": "software_only_slice_evidence_not_print_release",
+  "generated_utc": "2026-11-01",
+  "slicer": {
+    "name": "OrcaSlicer",
+    "version": "2.4.2",
+    "appimage_url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.4.2/OrcaSlicer_Linux_AppImage_Ubuntu2404_V2.4.2.AppImage",
+    "appimage_sha256": "d12fb8c8eac1aecd2dfb6377acd48f994f8fa439ed5292fa532dd82880f029fd",
+    "runtime_lock_sha256": "aa19a76c97691875da2a9357943dccee6d567b4365b1907f4d078e24d2ff2833",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "private_rootless_runtime": true
+  },
+  "profile": {
+    "printer": "Bambu Lab A1 mini 0.4 nozzle (profile assumption; physical configuration unverified)",
+    "process": "0.20mm Standard @BBL A1M",
+    "filament": "Bambu PLA Basic @BBL A1M (user material not verified)",
+    "plate": "Textured PEI Plate (profile default; actual plate not verified)",
+    "effective_profile_hashes": {
+      "effective-machine.json": "85632b53bc044034e1606685cb83e3bbc405815a7920b5583e0e4bab99e59bb7",
+      "effective-process.json": "4fe8aab704f23e798a9f2d6ace3b318ea843add2296a464ebdb901c1dae9ea31",
+      "effective-filament.json": "a7735cfd9192b3af9f50d90c0ba838eded8c119e4da86b05a3f5b10e8fc5a4b7"
+    },
+    "layer_height_mm": 0.2,
+    "wall_loops": 2,
+    "infill_percent": 15,
+    "brim_width_mm": 5,
+    "support_generation": "same effective process used by prior subset slice; no support feature markers in either G-code"
+  },
+  "parts": [
+    {
+      "part": "wing_left_sector_x1_z1",
+      "step_source": "highspeed_edf/phase15/print_prototype/main_wing/wing_left_sector_x1_z1.step",
+      "step_source_sha256": "569157a7ad28a5942300d0cf818770f2e48c7a08fc240d316e3ce59135399f42",
+      "mesh_conversion": "FreeCAD MeshPart export from exact STEP source at 0.05 mm linear / 0.1 rad angular deflection",
+      "stl": "wing_left_sector_x1_z1.stl",
+      "stl_sha256": "d4e7d403924495952b4176e05659df7aad1b73e70a79a30191865dd28d1cb2ec",
+      "stl_extents_mm": [
+        89.83514404296875,
+        37.73927307128906,
+        123.18496704101562
+      ],
+      "stl_facets": 26268,
+      "slicer_input_unit_interpretation": "Millimetres, inherited from FreeCAD-converted STEP units; STL itself has no unit metadata.",
+      "slicer_return_code": 0,
+      "slicer_error_string": "Success.",
+      "slicer_plate_id": 1,
+      "slicer_triangle_count": 26268,
+      "slicer_warning": "",
+      "slicer_reported_best_orientation_candidate": "-0.000000 -0.000000 -1.000000, costs:1.5,\t4408.3,\t3092.0,\t265.6,\t0.0,\t0.0,\t0.0",
+      "gcode_model_time": "2h 17m 13s",
+      "gcode_total_estimated_time": "2h 23m 11s",
+      "gcode_total_layers": 615,
+      "gcode_max_z_height_mm": 123.2,
+      "gcode_support_feature_markers": 0,
+      "gcode_sha256": "ce7081ffb382aed562c756bca393bf02f5078acfe1a34b665724612d8d5008fa",
+      "gcode_bytes": 7168063,
+      "cli_args": [
+        "--datadir",
+        "/tmp/orca-subset/wing-data",
+        "--load-settings",
+        "/workspace/drone-mech/highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-machine.json;/workspace/drone-mech/highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-process.json",
+        "--load-filaments",
+        "/workspace/drone-mech/highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-filament.json",
+        "--orient",
+        "1",
+        "--arrange",
+        "1",
+        "--outputdir",
+        "/tmp/orca-subset/wing-out",
+        "--slice",
+        "0",
+        "/workspace/drone-mech/highspeed_edf/phase15/reports/print_subset_slice/wing_left_sector_x1_z1.stl"
+      ],
+      "cli_log_sha256": "59839a1562ef1d35b2a071ff0d7f4ec57e8c9953149c83604934b1c52aec1d79",
+      "slicer_warning_expected": ""
+    },
+    {
+      "part": "fuselage_shell_segment_01_port",
+      "step_source": "highspeed_edf/phase15/print_prototype/fuselage_shell/fuselage_shell_segment_01_port.step",
+      "step_source_sha256": "3bc7a9ca1cb37417d5feac6b926354317e2f41e588442fa25e766f813efed667",
+      "mesh_conversion": "FreeCAD MeshPart export from exact STEP source at 0.05 mm linear / 0.1 rad angular deflection",
+      "stl": "fuselage_shell_segment_01_port.stl",
+      "stl_sha256": "e3c2ef1dcc003a62ce176f6db27f8dc8d61970a74b9cd92f02589bdfb3559bba",
+      "stl_extents_mm": [
+        105.89177703860348,
+        90.21953201293945,
+        120.0
+      ],
+      "stl_facets": 3754,
+      "slicer_input_unit_interpretation": "Millimetres, inherited from FreeCAD-converted STEP units; STL itself has no unit metadata.",
+      "slicer_return_code": 0,
+      "slicer_error_string": "Success.",
+      "slicer_plate_id": 1,
+      "slicer_triangle_count": 3754,
+      "slicer_warning": "It seems object fuselage_shell_segment_01_port.stl has floating cantilever. Please re-orient the object or enable support generation.",
+      "slicer_reported_best_orientation_candidate": "-1.000000 -0.000000 -0.000000, costs:4801.9,\t5707.2,\t6026.1,\t302.2,\t1710.5,\t0.0,\t1.1",
+      "gcode_model_time": "2h 52m 9s",
+      "gcode_total_estimated_time": "2h 58m 7s",
+      "gcode_total_layers": 529,
+      "gcode_max_z_height_mm": 105.8,
+      "gcode_support_feature_markers": 0,
+      "gcode_sha256": "729387510d76729c30d9c765aba808c82aeecb25969c8c6f6f76d2e6432d29da",
+      "gcode_bytes": 10191182,
+      "cli_args": [
+        "--datadir",
+        "/tmp/orca-subset/fuse-data",
+        "--load-settings",
+        "/workspace/drone-mech/highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-machine.json;/workspace/drone-mech/highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-process.json",
+        "--load-filaments",
+        "/workspace/drone-mech/highspeed_edf/phase15/print_prototype/main_wing/software_slice/effective-filament.json",
+        "--orient",
+        "1",
+        "--arrange",
+        "1",
+        "--outputdir",
+        "/tmp/orca-subset/fuse-out",
+        "--slice",
+        "0",
+        "/workspace/drone-mech/highspeed_edf/phase15/reports/print_subset_slice/fuselage_shell_segment_01_port.stl"
+      ],
+      "cli_log_sha256": "f3d67ad20570a499d97bae9097559a24349d17df630782210a1dca933f448cab",
+      "slicer_warning_expected": "floating cantilever"
+    }
+  ],
+  "checks": {
+    "both_slice_jobs_return_success": true,
+    "selected_wing_piece_has_no_slicer_warning": true,
+    "fuselage_slice_warning_preserved": true,
+    "both_gcodes_contain_no_support_features": true,
+    "both_parts_fit_profile_cube_by_source_extents": true
+  },
+  "boundary": {
+    "gcode_review_only": true,
+    "physical_printer_used": false,
+    "adhesion_orientation_and_strength_verified": false,
+    "fabrication_or_aircraft_release": false,
+    "fuselage_floating_cantilever_warning_resolved": false,
+    "flight_readiness_claim": false
+  },
+  "all_recorded_checks_pass": true
+}
