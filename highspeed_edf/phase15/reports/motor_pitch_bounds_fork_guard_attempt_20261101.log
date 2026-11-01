@@ -1,0 +1,6 @@
+Guarded nozzle BRep attempt 1 (fork-based child)
+Input STEP SHA-256: 9b83f3bfa5ea261c2055152c9fdd2147b9e16819634715c3c4ae23b45deae772
+Input generator SHA-256: 53353da1c6f46d8cd9df7431209946869c0984908b269fb94d01f25a1cfabd47
+The first non-bbox-disjoint candidate was duct_A_stator_S2_N21 translated +44 mm, Z=106..114 mm, against the current nozzle BRep Z=110..245 mm (4 mm axial bounding-box overlap).
+The forked OpenCascade Boolean child (PID 17191) entered futex_wait at approximately 508 MiB RSS and produced no result. It was terminated before the configured 600 s per-Boolean ceiling after the post-fork stall was identified. Exact 3D common volume for this check is unresolved in this attempt; no zero-intersection claim is made from the bbox overlap.
+The verifier was changed to use fresh interpreter subprocesses for each bounded Boolean; see motor_pitch_bounds_20261101.log for the final guarded run.

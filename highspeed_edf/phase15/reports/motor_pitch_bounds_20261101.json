@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 1,
+  "audit": "Phase-15 motor/rotor axial STEP bounds audit",
+  "disposition": "BLOCKED_CURRENT_36MM_PITCH_EXCEEDS_NATIVE_STEP_MOTOR_ENVELOPE",
+  "scope": "Native BRep placement/bounding-box comparison only. This does not certify real motor dimensions, physical collision, shaft fit, drivetrain feasibility, CFD, strength, or aircraft readiness.",
+  "source": {
+    "step": {
+      "path": "highspeed_edf/deliverables/phase15_geometry/step/phase15_airframe_full_assembly.step",
+      "sha256": "9b83f3bfa5ea261c2055152c9fdd2147b9e16819634715c3c4ae23b45deae772"
+    },
+    "generator": {
+      "path": "highspeed_edf/phase15/optimization/phase15_generate_geometry.py",
+      "sha256": "53353da1c6f46d8cd9df7431209946869c0984908b269fb94d01f25a1cfabd47"
+    },
+    "cadqueryVersion": "2.7.0",
+    "openCascadePythonVersion": "7.8.1.1",
+    "sourceConstants": {
+      "ROTOR_Z_mm": [
+        12.0,
+        48.0,
+        84.0
+      ],
+      "STATOR_Z_mm": [
+        30.0,
+        66.0,
+        102.0
+      ],
+      "ROTOR_CHORD_mm": 16.0,
+      "MOTOR_CAN_D_mm": 42.0,
+      "MOTOR_CAN_LENGTH_mm": 72.0
+    },
+    "additionalAxialGeometry": "Generator constructs a 2.5 mm radius, 8 mm long coaxial cylinder from can_start\u22128 to can_start, fused to the 42 mm can. This 8 mm pilot/stub is included in each exported motor component BRep."
+  },
+  "motorComponents": {
+    "motor_A_R1_3670_42x72_envelope": {
+      "solids": 1,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          -65.0,
+          -23.0
+        ],
+        "y": [
+          -21.0,
+          21.0
+        ],
+        "z": [
+          12.0,
+          92.0
+        ]
+      },
+      "bboxExtentMm": [
+        42.0,
+        42.0,
+        80.0
+      ]
+    },
+    "motor_A_R2_3670_42x72_envelope": {
+      "solids": 1,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          -65.0,
+          -23.0
+        ],
+        "y": [
+          -21.0,
+          21.0
+        ],
+        "z": [
+          48.0,
+          128.0
+        ]
+      },
+      "bboxExtentMm": [
+        42.0,
+        42.0,
+        80.0
+      ]
+    },
+    "motor_A_R3_3670_42x72_envelope": {
+      "solids": 1,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          -65.0,
+          -23.0
+        ],
+        "y": [
+          -21.0,
+          21.0
+        ],
+        "z": [
+          84.0,
+          164.0
+        ]
+      },
+      "bboxExtentMm": [
+        42.0,
+        42.0,
+        80.0
+      ]
+    },
+    "motor_B_R1_3670_42x72_envelope": {
+      "solids": 1,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          23.0,
+          65.0
+        ],
+        "y": [
+          -21.0,
+          21.0
+        ],
+        "z": [
+          12.0,
+          92.0
+        ]
+      },
+      "bboxExtentMm": [
+        42.0,
+        42.0,
+        80.0
+      ]
+    },
+    "motor_B_R2_3670_42x72_envelope": {
+      "solids": 1,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          23.0,
+          65.0
+        ],
+        "y": [
+          -21.0,
+          21.0
+        ],
+        "z": [
+          48.0,
+          128.0
+        ]
+      },
+      "bboxExtentMm": [
+        42.0,
+        42.0,
+        80.0
+      ]
+    },
+    "motor_B_R3_3670_42x72_envelope": {
+      "solids": 1,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          23.0,
+          65.0
+        ],
+        "y": [
+          -21.0,
+          21.0
+        ],
+        "z": [
+          84.0,
+          164.0
+        ]
+      },
+      "bboxExtentMm": [
+        42.0,
+        42.0,
+        80.0
+      ]
+    }
+  },
+  "rotorComponents": {
+    "duct_A_rotor_R1_N13": {
+      "solids": 14,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          -82.44613367199,
+          -5.6999999
+        ],
+        "y": [
+          -38.64244735751,
+          38.654904661888004
+        ],
+        "z": [
+          4.0,
+          20.0
+        ]
+      }
+    },
+    "duct_A_rotor_R2_N12": {
+      "solids": 13,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          -82.30000009999999,
+          -5.6999999
+        ],
+        "y": [
+          -38.3000001,
+          38.3000001
+        ],
+        "z": [
+          40.0,
+          56.0
+        ]
+      }
+    },
+    "duct_A_rotor_R3_N11": {
+      "solids": 12,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          -82.23080217022999,
+          -5.6999999
+        ],
+        "y": [
+          -38.65889292252,
+          38.644184874712
+        ],
+        "z": [
+          76.0,
+          92.0
+        ]
+      }
+    },
+    "duct_B_rotor_R1_N13": {
+      "solids": 14,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          5.553866328001,
+          82.30000009999999
+        ],
+        "y": [
+          -38.64244735751,
+          38.654904661888004
+        ],
+        "z": [
+          4.0,
+          20.0
+        ]
+      }
+    },
+    "duct_B_rotor_R2_N12": {
+      "solids": 13,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          5.6999999,
+          82.30000009999999
+        ],
+        "y": [
+          -38.3000001,
+          38.3000001
+        ],
+        "z": [
+          40.0,
+          56.0
+        ]
+      }
+    },
+    "duct_B_rotor_R3_N11": {
+      "solids": 12,
+      "valid": true,
+      "boundsMm": {
+        "x": [
+          5.769197829768999,
+          82.30000009999999
+        ],
+        "y": [
+          -38.65889292252,
+          38.644184874712
+        ],
+        "z": [
+          76.0,
+          92.0
+        ]
+      }
+    }
+  },
+  "stations": {
+    "rotorStationOriginsMm": [
+      12.0,
+      48.0,
+      84.0
+    ],
+    "rotorPitchesMm": [
+      36.0,
+      36.0
+    ],
+    "motorComponentIntervalsByDuctMm": {
+      "A": {
+        "R1": [
+          12.0,
+          92.0
+        ],
+        "R2": [
+          48.0,
+          128.0
+        ],
+        "R3": [
+          84.0,
+          164.0
+        ]
+      },
+      "B": {
+        "R1": [
+          12.0,
+          92.0
+        ],
+        "R2": [
+          48.0,
+          128.0
+        ],
+        "R3": [
+          84.0,
+          164.0
+        ]
+      }
+    },
+    "principalCanBodyIntervalsMm": [
+      [
+        20.0,
+        92.0
+      ],
+      [
+        56.0,
+        128.0
+      ],
+      [
+        92.0,
+        164.0
+      ]
+    ],
+    "principalCanBodyOverlapForAdjacentStationsMm": [
+      36.0,
+      36.0
+    ],
+    "fullComponentBBoxOverlapForAdjacentStationsByDuctMm": {
+      "A": [
+        44.0,
+        44.0
+      ],
+      "B": [
+        44.0,
+        44.0
+      ]
+    },
+    "minimumCenterPitchForNoPrincipalCanBodyBBoxOverlapMm": 72.0,
+    "minimumCenterPitchForNoFullMotorComponentBBoxOverlapMm": 80.0,
+    "increaseNeededFromCurrentPitchToSeparateFullMotorComponentBBoxesMm": 44.0,
+    "thirdRotorShiftIfPitchChangedUniformlyFromR1AnchorMm": 88.0,
+    "currentContinuousDuctTubeZIntervalMm": [
+      0.0,
+      110.0
+    ],
+    "currentNozzleZIntervalMm": [
+      110.0,
+      245.0
+    ],
+    "rotorSolidZBoundsMm": {
+      "duct_A_rotor_R1_N13": [
+        4.0,
+        20.0
+      ],
+      "duct_A_rotor_R2_N12": [
+        40.0,
+        56.0
+      ],
+      "duct_A_rotor_R3_N11": [
+        76.0,
+        92.0
+      ],
+      "duct_B_rotor_R1_N13": [
+        4.0,
+        20.0
+      ],
+      "duct_B_rotor_R2_N12": [
+        40.0,
+        56.0
+      ],
+      "duct_B_rotor_R3_N11": [
+        76.0,
+        92.0
+      ]
+    },
+    "statorSolidZBoundsMm": {
+      "duct_A_stator_S1_N23": [
+        25.9999999,
+        34.0000001
+      ],
+      "duct_A_stator_S2_N21": [
+        61.9999999,
+        70.0000001
+      ],
+      "duct_A_stator_S3_N19": [
+        97.9999999,
+        106.0000001
+      ],
+      "duct_B_stator_S1_N23": [
+        25.9999999,
+        34.0000001
+      ],
+      "duct_B_stator_S2_N21": [
+        61.9999999,
+        70.0000001
+      ],
+      "duct_B_stator_S3_N19": [
+        97.9999999,
+        106.0000001
+      ]
+    },
+    "counterfactualR3NozzleStationCheck": {
+      "counterfactualUniformPitchMm": 80.0,
+      "R3ShiftMmFromCurrentR1Anchor": 88.0,
+      "currentNozzleBRepZBoundsMm": [
+        110.0,
+        245.0
+      ],
+      "movedStages": [
+        {
+          "stage": "rotor",
+          "row": 1,
+          "sourceComponent": "duct_A_rotor_R1_N13",
+          "axialShiftMm": 0.0,
+          "movedZBoundsMm": [
+            4.0,
+            20.0
+          ],
+          "nozzleZBoundsMm": [
+            110.0,
+            245.0
+          ],
+          "axialBBoxOverlapMm": 0.0,
+          "commonBRepVolumeWithNozzleMm3": 0.0,
+          "commonBRepGuardStatus": "not_run_bbox_disjoint"
+        },
+        {
+          "stage": "stator",
+          "row": 1,
+          "sourceComponent": "duct_A_stator_S1_N23",
+          "axialShiftMm": 0.0,
+          "movedZBoundsMm": [
+            25.9999999,
+            34.0000001
+          ],
+          "nozzleZBoundsMm": [
+            110.0,
+            245.0
+          ],
+          "axialBBoxOverlapMm": 0.0,
+          "commonBRepVolumeWithNozzleMm3": 0.0,
+          "commonBRepGuardStatus": "not_run_bbox_disjoint"
+        },
+        {
+          "stage": "rotor",
+          "row": 2,
+          "sourceComponent": "duct_A_rotor_R2_N12",
+          "axialShiftMm": 44.0,
+          "movedZBoundsMm": [
+            84.0,
+            100.0
+          ],
+          "nozzleZBoundsMm": [
+            110.0,
+            245.0
+          ],
+          "axialBBoxOverlapMm": 0.0,
+          "commonBRepVolumeWithNozzleMm3": 0.0,
+          "commonBRepGuardStatus": "not_run_bbox_disjoint"
+        },
+        {
+          "stage": "stator",
+          "row": 2,
+          "sourceComponent": "duct_A_stator_S2_N21",
+          "axialShiftMm": 44.0,
+          "movedZBoundsMm": [
+            105.9999999,
+            114.0000001
+          ],
+          "nozzleZBoundsMm": [
+            110.0,
+            245.0
+          ],
+          "axialBBoxOverlapMm": 4.000000099999994,
+          "commonBRepVolumeWithNozzleMm3": 0.0,
+          "commonBRepGuardStatus": "completed"
+        },
+        {
+          "stage": "rotor",
+          "row": 3,
+          "sourceComponent": "duct_A_rotor_R3_N11",
+          "axialShiftMm": 88.0,
+          "movedZBoundsMm": [
+            164.0,
+            180.0
+          ],
+          "nozzleZBoundsMm": [
+            110.0,
+            245.0
+          ],
+          "axialBBoxOverlapMm": 16.0,
+          "commonBRepVolumeWithNozzleMm3": 0.0,
+          "commonBRepGuardStatus": "completed"
+        },
+        {
+          "stage": "stator",
+          "row": 3,
+          "sourceComponent": "duct_A_stator_S3_N19",
+          "axialShiftMm": 88.0,
+          "movedZBoundsMm": [
+            185.9999999,
+            194.0000001
+          ],
+          "nozzleZBoundsMm": [
+            110.0,
+            245.0
+          ],
+          "axialBBoxOverlapMm": 8.000000199999988,
+          "commonBRepVolumeWithNozzleMm3": 0.0,
+          "commonBRepGuardStatus": "completed"
+        }
+      ],
+      "interpretation": "At the counterfactual 80 mm pitch, later rotor/stator rows occupy the same axial interval as the current nozzle BRep. The listed BRep common volumes screen only solid intersection. A zero result does not show aerodynamic compatibility, adequate clearance under load, thermal expansion, or an acceptable nozzle/rotor arrangement."
+    }
+  },
+  "adjacentStationPairs": [
+    {
+      "ductRowPair": "R1-R2",
+      "rotorStationPitchMm": 36.0,
+      "principalCanBodyIntervalsMm": [
+        [
+          20.0,
+          92.0
+        ],
+        [
+          56.0,
+          128.0
+        ]
+      ],
+      "principalCanBodyOverlapMm": 36.0,
+      "fullMotorComponentIntervalsPerDuctMm": {
+        "A": [
+          [
+            12.0,
+            92.0
+          ],
+          [
+            48.0,
+            128.0
+          ]
+        ],
+        "B": [
+          [
+            12.0,
+            92.0
+          ],
+          [
+            48.0,
+            128.0
+          ]
+        ]
+      },
+      "fullMotorComponentBBoxOverlapMm": {
+        "A": 44.0,
+        "B": 44.0
+      },
+      "fullMotorComponentCommonBRepVolumeMm3": {
+        "A": 50033.00460107198,
+        "B": 50033.00460107198
+      }
+    },
+    {
+      "ductRowPair": "R2-R3",
+      "rotorStationPitchMm": 36.0,
+      "principalCanBodyIntervalsMm": [
+        [
+          56.0,
+          128.0
+        ],
+        [
+          92.0,
+          164.0
+        ]
+      ],
+      "principalCanBodyOverlapMm": 36.0,
+      "fullMotorComponentIntervalsPerDuctMm": {
+        "A": [
+          [
+            48.0,
+            128.0
+          ],
+          [
+            84.0,
+            164.0
+          ]
+        ],
+        "B": [
+          [
+            48.0,
+            128.0
+          ],
+          [
+            84.0,
+            164.0
+          ]
+        ]
+      },
+      "fullMotorComponentBBoxOverlapMm": {
+        "A": 44.0,
+        "B": 44.0
+      },
+      "fullMotorComponentCommonBRepVolumeMm3": {
+        "A": 50033.00460107198,
+        "B": 50033.00460107198
+      }
+    }
+  ],
+  "pairwiseMotorCommonVolumesByDuct": {
+    "A": [
+      {
+        "pair": "R1-R2",
+        "commonBRepVolumeMm3": 50033.00460107198
+      },
+      {
+        "pair": "R2-R3",
+        "commonBRepVolumeMm3": 50033.00460107198
+      },
+      {
+        "pair": "R1-R3",
+        "commonBRepVolumeMm3": 157.07963267948963
+      }
+    ],
+    "B": [
+      {
+        "pair": "R1-R2",
+        "commonBRepVolumeMm3": 50033.00460107198
+      },
+      {
+        "pair": "R2-R3",
+        "commonBRepVolumeMm3": 50033.00460107198
+      },
+      {
+        "pair": "R1-R3",
+        "commonBRepVolumeMm3": 157.07963267948963
+      }
+    ]
+  },
+  "nozzleBooleanGuard": {
+    "perBooleanTimeoutSeconds": 600,
+    "perBooleanChildRssLimitMiB": 3072,
+    "records": [
+      {
+        "label": "duct_A_rotor_R1_vs_existing_nozzle",
+        "status": "not_run_bbox_disjoint",
+        "elapsedSeconds": 0.0,
+        "wallClockLimitSeconds": 600.0,
+        "rssLimitMiB": 3072,
+        "observedPeakChildRssMiB": 0.0
+      },
+      {
+        "label": "duct_A_stator_R1_vs_existing_nozzle",
+        "status": "not_run_bbox_disjoint",
+        "elapsedSeconds": 0.0,
+        "wallClockLimitSeconds": 600.0,
+        "rssLimitMiB": 3072,
+        "observedPeakChildRssMiB": 0.0
+      },
+      {
+        "label": "duct_A_rotor_R2_vs_existing_nozzle",
+        "status": "not_run_bbox_disjoint",
+        "elapsedSeconds": 0.0,
+        "wallClockLimitSeconds": 600.0,
+        "rssLimitMiB": 3072,
+        "observedPeakChildRssMiB": 0.0
+      },
+      {
+        "label": "duct_A_stator_R2_vs_existing_nozzle",
+        "status": "completed",
+        "elapsedSeconds": 129.597,
+        "wallClockLimitSeconds": 600.0,
+        "rssLimitMiB": 3072,
+        "observedPeakChildRssMiB": 1399.69,
+        "exitCode": 0,
+        "volumeMm3": 0.0,
+        "stepSha256": "9b83f3bfa5ea261c2055152c9fdd2147b9e16819634715c3c4ae23b45deae772"
+      },
+      {
+        "label": "duct_A_rotor_R3_vs_existing_nozzle",
+        "status": "completed",
+        "elapsedSeconds": 106.156,
+        "wallClockLimitSeconds": 600.0,
+        "rssLimitMiB": 3072,
+        "observedPeakChildRssMiB": 819.94,
+        "exitCode": 0,
+        "volumeMm3": 0.0,
+        "stepSha256": "9b83f3bfa5ea261c2055152c9fdd2147b9e16819634715c3c4ae23b45deae772"
+      },
+      {
+        "label": "duct_A_stator_R3_vs_existing_nozzle",
+        "status": "completed",
+        "elapsedSeconds": 97.236,
+        "wallClockLimitSeconds": 600.0,
+        "rssLimitMiB": 3072,
+        "observedPeakChildRssMiB": 1428.14,
+        "exitCode": 0,
+        "volumeMm3": 0.0,
+        "stepSha256": "9b83f3bfa5ea261c2055152c9fdd2147b9e16819634715c3c4ae23b45deae772"
+      }
+    ]
+  },
+  "interpretation": [
+    "The named 42x72 motor can body is 72 mm long, but each exported motor component BRep includes an 8 mm radius-2.5 mm coaxial pilot/stub, so its native Z bounding extent is 80 mm.",
+    "At the current 36 mm rotor pitch, principal can bodies overlap by 36 mm; full component bounding intervals overlap by 44 mm between adjacent rows. The nonadjacent R1/R3 full intervals overlap by 8 mm from the stub extension.",
+    "A uniform 80 mm pitch is the smallest axial pitch that separates the full component bounding intervals in this model, requiring +44 mm per inter-row pitch and shifting R3 +88 mm if R1 stays fixed. Later rotor/stator rows then occupy the current 110..245 mm nozzle axial interval; the nozzle BRep intersection check is reported separately and does not validate the changed flowpath.",
+    "No smaller sourced motor/drive package or authoritative motor drawing is present in the repository. Translating only the motor envelopes would require an unmodeled shaft/gear arrangement and is not an evidence-backed compatibility fix."
+  ],
+  "outputPath": "highspeed_edf/phase15/reports/motor_pitch_bounds_20261101.json"
+}
