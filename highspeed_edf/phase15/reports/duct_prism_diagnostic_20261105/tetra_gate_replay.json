@@ -1,0 +1,12 @@
+{
+  "candidate_sha256": "97a897b40aae3fcd1828626afe624b9f8db1c4289006052ba8370dc7e8003a58",
+  "input_checkmesh_sha256": "b54de9a48319d7337477e9f33445ca16c52e8da4604e57879dde990a4bb3c063",
+  "checkmesh_fixture": "actual candidate OpenFOAM log; external execution commands replayed",
+  "calls": [
+    "gmsh",
+    "gmshToFoam",
+    "checkMesh"
+  ],
+  "status": "blocked-mesh",
+  "missing_executable_handled": true
+}

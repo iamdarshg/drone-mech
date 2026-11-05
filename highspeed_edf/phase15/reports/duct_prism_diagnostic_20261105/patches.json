@@ -1,0 +1,26 @@
+{
+  "source_commit": "mesh experiment based on 23fbece",
+  "patches": {
+    "inlet": {
+      "faces": 292,
+      "area_m2": 0.0028145674938046313,
+      "z_min_m": 0.0,
+      "z_max_m": 0.0
+    },
+    "outlet": {
+      "faces": 292,
+      "area_m2": 0.004756619064662159,
+      "z_min_m": 0.12,
+      "z_max_m": 0.12
+    },
+    "walls": {
+      "faces": 912,
+      "area_m2": 0.026055242367395925,
+      "z_min_m": 0.0,
+      "z_max_m": 0.12
+    }
+  },
+  "expected": "inlet z=0 radius .030m; outlet z=.120 radius .039m; walls span full length",
+  "mapping_pass": true,
+  "scope": "native OpenFOAM mesh boundary geometry only; no flow solved"
+}

@@ -1,0 +1,9 @@
+{
+  "source_surface_mesh_sha256": "2508e0a051edc45b05cdf76bb6c4362748562be3584e5b6a920f64436ef6e409",
+  "layers": 24,
+  "inlet_nodes": 166,
+  "inlet_triangles": 292,
+  "perimeter_edges": 38,
+  "prism_cells": 7008,
+  "scope": "mesh-only axial scaled extrusion of existing triangulated cone, no change to target dimensions, no flow solution"
+}

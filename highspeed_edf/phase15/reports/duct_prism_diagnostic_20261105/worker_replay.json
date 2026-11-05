@@ -1,0 +1,7 @@
+{
+  "worker_sha256": "97a897b40aae3fcd1828626afe624b9f8db1c4289006052ba8370dc7e8003a58",
+  "prism_script_sha256": "05c1ca7f182a5f3b2c5c09fe265957cdaa624b4b77f7226d1d6c0e0a4d85feeb",
+  "generated_mesh_sha256": "48127ecd3c88f01539e2958dcc493c444672091438317b672ce01d0ab1f7a296",
+  "status": "no-recovery-extracted",
+  "scope": "Actual prism generator and worker; external gmsh, OpenFOAM mesh check and solver commands stubbed/replayed, no CFD solve"
+}

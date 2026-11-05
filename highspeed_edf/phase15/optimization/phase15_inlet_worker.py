@@ -13,6 +13,7 @@ import json
 import os
 import re
 import subprocess
+import sys
 import time
 from pathlib import Path
 
@@ -139,22 +140,36 @@ def main() -> None:
     ap.add_argument("--output", required=True)
     ap.add_argument("--work", default="/opt/phase15/work")
     ap.add_argument("--run-budget-seconds", type=int, default=360)
+    ap.add_argument("--mesh", choices=("tetra", "prism"), default="tetra",
+                    help="Prism is an experimental layered mesh; all mesh and flow gates still apply")
     args = ap.parse_args()
 
     out = Path(args.output); out.mkdir(parents=True, exist_ok=True)
     work = Path(args.work); work.mkdir(parents=True, exist_ok=True)
-    case = work / "duct"; case.mkdir(parents=True, exist_ok=True)
+    case = work / "duct"
+    if case.exists():
+        raise SystemExit(f"Refusing to reuse existing case {case}; choose a fresh --work directory")
+    case.mkdir(parents=True)
     logs = out / "logs"; logs.mkdir(exist_ok=True)
     env = dict(os.environ)
 
     r_in, r_out, length, uin = 0.030, 0.039, 0.120, 178.0
     write_case(case, r_in, r_out, length, 0.005, uin)
-    ev = {"case": {"r_in": r_in, "r_out": r_out, "length": length, "u_in": uin}, "steps": {}}
+    ev = {"case": {"r_in": r_in, "r_out": r_out, "length": length, "u_in": uin, "mesh": args.mesh}, "steps": {}}
     ev["steps"]["gmsh"] = run(["gmsh", "duct.geo", "-3", "-format", "msh2", "-o", "duct.msh"], case, logs / "gmsh.log", 240, env)
+    required_steps = ["gmsh", "gmshToFoam", "checkMesh"]
+    if args.mesh == "prism":
+        prism_script = Path(__file__).resolve().with_name("prism_duct_mesh.py")
+        ev["steps"]["prismMesh"] = run([sys.executable, str(prism_script), "duct.msh", "duct_prism.msh",
+                                         "--r-in", str(r_in), "--r-out", str(r_out), "--length", str(length)],
+                                        case, logs / "prismMesh.log", 120, env)
+        required_steps.append("prismMesh")
+        if ev["steps"]["prismMesh"]["rc"] == 0:
+            (case / "duct_prism.msh").replace(case / "duct.msh")
     ev["steps"]["gmshToFoam"] = run(["gmshToFoam", "duct.msh"], case, logs / "gmshToFoam.log", 180, env)
     ev["steps"]["checkMesh"] = run(["checkMesh", "-allTopology", "-allGeometry"], case, logs / "checkMesh.log", 120, env)
     mesh_log = (logs / "checkMesh.log").read_text(encoding="utf-8", errors="replace")
-    if any(ev["steps"][key]["rc"] != 0 for key in ("gmsh", "gmshToFoam", "checkMesh")) or "Mesh OK." not in mesh_log:
+    if any(ev["steps"][key]["rc"] != 0 for key in required_steps) or "Mesh OK." not in mesh_log:
         res = {"phase": 15, "study": "isolated duct internal-loss RANS (incompressible)",
                "scope": "INTERNAL duct loss only; not installed inlet recovery", "evidence": ev,
                "inletTotalPressure": None, "outletTotalPressure": None, "internalRecovery": None,
@@ -190,11 +205,14 @@ def main() -> None:
     pt_in = pt(last(fi)) if fi else None
     pt_out = pt(last(fo)) if fo else None
     rec = (pt_out / pt_in) if (pt_in and pt_out) else None
+    solver_ok = ev["steps"]["simpleFoam"]["rc"] == 0
+    if not solver_ok:
+        pt_in = pt_out = rec = None
     res = {"phase": 15, "study": "isolated duct internal-loss RANS (incompressible)",
            "scope": "INTERNAL duct loss only; not installed inlet recovery",
            "evidence": ev, "inletTotalPressure": pt_in, "outletTotalPressure": pt_out,
            "internalRecovery": round(rec, 5) if rec else None,
-           "status": "diagnostic-unvalidated" if rec else "no-recovery-extracted",
+           "status": "solver-failed" if not solver_ok else ("diagnostic-unvalidated" if rec else "no-recovery-extracted"),
            "limitations": "Incompressible isolated-duct estimate; boundary conditions, flux balance, convergence, and total-pressure recovery have not been validated."}
     (out / "phase15_inlet_result.json").write_text(json.dumps(res, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(res, indent=2))

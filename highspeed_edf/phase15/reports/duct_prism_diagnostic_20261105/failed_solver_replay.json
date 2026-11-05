@@ -1,0 +1,7 @@
+{
+  "worker_sha256": "97a897b40aae3fcd1828626afe624b9f8db1c4289006052ba8370dc7e8003a58",
+  "status": "solver-failed",
+  "solver_exit": 7,
+  "recovery": null,
+  "scope": "mocked failed solver and stale pressure files; no CFD solve"
+}

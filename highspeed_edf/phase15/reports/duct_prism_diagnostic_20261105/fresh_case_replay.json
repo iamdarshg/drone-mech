@@ -1,0 +1,6 @@
+{
+  "worker_sha256": "97a897b40aae3fcd1828626afe624b9f8db1c4289006052ba8370dc7e8003a58",
+  "existing_case_rejected": true,
+  "prior_data_preserved": true,
+  "scope": "case-reuse guard test; no CFD solve"
+}
