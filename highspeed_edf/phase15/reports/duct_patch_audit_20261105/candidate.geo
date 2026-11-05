@@ -1,0 +1,14 @@
+SetFactory("OpenCASCADE");
+Cone(1) = {0,0,0, 0,0,0.12, 0.03, 0.039};
+Physical Volume("internal") = {1};
+eps = 1e-6; rmax = 0.039;
+inlet[] = Surface In BoundingBox {-rmax-eps,-rmax-eps,-eps, rmax+eps,rmax+eps,eps};
+outlet[] = Surface In BoundingBox {-rmax-eps,-rmax-eps,0.12-eps, rmax+eps,rmax+eps,0.12+eps};
+walls[] = Surface{:};
+walls[] -= {inlet[], outlet[]};
+Physical Surface("inlet") = {inlet[]};
+Physical Surface("walls") = {walls[]};
+Physical Surface("outlet") = {outlet[]};
+Mesh.CharacteristicLengthMax = 0.005;
+Mesh.CharacteristicLengthMin = 0.005;
+Mesh.Optimize = 1;

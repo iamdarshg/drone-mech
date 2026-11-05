@@ -1,0 +1,26 @@
+{
+  "source_commit": "candidate based on 023bc5c5af1ad6080225baacfa7c34e35b9c5fcd",
+  "patches": {
+    "walls": {
+      "faces": 2513,
+      "area_m2": 0.02606884876343504,
+      "z_min_m": 0.0,
+      "z_max_m": 0.12
+    },
+    "outlet": {
+      "faces": 463,
+      "area_m2": 0.004765278491739167,
+      "z_min_m": 0.12,
+      "z_max_m": 0.12
+    },
+    "inlet": {
+      "faces": 292,
+      "area_m2": 0.0028145674938046313,
+      "z_min_m": 0.0,
+      "z_max_m": 0.0
+    }
+  },
+  "expected": "inlet z=0 radius .030m; outlet z=.120 radius .039m; walls span full length",
+  "mapping_pass": true,
+  "scope": "native OpenFOAM mesh boundary geometry only; no flow solved"
+}

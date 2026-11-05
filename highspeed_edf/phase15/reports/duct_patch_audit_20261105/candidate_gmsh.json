@@ -1,0 +1,46 @@
+{
+  "source_commit": "candidate based on 023bc5c5af1ad6080225baacfa7c34e35b9c5fcd",
+  "worker_sha256": "887697c35ae2d094137cf0a95852b94af49eebb455dc68bc8dde63646ec8836c",
+  "physical_surfaces": [
+    {
+      "name": "inlet",
+      "surface": 3,
+      "bounds": [
+        -0.0300001,
+        -0.0300001,
+        -1e-07,
+        0.0300001,
+        0.0300001,
+        1e-07
+      ],
+      "occ_area_m2": 0.002827433388230814
+    },
+    {
+      "name": "walls",
+      "surface": 1,
+      "bounds": [
+        -0.0390001,
+        -0.0390001,
+        -1e-07,
+        0.0390001,
+        0.0390001,
+        0.1200001
+      ],
+      "occ_area_m2": 0.02608544441796009
+    },
+    {
+      "name": "outlet",
+      "surface": 2,
+      "bounds": [
+        -0.0390001,
+        -0.0390001,
+        0.11999989999999999,
+        0.0390001,
+        0.0390001,
+        0.1200001
+      ],
+      "occ_area_m2": 0.004778362426110075
+    }
+  ],
+  "scope": "CAD physical group diagnostic only; no flow solve or installed-inlet claim"
+}

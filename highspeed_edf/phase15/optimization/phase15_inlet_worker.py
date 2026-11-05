@@ -30,6 +30,9 @@ def run(args, cwd, log, timeout=300, env=None):
     except subprocess.TimeoutExpired:
         log.write_text("TIMEOUT\n", encoding="utf-8")
         return {"rc": None, "elapsed": round(time.monotonic() - start, 1), "timeout": True}
+    except OSError as exc:
+        log.write_text(f"EXECUTION ERROR: {exc}\n", encoding="utf-8")
+        return {"rc": None, "elapsed": round(time.monotonic() - start, 1), "error": str(exc)}
 
 
 def write_case(case: Path, r_in: float, r_out: float, length: float, mesh: float, uin: float) -> None:
@@ -40,9 +43,14 @@ def write_case(case: Path, r_in: float, r_out: float, length: float, mesh: float
         'SetFactory("OpenCASCADE");\n'
         f'Cone(1) = {{0,0,0, 0,0,{length}, {r_in}, {r_out}}};\n'
         'Physical Volume("internal") = {1};\n'
-        'Physical Surface("inlet") = {1};\n'
-        'Physical Surface("walls") = {2};\n'
-        'Physical Surface("outlet") = {3};\n'
+        f'eps = 1e-6; rmax = {max(r_in, r_out)};\n'
+        'inlet[] = Surface In BoundingBox {-rmax-eps,-rmax-eps,-eps, rmax+eps,rmax+eps,eps};\n'
+        f'outlet[] = Surface In BoundingBox {{-rmax-eps,-rmax-eps,{length}-eps, rmax+eps,rmax+eps,{length}+eps}};\n'
+        'walls[] = Surface{:};\n'
+        'walls[] -= {inlet[], outlet[]};\n'
+        'Physical Surface("inlet") = {inlet[]};\n'
+        'Physical Surface("walls") = {walls[]};\n'
+        'Physical Surface("outlet") = {outlet[]};\n'
         f'Mesh.CharacteristicLengthMax = {mesh};\nMesh.CharacteristicLengthMin = {mesh};\nMesh.Optimize = 1;\n',
         encoding="utf-8")
 
@@ -144,7 +152,16 @@ def main() -> None:
     ev = {"case": {"r_in": r_in, "r_out": r_out, "length": length, "u_in": uin}, "steps": {}}
     ev["steps"]["gmsh"] = run(["gmsh", "duct.geo", "-3", "-format", "msh2", "-o", "duct.msh"], case, logs / "gmsh.log", 240, env)
     ev["steps"]["gmshToFoam"] = run(["gmshToFoam", "duct.msh"], case, logs / "gmshToFoam.log", 180, env)
-    ev["steps"]["checkMesh"] = run(["checkMesh"], case, logs / "checkMesh.log", 120, env)
+    ev["steps"]["checkMesh"] = run(["checkMesh", "-allTopology", "-allGeometry"], case, logs / "checkMesh.log", 120, env)
+    mesh_log = (logs / "checkMesh.log").read_text(encoding="utf-8", errors="replace")
+    if any(ev["steps"][key]["rc"] != 0 for key in ("gmsh", "gmshToFoam", "checkMesh")) or "Mesh OK." not in mesh_log:
+        res = {"phase": 15, "study": "isolated duct internal-loss RANS (incompressible)",
+               "scope": "INTERNAL duct loss only; not installed inlet recovery", "evidence": ev,
+               "inletTotalPressure": None, "outletTotalPressure": None, "internalRecovery": None,
+               "status": "blocked-mesh"}
+        (out / "phase15_inlet_result.json").write_text(json.dumps(res, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(res, indent=2))
+        return
     ev["steps"]["simpleFoam"] = run(["simpleFoam"], case, logs / "solver.log", args.run_budget_seconds, env)
 
     def last(p: Path):
@@ -177,7 +194,8 @@ def main() -> None:
            "scope": "INTERNAL duct loss only; not installed inlet recovery",
            "evidence": ev, "inletTotalPressure": pt_in, "outletTotalPressure": pt_out,
            "internalRecovery": round(rec, 5) if rec else None,
-           "status": "complete" if rec else "no-recovery-extracted"}
+           "status": "diagnostic-unvalidated" if rec else "no-recovery-extracted",
+           "limitations": "Incompressible isolated-duct estimate; boundary conditions, flux balance, convergence, and total-pressure recovery have not been validated."}
     (out / "phase15_inlet_result.json").write_text(json.dumps(res, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(res, indent=2))
 
