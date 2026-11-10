@@ -1,0 +1,11 @@
+{
+  "iteration": 100,
+  "patch_flux_m3_per_s": {
+    "inlet": -0.5009930141,
+    "outlet": 0.500989787548,
+    "walls": 0.0
+  },
+  "inlet_negative_outlet_positive": true,
+  "imbalance_relative_to_inlet": 6.440313355884503e-06,
+  "scope": "diagnostic incompressible numerical run; not converged, no validated pressure recovery or design conclusion"
+}
