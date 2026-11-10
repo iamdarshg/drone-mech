@@ -1,0 +1,18 @@
+{
+  "iteration": "80",
+  "cells": 7008,
+  "pressure_min_pa": 69509.429,
+  "pressure_max_pa": 69993.213,
+  "temperature_min_k": 269.65369,
+  "temperature_max_k": 270.22432,
+  "mach_min": 0.05478226659885838,
+  "mach_max": 0.11995060276613664,
+  "mach_mean": 0.09201319614554469,
+  "boundary_mass_flux_kg_s": {
+    "inlet": -0.0999999982,
+    "outlet": 0.099999553,
+    "walls": 0.0
+  },
+  "mass_imbalance_relative": 4.452000080040867e-06,
+  "limitations": "ideal-gas cell-centre Mach screen on a coarse, unvalidated isolated duct; solver residual stop alone is not evidence of converged performance"
+}

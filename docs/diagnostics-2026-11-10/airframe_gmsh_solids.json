@@ -1,0 +1,25 @@
+{
+  "solid_bbox_union": [
+    -596.934478497,
+    -73.0000001,
+    -1393.354141767,
+    596.93447849705,
+    75.0000001,
+    2016.2407197700002
+  ],
+  "source_sha256": "9b83f3bfa5ea261c2055152c9fdd2147b9e16819634715c3c4ae23b45deae772",
+  "gmsh_version": "4.13.1",
+  "elapsed_s": 89.52638483047485,
+  "imported_entities": 516,
+  "solid_count": 516,
+  "bounding_box": [
+    -596.934478497,
+    -73.0000001,
+    -1393.354141767,
+    596.93447849705,
+    75.0000001,
+    2016.2407197700002
+  ],
+  "units": "STEP import native coordinates; verify against CAD before meshing",
+  "status": "geometry import only; no mesh or solver result"
+}
