@@ -1,0 +1,11 @@
+wall faces 212162  first-cell centroid height mm [min,p5,median,p95,max]: [0.151, 0.6, 0.735, 1.0, 1.583]
+IAS50 U=16.12 m/s x=0.1 m Re_x=8.65e+04 Cf=0.006094 median y+=35  p95 y+=48
+IAS50 U=16.12 m/s x=0.39 m Re_x=3.37e+05 Cf=0.004642 median y+=31  p95 y+=42
+IAS60 U=19.34 m/s x=0.1 m Re_x=1.04e+05 Cf=0.005876 median y+=41  p95 y+=56
+IAS60 U=19.34 m/s x=0.39 m Re_x=4.05e+05 Cf=0.004476 median y+=36  p95 y+=49
+IAS700 U=222.13 m/s x=0.1 m Re_x=1.19e+06 Cf=0.003606 median y+=372  p95 y+=507
+IAS700 U=222.13 m/s x=0.39 m Re_x=4.65e+06 Cf=0.002747 median y+=325  p95 y+=442
+IAS800 U=252.81 m/s x=0.1 m Re_x=1.36e+06 Cf=0.003514 median y+=418  p95 y+=569
+IAS800 U=252.81 m/s x=0.39 m Re_x=5.29e+06 Cf=0.002677 median y+=365  p95 y+=497
+IAS900 U=283.17 m/s x=0.1 m Re_x=1.52e+06 Cf=0.003435 median y+=463  p95 y+=630
+IAS900 U=283.17 m/s x=0.39 m Re_x=5.93e+06 Cf=0.002617 median y+=404  p95 y+=550

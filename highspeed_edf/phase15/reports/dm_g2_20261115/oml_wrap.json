@@ -1,0 +1,51 @@
+{
+ "brep": "<workspace>/DM-G2/oml_fused.brep",
+ "pitch_mm": 1.0,
+ "target_faces": 300000,
+ "brep_faces": 952,
+ "faces_without_triangulation": 2,
+ "cad_triangles": 52478,
+ "cad_bbox_mm": [
+  -260.0,
+  -46.99,
+  -270.0,
+  260.0,
+  75.0,
+  396.0
+ ],
+ "cad_watertight": false,
+ "grid": [
+  529,
+  131,
+  675
+ ],
+ "solid_voxels": 4126705,
+ "solid_components": 3,
+ "wrap_faces_raw": 2126904,
+ "wrap_components": 2,
+ "wrap_faces": 299998,
+ "wrap_watertight": true,
+ "wrap_winding_consistent": true,
+ "wrap_volume_mm3": 4119590.993192237,
+ "wrap_bbox_mm": [
+  -261.39,
+  -47.47,
+  -270.51,
+  260.5,
+  74.51,
+  395.48
+ ],
+ "euler": -24,
+ "deviation_wrap_to_cad_mm": {
+  "mean": 0.637,
+  "p95": 1.413,
+  "max": 2.251
+ },
+ "deviation_cad_to_wrap_mm": {
+  "mean": 0.762,
+  "p95": 1.487,
+  "max": 5.006
+ },
+ "cad_area_frac_within_1p5h": 0.9563,
+ "seconds": 7.9
+}

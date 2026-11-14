@@ -1,0 +1,41 @@
+{
+ "input": "<workspace>/DM-G2/oml_wrap.stl",
+ "target_edge_mm": 3.0,
+ "iterations": 30,
+ "featuredeg": 150.0,
+ "maxsurfdist_mm": 0.8999999999999999,
+ "faces": 212198,
+ "watertight": true,
+ "winding_consistent": true,
+ "euler": -24,
+ "edge_mm": {
+  "min": 0.5402,
+  "p01": 2.3639,
+  "mean": 3.1049,
+  "max": 5.4693
+ },
+ "min_angle_deg": {
+  "min": 1.82,
+  "p01": 39.52,
+  "frac_tris_lt_20deg": 9e-05
+ },
+ "volume_change_frac": -0.00346,
+ "deviation_to_wrap_mm": {
+  "mean": 0.0,
+  "p95": 0.0,
+  "max": 0.0
+ },
+ "shells": [
+  {
+   "faces": 157858,
+   "watertight": true,
+   "volume_m3": 0.003711949960319398
+  },
+  {
+   "faces": 54340,
+   "watertight": true,
+   "volume_m3": 0.0003934047817804879
+  }
+ ],
+ "seconds": 35.3
+}
