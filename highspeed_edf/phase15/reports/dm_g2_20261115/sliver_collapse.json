@@ -1,0 +1,29 @@
+{
+ "min_angle_threshold_deg": 20.0,
+ "shells": [
+  {
+   "file": "<workspace>/DM-G2/oml_remesh_shell0_m.stl",
+   "slivers_before": 20,
+   "collapses": 18,
+   "rejected": 0,
+   "slivers_after": 0,
+   "min_angle_after": 20.94,
+   "watertight": true,
+   "winding_consistent": true,
+   "faces": 157822,
+   "max_dev_from_input_mm": 0.0
+  },
+  {
+   "file": "<workspace>/DM-G2/oml_remesh_shell1_m.stl",
+   "slivers_before": 0,
+   "collapses": 0,
+   "rejected": 0,
+   "slivers_after": 0,
+   "min_angle_after": 23.81,
+   "watertight": true,
+   "winding_consistent": true,
+   "faces": 54340,
+   "max_dev_from_input_mm": 0.0
+  }
+ ]
+}

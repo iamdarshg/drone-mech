@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<workspace>/tools/scripts/oml_fuse.py", line 34, in <module>
+    gmsh.model.mesh.generate(2)
+  File "<workspace>/tools/envs/eng/lib/python3.11/site-packages/gmsh.py", line 2189, in generate
+    raise Exception(logger.getLastError())
+Exception: Impossible to mesh periodic surface 263

@@ -1,0 +1,10 @@
+6c9888d7739409ab95f82e4ff9f0c509a63470af3e9955be6f98e4d5deda6934  <workspace>/DM-G2/oml_fused.brep
+3a9312872e30bc3fe73497ac75ff291a74281ee8472671de564a546f5b2cb7b9  <workspace>/DM-G2/oml_wrap.stl
+5ec9b09325dd9d7185d55af2aeaac2395357e57cfa627850caab4c9f2f8b697d  <workspace>/DM-G2/oml_remesh_shell0_m.stl
+0179c6114bc9bc53ab988cc4f59d63411996bdbeb3c2a16eb3b68c1828f2a202  <workspace>/DM-G2/oml_remesh_shell1_m.stl
+e9b3b225e403d70335ca6d9eceb2d328c376a09ac6e2d901ec12ea1082ed179c  <workspace>/DM-G2/dm_g2_tet.msh
+c2c7947f531930bc195bca450aa4be4136af66f9f93e35fb7392b995d28271d2  <workspace>/DM-G2/foam_case/constant/polyMesh/points
+b78ddbb7850ac2646fcb275e7b0f4fcadf7ca52de721cb647da1c3f68e075196  <workspace>/DM-G2/foam_case/constant/polyMesh/faces
+b5428a685bf09c98ec142f3cc6a2e7cb120ef5dd75114570d8a08f7329d7142c  <workspace>/DM-G2/foam_case/constant/polyMesh/owner
+798c28cb08eaf74c30e9ae245986c283bf37191da3e7080436cca7bac67c32f1  <workspace>/DM-G2/foam_case/constant/polyMesh/neighbour
+50e2a6f9af8c10276571eca426fc98a2a85971afac5671c9bc2b470e0baa01b4  <workspace>/DM-G2/foam_case/constant/polyMesh/boundary

@@ -1,0 +1,33 @@
+{
+ "input": "<workspace>/DM-G2/oml_remesh_shell0_m.stl,<workspace>/DM-G2/oml_remesh_shell1_m.stl",
+ "wall_h_m": 0.003,
+ "far_h_m": 0.25,
+ "box_half_xy_m": 2.0,
+ "upstream_m": 2.0,
+ "downstream_m": 4.0,
+ "body_surfaces": 2,
+ "shells": 2,
+ "body_bbox_m": [
+  -0.2612,
+  -0.0475,
+  -0.2704,
+  0.2605,
+  0.0745,
+  0.3955
+ ],
+ "mesh2d": "ok",
+ "mesh3d": "ok",
+ "netgen_opt": "ok",
+ "tets": 1421557,
+ "boundary_tris": 217440,
+ "minSICN": {
+  "min": 0.3291411811688557,
+  "p01": 0.6522938675090346,
+  "frac_lt_0.1": 0.0
+ },
+ "gamma": {
+  "min": 0.2704555257117043,
+  "p01": 0.5984197977030772
+ },
+ "seconds": 51.7
+}
