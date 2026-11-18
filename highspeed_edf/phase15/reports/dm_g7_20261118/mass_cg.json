@@ -1,0 +1,193 @@
+{
+ "rows": {
+  "motors": {
+   "spec_nominal_kg": 1.68,
+   "cad_solids": 6,
+   "cad_volume_cm3": 599.5,
+   "centroid_mm": [
+    0.0,
+    0.0,
+    91.94
+   ]
+  },
+  "battery": {
+   "spec_nominal_kg": 0.56,
+   "cad_solids": 2,
+   "cad_volume_cm3": 1322.8,
+   "centroid_mm": [
+    0.0,
+    -0.0,
+    -207.5
+   ]
+  },
+  "esc_flight_pcbs": {
+   "spec_nominal_kg": 0.4,
+   "cad_solids": 141,
+   "cad_volume_cm3": 344.7,
+   "centroid_mm": [
+    -0.03,
+    58.0,
+    261.98
+   ]
+  },
+  "rotors_hubs_stators": {
+   "spec_nominal_kg": 0.37,
+   "cad_solids": 218,
+   "cad_volume_cm3": 188.6,
+   "centroid_mm": [
+    0.0,
+    0.0,
+    49.03
+   ]
+  },
+  "duct_inlet_composites": {
+   "spec_nominal_kg": 0.28,
+   "cad_solids": 14,
+   "cad_volume_cm3": 370.7,
+   "centroid_mm": [
+    0.0,
+    -0.0,
+    77.55
+   ]
+  },
+  "lifting_body_shell": {
+   "spec_nominal_kg": 0.27,
+   "cad_solids": 21,
+   "cad_volume_cm3": 3132.2,
+   "centroid_mm": [
+    -0.01,
+    4.42,
+    -31.1
+   ]
+  },
+  "actuators": {
+   "spec_nominal_kg": 0.18,
+   "cad_solids": 49,
+   "cad_volume_cm3": 71.1,
+   "centroid_mm": [
+    4.43,
+    -6.6,
+    227.81
+   ]
+  },
+  "mounts_clamps_fasteners": {
+   "spec_nominal_kg": 0.25,
+   "cad_solids": 59,
+   "cad_volume_cm3": 106.1,
+   "centroid_mm": [
+    0.0,
+    28.81,
+    -116.02
+   ]
+  },
+  "landing_gear": {
+   "spec_nominal_kg": 0.4,
+   "cad_solids": 6,
+   "cad_volume_cm3": 27.2,
+   "centroid_mm": [
+    0.0,
+    -58.4,
+    -8.69
+   ]
+  },
+  "harness_connectors_fuses": {
+   "spec_nominal_kg": 0.25,
+   "cad_solids": 0,
+   "placed_at": "centroid of esc_flight_pcbs",
+   "centroid_mm": [
+    -0.03,
+    58.0,
+    261.98
+   ]
+  },
+  "avionics": {
+   "spec_nominal_kg": 0.2,
+   "cad_solids": 0,
+   "placed_at": "centroid of esc_flight_pcbs",
+   "centroid_mm": [
+    -0.03,
+    58.0,
+    261.98
+   ]
+  },
+  "payload": {
+   "spec_nominal_kg": 1.0,
+   "cad_solids": 0,
+   "placed_at": "centroid of battery",
+   "centroid_mm": [
+    0.0,
+    -0.0,
+    -207.5
+   ]
+  }
+ },
+ "unassigned_solids": [],
+ "total_mass_kg_excl_reserve": 5.84,
+ "cg_mm": {
+  "x_lateral": 0.13,
+  "y_vertical": 5.68,
+  "z_longitudinal": 16.0
+ },
+ "spec_window_mm": {
+  "z_longitudinal": [
+   -5,
+   15
+  ],
+  "x_lateral": [
+   -3,
+   3
+  ],
+  "y_vertical": [
+   -5,
+   10
+  ]
+ },
+ "cg_in_window": {
+  "z": false,
+  "x": true,
+  "y": true
+ },
+ "inertia_about_cg_kg_m2": {
+  "Ixx_pitch(about X lateral)": 0.1821,
+  "Iyy_yaw(about Y vertical)": 0.1943,
+  "Izz_roll(about Z)": 0.0236,
+  "Ixy": -1e-05,
+  "Ixz": -0.00024,
+  "Iyz": -0.01107
+ },
+ "spec_inertia_kg_m2(uniform-body estimate)": {
+  "pitch": [
+   0.15,
+   0.2,
+   0.25
+  ],
+  "yaw": [
+   0.2,
+   0.25,
+   0.35
+  ],
+  "roll": [
+   0.025,
+   0.03,
+   0.08
+  ]
+ },
+ "cg_z_without_payload_mm": 62.17,
+ "payload_z_for_cg_5mm": -271.7,
+ "battery_z_shift_for_cg_5mm_with_payload_at_bay": -114.7,
+ "structure_check": {
+  "oml_wrap_area_m2": 0.8917,
+  "composite_shell_mass_kg_at_t_0.8_1.2_2.0mm_rho1.5": [
+   1.07,
+   1.605,
+   2.675
+  ],
+  "lifting_body_cad_volume_cm3": 3132.2,
+  "lifting_body_as_PLA_kg_at_infill_10_20_100pct(rho1.24)": [
+   0.388,
+   0.777,
+   3.884
+  ],
+  "spec_rows_lifting_body_plus_ducts_kg": 0.55
+ }
+}
